@@ -12,7 +12,7 @@ The recommended flow for this WhatTheHack:
 
 ## Coach's Guides
   - Challenge 1: [Setup your Environment and Discover](Solution01.md)
-    - Get your local and Azure Environment ready 
+    - Get your local and Azure Environment ready
   - Challenge 2: [Provision your Front Door](Solution02.md)
     - Get the basic Front Door setup
   - Challenge 3: [Provision a Web Application Firewall (WAF)](Solution03.md)

@@ -4,7 +4,7 @@
 
 ## Introduction
 
-When some people think of load testing, the first thought that comes to mind is pointing a tool at your site and cranking the load to the max and see what happens.  While that might be exciting at the moment, it’s critical to take a step back and develop a load testing strategy that is tailored to the application. This means breaking down the architecture, internal/external dependencies, high availability design, scaling and the data tier.  Having a plan not only helps you prepare while you are testing the application but also provides context as to why and how you are testing the application for anyone in the future.  
+When some people think of load testing, the first thought that comes to mind is pointing a tool at your site and cranking the load to the max and see what happens.  While that might be exciting at the moment, it’s critical to take a step back and develop a load testing strategy that is tailored to the application. This means breaking down the architecture, internal/external dependencies, high availability design, scaling and the data tier.  Having a plan not only helps you prepare while you are testing the application but also provides context as to why and how you are testing the application for anyone in the future.
 
 ## Description
 
@@ -15,7 +15,7 @@ Create a load testing strategy to describe your plan and goals.  Below are some 
 - Identify the test failure criteria
 - Identify how you will be monitoring your application
 - Identify potential bottlenecks/limitations in advance
-- Please note any assumptions 
+- Please note any assumptions
 
 Below is the sample application that we will be using:
 

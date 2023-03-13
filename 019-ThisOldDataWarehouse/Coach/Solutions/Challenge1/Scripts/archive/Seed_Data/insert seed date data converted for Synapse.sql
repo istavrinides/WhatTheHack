@@ -1,5 +1,5 @@
 
-INSERT INTO [Dimension].[Date] ([Date], [Day Number], [Day], [Month], [Short Month], [Calendar Month Number], [Calendar Month Label], [Calendar Year], [Calendar Year Label], [Fiscal Month Number], [Fiscal Month Label], [Fiscal Year], [Fiscal Year Label], [ISO Week Number])  
+INSERT INTO [Dimension].[Date] ([Date], [Day Number], [Day], [Month], [Short Month], [Calendar Month Number], [Calendar Month Label], [Calendar Year], [Calendar Year Label], [Fiscal Month Number], [Fiscal Month Label], [Fiscal Year], [Fiscal Year Label], [ISO Week Number])
 SELECT CAST(N'2013-01-01' AS Date), 1, N'1', N'January', N'Jan', 1, N'CY2013-Jan', 2013, N'CY2013', 3, N'FY2013-Jan', 2013, N'FY2013', 1
 UNION ALL SELECT CAST(N'2013-01-02' AS Date), 2, N'2', N'January', N'Jan', 1, N'CY2013-Jan', 2013, N'CY2013', 3, N'FY2013-Jan', 2013, N'FY2013', 1
 UNION ALL SELECT CAST(N'2013-01-03' AS Date), 3, N'3', N'January', N'Jan', 1, N'CY2013-Jan', 2013, N'CY2013', 3, N'FY2013-Jan', 2013, N'FY2013', 1

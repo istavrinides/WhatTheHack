@@ -36,15 +36,15 @@ window.Modernizr = (function( window, document, undefined ) {
     docElement = document.documentElement,
 
     /**
-     * Create our "modernizr" element that we do most feature tests on.
-     */
+    * Create our "modernizr" element that we do most feature tests on.
+    */
     mod = 'modernizr',
     modElem = document.createElement(mod),
     mStyle = modElem.style,
 
     /**
-     * Create the input element for various Web Forms feature tests.
-     */
+    * Create the input element for various Web Forms feature tests.
+    */
     inputElem /*>>inputelem*/ = document.createElement('input') /*>>inputelem*/ ,
 
     /*>>smile*/
@@ -169,8 +169,8 @@ window.Modernizr = (function( window, document, undefined ) {
 
       return bool;
 
-     },
-     /*>>mq*/
+    },
+    /*>>mq*/
 
 
     /*>>hasevent*/
@@ -284,29 +284,29 @@ window.Modernizr = (function( window, document, undefined ) {
     }
 
     /**
-     * setCss applies given styles to the Modernizr DOM node.
-     */
+    * setCss applies given styles to the Modernizr DOM node.
+    */
     function setCss( str ) {
         mStyle.cssText = str;
     }
 
     /**
-     * setCssAll extrapolates all vendor-specific css strings.
-     */
+    * setCssAll extrapolates all vendor-specific css strings.
+    */
     function setCssAll( str1, str2 ) {
         return setCss(prefixes.join(str1 + ';') + ( str2 || '' ));
     }
 
     /**
-     * is returns a boolean for if typeof obj is exactly type.
-     */
+    * is returns a boolean for if typeof obj is exactly type.
+    */
     function is( obj, type ) {
         return typeof obj === type;
     }
 
     /**
-     * contains returns a boolean for if substr is found within str.
-     */
+    * contains returns a boolean for if substr is found within str.
+    */
     function contains( str, substr ) {
         return !!~('' + str).indexOf(substr);
     }
@@ -344,9 +344,9 @@ window.Modernizr = (function( window, document, undefined ) {
 
     // TODO :: add testDOMProps
     /**
-     * testDOMProps is a generic DOM property test; if a browser supports
-     *   a certain property, it won't return undefined for it.
-     */
+    * testDOMProps is a generic DOM property test; if a browser supports
+    *   a certain property, it won't return undefined for it.
+    */
     function testDOMProps( props, obj, elem ) {
         for ( var i in props ) {
             var item = obj[props[i]];
@@ -370,11 +370,11 @@ window.Modernizr = (function( window, document, undefined ) {
 
     /*>>testallprops*/
     /**
-     * testPropsAll tests a list of DOM properties we want to check against.
-     *   We specify literally ALL possible (known and/or likely) properties on
-     *   the element including the non-vendor prefixed one, for forward-
-     *   compatibility.
-     */
+    * testPropsAll tests a list of DOM properties we want to check against.
+    *   We specify literally ALL possible (known and/or likely) properties on
+    *   the element including the non-vendor prefixed one, for forward-
+    *   compatibility.
+    */
     function testPropsAll( prop, prefixed, elem ) {
 
         var ucProp  = prop.charAt(0).toUpperCase() + prop.slice(1),
@@ -394,9 +394,9 @@ window.Modernizr = (function( window, document, undefined ) {
 
 
     /**
-     * Tests
-     * -----
-     */
+    * Tests
+    * -----
+    */
 
     // The *new* flexbox
     // dev.w3.org/csswg/css3-flexbox
@@ -435,18 +435,18 @@ window.Modernizr = (function( window, document, undefined ) {
     };
 
     /*
-     * The Modernizr.touch test only indicates if the browser supports
-     *    touch events, which does not necessarily reflect a touchscreen
-     *    device, as evidenced by tablets running Windows 7 or, alas,
-     *    the Palm Pre / WebOS (touch) phones.
-     *
-     * Additionally, Chrome (desktop) used to lie about its support on this,
-     *    but that has since been rectified: crbug.com/36415
-     *
-     * We also test for Firefox 4 Multitouch Support.
-     *
-     * For more info, see: modernizr.github.com/Modernizr/touch.html
-     */
+    * The Modernizr.touch test only indicates if the browser supports
+    *    touch events, which does not necessarily reflect a touchscreen
+    *    device, as evidenced by tablets running Windows 7 or, alas,
+    *    the Palm Pre / WebOS (touch) phones.
+    *
+    * Additionally, Chrome (desktop) used to lie about its support on this,
+    *    but that has since been rectified: crbug.com/36415
+    *
+    * We also test for Firefox 4 Multitouch Support.
+    *
+    * For more info, see: modernizr.github.com/Modernizr/touch.html
+    */
 
     tests['touch'] = function() {
         var bool;
@@ -618,21 +618,21 @@ window.Modernizr = (function( window, document, undefined ) {
 
     tests['cssgradients'] = function() {
         /**
-         * For CSS Gradients syntax, please see:
-         * webkit.org/blog/175/introducing-css-gradients/
-         * developer.mozilla.org/en/CSS/-moz-linear-gradient
-         * developer.mozilla.org/en/CSS/-moz-radial-gradient
-         * dev.w3.org/csswg/css3-images/#gradients-
-         */
+        * For CSS Gradients syntax, please see:
+        * webkit.org/blog/175/introducing-css-gradients/
+        * developer.mozilla.org/en/CSS/-moz-linear-gradient
+        * developer.mozilla.org/en/CSS/-moz-radial-gradient
+        * dev.w3.org/csswg/css3-images/#gradients-
+        */
 
         var str1 = 'background-image:',
             str2 = 'gradient(linear,left top,right bottom,from(#9f9),to(white));',
             str3 = 'linear-gradient(left top,#9f9, white);';
 
         setCss(
-             // legacy webkit syntax (FIXME: remove when syntax not in use anymore)
+            // legacy webkit syntax (FIXME: remove when syntax not in use anymore)
               (str1 + '-webkit- '.split(' ').join(str2 + str1) +
-             // standard syntax             // trailing 'background-image:'
+            // standard syntax             // trailing 'background-image:'
               prefixes.join(str3 + str1)).slice(0, -str1.length)
         );
 
@@ -959,44 +959,44 @@ window.Modernizr = (function( window, document, undefined ) {
 
 
     /**
-     * addTest allows the user to define their own feature tests
-     * the result will be added onto the Modernizr object,
-     * as well as an appropriate className set on the html element
-     *
-     * @param feature - String naming the feature
-     * @param test - Function returning true if feature is supported, false if not
-     */
-     Modernizr.addTest = function ( feature, test ) {
-       if ( typeof feature == 'object' ) {
-         for ( var key in feature ) {
-           if ( hasOwnProp( feature, key ) ) {
-             Modernizr.addTest( key, feature[ key ] );
-           }
-         }
-       } else {
+    * addTest allows the user to define their own feature tests
+    * the result will be added onto the Modernizr object,
+    * as well as an appropriate className set on the html element
+    *
+    * @param feature - String naming the feature
+    * @param test - Function returning true if feature is supported, false if not
+    */
+    Modernizr.addTest = function ( feature, test ) {
+      if ( typeof feature == 'object' ) {
+        for ( var key in feature ) {
+          if ( hasOwnProp( feature, key ) ) {
+            Modernizr.addTest( key, feature[ key ] );
+          }
+        }
+      } else {
 
-         feature = feature.toLowerCase();
+        feature = feature.toLowerCase();
 
-         if ( Modernizr[feature] !== undefined ) {
-           // we're going to quit if you're trying to overwrite an existing test
-           // if we were to allow it, we'd do this:
-           //   var re = new RegExp("\\b(no-)?" + feature + "\\b");
-           //   docElement.className = docElement.className.replace( re, '' );
-           // but, no rly, stuff 'em.
-           return Modernizr;
-         }
+        if ( Modernizr[feature] !== undefined ) {
+          // we're going to quit if you're trying to overwrite an existing test
+          // if we were to allow it, we'd do this:
+          //   var re = new RegExp("\\b(no-)?" + feature + "\\b");
+          //   docElement.className = docElement.className.replace( re, '' );
+          // but, no rly, stuff 'em.
+          return Modernizr;
+        }
 
-         test = typeof test == 'function' ? test() : test;
+        test = typeof test == 'function' ? test() : test;
 
-         if (typeof enableClasses !== "undefined" && enableClasses) {
-           docElement.className += ' ' + (test ? '' : 'no-') + feature;
-         }
-         Modernizr[feature] = test;
+        if (typeof enableClasses !== "undefined" && enableClasses) {
+          docElement.className += ' ' + (test ? '' : 'no-') + feature;
+        }
+        Modernizr[feature] = test;
 
-       }
+      }
 
-       return Modernizr; // allow chaining.
-     };
+      return Modernizr; // allow chaining.
+    };
 
 
     // Reset modElem.cssText to nothing to reduce memory footprint.
@@ -1005,8 +1005,8 @@ window.Modernizr = (function( window, document, undefined ) {
 
     /*>>shiv*/
     /**
-     * @preserve HTML5 Shiv prev3.7.1 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
-     */
+    * @preserve HTML5 Shiv prev3.7.1 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
+    */
     ;(function(window, document) {
         /*jshint evil:true */
         /** version */
@@ -1064,12 +1064,12 @@ window.Modernizr = (function( window, document, undefined ) {
         /*--------------------------------------------------------------------------*/
 
         /**
-         * Creates a style sheet with the given CSS text and adds it to the document.
-         * @private
-         * @param {Document} ownerDocument The document.
-         * @param {String} cssText The CSS text.
-         * @returns {StyleSheet} The style element.
-         */
+        * Creates a style sheet with the given CSS text and adds it to the document.
+        * @private
+        * @param {Document} ownerDocument The document.
+        * @param {String} cssText The CSS text.
+        * @returns {StyleSheet} The style element.
+        */
         function addStyleSheet(ownerDocument, cssText) {
           var p = ownerDocument.createElement('p'),
           parent = ownerDocument.getElementsByTagName('head')[0] || ownerDocument.documentElement;
@@ -1079,21 +1079,21 @@ window.Modernizr = (function( window, document, undefined ) {
         }
 
         /**
-         * Returns the value of `html5.elements` as an array.
-         * @private
-         * @returns {Array} An array of shived element node names.
-         */
+        * Returns the value of `html5.elements` as an array.
+        * @private
+        * @returns {Array} An array of shived element node names.
+        */
         function getElements() {
           var elements = html5.elements;
           return typeof elements == 'string' ? elements.split(' ') : elements;
         }
 
         /**
-         * Returns the data associated to the given document
-         * @private
-         * @param {Document} ownerDocument The document.
-         * @returns {Object} An object of data.
-         */
+        * Returns the data associated to the given document
+        * @private
+        * @param {Document} ownerDocument The document.
+        * @returns {Object} An object of data.
+        */
         function getExpandoData(ownerDocument) {
           var data = expandoData[ownerDocument[expando]];
           if (!data) {
@@ -1106,12 +1106,12 @@ window.Modernizr = (function( window, document, undefined ) {
         }
 
         /**
-         * returns a shived element for the given nodeName and document
-         * @memberOf html5
-         * @param {String} nodeName name of the element
-         * @param {Document} ownerDocument The context document.
-         * @returns {Object} The shived element.
-         */
+        * returns a shived element for the given nodeName and document
+        * @memberOf html5
+        * @param {String} nodeName name of the element
+        * @param {Document} ownerDocument The context document.
+        * @returns {Object} The shived element.
+        */
         function createElement(nodeName, ownerDocument, data){
           if (!ownerDocument) {
             ownerDocument = document;
@@ -1143,11 +1143,11 @@ window.Modernizr = (function( window, document, undefined ) {
         }
 
         /**
-         * returns a shived DocumentFragment for the given document
-         * @memberOf html5
-         * @param {Document} ownerDocument The context document.
-         * @returns {Object} The shived DocumentFragment.
-         */
+        * returns a shived DocumentFragment for the given document
+        * @memberOf html5
+        * @param {Document} ownerDocument The context document.
+        * @returns {Object} The shived DocumentFragment.
+        */
         function createDocumentFragment(ownerDocument, data){
           if (!ownerDocument) {
             ownerDocument = document;
@@ -1167,11 +1167,11 @@ window.Modernizr = (function( window, document, undefined ) {
         }
 
         /**
-         * Shivs the `createElement` and `createDocumentFragment` methods of the document.
-         * @private
-         * @param {Document|DocumentFragment} ownerDocument The document.
-         * @param {Object} data of the document.
-         */
+        * Shivs the `createElement` and `createDocumentFragment` methods of the document.
+        * @private
+        * @param {Document|DocumentFragment} ownerDocument The document.
+        * @param {Object} data of the document.
+        */
         function shivMethods(ownerDocument, data) {
           if (!data.cache) {
             data.cache = {};
@@ -1199,17 +1199,17 @@ window.Modernizr = (function( window, document, undefined ) {
             return 'c("' + nodeName + '")';
           }) +
             ');return n}'
-                                                         )(html5, data.frag);
+                                                        )(html5, data.frag);
         }
 
         /*--------------------------------------------------------------------------*/
 
         /**
-         * Shivs the given document.
-         * @memberOf html5
-         * @param {Document} ownerDocument The document to shiv.
-         * @returns {Document} The shived document.
-         */
+        * Shivs the given document.
+        * @memberOf html5
+        * @param {Document} ownerDocument The document to shiv.
+        * @returns {Document} The shived document.
+        */
         function shivDocument(ownerDocument) {
           if (!ownerDocument) {
             ownerDocument = document;
@@ -1224,7 +1224,7 @@ window.Modernizr = (function( window, document, undefined ) {
                                             'mark{background:#FF0;color:#000}' +
                                             // hides non-rendered elements
                                             'template{display:none}'
-                                         );
+                                        );
           }
           if (!supportsUnknownElements) {
             shivMethods(ownerDocument, data);
@@ -1235,55 +1235,55 @@ window.Modernizr = (function( window, document, undefined ) {
         /*--------------------------------------------------------------------------*/
 
         /**
-         * The `html5` object is exposed so that more elements can be shived and
-         * existing shiving can be detected on iframes.
-         * @type Object
-         * @example
-         *
-         * // options can be changed before the script is included
-         * html5 = { 'elements': 'mark section', 'shivCSS': false, 'shivMethods': false };
-         */
+        * The `html5` object is exposed so that more elements can be shived and
+        * existing shiving can be detected on iframes.
+        * @type Object
+        * @example
+        *
+        * // options can be changed before the script is included
+        * html5 = { 'elements': 'mark section', 'shivCSS': false, 'shivMethods': false };
+        */
         var html5 = {
 
           /**
-           * An array or space separated string of node names of the elements to shiv.
-           * @memberOf html5
-           * @type Array|String
-           */
+          * An array or space separated string of node names of the elements to shiv.
+          * @memberOf html5
+          * @type Array|String
+          */
           'elements': options.elements || 'abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video',
 
           /**
-           * current version of html5shiv
-           */
+          * current version of html5shiv
+          */
           'version': version,
 
           /**
-           * A flag to indicate that the HTML5 style sheet should be inserted.
-           * @memberOf html5
-           * @type Boolean
-           */
+          * A flag to indicate that the HTML5 style sheet should be inserted.
+          * @memberOf html5
+          * @type Boolean
+          */
           'shivCSS': (options.shivCSS !== false),
 
           /**
-           * Is equal to true if a browser supports creating unknown/HTML5 elements
-           * @memberOf html5
-           * @type boolean
-           */
+          * Is equal to true if a browser supports creating unknown/HTML5 elements
+          * @memberOf html5
+          * @type boolean
+          */
           'supportsUnknownElements': supportsUnknownElements,
 
           /**
-           * A flag to indicate that the document's `createElement` and `createDocumentFragment`
-           * methods should be overwritten.
-           * @memberOf html5
-           * @type Boolean
-           */
+          * A flag to indicate that the document's `createElement` and `createDocumentFragment`
+          * methods should be overwritten.
+          * @memberOf html5
+          * @type Boolean
+          */
           'shivMethods': (options.shivMethods !== false),
 
           /**
-           * A string to describe the type of `html5` object ("default" or "default print").
-           * @memberOf html5
-           * @type String
-           */
+          * A string to describe the type of `html5` object ("default" or "default print").
+          * @memberOf html5
+          * @type String
+          */
           'type': 'default',
 
           // shivs the document according to the specified `html5` object options

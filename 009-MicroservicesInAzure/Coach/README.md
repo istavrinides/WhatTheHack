@@ -17,7 +17,7 @@ This hack also includes a [lecture presentation](Lectures.pptx) that features sh
 - Pre-Hack Setup: **[Setting up the Coach's Environment](PreHack-Setup.md)**
   - Coaches need to have access to a running version of the solution to demonstrate the end goal.
 - Challenge 0: **[Pre-requisites - Ready, Set, GO!](Challenge-00.md)**
-  - A smart cloud solution architect always has the right tools in their toolbox. 
+  - A smart cloud solution architect always has the right tools in their toolbox.
 - Challenge 1: **[First Thing is First - A Resource Group](Challenge-01.md)**
   - All work in Azure begins with the resource group.
 - Challenge 2: **[Always Need App Insights](Challenge-02.md)**

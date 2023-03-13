@@ -25,7 +25,7 @@ The objective of this lab is to setup your on-premise data warehouse environment
 
 ### Setup your Development Environment on your Laptop
 1. [SQL Server Management Studion (Version 18.x or higher)](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15)
-2. [Visual Studio Code](https://code.visualstudio.com/Download) 
+2. [Visual Studio Code](https://code.visualstudio.com/Download)
 3. [Power BI Desktop](https://www.microsoft.com/en-us/download/details.aspx?id=58494)
 
 
@@ -56,12 +56,12 @@ az container create -g {Resource Group Name} --name mdwhackdb --image alexk002/s
 
 5. At the start of Challenge 1, reach out to your coach and they will share username and password for the LOB databases for this hack.
 
-6. [Upload](https://docs.microsoft.com/en-us/azure/cloud-shell/persisting-shell-storage#upload-files) your ARM templates into Azure CloudShell. 
+6. [Upload](https://docs.microsoft.com/en-us/azure/cloud-shell/persisting-shell-storage#upload-files) your ARM templates into Azure CloudShell.
 
 
-    /Student/Challenges/Challenge0/ARM.  
+    /Student/Challenges/Challenge0/ARM.
     The files are parametersFile.json and template.json.
-    Edit the parmeters file and replace any {} with information requested.  
+    Edit the parmeters file and replace any {} with information requested.
 
 
 7. Run the last command to setup Azure Data Factory, Azure SQL Server Instance and SSIS Runtime.  This will build out for Challenge 1 the SSIS environment in Azure Data Factory.

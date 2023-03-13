@@ -7,19 +7,19 @@ We are going to build out a LUIS triggered dialog flow to help answer the curren
 - This intent needs to recognize when a Stock Price question is asked. So it should recognize questions like
   - What is the MSFT stock today?
   - Get me the stock price of TSLA
-  - Provide me with more information on the stock opening price for AAPL 
-- We also want to pull out the entity information for the Ticker Symbol in each utterance, in the above examples the entities we would pull out would be: MSFT, TSLA, and AAPL 
+  - Provide me with more information on the stock opening price for AAPL
+- We also want to pull out the entity information for the Ticker Symbol in each utterance, in the above examples the entities we would pull out would be: MSFT, TSLA, and AAPL
 
 
 ## Description
 1. Add a new trigger by Intent for recognizing Stock Price questions
-2. Train your LUIS model with trigger phrases to recognize the intent and entities. 
+2. Train your LUIS model with trigger phrases to recognize the intent and entities.
 4. Add dialog in this trigger action to print back out the stock that they are asking for, we will add additional functionality in future challenges. The flow of the Bot should essentially look like this to the user:
 
    - Bot: *\<Greeting and prompt for a question>*
    - User: " What is the stock price of MSFT?"
    - Bot: "You want to know the stock price of MSFT?"
-   
+
    - User: "TSLA stock price?"
    - Bot: "You want to know the stock price of TSLA?"
 

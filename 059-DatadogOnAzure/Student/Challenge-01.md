@@ -13,7 +13,7 @@ In the eShopOnWeb Azure environment, there are three compute resources to be awa
 
 >**Note** The "XX" in each resource name will vary based on the Azure region the eShopOnWeb Azure environment has been deployed to.
 
-Azure Bastion has been configured to enable you to securely login to any of these VMs with a Remote Desktop session through a web brower. 
+Azure Bastion has been configured to enable you to securely login to any of these VMs with a Remote Desktop session through a web brower.
 
 To login to a VM via Azure Bastion, navigate to the blade for any of these VMs in the Azure portal, click the "Connect" button, and select "Bastion". Use the username and password provided in Challenge 0.
 
@@ -30,22 +30,22 @@ You will do this by configuring monitors with Datadog on the SQL Server VM (`vmw
 
 ### Configure Monitors with Datadog
 
-There are multiple ways to configure monitoring in Datadog.  You can configure monitoring manually in the Datadog portal or via the Datadog API.  This is a great way to learn how Datadog works and what settings are available to choose from. 
+There are multiple ways to configure monitoring in Datadog.  You can configure monitoring manually in the Datadog portal or via the Datadog API.  This is a great way to learn how Datadog works and what settings are available to choose from.
 
 However, this method does not scale when you need to configure monitoring across 10s, 100s, or even 1000s of resources in Azure. It is easier to configure monitoring at scale across many Azure resources if you use a declarative infrastructure-as-code tool such as Terraform.
 
 > **Note** Terraform is an open-source infrastructure as code software tool that provides a consistent CLI workflow to manage hundreds of cloud services. Terraform codifies cloud APIs into declarative configuration files. It's often best practice to use infrastructure as code (IAC) to deploy resources into Azure for repeatability, fewer mistakes from manual processes, and leverage the organization's CI/CD pipeline.
 
-For this challenge, you will use Terraform to deploy the Datadog monitor. We have provided you with a sample Terraform file that can be used to configure monitoring in Datadog. 
+For this challenge, you will use Terraform to deploy the Datadog monitor. We have provided you with a sample Terraform file that can be used to configure monitoring in Datadog.
 
 You can find the sample Terraform file, `GenerateMonitors.tf`, in the `/Challenge-01` folder of the `Resources.zip` file provided by your coach. To complete the challenge, navigate to the location of this file using your terminal client (WSL or Azure Cloud Shell).
 
-- Update the parameters of the `GenerateMonitors.tf` file 
+- Update the parameters of the `GenerateMonitors.tf` file
 - Add the names of your VMs for your monitors
-- Deploy the `GenerateMonitors.tf` template using: 
+- Deploy the `GenerateMonitors.tf` template using:
 
     ```terraform init && terraform apply -auto-approve```
- 
+
 - Modify the `GenerateMonitors.tf` to include “Disk Write Operations/Sec” and set a threshold of 20
 - Rerun your template and verify your new Monitors are created for each of your VMs
 

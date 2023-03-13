@@ -1,9 +1,9 @@
-param location string 
+param location string
 param functionRuntime string = 'dotnet'
 param functionSku string = 'Y1'
-param storageAccountName string 
-param functionAppName string 
-param appServicePlanName string 
+param storageAccountName string
+param functionAppName string
+param appServicePlanName string
 param appInsightsInstrumentationKey string
 param resourceTags object
 
@@ -89,7 +89,7 @@ resource functionApp 'Microsoft.Web/sites@2021-02-01' = {
   }
   identity: {
     type: 'SystemAssigned'
-  }  
+  }
 }
 
 output functionAppName string = functionApp.name

@@ -82,7 +82,7 @@ then
 	az login
 fi
 
-defsubscriptionId=$(az account show --query "id" --out json | sed 's/"//g') 
+defsubscriptionId=$(az account show --query "id" --out json | sed 's/"//g')
 
 #Prompt for parameters is some required parameters are missing
 if [[ -z "$subscriptionId" ]]; then
@@ -109,7 +109,7 @@ defdeployprefix=${defdeployprefix,,}
 if [[ -z "$resourceGroupLocation" ]]; then
 	echo "If creating a *new* resource group, you need to set a location "
 	echo "You can lookup locations with the CLI using: az account list-locations "
-	
+
 	echo "Enter resource group location:"
 	read resourceGroupLocation
 fi
@@ -196,7 +196,7 @@ echo "Starting HL7 Ingest Platform deployment..."
 		echo "************************************************************************************************************"
 		echo " "
 )
-	
+
 if [ $?  != 0 ];
  then
 	echo "Health Data Ingest had errors. Consider deleting resource group "$resourceGroupName" and trying again..."

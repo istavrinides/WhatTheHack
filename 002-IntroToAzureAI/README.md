@@ -13,7 +13,7 @@ Most challenges observed by customers in these realms are in stitching multiple 
 
 Once all hackathon challenges are completed, you should be able to:
 - Configure your apps to call Cognitive Services
-- Build an application that calls various Cognitive Services APIs (specifically Computer Vision) 
+- Build an application that calls various Cognitive Services APIs (specifically Computer Vision)
 - Effectively leverage the custom vision service to create image classification services that can then be leveraged by an application
 - Implement Azure Search features to provide a positive search experience inside applications
 - Configure an Azure Search service to extend your data to enable full-text, language-aware search
@@ -29,14 +29,14 @@ This workshop is meant for an AI Developer on Azure. Since our time today is lim
 - Bot Framework
     - You should have some experience developing bots with [Microsoft's Bot Framework](https://dev.botframework.com). We won't spend a lot of time discussing how to design them or how dialogs work.
 - Azure Portal
-    - You should have experience with the [Azure Portal](https://portal.azure.com) and understand how to create resource groups and configure individual services. 
+    - You should have experience with the [Azure Portal](https://portal.azure.com) and understand how to create resource groups and configure individual services.
 
 ## Challenges
 Your team’s mission today is to learn more about AI capabilities through hands-on practice by completing challenges in two key areas: Cognitive Services and Bots.
 
 Your team will start by building a simple C# application that allows you to ingest pictures from your local drive, then invoke the Computer Vision API to analyze the images and obtain tags and a description. Once you have this data, you will process it to pull out the details we need, and store it all into Cosmos DB.
 
-You'll continue by build an Azure Search Index (Azure Search is our PaaS offering for faceted, fault-tolerant search) on top of Cosmos DB, then you’ll build a Bot Framework bot to query it. Finally, you'll extend this bot with Language Understanding (LUIS) to automatically derive intent from your queries and use those to direct your searches intelligently. 
+You'll continue by build an Azure Search Index (Azure Search is our PaaS offering for faceted, fault-tolerant search) on top of Cosmos DB, then you’ll build a Bot Framework bot to query it. Finally, you'll extend this bot with Language Understanding (LUIS) to automatically derive intent from your queries and use those to direct your searches intelligently.
 
 ### Part 1: Cognitive Services
 This set of challenges involves building an end-to-end application that allows you to pull in your own pictures, use Cognitive Services to obtain a caption and some tags about the images, and then store that information in Cosmos DB. Build on your work by using the NoSQL store (Cosmos DB) to populate an Azure Search index, and then build a Bot Framework bot using LUIS to allow easy, targeted querying.
@@ -50,7 +50,7 @@ This set of challenges involves building an end-to-end application that allows y
 
 
 ### Part 2: Bots
-You are working with Contoso LLC, which sells bicycles and bicycle equipment to its customers. Contoso currently processes new product orders and queries through human operators and is starting to devise a plan to implement your proposed solution using bots. The solution will provide an automated approach that allows Contoso to seamlessly scale up to handle a large call volume while maintaining zero wait times and freeing up staff to manage other tasks.  
+You are working with Contoso LLC, which sells bicycles and bicycle equipment to its customers. Contoso currently processes new product orders and queries through human operators and is starting to devise a plan to implement your proposed solution using bots. The solution will provide an automated approach that allows Contoso to seamlessly scale up to handle a large call volume while maintaining zero wait times and freeing up staff to manage other tasks.
 
 - Challenge 1: **[Developing Intelligent Applications with Azure Search](Student/Guides/StudentGuide.docx)**
 - Challenge 2: **[Developing Intelligent Applications with LUIS and Azure Search](Student/Guides/StudentGuide.docx)**

@@ -64,7 +64,7 @@ namespace WTHAzureCosmosDB.Web.Helpers
 
 
             var url = $"{altDataPlaneEndpoint}/testruns/{newTestRunId.ToString()}?api-version=2022-06-01-preview";
-            
+
             var obj = JsonConvert.DeserializeObject(json);
 
             //var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -89,7 +89,7 @@ namespace WTHAzureCosmosDB.Web.Helpers
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             var response = await _httpClient.GetAsync(url);
-            
+
             return await response.Content.ReadAsStringAsync();
 
         }

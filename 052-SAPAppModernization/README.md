@@ -1,6 +1,6 @@
 # What The Hack - SAP on Azure Application Modernization
 
-## Introduction 
+## Introduction
 
 This hack is designed to help build skills in connecting other Azure services to SAP instances hosted on the Microsoft Azure platform. Connecting services to SAP systems hosted either on-premises or in the cloud should not be overly difficult, yet often the correct tools and processes are poorly understood and/or documented.
 
@@ -8,11 +8,11 @@ Following on from the SAP Infrastructure Hack [SAP On Azure](../042-SAPOnAzure/R
 
 ## Learning Objectives
 
-The SAP on Azure Application Modernization WTH challenges will help you build on your prior knowledge of SAP and build applications and integrations that can connect SAP to Azure Services and dotnet applications using industry standard protocols such as OData, OpenApi, OAuth2, OpenID Connect. 
+The SAP on Azure Application Modernization WTH challenges will help you build on your prior knowledge of SAP and build applications and integrations that can connect SAP to Azure Services and dotnet applications using industry standard protocols such as OData, OpenApi, OAuth2, OpenID Connect.
 
 You will learn how to front SAP systems with Azure Gateways such as Azure API Management and how to authenticate, authorize and cache data from these services for use in modern distributed web architectures. Once you have completed these challenges you will be ready to move away from legacy ABAP-based code integrations and towards modern, open protocols.
 
-You will then move on to building interactive applications and intelligent agents that can both consume and react to the raw data and event streams, that are produced from the SAP Platform services that you have connected to. 
+You will then move on to building interactive applications and intelligent agents that can both consume and react to the raw data and event streams, that are produced from the SAP Platform services that you have connected to.
 
 ## Challenges
 
@@ -54,7 +54,7 @@ You will then move on to building interactive applications and intelligent agent
 - You have an Azure, Microsoft 365 subscription
 - All team members can access your Azure resource group.
 - You can login to the SAP Cloud Appliance Library with your S- or P-User, which is linked to your subscription.
-- All team members can login and create a Power Virtual Agents Bot. 
+- All team members can login and create a Power Virtual Agents Bot.
 
 ## Contributors
 - Will Eastbury
@@ -62,4 +62,4 @@ You will then move on to building interactive applications and intelligent agent
 - Vinod Desmuth
 - Christof Claessens
 - Jelle Druyts
-- Martin Raepple 
+- Martin Raepple

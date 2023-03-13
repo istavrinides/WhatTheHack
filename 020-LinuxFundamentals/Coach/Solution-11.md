@@ -1,4 +1,4 @@
-# Challenge 11 - Package Management - Coach's Guide 
+# Challenge 11 - Package Management - Coach's Guide
 
 [< Previous Solution](./Solution-10.md) - **[Home](./README.md)** - [Next Solution >](./Solution-12.md)
 
@@ -24,7 +24,7 @@ Reading state information... Done
 
 ```bash
 Reading package lists... Done
-Building dependency tree       
+Building dependency tree
 Reading state information... Done
 Calculating upgrade... Done
 The following package was automatically installed and is no longer required:
@@ -36,7 +36,7 @@ The following packages will be upgraded:
 1 standard security update
 Need to get 615 kB of archives.
 After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] y 
+Do you want to continue? [Y/n] y
 Get:1 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 bash amd64 4.4.18-2ubuntu1.3 [615 kB]
 Fetched 615 kB in 0s (14.8 MB/s)
 (Reading database ... 77066 files and directories currently installed.)
@@ -51,9 +51,9 @@ Processing triggers for install-info (6.5.0.dfsg.1-2) ...
 3. Install the following packages
 
     1. git
-    
-    `student@vm1:~$ sudo apt install git` 
-    
+
+    `student@vm1:~$ sudo apt install git`
+
     ```bash
     Reading package lists... Done
     Building dependency tree
@@ -76,11 +76,11 @@ Processing triggers for install-info (6.5.0.dfsg.1-2) ...
 
     2. php-fpm
 
-    `student@vm1:~$ sudo apt install net-tools` 
-    
+    `student@vm1:~$ sudo apt install net-tools`
+
     ```bash
     Reading package lists... Done
-    Building dependency tree       
+    Building dependency tree
     Reading state information... Done
     The following additional packages will be installed:
       libsodium23 php-common php7.2-cli php7.2-common php7.2-fpm php7.2-json php7.2-opcache php7.2-readline
@@ -191,11 +191,11 @@ Processing triggers for install-info (6.5.0.dfsg.1-2) ...
     Processing triggers for libc-bin (2.27-3ubuntu1.5) ...
     Processing triggers for systemd (237-3ubuntu10.53) ...
     ```
-        
+
     3. nginx
 
-    `student@vm1:~$ sudo apt install nginx-core` 
-    
+    `student@vm1:~$ sudo apt install nginx-core`
+
     ```bash
     Reading package lists... Done
     Building dependency tree
@@ -260,8 +260,8 @@ Processing triggers for install-info (6.5.0.dfsg.1-2) ...
 
 4. Uninstall the package named nano
 
-`student@vm1:~$ sudo apt remove nano` 
-    
+`student@vm1:~$ sudo apt remove nano`
+
 ```bash
 Reading package lists... Done
 Building dependency tree
@@ -280,8 +280,8 @@ Processing triggers for man-db (2.9.1-1) ...
 
 5. Show packate details for vim
 
-`student@vm1:~$ sudo apt show  vim` 
-    
+`student@vm1:~$ sudo apt show  vim`
+
 ```bash
 Package: vim
 Version: 2:8.1.2269-1ubuntu5.7
@@ -315,8 +315,8 @@ Description: Vi IMproved - enhanced vi editor
 
 6. Search for docker at the packages list and install the Linux container runtime
 
-`student@vm1:~$ sudo apt search docker` 
-    
+`student@vm1:~$ sudo apt search docker`
+
 ```bash
 Sorting... Done
 Full Text Search... Done
@@ -342,9 +342,9 @@ debootstick/focal 2.4 amd64
 ...
 ...
   ```
-  
-  
-`student@vm1:~$ sudo apt install docker.io` 
+
+
+`student@vm1:~$ sudo apt install docker.io`
 
 ```bash
 Reading package lists... Done

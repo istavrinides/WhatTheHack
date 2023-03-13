@@ -21,7 +21,7 @@ In this challenge you will be installing Helm locally and then creating a Helm "
 	- `helm-webapp-namespace.yml`
 	- `helm-webapp-deployment.yml`
 	- `helm-webapp-service.yml`
-- Verify that the app has been deployed successfully by browsing the web app via the LoadBalancer IP address at port 80. 
+- Verify that the app has been deployed successfully by browsing the web app via the LoadBalancer IP address at port 80.
 - Redeploy the app to use v2 of the image and verify that the update is visible in the web app. Repeat these steps with v3 and v4 of the container image.
 
 ### Install Helm on Your Workstation
@@ -38,17 +38,17 @@ If you are using the Azure Cloud Shell, the Helm CLI is already installed and yo
 ### Deploy With Helm
 
 - Creating a Helm Chart from a local package
-	- **NOTE:** You will need to create the expected namespace on the CLI when you run the `helm install` command (it is a parameter). You'll need to use the namespace found in this file that you used above 
+	- **NOTE:** You will need to create the expected namespace on the CLI when you run the `helm install` command (it is a parameter). You'll need to use the namespace found in this file that you used above
 		- `helm-webapp-namespace.yml`
 		- **Hint:** The namespace will NOT be a part of your Chart but must be specified when installing the chart.
 	- Convert these yaml files that were just used to deploy the app into a Helm chart using v1 of the container image.
 		- You should parameterize the following values in the deployment YAML file (`helm-webapp-deployment.yml`):
 			- container image name
-			- container image version 
+			- container image version
 	- Create a Helm package on the local machine for each version of the web app.
 		- **Hint:** If you parameterize things properly, you'll be able to write ONE helm chart that takes the version as an input.
 	- Remove the previously deployed app by deleting the namespace that was created via the yaml file
-	- Deploy the helm chart with v1 of the image you just created. 
+	- Deploy the helm chart with v1 of the image you just created.
 	- Verify that the app has been deployed successfully
 	- Make a note of the difference in number of steps involved in the deployment using individual yaml files vs the Helm chart
 - Deploying helm charts from a remote container registry

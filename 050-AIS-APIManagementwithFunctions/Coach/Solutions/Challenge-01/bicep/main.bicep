@@ -45,7 +45,7 @@ module appInsightsModule 'modules/appInsights.bicep' = {
     resourceTags: resourceTags
   }
 
-  
+
 }
 
 module functionModule 'modules/function.bicep' = {
@@ -70,9 +70,9 @@ module apimmodule './modules/apim.bicep' = {
     sku: 'Developer'
     skuCount: 1
     publisherName: publisherName
-    publisherEmail: publisherEmail    
+    publisherEmail: publisherEmail
     appInsightsInstrumentationKey: appInsightsModule.outputs.appInsightsInstrumentationKey
-    appInsightsResourceId: appInsightsModule.outputs.appInsightsResourceId    
-    resourceTags: resourceTags    
+    appInsightsResourceId: appInsightsModule.outputs.appInsightsResourceId
+    resourceTags: resourceTags
   }
 }

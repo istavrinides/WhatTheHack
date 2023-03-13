@@ -22,11 +22,11 @@ function Set-FhirServerApiApplicationRoles {
     )
 
     Set-StrictMode -Version Latest
-    
+
     # Get current AzureAd context
     try {
         Get-AzureADCurrentSessionInfo -ErrorAction Stop | Out-Null
-    } 
+    }
     catch {
         throw "Please log in to Azure AD with Connect-AzureAD cmdlet before proceeding"
     }
@@ -41,7 +41,7 @@ function Set-FhirServerApiApplicationRoles {
 
     foreach ($role in $AppRoles) {
         $existingAppRole = $azureAdApplication.AppRoles | Where-Object Value -eq $role
-        
+
         if($existingAppRole) {
             $id = $existingAppRole.Id
         }
@@ -82,7 +82,7 @@ function Set-FhirServerApiApplicationRoles {
             Set-AzureADApplication -ObjectId $azureAdApplication.objectId -appRoles $azureAdApplication.AppRoles | Out-Null
         }
 
-        # Update app roles 
+        # Update app roles
         Write-Host "Updating appRoles"
         Set-AzureADApplication -ObjectId $azureAdApplication.objectId -appRoles $desiredAppRoles | Out-Null
     }

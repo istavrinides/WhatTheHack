@@ -18,7 +18,7 @@ namespace PartsUnlimited.Controllers
         private readonly ITelemetryProvider telemetry;
         private readonly IShippingTaxCalculator shippingTaxCalculator;
 
-		public ShoppingCartController(IPartsUnlimitedContext context, ITelemetryProvider telemetryProvider, 
+		public ShoppingCartController(IPartsUnlimitedContext context, ITelemetryProvider telemetryProvider,
 			IShippingTaxCalculator shippingTaxCalc)
         {
             db = context;

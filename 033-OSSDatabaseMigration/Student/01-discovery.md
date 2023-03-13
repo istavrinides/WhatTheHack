@@ -4,11 +4,11 @@
 
 ## Introduction
 
-Discover and assess aspects of the database environment that you will be migrating. You will also deploy an Azure DB for MySQL and/or PostgreSQL. 
+Discover and assess aspects of the database environment that you will be migrating. You will also deploy an Azure DB for MySQL and/or PostgreSQL.
 
 ## Description
 
-In this challenge you will be connecting to your "on-prem" environment using the database tools you installed in the prerequisites. You will take an inventory of the database(s) that need to be migrated, check the database versions, check the database engine and determine if they are ready to migrate to Azure. You can use either the GUI or CLI tools mentioned in the [Prerequisites](./00-prereqs.md) to get this information. In an actual migration you would need to determine CPU/memory and I/O requirements as well. However, since this is not a production environment you will instead select either the default configuration for Azure DB for Postgres/MySQL Single Server (4 cores/100GB) or use the Production (Small/Medium-size) option for Workload type for Azure DB for Postgres/MySQL Flexible Server. 
+In this challenge you will be connecting to your "on-prem" environment using the database tools you installed in the prerequisites. You will take an inventory of the database(s) that need to be migrated, check the database versions, check the database engine and determine if they are ready to migrate to Azure. You can use either the GUI or CLI tools mentioned in the [Prerequisites](./00-prereqs.md) to get this information. In an actual migration you would need to determine CPU/memory and I/O requirements as well. However, since this is not a production environment you will instead select either the default configuration for Azure DB for Postgres/MySQL Single Server (4 cores/100GB) or use the Production (Small/Medium-size) option for Workload type for Azure DB for Postgres/MySQL Flexible Server.
 
 ## Success Criteria
 
@@ -21,7 +21,7 @@ In this challenge you will be connecting to your "on-prem" environment using the
 
 ## Hints
 
-* For Oracle you can use either GUI/CLI database tools or ora2pg to get the information requested. There is already an ora2pg container deployed in your environment that you can use. 
+* For Oracle you can use either GUI/CLI database tools or ora2pg to get the information requested. There is already an ora2pg container deployed in your environment that you can use.
 
 
 ## References

@@ -17,7 +17,7 @@ For teams deciding to go the Docker route, here are some helpful scripts/tips. T
     * [Install PowerShell (likely already installed)](https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell?view=powershell-6)
     * [Optional: can use bash.  See this guide for more information](https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-linux-2017)
 
-The following script is for example purposes only and will likely need some tweaking: 
+The following script is for example purposes only and will likely need some tweaking:
 * Configure a different port, if desired (1433:1433 maps the host port 1433 to container 1433 -- the default port).
 * Edit the local location of the backup file(s) to copy to the container.
 * Edit the files in the RESTORE command; if unsure, use RESTORE FILELISTONLY to make sure data/log files have a location like in the script.
@@ -31,7 +31,7 @@ docker pull mcr.microsoft.com/mssql/server:2019-latest
 docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=p@ssw0rd" `
    -p 1433:1433 --name sql1 `
    -d mcr.microsoft.com/mssql/server:2019-latest
-   
+
 docker ps -a
 
 # Create a new folder to copy backups to

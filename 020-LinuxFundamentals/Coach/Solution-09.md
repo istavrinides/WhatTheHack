@@ -1,4 +1,4 @@
-# Challenge 09 - Disks, partitions and file systems - Coach's Guide 
+# Challenge 09 - Disks, partitions and file systems - Coach's Guide
 
 [< Previous Solution](./Solution-08.md) - **[Home](./README.md)** - [Next Solution >](./Solution-10.md)
 
@@ -39,7 +39,7 @@ Disk model: Virtual Disk
     `student@vm01:~$ sudo fdisk /dev/sdc`
 
     1. Add a new partition with 500MB
-    
+
     ```bash
     Welcome to fdisk (util-linux 2.34).
     Changes will remain in memory only, until you decide to write them.
@@ -63,16 +63,16 @@ Disk model: Virtual Disk
     Calling ioctl() to re-read partition table.
     Syncing disks.
     ```
-    
+
     2. List and identify in the S.O. the partition created
 
     `student@vm01:~$ ls -l /dev/sdc*`
-    
+
     ```bash
     brw-rw---- 1 root disk 8, 32 Apr  6 15:09 /dev/sdc
     brw-rw---- 1 root disk 8, 33 Apr  6 15:09 /dev/sdc1
     ```
-    
+
     3. Erase partition
 
     `student@vm01:~$ sudo fdisk /dev/sdc`
@@ -104,7 +104,7 @@ Disk model: Virtual Disk
     5. Add two new partitions with a native Linux partition (83), one with 500MB and another with 100MB
 
     `student@vm01:~$ sudo fdisk /dev/sdc`
-    
+
     ```bash
     Welcome to fdisk (util-linux 2.34).
     Changes will remain in memory only, until you decide to write them.
@@ -130,7 +130,7 @@ Disk model: Virtual Disk
     Partition number (2-4, default 2):
     First sector (1026048-10485759, default 1026048):
     Last sector, +/-sectors or +/-size{K,M,G,T,P} (1026048-10485759, default 10485759): +100M
-    
+
     Created a new partition 2 of type 'Linux' and of size 100 MiB.
 
     Command (m for help): w
@@ -142,13 +142,13 @@ Disk model: Virtual Disk
     6. Check in S.O. that the partitions were created
 
     `student@vm01:~$ ls -l /dev/sdc*`
-    
+
     ```bash
     brw-rw---- 1 root disk 8, 32 Apr  6 15:53 /dev/sdc
     brw-rw---- 1 root disk 8, 33 Apr  6 15:53 /dev/sdc1
     brw-rw---- 1 root disk 8, 34 Apr  6 15:53 /dev/sdc2
     ```
-    
+
 3. Create a file system on each of the partitions created
 
 `student@vm01:~$ sudo mkfs.ext4 /dev/sdc1`

@@ -19,20 +19,20 @@ OPTION (LABEL = 'Transaction 1 - OrderDateKey >=20110101 AND OrderDateKey <= 201
 
 $connectionString = "Server=$DedicatedPoolEndPoint;Initial Catalog=$DedicatedPoolName;Persist Security Info=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Pooling=false"
 
-$connection = New-Object System.Data.SqlClient.SqlConnection($connectionString) 
+$connection = New-Object System.Data.SqlClient.SqlConnection($connectionString)
 
-# Set AAD generated token to SQL connection token 
-$connection.AccessToken = $token 
+# Set AAD generated token to SQL connection token
+$connection.AccessToken = $token
 
-# Opens connection to Azure SQL Database and executes a query 
-$connection.Open() 
+# Opens connection to Azure SQL Database and executes a query
+$connection.Open()
 
-$command = New-Object -Type System.Data.SqlClient.SqlCommand($query, $connection) 
-$command.ExecuteNonQuery() 
-#$connection.Close() 
+$command = New-Object -Type System.Data.SqlClient.SqlCommand($query, $connection)
+$command.ExecuteNonQuery()
+#$connection.Close()
 
 # Invoke-SqlCmd -ServerInstance $DedicatedPoolEndPoint -Database $DedicatedPoolName -AccessToken $token -Query $SQLcommand -ApplicationName "WTH - Dedicated SQL Pool - Challenge3 - Ex.1"
 
-Read-Host -Prompt "Run the proposed T-SQL script. 
-Do not close this session until you complete the excercise. 
+Read-Host -Prompt "Run the proposed T-SQL script.
+Do not close this session until you complete the excercise.
 Press any button to complete"

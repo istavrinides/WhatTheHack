@@ -21,7 +21,7 @@ First, you'll add a secrets management JSON configuration file to the solution:
     ```json
     {
       "smtp":
-      {        
+      {
         "user": "_username",
         "password": "_password"
       },
@@ -52,7 +52,7 @@ First, you'll add a secrets management JSON configuration file to the solution:
       - name: nestedSeparator
         value: "."
     scopes:
-      - finecollectionservice   
+      - finecollectionservice
     ```
 
     *Note the `type` element: The `local.file` secret store is specified. This file-based local secret store component is **only** for development or testing purposes. It's not suitable for production!*
@@ -101,7 +101,7 @@ As stated, you can reference secrets from other Dapr component configuration fil
     auth:
       secretStore: trafficcontrol-secrets
     scopes:
-      - finecollectionservice  
+      - finecollectionservice
     ```
 
 Now the output binding for the SendMail component will use the `smtp.user` and `smtp.password` secrets from the secrets file at runtime.

@@ -23,10 +23,10 @@ In this hack you will be challenged with some common tasks from a real world sce
 4. Work with standard Linux permissions
 5. Collect information about Linux processes in your environment
 6. Management of users and groups
-7. Basic shell scripting 
+7. Basic shell scripting
 8. Work with disks, partitions and logical volume manager
-9. Linux package management 
-10. Implement a basic webserver 
+9. Linux package management
+10. Implement a basic webserver
 
 ## Challenges
 
@@ -43,7 +43,7 @@ With the exception of challenge 01 which has as an outcome a Linux Virtual Machi
 * Challenge 05: **[Standard File Permissions](Student/Challenge-05.md)**
 	 - Learn about the Linux standard file permissions and understand how to work with file permissioning on a Linux environment.
 * Challenge 06: **[Process Management](Student/Challenge-06.md)**
-	 - Your objectives will involve basic process management, such as checking processes running and identifying process ids. 
+	 - Your objectives will involve basic process management, such as checking processes running and identifying process ids.
 * Challenge 07: **[Group and User Management](Student/Challenge-07.md)**
 	 - In this challenge you will learn about the creation of user and groups in a Linux environment.
 * Challenge 08: **[Scripting](Student/Challenge-08.md)**
@@ -55,8 +55,8 @@ With the exception of challenge 01 which has as an outcome a Linux Virtual Machi
 * Challenge 11: **[Package Management](Student/Challenge-11.md)**
 	 - Learn about package management and common activites such as update package distribution lists, install and uninstall packages.
 * Challenge 12: **[Setting up a Webserver](Student/Challenge-12.md)**
-	 - In this challenge we will setting up a webserver and deploy a simple PHP application into it. The usage of SSL could be a plus. 
-	 
+	 - In this challenge we will setting up a webserver and deploy a simple PHP application into it. The usage of SSL could be a plus.
+
 ## Prerequisites
 - Your own Azure subscription with contributor access for the Challenge 01 or contributor access to a pre-created Azure Virtual Machine for all other challenges.
 - Access to a terminal. The terms “terminal,” “shell,” and “command line interface” are often used interchangeably, but there are subtle differences between them:

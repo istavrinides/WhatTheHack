@@ -1,4 +1,4 @@
-# What the Hack: OSS DevOps 
+# What the Hack: OSS DevOps
 
 ## Intentionally Blank
 

@@ -25,7 +25,7 @@ namespace RazorPagesTestSample.Tests.UnitTests
                 // Assert
                 var actualMessages = Assert.IsAssignableFrom<List<Message>>(result);
                 Assert.Equal(
-                    expectedMessages.OrderBy(m => m.Id).Select(m => m.Text), 
+                    expectedMessages.OrderBy(m => m.Id).Select(m => m.Text),
                     actualMessages.OrderBy(m => m.Id).Select(m => m.Text));
             }
         }
@@ -77,7 +77,7 @@ namespace RazorPagesTestSample.Tests.UnitTests
                 await db.AddRangeAsync(seedMessages);
                 await db.SaveChangesAsync();
                 var recId = 1;
-                var expectedMessages = 
+                var expectedMessages =
                     seedMessages.Where(message => message.Id != recId).ToList();
                 #endregion
 
@@ -90,7 +90,7 @@ namespace RazorPagesTestSample.Tests.UnitTests
                 // Assert
                 var actualMessages = await db.Messages.AsNoTracking().ToListAsync();
                 Assert.Equal(
-                    expectedMessages.OrderBy(m => m.Id).Select(m => m.Text), 
+                    expectedMessages.OrderBy(m => m.Id).Select(m => m.Text),
                     actualMessages.OrderBy(m => m.Id).Select(m => m.Text));
                 #endregion
             }
@@ -121,7 +121,7 @@ namespace RazorPagesTestSample.Tests.UnitTests
                 // Assert
                 var actualMessages = await db.Messages.AsNoTracking().ToListAsync();
                 Assert.Equal(
-                    expectedMessages.OrderBy(m => m.Id).Select(m => m.Text), 
+                    expectedMessages.OrderBy(m => m.Id).Select(m => m.Text),
                     actualMessages.OrderBy(m => m.Id).Select(m => m.Text));
             }
         }

@@ -5,7 +5,7 @@ param apim_nsg_name string
 param agw_nsg_name string
 
 @description('The name of the NSG for VM')
-param vm_nsg_name string 
+param vm_nsg_name string
 
 @description('The location where the resource would be created')
 param location string

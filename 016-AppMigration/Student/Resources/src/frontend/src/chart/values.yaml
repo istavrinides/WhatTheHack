@@ -16,7 +16,7 @@ image:
 service:
   type: LoadBalancer
   port: 80
-  connectionstring: replace 
+  connectionstring: replace
 
 externalServices:
   inventory: http://168.61.184.44:5000
@@ -58,4 +58,4 @@ customTitle: "TAILWIND TRADERS"
 
 aksIngress:
   baseDomain: ''
-  
+

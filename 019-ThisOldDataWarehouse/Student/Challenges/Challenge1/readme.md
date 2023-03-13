@@ -8,7 +8,7 @@ WWI wants to modernize their data warehouse in phases.  The first stage will be 
 
 ## Description
 
-The objective of this lab is to migrate the WWI DW (OLAP) to Azure Synapse Analytics.  Azure Synapse Analytics is a MPP (Massive Parallel Processing) platform that allows you to scale out your datawarehouse by adding new server nodes (compute) rather than adding more cores to the server.  
+The objective of this lab is to migrate the WWI DW (OLAP) to Azure Synapse Analytics.  Azure Synapse Analytics is a MPP (Massive Parallel Processing) platform that allows you to scale out your datawarehouse by adding new server nodes (compute) rather than adding more cores to the server.
 
 There will be four different object types we'll migrate:
 
@@ -46,7 +46,7 @@ There will be four different object types we'll migrate:
 ### Database Schema Migration
 1. [Azure Synapse Analytics SQL Architecture](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql/overview-architecture)
 1. [Distributed Tables](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-tables-distribute?context=%2Fazure%2Fsynapse-analytics%2Fcontext%2Fcontext)
-1. [Distribution Keys](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql/develop-tables-overview) 
+1. [Distribution Keys](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql/develop-tables-overview)
 1. [Distribution Key Cheat Sheet](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/cheat-sheet#distributed-or-replicated-tables)
 1. [Data Types](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql/develop-tables-data-types#unsupported-data-types)  A list of unsupported data types at this link.
 1. [Table Constraints](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-table-constraints?context=%2Fazure%2Fsynapse-analytics%2Fcontext%2Fcontext)

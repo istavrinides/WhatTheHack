@@ -4,7 +4,7 @@
 
 ## Notes & Guidance
 
-In this challenge, you will implement the FHIR Server Samples reference architecture to ingest and load patient data in FHIR.  You will generate synthetic FHIR patient data for bulk load into FHIR Server.  To generate synthetic patient data, you will use **[SyntheaTM Patient Generator](https://github.com/synthetichealth/synthea#syntheatm-patient-generator)** open source Java tool to simulate patient records in FHIR format.  
+In this challenge, you will implement the FHIR Server Samples reference architecture to ingest and load patient data in FHIR.  You will generate synthetic FHIR patient data for bulk load into FHIR Server.  To generate synthetic patient data, you will use **[SyntheaTM Patient Generator](https://github.com/synthetichealth/synthea#syntheatm-patient-generator)** open source Java tool to simulate patient records in FHIR format.
 
 **FHIR bulk load scenario**
 
@@ -27,10 +27,10 @@ In this scenario, you will deploy a storage account with a BLOB container called
         - If you don't have Administrator access:
             - Primary (Resource) AD tenant: This tenant is Resource Control Plane where all your Azure Resources will be deployed to.
             - Secondary (Data) AD tenant: This tenant is Data Control Plane where all your App Registrations will be deployed to.
-            
+
     - Deploy **[FHIR Server Samples](https://github.com/microsoft/fhir-server-samples#deployment)** with the managed Azure API for FHIR (PaaS) scenario:
         - Run `Create-FhirServerSamplesEnvironment.ps1` from the cloned `./deploy/scripts` folder.
-    - To Validate your deployment, 
+    - To Validate your deployment,
         - Check Azure resources created in `{ENVIRONMENTNAME}` and `{ENVIRONMENTNAME}-sof` Resource Groups
         - Check `App Registration` in secondary AAD tenat that all three different **[client application types](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir-app-registration)** are registered for Azure API for FHIR.
         - Check `Azure API for FHIR` > `Authentication` > `Allowed object IDs` configuration in Azure Portal to ensure that the Azure AD object IDs of the 3 registered client applications have been added. This will allow these client apps to access this Azure API for FHIR.
@@ -62,7 +62,7 @@ In this scenario, you will deploy a storage account with a BLOB container called
         # this can be overridden by passing a different value to the Generator constructor
         generate.default_population = 1000
         ```
-        
+
         **Note:** The default properties file values can be found at src/main/resources/synthea.properties. By default, synthea does not generate CCDA, CPCDA, CSV, or Bulk FHIR (ndjson). You'll need to adjust this file to activate these features. See the **[wiki](https://github.com/synthetichealth/synthea/wiki)** for more details.
     - Generate Synthetic Patients
         Generating the population 1000 at a time...
@@ -72,7 +72,7 @@ In this scenario, you will deploy a storage account with a BLOB container called
     - For this configuration, Synthea will output 1000 patient records in FHIR formats in `./output/fhir` folder.
 
 **Bulk Load Synthea generated patient FHIR Bundles to FHIR Server**
-- Copy Synthea generated patient data to `fhirimport` BLOB, which will automatically trigger a function app to persist them to FHIR Server 
+- Copy Synthea generated patient data to `fhirimport` BLOB, which will automatically trigger a function app to persist them to FHIR Server
     - To copy data to Azure Storage using **[AzCopy](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10)** commandline tool
         - **[Download AzCopy](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10#download-azcopy)**
         - **[Run AzCopy](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10#run-azcopy)**
@@ -97,12 +97,12 @@ In this scenario, you will deploy a storage account with a BLOB container called
             Executed 'FhirBundleBlobTrigger' (Succeeded, ...)
             ```
 **Use Postman to retrieve Patients data via FHIR Patients API**
-- Open Postman and **[import Postman data](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/)**: 
+- Open Postman and **[import Postman data](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/)**:
     - In Postman, click Import.
     - In your **[Student Resources folder for Postman](../Student/Resources/Postman)**, select **[Environment](../Student/Resources/Postman/WTHFHIR.postman_environment.json)** and **[Collection](../Student/Resources/Postman/WTHFHIR.postman_collection.json)** JSON files.
     - Confirm the name, format, and import as, then click Import to bring your data into your Postman.
     - You will get confirmation that `WTH FHIR` Collection and Environment were imported and see in Postman a new `WTH FHIR` in `Collections` (left) blade and top right `Manage Environments` drop-down list.
-   - Select `WTH FHIR` environment and click `Environment Quick Look` button to see a list of env vars: 
+   - Select `WTH FHIR` environment and click `Environment Quick Look` button to see a list of env vars:
     - Click `Edit` to open `Management Environments` window and input the corresponding FHIR environment values:
         - `adtenantId`: This is the tenant Id of the Secondary (Data) AD tenant
         - `clientId`: This is the client Id that is stored in Secret `{your resource prefix}-service-client-id`" in `{your resource prefix}-ts` Key Vault.
@@ -112,14 +112,14 @@ In this scenario, you will deploy a storage account with a BLOB container called
         - `resource`: This is the Audience of the Azure API for FHIR `https://{ENVIRONMENTNAME}.azurehealthcareapis.com` you created. You can find this Audience in Azure Portal when you click Authetication in Azure API for FHIR resource.
     - Click the Update button and close the `MANAGE ENVIRONMENTS` window.
 - Run FHIR API HTTP Requests:
-    - First, open `AuthorizeGetToken SetBearer` and confirm `WTH FHIR` environment is selected in the top-right `Environment` drop-down. 
+    - First, open `AuthorizeGetToken SetBearer` and confirm `WTH FHIR` environment is selected in the top-right `Environment` drop-down.
         - Click the Send button to pass the values in the Body to AD Tenant, get the bearer token back and assign it to variable bearerToken.
     - Open `Get Patient` and click the `Send` button. This will return all Patients stored in your FHIR Server. (Postman may not show all the results.)
-    - Open `Get Patient Count` and click the `Send` button.  This will return Count of Patients stored in your FHIR Server.  
+    - Open `Get Patient Count` and click the `Send` button.  This will return Count of Patients stored in your FHIR Server.
     - Open `Get Patient Filter ID` and click the `Send` button.  This will return a Patient with that ID. Change the ID to one you have loaded and validate that it exists.
     - Open `Get Patient Filter Exact` and click the `Send` button.  This will return a Patient with the specified given name. Specify a given name from your FHIR import and validate it exists.
     - Open `Get Patient Filter Contains` and click the `Send` button.  This will return Patients with Given name that contains the specified letters. Specify a partial given name from your FHIR import and validate it exists.
-    
+
     **Note:** `bearerToken` has expiration, so if you get Authentication errors in any requests, re-run `AuthorizeGetToken SetBearer` to get a new `bearerToken`.
 
 

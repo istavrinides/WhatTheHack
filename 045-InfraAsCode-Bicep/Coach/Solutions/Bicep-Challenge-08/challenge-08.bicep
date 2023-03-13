@@ -3,10 +3,10 @@ param prefix string = 'ch08'
 
 @description('Number of VM instances (100 or less).')
 @maxValue(100)
-param vmssInstanceCount int = 2 
+param vmssInstanceCount int = 2
 
 @description('User name for the Virtual Machine.')
-param adminUsername string 
+param adminUsername string
 
 @description('Password for the Virtual Machine.')
 @secure()

@@ -14,16 +14,16 @@ BEGIN
             , AddressType = S1.AddressType
             , rowguid = S1.rowguid
             , ModifiedDate = S1.ModifiedDate
-            
+
         from Staging.CustomerAddress S1
         where [SalesLT].[CustomerAddress].rowguid = S1.rowguid
         and S1.__$operation = 4
         and S1.tran_begin_time = (
-                                    select MAX(s2.tran_begin_time) 
-                                    from Staging.CustomerAddress s2 
+                                    select MAX(s2.tran_begin_time)
+                                    from Staging.CustomerAddress s2
                                     where s2.rowguid=s1.rowguid and S2.__$operation in (4)
                                 )
-                                
+
 ;
 END;
 GO

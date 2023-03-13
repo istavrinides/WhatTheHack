@@ -124,7 +124,7 @@ namespace PartsUnlimited.Areas.Admin.Controllers
 
                 var annoucementHub = GlobalHost.ConnectionManager.GetHubContext<AnnouncementHub>();
                 annoucementHub.Clients.All.announcement(new ProductData() { Title = product.Title, Url = Url.Action("Details", "Store", new { id = product.ProductId }) });
-                
+
                 MemoryCache.Default.Remove("latestProduct");
                 return RedirectToAction("Index");
             }
@@ -146,8 +146,8 @@ namespace PartsUnlimited.Areas.Admin.Controllers
             ViewBag.categories = db.Categories
                 .Select(x => new SelectListItem
                 {
-                    Text = x.Name, 
-                    Value = x.CategoryId.ToString(), 
+                    Text = x.Name,
+                    Value = x.CategoryId.ToString(),
                     Selected = product.CategoryId == x.CategoryId
                 });
 

@@ -25,7 +25,7 @@ In a previous challenge we manually deployed the app on Azure. Now with this cha
 ## Tips
 
 1. [Deploy to an Azure Web App for Containers - Define your CI build pipeline](https://docs.microsoft.com/en-us/azure/devops/pipelines/apps/cd/deploy-docker-webapp?view=vsts#define-your-ci-build-pipeline)
-1. [Deploy to an Azure Web App for Containers - Create a release pipeline](https://docs.microsoft.com/en-us/azure/devops/pipelines/apps/cd/deploy-docker-webapp?view=vsts#create-a-release-pipeline) 
+1. [Deploy to an Azure Web App for Containers - Create a release pipeline](https://docs.microsoft.com/en-us/azure/devops/pipelines/apps/cd/deploy-docker-webapp?view=vsts#create-a-release-pipeline)
 
 ## Advanced challenges
 

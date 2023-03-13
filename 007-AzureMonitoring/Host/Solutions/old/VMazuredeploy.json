@@ -83,7 +83,7 @@
         "metadata": {
             "description": "Server only, Private or Public"
         },
-        
+
         "defaultValue": "Private"
     },
     "sqlPortNumber": {
@@ -91,7 +91,7 @@
         "metadata": {
             "description": "sql server Port Number"
         },
-        
+
         "defaultValue": 1433
     },
     "sqlAuthenticationLogin": {
@@ -99,7 +99,7 @@
         "metadata": {
             "description": "sql server admin username"
         },
-        
+
         "defaultValue": "sqladmin"
     },
     "rServicesEnabled": {
@@ -118,7 +118,7 @@
         "metadata": {
           "description": "Storage Account type"
         }
-    },   
+    },
       "location": {
           "type": "string",
           "defaultValue": "[resourceGroup().location]",
@@ -181,7 +181,7 @@
         },
         "kind": "Storage",
         "properties": {}
-    },  
+    },
     {
           "apiVersion": "2015-06-15",
           "type": "Microsoft.Network/networkSecurityGroups",
@@ -562,27 +562,27 @@
                 ]
             }
         },
-        "resources": [ 
-            { 
-                       "type": "extensions", 
-                       "name": "CustomScriptExtension", 
-                       "apiVersion": "2017-03-30", 
-                       "location": "[resourceGroup().location]", 
-                       "dependsOn": [ 
+        "resources": [
+            {
+                       "type": "extensions",
+                       "name": "CustomScriptExtension",
+                       "apiVersion": "2017-03-30",
+                       "location": "[resourceGroup().location]",
+                       "dependsOn": [
                          "[concat('Microsoft.Compute/virtualMachines/' ,variables('VisualStudioSrvName'))]"
-                       ], 
-                       "properties": { 
-                         "publisher": "Microsoft.Compute", 
-                         "type": "CustomScriptExtension", 
-                         "typeHandlerVersion": "1.8", 
-                         "autoUpgradeMinorVersion": true, 
-                         "settings": { 
-                           "fileUris": [ 
-                             "https://raw.githubusercontent.com/rkuehfus/AzureMonitoringHackathon/master/SetupVSServer.ps1" 
-                           ], 
-                           "commandToExecute": "[concat('powershell.exe -ExecutionPolicy Unrestricted -File SetupVSServer.ps1 ', ' ', variables('sqlSrvDBName'), ' ', parameters('password'))]"  
-                         } 
-                       } 
+                       ],
+                       "properties": {
+                         "publisher": "Microsoft.Compute",
+                         "type": "CustomScriptExtension",
+                         "typeHandlerVersion": "1.8",
+                         "autoUpgradeMinorVersion": true,
+                         "settings": {
+                           "fileUris": [
+                             "https://raw.githubusercontent.com/rkuehfus/AzureMonitoringHackathon/master/SetupVSServer.ps1"
+                           ],
+                           "commandToExecute": "[concat('powershell.exe -ExecutionPolicy Unrestricted -File SetupVSServer.ps1 ', ' ', variables('sqlSrvDBName'), ' ', parameters('password'))]"
+                         }
+                       }
                      },
                      {
                         "name": "[concat(variables('VisualStudioSrvName'),'/', 'IaaSDiagnostics')]",
@@ -828,7 +828,7 @@
                                 "storageAccountEndPoint": "https://core.windows.net/"
                             }
                         }
-                    } 
+                    }
                    ]
     },
       {
@@ -1042,7 +1042,7 @@
                   ]
               }
           },
-          "resources": [ 
+          "resources": [
             {
                 "name": "[concat(variables('webSrvName'), copyindex(), '/', 'IaaSDiagnostics')]",
                 "type": "Microsoft.Compute/virtualMachines/extensions",
@@ -1287,28 +1287,28 @@
                         "storageAccountEndPoint": "https://core.windows.net/"
                     }
                 }
-            }, 
-            { 
-                       "type": "extensions", 
-                       "name": "CustomScriptExtension", 
-                       "apiVersion": "2017-03-30", 
-                       "location": "[resourceGroup().location]", 
-                       "dependsOn": [ 
+            },
+            {
+                       "type": "extensions",
+                       "name": "CustomScriptExtension",
+                       "apiVersion": "2017-03-30",
+                       "location": "[resourceGroup().location]",
+                       "dependsOn": [
                          "[concat('Microsoft.Compute/virtualMachines/' ,variables('webSrvName'), copyindex())]"
-                       ], 
-                       "properties": { 
-                         "publisher": "Microsoft.Compute", 
-                         "type": "CustomScriptExtension", 
-                         "typeHandlerVersion": "1.8", 
-                         "autoUpgradeMinorVersion": true, 
-                         "settings": { 
-                           "fileUris": [ 
-                             "https://raw.githubusercontent.com/rkuehfus/AzureMonitoringHackathon/master/SetupWebServers.ps1" 
-                           ], 
-                           "commandToExecute": "[concat('powershell.exe -ExecutionPolicy Unrestricted -File SetupWebServers.ps1 ', ' ', variables('VisualStudioSrvName'))]"   
-                         } 
-                       } 
-                     } 
+                       ],
+                       "properties": {
+                         "publisher": "Microsoft.Compute",
+                         "type": "CustomScriptExtension",
+                         "typeHandlerVersion": "1.8",
+                         "autoUpgradeMinorVersion": true,
+                         "settings": {
+                           "fileUris": [
+                             "https://raw.githubusercontent.com/rkuehfus/AzureMonitoringHackathon/master/SetupWebServers.ps1"
+                           ],
+                           "commandToExecute": "[concat('powershell.exe -ExecutionPolicy Unrestricted -File SetupWebServers.ps1 ', ' ', variables('VisualStudioSrvName'))]"
+                         }
+                       }
+                     }
                    ]
       }
   ]

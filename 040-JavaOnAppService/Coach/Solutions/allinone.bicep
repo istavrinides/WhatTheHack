@@ -28,7 +28,7 @@ module keyVault './keyvault.bicep' = {
     baseName: baseName
     mysqlUser: mysql.outputs.userName
     mysqlPassword: mysql.outputs.password
-    mysqlUrl: mysql.outputs.jdbcUrl    
+    mysqlUrl: mysql.outputs.jdbcUrl
   }
   dependsOn: [
     webApp
@@ -37,7 +37,7 @@ module keyVault './keyvault.bicep' = {
 
 module appInsights './appinsights.bicep' = {
   name: 'appinsights'
-  params: {    
+  params: {
     baseName: baseName
   }
   dependsOn: [

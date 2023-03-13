@@ -1,20 +1,20 @@
 QUnit.begin = function() {
-	console.log("Starting test suite");
-	console.log("================================================\n");
+  console.log("Starting test suite");
+  console.log("================================================\n");
 };
 
 QUnit.moduleDone = function(opts) {
-	if(opts.failed === 0) {
-		console.log("\u2714 All tests passed in '"+opts.name+"' module");
-	} else {
-		console.log("\u2716 "+ opts.failed +" tests failed in '"+opts.name+"' module");
-	}
+  if(opts.failed === 0) {
+    console.log("\u2714 All tests passed in '"+opts.name+"' module");
+  } else {
+    console.log("\u2716 "+ opts.failed +" tests failed in '"+opts.name+"' module");
+  }
 };
 
 QUnit.done = function(opts) {
-	console.log("\n================================================");
-	console.log("Tests completed in "+opts.runtime+" milliseconds");
-	console.log(opts.passed + " tests of "+opts.total+" passed, "+opts.failed+" failed.");
+  console.log("\n================================================");
+  console.log("Tests completed in "+opts.runtime+" milliseconds");
+  console.log(opts.passed + " tests of "+opts.total+" passed, "+opts.failed+" failed.");
 };
 
 module('Basics', {
@@ -26,7 +26,7 @@ module('Basics', {
 
 test("globals set up", function() {
 
-	ok(window.Modernizr, 'global modernizr object created');
+  ok(window.Modernizr, 'global modernizr object created');
 
 });
 
@@ -91,31 +91,31 @@ test("bind is implemented", function() {
 
 
 test("document.documentElement is valid and correct",1, function() {
-	equal(document.documentElement,document.getElementsByTagName('html')[0]);
+  equal(document.documentElement,document.getElementsByTagName('html')[0]);
 });
 
 
 test("no-js class is gone.", function() {
 
-	ok(!/(?:^|\s)no-js(?:^|\s)/.test(document.documentElement.className),
-	   'no-js class is gone');
+  ok(!/(?:^|\s)no-js(?:^|\s)/.test(document.documentElement.className),
+    'no-js class is gone');
 
-	ok(/(?:^|\s)js(?:^|\s)/.test(document.documentElement.className),
-	   'html.js class is present');
+  ok(/(?:^|\s)js(?:^|\s)/.test(document.documentElement.className),
+    'html.js class is present');
 
-	ok(/(?:^|\s)\+no-js(?:\s|$)/.test(document.documentElement.className),
-	   'html.+no-js class is still present');
+  ok(/(?:^|\s)\+no-js(?:\s|$)/.test(document.documentElement.className),
+    'html.+no-js class is still present');
 
-	ok(/(?:^|\s)no-js-(?:\s|$)/.test(document.documentElement.className),
-	   'html.no-js- class is still present');
+  ok(/(?:^|\s)no-js-(?:\s|$)/.test(document.documentElement.className),
+    'html.no-js- class is still present');
 
-	ok(/(?:^|\s)i-has-no-js(?:\s|$)/.test(document.documentElement.className),
-	   'html.i-has-no-js class is still present');
+  ok(/(?:^|\s)i-has-no-js(?:\s|$)/.test(document.documentElement.className),
+    'html.i-has-no-js class is still present');
 
-	if (document.querySelector){
-	  ok(document.querySelector('html.js') == document.documentElement,
-	     "document.querySelector('html.js') matches.");
-	}
+  if (document.querySelector){
+    ok(document.querySelector('html.js') == document.documentElement,
+      "document.querySelector('html.js') matches.");
+  }
 });
 
 test('html shim worked', function(){
@@ -189,7 +189,7 @@ test('html classes are looking good',function(){
 
     } else {
       equal(Modernizr[aclass], true,
-             aclass + ' is correctly true in the classes and object')
+            aclass + ' is correctly true in the classes and object')
     }
   }
 
@@ -213,9 +213,9 @@ test('Modernizr properties are looking good',function(){
 
   var count  = 0,
       nobool = TEST.API.concat(TEST.inputs)
-                       .concat(TEST.audvid)
-                       .concat(TEST.privates)
-                       .concat(['textarea']); // due to forms-placeholder.js test
+                      .concat(TEST.audvid)
+                      .concat(TEST.privates)
+                      .concat(['textarea']); // due to forms-placeholder.js test
 
   for (var prop in window.Modernizr){
     if (Modernizr.hasOwnProperty(prop)){
@@ -309,11 +309,11 @@ test('Modernizr.addTest()',22,function(){
 
 
   Modernizr.addTest('testcamelCase',function(){
-     return true;
-   });
+    return true;
+  });
 
   ok(docEl.className.indexOf(' testcamelCase') === -1,
-     'camelCase test name toLowerCase()\'d');
+    'camelCase test name toLowerCase()\'d');
 
 
   // okay new signature for this API! woo
@@ -333,7 +333,7 @@ test('Modernizr.addTest()',22,function(){
 
 
   Modernizr.addTest({'testobjboolfalse': false,
-                     'testobjbooltrue' : true   });
+                    'testobjbooltrue' : true   });
 
   ok(~docEl.className.indexOf(' no-testobjboolfalse'), 'Modernizr.addTest({feature: bool}): negative class added');
   equal(Modernizr.testobjboolfalse, false, 'Modernizr.addTest({feature: bool}): negative prop added');
@@ -345,7 +345,7 @@ test('Modernizr.addTest()',22,function(){
 
 
   Modernizr.addTest({'testobjfnfalse': function(){ return false },
-                     'testobjfntrue' : function(){ return true }   });
+                    'testobjfntrue' : function(){ return true }   });
 
 
   ok(~docEl.className.indexOf(' no-testobjfnfalse'), 'Modernizr.addTest({feature: bool}): negative class added');
@@ -377,30 +377,30 @@ test('Modernizr.mq: media query testing',function(){
   // from jquery mobile
 
   $.mobile.media = (function() {
-  	// TODO: use window.matchMedia once at least one UA implements it
-  	var cache = {},
-  		testDiv = $( "<div id='jquery-mediatest'>" ),
-  		fakeBody = $( "<body>" ).append( testDiv );
+    // TODO: use window.matchMedia once at least one UA implements it
+    var cache = {},
+      testDiv = $( "<div id='jquery-mediatest'>" ),
+      fakeBody = $( "<body>" ).append( testDiv );
 
-  	return function( query ) {
-  		if ( !( query in cache ) ) {
-  			var styleBlock = document.createElement('style'),
-          		cssrule = "@media " + query + " { #jquery-mediatest { position:absolute; } }";
-  	        //must set type for IE!
-  	        styleBlock.type = "text/css";
-  	        if (styleBlock.styleSheet){
-  	          styleBlock.styleSheet.cssText = cssrule;
-  	        }
-  	        else {
-  	          styleBlock.appendChild(document.createTextNode(cssrule));
-  	        }
+    return function( query ) {
+      if ( !( query in cache ) ) {
+        var styleBlock = document.createElement('style'),
+              cssrule = "@media " + query + " { #jquery-mediatest { position:absolute; } }";
+            //must set type for IE!
+            styleBlock.type = "text/css";
+            if (styleBlock.styleSheet){
+              styleBlock.styleSheet.cssText = cssrule;
+            }
+            else {
+              styleBlock.appendChild(document.createTextNode(cssrule));
+            }
 
-  			$html.prepend( fakeBody ).prepend( styleBlock );
-  			cache[ query ] = testDiv.css( "position" ) === "absolute";
-  			fakeBody.add( styleBlock ).remove();
-  		}
-  		return cache[ query ];
-  	};
+        $html.prepend( fakeBody ).prepend( styleBlock );
+        cache[ query ] = testDiv.css( "position" ) === "absolute";
+        fakeBody.add( styleBlock ).remove();
+      }
+      return cache[ query ];
+    };
   })();
 
 
@@ -470,8 +470,8 @@ test('Modernizr.testProp()',function(){
   equal(false, Modernizr.testProp('font-size'), 'Nobody supports font-size');
 
   equal('pointerEvents' in  document.createElement('div').style,
-         Modernizr.testProp('pointerEvents'),
-         'results for `pointer-events` are consistent with a homegrown feature test');
+        Modernizr.testProp('pointerEvents'),
+        'results for `pointer-events` are consistent with a homegrown feature test');
 
 });
 
@@ -528,7 +528,7 @@ test('Modernizr.prefixed() - css and DOM resolving', function(){
   }
 
   var propArr = ['transition', 'backgroundSize', 'boxSizing', 'borderImage',
-                 'borderRadius', 'boxShadow', 'columnCount'];
+                'borderRadius', 'boxShadow', 'columnCount'];
 
   var domPropArr = [{ 'prop': 'requestAnimationFrame',  'obj': window },
                     { 'prop': 'querySelectorAll',       'obj': document },
@@ -662,8 +662,3 @@ test('Modernizr.prefixed autobind', function(){
 
 
 });
-
-
-
-
-

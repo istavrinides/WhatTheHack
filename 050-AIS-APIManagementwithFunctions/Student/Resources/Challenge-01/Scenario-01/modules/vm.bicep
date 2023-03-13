@@ -55,7 +55,7 @@ param location string = resourceGroup().location
 param vmName string
 
 @description('VM subnet')
-param subnetId string 
+param subnetId string
 
 var storageAccountName = 'bootdiags${uniqueString(resourceGroup().id)}'
 var nicName = 'myVMNic'

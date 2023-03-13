@@ -14,7 +14,7 @@ Set-AzureRmContext -SubscriptionID <yourSubIdHere>
 
 #Get a list of core quotas for a given region (important before you start deploying stuff)
 # Note: If the quote is not high enough for you, you must open a support ticket in the portal!
-Get-AzureRmVMUsage -Location eastus2 
+Get-AzureRmVMUsage -Location eastus2
 
 #Get a list of available VM sizes in a region
 Get-AzureRmVMSize -Location eastus2
@@ -31,7 +31,7 @@ Get-AzureRmVMImage
 
 #Get a list of VMs by various search queries
 Get-AzureRmVmImageOffer -Location eastus2 -Publisher MicrosoftSqlServer
-Get-AzureRmVmImageOffer -Location eastus2 -Publisher Oracle 
+Get-AzureRmVmImageOffer -Location eastus2 -Publisher Oracle
 
 
 ##Create Resource Group##

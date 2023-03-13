@@ -5,7 +5,7 @@
 --UPDATE Statements with JOINS and Subqueries
 --Rollback workarounds and use native code from WWI Samples
 
---Cleanup Dimension schema 
+--Cleanup Dimension schema
 IF object_id('[Dimension].[City]','U') IS NOT NULL DROP TABLE [Dimension].[City]
 IF object_id('[Dimension].[Customer]','U') IS NOT NULL DROP TABLE [Dimension].[Customer]
 IF object_id('[Dimension].[Date]','U') IS NOT NULL DROP TABLE [Dimension].[Date]
@@ -942,7 +942,7 @@ CREATE VIEW [Integration].[vTableSizes]
 AS WITH base
 AS
 (
-SELECT 
+SELECT
  GETDATE()                                                             AS  [execution_time]
 , DB_NAME()                                                            AS  [database_name]
 , s.name                                                               AS  [schema_name]
@@ -963,15 +963,15 @@ SELECT
 , nps.[partition_number]                                               AS  [partition_nmbr]
 , nps.[reserved_page_count]                                            AS  [reserved_space_page_count]
 , nps.[reserved_page_count] - nps.[used_page_count]                    AS  [unused_space_page_count]
-, nps.[in_row_data_page_count] 
-    + nps.[row_overflow_used_page_count] 
+, nps.[in_row_data_page_count]
+    + nps.[row_overflow_used_page_count]
     + nps.[lob_used_page_count]                                        AS  [data_space_page_count]
-, nps.[reserved_page_count] 
- - (nps.[reserved_page_count] - nps.[used_page_count]) 
- - ([in_row_data_page_count] 
+, nps.[reserved_page_count]
+ - (nps.[reserved_page_count] - nps.[used_page_count])
+ - ([in_row_data_page_count]
          + [row_overflow_used_page_count]+[lob_used_page_count])       AS  [index_space_page_count]
 , nps.[row_count]                                                      AS  [row_count]
-from 
+from
     sys.schemas s
 INNER JOIN sys.tables t
     ON s.[schema_id] = t.[schema_id]
@@ -1044,7 +1044,7 @@ SELECT
 ,  ([index_space_page_count]  * 8.0)/1000000000                        AS [index_space_TB]
 FROM base
 )
-SELECT * 
+SELECT *
 FROM size;
 GO
 
@@ -1195,7 +1195,7 @@ BEGIN
                                WHERE [Table Name] = N'Customer'
                                AND [Data Load Completed] IS NULL
                                ORDER BY [Lineage Key] DESC);
-	
+
     WITH RowsToCloseOff
     AS
     (
@@ -1342,7 +1342,7 @@ BEGIN
 									             ORDER BY tt.[Valid From]), 0);
 
     -- Update existing Fact records with latest values
-	
+
 	UPDATE FACT.MOVEMENT
 	SET FACT.MOVEMENT.[Date Key] = Integration.Movement_Staging.[Date Key],
         FACT.MOVEMENT.[Stock Item Key] = Integration.Movement_Staging.[Stock Item Key],
@@ -1351,21 +1351,21 @@ BEGIN
         FACT.MOVEMENT.[Transaction Type Key] = Integration.Movement_Staging.[Transaction Type Key],
         FACT.MOVEMENT.[WWI Invoice ID] = Integration.Movement_Staging.[WWI Invoice ID],
         FACT.MOVEMENT.[WWI Purchase Order ID] = Integration.Movement_Staging.[WWI Purchase Order ID],
-        FACT.MOVEMENT.Quantity = Integration.Movement_Staging.Quantity, 
+        FACT.MOVEMENT.Quantity = Integration.Movement_Staging.Quantity,
         FACT.MOVEMENT.[Lineage Key] = @LineageKey
 		FROM Integration.Movement_Staging
-		WHERE FACT.MOVEMENT.[WWI Stock Item Transaction ID] = Integration.Movement_Staging.[WWI Stock Item Transaction ID];    
+		WHERE FACT.MOVEMENT.[WWI Stock Item Transaction ID] = Integration.Movement_Staging.[WWI Stock Item Transaction ID];
 
 	--Insert new records into the fact table
 
-    INSERT Fact.Movement 
+    INSERT Fact.Movement
 			([Date Key], [Stock Item Key], [Customer Key], [Supplier Key], [Transaction Type Key],
             [WWI Stock Item Transaction ID], [WWI Invoice ID], [WWI Purchase Order ID], Quantity, [Lineage Key])
     SELECT [Date Key], [Stock Item Key], [Customer Key], [Supplier Key], [Transaction Type Key],
             [WWI Stock Item Transaction ID], [WWI Invoice ID], [WWI Purchase Order ID], Quantity, @LineageKey
 			FROM Integration.Movement_Staging
 			WHERE [WWI Stock Item Transaction ID] NOT IN (SELECT [WWI Stock Item Transaction ID] FROM FACT.MOVEMENT);
-	
+
 	UPDATE Integration.Lineage
         SET [Data Load Completed] = SYSDATETIME(),
             [Was Successful] = 1
@@ -1440,7 +1440,7 @@ BEGIN
 	DELETE o
     FROM Fact.[Order] AS o
     WHERE o.[WWI Order ID] IN (SELECT [WWI Order ID] FROM Integration.Order_Staging);
-    
+
     -- Insert all current details for these orders
 
     INSERT Fact.[Order]
@@ -2123,7 +2123,7 @@ BEGIN
 
 
 IF EXISTS(select * from [Integration].[Load_Control])
-   update Integration.[Load_Control] 
+   update Integration.[Load_Control]
 		SET [Load_Date] = @EndingETLCutoffTime
 ELSE
    insert into Integration.[Load_Control] values(@EndingETLCutoffTime);
@@ -2291,7 +2291,7 @@ GO
 TRUNCATE TABLE [Integration].[Load_Control]
 INSERT INTO [Integration].[Load_Control]([Load_Date]) VALUES('2020-01-01 23:59:59.0000000')
 
-TRUNCATE TABLE [Integration].[ETL Cutoff] 
+TRUNCATE TABLE [Integration].[ETL Cutoff]
 INSERT INTO [Integration].[ETL Cutoff]([Table Name],[Cutoff Time]) VALUES ('City','2012-12-31 00:00:00.0000000')
 INSERT INTO [Integration].[ETL Cutoff]([Table Name],[Cutoff Time]) VALUES ('Customer','2012-12-31 00:00:00.0000000')
 INSERT INTO [Integration].[ETL Cutoff]([Table Name],[Cutoff Time]) VALUES ('Date','2012-12-31 00:00:00.0000000')

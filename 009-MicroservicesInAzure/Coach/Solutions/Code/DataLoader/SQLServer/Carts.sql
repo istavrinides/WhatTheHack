@@ -61,16 +61,16 @@ GO
 CREATE PROCEDURE dbo.UpsertCartFlights
     @Id UNIQUEIDENTIFIER,
     @DepartingFlight [int]  null,
-    @ReturningFlight [int]   null 
+    @ReturningFlight [int]   null
 AS
     SET NOCOUNT ON
-    MERGE CARTS AS target  
-    USING (SELECT @Id, @DepartingFlight, @ReturningFlight) AS source (Id, DepartingFlight, ReturningFlight)  
-    ON (target.Id = source.Id)  
-    WHEN MATCHED THEN   
+    MERGE CARTS AS target
+    USING (SELECT @Id, @DepartingFlight, @ReturningFlight) AS source (Id, DepartingFlight, ReturningFlight)
+    ON (target.Id = source.Id)
+    WHEN MATCHED THEN
         UPDATE SET DepartingFlight = source.DepartingFlight, ReturningFlight = source.ReturningFlight
-    WHEN NOT MATCHED THEN  
-        INSERT (Id, DepartingFlight, ReturningFlight)  
+    WHEN NOT MATCHED THEN
+        INSERT (Id, DepartingFlight, ReturningFlight)
         VALUES (source.Id, source.DepartingFlight, source.ReturningFlight);
 GO
 
@@ -85,17 +85,17 @@ GO
 CREATE PROCEDURE dbo.UpsertCartCar
     @Id UNIQUEIDENTIFIER,
     @CarReservation [int]  null,
-    @CarReservationDuration [FLOAT]  null 
+    @CarReservationDuration [FLOAT]  null
 AS
     SET NOCOUNT ON
-    MERGE CARTS AS target  
-    USING (SELECT @Id, @CarReservation, @CarReservationDuration) AS source (Id, CarReservation, CarReservationDuration)  
-    ON (target.Id = source.Id)  
-    WHEN MATCHED THEN   
+    MERGE CARTS AS target
+    USING (SELECT @Id, @CarReservation, @CarReservationDuration) AS source (Id, CarReservation, CarReservationDuration)
+    ON (target.Id = source.Id)
+    WHEN MATCHED THEN
         UPDATE SET CarReservation = source.CarReservation, CarReservationDuration = source.CarReservationDuration
-    WHEN NOT MATCHED THEN  
-        INSERT (Id, CarReservation, CarReservationDuration)  
-        VALUES (source.Id, source.CarReservation, source.CarReservationDuration);        
+    WHEN NOT MATCHED THEN
+        INSERT (Id, CarReservation, CarReservationDuration)
+        VALUES (source.Id, source.CarReservation, source.CarReservationDuration);
 GO
 
 
@@ -110,16 +110,16 @@ GO
 CREATE PROCEDURE dbo.UpsertCartHotel
     @Id UNIQUEIDENTIFIER,
     @HotelReservation [int] null,
-    @HotelReservationDuration [int]  null   
+    @HotelReservationDuration [int]  null
 AS
     SET NOCOUNT ON
 
-    MERGE CARTS AS target  
-    USING (SELECT @Id, @HotelReservation, @HotelReservationDuration) AS source (Id, HotelReservation, HotelReservationDuration)  
-    ON (target.Id = source.Id)  
-    WHEN MATCHED THEN   
+    MERGE CARTS AS target
+    USING (SELECT @Id, @HotelReservation, @HotelReservationDuration) AS source (Id, HotelReservation, HotelReservationDuration)
+    ON (target.Id = source.Id)
+    WHEN MATCHED THEN
         UPDATE SET HotelReservation = source.HotelReservation, HotelReservationDuration = source.HotelReservationDuration
-    WHEN NOT MATCHED THEN  
-        INSERT (Id, HotelReservation, HotelReservationDuration)  
-        VALUES (source.Id, source.HotelReservation, source.HotelReservationDuration);          
+    WHEN NOT MATCHED THEN
+        INSERT (Id, HotelReservation, HotelReservationDuration)
+        VALUES (source.Id, source.HotelReservation, source.HotelReservationDuration);
 GO

@@ -61,7 +61,7 @@ namespace Contoso.Web.Controllers
                         authProperties);
 
                     _logger.LogInformation($"User {viewModel.Username} logged in at {DateTime.UtcNow}.");
-                    
+
                     return Redirect(returnUrl);
                 }
                 else

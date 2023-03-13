@@ -23,7 +23,7 @@
         private static async Task StartBotConversation()
         {
             DirectLineClient client = new DirectLineClient(directLineSecret);
-            
+
             var conversation = await client.Conversations.StartConversationAsync();
 
             new System.Threading.Thread(async () => await ReadBotMessagesAsync(client, conversation.ConversationId)).Start();
@@ -58,7 +58,7 @@
         private static async Task ReadBotMessagesAsync(DirectLineClient client, string conversationId)
         {
             string watermark = null;
-            
+
             while (true)
             {
                 var activitySet = await client.Conversations.GetActivitiesAsync(conversationId, watermark);

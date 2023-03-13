@@ -24,7 +24,7 @@ _backgroundColor: black
 _class: lead
 -->
 
-![auto](images/wth-logo-white.png) 
+![auto](images/wth-logo-white.png)
 
 # <INSERT Hack Name Here>
 ## Subtitle
@@ -48,7 +48,7 @@ _class: lead
 ## Get your machines ready
 
 * [Install Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (Bash Shell)
-* [Install the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) (in WSL if on Windows!) 
+* [Install the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) (in WSL if on Windows!)
 * [Install PowerShell Cmdlets for Azure](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-6.4.0)
 * [Install Visual Studio Code](https://code.visualstudio.com/download)
 * [Install ARM Tools extension for VS Code](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
@@ -77,7 +77,7 @@ _class: lead
 
 - Key challenge goal #1
     - Challenge goal details/specifications
-    - Takes inputs: 
+    - Takes inputs:
         - Location
         - A unique storage account name
     - Returns output:
@@ -108,7 +108,7 @@ _class: lead
 
 - Key challenge goal #1
     - Challenge goal details/specifications
-    - Takes inputs: 
+    - Takes inputs:
         - Location
         - A unique storage account name
     - Returns output:
@@ -140,10 +140,10 @@ _class: lead
 
 # Split backgrounds with specified size
 
---- 
+---
 
 # Speaker Notes
 
-<!-- 
+<!--
 this is a speaker note and is only available in presentation mode
 -->

@@ -6,11 +6,11 @@
 Being the coaches guide, this content includes comments, guidance, possible gotchas related to the challenges facing the partipants. The success criteria for the challenge has been duplicated here, but within them, you will find the notes for coaches. In many cases, there is no single solution so coaches are encouraged to be flexibile and focus on the outcome. Did the team accomplish the spirit of the task not necessarily did they do it in the way it is described here?
 ## Success Criteria
 1. **Demonstrate that a user can access the emergency information from a mobile device.**
-    * Have someone login to Microsoft teams from a mobile device 
+    * Have someone login to Microsoft teams from a mobile device
     * Generally we don't provide mobile devices to groups during the hack, so if the group is uncomfrtable doing that with their personal device, don't hold it against them.
 
 1. **Demonstrate that a user can take a set of documents from the emergency documentation offline on a device.**
-    * This is to get the users the experience of syncing documents for offline access. On a PC this can be accessed within Teams from the Sync option. It will start the initialization of the OD4B sync client on the machine if that has not been set up. 
+    * This is to get the users the experience of syncing documents for offline access. On a PC this can be accessed within Teams from the Sync option. It will start the initialization of the OD4B sync client on the machine if that has not been set up.
     * Through mobile, this can be done with the OneDrive mobile app as well.
 
 1. **Demonstrate the ability to schedule and host a meeting where a user could dial in through telephony without the Microsoft Teams client.**
@@ -19,7 +19,7 @@ Being the coaches guide, this content includes comments, guidance, possible gotc
     * After creating the meeting request, Teams will automatically add the audio conferencing details provided that option has been configured in the tenant.
 
 1. **Demonstrate how your team suggests standardizing the photo gathering business process of first responders. Based on the photo and information gathered, either the Logistics or Engineering team should be notified of the request.**
-    * This challenge could be done with the Power Platform, Microsoft Dataverse for Teams, or just a SharePoint list as the repository.  
+    * This challenge could be done with the Power Platform, Microsoft Dataverse for Teams, or just a SharePoint list as the repository.
     * Gov cloud customers typically gravitate to SharePoint lists as the other choices are not fully available.
     * If a SP list is being used, make sure it is created in the SharePoint site backing the file storage in MS Teams so the security context remains consistent.
     * The list should have a choice column of Logistics or Engineering to help with the routing.
@@ -31,7 +31,7 @@ Being the coaches guide, this content includes comments, guidance, possible gotc
     * A condition action helps create paths for each of the request type choices.\
     ![Condition](images/2condition.png)
     * The correct team can be alerted by posting a teams message in the correct channel. Dynamic placeholders can be used to provide details of the specific request.\
-    ![Post Message](images/2postmessage.png)  
+    ![Post Message](images/2postmessage.png)
     * One the group create's one "Post Message" action they can copy and paste it into the other branch.
     * The entire flow could look something like this:\
     ![Flow](images/2flow.png)
@@ -48,7 +48,7 @@ Being the coaches guide, this content includes comments, guidance, possible gotc
 
 1. **If the mobile device is not managed by the organization, the user is prompted for the multi-factor authentication.**
     * If the group decides to take on this challenge, be sure they only create a policy for one of their users. We don't want to create an unwelcome experience as they work on the other challenges.
-    * First, the group will have to enable MFA through the user object in Azure Active Directory. [Steps to enable MFA for user](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-userstates) 
+    * First, the group will have to enable MFA through the user object in Azure Active Directory. [Steps to enable MFA for user](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-userstates)
     * Then they will want to create a new Conditional Access Policy (use a name that clearly maps to the group of participants). In user assignments, specify the user that was enabled earlier.\
     ![Creating Conditional Access Policy](images/2condaccess.png)\
     Target the Microsoft Teams application\

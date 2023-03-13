@@ -15,7 +15,7 @@ Unlike load testing, which ensures that a system can handle what it's designed t
 
 ## Success Criteria
 
-- Show a side-by-side comparison of the load tests results and the stress test results. 
+- Show a side-by-side comparison of the load tests results and the stress test results.
 - Show where the bottlenecks and breakpoints are in the application from these tests.
 
 ## Learning Resources

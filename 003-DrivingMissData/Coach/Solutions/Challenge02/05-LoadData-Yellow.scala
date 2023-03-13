@@ -154,14 +154,14 @@ val yellowTripSchema_10to14 = StructType(Array(
 
 // Function to return schema for a given year and month
 // Input:  Year and month
-// Output: StructType for applicable schema 
+// Output: StructType for applicable schema
 // Sample call: println(GetTaxiSchema(2009,1))
 
 def GetTaxiSchema(tripYear: Int, tripMonth: Int): StructType = {
   var taxiSchema : StructType = null
 
   val years10To14 = Set(2010, 2011, 2012, 2013, 2014)
-  
+
   if (tripYear >= 2017 || (tripYear == 2016 && tripMonth > 6))
   {
     // println("yellowTripSchema_16H2to18")
@@ -191,15 +191,15 @@ def GetTaxiSchema(tripYear: Int, tripMonth: Int): StructType = {
 
 // Function to add columns to dataframe as required to homogenize schema
 // Input:  Dataframe, year and month
-// Output: Dataframe with homogenized schema 
+// Output: Dataframe with homogenized schema
 // Sample call: println(GetSchemaHomogenizedDataframe(DF,2014,6))
 
 def GetSchemaHomogenizedDataframe(sourceDF: org.apache.spark.sql.DataFrame,
-                                  tripYear: Int, 
+                                  tripYear: Int,
                                   tripMonth: Int): org.apache.spark.sql.DataFrame =
 {
   val years10To14 = Set(2010, 2011, 2012, 2013, 2014)
-  
+
   var df : org.apache.spark.sql.DataFrame = null
 
   if (tripYear >= 2017 || (tripYear == 2016 && tripMonth > 6))
@@ -262,13 +262,13 @@ def GetSchemaHomogenizedDataframe(sourceDF: org.apache.spark.sql.DataFrame,
   {
     df = sourceDF
       .withColumn("trip_year", substring(col("pickup_datetime"), 0, 4))
-      .withColumn("trip_month", substring(col("pickup_datetime"), 6, 2))    
+      .withColumn("trip_month", substring(col("pickup_datetime"), 6, 2))
       .withColumn("taxi_type", lit("yellow"))
       .withColumn("temp_vendor_id", col("vendor_id").cast(StringType)).drop("vendor_id").withColumnRenamed("temp_vendor_id", "vendor_id")
       // pickup_datetime
       // dropoff_datetime
       // passenger_count
-      // trip_distance 
+      // trip_distance
       .withColumnRenamed("rate_code", "rate_code_id")
       // store_and_fwd_flag
       .withColumn("pickup_location_id", lit(0).cast(IntegerType))
@@ -286,7 +286,7 @@ def GetSchemaHomogenizedDataframe(sourceDF: org.apache.spark.sql.DataFrame,
       .withColumn("improvement_surcharge",lit(0).cast(DoubleType))
       // total_amount
   }
-  
+
   df
 }
 
@@ -366,21 +366,21 @@ for (yyyy <- 2010 to 2018)
 
     // At this writing we only have Jan-June for 2018
     var endMonth = if (yyyy==2018) 6 else 12
-    
-    for (m <- startMonth to endMonth) 
+
+    for (m <- startMonth to endMonth)
     {
       println()
 
       var mm = "%02d".format(m)
-      
-      // Source path  
+
+      // Source path
       var srcDataFile = srcDataDirRoot + "year=" + yyyy + "/month=" +  mm + "/type=yellow/yellow_tripdata_" + yyyy + "-" + mm + ".csv"
       println("srcDataFile = " + srcDataFile)
 
-      // Destination path  
+      // Destination path
       var destDataDir = destDataDirRoot + "/trip_year=" + yyyy + "/trip_month=" + mm + "/"
       println("destDataDir = " + destDataDir)
-      
+
       println()
 
       // Source schema - use the Int m for this call, not the formatted String mm
@@ -394,13 +394,13 @@ for (yyyy <- 2010 to 2018)
         .schema(taxiSchema)
         .load(srcDataFile)
         .cache()
-      
+
       /*
       println("taxiDF")
       DataframeInfo(taxiDF)
       println()
       */
-      
+
       // Add additional columns to homogenize schema across years - use the Int m for this call, not the formatted String mm
       var taxiFormattedDF = GetSchemaHomogenizedDataframe(taxiDF, yyyy, m)
 
@@ -409,7 +409,7 @@ for (yyyy <- 2010 to 2018)
       DataframeInfo(taxiFormattedDF)
       println()
       */
-      
+
       // Order all columns to align with the canonical schema for yellow taxi
       var taxiCanonicalDF = taxiFormattedDF.select(canonicalTripSchemaColList.map(c => col(c)): _*)
       //.repartition(400)
@@ -419,7 +419,7 @@ for (yyyy <- 2010 to 2018)
       DataframeInfo(taxiCanonicalDF)
       println()
       */
-      
+
       // Write parquet output, calling function to calculate number of partition files
       taxiCanonicalDF.coalesce(CalcOutputFileCountTxtToParquet(srcDataFile, 64)).write.parquet(destDataDir)
 
@@ -428,7 +428,7 @@ for (yyyy <- 2010 to 2018)
 
       // Add partition for year and month
       spark.sql("ALTER TABLE yellow_taxi_trips ADD IF NOT EXISTS PARTITION (trip_year=" + yyyy + ",trip_month=" + mm + ") LOCATION '" + destDataDir.dropRight(1) + "'")
-    
+
       // Refresh table
       spark.sql("REFRESH TABLE yellow_taxi_trips")
     }

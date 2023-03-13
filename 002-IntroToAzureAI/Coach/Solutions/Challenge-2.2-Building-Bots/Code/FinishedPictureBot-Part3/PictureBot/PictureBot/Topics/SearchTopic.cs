@@ -30,7 +30,7 @@ namespace PictureBot.Topics
                         if (!RequestedForSearch)
                         {
                             await SearchResponses.ReplyWithSearchRequest(context);
-                            // Now that we've asked, set to true, so we don't ask again 
+                            // Now that we've asked, set to true, so we don't ask again
                             this.RequestedForSearch = true;
                             return true;
                         }
@@ -77,7 +77,7 @@ namespace PictureBot.Topics
         {
             ISearchIndexClient indexClientForQueries = CreateSearchIndexClient();
             // For more examples of calling search with SearchParameters, see
-            // https://github.com/Azure-Samples/search-dotnet-getting-started/blob/master/DotNetHowTo/DotNetHowTo/Program.cs.  
+            // https://github.com/Azure-Samples/search-dotnet-getting-started/blob/master/DotNetHowTo/DotNetHowTo/Program.cs.
             // Call the search service and store the results
             DocumentSearchResult results = await indexClientForQueries.Documents.SearchAsync(searchText);
             await SendResultsAsync(context, results);

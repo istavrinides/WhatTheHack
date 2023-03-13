@@ -8,13 +8,13 @@ We started out with some very simple, default networking that Kubernetes gives u
 
 ## Description
 
-In this challenge you will be enabling DNS, installing an Ingress Controller and learning how the "Ingress" resource in Kubernetes works. 
+In this challenge you will be enabling DNS, installing an Ingress Controller and learning how the "Ingress" resource in Kubernetes works.
 
 ## Part 1:  DNS for Public IPs
 In the previous challenges, we accessed our service via an IP address.  Humans prefer names to IP addresses, so let's create a DNS name for accessing our service.
 
-1. Your first task is to add a dns label to your __content-web__ service. 
-2. Your service should now be available at the url http://[myserviceuniquelabel].[location].cloudapp.azure.com.   
+1. Your first task is to add a dns label to your __content-web__ service.
+2. Your service should now be available at the url http://[myserviceuniquelabel].[location].cloudapp.azure.com.
 3. Verify that the DNS record has been created (nslookup or dig), and then test this url in your browser.
 4. Discuss with your coach how you might link a 'real' DNS name (eg, conferenceinfo.fabmedical.com) with this "azure-specific" DNS name (eg, conferenceinfo.eastus.cloudapp.azure.com)
 
@@ -23,7 +23,7 @@ Switching gears, we will now start working with ingress controllers, which allow
 
 1. Delete the existing content-web service.
 2. Create an nginx ingress controller. (Hint: use helm)
-3. Deploy the content-web service and create an Ingress resource for it. 
+3. Deploy the content-web service and create an Ingress resource for it.
 	- The reference template (which will need editing!) can be found in the `Challenge-10` folder of the `Resources.zip` package: `template-web-ingress-deploy.yaml`
 4. Show your coach that you can access the ingress in your browser via IP address
 
@@ -34,7 +34,7 @@ Just like in part 1, you will now add a metadata annotation to the ingress contr
    - You already have an ingress controller (from step 2a) so you don't need to create a new one or do a fresh install.
    - Ignore any notes about creating and using a static IP.  For this challenge, a dynamic IP is fine.
    - Don't forget to add the host name to your ingress YAML template.
-2. Verify that the DNS record has been created (nslookup or dig), and then access the application using the DNS name, e.g: 
+2. Verify that the DNS record has been created (nslookup or dig), and then access the application using the DNS name, e.g:
     - `http://[new-dns-label].[REGION].cloudapp.azure.com`
 
 ## Success Criteria

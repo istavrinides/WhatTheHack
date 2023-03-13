@@ -12,7 +12,7 @@ In this challenge, you will deploy a **[FHIR sample JavaScript app](https://docs
 - **[Create a new Azure Web App](https://docs.microsoft.com/en-us/azure/healthcare-apis/tutorial-web-app-write-web-app#create-web-application)** in Azure Portal to host the FHIR sample JavaScript app.
 - Check in secondary Azure AD tenant (can be primary tenant if you already have directory admin privilege) that a **[Resource Application](https://docs.microsoft.com/en-us/azure/healthcare-apis/register-resource-azure-ad-client-app)** has been registered for the FHIR Server resource.
 
-    **Note:** 
+    **Note:**
     - If you are using the Azure API for FHIR, a Resource Application is automatically created when you deploy the service in same AAD tenant as your application.
     - In the FHIR Server Sample environment deployment, a Resource Application is automatically created for the FHIR Server resource.
 
@@ -29,7 +29,7 @@ In this challenge, you will deploy a **[FHIR sample JavaScript app](https://docs
     - Select `APIs my organization uses`, search for `Azure Healthcare APIs` and select it.
     - Select `user_impersonation` and click `add permissions`.
 - Update the sample JavaScript app to connect and read FHIR patient data from your FHIR Serer.
-  - Start with the sample code from the **[FHIR patient JavaScript app](https://docs.microsoft.com/en-us/azure/healthcare-apis/tutorial-web-app-write-web-app)** site or **[index.html](../Student/Resources/JavaScript-Sample/index.html)** file in the Student Resources folder. 
+  - Start with the sample code from the **[FHIR patient JavaScript app](https://docs.microsoft.com/en-us/azure/healthcare-apis/tutorial-web-app-write-web-app)** site or **[index.html](../Student/Resources/JavaScript-Sample/index.html)** file in the Student Resources folder.
   - Open App Service resource for sample web app in Azure Portal.
     - Select App Service Editor and select `index.html` file to open it in the editor.
     - Paste the sample code into the editor to replace the content.
@@ -38,10 +38,10 @@ In this challenge, you will deploy a **[FHIR sample JavaScript app](https://docs
         - `authority` - Update with Authority from your FHIR Server (under Authentication)
         - `FHIRendpoint` - Update the FHIRendpoint to have your FHIR service name
         - `Scopes` - Update with Audience from your FHIR Server (under Authentication)
-      
+
       **Note:** App Services Editor automatically saves changes.
 - Test sample JavaScript app
   - Browse to App Service website URL in a new In-private / InCognito window
   - Sign in with your secondary tenant (can be primary tenant if you already have directory admin privilege) used in deploying FHIR Server Samples reference architecture
   - You should see a list of patients that were loaded into FHIR Server.
-  
+

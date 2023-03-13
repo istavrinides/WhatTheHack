@@ -68,7 +68,7 @@ az login
 if [ $? == 0 ]; then
   echosuccess "
   Your machine should be ready! Now proceed with ./deploy.sh script
-  
+
   ";
 else
   echoerr "Login into Azure failed!";

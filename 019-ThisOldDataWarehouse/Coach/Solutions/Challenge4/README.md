@@ -20,7 +20,7 @@ Build a streaming pipeline using Azure Event Hub to ingest simulated click strea
 In order to generate the source data stream for this exercise, you will need to execute sample .Net application (Step 2).  This code will randomly generate product related data, and write it to a Kafka endpoint on an Azure Event Hub.
 (Note: this solution guide was built with an Event Hub named 'test'.  If you create an Event Hub with a different name, there may be further modifications required to configuration settings in order to successfully create your data stream.)
 
-### Data Sink 
+### Data Sink
 Azure Databricks will be used to consume Event Hub, and write streaming data to Delta Lake tables stored in Azure Data Lake.
 
 ## Step by Step Guidance
@@ -29,11 +29,11 @@ Azure Databricks will be used to consume Event Hub, and write streaming data to 
 Follow Event Hub quickstart instructions [here](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create).
 
 **Step 2 - Set up and configure data source**
-Open and configure Click Stream Generator application found [here](https://github.com/alexkarasek/ClickStreamGenerator).  You will need to provide your host name and shared access policy key in the appsettings.json file.  
+Open and configure Click Stream Generator application found [here](https://github.com/alexkarasek/ClickStreamGenerator).  You will need to provide your host name and shared access policy key in the appsettings.json file.
 
-Here is a script to simplify deployment and reduce setup time for the hack.  This script is provided in the student's challenge.  
+Here is a script to simplify deployment and reduce setup time for the hack.  This script is provided in the student's challenge.
 
-``` 
+```
 az container create -g [Resource Group Name] --name [container name] --image
 alexk002/wwiclickstreamgenerator:1 --environment-variables 'hostName'='[EH Host Name]'
 'sasKeyName'='RootManageSharedAccessKey' 'sasKeyValue'='[SAS Key]' 'eventHubName'='[Event Hub Name]'

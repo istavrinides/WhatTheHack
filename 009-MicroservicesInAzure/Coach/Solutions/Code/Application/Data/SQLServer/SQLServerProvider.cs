@@ -24,8 +24,8 @@ namespace ContosoTravel.Web.Application.Data.SQLServer
             {
                 using (var connection = await _connectionProvider.GetOpenConnection(cancellationToken))
                 {
-                    CommandDefinition commandDefinition = new CommandDefinition(storedProcName, parameters, 
-                                                                                commandType: System.Data.CommandType.StoredProcedure, 
+                    CommandDefinition commandDefinition = new CommandDefinition(storedProcName, parameters,
+                                                                                commandType: System.Data.CommandType.StoredProcedure,
                                                                                 cancellationToken: cancellationToken);
                     var results = await connection.QueryAsync<RETVAL>(commandDefinition);
                     scope.Complete();

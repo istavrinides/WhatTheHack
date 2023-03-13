@@ -6,5 +6,5 @@
 
 - See solution, in solutions folder for GitHub Action Workflow file.
 
-## Solution 
+## Solution
 - [Navigate to Solution for Challenge 06](./Solution/Solution-06/Solution06.yml)

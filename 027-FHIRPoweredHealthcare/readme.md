@@ -16,7 +16,7 @@ This hack will help you:
 7. Visualize FHIR data using PowerBI.
 
 ## Scenario
-Contoso Healthcare is implementing a FHIR-based data management solution. 
+Contoso Healthcare is implementing a FHIR-based data management solution.
 Your team's assistance is needed to implement the following scenarios using FHIR Powered Healthcare hack:
    * Ingest and process patient record in HL7 FHIR or legacy formats from EHR systems into a common FHIR-based standard format and persist them into a FHIR Compliant store.
    * Generate FHIR CUD (create, update, or delete) events whenever FHIR CUD operations take place in FHIR Server for post-processing.

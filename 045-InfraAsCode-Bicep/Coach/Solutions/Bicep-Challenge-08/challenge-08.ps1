@@ -9,4 +9,3 @@ New-AzResourceGroupDeployment `
 	-ResourceGroupName $resourceGroupName `
 	-TemplateFile ./challenge-08.bicep `
 	-TemplateParameterFile ./challenge-08.parameters.json
-	

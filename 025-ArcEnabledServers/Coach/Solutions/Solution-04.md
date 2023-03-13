@@ -13,4 +13,4 @@
 
 1. From Azure Sentinel, view collected events from your Azure Arc connected machine.
 
-- In the Azure portal, navigate to the **Azure Sentinel \| Data Connectors** blade, select **Security Events** entry, and then select **Go to analytics**. 
+- In the Azure portal, navigate to the **Azure Sentinel \| Data Connectors** blade, select **Security Events** entry, and then select **Go to analytics**.

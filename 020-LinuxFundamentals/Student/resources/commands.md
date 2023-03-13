@@ -1,8 +1,8 @@
-# Linux Commands Cheat Sheet 
+# Linux Commands Cheat Sheet
 
 The command line terminal in Linux is the operating system’s most powerful component. However, due to the sheer amount of commands available, it can be intimidating for newcomers. Even longtime users may forget a command every once in a while and that is why we have created this Linux cheat sheet commands guide.
 
-In this page, we’ll present you with a curated list of the most handy Linux commands. 
+In this page, we’ll present you with a curated list of the most handy Linux commands.
 
 _Please note that those commands are for Linux in general, both RedHat-like and Debian-like distributions. There are some commands in the Package management session which may be specific for Redhat-based such as yum and rpm which do not work in Ubuntu (Debian-based)._
 
@@ -23,19 +23,19 @@ _Please note that those commands are for Linux in general, both RedHat-like and 
 |`mv [file_name1] [file_name2]`|Rename [file_name1] to [file_name2] with the command|
 |`ln -s /path/to/[file_name] [link_name]`|Create a symbolic link to a file|
 | `touch [file_name]` | Create a new file using touch |
-| `more [file_name]` | Show the contents of a file | 
+| `more [file_name]` | Show the contents of a file |
 | `cat [file_name]`  | or use the cat command |
-| `cat [file_name1] >> [file_name2]` | Append file contents to another file | 
-| `head [file_name]` | Display the first 10 lines of a file with head command | 
-| `tail [file_name]` | Show the last 10 lines of a file | 
-| `wc` | Show the number of words, lines, and bytes in a file using wc | 
-| `ls \| xargs wc` | List number of lines/words/characters in each file in a directory with the xargs command | 
-| `cut -d[delimiter] [filename]` | Cut a section of a file and print the result to standard output | 
-| `[data] \| cut -d[delimiter]` | Cut a section of piped data and print the result to standard output | 
+| `cat [file_name1] >> [file_name2]` | Append file contents to another file |
+| `head [file_name]` | Display the first 10 lines of a file with head command |
+| `tail [file_name]` | Show the last 10 lines of a file |
+| `wc` | Show the number of words, lines, and bytes in a file using wc |
+| `ls \| xargs wc` | List number of lines/words/characters in each file in a directory with the xargs command |
+| `cut -d[delimiter] [filename]` | Cut a section of a file and print the result to standard output |
+| `[data] \| cut -d[delimiter]` | Cut a section of piped data and print the result to standard output |
 | `awk '[pattern] {print $0}' [filename]` | Print all lines matching a pattern in a file |
-| `diff [file1] [file2]` | Compare two files and display differences| 
-| `source [filename]` | Read and execute the file content in the current shell| 
-| `[command] \| tee [filename] >/dev/null` | Store the command output in a file and skip the terminal output | 
+| `diff [file1] [file2]` | Compare two files and display differences|
+| `source [filename]` | Read and execute the file content in the current shell|
+| `[command] \| tee [filename] >/dev/null` | Store the command output in a file and skip the terminal output |
 
 ## Searching
 
@@ -54,7 +54,7 @@ _Please note that those commands are for Linux in general, both RedHat-like and 
 |`tar cf [compressed_file.tar] [file_name]`|Archive an existing file|
 |`tar xf [compressed_file.tar]`|Extract an archived file|
 |`tar czf [compressed_file.tar.gz]`|Create a gzip compressed tar file by running|
-|`gzip [file_name]`  | Compress a file with the .gz extension | 
+|`gzip [file_name]`  | Compress a file with the .gz extension |
 
 
 ## File Transfer
@@ -71,12 +71,12 @@ _Please note that those commands are for Linux in general, both RedHat-like and 
 |`id`|See details about the active users|
 |`last`|Show last system logins|
 |`who`|Display who is currently logged into the system with the who command|
-|`w`  | Show which users are logged in and their activity | 
+|`w`  | Show which users are logged in and their activity |
 | `groupadd [group_name]` | Add a new group by typing |
 | `adduser [user_name]` | Add a new user|
 | `usermod -aG [group_name] [user_name]` | Add a user to a group |
-| `sudo [command_to_be_executed_as_superuser]`| Temporarily elevate user privileges to superuser or root using the sudo command | 
-| `userdel [user_name] ` | Delete a user | 
+| `sudo [command_to_be_executed_as_superuser]`| Temporarily elevate user privileges to superuser or root using the sudo command |
+| `userdel [user_name] ` | Delete a user |
 | `usermod`| Modify user information with |
 | `chgrp [group-name] [directory-name]` | Change directory group|
 
@@ -152,7 +152,7 @@ _Please note that those commands are for Linux in general, both RedHat-like and 
 | Command | Description |
 |--------------|--------------|
 |`ssh user@host`|Connect to host as user|
-|`ssh host` | Securely connect to host via SSH default port 22| 
+|`ssh host` | Securely connect to host via SSH default port 22|
 | `ssh -p [port] user@host` |Connect to host using a particular port|
 
 ## File Permission
@@ -161,7 +161,7 @@ _Please note that those commands are for Linux in general, both RedHat-like and 
 |--------------|--------------|
 |`chmod 777 [file_name]`|Assign read, write, and execute permission to everyone|
 |`chmod 755 [file_name]`|Give read, write, and execute permission to owner, and read and execute permission to group and others|
-|`chmod 766 [file_name]` | Assign full permission to owner, and read and write permission to group and others| 
+|`chmod 766 [file_name]` | Assign full permission to owner, and read and write permission to group and others|
 |`chown [user] [file_name]`| Change the ownership of a file|
 |`chown [user]:[group] [file_name]`|Change the owner and group ownership of a file|
 
@@ -189,7 +189,7 @@ _Please note that those commands are for Linux in general, both RedHat-like and 
 | Command | Description |
 |--------------|--------------|
 | `let "[variable]=[value]"`|Assign an integer value to a variable|
-| `export [variable-name]` | Export a Bash variable| 
+| `export [variable-name]` | Export a Bash variable|
 | `declare [variable-name]= "[value]"` | Declare a Bash variable|
 | `set` | List the names of all the shell variables and functions|
 | `echo $[variable-name]` | Display the value of a variable|
@@ -230,11 +230,11 @@ _Please note that those commands are for Linux in general, both RedHat-like and 
 | `free -h` | Display free and used memory |
 | `lshw` | List hardware configuration information |
 | `lsblk` | See information about block devices |
-| `lspci -tv`| Show PCI devices in a tree-like diagram | 
+| `lspci -tv`| Show PCI devices in a tree-like diagram |
 | `dmidecode` |Show hardware information from the BIOS |
 | `hdparm -i /dev/disk` | Display disk data information |
 | `hdparm -tT /dev/[device]` | Conduct a read-speed test on device/disk |
-| `fsck [disk-or-partition-location]`| Run a disk check on an unmounted disk or partition | 
+| `fsck [disk-or-partition-location]`| Run a disk check on an unmounted disk or partition |
 
 
 

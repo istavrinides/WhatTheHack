@@ -27,7 +27,7 @@ Azure cheat sheet for routing precedence and route path control.
     4.  Prefer ExpressRoute connections with higher connection weight
     5.  Prefer "shortest" path - honor AS PATH prepending
     6.  Spoke-to-spoke via a single hub is NOT connected by default - **Vnet peering is non-transitive**
-    7.  Spoke-to-spoke via a single hub can be enabled by UDR (0.0.0.0/0 or specific spoke Vnet address space) to an NVA. 
+    7.  Spoke-to-spoke via a single hub can be enabled by UDR (0.0.0.0/0 or specific spoke Vnet address space) to an NVA.
 
 # Route Path Control
 
@@ -54,13 +54,13 @@ Azure cheat sheet for routing precedence and route path control.
 
 **What's the difference between them?**
 
-Let's go through the definition of each before we try to find the differences between them and how do they all fit together.  
+Let's go through the definition of each before we try to find the differences between them and how do they all fit together.
 
-- **BGP table**: The BGP table contains a list of prefixes that our peer has advertised to us on a BGP session.  
+- **BGP table**: The BGP table contains a list of prefixes that our peer has advertised to us on a BGP session.
 
-- **Routing table**: The routing table contains a list of routes we have learned from many sources, including static configuration and those learned from BGP.  
+- **Routing table**: The routing table contains a list of routes we have learned from many sources, including static configuration and those learned from BGP.
 
-- **Forwarding table**: This is the actual table a router uses to make a decision on forwarding packets. Wrongly referred by many people as the "routing table". The forwarding table contains a list of effective routes.  
+- **Forwarding table**: This is the actual table a router uses to make a decision on forwarding packets. Wrongly referred by many people as the "routing table". The forwarding table contains a list of effective routes.
 
 **Interaction between tables**
 

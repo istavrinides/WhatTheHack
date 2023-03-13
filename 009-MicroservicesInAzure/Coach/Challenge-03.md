@@ -25,5 +25,5 @@ For Bash:
 
 ```bash
 export cosmosDbAccountName="XXX"
-export cosmosPrimaryKey=$(az cosmosdb list-keys --resource-group $rg --subscription $sub --name $cosmosDbAccountName --query primaryMasterKey | tr -d '"') 
+export cosmosPrimaryKey=$(az cosmosdb list-keys --resource-group $rg --subscription $sub --name $cosmosDbAccountName --query primaryMasterKey | tr -d '"')
 ```

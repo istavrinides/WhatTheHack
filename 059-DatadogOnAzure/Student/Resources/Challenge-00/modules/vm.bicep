@@ -107,7 +107,7 @@ resource VsCseExtension 'Microsoft.Compute/virtualMachines/extensions@2022-03-01
   location: Location
  dependsOn: [
    roleAssignmentSMI
- ] 
+ ]
   properties: {
     publisher: 'Microsoft.Compute'
     type: 'CustomScriptExtension'

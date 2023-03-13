@@ -3,7 +3,7 @@
 param location string = resourceGroup().location
 
 @description('The name of the Bastion public IP address')
-param publicIpName string 
+param publicIpName string
 
 @description('The name of the Bastion host')
 param bastionHostName string
@@ -40,7 +40,7 @@ resource bastionHost 'Microsoft.Network/bastionHosts@2020-06-01' = {
         }
       }
     ]
-    
+
   }
 }
 

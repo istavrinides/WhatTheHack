@@ -13,4 +13,4 @@ appData:
 serviceDefinition:
   name: "langfactsservice"
   type: "LoadBalancer"
-   
+

@@ -39,7 +39,7 @@ In the Resources\Images folder are three folders:
 - Test
 
 The Hemlock and Japenese Cherry folders contain images of these types of plants that
-will be trained and tagged. The Test folder contains an image that will be used to 
+will be trained and tagged. The Test folder contains an image that will be used to
 perform the test prediction
 
 
@@ -198,7 +198,7 @@ foreach (var image in hemlockImages)
    trainingApi.CreateImagesFromData(project.Id, image, new List<string>() { hemlockTag.Id.ToString() });
 }
 
-// Or uploaded in a single batch 
+// Or uploaded in a single batch
 trainingApi.CreateImagesFromData(project.Id, japaneseCherryImages, new List<Guid>() { japaneseCherryTag.Id });
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -245,17 +245,17 @@ entered.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Now there is a trained endpoint, it can be used to make a prediction
 
-// Add your prediction key from the settings page of the portal 
-// The prediction key is used in place of the training key when making predictions 
+// Add your prediction key from the settings page of the portal
+// The prediction key is used in place of the training key when making predictions
 string predictionKey = GetPredictionKey("<your key here>", args);
 
-// Create a prediction endpoint, passing in a prediction credentials object that contains the obtained prediction key  
+// Create a prediction endpoint, passing in a prediction credentials object that contains the obtained prediction key
 PredictionEndpointCredentials predictionEndpointCredentials = new PredictionEndpointCredentials(predictionKey);
 PredictionEndpoint endpoint = new PredictionEndpoint(predictionEndpointCredentials);
-// Make a prediction against the new project  
+// Make a prediction against the new project
 Console.WriteLine("Making a prediction:");
 var result = endpoint.PredictImage(project.Id, testImage);
-// Loop over each prediction and write out the results  
+// Loop over each prediction and write out the results
 foreach (var c in result.Predictions)
 {
     Console.WriteLine($"\t{c.Tag}: {c.Probability:P1}");

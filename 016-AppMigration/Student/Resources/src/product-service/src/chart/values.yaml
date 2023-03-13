@@ -16,7 +16,7 @@ image:
 service:
   type: LoadBalancer
   port: 8000
-  connectionstring: replace 
+  connectionstring: replace
 
 ingress:
   enabled: false
@@ -51,4 +51,3 @@ affinity: {}
 
 aksIngress:
   baseDomain: ''
-  

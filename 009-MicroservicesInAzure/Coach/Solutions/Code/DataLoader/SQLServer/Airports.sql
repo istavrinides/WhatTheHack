@@ -24,7 +24,7 @@ GO
 
 
 CREATE PROCEDURE dbo.CreateAirport
-    @AirportCode [CHAR](3), 
+    @AirportCode [CHAR](3),
     @State [CHAR](2),
     @AirportName [VARCHAR](255),
     @CityName [VARCHAR](50),

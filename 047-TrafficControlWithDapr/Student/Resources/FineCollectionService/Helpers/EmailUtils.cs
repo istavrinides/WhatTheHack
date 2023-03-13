@@ -6,8 +6,8 @@ namespace FineCollectionService.Helpers
     public class EmailUtils
     {
         public static string CreateEmailBody(
-            SpeedingViolation speedingViolation, 
-            VehicleInfo vehicleInfo, 
+            SpeedingViolation speedingViolation,
+            VehicleInfo vehicleInfo,
             string fine)
         {
             return $@"
@@ -17,7 +17,7 @@ namespace FineCollectionService.Helpers
                             body {{
                                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                             }}
-                            table {{ 
+                            table {{
 								text-align: left;
 								padding-top: 10px;
                             }}
@@ -72,18 +72,18 @@ namespace FineCollectionService.Helpers
 							<div class='logo-bar'>&nbsp;</div>
 						</div>
                         <p>The Hague, {DateTime.Now.ToLongDateString()}</p>
-                        
+
                         <p>Dear Mr. / Miss / Mrs. {vehicleInfo.OwnerName},</p>
-                        
-                        <p>We hereby inform you of the fact that a speeding violation was detected with a 
+
+                        <p>We hereby inform you of the fact that a speeding violation was detected with a
                         vehicle that is registered to you.</p>
-						
-						<p>The violation was detected by a speeding camera. We have a digital image of your 
-                        vehicle committing the violation on record in our system. If requested by your 
+
+						<p>The violation was detected by a speeding camera. We have a digital image of your
+                        vehicle committing the violation on record in our system. If requested by your
                         solicitor, we will provide this image to you.</p>
 
 						<hr/>
-						
+
 						<p>Below you can find all the details of the violation.</p>
 
                         <p>
@@ -101,34 +101,34 @@ namespace FineCollectionService.Helpers
                                 <tr><th>Road</th><td>{speedingViolation.RoadId}</td></tr>
                                 <tr><th>Date</th><td>{speedingViolation.Timestamp.ToString("dd-MM-yyyy")}</td></tr>
                                 <tr><th>Time of day</th><td>{speedingViolation.Timestamp.ToString("hh:mm:ss")}</td></tr>
-                            </table>							
+                            </table>
                         </p>
-						
+
                         <p>
                             <b>Sanction:</b>
                             <table>
                                 <tr><th>Maxiumum speed violation</th><td>{speedingViolation.ViolationInKmh} KMh</td></tr>
                                 <tr><th>Sanction amount</th><td><div class='fine'>{fine}</div></td></tr>
-                            </table>							
-                        </p>		
+                            </table>
+                        </p>
 
 						<hr/>
-							
+
 						<p><b>Sanction handling:</b></p>
-							
-						<p>If the amount of the fine is to be determined by the prosecutor, you will receive a notice 
+
+						<p>If the amount of the fine is to be determined by the prosecutor, you will receive a notice
                         to appear in court shortly.</p>
-						
-                        <p>Otherwise, you must pay the sanctioned fine <b>within 8 weeks</b> after the date of this 
-                        email. If you fail to pay within 8 weeks, you will receive a first reminder email and <b>the 
-                        fine will be increased to 1.5x the original fine amount</b>. If you fail to pay within 8 weeks 
-                        after the first reminder, you will receive a second and last reminder email and <b>the fine 
-                        will be increased to 3x the original fine amount</b>. If you fail to pay within 8 weeks 
-                        after the second reminder, the case is turned over to the prosecutor and you will receive a 
+
+                        <p>Otherwise, you must pay the sanctioned fine <b>within 8 weeks</b> after the date of this
+                        email. If you fail to pay within 8 weeks, you will receive a first reminder email and <b>the
+                        fine will be increased to 1.5x the original fine amount</b>. If you fail to pay within 8 weeks
+                        after the first reminder, you will receive a second and last reminder email and <b>the fine
+                        will be increased to 3x the original fine amount</b>. If you fail to pay within 8 weeks
+                        after the second reminder, the case is turned over to the prosecutor and you will receive a
                         notice to appear in court.</p>
 
 						<hr/>
-									
+
 						<p>
 						Yours sincerely,<br/>
 						The Central Fine Collection Agency
@@ -136,6 +136,6 @@ namespace FineCollectionService.Helpers
                     </body>
                 </html>
             ";
-        }        
+        }
     }
 }

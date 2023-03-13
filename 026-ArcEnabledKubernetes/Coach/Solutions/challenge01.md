@@ -3,7 +3,7 @@
 ## Challenge 1 - Deploy Kubernetes cluster on GCP
 [Back](challenge00.md) - [Home](../readme.md) - [Next](challenge02.md)
 
-### Solution 
+### Solution
 Estimated Time to Complete: **90 mins**
 
 The hack starts out with getting the attendees to deploy a GKE cluster on GKE.

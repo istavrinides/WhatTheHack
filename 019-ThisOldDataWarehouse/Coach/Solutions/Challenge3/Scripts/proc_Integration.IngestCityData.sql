@@ -1,4 +1,4 @@
-CREATE Procedure Integration.IngestCityData 
+CREATE Procedure Integration.IngestCityData
 AS
 BEGIN
 

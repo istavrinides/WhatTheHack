@@ -25,7 +25,7 @@ STOP1 - Run this update and explain its behavior
 DECLARE @c SMALLINT
 DECLARE @t SMALLINT
 
-SELECT @c = (SELECT COUNT(*) FROM Sales.DimCurrency) 
+SELECT @c = (SELECT COUNT(*) FROM Sales.DimCurrency)
 
 
 UPDATE Sales.FactInternetSales SET CurrencyKey = ABS(CHECKSUM(NEWID())) % @c + 1

@@ -19,7 +19,7 @@ import org.apache.spark.sql.functions._
 
 //Read source data
 val yellowTaxiDF = sql("""
-SELECT 
+SELECT
     taxi_type,
     vendor_id,
     pickup_datetime,
@@ -68,7 +68,7 @@ SELECT
     dropoff_second,
     trip_year,
     trip_month
-  FROM taxi_db.yellow_taxi_trips_curated 
+  FROM taxi_db.yellow_taxi_trips_curated
 """)
 
 //Add extra columns
@@ -95,7 +95,7 @@ yellowTaxiDFHomogenized.printSchema
 // COMMAND ----------
 
 //Destination directory
-val destDataDirRoot = "/mnt/data/nyctaxi/curatedDir/materialized-view" 
+val destDataDirRoot = "/mnt/data/nyctaxi/curatedDir/materialized-view"
 
 //Delete any residual data from prior executions for an idempotent run
 dbutils.fs.rm(destDataDirRoot,recurse=true)
@@ -103,7 +103,7 @@ dbutils.fs.rm(destDataDirRoot,recurse=true)
 // COMMAND ----------
 
 val matViewDF = sql("""
-  SELECT DISTINCT  
+  SELECT DISTINCT
     taxi_type,
     vendor_id,
     pickup_datetime,
@@ -155,9 +155,9 @@ val matViewDF = sql("""
     dropoff_second,
     trip_year,
     trip_month
-  FROM yellow_taxi_trips_unionable 
+  FROM yellow_taxi_trips_unionable
 UNION ALL
-  SELECT DISTINCT 
+  SELECT DISTINCT
     taxi_type,
     vendor_id,
     pickup_datetime,
@@ -209,7 +209,7 @@ UNION ALL
     dropoff_second,
     trip_year,
     trip_month
-  FROM taxi_db.green_taxi_trips_curated 
+  FROM taxi_db.green_taxi_trips_curated
 """)
 
 
@@ -225,7 +225,7 @@ val acntInfo = "fs.azure.account.key."+ blobStorage
 
 //SQL Data Warehouse related settings
  val dwDatabase = "dta"
- val dwServer = "dta" 
+ val dwServer = "dta"
  val dwUser = "dta"
  val dwPass = "fy19@12345"
  val dwJdbcPort =  "1433"
@@ -242,7 +242,7 @@ spark.conf.set(
 
 matViewDF.write
      .format("com.databricks.spark.sqldw")
-     .option("url", sqlDwUrlSmall) 
+     .option("url", sqlDwUrlSmall)
      .option("dbtable", "NYCTaxiData-2")
      .option( "forward_spark_azure_storage_credentials","True")
      .option("tempdir", tempDir)
@@ -251,4 +251,4 @@ matViewDF.write
 
 // COMMAND ----------
 
-databricks secrets list 
+databricks secrets list

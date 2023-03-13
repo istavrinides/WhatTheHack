@@ -22,9 +22,9 @@ BEGIN
             , AddressType
             , rowguid
             , ModifiedDate
-            
+
     from Staging.CustomerAddress S1
-    where NOT EXISTS (SELECT CustomerID, AddressID FROM SalesLT.CustomerAddress S2 
+    where NOT EXISTS (SELECT CustomerID, AddressID FROM SalesLT.CustomerAddress S2
                         WHERE S2.CustomerID = S1.CustomerID AND S2.AddressID = S1.AddressID)
     and S1.__$operation = 2
 

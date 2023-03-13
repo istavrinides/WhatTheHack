@@ -33,19 +33,19 @@ Being the coaches guide, this content includes comments, guidance, possible gotc
 	![Create Live Event](images/1createliveevent.png)\
 	![Live Event Permissions](images/1liveeventpermissions.png)\
 	![Create Live Event](images/1liveeventsettings.png)
-	
+
 	* Ask them to join, start, and end the event.\
 	![Live Event Details](images/1liveeventdetails.png)\
 	![Create Live Event](images/1liveevent.png)
-	
+
 	* Have them locate the recording (it can take a few minutes to process), post it to Stream, and add a tab in the Headquarters channel to show those videos.\
 	![Live Event Video](images/1liveeventvideo.png)
-	
+
 	* When going to Stream - it is important to post it in the context of the group that corresponds to the emergency team. This keeps security in alignment. Locate the Group/Team in Stream first before creating the channel and uploading.\
 	![Stream](images/1stream.png)\
 	![Stream Channel](images/1streamchannel.png)\
 	![Stream in Teams](images/1streamtabinteams.png)
-	
+
 
 
 

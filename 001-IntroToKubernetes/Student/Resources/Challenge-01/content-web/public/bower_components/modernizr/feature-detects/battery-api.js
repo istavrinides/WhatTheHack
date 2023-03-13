@@ -4,5 +4,5 @@
 // By: Paul Sayre
 
 Modernizr.addTest('battery',
-	!!Modernizr.prefixed('battery', navigator)
+  !!Modernizr.prefixed('battery', navigator)
 );

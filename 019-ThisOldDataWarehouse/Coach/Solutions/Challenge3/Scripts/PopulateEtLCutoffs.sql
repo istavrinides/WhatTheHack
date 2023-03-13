@@ -5,7 +5,7 @@ ADD [GroupId] [int] ;
 
 ALTER TABLE Integration.[ETL Cutoff]
 ADD [SequenceId] [int] ;
-	
+
 ALTER TABLE Integration.[ETL Cutoff]
 ADD [isActive] [bit] ;
 

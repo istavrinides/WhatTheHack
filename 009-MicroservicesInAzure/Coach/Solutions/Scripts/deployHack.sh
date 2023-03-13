@@ -33,10 +33,10 @@ dataServiceUri=$(az container show -g $rg -n $baseName-data --query "ipAddress.f
 #create itinerary service ACI
 az container create --subscription $sub --resource-group $rg --name $baseName-itinerary --image microservicesdiscovery/travel-itinerary-service --dns-name-label $baseName-itineraryservice --environment-variables DataAccountName=$cosmoAccountName DataAccountPassword=$cosmosPrimaryKey ApplicationInsights__InstrumentationKey=$appInsightsKey --restart-policy OnFailure
 itineraryServiceUri=$(az container show -g $rg -n $baseName-itinerary --query "ipAddress.fqdn" | tr -d '"')
-	
-#create and deploy app service container 
+
+#create and deploy app service container
 az appservice plan create --name asp-discovery --resource-group $rg --is-linux --location $loc --sku S1 --number-of-workers 1 --subscription $sub
-az webapp create --subscription $sub --resource-group $rg --name $baseName-web --plan asp-discovery -i microservicesdiscovery/travel-web 
+az webapp create --subscription $sub --resource-group $rg --name $baseName-web --plan asp-discovery -i microservicesdiscovery/travel-web
 az webapp config appsettings set  --resource-group $rg --subscription $sub --name $baseName-web --settings DataAccountName=$cosmoAccountName DataAccountPassword=$cosmosPrimaryKey ApplicationInsights__InstrumentationKey=$appInsightsKey DataServiceUrl="http://$dataServiceUri/" ItineraryServiceUrl="http://$itineraryServiceUri/"
 
 

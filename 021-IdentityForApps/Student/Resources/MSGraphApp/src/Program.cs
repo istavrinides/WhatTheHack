@@ -81,7 +81,7 @@ namespace b2c_ms_graph
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"An error occurred: {ex}");
                 Console.ResetColor();
-            }           
+            }
             Console.ReadLine();
         }
 

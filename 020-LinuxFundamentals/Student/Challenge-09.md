@@ -2,10 +2,10 @@
 
 [< Previous Challenge](./Challenge-08.md) - **[Home](../README.md)** - [Next Challenge >](./Challenge-10.md)
 
-## Pre-requisites 
+## Pre-requisites
 
 - Create a data disk with the size of 5GB
-- Add the disk the the virtual machine 
+- Add the disk the the virtual machine
 
 ## Description
 
@@ -31,7 +31,7 @@ This challenge you will be working with disks and partitions. Will be an opportu
 
 1. Check if the disk was added to the virtual machine
 2. Make sure you created the partitions as expected
-3. Validate on both partitions the file system created 
+3. Validate on both partitions the file system created
 4. Make sure you have created the the respective directories inside `mnt` directory
 5. Make sure the partitions are properly mounted
 6. Ensure you can create files on the partitions

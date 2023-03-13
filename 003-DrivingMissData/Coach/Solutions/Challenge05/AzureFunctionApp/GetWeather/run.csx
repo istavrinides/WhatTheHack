@@ -54,7 +54,7 @@ public static async Task Run(Stream inputData, string name, TraceWriter log)
                 // Assemble the full URL for this API call
                 string address = apiRoot + $"{apiKey}/{pickup_latitude},{pickup_longitude},{pickup_datetime_darksky}?exclude=currently,minutely,hourly,alerts,flags";
                 log.Info(address);
-                
+
                 // Call the API and get an HTTP response
                 HttpResponseMessage response = await httpClient.GetAsync(address);
 

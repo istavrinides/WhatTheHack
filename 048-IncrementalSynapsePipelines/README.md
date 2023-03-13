@@ -1,14 +1,14 @@
-# What The Hack - Incremental Synapse Pipelines <br> <i>Utilizing Change Data Capture in Azure SQL</i> 
+# What The Hack - Incremental Synapse Pipelines <br> <i>Utilizing Change Data Capture in Azure SQL</i>
 
 ## Introduction
-If you accept the challenge to attend, you and your teammates will work together to help take data from a transactional Azure SQL database and copy it into a Synapse Dedicated Pool to be used as a reporting warehouse.  
+If you accept the challenge to attend, you and your teammates will work together to help take data from a transactional Azure SQL database and copy it into a Synapse Dedicated Pool to be used as a reporting warehouse.
 
-But wait there’s more!  As you add data to your transactional database, it needs to automatically make it to the proper tables in the reporting warehouse so we can see the changes in near real time in a report.  
+But wait there’s more!  As you add data to your transactional database, it needs to automatically make it to the proper tables in the reporting warehouse so we can see the changes in near real time in a report.
 
 Four words…  <B>Trigger an Incremental Copy</B>.
 
 ## Learning Objectives
-Upon completion of this Hack, you will be able to setup an Azure environment to incrementally copy data from an Azure SQL Database to a Synapse Dedicated Pool utilizing the Change Data Capture functionality within Azure SQL. 
+Upon completion of this Hack, you will be able to setup an Azure environment to incrementally copy data from an Azure SQL Database to a Synapse Dedicated Pool utilizing the Change Data Capture functionality within Azure SQL.
 
 You will also have utilizized how to implement a watermark table to validate the last copied execution in case of a trigger failure.
 

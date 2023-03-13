@@ -56,7 +56,7 @@ resource vmss 'Microsoft.Compute/virtualMachineScaleSets@2022-03-01' = {
   location: Location
   identity: {
     type: 'UserAssigned'
-    userAssignedIdentities: { '${userManagedIdentity.id}': {} } 
+    userAssignedIdentities: { '${userManagedIdentity.id}': {} }
   }
   sku: {
     name: 'Standard_DS3_v2'

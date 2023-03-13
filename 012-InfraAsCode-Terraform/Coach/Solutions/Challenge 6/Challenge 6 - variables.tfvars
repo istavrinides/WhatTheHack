@@ -11,7 +11,7 @@ resource_group_name = "WTHTFRG"
 virtual_network_name = "WTHVNetTF"
 virtual_network_address_space = ["10.1.0.0/16"]
 
-subnet = { 
+subnet = {
     name = "default"
     address_prefix = "10.1.0.0/24"
 }
@@ -51,14 +51,14 @@ azurerm_public_ip = {
     name = "myPublicIP"
     allocation_method = "Dynamic"
 }
-azurerm_storage_account = {    
+azurerm_storage_account = {
     account_replication_type = "LRS"
     account_tier = "Standard"
 }
 
 azurerm_network_interface_ip_configuration =  {
         name                          = "WTHUbuntuNICConfiguration"
-        private_ip_address_allocation = "Dynamic"        
+        private_ip_address_allocation = "Dynamic"
 }
 
 os_profile = {

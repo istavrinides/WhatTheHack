@@ -46,7 +46,7 @@ namespace TollBooth
             var key = Environment.GetEnvironmentVariable("eventGridTopicKey");
 
             _log.LogInformation($"Sending license plate data to the {eventType} Event Grid type");
-            
+
             var events = new List<Event<LicensePlateData>>
             {
                 new Event<LicensePlateData>()

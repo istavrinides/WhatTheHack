@@ -15,18 +15,18 @@ In Azure DevOps we can use Azure Pipelines to automate deploying our Azure infra
 
 - Create a release pipeline using the **Empty Job** template, call it `Infrastructure Release`
 - A release pipeline starts with an `Artifact`. In our pipeline we will be using the master branch of our Azure Repo.
-- Next lets create the first stage in our Infrastructure Release to deploy our ARM template to Dev. Name the sage `Dev`, and it should have a single `Azure Resource Group Deployment` task. 
+- Next lets create the first stage in our Infrastructure Release to deploy our ARM template to Dev. Name the sage `Dev`, and it should have a single `Azure Resource Group Deployment` task.
    - The task will ask you what Azure Subscription, Resource Group, and Resource Group Location you wish to use.
-   - The task will also ask you what Template you want to deploy. Use the `...` to pick the one in the ARM templates folder. 
+   - The task will also ask you what Template you want to deploy. Use the `...` to pick the one in the ARM templates folder.
    - You will need to override many of the templates parameters, replacing the `<prefix>` part with a unique lowercase 5 letter name.
-- You should now be able to save and execute your infrastructure release pipeline successfully and see the dev environment out in Azure. 
+- You should now be able to save and execute your infrastructure release pipeline successfully and see the dev environment out in Azure.
 - If everything worked, go ahead and clone the `dev` stage two more times for `test` and `prod`.
-   - The only change you need to make in the `test` and `prod` stages is changing the webAppName template parameter to `<prefix>devops-test` and `<prefix>devops-prod` respectively. 
-- You should now be able to save and execute your infrastructure release pipeline successfully and see all three environments out in Azure. 
+   - The only change you need to make in the `test` and `prod` stages is changing the webAppName template parameter to `<prefix>devops-test` and `<prefix>devops-prod` respectively.
+- You should now be able to save and execute your infrastructure release pipeline successfully and see all three environments out in Azure.
 
 ## Success Criteria
 
-1. Your infrastructure release should complete without any errors and you should see all three environments out in Azure. 
+1. Your infrastructure release should complete without any errors and you should see all three environments out in Azure.
 
 ## Learning Resources
 

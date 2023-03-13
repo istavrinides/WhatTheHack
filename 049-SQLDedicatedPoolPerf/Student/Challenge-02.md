@@ -9,7 +9,7 @@
 
 In this challenge you will dig into best practices you have to consider writing query for your data warehouse.
 
-You can find all the files for this challnge into the Zip file provided by your coach at this path: _./Resources/Challenge-02/_ 
+You can find all the files for this challnge into the Zip file provided by your coach at this path: _./Resources/Challenge-02/_
 
 ## Description
 
@@ -27,8 +27,8 @@ Were all statistics in place when you ran the first attempt ?
 
 ### Replicated Tables
 
-Despite the query is leveraging multiple Replicated Table users are complaining about poor performance and they noticed some potentially un-necessary data movement. 
-Could you help fixing it and improving the performance ? 
+Despite the query is leveraging multiple Replicated Table users are complaining about poor performance and they noticed some potentially un-necessary data movement.
+Could you help fixing it and improving the performance ?
   - Open [C2_3_Replicated_Tables_and_Join.sql](./Resources/Challenge-02/C2_2_Replicated_Tables_and_Join.sql?raw=true) and explain why replicated Tables used by proposed query need data movement affecting performance.
     - Is the replicated table cache ready ?
     - Which factors can affect the cache ?
@@ -39,7 +39,7 @@ Users are complaining an important query is taking much more than expected to co
 
 - Open [C2_2_Incompatible_Join.sql](./Resources/Challenge-02/C2_3_Incompatible_Join.sql?raw=true) and try to optimize the proposed query.
 Use the suggested T-SQL command to investigate this issue.
-  - Are tables used by the query using the same distribution column ? 
+  - Are tables used by the query using the same distribution column ?
   - Is this query using a compatible join ?
 
 ## Success Criteria

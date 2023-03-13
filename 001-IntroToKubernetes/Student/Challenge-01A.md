@@ -25,11 +25,11 @@ This is a three step process which any Azure professional should be familiar wit
 
 **NOTE:** If you are using [Azure Cloud Shell](https://shell.azure.com) to run this hack, you will need to upload the `Resources.zip` file provided by your coach into the Cloud Shell.  Unpack the `Resources.zip` file there first, and then proceed with the instructions below.
 
-1. Log into your Azure Subscription with the Azure CLI: 
+1. Log into your Azure Subscription with the Azure CLI:
     ```
     az login
     ```
-1. Create a new Resource Group: 
+1. Create a new Resource Group:
     ```
     az group create --name <resource-group-name> --location <azure-region>
     ```
@@ -44,10 +44,10 @@ This is a three step process which any Azure professional should be familiar wit
         - Have lower characters
         - Have upper characters
         - Have a digit
-        - Have a special character 
+        - Have a special character
 
 When the deployment is complete, you can ssh into the build machine using port 2266 on the VMs public IP:
-- `ssh -p 2266 wthadmin@<VM Public IP>` 
+- `ssh -p 2266 wthadmin@<VM Public IP>`
 - Verify that Docker and Azure CLI are installed on the VM.
 
 ### Build & Run the FabMedical Application
@@ -58,7 +58,7 @@ When the deployment is complete, you can ssh into the build machine using port 2
 	- To start the app, run `node ./server.js &`
 	- Verify the API app runs by hitting its URL with one of the three function names. Eg: **<http://localhost:3001/speakers>**
 - Repeat for the steps above for the content-web app which is located in the `/content-web` folder, but verify it's available via a browser on the Internet!
-	- **NOTE:** The content-web app expects an environment variable named `CONTENT_API_URL` that points to the API app's URL. 
+	- **NOTE:** The content-web app expects an environment variable named `CONTENT_API_URL` that points to the API app's URL.
 
 ### Create Dockerfiles to Containerize the FabMedical Application
 
@@ -76,9 +76,9 @@ When the deployment is complete, you can ssh into the build machine using port 2
 
 ### Run the Containerized FabMedical Application with Docker
 
-- Run both containers you just built and verify that it is working. 
+- Run both containers you just built and verify that it is working.
 	- **Hint:** Run the containers in 'detached' mode so that they run in the background.
-	- **NOTE:** The containers need to run in the same network to talk to each other. 
+	- **NOTE:** The containers need to run in the same network to talk to each other.
 		- Create a Docker network named "fabmedical"
 		- Run each container using the "fabmedical" network
 		- **Hint:** Each container you run needs to have a "name" on the fabmedical network and this is how you access it from other containers on that network.

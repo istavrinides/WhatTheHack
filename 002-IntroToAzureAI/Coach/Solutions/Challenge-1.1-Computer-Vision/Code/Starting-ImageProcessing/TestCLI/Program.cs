@@ -43,7 +43,7 @@ namespace TestCLI
                     RunQuery(q.Value());
                     return 0;
                 }
-                else 
+                else
                 {
                     app.ShowHelp("Must provide a directory to process");
                     return -1;
@@ -92,7 +92,7 @@ namespace TestCLI
                 ".jpeg",
                 ".gif"
             };
-            foreach (var file in 
+            foreach (var file in
                 from file in Directory.EnumerateFiles(dir, "*", SearchOption.AllDirectories)
                 where imageExtensions.Contains(Path.GetExtension(file))
                 select file)

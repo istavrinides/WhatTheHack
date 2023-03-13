@@ -1,6 +1,6 @@
 // Create the main myMSALObj instance
 // configuration parameters are located at authConfig.js
-const myMSALObj = new Msal.UserAgentApplication(msalConfig); 
+const myMSALObj = new Msal.UserAgentApplication(msalConfig);
 
 let accessToken;
 
@@ -12,8 +12,8 @@ function authRedirectCallBack(error, response) {
       console.log(error);
   } else {
       if (response.tokenType === "id_token") {
-          console.log("id_token acquired at: " + new Date().toString()); 
-          
+          console.log("id_token acquired at: " + new Date().toString());
+
           if (myMSALObj.getAccount()) {
             showWelcomeMessage(myMSALObj.getAccount());
           }
@@ -73,4 +73,3 @@ function getTokenRedirect(request, endpoint) {
 function seePatients() {
   getTokenRedirect(loginRequest, fhirConfig.fhirEndpoint);
 }
-  

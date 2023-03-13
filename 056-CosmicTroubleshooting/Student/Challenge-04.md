@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Stuff and More Stuff Co. has decided that it needs to introduce ML capabilities in their platform to assist their users to discover more products that are of interest to them based on their interactions with the site. 
+Stuff and More Stuff Co. has decided that it needs to introduce ML capabilities in their platform to assist their users to discover more products that are of interest to them based on their interactions with the site.
 
 For this, they are capturing ClickStream data in the `clickstream` container. However, when trying to leverage that dataset, they have seen that they would need to scale the container to a high amount of RU/s for their queries to be effective. They will need a different strategy to do analytics over that data set.
 
@@ -14,19 +14,19 @@ In this challenge, you will properly configure the `clickstream` container to en
 
 You will need to run the deployment script under the `/Challenge04/` folder of the Resources.zip file given by your coach. To do this, please run the respective PowerShell or Bash script as below:
 
-- Powershell: 
-  ``` 
+- Powershell:
+  ```
   # Update your Az Powershell commandlets
   Update-Module Az
 
   # Connect to your Azure Account
   Connect-AzAccount
-  
+
   # Deploy the infrastructure
   # Please make sure you are using Powershell v7.2 or newer
   # You might need to unblock the file
   # You will need to provide your user's Principal Id (objectId) in you Azure AD tenant
-  .\deploy.ps1 
+  .\deploy.ps1
   ```
 - Bash:
   ```

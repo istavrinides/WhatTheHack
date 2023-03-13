@@ -19,12 +19,12 @@ The goals for this challenge include understanding:
 ## Description
 
 -	Extend ARM template to:
-    - Add a second webserver VM 
+    - Add a second webserver VM
     - Add a public Load Balancer
         - Put the webservers in a backend pool
         - Create frontend pool enabling port 80 to website
     - Ensure the VMs are highly available!
-    
+
 ## Success Criteria
 
 1. Verify you can access the website at the public IP address of the Load Balancer.

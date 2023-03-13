@@ -13,7 +13,7 @@ In a previous challenge we deployed the app on Azure but into an Azure Docker-ma
 ## Challenges
 
 1. Provision an Azure Web App Service for Containers via Infrastructure-as-Code from within Azure Cloud Shell. The approach here is to leverage the Azure CLI (not the Azure portal) by executing a series of bash commands. Do you remember? *Friends don't let friends use UI to provision Azure services, right? ;)*
-1. Take the same approach to provision an Azure Container Registry (ACR) to push your container in it. 
+1. Take the same approach to provision an Azure Container Registry (ACR) to push your container in it.
 1. Deploy the app in your Azure Web App Service for Containers by pulling the Docker image from your ACR previously created, test it as an end-user, and play a game once deployed there.
 
 ## Success criteria

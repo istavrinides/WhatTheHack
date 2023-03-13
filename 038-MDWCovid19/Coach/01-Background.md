@@ -56,7 +56,7 @@ help you coach your team during the Hack itself.
 
 ### 3. Prepare to support your team and guide them to answers
 
-There is no set way to accomplish the scussess criteria as multiple tools could be used (i.e. Synapse, DF, Pure SQL, Data Bricks) and will depend on your teams expertise. 
+There is no set way to accomplish the scussess criteria as multiple tools could be used (i.e. Synapse, DF, Pure SQL, Data Bricks) and will depend on your teams expertise.
 
 The coaches guide in each section is to help you prevent your team from gotchas and not to provide answers.
 

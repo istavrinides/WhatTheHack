@@ -8,7 +8,7 @@ In this challenge, you will need to deploy a server to your Azure subscription. 
 
 Once deployed, you will install the Azure Arc agent on the server and confirm that the server is visible from the Azure portal as a resource by using [Resource Graph Explorer](https://docs.microsoft.com/en-us/azure/governance/resource-graph/first-query-portal).
 
-1. Deploy a server running a [supported OS](https://docs.microsoft.com/en-us/azure/azure-arc/servers/agent-overview#supported-operating-systems) to your Azure subscription. Be sure that the server you deploy has a public IP address. 
+1. Deploy a server running a [supported OS](https://docs.microsoft.com/en-us/azure/azure-arc/servers/agent-overview#supported-operating-systems) to your Azure subscription. Be sure that the server you deploy has a public IP address.
 
 - In the browser window where you signed to your Azure subscription, in the PowerShell session in the Cloud Shell pane, run the following to create a resource group that will be hosting the lab VM, from which you will be running the challenges (replace the `[Azure_region]` placeholder with the name of an Azure region you intend to use to host Azure resources):
 
@@ -34,7 +34,7 @@ Once deployed, you will install the Azure Arc agent on the server and confirm th
     | Host Admin Password | **demo@pass123** |
 
 - Once deployment completes, add a rule allowing inbound RDP connectivity to the network security group associated with the **archhv-vm-nic1** network adapter.
-- Connect to the newly deployed Azure VM **arcchhv-vm** via Remote Desktop. 
+- Connect to the newly deployed Azure VM **arcchhv-vm** via Remote Desktop.
 - Within the Remote Desktop session to **arcchhv-vm**, disable Internet Explorer Enhanced Security, use Internet Explorer to navigate to [Windows Server Evaluations](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019), and download the Windows Server 2019 **VHD** file to the **F:\VHDs** folder.
 - Start Hyper-V manager and create a new Hyper-V VM with the following settings (leave others with their default values):
 

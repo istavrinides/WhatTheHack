@@ -19,7 +19,7 @@ Your challenge is to:
 
 - Extend the Bicep template to configure a webserver on the Linux VM you deployed.
 - There are two options for how to do this:
-    
+
     - Option 1:
         - Host the script file in a secure artifact (staging) location that is only accessible to the Azure Resource Manager.
         - Pull the website configuration script from the artifact location.

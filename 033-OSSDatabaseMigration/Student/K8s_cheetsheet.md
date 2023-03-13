@@ -12,7 +12,7 @@ az aks get-credentials --name ossdbmigration --resource-group OSSDBMigration
 kubectl get nodes
 ```
 
-### Display all the namespaces 
+### Display all the namespaces
 
 ```
 kubectl get ns
@@ -86,5 +86,5 @@ kubectl -n oracle exec deploy/oracle -it -- /bin/bash
 
 ### View the deployment logs of the container(s)
 ```bash
-kubectl -n {infrastructure.namespace goes here} logs deploy/contosopizza --tail=5000 #Or omit '--tail 5000' if you want to see the environment variables that were used at deployment time 
+kubectl -n {infrastructure.namespace goes here} logs deploy/contosopizza --tail=5000 #Or omit '--tail 5000' if you want to see the environment variables that were used at deployment time
 ```

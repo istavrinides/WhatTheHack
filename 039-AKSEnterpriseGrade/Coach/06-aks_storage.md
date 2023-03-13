@@ -67,7 +67,7 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: mssql
-                key: SA_PASSWORD 
+                key: SA_PASSWORD
           - name: ACCEPT_EULA
             value: \"Y\"
           ports:
@@ -142,7 +142,7 @@ remote "kubectl -n sql exec -it $pod_name -- rm /var/opt/mssql/testfile"
 This is a example output of the `dd` command:
 
 ```
-1073741824 bytes (1.1 GB, 1.0 GiB) copied, 50.4886 s, 21.3 MB/s 
+1073741824 bytes (1.1 GB, 1.0 GiB) copied, 50.4886 s, 21.3 MB/s
 ```
 
 Note the bandwidth, 21.3 MB/s, roughly matching the maximum performance of a P2 disk (check [Azure Managed Disks Pricing](https://azure.microsoft.com/pricing/details/managed-disks/)).
@@ -233,7 +233,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: mssql
-              key: SA_PASSWORD 
+              key: SA_PASSWORD
         volumeMounts:
         - name: mssqldb
           mountPath: /var/opt/mssql

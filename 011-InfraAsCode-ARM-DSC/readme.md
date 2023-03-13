@@ -26,7 +26,7 @@ This hack will help you learn:
 
 ## Challenges
 
-This hack is split into two parts: 
+This hack is split into two parts:
 1. [ARM Template Challenges](#arm-template-challenges)
 1. [PowerShell DSC Challenges](#powershell-dsc-challenges)
 
@@ -88,7 +88,7 @@ You will want to prepare your machine with the following to help complete the Ch
 
 For more details, see: [IaC ARM-DSC Hack - Prerequisites](./Student/Prerequisites.md)
 
-## Repository Contents 
+## Repository Contents
 - `../Coach`
   - Coach's Guide and related files
 - `../Coach/Solutions`

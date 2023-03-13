@@ -6,6 +6,6 @@ namespace PartsUnlimited.Hubs
     [HubName("Announcement")]
     public class AnnouncementHub : Hub
     {
-       
+
     }
 }

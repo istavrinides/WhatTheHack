@@ -5,7 +5,7 @@ Welcome to the coach's guide for the MLOps What The Hack. Here you will find lin
 
 Also remember that this hack includes a optional [lecture presentation](MLOpsLectures.pptx) that features short presentations to introduce key topics associated with each challenge. It is recommended that the host present each short presentation before attendees kick off that challenge.
 
-## Solutions 
+## Solutions
 
 -  [Challenge 0: Prerequisities](Solution-00.md)
 -  [Challenge 1: Incorporate your locally trained machine learning code into Azure DevOps](Solution-01.md)

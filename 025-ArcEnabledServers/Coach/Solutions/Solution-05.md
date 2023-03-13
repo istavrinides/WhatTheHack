@@ -5,7 +5,7 @@
 ## Notes & Guidance
 
 
-Pair with another member of your team and [Oonboard their Azure subscription](https://docs.microsoft.com/en-us/azure/lighthouse/how-to/onboard-customer) into your Azure Lighthouse subscription. 
+Pair with another member of your team and [Oonboard their Azure subscription](https://docs.microsoft.com/en-us/azure/lighthouse/how-to/onboard-customer) into your Azure Lighthouse subscription.
 They should enable delegated access of your Azure Arc enabled server to you.
 
 - In the *provider subscription*, use the Azure portal to identify the Azure AD tenant Id.
@@ -13,13 +13,13 @@ They should enable delegated access of your Azure Arc enabled server to you.
 - In the *customer subscription*, identify the Id of the **Contributor** built-in RBAC role by running the following from a PowerShell session of in the Cloud Shell pane of the Azure portal.
 
    ```pwsh
-   (Get-AzRoleDefinition -name 'Contributor').Id   
+   (Get-AzRoleDefinition -name 'Contributor').Id
    ```
 
 - In the *customer subscription*, verify that the user account used to onboard the service provider is explicitly assigned the **Owner** role in the subscription. If not, make sure to assign it.
 - In the browser window displaying the *customer subscription* in the Azure portal, open another tab, navigate to the [Azure Lighthouse samples](https://github.com/Azure/Azure-Lighthouse-samples), and select the **Deploy to Azure** button next to the **Azure Lighthouse - Subscription Deployment** entry. On the **Custom deployment** blade, perform a deployment with the following settings (leave others with their default values):
 
-    | Setting | Value | 
+    | Setting | Value |
     | --- | --- |
     | Subscription | the name of the *customer subscription*  |
     | Region | the name of the Azure region where you deployed all of the resources |

@@ -3,7 +3,7 @@
 **[Home](../README.md)** - [Next Challenge>](./Challenge-02.md)
 
 
-## Introduction 
+## Introduction
 
 In this challenge you will decide on an architecture for your Sentinel workspace(s) and what information will be stored in that Log Analytics workspace.  Then you will add Sentinel to that workspace and confirm you can now access Sentinel.  Next, you will deploy agents to get data into the log analytics workspace.
 
@@ -48,12 +48,12 @@ The following articles will help you decide on an architecture, explain the alte
 - **[Visualizing Data](https://docs.microsoft.com/en-us/azure/sentinel/monitor-your-data)** </br>
 
 
-## Tips 
+## Tips
 
 Don't overthink the architecture, the guide here is to get you to understand the options. Ask yourself why would I need multiple Sentinel workspaces, and what is the impact of doing so?
 For the workbook, don't create one, use an existing workbook.
 
-## Advanced Challenges 
+## Advanced Challenges
 
 *Too comfortable?  Eager to do more?  Try these additional challenges!*
 

@@ -4,7 +4,7 @@
 
 ## Introduction
 
-A smart cloud solution architect always has the right tools in their toolbox. 
+A smart cloud solution architect always has the right tools in their toolbox.
 
 ## Description
 
@@ -26,9 +26,9 @@ In this challenge we'll be setting up all the tools we will need to complete our
 
 ## Learning Resources
 
-- Azure Cloud Shell:  
+- Azure Cloud Shell:
   - [https://docs.microsoft.com/en-us/azure/cloud-shell/overview](https://docs.microsoft.com/en-us/azure/cloud-shell/overview)
-- Install the Azure CLI: 
+- Install the Azure CLI:
   - [https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
-- Azure CLI Reference: 
+- Azure CLI Reference:
   - [https://docs.microsoft.com/en-us/cli/azure/reference-index?view=azure-cli-latest](https://docs.microsoft.com/en-us/cli/azure/reference-index?view=azure-cli-latest)

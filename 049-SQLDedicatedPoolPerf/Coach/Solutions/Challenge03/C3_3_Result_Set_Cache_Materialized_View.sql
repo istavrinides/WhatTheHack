@@ -21,7 +21,7 @@ GO
 
 
 --Pointing your Dedicated SQL Pool
-SELECT 
+SELECT
 	Fis.SalesTerritoryKey
 	,Fis.OrderDateKey
 	, Dsr.SalesReasonName
@@ -49,7 +49,7 @@ GO
 /****************************************************************************************
 STEP 3 of 7 - Run the query again, it should faster than previous execution
 ****************************************************************************************/
-SELECT 
+SELECT
 	Fis.SalesTerritoryKey
 	,Fis.OrderDateKey
 	, Dsr.SalesReasonName
@@ -67,8 +67,8 @@ GO
 
 /****************************************************************************************
 STEP 4 of 7 - Check the MPP plan.
-Requests:	
-checking sys.dm_pdw_exec_requests, result_cache_hit should be 1 
+Requests:
+checking sys.dm_pdw_exec_requests, result_cache_hit should be 1
 
 Steps:
 It should be a one step MPP plan and should use 1 ReturnOperation step
@@ -115,7 +115,7 @@ GO
 /****************************************************************************************
 STEP 6 of 7 - Disabling the cache and create Materialized view (it should take few minutes)
 
-No need to specify the Name of the Materialized view, 
+No need to specify the Name of the Materialized view,
 the query optimizer will automatically consider it, so Cx doesn't need to change their code to benefit from MV.
 
 ****************************************************************************************/

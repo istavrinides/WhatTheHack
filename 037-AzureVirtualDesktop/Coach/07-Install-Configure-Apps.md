@@ -6,7 +6,7 @@
 
 ### MSIX Packaging
 
-- Students will need to use the MSIX Packaging tool MS Store app to convert app installers to .msix format. 
+- Students will need to use the MSIX Packaging tool MS Store app to convert app installers to .msix format.
 - [Use Self-Signed Cert Script](https://raw.githubusercontent.com/DeanCefola/PowerShell-Scripts/master/Certificate_Self%20Signed.ps1)
 - Put Cert into local computer *Trusted People* store
 - [Download MSIXMgr Tool](https://aka.ms/msixmgr)
@@ -15,14 +15,14 @@
 - MSIX AppAttach Permissions
     - Create AD Group for US,UK,Japan Session Hosts
     - Sync to Azure with Azure AD Connect
-    - Verify Group membership in Azure AD 
+    - Verify Group membership in Azure AD
     - Assign Azure Files Share **Contributor** permissions to AD Comptuer Group for the correct regions
     - Assign Azure Files Share **READ** permissions to AD Users Groups for the correct regions
     - Assign NTFS Permissions for AD Computer and Users Groups, matching Azure Files Permissions
 
 ### User Assignments
 
-Follow the tables below to know which applications need to be packaged as MSIX vs what is **ALREADY** included in the Images.  
+Follow the tables below to know which applications need to be packaged as MSIX vs what is **ALREADY** included in the Images.
 **NOTE:** Office Apps are already included in the Image.**
 
 #### Application Deployment Options
@@ -39,7 +39,7 @@ Teams       | X                        |                 |
 Chrome      | X                        |                 |
 Acrobat Reader| X                      |                 |
 Notepad++   |                          | X               |
-VS Code (Dev) |                        | X               |  
+VS Code (Dev) |                        | X               |
 
 - Students will need to assign the correct applications through the app groups to the correct users.
     * Japan (Personal Pool) only have a Desktop application group.  Add MSIX app as a application to that DAG.
@@ -48,7 +48,7 @@ VS Code (Dev) |                        | X               |
 
 Applications    | Japan Users (Devs)  |   UK Users (Remote)   |   US Users (General)  |
 ----------------|:-------------------:|:---------------------:|:---------------------:|
-Word            |                     |                       | X                     |  
+Word            |                     |                       | X                     |
 Excel           |                     |                       | X                     |
 PowerPoint      |                     |                       | App Masking           |
 OneNote         |                     |                       | App Masking           |

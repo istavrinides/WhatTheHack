@@ -17,7 +17,7 @@ select * from SalesLT.CustomerAddress order by CustomerID DESC
 
 
 Select C.CustomerID, C.firstname, C.lastname, C.phone, C.companyname, A.AddressLine1, A. City, A.StateProvince, A.Postalcode, A.CountryRegion
-From SalesLT.Customer C 
+From SalesLT.Customer C
 inner join SalesLT.CustomerAddress CA on C.CustomerID=Ca.CustomerID
 inner join SalesLT.Address A on CA.AddressID=A.AddressID
 order by C.customerID DESC

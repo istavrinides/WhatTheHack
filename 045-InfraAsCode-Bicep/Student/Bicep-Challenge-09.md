@@ -10,7 +10,7 @@ The goals of this challenge include understanding:
 
 ## Description
 
-We have provided a script (`install_apache_vmss.sh`) that configures Apache web server on a Linux VMSS. When run on an individual VM instance, the script deploys a static web page that should be available at: `http://<PublicIPofTheLoadBalancer>/wth.html`  
+We have provided a script (`install_apache_vmss.sh`) that configures Apache web server on a Linux VMSS. When run on an individual VM instance, the script deploys a static web page that should be available at: `http://<PublicIPofTheLoadBalancer>/wth.html`
 
 You can find the script in the Resources folder for **Bicep-Challenge-09**.
 

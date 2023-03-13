@@ -1,5 +1,5 @@
 param AddressPrefixes array
-param Location string 
+param Location string
 param Subnets array
 param VirtualNetworkName string
 

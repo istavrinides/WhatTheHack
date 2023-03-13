@@ -119,7 +119,7 @@ NAME                                       CAPACITY   ACCESS MODES   RECLAIM POL
 pvc-b43420ee-b94b-4621-b60b-2ce3a03c45bc   5Gi        RWO            Delete           Bound    default/managed-disk-claim   default                 35s
 ```
 
-### Stream content of persisted file 
+### Stream content of persisted file
 
 ```
 2021-03-24:23:45:44 - disk-app-78d66989-dmr55
@@ -160,7 +160,7 @@ NAME               TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)        AG
 managed-disk-svc   LoadBalancer   10.0.142.223   20.42.39.51   80:32581/TCP   2m48s
 ```
 
-### Stream content of persisted file 
+### Stream content of persisted file
 
 ```
 Every 1.0s: curl -s 20.42.39.51 | tail | head -20                                       ubuntu: Thu Mar 25 00:05:18 2021
@@ -270,7 +270,7 @@ NAME               TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)        AG
 files-app          LoadBalancer   10.0.129.252   20.42.33.25   80:30759/TCP   12m
 ```
 
-### Stream content of persisted file 
+### Stream content of persisted file
 
 ```
 Every 1.0s: curl -s 20.42.33.25 | tail | head -20                                       ubuntu: Thu Mar 25 00:34:28 2021

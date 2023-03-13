@@ -57,7 +57,7 @@ param jumpboxVmUsername string = 'svradmin'
 @secure()
 @minLength(8)
 @description('Jumphost virtual machine password')
-param jumpboxVmPassword string 
+param jumpboxVmPassword string
 
 var laws_name_var = 'laws-${base_name}'
 var app_insights_name_var = 'ai-${base_name}'
@@ -122,7 +122,7 @@ module nsgModule 'modules/nsg.bicep' = {
 }
 
 module apimModule 'modules/apim.bicep' = {
-  name: apim_name_var    
+  name: apim_name_var
   params: {
     location: location
     apim_sku: apim_sku
@@ -153,7 +153,7 @@ module agwModule 'modules/agw.bicep' = {
 
 module privateDnsZoneResource 'modules/privateDnsZones.bicep' = {
   name: apim_dns_name_var
-  params: {    
+  params: {
     apim_name: apim_name_var
     apimIpv4Address: apimModule.outputs.apimPrivateIpAddresses
     vnet_dns_link_name: vnet_dns_link_name
@@ -172,7 +172,7 @@ module functionModule 'modules/functionapp.bicep' = {
     storageAccountName:storageAccountName
     functionAppName:funcapp_name_var
     appServicePlanName:appServicePlanName
-    appInsightsInstrumentationKey: logAnalyticsModule.outputs.appInsightsInstrumentationKey    
+    appInsightsInstrumentationKey: logAnalyticsModule.outputs.appInsightsInstrumentationKey
   }
 }
 

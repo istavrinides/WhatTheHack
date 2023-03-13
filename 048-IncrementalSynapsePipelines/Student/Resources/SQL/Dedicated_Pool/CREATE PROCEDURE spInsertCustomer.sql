@@ -42,7 +42,7 @@ BEGIN
             , PasswordSalt
             , rowguid
             , ModifiedDate
-            
+
     from Staging.Customer S1
     where NOT EXISTS (SELECT CustomerID FROM SalesLT.Customer S2 WHERE S2.CustomerID = S1.CustomerID)
     and S1.__$operation = 2

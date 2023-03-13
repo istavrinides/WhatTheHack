@@ -1,7 +1,7 @@
 # Terraform Challenge
 Utilizing Terraform deploy the app on ACI
 
-## Deploy the resource 
+## Deploy the resource
 Replace the following values with your values
 *   ***Your_subscription_id***
 *   ***Your_client_id***

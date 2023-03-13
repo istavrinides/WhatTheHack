@@ -1,4 +1,4 @@
-# What The Hack: DevOps with GitHub 
+# What The Hack: DevOps with GitHub
 
 ## Challenge 6 – Continuous Delivery (CD)
 
@@ -6,19 +6,19 @@
 
 ### Introduction
 
-In DevOps after we automate our build process, we want to automate our release process, we do this with a technique called Continuous Delivery (CD). Please take a moment to review this brief article talking about why this is important. 
+In DevOps after we automate our build process, we want to automate our release process, we do this with a technique called Continuous Delivery (CD). Please take a moment to review this brief article talking about why this is important.
 
 - [What is Continuous Delivery?](https://docs.microsoft.com/en-us/azure/devops/learn/what-is-continuous-delivery)
 
 ### Challenge
 
-In this challenge, we will use GitHub Actions to deploy our container image to the dev environment. 
+In this challenge, we will use GitHub Actions to deploy our container image to the dev environment.
 
 **OPTIONAL**: Use your code editor (VS Code) to update your workflow file locally on your machine. Remember to commit and push any changes.
 
 Extend the workflow you created in Challenge #4 to:
 
-1. Configure your `dev` environment to pull the latest container image from ACR. 
+1. Configure your `dev` environment to pull the latest container image from ACR.
    - Login to Azure using your service principal, if needed ([hint](https://docs.microsoft.com/en-us/azure/app-service/deploy-container-github-action?tabs=service-principal#tabpanel_CeZOj-G++Q-3_service-principal))
    - Use the `Azure/webapps-deploy@v2` [action](https://github.com/Azure/webapps-deploy) to update the Web App to pull the latest image from ACR. Key parameters to configure:
       - `app-name` - the name of the wep app instance to target

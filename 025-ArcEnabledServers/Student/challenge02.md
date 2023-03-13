@@ -1,4 +1,4 @@
-# What the Hack: Azure Arc enabled servers 
+# What the Hack: Azure Arc enabled servers
 
 ## Challenge 2 – Policy for Azure Arc connected servers
 [Back](challenge01.md) - [Home](../readme.md) - [Next](challenge03.md)
@@ -19,7 +19,7 @@ In the last challenge you deployed a server somewhere other than Azure, and then
 
 ### Success Criteria
 
-1. Azure Arc connected servers should have a tag applied by the policy you created in Challenge #1. 
+1. Azure Arc connected servers should have a tag applied by the policy you created in Challenge #1.
 
 2. Azure Arc connected servers should have the Log Analytics agent deployed and working.
 

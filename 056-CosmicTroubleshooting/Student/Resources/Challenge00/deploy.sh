@@ -50,7 +50,7 @@ output=$(az deployment sub create \
   --template-file "WTHAzureCosmosDB.IaC/main.bicep" \
   --parameters @$parametersfilename \
   --parameters resourceGroupName=$RG_NAME)
-  
+
 
 originDir=$PWD
 
@@ -185,7 +185,7 @@ testPlanStatus="VALIDATION_INITIATED";
 
 while [[ $(date -u +%s) -le $endtime ]]; do
     azTokenExpiresOn=`echo $azToken | jq -r '.expiresOn'`
-    
+
     dateExpiresOn=`date  '+%s' --date "$azTokenExpiresOn"`
     now=`date  '+%s'`
 
@@ -211,17 +211,17 @@ while [[ $(date -u +%s) -le $endtime ]]; do
 
     state=`echo $output | jq -r '.body' | jq -r '.inputArtifacts.testScriptUrl.validationStatus'`
     echo "checking for updates... $state"
-    
+
     if [ "$state" == "" ]; then
         echo "Empty validation status - skipping"
         continue;
     fi
-    
+
     if [ "$state" == "VALIDATION_SUCCESS" ]; then
         testPlanStatus="VALIDATION_SUCCESS"
         break
     fi
-  
+
     sleep 10
 
 done

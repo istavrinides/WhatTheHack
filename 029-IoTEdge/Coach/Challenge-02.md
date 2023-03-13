@@ -16,7 +16,7 @@ For this module to be successful, participants must have the following tasks com
 1. Explanation of the addresses that will be used on the Edge to connect into the OPC server
 1. Validation of any ports (if a VM is used or private network with ACI) will need to be opened to allow OPC connectivity to work from the Edge
 1. Explanation of how the participants intend to secure the solution aligned with a typical manufacturing plant [Review some notes on the Purdue model and ISA-95](https://www.automationworld.com/factory/iiot/article/21132891/is-the-purdue-model-still-relevant)
-* * * 
+* * *
 
 ## Tips
 
@@ -28,10 +28,10 @@ If you need to troubleshoot whether or not the IoT Edge Is connecting, you can o
 ![image info](./assets/prosysopc_sessions.png)
 
 When configuring the Iot Edge OPC Module, you will need to have the node-IDs of data-points you wish to capture.  The simulated values would work to pacify the Hack with elements for feeding into TSI.  Participants can select which values they want to use as all of the simulated values would drive subsequent modules
-![image info](./assets/prosysopc_simulation.png)    
+![image info](./assets/prosysopc_simulation.png)
 * * *
 ### The Microsoft PLC Simulator:
-Easy mechanism to deploy this container into Azure w/o a VM is with a Container Instance as follows.  Ensure it's in the same region as the IoT Edge to eliminate egress.  You can also use the ARM template on the link above or the [one in the coaches folder to deploy](./assets/aci_plc_sim.json)  
+Easy mechanism to deploy this container into Azure w/o a VM is with a Container Instance as follows.  Ensure it's in the same region as the IoT Edge to eliminate egress.  You can also use the ARM template on the link above or the [one in the coaches folder to deploy](./assets/aci_plc_sim.json)
 ![image info](./assets/plc_create.png)
 
 The deployment configuration allows you to specify the quantity of slow/fast changing values that will be used on the IoT Edge OPC modules.

@@ -17,7 +17,7 @@ Welcome to the coach's guide for the Linux Fundamentals What The Hack. Here you 
 * Challenge 05: **[Standard File Permissions](../Coach/Solution-05.md)**
 	 - Learn about the Linux standard file permissions and understand how to work with file permissioning on a Linux environment.
 * Challenge 06: **[Process Management](../Coach/Solution-06.md)**
-	 - Your objectives will involve basic process management, such as checking running processes and identifying process ids. 
+	 - Your objectives will involve basic process management, such as checking running processes and identifying process ids.
 * Challenge 07: **[Group and User Management](../Coach/Solution-07.md)**
 	 - In this challenge you will learn about the creation of user and groups in a Linux environment.
 * Challenge 08: **[Scripting](../Coach/Solution-08.md)**
@@ -31,7 +31,7 @@ Welcome to the coach's guide for the Linux Fundamentals What The Hack. Here you 
 * Challenge 12: **[Setting up a Webserver](../Coach/Solution-12.md)**
 	 - In this challenge we will setting up a webserver and deploy a simple PHP application into it. The usage of SSL could be a plus.
 
-## Coach Prerequisites 
+## Coach Prerequisites
 
 This hack has pre-reqs that a coach is responsible for understanding and/or setting up BEFORE hosting an event. Please review the [What The Hack Hosting Guide](https://aka.ms/wthhost) for information on how to host a hack event.
 
@@ -43,7 +43,7 @@ Before the hack, it is the Coach's responsibility to download and package up the
 
 Always refer students to the [What The Hack website](https://aka.ms/wth) for the student guide: [https://aka.ms/wth](https://aka.ms/wth)
 
-**NOTE:** Students should **not** be given a link to the What The Hack repo before or during a hack. The student guide does **NOT** have any links to the Coach's guide or the What The Hack repo on GitHub.  
+**NOTE:** Students should **not** be given a link to the What The Hack repo before or during a hack. The student guide does **NOT** have any links to the Coach's guide or the What The Hack repo on GitHub.
 
 ## Azure Requirements
 

@@ -11,8 +11,8 @@ Now that the clusters are deployed, in this challenge attendees will onboard bot
 
  ![](../../img/image5.png)
 
-* For the minikube cluster use the [following instructions](https://github.com/microsoft/azure_arc/blob/master/azure_arc_k8s_jumpstart/docs/onboard_k8s.md) to onboard the cluster. 
-* For GKE cluster use the [following documentation](https://github.com/microsoft/azure_arc/blob/master/azure_arc_k8s_jumpstart/docs/gke_terraform.md) to onboard the cluster to Azure Arc. 
+* For the minikube cluster use the [following instructions](https://github.com/microsoft/azure_arc/blob/master/azure_arc_k8s_jumpstart/docs/onboard_k8s.md) to onboard the cluster.
+* For GKE cluster use the [following documentation](https://github.com/microsoft/azure_arc/blob/master/azure_arc_k8s_jumpstart/docs/gke_terraform.md) to onboard the cluster to Azure Arc.
     * The GKE onboarding guide talks to both the deployment of the cluster and onboarding. The [onboarding section](https://github.com/microsoft/azure_arc/blob/master/azure_arc_k8s_jumpstart/docs/gke_terraform.md#connecting-to-azure-arc) is relevant to this challenge.
 
 

@@ -1,5 +1,5 @@
 CREATE VIEW BikeBuyerTraining
-AS 
+AS
 SELECT  DATEDIFF(year, CAST(BirthDate AS Datetime), GETDATE()) AS Age,
         MaritalStatus,
         Gender,
@@ -15,7 +15,7 @@ SELECT  DATEDIFF(year, CAST(BirthDate AS Datetime), GETDATE()) AS Age,
         CASE WHEN BikeOrderCount IS NULL THEN 0 ELSE 1 END AS BikeBuyer
 FROM [dbo].[DimCustomer] C
 INNER JOIN [dbo].[DimGeography] G ON C.GeographyKey = G.GeographyKey
-LEFT OUTER JOIN 
+LEFT OUTER JOIN
 (
     SELECT  CustomerKey,
             COUNT(salesordernumber) AS BikeOrderCount

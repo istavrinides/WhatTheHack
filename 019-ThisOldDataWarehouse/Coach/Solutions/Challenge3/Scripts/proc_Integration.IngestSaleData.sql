@@ -1,4 +1,4 @@
-CREATE  Procedure Integration.IngestSaleData 
+CREATE  Procedure Integration.IngestSaleData
 AS
 BEGIN
 

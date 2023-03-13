@@ -12,7 +12,7 @@ Before the hack, it is the Coach's responsibility to download and package up the
 
 ## Coach's Guides
 - Challenge 01: **[Ingest Data From Blob Storage](./Solution-01.md)**
-	 - In this challenge, attendees will import several parquet files from Blob Storage into their Dedicated SQL pool; 
+	 - In this challenge, attendees will import several parquet files from Blob Storage into their Dedicated SQL pool;
 - Challenge 02: **[Queries Best Practice](./Solution-02.md)**
 	 - In this challenge, attendees will dig into best practices to consider writing a query for your data warehouse.
 - Challenge 03: **[Queries Behavior](./Solution-03.md)**
@@ -22,7 +22,7 @@ Before the hack, it is the Coach's responsibility to download and package up the
 - Challenge 05: **[Monitoring Workload](./Solution-05.md)**
 	 - In this challenge, attendees will understand how to monitor your workload to identify poor performing and failed queries
 
-## Coach Prerequisites 
+## Coach Prerequisites
 This hack has pre-reqs that a coach is responsible for understanding and/or setting up BEFORE hosting an event.
 
 These pre-reqs should be shared with a stakeholder in the organization that will be providing the Azure subscription(s) that will be used by the students.

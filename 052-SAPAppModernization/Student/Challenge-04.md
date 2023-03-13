@@ -4,7 +4,7 @@
 
 # Introduction
 
-This time we already have a working geode cache and ASP.NET Application running on Azure, but what about if our user credentials are all stored in Azure Active Directory? 
+This time we already have a working geode cache and ASP.NET Application running on Azure, but what about if our user credentials are all stored in Azure Active Directory?
 
 In this challenge, you'll wire up your MVC application/APIM combination to handle login via Azure Active Directory and use APIM to perform user Principal Mapping to SAP user identities via Azure AAD.
 

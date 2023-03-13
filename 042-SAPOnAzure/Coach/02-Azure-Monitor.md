@@ -30,7 +30,7 @@ Click Review + create to review the settings and then Create to create the works
 From the Azure portal, select Virtual machines and select a resource from the list. In the Monitoring section of the menu, select Insights and then Enable.
 - Enable VM Insights
 ![VM Insights](Images/Challenge2_VM_Insights.png)
-- Select correct workspace. 
+- Select correct workspace.
 
 ## Step 4 - Configure SAP NetWeaver providers.
 
@@ -44,12 +44,12 @@ From the Azure portal, select Virtual machines and select a resource from the li
 7. Go back and select Profile->Save
 8. Restart system for parameter to take effect
 
-- Configuration of NetWeaver provider on the Azure portal 
+- Configuration of NetWeaver provider on the Azure portal
 ![Netweaver](Images/Challenge2_Netweaver.png)
 
 ## Step 5 - Check for Monitoring data in Log Analytics Workspace.
 The solutions Overview page in Azure Monitor displays a tile for each solution installed in a Log Analytics workspace.
-- Go to Azure Monitor in the Azure portal. 
+- Go to Azure Monitor in the Azure portal.
 - Under the Insights menu, select More to open the Insights Hub, and then click on Log Analytics workspaces.
 ![Log Analytics Workspace](Images/02-Azure-Monitor-workspaces-log1.png)
 - Use the dropdown boxes at the top of the screen to change the workspace or the time range used for the tiles. Click on the tile for a solution to open its view that includes more detailed analysis its collected data.

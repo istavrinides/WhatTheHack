@@ -26,7 +26,7 @@ namespace PartsUnlimited.Api
         [System.Web.Http.HttpGet, System.Web.Http.Route("{id}"), System.Web.Http.ActionName("GetOne")]
         public Task<Raincheck> Get(int id)
         {
-            return _query.FindAsync(id); 
+            return _query.FindAsync(id);
         }
 
         [System.Web.Http.HttpPost, System.Web.Http.Route, System.Web.Http.ActionName("Save")]

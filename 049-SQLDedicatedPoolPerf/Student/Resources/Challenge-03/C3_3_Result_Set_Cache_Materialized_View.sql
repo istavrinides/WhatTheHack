@@ -20,7 +20,7 @@ DBCC DROPCLEANBUFFERS()
 DBCC FREEPROCCACHE()
 GO
 
-SELECT 
+SELECT
 	Fis.SalesTerritoryKey
 	,Fis.OrderDateKey
 	, Dsr.SalesReasonName

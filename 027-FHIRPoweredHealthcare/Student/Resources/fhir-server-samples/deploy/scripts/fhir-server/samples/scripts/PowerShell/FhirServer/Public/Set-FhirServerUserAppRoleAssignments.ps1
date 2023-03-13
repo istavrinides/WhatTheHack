@@ -32,7 +32,7 @@ function Set-FhirServerUserAppRoleAssignments {
     # Get current AzureAd context
     try {
         Get-AzureADCurrentSessionInfo -ErrorAction Stop | Out-Null
-    } 
+    }
     catch {
         throw "Please log in to Azure AD with Connect-AzureAD cmdlet before proceeding"
     }

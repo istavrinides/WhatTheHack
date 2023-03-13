@@ -7,14 +7,14 @@
 1. Your Azure Subscription
 1. Your Azure DevOps account, if not yet it's time to create one! ;)
 
-## Introduction 
+## Introduction
 
 ### Set up your *local* environment.
 
 The first challenge is to setup an environment that will help you build the Rock Paper Scissors Boom! Game Server and deploy it locally. We need to make sure everything is working before bringing it to Azure.
 
  To *really* do this locally, you would need the app platform (.NET Core, SQL Server, IIS, etc) running locally. We probably do not have enough time for that. Enter Azure! We can set up server in Azure to replicate a local environment where we can build our application and test deploying it. All we need running on that server is Docker and we can leverage containers for building and deploying the application; even hosting the database!
- 
+
  But, even in that case, we need some tools locally to manage Azure and that can take a while to setup. The good news is that by using the Azure Shell - we have all the tools we need.  All we really need is a browser and an Azure subscription.
 
 > The use of Azure Cloud Shell is our recommendation to simplify your experience. But if you prefer using your local machine to do the lab, feel free to do it. Based on our experience, the setup of Docker on local machine (which is required for the challenges) could take some time and could have some issues.*
@@ -25,7 +25,7 @@ The first challenge is to setup an environment that will help you build the Rock
 
 1. [Fork](https://help.github.com/articles/fork-a-repo/) this repo in your GitHub account. We want you to create your own fork so that if you have suggestions or fixes, you can issue a pull-request and submit them back to the main repo.
 1. [Clone](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) your repo in [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview)
-    * cloning the entire WhatTheHack repo will take several minutes. 
+    * cloning the entire WhatTheHack repo will take several minutes.
     * Make sure you clone your OWN fork of the repo, not the Microsoft/WhatTheHack repo.
     * We recommend using [Bash (Linux) mode](https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart) in the cloud shell for this Hack
     * Have limited screen real estate? Try the [full screen shell](https://shell.azure.com/)

@@ -78,9 +78,9 @@ display(dbutils.fs.ls(wasbPath))
 def GetFileName(taxiType: String, year: Int, month: Int): String =
 {
   var fileName = taxiType + "_tripdata_" + year + "-" + "%02d".format(month) + ".csv"
-  
+
   // println(fileName)
-  
+
   return fileName
 }
 
@@ -89,9 +89,9 @@ def GetFileName(taxiType: String, year: Int, month: Int): String =
 def GetLocalPath(fileName: String): String =
 {
   var localPath = "file:/tmp/" + fileName
-  
+
   // println(localPath)
-  
+
   return localPath
 }
 
@@ -100,9 +100,9 @@ def GetLocalPath(fileName: String): String =
 def GetWasbPath(taxiType: String, year: Int, month: Int): String =
 {
   var wasbPath = mountRoot + "source/transactional-data/year=" + year + "/month=" + "%02d".format(month) + "/type=" + taxiType + "/"
-  
+
   // println(wasbPath)
-  
+
   return wasbPath
 }
 

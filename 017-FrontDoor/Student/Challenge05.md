@@ -4,9 +4,9 @@
 
 ## Introduction
 
-We now have a globally scaled website, protected by WAF, and routing traffic for a specific address that uses a different backend to relieve pressure on our current website.  Now we have to make sure that all traffic is forced to HTTPS.  
+We now have a globally scaled website, protected by WAF, and routing traffic for a specific address that uses a different backend to relieve pressure on our current website.  Now we have to make sure that all traffic is forced to HTTPS.
 
-We can use the new [Rules Engine in Front Door](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-rules-engine) to specify rules to execute at the edge before sending traffic to your origin.  
+We can use the new [Rules Engine in Front Door](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-rules-engine) to specify rules to execute at the edge before sending traffic to your origin.
 
 ## Description
 

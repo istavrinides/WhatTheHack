@@ -6,7 +6,7 @@
 <br />
 
 ## Introduction
-In this challenge, you will learn how to enable secure private access to Azure Services. 
+In this challenge, you will learn how to enable secure private access to Azure Services.
 
 <br />
 

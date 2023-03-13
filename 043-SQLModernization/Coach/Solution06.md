@@ -1,6 +1,6 @@
 # Challenge 6: Data Governance - Coach's Guide
 
-[< Previous Challenge](./Solution05.md) - **[Home](README.md)** 
+[< Previous Challenge](./Solution05.md) - **[Home](README.md)**
 
 **[Create an Azure Purview Account](#create-an-azure-purview-account)**
 1. [Create an Azure Purview Account](#1-create-an-azure-purview-account)
@@ -38,13 +38,13 @@ The challenge environment setup requires that participants have pre-provisioned 
 
 1. Sign in to the [Azure portal](https://portal.azure.com) with your Azure account and from the **Home** screen, click **Create a resource**.
 
-    ![Create a Resource](./images/azpurview01.01-create-resource.png)  
+    ![Create a Resource](./images/azpurview01.01-create-resource.png)
 
 2. Search the Marketplace for "Azure Purview" and click **Create**.
 
     ![Create Purview Resource](./images/azpurview01.02-create-purview.png)
 
-3. Provide the necessary inputs on the **Basics** tab.  
+3. Provide the necessary inputs on the **Basics** tab.
 
     **NOTE**: The table below provides example values for illustrative purposes only, ensure to specify values that make sense for your deployment.
 
@@ -64,11 +64,11 @@ The challenge environment setup requires that participants have pre-provisioned 
     | Platform size | `4 capacity units` | Sufficient for non-production scenarios. |
 
     :bulb: **Did you know?**
-    
+
     **Capacity Units** determine the size of the platform and is a **provisioned** (fixed) set of resources that is needed to keep the Azure Purview platform up and running. 1 Capacity Unit is able to support approximately 1 API call per second. Capacity Units are required regardless of whether you plan to invoke the Azure Purview API endpoints directly (i.e. ISV scenario) or indirectly via Purview Studio (GUI).
-    
+
     **vCore Hours** on the other hand is the unit used to measure **serverless** compute that is needed to run a scan. You only pay per vCore Hour of scanning that you consume (rounded up to the nearest minute).
-    
+
     For more information, check out the [Azure Purview Pricing](https://azure.microsoft.com/en-us/pricing/details/azure-purview/) page.
 
     ![Configure Purview Account](./images/azpurview01.04-create-configuration.png)
@@ -104,10 +104,10 @@ The challenge environment setup requires that participants have pre-provisioned 
     ![Purview Data Curator](./images/azpurview01.10-role-assignment.png)
 
     :bulb: **Did you know?**
-    
+
     Azure Purview has a set of predefined Data Plane roles that can be used to control who can access what.
 
-    | Role  | Catalog | Sources/Scans | Description | 
+    | Role  | Catalog | Sources/Scans | Description |
     | --- | --- | --- | --- |
     | Purview Data Reader | `Read` |  | Access to Purview Studio (read only). |
     | Purview Data Curator | `Read/Write` |  | Access to Purview Studio (read & write). |
@@ -137,7 +137,7 @@ The challenge environment setup requires that participants have pre-provisioned 
 
 1. Sign in to the [Azure portal](https://portal.azure.com) with your Azure account and from the **Home** screen, click **Create a resource**.
 
-    ![Azure Purview](./images/azpurview01.01-create-resource.png)  
+    ![Azure Purview](./images/azpurview01.01-create-resource.png)
 
 2.  Search for `Azure SQL` and click **Create**.
 
@@ -148,7 +148,7 @@ The challenge environment setup requires that participants have pre-provisioned 
     ![](./images/azpurview02.32-singledb-create.png)
 
 4. Under the **Basics** tab, select a **Resource group** (e.g. `resourcegroup-1`), provide a **Database name** (e.g. `sqldb-team01`) and under **Server** click **Create new**.
- 
+
     ![](./images/azpurview02.33-sqlsvr-create.png)
 
 5. Provide the necessary inputs and click **OK**.
@@ -201,13 +201,13 @@ The challenge environment setup requires that participants have pre-provisioned 
 
 1. From the **Home** screen of the Azure Portal, click **Create a resource**.
 
-    ![Azure Purview](./images/azpurview01.01-create-resource.png)  
+    ![Azure Purview](./images/azpurview01.01-create-resource.png)
 
 2. Search for `Key Vault` and click **Create**.
 
     ![](./images/azpurview02.45-create-vault.png)
 
-3. Under the **Basics** tab, select a **Resource group** (e.g. `resourcegroup-1`), provide a **Key vault name** (e.g. `vault-team01`), select a Region (e.g. `East US 2`). 
+3. Under the **Basics** tab, select a **Resource group** (e.g. `resourcegroup-1`), provide a **Key vault name** (e.g. `vault-team01`), select a Region (e.g. `East US 2`).
 
     ![](./images/azpurview02.46-vault-basics.png)
 
@@ -393,7 +393,7 @@ The challenge environment setup requires that participants have pre-provisioned 
     | PopularityScore | `Value between 1 and 100 inclusive. 1 indicates least popular query on the day/State/Country with Coronavirus intent, and 100 indicates the most popular query for the same geography on the same day.` |
 
     :bulb: **Did you know?**
-    
+
     **Classifications** and **Glossary Terms** can be assigned at the asset level (e.g. a Table within a Database) as well as at the schema level (e.g. a Column within a Table Schema).
 
     ![Update Schema](./images/azpurview03.06-asset-schema.png)
@@ -401,7 +401,7 @@ The challenge environment setup requires that participants have pre-provisioned 
 5. Navigate to the **Contacts** tab and set someone within your organization to be an **Expert** and an **Owner**. Click **Save**.
 
     :bulb: **Did you know?**
-    
+
     Assets can be related to two different types of contacts. **Experts** are often business process or subject matter experts. Where as **Owners** are often senior executives or business area owners that define governance or business processes over certain data areas.
 
     ![Update Contacts](./images/azpurview03.07-asset-contacts.png)

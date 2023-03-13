@@ -1,11 +1,11 @@
-# Challenge 09 - Helm - Coach's Guide 
+# Challenge 09 - Helm - Coach's Guide
 
 [< Previous Solution](./Solution-08.md) - **[Home](./README.md)** - [Next Solution >](./Solution-10.md)
 
 ## Notes & Guidance
 
 - You should deliver a demo in addition to the lecture to show what a working Helm chart looks like.
-  - Consider using the `app-languages-helm-chart` helm chart provided in the Coach Solutions folder for Challenge 9 as one that can be demoed during the lecture.  
+  - Consider using the `app-languages-helm-chart` helm chart provided in the Coach Solutions folder for Challenge 9 as one that can be demoed during the lecture.
 - You should provide guidance in the challenge as to which values should be parameterized in the Helm templates.
 	- At a minimum make sure the version label is parameterized (ie: v1, v2, etc) so that students can install different versions of the app using `helm install` easily.
 - **NOTE:** Helm 3 does not automatically create namespaces.
@@ -15,7 +15,7 @@
 	- Students should NOT include the namespace YAML in the helm chart
 	- The application's YAML files should NOT include a namespace, we will leave namespace creation up to helm (see below).
 
-## Helm Commands 
+## Helm Commands
 First let's install our new chart and make sure it is in the releases as well as check that everything is deployed in Kubernetes
 - **NOTE:** Take special note of the `helm install` command and how we are telling it to create a new namespace. Because we did NOT put a namespace in the yaml file templates in our Chart, those resources will go into the namespace we pass into the `-n` parameter, in our case `mynamespace`. We're also using the `--create-namespace` option so that `mynamespace` will be created if it doesn't already exist.
 
@@ -38,7 +38,7 @@ Next we'll lay out all the commands needed to create the chart using the `app-la
   az acr update -n myacr -g myrg --admin-enabled true
 
   # get credentials for Admin user on ACR (save these values)
-  az acr credential show -n myacr -g myrg 
+  az acr credential show -n myacr -g myrg
 
   # login Helm to ACR using admin credentials (use values from above for -u and -p)
   export HELM_EXPERIMENTAL_OCI=1
@@ -51,7 +51,7 @@ Next we'll lay out all the commands needed to create the chart using the `app-la
 
 - Now we can package up the `app-languages-helm-chart` chart and push it to our ACR helm repo
 	- Packaging creates a tarball using the name of our chart provided in `Chart.yaml`
-  
+
   ```bash
   # package Helm chart
   helm package app-languages-helm-chart

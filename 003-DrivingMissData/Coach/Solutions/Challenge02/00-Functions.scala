@@ -21,13 +21,13 @@ import com.databricks.backend.daemon.dbutils.FileInfo
 def AnalyzeHiveTable(hiveDatabaseAndTable: String)
 {
   // println("Table: " + hiveDatabaseAndTable)
-  
+
   // println("Refresh table...")
   sql("REFRESH TABLE " + hiveDatabaseAndTable)
-  
+
   // println("Analyze table and compute statistics...")
   sql("ANALYZE TABLE " + hiveDatabaseAndTable + " COMPUTE STATISTICS")
-  
+
   // println("Done")
 }
 
@@ -47,13 +47,13 @@ def DataframeInfo(df: org.apache.spark.sql.DataFrame)
 
   // println("df.printSchema()")
   df.printSchema()
-  
+
   // println("df.describe().show()")
   df.describe().show()
 
   // println("df.show(25)")
   df.show(25)
-  
+
   // println("display(df)")
   display(df)
 }
@@ -75,9 +75,9 @@ def MountStorageContainer(storageAccount: String, storageAccountKey: String, sto
     mountPoint = blobMountPoint,
     extraConfigs = Map("fs.azure.account.key." + storageAccount + ".blob.core.windows.net" -> storageAccountKey)
   )
-  
+
   // println("Status of mount of container " + storageContainer + " is: " + mountStatus)
-  
+
   mountStatus
 }
 
@@ -91,9 +91,9 @@ def MountStorageContainer(storageAccount: String, storageAccountKey: String, sto
 def CalcOutputFileCountTxtToParquet(srcTextFile: String, targetFileSizeMB: Int): Int =
 {
   val fs = FileSystem.get(new Configuration())
-  
+
   val estFileCount: Int = Math.floor((fs.getContentSummary(new Path(srcTextFile)).getLength * shrinkageParquet) / (targetFileSizeMB * 1024 * 1024)).toInt
-  
+
   if(estFileCount == 0) 1 else estFileCount
 }
 
@@ -105,10 +105,10 @@ def GetRecursiveFileCollection(rootDirectoryPath: String): Seq[String] =
   {
     // Work around double encoding bug
     val directoryItemPath = directoryItem.path.replace("%25", "%").replace("%25", "%")
-    
-    if (directoryItem.isDir) 
+
+    if (directoryItem.isDir)
       GetRecursiveFileCollection(directoryItemPath)
-    else 
+    else
       Seq[String](directoryItemPath)
   })
   .reduce(_ ++ _)

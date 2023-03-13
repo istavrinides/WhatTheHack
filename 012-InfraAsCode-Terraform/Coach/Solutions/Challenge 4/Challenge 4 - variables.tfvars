@@ -11,7 +11,7 @@ resource_group_name = "WTHTFRG"
 virtual_network_name = "WTHVNetTF"
 virtual_network_address_space = ["10.1.0.0/16"]
 
-subnet = { 
+subnet = {
     name = "default"
     address_prefix = "10.1.0.0/24"
 }

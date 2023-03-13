@@ -17,7 +17,7 @@ namespace PartsUnlimited.Models
         public IDbSet<OrderDetail> OrderDetails { get; set; }
         public IDbSet<Raincheck> RainChecks { get; set; }
         public IDbSet<Store> Stores { get; set; }
-        
+
         protected override void OnModelCreating(DbModelBuilder builder)
         {
             builder.Entity<Product>().HasKey(a => a.ProductId);

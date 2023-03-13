@@ -7,17 +7,17 @@ We assume that you've had some exposure to the Bot Framework. If you have, great
 
 ### Lab 1.1: Setting up for bot development
 
-We will be developing a bot using the latest .NET SDK (v4).  To get started, we'll need to download the Bot Framework Emulator, and we'll need to clone and build the SDK. We'll emulate everything locally in this lab, and won't need any keys or services at this point.  
+We will be developing a bot using the latest .NET SDK (v4).  To get started, we'll need to download the Bot Framework Emulator, and we'll need to clone and build the SDK. We'll emulate everything locally in this lab, and won't need any keys or services at this point.
 
-#### Download the Bot Framework Emulator  
+#### Download the Bot Framework Emulator
 
-1. Download the Bot Framework Emulator for testing your bot locally [here](https://github.com/Microsoft/BotFramework-Emulator/releases/download/v3.5.33/botframework-emulator-Setup-3.5.33.exe).  The emulator installs to `c:\Users\`_your-username_`\AppData\Local\botframework\app-3.5.33\botframework-emulator.exe` or your Downloads folder, depending on browser.  
+1. Download the Bot Framework Emulator for testing your bot locally [here](https://github.com/Microsoft/BotFramework-Emulator/releases/download/v3.5.33/botframework-emulator-Setup-3.5.33.exe).  The emulator installs to `c:\Users\`_your-username_`\AppData\Local\botframework\app-3.5.33\botframework-emulator.exe` or your Downloads folder, depending on browser.
 
 #### Building the SDK
 
-> Note: You can either **install the packages locally**, or use **NuGet Package Manager** and add the packages. Because the product is in pre-release (as of today 5/1/2018), sometimes changes will be reflected in the SDK faster than in the NuGet packages. **We recommend using the NuGet packages** (explained in 1.2) for the purposes of these labs, but if you want to be on the latest build, you can follow the instructions below. 
+> Note: You can either **install the packages locally**, or use **NuGet Package Manager** and add the packages. Because the product is in pre-release (as of today 5/1/2018), sometimes changes will be reflected in the SDK faster than in the NuGet packages. **We recommend using the NuGet packages** (explained in 1.2) for the purposes of these labs, but if you want to be on the latest build, you can follow the instructions below.
 
-Follow the [instructions here to build the SDK](https://github.com/Microsoft/botbuilder-dotnet/wiki/Building-the-SDK).  
+Follow the [instructions here to build the SDK](https://github.com/Microsoft/botbuilder-dotnet/wiki/Building-the-SDK).
 
 Make sure you follow the instructions for consuming the NuGet packages. I recommend copying the NuGet packages to a new folder called "botbuilder-dotnet" where the rest of your NuGet packages are stored - **C:\Program Files (x86)\Microsoft SDKs\NuGetPackages**. This is a tedious process, because you need to grab the NuGet packages (they end in ".nupkg") from the following folders:
 * C:\Users\[username]\botbuilder-dotnet\libraries\integration\Microsoft.Bot.Builder.Integration.AspNet.Core\bin\Debug - NuGet Packages
@@ -26,38 +26,38 @@ Make sure you follow the instructions for consuming the NuGet packages. I recomm
 * C:\Users\[username]\botbuilder-dotnet\libraries\Microsoft.Bot.Builder.Core.Extensions\bin\Debug - NuGet Packages
 * C:\Users\[username]\botbuilder-dotnet\libraries\Microsoft.Bot.Builder.AI.LUIS\bin\Debug - NuGet Packages
 * C:\Users\[username]\botbuilder-dotnet\libraries\Microsoft.Bot.Connector\bin\Debug - NuGet Packages
-* C:\Users\[username]\botbuilder-dotnet\libraries\Microsoft.Bot.Schema\bin\Debug - NuGet Packages  
+* C:\Users\[username]\botbuilder-dotnet\libraries\Microsoft.Bot.Schema\bin\Debug - NuGet Packages
 
-> **Note**: If you don't have the rights (you need admin rights on your machine) to add the packages to this folder, add them to a local folder, perhaps under **Documents/botbuilder-dotnet**. Then follow the following instructions to add the packages to NuGet Package Manager:  
+> **Note**: If you don't have the rights (you need admin rights on your machine) to add the packages to this folder, add them to a local folder, perhaps under **Documents/botbuilder-dotnet**. Then follow the following instructions to add the packages to NuGet Package Manager:
 >1.  Open Visual Studio.
 >2.  Select **Tools > NuGet Package Manager > Package Manager Settings > Package Sources**.
 >3.  Select the green plus in the top right of the window. Rename the Package source to "botbuilder-dotnet."
 >4.  Select the "..." next to the Source field and browse to your local folder with the NuGet packages you copied over, click "Select."
->5.  Hit OK twice.  
+>5.  Hit OK twice.
 >Now, you should be able to add the NuGet packages locally in the followed labs.
 
 ### Lab 1.2: Creating a simple bot and running it
 
-In Visual Studio, create a new ASP.NET Core Web Application called "PictureBot":  
+In Visual Studio, create a new ASP.NET Core Web Application called "PictureBot":
 * Target **.NET Core ASP.NET Core 2.0**.
 * Pick the **Empty** project template.
-* Select **No Authentication**, if it isn't selected already. 
+* Select **No Authentication**, if it isn't selected already.
 
->**TIP**:  If you only have one monitor and you would like to easily switch between instructions and Visual Studio, you can add the instruction files to your Visual Studio solution by right-clicking on the project in Solution Explorer and selecting **Add > Existing Item**. Navigate to "lab02.2-bulding_bots," and add all the files of type "MD File." 
+>**TIP**:  If you only have one monitor and you would like to easily switch between instructions and Visual Studio, you can add the instruction files to your Visual Studio solution by right-clicking on the project in Solution Explorer and selecting **Add > Existing Item**. Navigate to "lab02.2-bulding_bots," and add all the files of type "MD File."
 
-Right-click on the solution in Solution Explorer and select "Manage NuGet Packages for Solution." Install all of the packages listed below, starting with "Microsoft.Bot.Builder."  Make sure you check the box "Include prerelease" and are on the "Browse" tab.  After you've installed them, under **Dependencies > NuGet** in your Solution Explorer, you should see the following packages:  
- 
+Right-click on the solution in Solution Explorer and select "Manage NuGet Packages for Solution." Install all of the packages listed below, starting with "Microsoft.Bot.Builder."  Make sure you check the box "Include prerelease" and are on the "Browse" tab.  After you've installed them, under **Dependencies > NuGet** in your Solution Explorer, you should see the following packages:
+
 * Microsoft.Bot.Builder
 * Microsoft.Bot.Builder.Integration.AspNet.Core
 * Microsoft.Bot.Builder.Core
 * Microsoft.Bot.Connector
-* Microsoft.Bot.Schema  
+* Microsoft.Bot.Schema
 * Microsoft.Bot.Builder.Core.Extensions
-* Microsoft.Bot.Builder.AI.LUIS  
+* Microsoft.Bot.Builder.AI.LUIS
 
 > Note: If you built the SDK locally, in the top right of the new window, you will need to change the Package source to "Microsoft Visual Studio Offline Packages" (or "botbuilder-dotnet" if you followed the extra steps to create a package source).
 
-There is one other NuGet package we'll need later. Browse for the "Microsoft.Azure.Search" package and install it (read more about using the NuGet window to install packages [here](https://docs.microsoft.com/en-us/nuget/tools/package-manager-ui)).  
+There is one other NuGet package we'll need later. Browse for the "Microsoft.Azure.Search" package and install it (read more about using the NuGet window to install packages [here](https://docs.microsoft.com/en-us/nuget/tools/package-manager-ui)).
 
 We need to add some code to tell the app what to show us in the browser when we run it. Add an html file called `default.html` under the wwwroot folder (be sure to right-click **wwwroot > Add > New item**), and replace the default contents with the following:
 ```html
@@ -75,7 +75,7 @@ We need to add some code to tell the app what to show us in the browser when we 
 ```
 
 
-Update the Startup.cs file to this:  
+Update the Startup.cs file to this:
 
 ```csharp
 using Microsoft.AspNetCore.Builder;
@@ -130,7 +130,7 @@ namespace PictureBot
     }
 }
 ```
-Create a PictureBot.cs class file. Update the file to this:  
+Create a PictureBot.cs class file. Update the file to this:
 ```csharp
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
@@ -153,24 +153,24 @@ namespace PictureBot
 }
 ```
 
->The rest of the **Creating a simple bot and running it** lab is optional. Per the prerequisites, you should have experience working with the Bot Framework. You can hit F5 to confirm it builds correctly, and move on to the next lab (1.3 Organizing Code for Bots).  
+>The rest of the **Creating a simple bot and running it** lab is optional. Per the prerequisites, you should have experience working with the Bot Framework. You can hit F5 to confirm it builds correctly, and move on to the next lab (1.3 Organizing Code for Bots).
 
 
-Now start your bot (with or without debugging) by pressing the "IIS Express" button that looks like a play button (or hit F5). NuGet should take care of downloading the appropriate dependencies.  
+Now start your bot (with or without debugging) by pressing the "IIS Express" button that looks like a play button (or hit F5). NuGet should take care of downloading the appropriate dependencies.
 * Your default.html page will be displayed in a browser.
-* Note the localhost port number for the page. You will need this information to interact with your bot.  
+* Note the localhost port number for the page. You will need this information to interact with your bot.
 
 To interact with your bot:
-* Launch the Bot Framework Emulator.  (If you just installed it, it may not be indexed to show up in a search on your local machine, so remember that it installs to c:\Users\your-username\AppData\Local\botframework\app-3.5.27\botframework-emulator.exe.)  Ensure that the Bot URL matches the port number that launched in the web browser, and then api/messages appended to the end (e.g. `http://localhost:portNumber/api/messages`).  You should be able to converse with the bot. 
+* Launch the Bot Framework Emulator.  (If you just installed it, it may not be indexed to show up in a search on your local machine, so remember that it installs to c:\Users\your-username\AppData\Local\botframework\app-3.5.27\botframework-emulator.exe.)  Ensure that the Bot URL matches the port number that launched in the web browser, and then api/messages appended to the end (e.g. `http://localhost:portNumber/api/messages`).  You should be able to converse with the bot.
 * Type "hello", and the bot will respond with "Hello World" to every message.
 
-![Bot Emulator](./resources/assets/botemulator2.png) 
+![Bot Emulator](./resources/assets/botemulator2.png)
 
 > Fun Aside: why this port number?  It is set in your project properties.  In your Solution Explorer, double-click **Properties>Debug** and examine its contents. Does the App URL match what you connected to in the emulator?
 
 Browse around and examine the sample bot code. In particular, note:
-+ **Startup.cs** is where we will add services/middleware and configure the HTTP request pipeline.  
-+ In **PictureBot.cs**, `OnTurn` is the entry point which waits for a message from the user, and `context.Activity.Type is ActivityTypes.Message` is where we can react to a message once received and wait for further messages.  We can use `context.SendActivity` to send a message from the bot back to the user.  
++ **Startup.cs** is where we will add services/middleware and configure the HTTP request pipeline.
++ In **PictureBot.cs**, `OnTurn` is the entry point which waits for a message from the user, and `context.Activity.Type is ActivityTypes.Message` is where we can react to a message once received and wait for further messages.  We can use `context.SendActivity` to send a message from the bot back to the user.
 
 
 ### Lab 1.3: Organzing Code for Bots
@@ -180,21 +180,21 @@ There are many different methods and preferences for developing bots. The SDK al
 This PictureBot will be organized in the following way:
 * **Models** - the objects to be modified
 * **Topics** - the business logic for editing the models
-* **Responses** - classes which define the outputs to the users  
+* **Responses** - classes which define the outputs to the users
 
-Next, create a folder for each piece in your PictureBot project (create three folders: "Models", "Topics", "Responses").  
-#### Topics  
+Next, create a folder for each piece in your PictureBot project (create three folders: "Models", "Topics", "Responses").
+#### Topics
 
-We'll start by defining an interface ITopic which gives it the basic ability to manage topics. We'll include the following pieces:  
+We'll start by defining an interface ITopic which gives it the basic ability to manage topics. We'll include the following pieces:
 
 * **ITopic.StartTopic()** -Called when a topic is created.
 * **ITopic.ContinueTopic()** - Called for every activity as context.State.Conversation.ActivePrompt points to it.
-* **ITopic.ResumeTopic()** - Called whenever someone has interrupted your topic so you can resume your topic cleanly. 
+* **ITopic.ResumeTopic()** - Called whenever someone has interrupted your topic so you can resume your topic cleanly.
 
-The UserStateManagerMiddleware() and ConversationStateManagerMiddleware() will be used to add automatic persistence of the **context.state.ConversationProperties** and **context.state.UserProperties** objects.  
+The UserStateManagerMiddleware() and ConversationStateManagerMiddleware() will be used to add automatic persistence of the **context.state.ConversationProperties** and **context.state.UserProperties** objects.
 
 We'll set the **context.state.Conversation.ActiveTopic** to point to an instance of the active ITopic class,
-which is automatically serialized on activity. It then uses this property to manage the active topic and switch between topics.  
+which is automatically serialized on activity. It then uses this property to manage the active topic and switch between topics.
 
 Create a new class titled "ITopic.cs." Review the code below before adding it to "ITopic.cs"
 ```csharp
@@ -237,7 +237,7 @@ namespace PictureBot
 We'll try to keep the code simple for the purposes of this lab, so we'll only have two topics:
 
 * **RootTopic** - The default topic the bot starts out with. This class will start other topic(s) as the user requests them.
-* **SearchTopic** - A topic which manages processing search requests and returning those results to the user.  
+* **SearchTopic** - A topic which manages processing search requests and returning those results to the user.
 
 Create two classes, called "RootTopic.cs" and "SearchTopic.cs" within the "Topics" folder. Put the following shell in for each (noting you'll have to change "RootTopic" and "Root" to "SearchTopic" and "Search"):
 
@@ -281,7 +281,7 @@ namespace PictureBot.Topics
 As the code is now, the two classes are just simple implementations of **ITopic**, which we configured earlier. Review the ITopic class with the new Topic classes you've created to confirm you agree. In the next lab, we'll start adding things to our topics (removing `throw new NotImplementedException();` as we go).
 
 #### Responses
-Create two classes, called "RootResponses.cs" and "SearchResponses.cs" within the "Responses" folder. As you may have figured out, the Responses files will simply contain the different outputs we may want to send to users, no logic.  
+Create two classes, called "RootResponses.cs" and "SearchResponses.cs" within the "Responses" folder. As you may have figured out, the Responses files will simply contain the different outputs we may want to send to users, no logic.
 
 Within "RootResponses.cs" add the following:
 ```csharp
@@ -358,13 +358,13 @@ namespace PictureBot.Responses
 }
 ```
 
-Note here a whole task is missing. Fill in as you see fit, but make sure the new task has the name "ReplyWithSearchRequest", or you may have issues later.  
+Note here a whole task is missing. Fill in as you see fit, but make sure the new task has the name "ReplyWithSearchRequest", or you may have issues later.
 
-#### Models 
-Due to time limitations, we will not be walking through creating all the models. They are straightforward, and we recommend taking some time to review the code within after you've added them. Right-click on the "Models" folder and select **Add>Existing Item**. Navigate to "challenge2.2-building_bots/building_bots-sdk_v4/resources/code/Models", select all four files, and select "Add."  
+#### Models
+Due to time limitations, we will not be walking through creating all the models. They are straightforward, and we recommend taking some time to review the code within after you've added them. Right-click on the "Models" folder and select **Add>Existing Item**. Navigate to "challenge2.2-building_bots/building_bots-sdk_v4/resources/code/Models", select all four files, and select "Add."
 
 At this point, your Solution Explorer should look similar to the following image:
-![Solution Folder view for Bot](./resources/assets/solutionExplorer.png) 
+![Solution Folder view for Bot](./resources/assets/solutionExplorer.png)
 
 Are you missing anything? Now's a good time to check.
 
@@ -401,7 +401,7 @@ namespace PictureBot
             }
             else
             {
-                // we do have an active topic, so call it 
+                // we do have an active topic, so call it
                 handled = await conversation.ActiveTopic.ContinueTopic(context);
             }
 
@@ -420,16 +420,16 @@ Take a few minutes to read the comments and be sure you understand what we're do
 
 ### Lab 1.4: Regex and Middleware
 
-There are a number of things that we can do to improve our bot.  First of all, we may not want to call LUIS for a simple "hi" greeting, which the bot will get fairly frequently from its users.  A simple regular expression could match this, and save us time (due to network latency) and money (due to cost of calling the LUIS service).  
+There are a number of things that we can do to improve our bot.  First of all, we may not want to call LUIS for a simple "hi" greeting, which the bot will get fairly frequently from its users.  A simple regular expression could match this, and save us time (due to network latency) and money (due to cost of calling the LUIS service).
 
-Also, as the complexity of our bot grows, and we are taking the user's input and using multiple services to interpret it, we need a process to manage that flow.  For example, try regular expressions first, and if that doesn't match, call LUIS, and then perhaps we also drop down to try other services like [QnA Maker](http://qnamaker.ai) and Azure Search. A great way to manage this is through [Middleware](https://github.com/Microsoft/botbuilder-dotnet/wiki/Creating-Middleware), and the SDK does a great job supporting that. We call middleware from `ConfigureServices` under `Startup.cs`, simply by calling additional options add it (check your `Startup.cs` file to see the location). 
+Also, as the complexity of our bot grows, and we are taking the user's input and using multiple services to interpret it, we need a process to manage that flow.  For example, try regular expressions first, and if that doesn't match, call LUIS, and then perhaps we also drop down to try other services like [QnA Maker](http://qnamaker.ai) and Azure Search. A great way to manage this is through [Middleware](https://github.com/Microsoft/botbuilder-dotnet/wiki/Creating-Middleware), and the SDK does a great job supporting that. We call middleware from `ConfigureServices` under `Startup.cs`, simply by calling additional options add it (check your `Startup.cs` file to see the location).
 
-Before continuing with the lab, learn more about middleware and the Bot Framework SDK:  
+Before continuing with the lab, learn more about middleware and the Bot Framework SDK:
 1.  [Overview and Architecture](https://github.com/Microsoft/botbuilder-dotnet/wiki/Overview)
 2.  [Creating Middleware](https://github.com/Microsoft/botbuilder-dotnet/wiki/Creating-Middleware)
-3.  [In the SDK, under `Microsoft.Bot.Builder.Core.Extensions`](https://github.com/Microsoft/botbuilder-dotnet/tree/master/libraries/Microsoft.Bot.Builder.Core.Extensions), you can look at some of the middleware that's built-in to the SDK.  
+3.  [In the SDK, under `Microsoft.Bot.Builder.Core.Extensions`](https://github.com/Microsoft/botbuilder-dotnet/tree/master/libraries/Microsoft.Bot.Builder.Core.Extensions), you can look at some of the middleware that's built-in to the SDK.
 
-Ultimately, we'll use some middleware to try to understand what users are saying with regular expressions (Regex) first, and if we can't, we'll call LUIS. If we still can't, then we'll drop down to a generic "I'm not sure what you mean" response, or whatever you put for "ReplyWithConfused."    
+Ultimately, we'll use some middleware to try to understand what users are saying with regular expressions (Regex) first, and if we can't, we'll call LUIS. If we still can't, then we'll drop down to a generic "I'm not sure what you mean" response, or whatever you put for "ReplyWithConfused."
 
 To add the middleware for Regex to your solution, create a new folder called "Middleware," and add the contents of the "Middleware" folder (you can find this under **resources > code**) to your solution.
 
@@ -447,17 +447,17 @@ In "Startup.cs", below the "Add middleware below" comment within `ConfigureServi
                     .AddIntent("help", new Regex("help(.*)", RegexOptions.IgnoreCase)));
                 // Add LUIS ability below
 ```
-You will probably get some errors within this. Fix them.  
+You will probably get some errors within this. Fix them.
 
-**Hint (1):** UserData and ConversationData are the objects we persisted as user and conversation state "State.cs" (in the Models folder).  
+**Hint (1):** UserData and ConversationData are the objects we persisted as user and conversation state "State.cs" (in the Models folder).
 
-**Hint (2):** You're missing a using statement.  
+**Hint (2):** You're missing a using statement.
 
-> We're really just skimming the surface of using regular expressions. [Learn more](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference).  
+> We're really just skimming the surface of using regular expressions. [Learn more](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference).
 
-Hopefully, it's fairly easy to see what we're doing here. Because of the order, we'll try Regex then LUIS. Without adding LUIS, our bot is really only going to pick up on a few variations, but it should capture a lot, if the users are using the bot for searching and sharing and ordering pictures. 
+Hopefully, it's fairly easy to see what we're doing here. Because of the order, we'll try Regex then LUIS. Without adding LUIS, our bot is really only going to pick up on a few variations, but it should capture a lot, if the users are using the bot for searching and sharing and ordering pictures.
 
-> Fun Aside: One might argue that the user shouldn't have to type "help" to get a menu of clear options on what the bot can do; rather, this should be the default experience on first contact with the bot.  **Discoverability** is one of the biggest challenges for bots - letting the users know what the bot is capable of doing.  Good [bot design principles](https://docs.microsoft.com/en-us/bot-framework/bot-design-principles) can help.   
+> Fun Aside: One might argue that the user shouldn't have to type "help" to get a menu of clear options on what the bot can do; rather, this should be the default experience on first contact with the bot.  **Discoverability** is one of the biggest challenges for bots - letting the users know what the bot is capable of doing.  Good [bot design principles](https://docs.microsoft.com/en-us/bot-framework/bot-design-principles) can help.
 
 #### RootTopic, Again
 
@@ -492,7 +492,7 @@ Make sure you understand the code, then replace the `StartTopic` method in "Root
                     }
                     break;
                 case ActivityTypes.Message:
-                    // greet on first message if we haven't already 
+                    // greet on first message if we haven't already
                     if (!Greeted)
                     {
                         await RootResponses.ReplyWithGreeting(context);
@@ -540,7 +540,7 @@ Based on our results from Regex, we need to direct the conversation in the next 
                             await RootResponses.ReplyWithHelp(context);
                             return true;
                         default:
-                            // adding app logic when Regex doesn't find an intent 
+                            // adding app logic when Regex doesn't find an intent
                             // respond saying we don't know
                             await RootResponses.ReplyWithConfused(context);
                             return true;
@@ -549,7 +549,7 @@ Based on our results from Regex, we need to direct the conversation in the next 
             return true;
         }
 ```
-3.  ResumeTopic - In both Topics we'll create today, this serves as a "catch" if for some reason (maybe the user interrupts the bot) the active topic isn't handled and isn't RootTopic, this will basically start us over.  
+3.  ResumeTopic - In both Topics we'll create today, this serves as a "catch" if for some reason (maybe the user interrupts the bot) the active topic isn't handled and isn't RootTopic, this will basically start us over.
 
 Replace ResumeTopic with the following code:
 ```csharp
@@ -571,5 +571,5 @@ Get stuck? You can find the solution for this lab under [resources/code/Finished
 
 
 
-### Continue to [2_Azure_Search](./2_Azure_Search.md)  
+### Continue to [2_Azure_Search](./2_Azure_Search.md)
 Back to [README](./0_README.md)

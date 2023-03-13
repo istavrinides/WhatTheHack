@@ -1,6 +1,6 @@
 ## Linux History
 
-Linux borrows heavily from the UNIX operating system because it was written to be a free and open source version of UNIX. Files are stored in a hierarchical filesystem, with the top node of the system being root or simply "/". 
+Linux borrows heavily from the UNIX operating system because it was written to be a free and open source version of UNIX. Files are stored in a hierarchical filesystem, with the top node of the system being root or simply "/".
 
 Whenever possible, Linux makes its components available via files or objects that look like files. Processes, devices, and network sockets are all represented by file-like objects, and can often be worked with using the same utilities used for regular files.
 
@@ -30,14 +30,14 @@ Many commercial distributors, including Red Hat, Ubuntu, SUSE, and Oracle, provi
 
 The Debian distribution is upstream for several other distributions including Ubuntu, and Ubuntu is upstream for Linux Mint and others. It is commonly used on both servers and desktop computers. Debian is a pure open source project and focuses on one key aspect, that is, stability. It also provides the largest and most complete software repository to its users.
 
-Ubuntu aims at providing a good compromise between long term stability and ease of use. Since Ubuntu gets most of its packages from Debian’s stable branch, Ubuntu also has access to a very large software repository. 
+Ubuntu aims at providing a good compromise between long term stability and ease of use. Since Ubuntu gets most of its packages from Debian’s stable branch, Ubuntu also has access to a very large software repository.
 
 _Key Facts About the Debian Family:_
 
 * The Debian family is upstream for Ubuntu, and Ubuntu is upstream for Linux Mint and others.
 * It uses the DPKG-based apt-get package manager (we cover in more detail later) to install, update, and remove packages in the system.
 * Ubuntu has been widely used for cloud deployments.
-	
+
 **Fedora Family**
 
 Fedora is the community distribution that forms the basis of Red Hat Enterprise Linux (RHEL), CentOS, Scientific Linux, and Oracle Linux. Fedora contains significantly more software than Red Hat’s enterprise version. One reason for this is that a diverse community is involved in building Fedora; it is not just a company.
@@ -51,14 +51,14 @@ _Key Facts About the Fedora Family:_
 
 **SUSE Family**
 
-The relationship between SUSE, SUSE Linux Enterprise Server (SLES), and openSUSE is similar to the one described between Fedora, Red Hat Enterprise Linux, and CentOS. 
+The relationship between SUSE, SUSE Linux Enterprise Server (SLES), and openSUSE is similar to the one described between Fedora, Red Hat Enterprise Linux, and CentOS.
 
 _Key Facts About the SUSE Family:_
 
 * SUSE Linux Enterprise Server (SLES) is upstream for openSUSE.
 * It uses the RPM-based zypper package manager (we cover in more detail later) to install, update, and remove packages in the system.
 * It includes the YaST (Yet another System Tool) application for system administration purposes.
-	
+
 As said, the biggest differences between the distros are their package management systems and tools.
 Debian (and derived distros) use the Debian (.deb) package format, Red-hat (and derived distros) use the RPM (.rpm) package format. And distros like Arch and Slackware use their own packaging formats and tools.
 

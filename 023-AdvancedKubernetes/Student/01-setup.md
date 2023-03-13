@@ -9,7 +9,7 @@
 1. Your Azure Subscription
 
 
-## Introduction 
+## Introduction
 
 The first challenge is to setup your local environment as well as the AKS cluster you will be running on.
 

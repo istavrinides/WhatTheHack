@@ -2,15 +2,15 @@
 
 # Change NSG firewall rule to restrict Postgres and MySQL database from client machine only
 
-# Find out your local client ip address. 
+# Find out your local client ip address.
 
 echo -e "\n This script restricts the access to your ""on-prem"" Postgres, Oracle and MySQL database from the shell where it is run from.
  It removes public access to the databases and adds your shell IP address as an source IP to connect from.
- If you are running this script from Azure Cloud Shell and want to add your computer's IP address as a source for Gui tools to connect to, 
- then you have to edit the variable my_ip below - put  your computer's IP address. 
- 
- In order to find the public IP address of your computer ip address,  point a browser to  https://ifconfig.me  
- 
+ If you are running this script from Azure Cloud Shell and want to add your computer's IP address as a source for Gui tools to connect to,
+ then you have to edit the variable my_ip below - put  your computer's IP address.
+
+ In order to find the public IP address of your computer ip address,  point a browser to  https://ifconfig.me
+
  If this script is run again it appends your IP address to the current white listed source IP addresses. \n"
 
 my_ip=`curl -s ifconfig.me`/32
@@ -27,7 +27,7 @@ export pg_nsg_rule_name=`az network nsg rule list -g $rg_nsg --nsg-name $nsg_nam
 export my_nsg_rule_name=`az network nsg rule list -g $rg_nsg --nsg-name $nsg_name --query "[].[name]" -o tsv | grep "TCP-3306" `
 export or_nsg_rule_name=`az network nsg rule list -g $rg_nsg --nsg-name $nsg_name --query "[].[name]" -o tsv | grep "TCP-1521" `
 
-# Capture the existing allowed_source_ip_address. 
+# Capture the existing allowed_source_ip_address.
 
 existing_pg_source_ip_allowed=`az network nsg rule show  -g $rg_nsg --nsg-name $nsg_name --name $pg_nsg_rule_name --query "sourceAddressPrefix" -o tsv`
 existing_my_source_ip_allowed=`az network nsg rule show  -g $rg_nsg --nsg-name $nsg_name --name $my_nsg_rule_name --query "sourceAddressPrefix" -o tsv`
@@ -54,8 +54,8 @@ then
    existing_or_source_ip_allowed="0.0.0.0"
 fi
 
-# if the existing source ip allowed is open to the world - then we need to remove it first. Otherwise it is a ( list of ) IP addresses then 
-# we append to it another IP address. Open the world is 0.0.0.0 or 0.0.0.0/0. 
+# if the existing source ip allowed is open to the world - then we need to remove it first. Otherwise it is a ( list of ) IP addresses then
+# we append to it another IP address. Open the world is 0.0.0.0 or 0.0.0.0/0.
 
 
 existing_pg_source_ip_allowed_prefix=`echo $existing_pg_source_ip_allowed | cut  -d "/" -f1`
@@ -67,33 +67,33 @@ existing_or_source_ip_allowed_prefix=`echo $existing_or_source_ip_allowed | cut 
 
 
 
-if [ "$existing_pg_source_ip_allowed_prefix" = "0.0.0.0" ]  
-then  
+if [ "$existing_pg_source_ip_allowed_prefix" = "0.0.0.0" ]
+then
   new_pg_source_ip_allowed="$my_ip"
-else  
+else
   new_pg_source_ip_allowed="$existing_pg_source_ip_allowed $my_ip"
 fi
 
 
-if [ "$existing_my_source_ip_allowed_prefix" = "0.0.0.0" ]  
-then  
+if [ "$existing_my_source_ip_allowed_prefix" = "0.0.0.0" ]
+then
   new_my_source_ip_allowed="$my_ip"
-else  
+else
   new_my_source_ip_allowed="$existing_my_source_ip_allowed $my_ip"
 fi
 
 
-if [ "$existing_or_source_ip_allowed_prefix" = "0.0.0.0" ]  
-then  
+if [ "$existing_or_source_ip_allowed_prefix" = "0.0.0.0" ]
+then
   new_or_source_ip_allowed="$my_ip"
-else  
+else
   new_or_source_ip_allowed="$existing_or_source_ip_allowed $my_ip"
 fi
 
 
 # Update the rule to allow access to Postgres and MySQL only from your client ip address - "myip". Also discard errors - as if you run the script
 # simply twice back to back - it gives an error message - does not do any harm though .
-   
+
 
 #echo -e "Using Resource Group $rg_nsg, NSG Name $nsg_name, Names $pg_nsg_rule_name, $my_nsg_rule_name, $or_nsg_rule_name, Source Address Prefixes $new_pg_source_ip_allowed"
 az network nsg rule update -g $rg_nsg --nsg-name $nsg_name --name $pg_nsg_rule_name --source-address-prefixes $new_pg_source_ip_allowed 2>/dev/zero

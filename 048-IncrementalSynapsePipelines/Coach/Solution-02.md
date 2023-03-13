@@ -16,7 +16,7 @@ Also, you can expand this component to examine [Change Data Capture](https://doc
 
 - [SQLMI to Dedicated Pool Proof of Concept](../Student/Resources/SQLMItoDedicatedPoolProofofConcept.docx?raw=true)
 
-*There are also some SQL scripts to help the attendees get started with inserting, updating and deleting records in the Azure SQL database to evaluate the Change Data Capture functionality and for the stored procedures needed for the SQL Dedicated Pool.  They are located in the [Resources Folder](../Student/Resources/SQL).*  
+*There are also some SQL scripts to help the attendees get started with inserting, updating and deleting records in the Azure SQL database to evaluate the Change Data Capture functionality and for the stored procedures needed for the SQL Dedicated Pool.  They are located in the [Resources Folder](../Student/Resources/SQL).*
 
 *Please distribute these to the students in a zip file in preperation for this challenge.*
 

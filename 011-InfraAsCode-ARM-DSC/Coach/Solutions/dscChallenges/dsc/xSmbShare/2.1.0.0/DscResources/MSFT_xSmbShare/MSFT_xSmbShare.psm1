@@ -30,7 +30,7 @@ function Get-TargetResource
             elseif ($access.AccessRight -eq 'Read' -and $access.AccessControlType -eq 'Allow')
             {
                 $readAccess += $access.AccountName
-            }            
+            }
             elseif ($access.AccessRight -eq 'Full' -and $access.AccessControlType -eq 'Allow')
             {
                 $fullAccess += $access.AccountName
@@ -44,7 +44,7 @@ function Get-TargetResource
     else
     {
         Write-Verbose "Share with name $Name does not exist"
-    } 
+    }
 
     $returnValue = @{
         Name = $smbShare.Name
@@ -52,7 +52,7 @@ function Get-TargetResource
         Description = $smbShare.Description
         ConcurrentUserLimit = $smbShare.ConcurrentUserLimit
         EncryptData = $smbShare.EncryptData
-        FolderEnumerationMode = $smbShare.FolderEnumerationMode                
+        FolderEnumerationMode = $smbShare.FolderEnumerationMode
         ShareState = $smbShare.ShareState
         ShareType = $smbShare.ShareType
         ShadowCopy = $smbShare.ShadowCopy
@@ -60,7 +60,7 @@ function Get-TargetResource
         ChangeAccess = $changeAccess
         ReadAccess = $readAccess
         FullAccess = $fullAccess
-        NoAccess = $noAccess     
+        NoAccess = $noAccess
         Ensure = if($smbShare) {"Present"} else {"Absent"}
     }
 
@@ -71,7 +71,7 @@ function Set-AccessPermission
 {
     [CmdletBinding()]
     Param
-    (           
+    (
         $ShareName,
 
         [string[]]
@@ -98,7 +98,7 @@ function Remove-AccessPermission
 {
     [CmdletBinding()]
     Param
-    (           
+    (
         $ShareName,
 
         [string[]]
@@ -204,12 +204,12 @@ function Set-TargetResource
                 $noAccessValue = $psboundparameters["NoAccess"]
                 $psboundparameters.Remove("NoAccess")
             }
-            
+
             # Use Set-SmbShare for performing operations other than changing access
             $psboundparameters.Remove("Ensure")
             $psboundparameters.Remove("Path")
             Set-SmbShare @PSBoundParameters -Force
-            
+
             # Use *SmbShareAccess cmdlets to change access
             $smbshareAccessValues = Get-SmbShareAccess -Name $Name
             if ($ChangeAccess -ne $null)
@@ -219,7 +219,7 @@ function Set-TargetResource
                                       | % {
                                             Remove-AccessPermission -ShareName $Name -UserName $_.AccountName -AccessPermission Change
                                           }
-                                  
+
                 $changeAccessValue | % {
                                         Set-AccessPermission -ShareName $Name -AccessPermission "Change" -Username $_
                                        }
@@ -234,7 +234,7 @@ function Set-TargetResource
                                           }
 
                 $readAccessValue | % {
-                                       Set-AccessPermission -ShareName $Name -AccessPermission "Read" -Username $_                        
+                                       Set-AccessPermission -ShareName $Name -AccessPermission "Read" -Username $_
                                      }
             }
             $smbshareAccessValues = Get-SmbShareAccess -Name $Name
@@ -247,7 +247,7 @@ function Set-TargetResource
                                           }
 
                 $fullAccessValue | % {
-                                        Set-AccessPermission -ShareName $Name -AccessPermission "Full" -Username $_                        
+                                        Set-AccessPermission -ShareName $Name -AccessPermission "Full" -Username $_
                                      }
             }
             $smbshareAccessValues = Get-SmbShareAccess -Name $Name
@@ -264,7 +264,7 @@ function Set-TargetResource
             }
         }
     }
-    else 
+    else
     {
         Write-Verbose "Removing share $Name to ensure it is Absent"
         Remove-SmbShare -name $Name -Force
@@ -326,7 +326,7 @@ function Test-TargetResource
         {
             $Params = 'Name', 'Path', 'Description', 'ChangeAccess', 'ConcurrentUserLimit', 'EncryptData', 'FolderEnumerationMode', 'FullAccess', 'NoAccess', 'ReadAccess', 'Ensure'
             if ($PSBoundParameters.Keys.Where({$_ -in $Params}) | ForEach-Object {Compare-Object -ReferenceObject $PSBoundParameters.$_ -DifferenceObject $share.$_})
-            { 
+            {
                 $testResult = $false
             }
             else

@@ -20,7 +20,7 @@ https://docs.microsoft.com/en-us/sql/t-sql/language-elements/kill-transact-sql?v
 /****************************************************************************************
 STEP 1 of 5 - This command should never complete
 Run this update after you run C3_A_Simulate_Writings.ps1 powershell script and wait for it to complete.
-It will update Sales.FactInternetSales and will use an exclusive lock on the table. 
+It will update Sales.FactInternetSales and will use an exclusive lock on the table.
 This will prevent further writings against the table.
 
 All Azure Synapse Analytics locks are table level or higher
@@ -31,7 +31,7 @@ https://docs.microsoft.com/en-us/sql/t-sql/language-elements/transactions-sql-da
 DECLARE @c SMALLINT
 DECLARE @t SMALLINT
 
-SELECT @c = (SELECT COUNT(*) FROM Sales.DimCurrency) 
+SELECT @c = (SELECT COUNT(*) FROM Sales.DimCurrency)
 
 UPDATE Sales.FactInternetSales SET CurrencyKey = ABS(CHECKSUM(NEWID())) % @c + 1
 WHERE OrderDateKey >=20210101 AND OrderDateKey <= 20210630
@@ -62,10 +62,10 @@ In this example it will never complete, Ps1 script doesn't contain the proper Co
 WITH blocked_sessions (login_name, blocked_session, state, type, command, object)
 AS
 (
-SELECT 
+SELECT
     sessions.login_name,
-    blocked.session_id as blocked_session, 
-    blocked.state , 
+    blocked.session_id as blocked_session,
+    blocked.state ,
     blocked.type,
     requests.command,
     blocked.object_name
@@ -77,19 +77,19 @@ SELECT
     WHERE blocked.state <> 'Granted'
     )
 --merging with blocking session info
-SELECT 
+SELECT
     blocked_sessions.login_name as blocked_user,
     blocked_sessions.blocked_session as blocked_session,
     blocked_sessions.state as blocked_state,
     blocked_sessions.type as blocked_type,
     blocked_sessions.command as blocked_command,
     sessions.login_name as blocking_user,
-    blocking.session_id as blocking_session, 
-    blocking.state as blocking_state, 
+    blocking.session_id as blocking_session,
+    blocking.state as blocking_state,
     blocking.type as blocking_type,
     requests.command as blocking_command
     FROM sys.dm_pdw_waits blocking
-    JOIN blocked_sessions 
+    JOIN blocked_sessions
         ON blocked_sessions.object = blocking.object_name
     JOIN sys.dm_pdw_exec_requests requests
         ON blocking.request_id = requests.request_id

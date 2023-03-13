@@ -25,10 +25,10 @@ This hack will help you learn:
 - How Terraform can be used to trigger the install of software on a VM
 
 ## Challenges
-0. [Get your machine ready](./Student/prerequisite.md) 
+0. [Get your machine ready](./Student/prerequisite.md)
    - Configure Terraform on Linux subsystem, credentials
 1. ["Hello World" Terraform](./Student/readme.md)
-   - Create an Azure resource group using Terraform 
+   - Create an Azure resource group using Terraform
 1. [Deploy a Virtual Network](./Student/readme.md)
    - Learn how to find Terraform HCL syntax to deploy an Azure resource
 1. [Open Some Ports](./Student/readme.md)

@@ -131,7 +131,7 @@
                     "properties": {
                       "publicAccess": "None"
                     }
-                  }                  
+                  }
             ]
         },
         {
@@ -154,7 +154,7 @@
             "tags": {
                 "FhirServerSolution": "[parameters('solutionType')]"
             },
-            "name": "[variables('functionAppName')]",  
+            "name": "[variables('functionAppName')]",
             "location": "[parameters('location')]",
             "kind": "functionapp",
             "dependsOn": [
@@ -260,7 +260,7 @@
                 }
             ]
         },
-        {   
+        {
         "apiVersion": "2018-05-01-preview",
         "name": "[variables('applicationInsightsName')]",
         "type": "microsoft.insights/components",

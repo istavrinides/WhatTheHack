@@ -22,7 +22,7 @@ kubectl -n oracle cp ./oracle.sql $oraPod:/tmp/oracle.sql
 
 for ((i = 0 ; i < 90 ; i++)); do
     oraLog=$(kubectl -n oracle logs $oraPod)
-    echo $oraLog 
+    echo $oraLog
     if [[ $oraLog != *"Completed"* ]]; then
         sleep 10
     else
@@ -49,7 +49,7 @@ for ((i = 0 ; i < 30 ; i++)); do
 done
 
 ora2pgIP=$(kubectl -n ora2pg get svc -o jsonpath="{.items[0].status.loadBalancer.ingress[0].ip}")
-ora2pgPort=$(kubectl -n ora2pg get svc -o jsonpath="{.items[0].spec.ports[0].port}")     
+ora2pgPort=$(kubectl -n ora2pg get svc -o jsonpath="{.items[0].spec.ports[0].port}")
 echo "ora2pg is at http://$ora2pgIP:$ora2pgPort/"
 
 oracleAppIP=$(kubectl -n contosoapporacle get svc -o jsonpath="{.items[0].status.loadBalancer.ingress[0].ip}")

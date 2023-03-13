@@ -125,7 +125,7 @@ You will enhance the `FineCollectionService` so that it uses the Dapr SMTP outpu
 
     If you see any warnings or errors, review the previous steps to make sure the code is correct
 
-That's it! That's all the code you need to send an email over SMTP.  
+That's it! That's all the code you need to send an email over SMTP.
 
 ## Step 3: Configure the output binding
 
@@ -250,7 +250,7 @@ You should see the same logs as before. You can also view the fine notification 
     dotnet add package Newtonsoft.Json
     ```
 
-1.  Navigate to the `Resources/FineCollectionService` directory. Open the `Resources\FineCollectionService\Controllers\CollectionController.cs` file. Modify the **CollectFine** method to pass in a JSON object to the Logic App's HTTP endpoint. 
+1.  Navigate to the `Resources/FineCollectionService` directory. Open the `Resources\FineCollectionService\Controllers\CollectionController.cs` file. Modify the **CollectFine** method to pass in a JSON object to the Logic App's HTTP endpoint.
 
     Add the following to the using statements at the top of the file.
 

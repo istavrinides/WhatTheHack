@@ -2,7 +2,7 @@
 
 **[Home](../README.md)** - [Next Challenge >](./Challenge-02.md)
 
-## Pre-requisites 
+## Pre-requisites
 For this challenge you will need the following:
 
 - - Access to an Azure subscription with Owner access
@@ -22,17 +22,17 @@ For this challenge you will need the following:
 
 
 ## Introduction
- This is the first step of getting an environment setup to work from. This will be a straightforward challenge to ensure you have your subscription setup and to devise a plan to work with your team if you're working as part of a group. This will be used to work as the starting point for IoT Edge communication in subsequent modules. 
+ This is the first step of getting an environment setup to work from. This will be a straightforward challenge to ensure you have your subscription setup and to devise a plan to work with your team if you're working as part of a group. This will be used to work as the starting point for IoT Edge communication in subsequent modules.
 
 ## Description
-In this challenge you will establish all necessary cloud components needed to deploy an Edge device. Consideration should be given to using automated deployment/provisioning capabilities of Azure IoT hub as a means to gain insight into activity occurring within the plant with an Edge endpoint & provision of a virtual IoT edge device.  
+In this challenge you will establish all necessary cloud components needed to deploy an Edge device. Consideration should be given to using automated deployment/provisioning capabilities of Azure IoT hub as a means to gain insight into activity occurring within the plant with an Edge endpoint & provision of a virtual IoT edge device.
 
-Azure IoT Hub will be needed that is created in **one of the regions where Device Streams are available**. At the time of writing, these are: 
+Azure IoT Hub will be needed that is created in **one of the regions where Device Streams are available**. At the time of writing, these are:
   - Central US
   - Central US EUAP (Early Updates Access Program)
   - North Europe
-  - Southeast Asia. 
-     
+  - Southeast Asia.
+
 Check for the updated list of supported regions here: [Device Streams: Regional availability](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-device-streams-overview#regional-availability).
 
 ## Success Criteria

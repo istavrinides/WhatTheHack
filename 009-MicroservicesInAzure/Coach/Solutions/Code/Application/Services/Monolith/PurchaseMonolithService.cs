@@ -18,7 +18,7 @@ namespace ContosoTravel.Web.Application.Services.Monolith
 
         public async Task<bool> SendForProcessing(string cartId, System.DateTimeOffset PurchasedOn, CancellationToken cancellationToken)
         {
-            await Task.Delay(_random.Next(0, 30) * 1000);   
+            await Task.Delay(_random.Next(0, 30) * 1000);
             string recordId = await _fulfillmentService.Purchase(cartId, PurchasedOn, cancellationToken);
             return !string.IsNullOrEmpty(recordId);
         }

@@ -15,11 +15,11 @@ Then pull out the app insights key:
 For Powershell:
 
 ```powershell
-$appInsightsKey=az resource show --resource-group $rg --subscription $sub --resource-type Microsoft.Insights/components --name YYYY --query "properties.InstrumentationKey" 
+$appInsightsKey=az resource show --resource-group $rg --subscription $sub --resource-type Microsoft.Insights/components --name YYYY --query "properties.InstrumentationKey"
 ```
 
 For Bash:
 
 ```bash
-export appInsightsKey=$(az resource show --resource-group $rg --subscription $sub --resource-type Microsoft.Insights/components --name YYYY --query "properties.InstrumentationKey" | tr -d '"') 
+export appInsightsKey=$(az resource show --resource-group $rg --subscription $sub --resource-type Microsoft.Insights/components --name YYYY --query "properties.InstrumentationKey" | tr -d '"')
 ```

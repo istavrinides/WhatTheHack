@@ -14,7 +14,7 @@ az group create --name $monitoringHackName -l $location
 
 #Step 3: Create Key Vault and set flag to enable for template deployment with ARM
 declare vaultSuffix="MonitoringHackVault"
-declare monitoringHackVaultName="$monitoringHackName$vaultSuffix" 
+declare monitoringHackVaultName="$monitoringHackName$vaultSuffix"
 az keyvault create --name $monitoringHackVaultName -g $monitoringHackName -l $location --enabled-for-template-deployment true
 
 #Step 4: Add password as a secret.  Use a password that meets the azure pwd police like P@ssw0rd123!!
@@ -23,7 +23,7 @@ az keyvault secret set --vault-name $monitoringHackVaultName --name 'VMPassword'
 
 #Step 5: Update azuredeploy.parameters.json file with your envPrefixName and Key Vault resourceID Example --> /subscriptions/{guid}/resourceGroups/{group-name}/providers/Microsoft.KeyVault/vaults/{vault-name}
 # Hint: Run the following line of code to retrieve the resourceID so you can cut and paste from the terminal into your parameters file!
-az keyvault show --name $monitoringHackVaultName -o json 
+az keyvault show --name $monitoringHackVaultName -o json
 
 #Step 6: Run deployment below after updating and SAVING the parameter file with your key vault info.  Make sure to update the paths to the json files or run the command from the same directory
 #Note: This will deploy VMs using DS3_v2 series VMs.  By default a subscription is limited to 10 cores of DS Series per region.  You may have to request more cores or

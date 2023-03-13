@@ -32,5 +32,4 @@ az vm create \
     --image win2016datacenter \
     --admin-username azureuser \
     --admin-password $AdminPassword \
-    --size Basic_A1 
-  
+    --size Basic_A1

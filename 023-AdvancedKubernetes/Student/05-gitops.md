@@ -20,7 +20,7 @@ Credit: <https://www.weave.works/blog/why-is-a-pull-vs-a-push-pipeline-important
     - Example: Add `--ui-message='Welcome to Flux'` to the container command
     - HINT: You can use `fluxctl sync` if you're impatient
 - Using GitOps, expose the service at podinfo.$INGRESS_IP.nip.io
-    - HINT: Here's a sample Ingress 
+    - HINT: Here's a sample Ingress
 
 ```
 apiVersion: extensions/v1beta1

@@ -5,7 +5,7 @@
     <h2>Policy Holder Details</h2>
         <div class="form-horizontal">
             <ul id="validationSummary"></ul>
-    
+
             <div class="form-group">
                 <label for="Person" class = "control-label col-md-2">
                  Person
@@ -16,7 +16,7 @@
                     </a>
                 </div>
             </div>
-    
+
             <div class="form-group">
                 <label for="Policy" class = "control-label col-md-2">
                  Policy
@@ -27,7 +27,7 @@
                     </a>
                 </div>
             </div>
-    
+
             <div class="form-group">
                 <label for="Active" class = "control-label col-md-2">
                 Active
@@ -36,7 +36,7 @@
                     <input type="checkbox" ng-model="data.active" id="Active" ng-disabled="true" />
                 </div>
             </div>
-    
+
             <div class="form-group">
                 <label for="StartDate" class = "control-label col-md-2">
                 Start Date
@@ -45,7 +45,7 @@
                     {{data.startDate | date}}
                 </div>
             </div>
-    
+
             <div class="form-group">
                 <label for="EndDate" class = "control-label col-md-2">
                 End Date
@@ -54,7 +54,7 @@
                     {{data.endDate | date}}
                 </div>
             </div>
-    
+
             <div class="form-group">
                 <label for="Username" class = "control-label col-md-2">
                 Username
@@ -63,7 +63,7 @@
                     {{data.username}}
                 </div>
             </div>
-    
+
             <div class="form-group">
                 <label for="PolicyNumber" class = "control-label col-md-2">
                 Policy #
@@ -72,18 +72,18 @@
                     {{data.policyNumber}}
                 </div>
             </div>
-    
+
             <div class="form-group">
                 <label for="FilePath" class = "control-label col-md-2">
                 File Path
                 </label>
-                <div class="col-md-10"> 
+                <div class="col-md-10">
                     <a ng-href="{{azureFunctionsProxyUrl}}" target="_blank">
                         {{data.filePath}}
                     </a>
                 </div>
             </div>
-    
+
             <div class="form-group">
                 <label for="PolicyAmount" class = "control-label col-md-2">
                 Policy Amount
@@ -92,7 +92,7 @@
                     {{data.policyAmount | currency:"$"}}
                 </div>
             </div>
-    
+
             <div class="form-group">
                 <label for="Deductible" class = "control-label col-md-2">
                 Deductible
@@ -101,7 +101,7 @@
                     {{data.deductible | currency:"$"}}
                 </div>
             </div>
-    
+
             <div class="form-group">
                 <label for="OutOfPocketMax" class = "control-label col-md-2">
                 Out of Pocket Max
@@ -110,7 +110,7 @@
                     {{data.outOfPocketMax | currency:"$"}}
                 </div>
             </div>
-    
+
             <div class="form-group">
                 <label for="EffectiveDate" class = "control-label col-md-2">
                 Effective Date
@@ -119,7 +119,7 @@
                     {{data.effectiveDate | date}}
                 </div>
             </div>
-    
+
             <div class="form-group">
                 <label for="ExpirationDate" class = "control-label col-md-2">
                 Expiration Date
@@ -127,9 +127,9 @@
                 <div class="col-md-10">
                     {{data.expirationDate | date}}
                 </div>
-            </div>       
+            </div>
         </div>
-    
+
     <div>
         <a href="#/policyHolders">Back to List</a>
     </div>

@@ -29,5 +29,5 @@ namespace DataLoader.CosmosDB
             var client = _cosmosDBProvider.GetDocumentClient();
             await client.CreateDatabaseIfNotExistsAsync(new Microsoft.Azure.Documents.Database() { Id = _contosoConfiguration.DatabaseName });
         }
-    }    
+    }
 }

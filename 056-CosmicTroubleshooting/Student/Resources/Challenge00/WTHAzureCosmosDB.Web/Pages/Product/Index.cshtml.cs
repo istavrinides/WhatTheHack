@@ -25,7 +25,7 @@ public class ProductIndexModel : PageModel
     [Required]
     public string CustomerId { get; set; }
 
-    public ProductIndexModel(ILogger<IndexModel> logger, 
+    public ProductIndexModel(ILogger<IndexModel> logger,
                              ICosmosDbService<models.Product> productService,
                              ICosmosDbService<models.CustomerCart> customerCartService)
     {

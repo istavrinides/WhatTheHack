@@ -1,11 +1,11 @@
-# Challenge 04 - Datadog for Applications - Coach's Guide 
+# Challenge 04 - Datadog for Applications - Coach's Guide
 
 [< Previous Solution](./Solution-03.md) - **[Home](./README.md)**
 
 ## Notes & Guidance
 
-The answer for this challenge can be exported as a Datadog Notebook with the saved queries and a dashboard definition. 
-  
+The answer for this challenge can be exported as a Datadog Notebook with the saved queries and a dashboard definition.
+
 ### Steps for Synthetics
   - Navigate to [Synthetics](https://us3.datadoghq.com/synthetics/tests)
     - Create new tests for:
@@ -33,7 +33,7 @@ instances:
     sites:
       - https://eshopwebpage (public IP address of virtual machine scaleset)
 ```
-  
+
 ### Enable RUM
 
 Navigate to [RUM setup page](https://us3.datadoghq.com/rum/)
@@ -45,7 +45,7 @@ Navigate to [RUM setup page](https://us3.datadoghq.com/rum/)
   - set the "dd.env" tag to `dev` on the top-right of the form (it updates the code on the left)
   - add a tag for version, set it to `1` in the code on the left
   - Copy the code to your clipboard (it contains `cliendToken` and `applicationId`)
-  - On the Visual Studio VM via Bastion, add the js code to the index.cshtml page 
+  - On the Visual Studio VM via Bastion, add the js code to the index.cshtml page
   - Run a new build via powershell script
   - Come back to the RUM application setup page
   - Click "explore user sessions" once the waiting for data spinner stops

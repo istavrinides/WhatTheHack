@@ -1,10 +1,10 @@
-# Challenge 05 - Monitoring workload - Coach's Guide 
+# Challenge 05 - Monitoring workload - Coach's Guide
 
 [< Previous Solution](./Solution-04.md) - **[Home](./README.md)**
 
 ## Notes & Guidance
 
-In this challenge you will understand how to monitor your workload to identify poor performing and  failed queries 
+In this challenge you will understand how to monitor your workload to identify poor performing and  failed queries
 
 **Learning objectives:**
 - How to monitor workload with T-SQL DMVs
@@ -44,22 +44,22 @@ Show attendess how to configure retention period, then query Log-analytics to ge
 If you're using Dedicated SQL Pool (formerly SQL DW) use this queries:
 ```
 //Getting all queries using the same table
-AzureDiagnostics 
+AzureDiagnostics
 | where Category == "ExecRequests" and Label_s != "health_checker"
-| where Command_s contains "FactInternetSales" 
-| order by StartTime_t desc 
+| where Command_s contains "FactInternetSales"
+| order by StartTime_t desc
 
 //getting queries with specific Label
-AzureDiagnostics 
+AzureDiagnostics
 | where Category == "ExecRequests" and Label_s != "health_checker"
 | where Label_s == "Not Partitioned Table"
-| order by StartTime_t desc 
+| order by StartTime_t desc
 
 //getting overlapping queries
-AzureDiagnostics 
+AzureDiagnostics
 | where Category == "ExecRequests" and Label_s != "health_checker"
 | where Status_s in("Running","Suspended")
-| order by StartTime_t desc 
+| order by StartTime_t desc
 
 ```
 
@@ -81,7 +81,7 @@ SynapseSqlPoolExecRequests
 //getting overlapping queries
 SynapseSqlPoolExecRequests
 | where Status in("Running","Suspended")
-| order by StartTime desc 
+| order by StartTime desc
 
 ```
 

@@ -5,7 +5,7 @@
 // By: Paul Sayre
 
 Modernizr.addTest('lowbattery', function () {
-	var minLevel = 0.20,
-		battery = Modernizr.prefixed('battery', navigator);
-	return !!(battery && !battery.charging && battery.level <= minLevel);
+  var minLevel = 0.20,
+    battery = Modernizr.prefixed('battery', navigator);
+  return !!(battery && !battery.charging && battery.level <= minLevel);
 });

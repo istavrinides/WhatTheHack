@@ -25,14 +25,14 @@ display(spark.catalog.listTables().orderBy("name"))
 
 //Report dataframe
 val reportDF = sql("""
-  select 
+  select
     taxi_type,
     trip_year,
     pickup_hour,
     count(*) as trip_count
-  from 
+  from
     taxi_trips_mat_view
-  group by 
+  group by
     taxi_type,
     trip_year,
     pickup_hour

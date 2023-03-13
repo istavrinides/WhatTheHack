@@ -64,9 +64,9 @@ az vm availability-set create \
 
 # Get the resource ID for the availability set
 availabilitySetResourceId=$(az vm availability-set show --name $availabilitySetName --resource-group $resourceGroupName --query id --output tsv)
-  
+
 for vm in ${virtualMachineNames[@]}; do
-    # Create the AVD session hosts 
+    # Create the AVD session hosts
     az vm create \
         --name $vm \
         --resource-group $resourceGroupName \

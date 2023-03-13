@@ -7,10 +7,10 @@
 -- Sometime the explain plan might not be consistent across runs
 
 EXPLAIN WITH_RECOMMENDATIONS(
-SELECT 
+SELECT
 TOP (1000001) [t3].[State Province],SUM([t0].[Total Including Tax])
  AS [a0]
-FROM 
+FROM
 (
 ((select [$Table].[Sale Key] as [Sale Key],
     [$Table].[City Key] as [City Key],
@@ -35,7 +35,7 @@ FROM
     [$Table].[Lineage Key] as [Lineage Key]
 from [Fact].[Sale] as [$Table]) AS [t0]
 
- left outer join 
+ left outer join
 
 (select [_].[Date] as [Invoice Date],
     [_].[Day Number] as [Day Number],
@@ -51,14 +51,14 @@ from [Fact].[Sale] as [$Table]) AS [t0]
     [_].[Fiscal Year] as [Fiscal Year],
     [_].[Fiscal Year Label] as [Fiscal Year Label],
     [_].[ISO Week Number] as [ISO Week Number]
-from [Dimension].[Date] as [_]) AS [t1] on 
+from [Dimension].[Date] as [_]) AS [t1] on
 (
 [t0].[Invoice Date Key] = [t1].[Invoice Date]
 )
 )
 
 
- left outer join 
+ left outer join
 
 (select [$Table].[City Key] as [City Key],
     [$Table].[WWI City ID] as [WWI City ID],
@@ -73,20 +73,20 @@ from [Dimension].[Date] as [_]) AS [t1] on
     [$Table].[Valid From] as [Valid From],
     [$Table].[Valid To] as [Valid To],
     [$Table].[Lineage Key] as [Lineage Key]
-from [Dimension].[City] as [$Table]) AS [t3] on 
+from [Dimension].[City] as [$Table]) AS [t3] on
 (
 [t0].[City Key] = [t3].[City Key]
 )
 )
 
-WHERE 
+WHERE
 (
 ([t1].[Invoice Date] < CAST( '20200701 00:00:00' AS datetime))
- AND 
+ AND
 ([t1].[Invoice Date] >= CAST( '20100701 00:00:00' AS datetime))
 )
 
-GROUP BY [t3].[State Province] 
+GROUP BY [t3].[State Province]
 )
 //*
 *******OPTIMAL EXPLAIN PLAN*****************

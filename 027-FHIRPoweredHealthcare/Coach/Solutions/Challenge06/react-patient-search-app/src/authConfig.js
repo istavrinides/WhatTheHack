@@ -1,7 +1,7 @@
-// 
+//
 //authConfig.js **** NOT USED IN THIS REACT APP ***
 // Config object to be passed to Msal on creation in authService.js
-// For a full list of msal.js configuration parameters, 
+// For a full list of msal.js configuration parameters,
 // visit https://azuread.github.io/microsoft-authentication-library-for-js/docs/msal/modules/_authenticationparameters_.html
 
 msalConfig = {
@@ -14,4 +14,4 @@ msalConfig = {
     cacheLocation: "sessionStorage", // This configures where your cache will be stored
     storeAuthStateInCookie: true, // Set this to "true" if you are having issues on IE11 or Edge
     }
-}; 
+};

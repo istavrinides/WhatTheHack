@@ -1,4 +1,4 @@
-# What the Hack: OSS DevOps 
+# What the Hack: OSS DevOps
 
 ## Challenge 07 - CICD via Jenkins: Continuous Build
 [Back](challenge06.md) // [Home](../readme.md) // [Next](challenge08.md)
@@ -26,7 +26,7 @@ Perform the following tasks:
 1. Deploy and setup a Jenkins instance
     * [Use Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/azure-oss.jenkins)
     * [**Advanced**] Deploy a Jenkins instance as an [Azure Container Instances (ACI) Container Group](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-container-groups)
-2. Create a ```Jenkins Job``` that will: 
+2. Create a ```Jenkins Job``` that will:
     *   Pull latest voting application code from the GitHub repo you created earlier in [Challenge 1](challenge01.md).
     *   Create a Docker container image
     *   Push the created container image to Azure Container Registry (ACR)
@@ -34,5 +34,5 @@ Perform the following tasks:
 ### Success Criteria
 
 The success for this challenge is to be able deploy a functional Jenkins server and create a set of Jobs within that server that pull code, create container image and push that image up to a container repository.
-   
+
 [Back](challenge06.md) // [Home](../readme.md) // [Next](challenge08.md)

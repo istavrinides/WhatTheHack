@@ -1,4 +1,4 @@
-CREATE  Procedure Integration.IngestMovementData 
+CREATE  Procedure Integration.IngestMovementData
 AS
 BEGIN
 

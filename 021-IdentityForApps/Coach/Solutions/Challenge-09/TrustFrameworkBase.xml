@@ -12,16 +12,16 @@
     <ClaimsSchema>
       <!-- The ClaimsSchema is divided into three sections:
            1. Section I lists the minimum claims that are required for the user journeys to work properly.
-           2. Section II lists the claims required for query string parameters and other special parameters 
-              to be passed to other claims providers, esp. login.microsoftonline.com for authentication. 
+           2. Section II lists the claims required for query string parameters and other special parameters
+              to be passed to other claims providers, esp. login.microsoftonline.com for authentication.
               Please do not modify these claims.
-           3. Section III lists any additional (optional) claims that can be collected from the user, stored 
-              in the directory and sent in tokens during sign in. Add new claims to be collected from the user 
+           3. Section III lists any additional (optional) claims that can be collected from the user, stored
+              in the directory and sent in tokens during sign in. Add new claims to be collected from the user
               and/or sent in the token in Section III. -->
 
-      <!-- NOTE: The claims schema contains restrictions on certain claims such as passwords and usernames. 
-           The trust framework policy treats Azure AD as any other claims provider and all its restrictions 
-           are modelled in the policy. A policy could be modified to add more restrictions, or use another 
+      <!-- NOTE: The claims schema contains restrictions on certain claims such as passwords and usernames.
+           The trust framework policy treats Azure AD as any other claims provider and all its restrictions
+           are modelled in the policy. A policy could be modified to add more restrictions, or use another
            claims provider for credential storage which will have its own restrictions. -->
 
       <!-- SECTION I: Claims required for user journeys to work properly -->
@@ -73,7 +73,7 @@
         <UserHelpText>Email address to use for signing in.</UserHelpText>
         <UserInputType>TextBox</UserInputType>
       </ClaimType>
-	  	  
+
       <ClaimType Id="accountEnabled">
         <DisplayName>Account Enabled</DisplayName>
         <DataType>boolean</DataType>
@@ -88,8 +88,8 @@
         <UserInputType>Password</UserInputType>
       </ClaimType>
 
-      <!-- The claim types newPassword and reenterPassword are considered special, please do not change the names. 
-           The UI validates that the user correctly re-entered their password during account creation based on these 
+      <!-- The claim types newPassword and reenterPassword are considered special, please do not change the names.
+           The UI validates that the user correctly re-entered their password during account creation based on these
            claim types.	  -->
       <ClaimType Id="newPassword">
         <DisplayName>New Password</DisplayName>
@@ -300,7 +300,7 @@
         <UserHelpText>Your surname (also known as family name or last name).</UserHelpText>
         <UserInputType>TextBox</UserInputType>
       </ClaimType>
-    
+
     </ClaimsSchema>
 
     <ClaimsTransformations>
@@ -353,7 +353,7 @@
           <OutputClaim ClaimTypeReferenceId="sub" TransformationClaimType="createdClaim" />
         </OutputClaims>
       </ClaimsTransformation>
- 
+
       <ClaimsTransformation Id="AssertAccountEnabledIsTrue" TransformationMethod="AssertBooleanClaimIsEqualToValue">
         <InputClaims>
           <InputClaim ClaimTypeReferenceId="accountEnabled" TransformationClaimType="inputClaim" />
@@ -451,7 +451,7 @@
   </BuildingBlocks>
 
   <!--
-        A list of all the claim providers that can be used in the technical policies. If a claims provider is not listed 
+        A list of all the claim providers that can be used in the technical policies. If a claims provider is not listed
         in this section, then it cannot be used in a technical policy.
     -->
   <ClaimsProviders>
@@ -497,7 +497,7 @@
         </TechnicalProfile>
       </TechnicalProfiles>
     </ClaimsProvider>
- 
+
     <ClaimsProvider>
       <DisplayName>Azure Active Directory</DisplayName>
       <TechnicalProfiles>
@@ -536,7 +536,7 @@
             <PersistedClaim ClaimTypeReferenceId="userPrincipalName" />
             <PersistedClaim ClaimTypeReferenceId="mailNickName" DefaultValue="unknown" />
             <PersistedClaim ClaimTypeReferenceId="displayName" DefaultValue="unknown" />
-  
+
             <!-- Optional claims -->
             <PersistedClaim ClaimTypeReferenceId="otherMails" />
             <PersistedClaim ClaimTypeReferenceId="givenName" />
@@ -564,7 +564,7 @@
           </InputClaims>
           <OutputClaims>
             <!-- Required claims -->
-  
+
             <OutputClaim ClaimTypeReferenceId="objectId" />
 
             <!-- Optional claims -->
@@ -583,7 +583,7 @@
           </Metadata>
           <IncludeTechnicalProfile ReferenceId="AAD-UserReadUsingAlternativeSecurityId" />
         </TechnicalProfile>
- 
+
         <!-- Technical profiles for local accounts -->
 
         <TechnicalProfile Id="AAD-UserWriteUsingLogonEmail">
@@ -601,7 +601,7 @@
             <PersistedClaim ClaimTypeReferenceId="newPassword" PartnerClaimType="password"/>
             <PersistedClaim ClaimTypeReferenceId="displayName" DefaultValue="unknown" />
             <PersistedClaim ClaimTypeReferenceId="passwordPolicies" DefaultValue="DisablePasswordExpiration" />
-  
+
             <!-- Optional claims. -->
             <PersistedClaim ClaimTypeReferenceId="givenName" />
             <PersistedClaim ClaimTypeReferenceId="surname" />
@@ -631,7 +631,7 @@
             <!-- Required claims -->
             <OutputClaim ClaimTypeReferenceId="objectId" />
             <OutputClaim ClaimTypeReferenceId="authenticationSource" DefaultValue="localAccountAuthentication" />
-  
+
             <!-- Optional claims -->
             <OutputClaim ClaimTypeReferenceId="userPrincipalName" />
             <OutputClaim ClaimTypeReferenceId="displayName" />
@@ -657,7 +657,7 @@
           <PersistedClaims>
             <PersistedClaim ClaimTypeReferenceId="objectId" />
             <PersistedClaim ClaimTypeReferenceId="newPassword" PartnerClaimType="password"/>
-  
+
           </PersistedClaims>
           <IncludeTechnicalProfile ReferenceId="AAD-Common" />
         </TechnicalProfile>
@@ -724,7 +724,7 @@
             <Key Id="issuer_secret" StorageReferenceId="B2C_1A_TokenSigningKeyContainer" />
           </CryptographicKeys>
           <InputClaims>
-            <!-- These claims ensure that any values retrieved in the previous steps (e.g. from an external IDP) are prefilled. 
+            <!-- These claims ensure that any values retrieved in the previous steps (e.g. from an external IDP) are prefilled.
                  Note that some of these claims may not have any value, for example, if the external IDP did not provide any of
                  these values, or if the claim did not appear in the OutputClaims section of the IDP.
                  In addition, if a claim is not in the InputClaims section, but it is in the OutputClaims section, then its
@@ -735,14 +735,14 @@
           </InputClaims>
           <OutputClaims>
             <!-- These claims are not shown to the user because their value is obtained through the "ValidationTechnicalProfiles"
-                 referenced below, or a default value is assigned to the claim. A claim is only shown to the user to provide a 
+                 referenced below, or a default value is assigned to the claim. A claim is only shown to the user to provide a
                  value if its value cannot be obtained through any other means. -->
             <OutputClaim ClaimTypeReferenceId="objectId" />
             <OutputClaim ClaimTypeReferenceId="newUser" />
             <OutputClaim ClaimTypeReferenceId="executed-SelfAsserted-Input" DefaultValue="true" />
 
-            <!-- Optional claims. These claims are collected from the user and can be modified. If a claim is to be persisted in the directory after having been 
-                 collected from the user, it needs to be added as a PersistedClaim in the ValidationTechnicalProfile referenced below, i.e. 
+            <!-- Optional claims. These claims are collected from the user and can be modified. If a claim is to be persisted in the directory after having been
+                 collected from the user, it needs to be added as a PersistedClaim in the ValidationTechnicalProfile referenced below, i.e.
                  in AAD-UserWriteUsingAlternativeSecurityId. -->
             <OutputClaim ClaimTypeReferenceId="displayName" />
             <OutputClaim ClaimTypeReferenceId="givenName" />
@@ -870,7 +870,7 @@
             <OutputClaim ClaimTypeReferenceId="objectId" />
             <OutputClaim ClaimTypeReferenceId="userPrincipalName" />
             <OutputClaim ClaimTypeReferenceId="authenticationSource" />
-  
+
           </OutputClaims>
           <ValidationTechnicalProfiles>
             <ValidationTechnicalProfile ReferenceId="AAD-UserReadUsingEmailAddress" />
@@ -888,7 +888,7 @@
           </CryptographicKeys>
           <InputClaims>
             <InputClaim ClaimTypeReferenceId="objectId" />
-  
+
           </InputClaims>
           <OutputClaims>
             <OutputClaim ClaimTypeReferenceId="newPassword" Required="true" />
@@ -941,7 +941,7 @@
             <PersistedClaim ClaimTypeReferenceId="AlternativeSecurityId" />
           </PersistedClaims>
         </TechnicalProfile>
- 
+
       </TechnicalProfiles>
     </ClaimsProvider>
 

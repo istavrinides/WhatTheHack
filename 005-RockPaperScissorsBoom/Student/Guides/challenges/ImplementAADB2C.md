@@ -6,7 +6,7 @@
 
 ## Introduction
 
-Right now your application on Azure is wide open for anyone to use. Your application allows you to add, edit and delete competitors. Let's make sure only authenticated users can do this. If you try to perform one of these actions in your application, you'll get some errors; you need to complete the feature! 
+Right now your application on Azure is wide open for anyone to use. Your application allows you to add, edit and delete competitors. Let's make sure only authenticated users can do this. If you try to perform one of these actions in your application, you'll get some errors; you need to complete the feature!
 
 The application has the code in place to authenticate users against Azure AD B2C, you just need to create an Azure AD B2C application, build the user journeys and policy and then set the right configuration values.
 
@@ -30,7 +30,7 @@ The application has the code in place to authenticate users against Azure AD B2C
 ## Tips
 
 1. Make sure you are calling the application with https for the authentication redirects to work.
-1. Remember to keep your configuration secrets OUT of your code or config files. 
+1. Remember to keep your configuration secrets OUT of your code or config files.
 1. If you can't find your AAD B2C Azure resources after you create them, make sure you switch AAD Tenants in the Azure portal.
 1. Don't forget `/signin-oidc` in your redirect URL :)
 

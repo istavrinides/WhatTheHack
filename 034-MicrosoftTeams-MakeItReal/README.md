@@ -12,9 +12,9 @@ In this hack you will work with your team to configure M365 services to solve a 
 1. Design and implement business processes that require collection of data, approval workflows, and reporting
 
 ## Contoso Agency Background
-Contoso is a fictitious government agency whose mission is to help people through emergency/disaster level events such as extreme weather, fires, earthquakes, and large-scale impacts of power or water systems. They have regional offices throughout the United States with regional directors and response teams that manage emergencies based on its geographical impact. The regional offices often work together with local authorities such as police, fire & rescue, national guard and the local media. There is a centralized headquarters in Washington DC which provides funding to the regional offices and provides guidance in the form of programs on how each office is to respond during specific types of events. If an emergency impacts more than one geography, the HQ staff often take on the coordinating role helping each regional office work collaboratively. 
+Contoso is a fictitious government agency whose mission is to help people through emergency/disaster level events such as extreme weather, fires, earthquakes, and large-scale impacts of power or water systems. They have regional offices throughout the United States with regional directors and response teams that manage emergencies based on its geographical impact. The regional offices often work together with local authorities such as police, fire & rescue, national guard and the local media. There is a centralized headquarters in Washington DC which provides funding to the regional offices and provides guidance in the form of programs on how each office is to respond during specific types of events. If an emergency impacts more than one geography, the HQ staff often take on the coordinating role helping each regional office work collaboratively.
 
-Contoso recently deployed Office 365 and is currently using all of its services for information worker activities. During a recent review, Contoso found several deficiencies in their standard operating procedures related to emergency response that they believe are opportunities for improvement by introducing Office 365 services. 
+Contoso recently deployed Office 365 and is currently using all of its services for information worker activities. During a recent review, Contoso found several deficiencies in their standard operating procedures related to emergency response that they believe are opportunities for improvement by introducing Office 365 services.
 
 ## Challenges
 - Challenge 0: **[Pre-requisites](Student/00-prereqs.md)**
@@ -25,7 +25,7 @@ Contoso recently deployed Office 365 and is currently using all of its services 
    - Enable first responders in the field to get access to resources even in poor network conditions and to send in photos which get routed to the appropriate response team
 - Challenge 3: **[Citizen Services](Student/03-citizenservices.md)**
    - Empower skilled citizens to volunteer their services as well as report missing persons
-   
+
 ## Prerequisites
 
 - Access to a Microsoft 365 / Office 365 environment to configure solutions for the challenges

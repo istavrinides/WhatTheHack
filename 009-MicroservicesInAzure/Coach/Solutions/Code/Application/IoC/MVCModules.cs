@@ -6,7 +6,7 @@ namespace ContosoTravel.Web.Application.IoC
     public class MVCModule : Module
     {
         protected override void Load(ContainerBuilder builder)
-        {  
+        {
             builder.RegisterType<Controllers.MVC.FlightsController>()
                    .As<IFlightsController>()
                    .SingleInstance();

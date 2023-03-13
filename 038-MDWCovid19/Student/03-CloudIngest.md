@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Great job! You now have a central landing zone for your different data sources.  
+Great job! You now have a central landing zone for your different data sources.
 
 Caladan currently stores policy data in
 Azure Cosmos DB.
@@ -29,9 +29,9 @@ The team will focus on these resources for Challenge 2.
 [Access keys for Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/secure-access-to-data)
 are available from within the Azure portal.
 
-The team's coach can provide credentials for the SQL database. They are also available on the CloudLabs homepage. 
+The team's coach can provide credentials for the SQL database. They are also available on the CloudLabs homepage.
 
-**Note:** Each team member should add their Client IP to the database if they are going to connect from their home machine via Azure Data Studio, etc.  
+**Note:** Each team member should add their Client IP to the database if they are going to connect from their home machine via Azure Data Studio, etc.
 
 Alternatively, the team may [set the Active Directory Admin](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-aad-authentication-configure#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server)
 to one of the provided WhatTheHack accounts.

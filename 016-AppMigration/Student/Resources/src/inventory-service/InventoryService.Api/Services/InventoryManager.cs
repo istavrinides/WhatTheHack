@@ -56,7 +56,7 @@ namespace InventoryService.Api.Services
         }
 
         public async Task<InventoryItem> DecrementInventory(string sku)
-        {            
+        {
             var updatedItem = await data.UpdateInventory(sku, quantityChanged: -1);
             await notifications.NotifyInventoryChanged(updatedItem);
             return updatedItem;

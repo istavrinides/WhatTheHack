@@ -20,7 +20,7 @@ module.exports = async function seedData({ mongoDbUrl, collectionName, dbName })
     const sourceProducts = await parse(csvData, {
       columns: true,
       cast: true
-    });    
+    });
 
     const products = sourceProducts.map(p => ({
       "id" : p.id,

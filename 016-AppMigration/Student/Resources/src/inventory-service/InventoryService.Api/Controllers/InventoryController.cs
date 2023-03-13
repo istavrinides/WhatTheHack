@@ -104,7 +104,7 @@ namespace InventoryService.Api.Controllers
         /// <returns>
         /// The updated inventory item
         /// </returns>
-        /// <param name="sku">The product SKU.</param> 
+        /// <param name="sku">The product SKU.</param>
         [HttpPost("{sku}/decrement")]
         public async Task<InventoryItem> DecrementAsync(string sku)
         {

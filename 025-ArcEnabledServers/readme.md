@@ -2,8 +2,8 @@
 
 ## Introduction
  ![](./img/image1.png)
- [Azure Arc enabled servers](https://docs.microsoft.com/en-us/azure/azure-arc/servers/overview) allows customers to use Azure management tools on any server running in any public cloud or on-premises environment. In this hack, you will be working on a set of progressive challenges to showcase the core features of Azure Arc. 
- 
+ [Azure Arc enabled servers](https://docs.microsoft.com/en-us/azure/azure-arc/servers/overview) allows customers to use Azure management tools on any server running in any public cloud or on-premises environment. In this hack, you will be working on a set of progressive challenges to showcase the core features of Azure Arc.
+
  In the first few challenges, you will set up your lab environment and deploy servers somewhere other than Azure. Then, you will use Azure Arc to project these servers into Azure, and begin to enable Azure management and security tools on these servers. On successive challenges, you will apply [Azure Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview) and enable other Azure services like [Azure Security Center](https://docs.microsoft.com/en-us/azure/security-center/) on your projected workloads.
 
 ## Learning Objectives
@@ -21,7 +21,7 @@ This hack will help you learn:
  - [Challenge 3](./Student/challenge03.md) - Arc Value Add: Integrate Security Center
  - [Challenge 4](./Student/challenge04.md) - Arc Value Add: Enable Sentinel
  - [Challenge 5](./Student/challenge05.md) - Arc Value Add: Azure Lighthouse
- 
+
 
 ## Prerequisites
 - Your own Azure subscription with Owner RBAC rights at the subscription level

@@ -4,7 +4,7 @@
 
 ## Coach Tips
 
-The intent of this WTH is not to focus on networking so if the attendee has trouble configuring VPN/VNet peering, feel free to help them through it. 
+The intent of this WTH is not to focus on networking so if the attendee has trouble configuring VPN/VNet peering, feel free to help them through it.
 
 ## Introduction
 
@@ -20,7 +20,7 @@ kubectl -n postgresql exec deploy/postgres -it -- bash
 pg_dump -o -h localhost -U contosoapp -d wth -s >dump_wth.sql
 ```
 
-This creates a psql dump text file. We need to import it to the *target*. We import the schema only. It is suggested to create a separate database for online migration - wth2. 
+This creates a psql dump text file. We need to import it to the *target*. We import the schema only. It is suggested to create a separate database for online migration - wth2.
 
 Alternatively, you can drop all the tables and indices and re-create just the tables.
 
@@ -28,7 +28,7 @@ To drop all the tables with indexes, the following SQL script creates a file cal
 
 ```bash
 
-psql -h pgtarget.postgres.database.azure.com -U contosoapp@pgtarget -d wth 
+psql -h pgtarget.postgres.database.azure.com -U contosoapp@pgtarget -d wth
 
 \t
 \out drop_tables.sql
@@ -119,11 +119,11 @@ SELECT DISTINCT CONCAT('ALTER TABLE ', event_object_schema, '.', event_object_ta
 FROM information_schema.triggers
 ```
 
-* For Azure DMS, the attendee needs to create a migration project in the DMS wizard. When they connect to the source, they will need the external IP which the attendee can get using the `kubectl -n postgresql get svc` command. 
+* For Azure DMS, the attendee needs to create a migration project in the DMS wizard. When they connect to the source, they will need the external IP which the attendee can get using the `kubectl -n postgresql get svc` command.
 * Make sure the radio buttons are checked for "Trust Server Certificate" and "Encrypt Connection"
 * The user contosoapp does not have replication role enabled. They should get an error (Insufficient permission on server. 'userepl' permission is required to perform migration). To resolve this, connect to psql as superuser
 
-```bash 
+```bash
 postgres=# alter role contosoapp with replication ;
 ```
 
@@ -165,13 +165,13 @@ WHERE constraint_type = 'FOREIGN KEY'
 
 ## Steps -- MySQL
 
-The MySQL data-in replication is initiated from Azure DB for MySQL and pulls data from on-premises. As such the source database's public IP address needs to be whitelisted. 
+The MySQL data-in replication is initiated from Azure DB for MySQL and pulls data from on-premises. As such the source database's public IP address needs to be whitelisted.
 
 The database tier has to be standard or memory optimized for the replication to work.
 
-The attendees have to login to MySQL with the user they created when they set up Azure DB for MySQL to setup the replication using the mysql.az_replication_change_master stored procedure. 
+The attendees have to login to MySQL with the user they created when they set up Azure DB for MySQL to setup the replication using the mysql.az_replication_change_master stored procedure.
 
-The values for master_log_file and master_log_pos need to be retrieved using `show master status` on the source server not on Azure DB for MySQL. 
+The values for master_log_file and master_log_pos need to be retrieved using `show master status` on the source server not on Azure DB for MySQL.
 
 The default gtid_mode in the source database is ON and in Azure DB for MySQL it is Off. Both sides have to match before starting replication.
 Since the wth database used for the challenges is not seeing a lot of transactions, the attendees can follow the MySQL [documentation](https://dev.mysql.com/doc/refman/5.7/en/replication-mode-change-online-disable-gtids.html) to change the parameter without stopping replication.

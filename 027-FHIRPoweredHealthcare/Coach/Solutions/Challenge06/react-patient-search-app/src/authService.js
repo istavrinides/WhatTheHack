@@ -10,8 +10,8 @@ constructor(configuration) {
 
     //authConfig.json
     // MSAL Config object to be passed to Msal on creation.
-    // For a full list of msal.js configuration parameters, 
-    // visit https://azuread.github.io/microsoft-authentication-library-for-js/docs/msal/modules/_authenticationparameters_.html   
+    // For a full list of msal.js configuration parameters,
+    // visit https://azuread.github.io/microsoft-authentication-library-for-js/docs/msal/modules/_authenticationparameters_.html
     this.msalConfig = {
     auth: {
         authority: configuration.msal.authority,
@@ -21,7 +21,7 @@ constructor(configuration) {
     cache: {
       cacheLocation: configuration.cache.cacheLocation, //cacheLocation: 'sessionStorage',
       storeAuthStateInCookie: configuration.cache.storeAuthStateInCookie  //storeAuthStateInCookie: true
-    }   
+    }
     };
 
     // Create the main msalclient instance
@@ -32,7 +32,7 @@ constructor(configuration) {
     this.loginRequest = {
       scopes: configuration.loginRequest.scopes
     };
-  
+
     // Add here scopes for access token to be used at MS Graph API endpoints.
     this.tokenRequest = {
         scopes: configuration.loginRequest.scopes
@@ -44,25 +44,25 @@ constructor(configuration) {
         fhirEndpoint: configuration.fhirConfig.fhirEndpoint
     };
 }
-  
+
 get serviceName() { return 'Microsoft'; }
 
 // msal login
 async signIn() {
-    
+
     //const response = await this.msalClient.loginPopup(this.loginRequest)
     await this.msalClient.loginPopup(this.signInOptions)
     .then(loginResponse => {
       console.log("id_token acquired at: " + new Date().toString());
       console.log(loginResponse);
-      
+
       if (this.msalClient.getAccount()) {
         showWelcomeMessage(this.msalClient.getAccount());
       }
     }).catch(error => {
       console.log(error);
     });
-    
+
     //return new Identity(response);
     return;
 }
@@ -78,7 +78,7 @@ getTokenPopup(request) {
       .catch(error => {
         console.log(error);
         console.log("silent token acquisition fails. acquiring token using popup");
-            
+
         // fallback to interaction when silent call fails
           return this.msalClient.acquireTokenPopup(request)
             .then(tokenResponse => {

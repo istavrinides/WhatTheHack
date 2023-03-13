@@ -1,4 +1,4 @@
-# Challenge 10 - Leverage Azure CDN 
+# Challenge 10 - Leverage Azure CDN
 
 ## Prerequisities
 

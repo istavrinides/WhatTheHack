@@ -12,7 +12,7 @@ Welcome to the coach's guide for the Modern Data Warehouse - COVID19 What The Ha
 - Challenge 3: **[Cloud Ingest](03-CloudIngest.md)**
    - Ingest cloud data into the modern data warehouse solution.
 - Challenge 4: **[On Prem Ingest](04-OnPremIngest.md)**
-   - Ingest on-premises data into the modern data warehouse solution. 
+   - Ingest on-premises data into the modern data warehouse solution.
 - Challenge 5: **[Transform Load](05-TransformLoad.md)**
    - Transform data for the modern data warehouse solution.
 - Challenge 6: **[Calculate](06-Calculate.md)**

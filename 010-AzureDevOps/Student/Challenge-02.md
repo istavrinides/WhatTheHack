@@ -17,10 +17,10 @@ To help you with Agile project management, Azure DevOps includes Azure Boards. W
 
 ## Description
 
-- Create a work item for this and each of the remaining challenges. 
+- Create a work item for this and each of the remaining challenges.
 - Assign the `challenge 2` work item to another member of your team, have them assign their `challenge 2` work item to you.
-- Using the kanban board, move their `challenge 2` work item to the resolved state. 
-- After you complete each of the following challenges be sure to move the corresponding work item to the resolved state. 
+- Using the kanban board, move their `challenge 2` work item to the resolved state.
+- After you complete each of the following challenges be sure to move the corresponding work item to the resolved state.
 
 ## Success Criteria
 

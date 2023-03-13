@@ -10,7 +10,7 @@ param adminUsername string
 
 @description('Password for the Virtual Machine.')
 @secure()
-param adminPassword string 
+param adminPassword string
 
 @description('The Ubuntu version for the VM. This will pick a fully patched image of this given Ubuntu version. Allowed values: 12.04.5-LTS, 14.04.2-LTS, 15.10.')
 @allowed([

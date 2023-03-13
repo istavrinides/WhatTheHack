@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Contoso heavily relies on SAP infrastructure to perform day to day business transactions. Unavailability of IT infrastructure for SAP or SAP application itself can heavily impact business transactions and potentially delay revenue recognition. Contoso is concerning about the data consistency on backups and restorability with online backups and necessity of offline backups along with periodicity. CIO heard about Azure netapp files and its features and took a decision to use ANF across the SAP infrastructure for Hana database.  
+Contoso heavily relies on SAP infrastructure to perform day to day business transactions. Unavailability of IT infrastructure for SAP or SAP application itself can heavily impact business transactions and potentially delay revenue recognition. Contoso is concerning about the data consistency on backups and restorability with online backups and necessity of offline backups along with periodicity. CIO heard about Azure netapp files and its features and took a decision to use ANF across the SAP infrastructure for Hana database.
 
 SAP S/4 Hana system is fully protected with required IT monitoring, secured & compliance configuration and also with high availabitly for IT component failures. However, it is not protected with accidental errors, unintended data discrepencies, data loss / corruption or geographical catastrophies. Design and implement BCDR solution for SAP S/4 Hana system by implementing secondary copy of SAP system in another seperate azure region from production region with continuous asynchronous data replication.
 
@@ -14,8 +14,8 @@ SAP S/4 Hana system is fully protected with required IT monitoring, secured & co
 
 1. Backup using a permanent solution (ANF snapshots)
 	- The backup team at Contoso has already finished assessing backup requirements and have provided you the below backup schedule _(See Table in Figure 1 below)_.
-	- Adjust log backup volume size for storing log backups based on the size requirement (daily change of 250 GiB) from Azure NetApp Files blade in Azure Portal. In addition, also adjust relevant HANA parameters (basepath_catalogbackup, basepath_logbackup) to use this volume for log backups. You may also want to validate that the new log backup location has correct <sid>adm user permissions. Command to change: ```chown -R user:group <new_backup_location>```. 
-	- Change/Validate the hana log backup timeout value (log_backup_timeout_s) which is measured in seconds, to align with the backup requirement of 15 min frequency or less - use HANA Studio. 
+	- Adjust log backup volume size for storing log backups based on the size requirement (daily change of 250 GiB) from Azure NetApp Files blade in Azure Portal. In addition, also adjust relevant HANA parameters (basepath_catalogbackup, basepath_logbackup) to use this volume for log backups. You may also want to validate that the new log backup location has correct <sid>adm user permissions. Command to change: ```chown -R user:group <new_backup_location>```.
+	- Change/Validate the hana log backup timeout value (log_backup_timeout_s) which is measured in seconds, to align with the backup requirement of 15 min frequency or less - use HANA Studio.
 	- Build a backup (snapshots) solution by installing the azacsnap tool directly on the HANA DB VM (or optionally on the Linux jump server), and by automating the snapshot scheduling using the Linux built-in tool, crontab. Refer to the table to ensure meeting backup retention and frequency requirements for both data and log backups (other). You can ignore taking snapshots for the shared volume for this challenge (optional).
 	- Execute an ad-hoc snapshot for the data volume.
 	- Offload and sync the `.snapshots` folder under /hana/data/ and the content of the log backups directory, using `azcopy "sync"` option from HANA VM, to respective blob containers in the provided storage account. The azcopy gets installed directly onto the HANA DB VM. Ensure that you log into azcopy without supplying the authentication key or a SAS (use Managed Identity). You may also want to upsize the data volume to provide higher throughout for a quicker offload.
@@ -28,7 +28,7 @@ SAP S/4 Hana system is fully protected with required IT monitoring, secured & co
 3. Disaster Recovery
 	- Assess the disaster recovery requirements:
 		- DR region is chosen as US East.
-		- RPO < 30 min, RTO < 4 hrs.	
+		- RPO < 30 min, RTO < 4 hrs.
 		- Inter-region DR using storage replication capabilities
 	- Set up ANF storage replication (CRR) for both data and log backup volumes to meet the RPO. This also requires creating the ANF account and the replicating volumes in the **standard** performance tier storage pool at the DR region.
 	- Create a placeholder file ```touch <filename>``` under the data volume (/hana/data/SID/mnt00001/) and note down the timestamp. Optionally, you can also create a security user `DRTEST` in HANA, but note that validation of this file or the security user at the DR site is optional for this challenge
@@ -40,7 +40,7 @@ SAP S/4 Hana system is fully protected with required IT monitoring, secured & co
 		- Break and delete the replication. Use the `UseThisAtDR` snapshot to revert the data and log backup volumes.
 		- Change the performance tier of the volumes from standard to premium.
 		- Assess and discuss the remaining steps required for business continuity at the DR site.
-		
+
 
 ---
 
@@ -60,7 +60,7 @@ Protect: | Size \(customer provided\) | Frequency | Retention | Offloading
 
 - A successful setup of the temporary backup solution.
 - An automatic orchestration of ANF snapshots on the data and log backup volumes to achieve point-in-time recovery.
-- The availability of offloaded snapshots in storage account containers per the requirement. 
+- The availability of offloaded snapshots in storage account containers per the requirement.
 - Be able to restore the lost files using ANF snapshots.
 - Be able to successfully set up DR replication using ANF CRR and validate changes are available at the DR site.
 

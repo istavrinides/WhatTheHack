@@ -26,7 +26,7 @@ With this challenge you will deploy and add your own SmartBot by leveraging Sign
 1. Don't reinvent the wheels, just copy/paste the `Dockerfile-Server` file to your `Dockerfile-ExampleBot` and change the content accordingly. You could also add a new entry in the `docker-compose.yaml` file if you would like. Then you could run `docker build` or `docker-compose up` with the appropriate parameters.
 1. Revisit challenges [Challenge 4 - Run the app on Azure](RunOnAzure.md) and/or [Challenge 7 - Build a CI/CD pipeline with Azure DevOps](BuildCICDPipelineWithAzureDevOps.md). For the latter, the recommendation is to create its own Build and Release definition (not impacting the ones already created for the `Server`).
 1. To edit or read files from within Azure Cloud Shell, you could run `code .` to graphically browse the current folder and its files and subfolders. FYI, `cat` or `vi` are other alternatives.
-1. To add this new Bot deployed in your Game, just navigate to the `Competitors` menu of your main web app (Server) and create a new competitor. You will have to provide the URL of your Bot by adding at the end of this URL: `/decision`. 
+1. To add this new Bot deployed in your Game, just navigate to the `Competitors` menu of your main web app (Server) and create a new competitor. You will have to provide the URL of your Bot by adding at the end of this URL: `/decision`.
 
 ## Advanced challenges
 
@@ -41,6 +41,6 @@ Too comfortable? Eager to do more? Try this:
 1. [SignalR](https://www.asp.net/signalr)
 1. [Azure SignalR](https://azure.microsoft.com/en-us/services/signalr-service/)
 1. [Leverage Azure SignalR](https://docs.microsoft.com/en-us/azure/azure-signalr/signalr-quickstart-dotnet-core)
-1. [The Twelve Factor App - checklist to build microservices-based solution](https://12factor.net/) 
+1. [The Twelve Factor App - checklist to build microservices-based solution](https://12factor.net/)
 
 [Next challenge (Leverage Azure CDN) >](./LeverageCDN.md)

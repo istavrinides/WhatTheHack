@@ -18,7 +18,7 @@ The network architecture and security groups are typically stable and do not cha
 
 ## Description
 
-In this challenge you will separate your existing ARM template deployment into two sets of linked templates. 
+In this challenge you will separate your existing ARM template deployment into two sets of linked templates.
 
 - Separate networking resources (Virtual Network & Network Security Groups) in to their own template.
 - Separate the load balancer, VMSS, and its dependencies into their own template

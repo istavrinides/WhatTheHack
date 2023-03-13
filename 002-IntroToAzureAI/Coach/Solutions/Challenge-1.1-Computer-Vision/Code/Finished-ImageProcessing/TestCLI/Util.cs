@@ -28,7 +28,7 @@ namespace TestCLI
         /// </summary>
         public ImageMetadata()
         {
-            
+
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace TestCLI
     static class Util
     {
         /// <summary>
-        /// Simple resize method for use when we're trying to run the cognitive services against large images. 
+        /// Simple resize method for use when we're trying to run the cognitive services against large images.
         /// We resize downward to avoid too much data over the wire.
         /// </summary>
         /// <param name="imageFile">Image file to resize.</param>

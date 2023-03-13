@@ -16,15 +16,15 @@ The goal of this solution is to facilitate a controlled shutdown & startup of SA
 This flexible solution enables (using Azure automation, Azure Tags, Scripting, and PowerShell runbooks):
 
 - Start & Stop of your SAP application servers, central services, database, and corrosponding VMs
-- Optionally convert Premium Managed Disks to Standard during the stop procedure, and back to Premium during the start procedure, thus saving cost storage as well  
+- Optionally convert Premium Managed Disks to Standard during the stop procedure, and back to Premium during the start procedure, thus saving cost storage as well
 
-SAP systems start and stop is done gracefully (using SAP native commands), allowing SAP users and batch jobs to finish (with timeout) minimizing downtime impact. 
+SAP systems start and stop is done gracefully (using SAP native commands), allowing SAP users and batch jobs to finish (with timeout) minimizing downtime impact.
 For detailed information refer below [Architecture](https://github.com/Microsoft-SAPonAzure-OpenHack/WhatTheHack/blob/master/999-SAPonAzure/Student/06-Start-Stop-Automation.md#architecture-of-the-startstop-solution).
 
-## Architecture of the Start/Stop solution 
+## Architecture of the Start/Stop solution
 
 The solution is using Azure automation account PaaS solution to execute the SAP shutdown/startup jobs (as shown in the below diagram).
-Runbooks are written in PowerShell. There is also a PowerShell module SAPAzurePowerShellModules that is used by all runbooks. These runbooks and module are stored in PowerShell Gallery, and are easy to import. 
+Runbooks are written in PowerShell. There is also a PowerShell module SAPAzurePowerShellModules that is used by all runbooks. These runbooks and module are stored in PowerShell Gallery, and are easy to import.
 
 ![image](https://user-images.githubusercontent.com/26795040/115051125-19d1c300-9ea2-11eb-9df9-e2d5425e3c70.png)
 
@@ -32,13 +32,13 @@ Information about SAP landscape and instances are to be stored in VM Tags.
 
 Secure assets in Azure Automation include credentials, certificates, connections, and encrypted variables. These assets are encrypted and stored in Azure Automation using a unique key that is generated for each Automation account. [Azure Automation stores the key in the system-managed Key Vault](https://docs.microsoft.com/en-us/azure/automation/shared-resources/credentials?tabs=azure-powershell). Before storing a secure asset, Automation loads the key from Key Vault and then uses it to encrypt the asset.
 
-SAP system start / stop / monitoring and SAP Application server Start / stop is implemented using scripts (calling SAP sapcontrol executable) via the Azure VM agent. 
+SAP system start / stop / monitoring and SAP Application server Start / stop is implemented using scripts (calling SAP sapcontrol executable) via the Azure VM agent.
 
-SAP HANA start / stop / monitoring is implemented using scripts (calling SAP sapcontrol executable) via the Azure VM agent. 
+SAP HANA start / stop / monitoring is implemented using scripts (calling SAP sapcontrol executable) via the Azure VM agent.
 
-SQL Server start / stop / monitoring is implemented using scripts (calling SAP Host Agent executable) via the Azure VM agent. 
+SQL Server start / stop / monitoring is implemented using scripts (calling SAP Host Agent executable) via the Azure VM agent.
 
-Azure runbooks can either be executed manually or scheduled. 
+Azure runbooks can either be executed manually or scheduled.
 
 ## Success Criteria
 
@@ -49,10 +49,10 @@ Azure runbooks can either be executed manually or scheduled.
 - Schedule the runbook to start the systems
 - (Optional) Restrict access to runbooks to an individual user
 
-## Learning Resources 
+## Learning Resources
 
 - [Manage credentials in Azure Automation](https://docs.microsoft.com/en-us/azure/automation/shared-resources/credentials?tabs=azure-powershell)
- 
+
 - [Azure Quickstart - Create an Azure Automation account](https://docs.microsoft.com/en-us/azure/automation/automation-quickstart-create-account)
 
 - [SAP Library - Tools for Monitoring the System](https://help.sap.com/saphelp_aii710/helpdata/en/f7/cb8577bc244a25a994fc3f9c16ce66/frameset.htm)
@@ -294,15 +294,15 @@ VM \[ts2-di0\] has to be tagged with following Tags:
 
 **Runtime steps:**
 
-  - Convert disk to Premium, if desired  
+  - Convert disk to Premium, if desired
     ConvertDisksToPremium = $True
 
   - Start VMs in this order:
-    
+
       - SAP ASCS or DVEBMS VM
-    
+
       - SAP DBMS VM
-    
+
       - SAP Dialog instances VMs
 
   - Show SAP DBMS Status
@@ -346,14 +346,14 @@ Runtime steps:
   - Get DBMS status
 
   - Stop VMs in this order:
-    
+
       - SAP Dialog instances VMs
-    
+
       - SAP DBMS VM
-    
+
       - SAP ASCS or DVEBMS VM
 
-  - Convert disk to Standard, if desired  
+  - Convert disk to Standard, if desired
     ConvertDisksToStandard = $True
 
 <!-- end list -->
@@ -372,7 +372,7 @@ This runbook will only start VM and standalone HANA DB.
 
 Runtime steps are:
 
-  - Convert disk to Premium, if desired  
+  - Convert disk to Premium, if desired
     ConvertDisksToPremium = $True
 
   - Start VM.
@@ -405,7 +405,7 @@ Runtime steps:
 
   - Stop VM.
 
-  - Convert disk to Standard, if desired  
+  - Convert disk to Standard, if desired
     ConvertDisksToStandard = $True
 
   - Show summary.
@@ -429,7 +429,7 @@ Runtime steps:
 
   - Stop VM.
 
-  - Convert disk to Standard, if desired  
+  - Convert disk to Standard, if desired
     ConvertDisksToStandard = $True
 
   - Show summary.
@@ -448,7 +448,7 @@ This runbook will start VM and standalone SAP Application Server.
 
 Runtime steps:
 
-  - Convert disk to Premium, if desired  
+  - Convert disk to Premium, if desired
     ConvertDisksToPremium = $True
 
   - Start VM.

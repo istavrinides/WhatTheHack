@@ -260,10 +260,10 @@
                 };
                 obj.isAnyMessageShown = function() {
                     var invalidAndModifiedPresent = false;
-                    
+
                     // ensure we have latest changes
                     result();
-                    
+
                     ko.utils.arrayForEach(validatables(), function (observable) {
                         if (!observable.isValid() && observable.isModified()) {
                             invalidAndModifiedPresent = true;
@@ -339,7 +339,7 @@
                     //          params: 2,
                     //          onlyIf: function() {
                     //                      return specialField.IsVisible();
-                    //                  }  
+                    //                  }
                     //      }
                     //  )};
                     //
@@ -689,12 +689,12 @@
                 msg = null,
                 isModified = false,
                 isValid = false;
-                
+
             obsv.extend({ validatable: true });
 
             isModified = obsv.isModified();
             isValid = obsv.isValid();
-            
+
             // create a handler to correctly return an error message
             var errorMsgAccessor = function () {
                 if (!config.messagesOnModified || isModified) {

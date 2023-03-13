@@ -47,7 +47,7 @@ export default function() {
 			resources.push(imgFile);
 		});
 
-		
+
 		doc.find("script").toArray().forEach(function (item) {
 			var jsFile = item.attr("src");
 
@@ -86,7 +86,7 @@ export default function() {
 			check(item, {
 				"status code is 200": (res) => res.status == 200,
 			  });
-		});		
+		});
 	});
 	group("Message Page", function() {
 		let req, res, resources;
@@ -120,7 +120,7 @@ export default function() {
 			resources.push(imgFile);
 		});
 
-		
+
 		doc.find("script").toArray().forEach(function (item) {
 			var jsFile = item.attr("src");
 
@@ -159,7 +159,7 @@ export default function() {
 			check(item, {
 				"status code is 200": (res) => res.status == 200,
 			  });
-		});	
+		});
 	});
 
 }

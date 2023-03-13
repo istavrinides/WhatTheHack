@@ -1,4 +1,4 @@
-# What the Hack: OSS DevOps 
+# What the Hack: OSS DevOps
 
 ## Challenge 2 – GitHub Project Boards: Agile Project Management
 [Back](challenge01.md) // [Home](../readme.md) // [Next](challenge03.md)

@@ -7,7 +7,7 @@ The story goes that, Tailwind Traders acquired Northwind Traders earlier this ye
 This hack includes presentations that feature lectures introducing key topics associated with each challenge. It is recommended that the host present each lecture before attendees kick off that challenge.
 
 ## Learning Objectives
-In this hack you will solve common challenges for companies migrating to the cloud. 
+In this hack you will solve common challenges for companies migrating to the cloud.
 
 1. Migrating to the cloud.
 1. Containerizing an application.
@@ -18,10 +18,10 @@ In this hack you will solve common challenges for companies migrating to the clo
 - Challenge 1: **[Learning Azure](Student/Challenge-01.md)**
    - Get familiar with the Azure environment, portal and command line.
 - Challenge 2: **[Migrating to the Cloud](Student/Challenge-02.md)**
-   - Take an existing web application and move it from a standard deployment using on premises web farms to a container infrastructure on Azure. 
+   - Take an existing web application and move it from a standard deployment using on premises web farms to a container infrastructure on Azure.
 - Challenge 3: **[DevOps and Containers](Student/Challenge-03.md)**
    - Build custom Docker images using Azure DevOps, push and store images in a private repository and deploy and run the images inside the Docker containers.
-   
+
 ## Prerequisites
 - Access to an Azure subscription with Owner access
    - If you don't have one, [Sign Up for Azure HERE](https://azure.microsoft.com/en-us/free/)

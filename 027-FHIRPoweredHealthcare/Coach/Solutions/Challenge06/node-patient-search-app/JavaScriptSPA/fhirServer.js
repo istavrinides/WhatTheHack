@@ -1,4 +1,4 @@
-// Helper function to call MS FHIR API endpoint 
+// Helper function to call MS FHIR API endpoint
 // using authorization bearer token scheme
 function callFHIRServer(endpoint, token, callback) {
   const headers = new Headers();
@@ -12,7 +12,7 @@ function callFHIRServer(endpoint, token, callback) {
   };
 
   console.log('request made to FHIR Server API at: ' + new Date().toString());
-  
+
   fetch(endpoint, options)
     .then(response => response.json())
     .then(response => callback(response, endpoint))

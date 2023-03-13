@@ -1,5 +1,5 @@
 param location string
-param appInsightsName string 
+param appInsightsName string
 param lawsName string
 param resourceTags object
 

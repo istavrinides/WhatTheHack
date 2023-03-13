@@ -29,7 +29,7 @@ In this challenge we need to get our application up and running in Kubernetes. W
     	- _Hint: Review the kubernetes docs for instructions, or feel free to use a GUI tool_
 	- From the terminal, curl the url of the `/speakers` end point.
 	- You should get a huge json document in response.
-   
+
 ### Deploy the Web app from the command line using kubectl and YAML files
 - **NOTE:** Sample YAML files to get you started can be found in the `/Challenge-04` folder of the `Resources.zip` file provided by your coach.
 - **NOTE:** The Web app expects to have an environment variable pointing to the URL of the API app named:

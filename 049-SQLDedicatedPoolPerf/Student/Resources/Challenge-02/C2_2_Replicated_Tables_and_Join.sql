@@ -19,8 +19,8 @@ STEP1 - Run this batch and let it complete.
 
 IF EXISTS
 (
-	SELECT * FROM sys.pdw_replicated_table_cache_state 
-		WHERE OBJECT_NAME(object_id) IN('DimProduct','DimCustomer','DimSalesTerritory') 
+	SELECT * FROM sys.pdw_replicated_table_cache_state
+		WHERE OBJECT_NAME(object_id) IN('DimProduct','DimCustomer','DimSalesTerritory')
 			and State = 'Ready'
 )
 BEGIN
@@ -61,7 +61,7 @@ FROM Sales.FactInternetSales Fis
 		ON Fis.CustomerKey = Dc.CustomerKey
 	INNER JOIN Sales.DimSalesTerritory Dst
 		ON Dst.SalesTerritoryKey = Fis.SalesTerritoryKey
-WHERE Fis.OrderDateKey >= '20210101' and Fis.OrderDateKey < '20211231' 
+WHERE Fis.OrderDateKey >= '20210101' and Fis.OrderDateKey < '20211231'
 GROUP BY Dc.CustomerKey
 	, Dc.FirstName + ' ' + Dc.LastName
 	, Dp.ProductAlternateKey
@@ -105,7 +105,7 @@ FROM Sales.FactInternetSales Fis
 		ON Fis.CustomerKey = Dc.CustomerKey
 	INNER JOIN Sales.DimSalesTerritory Dst
 		ON Dst.SalesTerritoryKey = Fis.SalesTerritoryKey
-WHERE Fis.OrderDateKey >= '20210101' and Fis.OrderDateKey < '20211231' 
+WHERE Fis.OrderDateKey >= '20210101' and Fis.OrderDateKey < '20211231'
 GROUP BY Dc.CustomerKey
 	, Dc.FirstName + ' ' + Dc.LastName
 	, Dp.ProductAlternateKey

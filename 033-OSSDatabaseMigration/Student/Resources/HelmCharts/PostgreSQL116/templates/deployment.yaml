@@ -68,13 +68,13 @@ spec:
         configMap:
           name: postgresql-config
       - name: postgresql-tls-keys
-        secret: 
+        secret:
           secretName: postgresql-tls-secret
           items:
           - key: tls.crt
             path: "tls.crt"
-          - key: tls.key  
-            path: "tls.key"          
+          - key: tls.key
+            path: "tls.key"
             mode: 0640
 ---
 apiVersion: v1

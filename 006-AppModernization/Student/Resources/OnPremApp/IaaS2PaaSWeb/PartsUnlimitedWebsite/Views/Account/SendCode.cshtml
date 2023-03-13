@@ -12,7 +12,7 @@
                 @Html.Hidden("rememberMe", @Model.RememberMe)
                 <h4>Send verification code</h4>
                 <div class="row">
-                
+
                     <div class="col-md-8">
                         <label>Select Two-Factor Authentication Provider:</label>
                         @Html.DropDownListFor(model => model.SelectedProvider, Model.Providers, new { @class = "form-control"})

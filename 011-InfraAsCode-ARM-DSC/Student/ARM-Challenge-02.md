@@ -10,11 +10,11 @@ This challenge has you add to the "hello world" template you created in the prev
 
 ## Description
 
-+	Extend the ARM template to provision a VNET w/one subnet 
-    +	The template should take the following inputs: 
++	Extend the ARM template to provision a VNET w/one subnet
+    +	The template should take the following inputs:
         +	Virtual Network Name and Address Prefix
         +	Subnet Name and Address Prefix
-    +   Use a parameter file to pass in parameter values 
+    +   Use a parameter file to pass in parameter values
 
 ## Success Criteria
 

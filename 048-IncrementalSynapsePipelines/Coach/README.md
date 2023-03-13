@@ -1,9 +1,9 @@
-# What The Hack - Incremental Synapse Pipelines <br> <i>Utilizing Change Data Capture in Azure SQL</i> <br> Coach's Guide 
+# What The Hack - Incremental Synapse Pipelines <br> <i>Utilizing Change Data Capture in Azure SQL</i> <br> Coach's Guide
 
 ## Introduction
 Welcome to the coach's guide for the Automating Incremental Pipelines What The Hack. Here you will find links to specific guidance for coaches for each of the challenges.
 
-Also remember that this hack includes a optional [lecture presentation](Automating-Incremental-Pipelines.pptx?raw=true) that features key topics for this What the Hack. 
+Also remember that this hack includes a optional [lecture presentation](Automating-Incremental-Pipelines.pptx?raw=true) that features key topics for this What the Hack.
 
 ## Solutions
 - Challenge 0: **[Setup the Source and Target Environments](Solution-00.md)**
@@ -20,7 +20,7 @@ This What the Hack was created during the pandemic and was designed and executed
 
 We initially conducted this hackathon in three - 3 hour sessions for a total of 9 hours.  It was done over a three week period with each session being conducted on a Friday.
 
-Moving forward, I would highly recommend that you dedicate at least 12 hours overall to this hackathon.  This excludes breaks.  Thus, you may want to break this into 3 sessions that are a total of 5-6 hours long, including breaks. 
+Moving forward, I would highly recommend that you dedicate at least 12 hours overall to this hackathon.  This excludes breaks.  Thus, you may want to break this into 3 sessions that are a total of 5-6 hours long, including breaks.
 
 Also, the feedback that we received from attendees is that they prefer that these sessions were held on consecutive days.  Since we did it every Friday, attendees felt that they spent too much time refreshing their memory on what was accomplished the week(s) before.
 

@@ -21,11 +21,11 @@ Here are some questions that you might have:
   - What is time series data and time series forecasting?
   - How is that different from conventional ML modeling?
   - How is a forecasting task different from other tasks?
-  - How to enable Continuous Integration for our AI project by creating a Build pipeline? 
+  - How to enable Continuous Integration for our AI project by creating a Build pipeline?
   - What artifacts do we deploy into the repo and what is our architecture end state?
-  - How to enable Continuous Delivery for our AI project by creating a Release pipeline? 
+  - How to enable Continuous Delivery for our AI project by creating a Release pipeline?
   - How do we automate our ML lifecycle and score our data?
-  - What is retraining? 
+  - What is retraining?
   - How to evaluate the best model between the current model and previous models?
   - How to convert a model into an endpoint?
   - How to identify Data Drift?

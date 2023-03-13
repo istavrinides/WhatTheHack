@@ -1,4 +1,4 @@
-# Challenge 07 - Load Testing With Chaos Experiment (Resilience Testing) - Coach's Guide 
+# Challenge 07 - Load Testing With Chaos Experiment (Resilience Testing) - Coach's Guide
 
 [< Previous Solution](./Solution-06.md) - **[Home](./README.md)**
 

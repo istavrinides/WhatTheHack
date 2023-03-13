@@ -18,7 +18,7 @@ $ProgressPreference = 'Continue'
 # Start .NET Tracer v1.13x64
 (Start-Process -Wait msiexec -ArgumentList '/qn /i c:\datadog-dotnet-apm-1.13.0-x64.msi')
 
-# Configure win32_event_log 
+# Configure win32_event_log
  echo "init_config:
 instances:
     - type:
@@ -64,13 +64,13 @@ logs:
     channel_path: Setup
     source: Setup
     service: Setup
-    sourcecategory: windowsevent" > C:\ProgramData\Datadog\conf.d\win32_event_log.d\conf.yaml 
+    sourcecategory: windowsevent" > C:\ProgramData\Datadog\conf.d\win32_event_log.d\conf.yaml
 
 [String[]] $v = @("COR_ENABLE_PROFILING=1", "COR_PROFILER={846F5F1C-F9AE-4B07-969E-05C26BC060D8}","CORECLR_ENABLE_PROFILING=1", "CORECLR_PROFILER={846F5F1C-F9AE-4B07-969E-05C26BC060D8}", "DD_TRACE_ANALYTICS_ENABLED=true", "DD_AspNet_ENABLED=true", "DD_LOGS_INJECTION=true")
 Set-ItemProperty HKLM:SYSTEM\CurrentControlSet\Services\W3SVC -Name Environment -Value $v
 Set-ItemProperty HKLM:SYSTEM\CurrentControlSet\Services\WAS -Name Environment -Value $v
 
 net stop was /y
-net start w3svc 
+net start w3svc
 
 & "$env:ProgramFiles\Datadog\Datadog Agent\bin\agent.exe" restart-service

@@ -37,7 +37,7 @@
                             <a class="nav-link text-dark" href="/Shipment/1">Shipments</a>
                         </li>
                     </ul>
-                </div>         
+                </div>
                 <div class="col-md-3 text-end">
                     <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#devToolsModal">Dev. tools</button>
                 </div>
@@ -129,7 +129,7 @@
                     },
                     contentType: 'application/x-www-form-urlencoded',
                     dataType: "json",
-                    
+
                     success: function (msg) {
                         console.log(msg);
                         if(msg.status == "ACCEPTED"){
@@ -154,14 +154,14 @@
                             statusDom.html("<p><strong>Load simulation status</strong></p><p><span class='badge bg-danger'>UNKNOWN ERROR</span> Unknown error during gathering current state.</p>");
                             isTestRunning = false;
                         }
-                   
+
                     },
                     error: function(msg){
                         statusDom.html("<p>Error, check console log</p>");
                         console.log(msg);
                     }
                 });
-                
+
             }, 5000);
         });
 
@@ -183,10 +183,10 @@
 
 
         $(document).ready(function(){
-            
+
             if(getUrlParameter('openDevToolsModal') == '1'){
                 $("#devToolsModal").modal('show');
-                
+
                 if("@ViewContext.ViewData["AltLastTestRunId"]" != ""){
                     $("#callAjaxButton").click();
                 }

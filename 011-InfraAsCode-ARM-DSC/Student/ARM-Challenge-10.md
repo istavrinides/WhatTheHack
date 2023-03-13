@@ -12,7 +12,7 @@ The goals of this challenge include understanding:
 
 ## Description
 
-We have provided a script (`install_apache_vmss.sh`) that configures web servers in a VMSS. When run on an individual VM instance, the script deploys a static web page that should be available at: `http://<PublicIPofTheLoadBalancer>/wth.html`  
+We have provided a script (`install_apache_vmss.sh`) that configures web servers in a VMSS. When run on an individual VM instance, the script deploys a static web page that should be available at: `http://<PublicIPofTheLoadBalancer>/wth.html`
 
 This script is similar to the one used earlier in Challenge 6. However, it has some differences that take into account how the script will be executed on a VM that is part of scale set.
 

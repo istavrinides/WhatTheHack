@@ -1,4 +1,4 @@
-# What the Hack: Azure Arc enabled Kubernetes Hack 
+# What the Hack: Azure Arc enabled Kubernetes Hack
 
 ## Intentionally Blank
 

@@ -2,7 +2,7 @@
 
 [< Previous Challenge](./05-TransformLoad.md) - **[Home](README.md)**
 
-Now that the team has established the bulk loads and conformed the data, it is time to build the Data Warehouse and perform the necessary calculations. 
+Now that the team has established the bulk loads and conformed the data, it is time to build the Data Warehouse and perform the necessary calculations.
 
 ### Creating and populating the star schema
 
@@ -97,24 +97,24 @@ WITH
 GO
 
 CREATE EXTERNAL FILE FORMAT [ParquetFormat]
-WITH (  
-    FORMAT_TYPE = PARQUET,  
-    DATA_COMPRESSION = 'org.apache.hadoop.io.compress.SnappyCodec'  
-);  
+WITH (
+    FORMAT_TYPE = PARQUET,
+    DATA_COMPRESSION = 'org.apache.hadoop.io.compress.SnappyCodec'
+);
 
 CREATE SCHEMA [external]
 GO
 
-CREATE EXTERNAL TABLE [external].[tablename] 
+CREATE EXTERNAL TABLE [external].[tablename]
     (
-        
+
     )
 WITH
     (
-        LOCATION = '/Conformed/table',  
-        DATA_SOURCE = ABFS,  
-        FILE_FORMAT = [ParquetFormat]  
-    )  
+        LOCATION = '/Conformed/table',
+        DATA_SOURCE = ABFS,
+        FILE_FORMAT = [ParquetFormat]
+    )
 GO
 ```
 

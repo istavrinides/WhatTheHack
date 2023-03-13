@@ -2,9 +2,9 @@
 // MAGIC %md
 // MAGIC # Using Dataframes in Spark
 // MAGIC Dataframes are the standard data structure in Spark 2.0 and later. They offer a consistent way to work with data in any Spark-supported language (Python, Scala, R, Java, etc.), and also support the Spark SQL API so you can query and manipulate data using SQL syntax.
-// MAGIC 
+// MAGIC
 // MAGIC In this lab, exercise, you'll use Dataframes to explore some data from the United Kingdom Government Department for Transport that includes details of road traffic accidents in 2016 (you'll find more of this data and related documentation at https://data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-safety-data.)
-// MAGIC 
+// MAGIC
 // MAGIC ## Read a Dataframe from a File
 // MAGIC After uploading the data files for this lab to your Azure storage account, adapt the code below to read the *Accidents.csv* file from your account into a Dataframe by replacing ***ACCOUNT_NAME*** with the name of your storage account:
 
@@ -17,7 +17,7 @@ textFile.printSchema()
 
 // MAGIC %md
 // MAGIC View the output returned, which describes the schema of the DataFrame. Note that the file content has been loaded into a DataFrame with a single column named **value**.
-// MAGIC 
+// MAGIC
 // MAGIC Let's take a look at the first ten lines of the text file:
 
 // COMMAND ----------
@@ -28,7 +28,7 @@ textFile.show(10, truncate = false)
 
 // MAGIC %md
 // MAGIC The file seems to contain comma-separated values, with the column header names in the first line.
-// MAGIC 
+// MAGIC
 // MAGIC You can use the **spark.read.csv** function to read a CSV file and infer the schema from its contents. Adapt the following code to use your storage account and run it to see the schema it infers:
 
 // COMMAND ----------
@@ -85,7 +85,7 @@ print(vehicle_schema.printTreeString)
 
 // MAGIC %md
 // MAGIC Now you can use the **spark.read.csv** function with the **schema** argument to load the data from the file based on the schema you have defined.
-// MAGIC 
+// MAGIC
 // MAGIC Adapt the following code to read the *Vehicles.csv* file from your storage account and verify that it's schema matches the one you defined:
 
 // COMMAND ----------
@@ -107,7 +107,7 @@ vehicles.show(10)
 // MAGIC %md
 // MAGIC ## Use DataFrame Methods
 // MAGIC The Dataframe class provides numerous properties and methods that you can use to work with data.
-// MAGIC 
+// MAGIC
 // MAGIC For example, run the code in the following cell to use the **select** method. This creates a new dataframe that contains specific columns from an existing dataframe:
 
 // COMMAND ----------
@@ -176,14 +176,14 @@ q.show()
 // MAGIC - **Stacked**: Selected
 // MAGIC - **Aggregation**: SUM
 // MAGIC - **Display type**: Bar chart
-// MAGIC 
-// MAGIC View the resulting chart (you can resize it by dragging the handle at the bottom-right) and note that it clearly shows that the most accidents involve drivers in age band **6** and vehicle type **9**. The UK Department for Transport publishes a lookup table for these variables at http://data.dft.gov.uk/road-accidents-safety-data/Road-Accident-Safety-Data-Guide.xls, which indicates that these values correlate to drivers aged between *26* and *35* in *cars*. 
+// MAGIC
+// MAGIC View the resulting chart (you can resize it by dragging the handle at the bottom-right) and note that it clearly shows that the most accidents involve drivers in age band **6** and vehicle type **9**. The UK Department for Transport publishes a lookup table for these variables at http://data.dft.gov.uk/road-accidents-safety-data/Road-Accident-Safety-Data-Guide.xls, which indicates that these values correlate to drivers aged between *26* and *35* in *cars*.
 
 // COMMAND ----------
 
 // MAGIC %md
 // MAGIC Temporary tables are saved within the current session, which for interactive analytics can be a good way to explore the data and discard it automatically at the end of the session. If you want to to persist the data for future analysis, or to share with other data processing applications in different sessions, then you can save the dataframe as a global table.
-// MAGIC 
+// MAGIC
 // MAGIC Run the following cell to save the data as a global table and query it.
 
 // COMMAND ----------

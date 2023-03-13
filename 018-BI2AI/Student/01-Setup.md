@@ -6,7 +6,7 @@
 1. Your Azure Subscription
 
 
-## Introduction 
+## Introduction
 
 ### Set up your development environment.
 

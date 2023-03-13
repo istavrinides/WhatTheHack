@@ -9,7 +9,7 @@ val acntInfo = "fs.azure.account.key."+ blobStorage
 
 //SQL Data Warehouse related settings
  val dwDatabase = "dta"
- val dwServer = "dta" 
+ val dwServer = "dta"
  val dwUser = "dta"
  val dwPass = "fy19@12345"
  val dwJdbcPort =  "1433"
@@ -25,14 +25,14 @@ spark.conf.set(
 
 //Read source data
 val VendorDF = sql("""
-SELECT 
+SELECT
    *
   FROM taxi_db.Vendor_Lookup
 """)
 
 VendorDF.write
      .format("com.databricks.spark.sqldw")
-     .option("url", sqlDwUrlSmall) 
+     .option("url", sqlDwUrlSmall)
      .option("dbtable", "Vendor_Lookup")
      .option( "forward_spark_azure_storage_credentials","True")
      .option("tempdir", tempDir)
@@ -43,14 +43,14 @@ VendorDF.write
 
 //Read source data
 val trip_typeDF = sql("""
-SELECT 
+SELECT
    *
   FROM taxi_db.trip_type_lookup
 """)
 
 trip_typeDF.write
      .format("com.databricks.spark.sqldw")
-     .option("url", sqlDwUrlSmall) 
+     .option("url", sqlDwUrlSmall)
      .option("dbtable", "trip_type_lookup")
      .option( "forward_spark_azure_storage_credentials","True")
      .option("tempdir", tempDir)
@@ -61,14 +61,14 @@ trip_typeDF.write
 
 //Read source data
 val trip_monthDF = sql("""
-SELECT 
+SELECT
    *
   FROM taxi_db.trip_month_lookup
 """)
 
 trip_monthDF.write
      .format("com.databricks.spark.sqldw")
-     .option("url", sqlDwUrlSmall) 
+     .option("url", sqlDwUrlSmall)
      .option("dbtable", "trip_month_lookup")
      .option( "forward_spark_azure_storage_credentials","True")
      .option("tempdir", tempDir)
@@ -79,14 +79,14 @@ trip_monthDF.write
 
 //Read source data
 val payment_typeDF = sql("""
-SELECT 
+SELECT
    *
   FROM taxi_db.payment_type_lookup
 """)
 
 payment_typeDF.write
      .format("com.databricks.spark.sqldw")
-     .option("url", sqlDwUrlSmall) 
+     .option("url", sqlDwUrlSmall)
      .option("dbtable", "payment_type_lookup")
      .option( "forward_spark_azure_storage_credentials","True")
      .option("tempdir", tempDir)
@@ -97,14 +97,14 @@ payment_typeDF.write
 
 //Read source data
 val rate_codeDF = sql("""
-SELECT 
+SELECT
    *
   FROM taxi_db.rate_code_lookup
 """)
 
 rate_codeDF.write
      .format("com.databricks.spark.sqldw")
-     .option("url", sqlDwUrlSmall) 
+     .option("url", sqlDwUrlSmall)
      .option("dbtable", "rate_code_lookup")
      .option( "forward_spark_azure_storage_credentials","True")
      .option("tempdir", tempDir)
@@ -115,14 +115,14 @@ rate_codeDF.write
 
 //Read source data
 val taxi_zoneDF = sql("""
-SELECT 
+SELECT
    *
   FROM taxi_db.taxi_zone_lookup
 """)
 
 taxi_zoneDF.write
      .format("com.databricks.spark.sqldw")
-     .option("url", sqlDwUrlSmall) 
+     .option("url", sqlDwUrlSmall)
      .option("dbtable", "taxi_zone_lookup")
      .option( "forward_spark_azure_storage_credentials","True")
      .option("tempdir", tempDir)

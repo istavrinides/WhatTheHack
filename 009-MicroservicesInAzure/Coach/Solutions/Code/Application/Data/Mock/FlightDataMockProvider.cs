@@ -15,7 +15,7 @@ namespace ContosoTravel.Web.Application.Data.Mock
         private readonly IAirportDataProvider _airportDataProvider;
         AsyncLazy<IEnumerable<FlightModel>> _flightModels;
         AsyncLazy<Dictionary<int, FlightModel>> _flightModelLookup;
-         
+
         public FlightDataMockProvider()
         {
             _airportDataProvider = new AirportDataMockProvider();
@@ -31,7 +31,7 @@ namespace ContosoTravel.Web.Application.Data.Mock
         }
 
         public async Task<IEnumerable<FlightModel>> FindFlights(string departingFrom, string arrivingAt, DateTimeOffset desiredTime, TimeSpan offset, CancellationToken cancellationToken)
-        {            
+        {
             return (await _flightModels).Where(f => f.DepartingFrom.Equals(departingFrom) && f.ArrivingAt.Equals(arrivingAt) &&
                                        f.DepartureTime > desiredTime.Subtract(offset) &&
                                        f.DepartureTime < desiredTime.Add(offset)).OrderBy(f => f.DepartureTime);

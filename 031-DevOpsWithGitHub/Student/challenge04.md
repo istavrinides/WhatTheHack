@@ -6,9 +6,9 @@
 
 ### Introduction
 
-With our existing repository and newly-created Azure App Service, we have laid the foundation for our application. Now, we must connect our source code and its destination. The first step in this journey is called Continuous Integration (CI). 
+With our existing repository and newly-created Azure App Service, we have laid the foundation for our application. Now, we must connect our source code and its destination. The first step in this journey is called Continuous Integration (CI).
 
-Continous integration is the process of merging local code changes into source control and may include steps to automatically build and/or test the code. When done effectively, Continuous Integration allows developers to rapidly iterate and collaborate, and it helps ensure that newly added code does not break the current application. 
+Continous integration is the process of merging local code changes into source control and may include steps to automatically build and/or test the code. When done effectively, Continuous Integration allows developers to rapidly iterate and collaborate, and it helps ensure that newly added code does not break the current application.
 
 Review the following articles:
 - [About continuous integration](https://docs.github.com/en/actions/building-and-testing-code-with-continuous-integration/about-continuous-integration)
@@ -31,15 +31,15 @@ In this challenge, you will build and test the .NET Core application.
 6. Update the predefined steps used to build the .NET Core application (note: for each step below, you will need to update each command to pass the relative path to the  `.csproj` as an argument):
    - `restore` - will get all the dependencies. Update with an [argument](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build#arguments) to the application csproj file.
    - `build` - will actually compile our code. Update with an argument to the application csproj file.
-   - `test` - will execute all our unit tests. Update with an argument to the unit test csproj file. 
+   - `test` - will execute all our unit tests. Update with an argument to the unit test csproj file.
 
 7. Test the workflow by making a small change to the application code (i.e., add a comment). Commit, push and ensure the workflow completes successfully.
 
-At this point, any changes pushed to the `/Application` folder automatically triggers the workflow...and that is Continuous Integration! 
+At this point, any changes pushed to the `/Application` folder automatically triggers the workflow...and that is Continuous Integration!
 
 ### Success Criteria
 
-- Any changes pushed to the `/Application` folder automatically triggers the workflow 
+- Any changes pushed to the `/Application` folder automatically triggers the workflow
 - .NET Core restore, build and test steps completes successfully
 
 ### Learning Resources
@@ -52,8 +52,8 @@ At this point, any changes pushed to the `/Application` folder automatically tri
 
 ### Tips
 
-- If you are having trouble finding a starting point, try clicking over to the 'Actions' tab of your GitHub repository. 
-- Take advantage of the prebuilt workflow templates if you find one that might work! 
+- If you are having trouble finding a starting point, try clicking over to the 'Actions' tab of your GitHub repository.
+- Take advantage of the prebuilt workflow templates if you find one that might work!
 
 ### Advanced Challenges (optional)
 

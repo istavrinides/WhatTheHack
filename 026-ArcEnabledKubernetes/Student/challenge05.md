@@ -13,7 +13,7 @@ In this challenge we will build on what we did in the previous challenge by enab
 1. Enable gitops on the GKE deployed cluster.
 2. Enable gitops on the locally deployed cluster.
 3. Note and discuss the technologies involved in enabling gitops.
-4. Discuss how to enable gitops using Azure Policy and/or Helm. 
+4. Discuss how to enable gitops using Azure Policy and/or Helm.
 
 ### Success Criteria
 This challenge will be complete when both the clusters have been gitops enabled.

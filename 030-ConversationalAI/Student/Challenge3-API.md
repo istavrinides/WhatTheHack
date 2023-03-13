@@ -1,4 +1,4 @@
-# Challenge 3:  Make API Calls from your Bot  
+# Challenge 3:  Make API Calls from your Bot
 [< Previous Challenge](./Challenge2-LUIS.md) - **[Home](../README.md)** - [Next Challenge>](./Challenge4-Deployment.md)
 ## Introduction
 
@@ -16,7 +16,7 @@ The power of the Bot Service is the ability to add your own APIs. In this challe
 
 ## Success Criteria
 - The bot successfully calls the Finnhub API without any errors
-- The bot can return the opening stock price of a variety of different companies such as MSFT, AAPL, JNJ, or FB. 
+- The bot can return the opening stock price of a variety of different companies such as MSFT, AAPL, JNJ, or FB.
 - The bot runs in the Bot Framework Emulator and displays the opening stock price.
 
 ![Sample](./Images/Ch3-1.JPG)

@@ -6,7 +6,7 @@ Welcome to the Datadog on Azure hack. This What The Hack provides provides hands
 
 ## Learning Objectives
 
-In this hack, you will be getting hands on experience with monitoring resources (VMs, applications, containers) using Datadog's capabilities such as logs, metrics, alerts and dashboards. 
+In this hack, you will be getting hands on experience with monitoring resources (VMs, applications, containers) using Datadog's capabilities such as logs, metrics, alerts and dashboards.
 
 ## Challenges
 
@@ -19,7 +19,7 @@ In this hack, you will be getting hands on experience with monitoring resources 
 - Challenge 03: **[Monitoring Azure Virtual Machines](Student/Challenge-03.md)**
 	 - Datadog agent manual and scalable installations on Windows and VM scale sets.
 - Challenge 04: **[Datadog for Applications](Student/Challenge-04.md)**
-	 - Monitoring applications deployed to Azure using Datadog. 
+	 - Monitoring applications deployed to Azure using Datadog.
 
 ## Prerequisites
 

@@ -1,9 +1,9 @@
-# Challenge 05 - Private link and private endpoint communications for SAP - Coach's Guide 
+# Challenge 05 - Private link and private endpoint communications for SAP - Coach's Guide
 
 [< Previous Solution](./Solution-04.md) - **[Home](./README.md)** - [Next Solution >](./Solution-06.md)
 
 # Notes & Guidance
-- Communication direct can be confusing. Clarify [Service Endpoint](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview) vs. [Private Endpoint](https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview) vs. [Private Link (Service)](https://docs.microsoft.com/en-us/azure/private-link/private-link-overview?toc=/azure/virtual-network/toc.json). 
+- Communication direct can be confusing. Clarify [Service Endpoint](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview) vs. [Private Endpoint](https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview) vs. [Private Link (Service)](https://docs.microsoft.com/en-us/azure/private-link/private-link-overview?toc=/azure/virtual-network/toc.json).
 - Use this [FAQ](https://docs.microsoft.com/en-us/azure/private-link/private-link-faq) for an official compare.
 
 ## Common mistakes Regarding Private Link Service (PLS)

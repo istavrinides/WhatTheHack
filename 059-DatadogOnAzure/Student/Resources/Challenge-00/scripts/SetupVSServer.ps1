@@ -1,5 +1,5 @@
 param (
-    [string]$SQLServerName, 
+    [string]$SQLServerName,
     [string]$SQLPassword,
     [string]$AdminUsername
 )
@@ -8,7 +8,7 @@ param (
 # Set file and folder path for SSMS installer .exe
 $folderpath="c:\windows\temp"
 $filepath="$folderpath\SSMS-Setup-ENU.exe"
- 
+
 #If SSMS not present, download
 if (!(Test-Path $filepath)){
 write-host "Downloading SQL Server Latest SSMS..."
@@ -16,13 +16,13 @@ $URL = "https://aka.ms/ssmsfullsetup"
 $clnt = New-Object System.Net.WebClient
 $clnt.DownloadFile($url,$filepath)
 Write-Host "SSMS installer download complete" -ForegroundColor Green
- 
+
 }
 else {
- 
+
 write-host "Located the SQL SSMS Installer binaries, moving on to install..."
 }
- 
+
 # start the SSMS installer
 write-host "Beginning SSMS 2016 install..." -nonewline
 $Parms = " /Install /Quiet /Norestart /Logs log.txt"
@@ -39,7 +39,7 @@ $exeFileNetCore = [System.IO.Path]::GetTempFileName() | Rename-Item -NewName "do
 Invoke-WebRequest -Uri "https://download.visualstudio.microsoft.com/download/pr/639f7cfa-84f8-48e8-b6c9-82634314e28f/8eb04e1b5f34df0c840c1bffa363c101/dotnet-sdk-3.1.100-win-x64.exe" -OutFile $exeFileNetCore
 # Run the exe with arguments
 $proc = (Start-Process -FilePath $exeFileNetCore.Name.ToString() -ArgumentList ('/install','/quiet') -WorkingDirectory $exeFileNetCore.Directory.ToString() -Passthru)
-$proc | Wait-Process 
+$proc | Wait-Process
 #>
 
 # Install Microsoft .Net Core 6.0.4
@@ -50,7 +50,7 @@ $exeFileNetCore = [System.IO.Path]::GetTempFileName() | Rename-Item -NewName "do
 Invoke-WebRequest -Uri "https://download.visualstudio.microsoft.com/download/pr/9a1d2e89-d785-4493-aaf3-73864627a1ea/245bdfaa9c46b87acfb2afbd10ecb0d0/dotnet-sdk-6.0.400-win-x64.exe" -OutFile $exeFileNetCore
 # Run the exe with arguments
 $proc = (Start-Process -FilePath $exeFileNetCore.Name.ToString() -ArgumentList ('/install','/quiet') -WorkingDirectory $exeFileNetCore.Directory.ToString() -Passthru)
-$proc | Wait-Process 
+$proc | Wait-Process
 
 
 try
@@ -61,7 +61,7 @@ try
     Set-ItemProperty -Path $AdminKey -Name "IsInstalled" -Value 0 -Force
     Set-ItemProperty -Path $UserKey -Name "IsInstalled" -Value 0 -Force
     Stop-Process -Name Explorer -Force
-} 
+}
 catch {}
 
 # Download eShopOnWeb to c:\eShopOnWeb and extract contents
@@ -76,7 +76,7 @@ $Destination = "C:\eshoponweb"
 Add-Type -assembly "system.io.compression.filesystem" -PassThru
 [io.compression.zipfile]::ExtractToDirectory($BackUpPath, $destination)
 
-<# New .NET 6 version of eShopOnWeb doesn't use this file. 
+<# New .NET 6 version of eShopOnWeb doesn't use this file.
 #  This setting is now maintained in the appsettings.json file and is on by default!
 #Modified version of Update eShopOnWeb project to use SQL Server
 #modify Startup.cs

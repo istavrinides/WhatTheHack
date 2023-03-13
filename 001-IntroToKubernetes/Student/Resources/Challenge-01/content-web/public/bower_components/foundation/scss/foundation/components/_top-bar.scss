@@ -172,12 +172,12 @@ $topbar-dropdown-arrows: true !default; //Set false to remove the \00bb >> text 
       }
 
       form,
-      input, 
+      input,
       select {
         margin-bottom: 0;
       }
 
-      input, 
+      input,
       select {
         font-size: $topbar-button-font-size;
         height: $topbar-input-height;
@@ -518,7 +518,7 @@ $topbar-dropdown-arrows: true !default; //Set false to remove the \00bb >> text 
         .has-form > button {
           font-size: rem-calc(14);
           height: $topbar-input-height;
-          position: relative; 
+          position: relative;
           top: (($topbar-height - $topbar-input-height) / 2);
         }
 

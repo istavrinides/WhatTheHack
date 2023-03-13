@@ -179,10 +179,10 @@ In this exercise, you will set up your environment for use for the rest of the e
 
 **Default Settings**
 
-- VM Admin User Name: sysadmin  
+- VM Admin User Name: sysadmin
 - VM Admin User Password: Password$123
-- Database Login Name: workshopServiceAcc  
-- Database User Name: workshopServiceAcc  
+- Database Login Name: workshopServiceAcc
+- Database User Name: workshopServiceAcc
 - Database User Password: P2ssw0rd
 - Database Name: partsUnlimitedDB
 
@@ -279,7 +279,7 @@ In this task we will migrate the web front end to Azure PaaS and leave the datab
      ![Migrated App & Database](./media/image14-connect-to-vm.jpeg)
 
 2. When you first connect, Server Manager will open.  To make is simpler to browse the web, let's turn off IE Enhanced Security.
-   
+
     a. Click on Local Server.  You will see an option for IE Enhanced Security, click it
 
      ![Local Server Manager](./media/image16-local-server-manager.jpeg)
@@ -287,7 +287,7 @@ In this task we will migrate the web front end to Azure PaaS and leave the datab
     b. Toggle both to Off
 
      ![Disable IE Enhanced Security Configuration](./media/image17-disable-ie-enhanced-configuration.png)
-   
+
 3. navigate to the [App Migration Tool](https://appmigration.microsoft.com) site.
 
   ![](./media/e1t1i1.png)
@@ -338,13 +338,13 @@ After filling out the form, click the 'Migrate' button to start the proces.
  ![](./media/e1t1i13.png)
 
 12.   Once the tool has completed migrating the website, it will walk you through setting up the Hybrid connection.  Again, make sure you are running on the WebSrv vm.  Download and install the hybrid connection to this server.  Then click 'Next' to continue.
- 
+
    ![](./media/e1t1i14.png)
-   
+
    ![](./media/e1t1i15.png)
 
    ![](./media/e1t1i16.png)
-     
+
 13. Once the migration process has been completed, click the 'Go To Your website' and verify that the migrated site runs correctly
 
   ![](./media/e1t1i17.png)
@@ -354,7 +354,7 @@ After filling out the form, click the 'Migrate' button to start the proces.
 **Exit criteria**
 
 - An Azure App Service instance should be created with the application
-- A Hybrid Connection should be created and configured 
+- A Hybrid Connection should be created and configured
 - The application runs against the database running on your SQLVM
 
 ### Task 2: Setup Traffic Manager (Optional)
@@ -379,7 +379,7 @@ Our intent is to use traffic manager as a way to gradually move our web servers 
    - Routing method: performance
    - Subscription: the same subscription you deployed your app service to
    - Resource Group: the same resource group you deployed your app service to
- 
+
    Then click 'Create'.  In a few moments, a traffic manager service will be provisioned into your resource group.
 
   ![](./media/e1t2i4.png)
@@ -734,11 +734,11 @@ Looks like there is a bug in the migration tool.  It doesn't property put the c
 
 ![Deployment error](./media/image70.jpeg)
 
-**Note**: This is an opportunity to see how you can troubleshoot the environment using Kudu, diagnostics, deployment slots, etc. Navigation with your web browser to 
+**Note**: This is an opportunity to see how you can troubleshoot the environment using Kudu, diagnostics, deployment slots, etc. Navigation with your web browser to
 
-``` 
+```
 https://\[webname\].scm.azurewebsites.net
-``` 
+```
 
 To Avoid the error……….
 
@@ -903,7 +903,7 @@ Click on the Application Insights Menu Item to create a new instance 
 > ![Resoure Group - Application Insights](./media/image100.jpeg)
 >
 > ![Create Application Insights](./media/image101.jpeg)
-> 
+>
 > ![Create Application Insights - New Resource](./media/image102.png)
 
 Enter a name for the Azure Application Insights instance and choose the region where it should be deployed. Choose the runtime/framework your application is using. In this case, choose ASP.NET. Click OK to create.
@@ -958,7 +958,7 @@ Lastly, we will enable trace collection.  Simply click the "**Collect traces fr
 This should leave you 100% configured
 
 > ![Application Insights - Configured 100%](./media/image110.png)
-> 
+>
 We need to update a package, so right click on the project in visual studio and select "Manage NuGet Packages.."
 
 > ![Update Application Insights NuGet Dependency](./media/image111.jpeg)
@@ -1553,7 +1553,7 @@ At this point the product images could be removed from the project or marked wit
 
 The deployment of the images to the storage account could also be automated using:
 
-**CLI**  
+**CLI**
 az storage blob
 upload-batch
 
@@ -2363,7 +2363,7 @@ Browse the product categories and details of the site and notice the Functions g
 
 ### Task 4: Publish the Service
 
-Now that we have a working Function App with the website, it is time to deploy to Azure, which can be accomplished using the Publish feature in Visual Studio. 
+Now that we have a working Function App with the website, it is time to deploy to Azure, which can be accomplished using the Publish feature in Visual Studio.
 
 > ![Publish Project](./media/image237.png)
 

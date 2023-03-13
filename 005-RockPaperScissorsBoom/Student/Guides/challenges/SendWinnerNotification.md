@@ -11,7 +11,7 @@ Imagine if you had this requirement: After each game is played, a notification s
 ## Challenges
 
 1. You want to automate sending the winner notification after every game is played.
-1. You need to build this feature using Azure's serverless capabilities to make sure it's done quickly and to keep costs at a minimum. 
+1. You need to build this feature using Azure's serverless capabilities to make sure it's done quickly and to keep costs at a minimum.
 1. The application is already wired-up to raise an event when the game completes. The event contains details about the winner. Can you use this event to complete the Winner Notification feature?
 
 ## Success criteria
@@ -27,7 +27,7 @@ Imagine if you had this requirement: After each game is played, a notification s
 
 1. This feature was previously implemented with this architecture
     * Event Grid Topic --> Event Grid Subscription (Webhook to Azure Function)
-    * Azure Function Initiates a Logic App HTTP trigger. 
+    * Azure Function Initiates a Logic App HTTP trigger.
     * The Logic App has a step that sends an email.
 1. You can see an example of the Azure Function in the [Func](../../Resources/Code/Func) folder in this repository.
     * Note that this requires a Windows-based Azure Function.

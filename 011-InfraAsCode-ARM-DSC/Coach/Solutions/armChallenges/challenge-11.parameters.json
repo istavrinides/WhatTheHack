@@ -3,14 +3,14 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "resourcePrefix": {
-        "value": "p20" 
+        "value": "p20"
       },
       "vmssName": {
         "value": "P20WebVMSS"
       },
       "vmssInstanceCount": {
         "value": 2
-      },        
+      },
       "adminUsername": {
         "value": "p20admin"
       },

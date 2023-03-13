@@ -5,20 +5,20 @@
 ## Introduction
 
 Congratulations, Caladan has now centralized their cloud data!
-Remember that the on-premise data also needs to be incorporated. 
-Leadership has become increasingly concerned that they are unable to effectively determine the best policies if all data is not incorporated. 
+Remember that the on-premise data also needs to be incorporated.
+Leadership has become increasingly concerned that they are unable to effectively determine the best policies if all data is not incorporated.
 With the establishment of an enterprise data lake, the time to leverage the additional
 data is close at hand!
 First, this additional data needs to be extracted.
 
-Caladan wants a repeatable data flow to pull data from both their cloud source and on-premise. 
+Caladan wants a repeatable data flow to pull data from both their cloud source and on-premise.
 They would like the team to leverage the services
 they provisioned for the previous import effort, which brought
 both the Azure SQL Databases and Azure Cosmos DB data to
 the enterprise data lake.
 Additionally, they would like the team to ensure that
 any solutions created to extract data
-can be further leveraged when any any other health related data is either made available on-prem or in the cloud. 
+can be further leveraged when any any other health related data is either made available on-prem or in the cloud.
 
 Once there's a baseline for the services used to import data,
 Caladan requires that the team establish version control to ensure that the work performed by the team can be
@@ -26,7 +26,7 @@ persisted, tracked, and potentially audited.
 
 ## Description
 
-The team will now begin working with the on-premise data. 
+The team will now begin working with the on-premise data.
 
 Although the data will land in the same data lake,
 it should be grouped by the source system of record:
@@ -48,8 +48,8 @@ By default, the lab setup process uses `sqladmin` as the SQL administrator login
 - All data from the `dbo` schema of the COVID19 VM Covid19  database
 has been extracted and stored in the enterprise data lake.
 
-- All extracted data is grouped by the source system of record and a flag added.  
-- The same DL has been used throughout. 
+- All extracted data is grouped by the source system of record and a flag added.
+- The same DL has been used throughout.
 - The team has persisted all extraction solution(s) in version control.
 
 ## Tips

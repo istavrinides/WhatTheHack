@@ -8,14 +8,14 @@ The students should be able to create an AIS environment consisting of APIM and 
 
 
 ## Description
-Students has to do one of the following AIS environments, click on the link below to jump straight to relevant scenario: 
+Students has to do one of the following AIS environments, click on the link below to jump straight to relevant scenario:
 - [Scenario 01: Deploy a VNET-secured AIS environment](#scenario-01-deploy-a-vnet-secured-ais-environment)
 - [Scenario 02: Deploy an identity-secured AIS environment](#scenario-02-deploy-an-identity-secured-ais-environment)
 
 ### Scenario 01: Deploy a VNET-secured AIS environment
-- Scenario 01: Students can deploy the Bicep templates of the VNET-integrated AIS which can be found at [Student/Resources/Challenge-01/Scenario-01](../Student/Resources/Challenge-01/Scenario-01).  This is the shortcut method - the templates are ready to deployed and all they need to do is plug-in the parameter values.  
+- Scenario 01: Students can deploy the Bicep templates of the VNET-integrated AIS which can be found at [Student/Resources/Challenge-01/Scenario-01](../Student/Resources/Challenge-01/Scenario-01).  This is the shortcut method - the templates are ready to deployed and all they need to do is plug-in the parameter values.
   This would create the following:
-  1. APIM 
+  1. APIM
   1. Application Gateway
   1. Application Insights (workspace-based)
   1. Log Analytics workspace
@@ -37,31 +37,31 @@ Students has to do one of the following AIS environments, click on the link belo
   - Ensure that the students have [published the APIM Developer portal](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-developer-portal-customize#publish) because they will need to use this in Challenge 04.  The students should log-in to the jumpbox VM to do this.
     - First, they need to [set the DNS entries for the APIM service endpoints in the hosts file](https://docs.microsoft.com/en-us/azure/api-management/api-management-using-with-internal-vnet?tabs=stv2#dns-configuration#:~:text=To%20access%20these%20API%20Management%20,%20(Windows)%20or%20%2Fetc%2Fhosts%20(Linux%2C%20macOS)).  Map the endpoints to the assigned private virtual IP address (usually 10.0.1.5), as follows:
     ![Set DNS Entries APIM 1](./images/Solution01_Set_DNS_Entries_APIM_1.jpg)
-    - Then, open a browser and go the Azure portal (still in the jumpbox VM).  In the menu list, go to Developer portal - Portal overview and click the Developer Portal button which will open a browser to create the Developer portal instance in Edit mode. 
+    - Then, open a browser and go the Azure portal (still in the jumpbox VM).  In the menu list, go to Developer portal - Portal overview and click the Developer Portal button which will open a browser to create the Developer portal instance in Edit mode.
     ![Set DNS Entries APIM 2](./images/Solution01_Set_DNS_Entries_APIM_2.jpg)
     - Go back to browser tab where the APIM Portal overview is opened, then click publish.
     ![Publish APIM Dev Portal](./images/Solution01_Publish_APIM_DevPortal_1.jpg)
     - Once done, enable CORS.
     ![Publish APIM Dev Portal](./images/Solution01_Publish_APIM_DevPortal_2.jpg)
-    - Open a new browser window (in incognito/private browsing mode) and then [view the portal](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-developer-portal-customize#visit-the-published-portal) 
+    - Open a new browser window (in incognito/private browsing mode) and then [view the portal](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-developer-portal-customize#visit-the-published-portal)
     ![Publish APIM Dev Portal](./images/Solution01_Publish_APIM_DevPortal_3.jpg)
     - Click API and test call Echo API GET operation (don't forget to add the subscription key!)
     ![Publish APIM Dev Portal](./images/Solution01_Publish_APIM_DevPortal_4.jpg)
 
-### Scenario 02: Deploy an identity-secured AIS environment 
+### Scenario 02: Deploy an identity-secured AIS environment
 - Scenario 02: Students they can deploy the Bicep templates of the publicly-exposed AIS which can be found at [Student/Resources/Challenge-01/Scenario-02](../Student/Resources/Challenge-01/Scenario-02).  There might be some parameter or variable values that are missing, so the students need to fill these out.
   This would create the following:
-  1. APIM 
+  1. APIM
   1. Application Insights (workspace-based)
   1. Function App in Consumption plan
 
-  
+
   The students should have the following files:
   - main.bicep - The main Bicep file.  In there, you will reference the modules, define parameter values, and then pass those values as input to the modules.
 
   - The rest of the deployments are organized into [Bicep modules](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/modules) contained in the "module" folder, namely:
 
-    - appInsights.bicep - Defines the Application Insights resource and should be the very first resource that need to be created. Make sure to define an [output parameter](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/outputs?tabs=azure-powershell) for the instrumentation key, which will then need to be passed as input into the Function App and APIM modules. 
+    - appInsights.bicep - Defines the Application Insights resource and should be the very first resource that need to be created. Make sure to define an [output parameter](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/outputs?tabs=azure-powershell) for the instrumentation key, which will then need to be passed as input into the Function App and APIM modules.
 
         ```
         resource laWorkspace 'Microsoft.OperationalInsights/workspaces@2021-06-01' = {
@@ -106,15 +106,15 @@ Students has to do one of the following AIS environments, click on the link belo
 
         resource apiManagementServiceLoggers 'Microsoft.ApiManagement/service/loggers@2021-08-01' = {
           parent: apiManagementService
-          name: 'apimlogger' 
+          name: 'apimlogger'
           properties: {
-            resourceId: appInsightsResourceId 
+            resourceId: appInsightsResourceId
             loggerType: 'applicationInsights'
             credentials: {
               instrumentationKey: appInsightsInstrumentationKey
             }
-            isBuffered: true 
-            
+            isBuffered: true
+
           }
         }
 
@@ -205,7 +205,7 @@ Students has to do one of the following AIS environments, click on the link belo
           }
           identity: {
             type: 'SystemAssigned'
-          }  
+          }
         }
 
         output functionAppName string = functionApp.name
@@ -213,7 +213,7 @@ Students has to do one of the following AIS environments, click on the link belo
 
         See [Microsoft.Web sites/functions](https://docs.microsoft.com/en-us/azure/templates/microsoft.web/sites/functions?tabs=bicep) for reference
 
-  
+
 
 
   - They can also refer to the [MS Learn Bicep tutorial](https://docs.microsoft.com/en-us/learn/modules/build-first-bicep-template/8-exercise-refactor-template-modules?pivots=cli) to guide them on how to author the files above.
@@ -226,13 +226,13 @@ Students has to do one of the following AIS environments, click on the link belo
     ```
   - Ensure that the students have [published the APIM Developer portal](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-developer-portal-customize#publish) because they will need to use this in Challenge 04.
 
-    - In the Azure portal, find the menu list, then go to Developer portal - Portal overview and click the Developer Portal button which will open a browser to create the Developer portal instance in Edit mode. 
+    - In the Azure portal, find the menu list, then go to Developer portal - Portal overview and click the Developer Portal button which will open a browser to create the Developer portal instance in Edit mode.
     ![Set DNS Entries APIM 2](./images/Solution01_Set_DNS_Entries_APIM_2.jpg)
     - Go back to browser tab where the APIM Portal overview is opened, then click publish.
     ![Publish APIM Dev Portal](./images/Solution01_Publish_APIM_DevPortal_1.jpg)
     - Once done, enable CORS.
     ![Publish APIM Dev Portal](./images/Solution01_Publish_APIM_DevPortal_2.jpg)
-    - Open a new browser window (in incognito/private browsing mode) and then [view the portal](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-developer-portal-customize#visit-the-published-portal) 
+    - Open a new browser window (in incognito/private browsing mode) and then [view the portal](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-developer-portal-customize#visit-the-published-portal)
     ![Publish APIM Dev Portal](./images/Solution01_Publish_APIM_DevPortal_3.jpg)
     - Click API and test call Echo API GET operation (don't forget to add the subscription key!)
     ![Publish APIM Dev Portal](./images/Solution01_Publish_APIM_DevPortal_4.jpg)

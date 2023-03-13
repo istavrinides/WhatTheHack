@@ -88,11 +88,11 @@ BEGIN
 
     INSERT Dimension.City
         ([WWI City ID], City, [State Province], Country, Continent,
-         [Sales Territory], Region, Subregion, 
+         [Sales Territory], Region, Subregion,
          [Latest Recorded Population], [Valid From], [Valid To],
          [Lineage Key])
     SELECT [WWI City ID], City, [State Province], Country, Continent,
-           [Sales Territory], Region, Subregion, 
+           [Sales Territory], Region, Subregion,
            [Latest Recorded Population], [Valid From], [Valid To],
            @LineageKey
     FROM Integration.City_Staging;
@@ -134,7 +134,7 @@ BEGIN
                                WHERE [Table Name] = N'Customer'
                                AND [Data Load Completed] IS NULL
                                ORDER BY [Lineage Key] DESC);
-	
+
     UPDATE Dimension.Customer
         SET Customer.[Valid To] = v_Customer_Stage.[Valid From]
     FROM Integration.v_Customer_Stage
@@ -265,7 +265,7 @@ BEGIN
 									             ORDER BY tt.[Valid From]), 0);
 
     -- Update existing Fact records with latest values
-	
+
 	UPDATE FACT.MOVEMENT
 	SET FACT.MOVEMENT.[Date Key] = Integration.Movement_Staging.[Date Key],
         FACT.MOVEMENT.[Stock Item Key] = Integration.Movement_Staging.[Stock Item Key],
@@ -274,21 +274,21 @@ BEGIN
         FACT.MOVEMENT.[Transaction Type Key] = Integration.Movement_Staging.[Transaction Type Key],
         FACT.MOVEMENT.[WWI Invoice ID] = Integration.Movement_Staging.[WWI Invoice ID],
         FACT.MOVEMENT.[WWI Purchase Order ID] = Integration.Movement_Staging.[WWI Purchase Order ID],
-        FACT.MOVEMENT.Quantity = Integration.Movement_Staging.Quantity, 
+        FACT.MOVEMENT.Quantity = Integration.Movement_Staging.Quantity,
         FACT.MOVEMENT.[Lineage Key] = @LineageKey
 		FROM Integration.Movement_Staging
-		WHERE FACT.MOVEMENT.[WWI Stock Item Transaction ID] = Integration.Movement_Staging.[WWI Stock Item Transaction ID];    
+		WHERE FACT.MOVEMENT.[WWI Stock Item Transaction ID] = Integration.Movement_Staging.[WWI Stock Item Transaction ID];
 
 	--Insert new records into the fact table
 
-    INSERT Fact.Movement 
+    INSERT Fact.Movement
 			([Date Key], [Stock Item Key], [Customer Key], [Supplier Key], [Transaction Type Key],
             [WWI Stock Item Transaction ID], [WWI Invoice ID], [WWI Purchase Order ID], Quantity, [Lineage Key])
     SELECT [Date Key], [Stock Item Key], [Customer Key], [Supplier Key], [Transaction Type Key],
             [WWI Stock Item Transaction ID], [WWI Invoice ID], [WWI Purchase Order ID], Quantity, @LineageKey
 			FROM Integration.Movement_Staging
 			WHERE [WWI Stock Item Transaction ID] NOT IN (SELECT [WWI Stock Item Transaction ID] FROM FACT.MOVEMENT);
-	
+
 	UPDATE Integration.Lineage
         SET [Data Load Completed] = SYSDATETIME(),
             [Was Successful] = 1
@@ -481,7 +481,7 @@ BEGIN
 
     DELETE FROM Fact.Purchase
     WHERE [WWI Purchase Order ID] IN (SELECT [WWI Purchase Order ID] FROM Integration.Purchase_Staging)
-	OPTION ( LABEL = N'CustomJoin', HASH JOIN );  
+	OPTION ( LABEL = N'CustomJoin', HASH JOIN );
 
     -- Insert all current details for these purchase orders
 
@@ -565,9 +565,9 @@ BEGIN
     -- Remove any existing entries for any of these invoices
 
 	DELETE FROM Fact.Sale
-	WHERE [WWI Invoice ID] IN(   
-	SELECT [WWI Invoice ID] FROM Integration.Sale_Staging)  
-	OPTION ( LABEL = N'CustomJoin', HASH JOIN ) ;  
+	WHERE [WWI Invoice ID] IN(
+	SELECT [WWI Invoice ID] FROM Integration.Sale_Staging)
+	OPTION ( LABEL = N'CustomJoin', HASH JOIN ) ;
 
 
     -- Insert all current details for these invoices
@@ -997,7 +997,7 @@ BEGIN
 
 
 IF EXISTS(select * from [Integration].[Load_Control])
-   update Integration.[Load_Control] 
+   update Integration.[Load_Control]
 		SET [Load_Date] = @EndingETLCutoffTime
 ELSE
    insert into Integration.[Load_Control] values(@EndingETLCutoffTime);

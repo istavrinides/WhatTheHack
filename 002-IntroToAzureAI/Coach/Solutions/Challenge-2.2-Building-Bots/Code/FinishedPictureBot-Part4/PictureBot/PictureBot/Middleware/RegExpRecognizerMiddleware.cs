@@ -7,12 +7,12 @@ using System.Text.RegularExpressions;
 using Microsoft.Bot.Builder;
 
 namespace PictureBot
-{ 
+{
     public class RegExpRecognizerSettings
     {
         /// <summary>
-        /// Minimum score, on a scale from 0.0 to 1.0, that should be returned for a matched 
-        /// expression.This defaults to a value of 0.0. 
+        /// Minimum score, on a scale from 0.0 to 1.0, that should be returned for a matched
+        /// expression.This defaults to a value of 0.0.
         /// </summary>
         public double MinScore { get; set; } = 0.0;
     }
@@ -133,7 +133,7 @@ namespace PictureBot
         }
         private List<Regex> GetExpressions(ITurnContext context, RegExLocaleMap map)
         {
-            
+
             var locale = string.IsNullOrWhiteSpace(context.Activity.Locale) ? "*" : context.Activity.Locale;
             var entry = map.GetLocale(locale);
             return entry;
@@ -145,7 +145,7 @@ namespace PictureBot
         }
         public static Intent Recognize(string text, Regex expression, List<string> entityTypes, double minScore)
         {
-            // Note: Not throwing here, as users enter whitespace all the time. 
+            // Note: Not throwing here, as users enter whitespace all the time.
             if (string.IsNullOrWhiteSpace(text))
                 return null;
 
@@ -179,7 +179,7 @@ namespace PictureBot
                     string groupName = DefaultEntityType;
                     if (entityTypes.Count > 0)
                     {
-                        // If the dev passed in group names, use them. 
+                        // If the dev passed in group names, use them.
                         groupName = (i - 1) < entityTypes.Count ? entityTypes[i - 1] : DefaultEntityType;
                     }
                     else

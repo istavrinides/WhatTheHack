@@ -1,6 +1,6 @@
- insert into [SalesLT].[CustomerAddress] 
-     (CustomerID, AddressID, AddressType, ModifiedDate) 
- values 
+ insert into [SalesLT].[CustomerAddress]
+     (CustomerID, AddressID, AddressType, ModifiedDate)
+ values
      ('30130', '11386', 'Main Office', GETDATE()),
      ('30131', '11387', 'Main Office', GETDATE()),
 	 ('30132', '11388', 'Main Office', GETDATE())

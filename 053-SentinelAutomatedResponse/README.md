@@ -4,7 +4,7 @@
 This Hack will introduce you to Microsoft Sentinel by helping you implement and explore the core functionality of Microsoft's Security Incident & Event Management (SIEM) /Security Orchestration Automated Response (SOAR) platform.
 
 ## Learning Objectives
-In this hack you will learn how to architect Sentinel, start ingesting data, use the Watchlists feature, create a custom alert and incident.  Finally you will learn how to add some automation to manage that incident.  
+In this hack you will learn how to architect Sentinel, start ingesting data, use the Watchlists feature, create a custom alert and incident.  Finally you will learn how to add some automation to manage that incident.
 
 1. Decide on the Sentinel Architecture
 2. Install the agent and start recieving logs
@@ -25,7 +25,7 @@ You will need an Azure subscription with contributor rights to complete this hac
 
 [Sign Up for Azure HERE](https://azure.microsoft.com/en-us/free/)
 
-Our goal in the hackathon is limiting the cost of using Azure services. 
+Our goal in the hackathon is limiting the cost of using Azure services.
 
 If you've never used Azure, you will get:
 - $200 free credits for use for up to 30 days

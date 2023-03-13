@@ -1,6 +1,6 @@
- 
+
 // Config object to be passed to Msal on creation.
-// For a full list of msal.js configuration parameters, 
+// For a full list of msal.js configuration parameters,
 // visit https://azuread.github.io/microsoft-authentication-library-for-js/docs/msal/modules/_authenticationparameters_.html
 const msalConfig = {
   auth: {
@@ -12,8 +12,8 @@ const msalConfig = {
     cacheLocation: "sessionStorage", // This configures where your cache will be stored
     storeAuthStateInCookie: false, // Set this to "true" if you are having issues on IE11 or Edge
   }
-};  
-  
+};
+
 // Add here the scopes to request when obtaining an access token for FHIR Server API
 // for more, visit https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/docs/scopes.md
 const loginRequest = {

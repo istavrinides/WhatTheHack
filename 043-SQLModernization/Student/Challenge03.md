@@ -11,7 +11,7 @@ Although SQL Server is easier than ever to deploy with Azure SQL Database, conta
 The purpose of this challenge is threefold:
 
 * Explore new features of SQL Server that may improve performance intrinsically.
-* Ensure would-be data engineers and DBAs are comfortable monitoring, evaluating performance. 
+* Ensure would-be data engineers and DBAs are comfortable monitoring, evaluating performance.
 * Leverage newer tools like Azure Data Studio Notebooks and [Azure Monitor SQL Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/insights/sql-insights-overview).
 
 ### Explore new features
@@ -20,13 +20,13 @@ To begin, download and open the [Intelligent Query Processing notebook](./Resour
 
 Follow the steps to create a Log Analytics workspace, a monitoring user, and an Azure Virtual Machine to [enable Azure Monitor SQL Insights ](https://docs.microsoft.com/en-us/azure/azure-monitor/insights/sql-insights-enable) on your subscription, and start monitoring your databases.
 
-While it's clear the SQL Server 2019 version performs better, the challenge is to understand why. Leverage Query Store to evaluate the differences in performance and execution plans.  
+While it's clear the SQL Server 2019 version performs better, the challenge is to understand why. Leverage Query Store to evaluate the differences in performance and execution plans.
 
 ### Understand key blockers
 
 There's a saying, "If you can't measure it, you can't improve it." Perhaps for code optimizations, it's more accurate to say, "To effectively improve something, you begin by measuring it." Looking at the execution plan is a key way to understand how a query is parsed and executed so that changes can be intentional and evaluated. This part of the challenge involves understanding the indexing and reading the execution plan. While altering a table and its indexes to improve a query may impact other queries, the goal is to find the appropriate tradeoffs.
 
-The WWI team powers a dashboard that uses a query similar to the below to track current invoices for a given day. Execute and evaluate its execution plan. 
+The WWI team powers a dashboard that uses a query similar to the below to track current invoices for a given day. Execute and evaluate its execution plan.
 
 ```sql
 SELECT InvoiceId, CustomerId, TotalChillerItems, TotalDryItems, ConfirmedDeliveryTime
@@ -51,7 +51,7 @@ Working with your team, improve the performance of the query. Provide any script
 
 ## Advanced Challenges (Optional)
 
-* Monitor your SQL deployments with Azure Monitor SQL Insights [log queries](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries). Create and save your own Kusto queries using the Azure Log Analytics workspace you created earlier. 
+* Monitor your SQL deployments with Azure Monitor SQL Insights [log queries](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries). Create and save your own Kusto queries using the Azure Log Analytics workspace you created earlier.
 * [Create an email alert](https://docs.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-log) using Log Analytics when CPU% usage reaches over 85%
 
 ## Learning Resources

@@ -14,7 +14,7 @@ This hack includes a [lecture slide deck](Coach/Lectures.pptx) that features sho
 ## Challenges
 
 - Challenge 0: **[Pre-requisites - Ready, Set, GO!](Student/Challenge-00.md)**
-  - A smart cloud solution architect always has the right tools in their toolbox. 
+  - A smart cloud solution architect always has the right tools in their toolbox.
 - Challenge 1: **[First Thing is First - A Resource Group](Student/Challenge-01.md)**
   - All work in Azure begins with the resource group.
 - Challenge 2: **[Always Need App Insights](Student/Challenge-02.md)**

@@ -15,11 +15,11 @@ namespace PictureBot.Models
         }
 
         /// <summary>
-        /// Object persisted as user state 
+        /// Object persisted as user state
         /// </summary>
         public class UserData
         {
             public SearchHit SearchHit { get; set; }
         }
-    
+
 }

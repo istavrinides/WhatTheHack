@@ -4,7 +4,7 @@
 
 ## Notes & Guidance
 
-**Install the recommended tool set:** 
+**Install the recommended tool set:**
 - Access to an **Azure subscription** with Owner access. **[Sign Up for Azure HERE](https://azure.microsoft.com/en-us/free/)**
 - **[Windows Subsystem for Linux (Windows 10-only)](https://docs.microsoft.com/en-us/windows/wsl/install-win10)**
     -  WSL is needed for shell script examples in hack or use cli on browser via shell.azure.com
@@ -16,7 +16,7 @@
   - Confirm PowerShell version is **[5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)** `$PSVersionTable.PSVersion`
   - **[PowerShell modules](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-7)**
     - Confirm PowerShell module versions.  Re-install the required version below (if needed):
-      - Az version 4.1.0 
+      - Az version 4.1.0
       - AzureAd version 2.0.2.4
         ```PowerShell
         Get-InstalledModule -Name Az -AllVersions
@@ -36,11 +36,11 @@
 - Download and install latest **[Node pre-built installer](https://nodejs.org/en/download/)** for your platform
 - Download and install **[Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)**
     - Install the latest version of **[nodejs](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)** (at least 10.x) on your machine, if using Windows, use the bash shell in the Windows Subsystem for Linux
-        - Install dotenv npm module: 
+        - Install dotenv npm module:
         ```bash
         $ npm install dotenv --save
         ```
-        - Install FHIR npm library: 
+        - Install FHIR npm library:
         ```bash
         $ npm install fhir
         ```

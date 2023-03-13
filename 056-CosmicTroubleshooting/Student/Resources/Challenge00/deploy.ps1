@@ -86,8 +86,8 @@ $azToken = (Get-AzAccessToken -Resource $tokenResourceUrl)
 $createTestInvokeParams = @{
     'Uri'     = "${loadTestingTestEndpoint}?api-version=2022-06-01-preview"
     'Method'  = 'PATCH'
-    'Headers' = @{ 
-        'Authorization' = $azToken.Type + ' ' + $azToken.Token 
+    'Headers' = @{
+        'Authorization' = $azToken.Type + ' ' + $azToken.Token
         'content-type'  = 'application/merge-patch+json'
     }
     'Body'    = (@{
@@ -128,7 +128,7 @@ if ($showDebugOutput) {
 
 $uploadInvokeParams = @{
     'Uri'    = $loadTestingTestFilesEndpoint
-    'Method' = 'PUT'   
+    'Method' = 'PUT'
 }
 
 $uploadInvokeForm = @{
@@ -151,7 +151,7 @@ $waitUntilDatetime = (get-date) + $ts
 $testPlanStatus = "VALIDATION_INITIATED";
 
 while ((get-date) -lt $waitUntilDatetime) {
-    
+
     if ($azToken.ExpiresOn -lt (get-date) ) {
         Write-Host "Refreshing access token..."
         $azToken = (Get-AzAccessToken -Resource $tokenResourceUrl);
@@ -161,14 +161,14 @@ while ((get-date) -lt $waitUntilDatetime) {
     $getTestInfoInvokeParams = @{
         'Uri'     = "${loadTestingTestEndpoint}?api-version=2022-06-01-preview"
         'Method'  = 'GET'
-        'Headers' = @{ 
+        'Headers' = @{
             'Authorization' = $azToken.Type + ' ' + $azToken.Token
         }
     }
-    
+
     $output = Invoke-RestMethod @getTestInfoInvokeParams -StatusCodeVariable "statusCode"
 
-    
+
     if ( [int]($statusCode) -ne 200) {
         Write-Error -Message "Azure Load Testing dataplane returned different status code (${statusCode}, was expecting 200) during gathering test plan status.\n${output}" -ErrorAction Stop
     }
@@ -179,7 +179,7 @@ while ((get-date) -lt $waitUntilDatetime) {
         Write-Information "Empty validation status - skipping"
         continue;
     }
-    
+
     if ($state -eq "VALIDATION_SUCCESS") {
         $testPlanStatus = "VALIDATION_SUCCESS"
         break;

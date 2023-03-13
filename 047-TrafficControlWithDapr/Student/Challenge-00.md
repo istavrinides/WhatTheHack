@@ -14,7 +14,7 @@ In this challenge, you'll do the following:
 Your coach will provide you with a `Resources.zip` package file that contains the starting projects for this hack. It contains a version of the services that use plain HTTP communication and store state in memory. With each challenge, you'll add a Dapr building block to enhance the application architecture.
 
 ### Install local prerequisites
-  
+
 Install all the prerequisites listed below and make sure they're working correctly:
 
   - Git ([download](https://git-scm.com/))
@@ -28,7 +28,7 @@ Install all the prerequisites listed below and make sure they're working correct
     - Linux ([instructions](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt))
     - macOS ([instructions](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-macos))
     - Windows ([instructions](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli))
-  - Install Bicep extension for VS Code ([instructions](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep))   
+  - Install Bicep extension for VS Code ([instructions](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep))
   - If you're running Windows, you'll need to install a **bash shell** to run some of the commands. Install either the [Git Bash](https://git-scm.com/downloads) client or the [Windows Subsystem for Linux 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 
 Make sure the following minimum software versions are installed by executing the commands in the following table:
@@ -71,7 +71,7 @@ To start, you'll need access to an Azure Subscription:
 
 - If you don't have one, [Sign Up for an Azure account](https://azure.microsoft.com/en-us/free/).
 - If you already have an Azure account, make sure you have at least [Contributor access instructions](https://docs.microsoft.com/azure/role-based-access-control/check-access)) for the resource group in which you'll provision Azure resources.
-    
+
 *Your IT organization may provide you access to an Azure resource group, but not the entire subscription. If that's the case, take note of that resource group name and make sure you have `Contributor` access to it, using the instructions mentioned above.*
 
 Next, you'll create the Azure resources for the subsequent challenges using [Azure Bicep](https://docs.microsoft.com/azure/azure-resource-manager/bicep/overview) and the [Azure CLI](https://docs.microsoft.com/cli/azure/what-is-azure-cli).
@@ -95,7 +95,7 @@ Next, you'll create the Azure resources for the subsequent challenges using [Azu
     ```
     - If prompted for a file name, leave the entry blank, and press enter.
     - If prompted for a passphrase, leave the entry blank, and press enter.
-   
+
     Once complete, you'll find two SSH key files in the following directory: `%USERPROFILE%\.ssh`. Right-click on the `id_rsa.pub` file and open with a text editor. Copy the entire contents of the file which is the public key. You'll need it to configure the parameter file in an upcoming step.
 
 1.  In the accompanying source code, modify the `Resources/Infrastructure/bicep/main.parameters.json` file so it contains the proper data for the deployment:
@@ -115,12 +115,12 @@ Next, you'll create the Azure resources for the subsequent challenges using [Azu
          "value": "adminbruce"
       },
       "publicSSHKey": {
-         "value": "ssh-rsa AAAAB...wnBTn bruce.wayne@<your computer name>"        
+         "value": "ssh-rsa AAAAB...wnBTn bruce.wayne@<your computer name>"
       }
     }
     ```
 
-1.  Create a new resource group for your WhatTheHack using the `Resources/Infrastructure/bicep/rg.bicep` script file. 
+1.  Create a new resource group for your WhatTheHack using the `Resources/Infrastructure/bicep/rg.bicep` script file.
 
     **When invoking the command, replace the `location` argument with the Azure region you want to use.**
 
@@ -216,7 +216,7 @@ Next, you'll create the Azure resources for the subsequent challenges using [Azu
     ```shell
     az aks get-credentials --name "<aks-name>" --resource-group "<resource-group-name>"
     ```
-   
+
     *The `az aks get-credentials` command retrieves credentials for an AKS cluster. It merges the credentials into your local kubeconfig file.*
 
 1.  Verify your "target" cluster is set correctly.
@@ -231,7 +231,7 @@ Next, you'll create the Azure resources for the subsequent challenges using [Azu
     CURRENT  NAME                   CLUSTER                AUTHINFO                                               NAMESPACE
     *        aks-dapr-<your value>  aks-dapr-<your value>  clusterUser_rg-dapr-<your value>_aks-dapr-<your value> blah-blah-blah
     ```
-   
+
 1.  Install Dapr in your AKS cluster
 
     Run the following command to initialize Dapr in your Kubernetes cluster using your current context.
@@ -277,14 +277,14 @@ Next, you'll create the Azure resources for the subsequent challenges using [Azu
 
 1.  Create a Kubernetes secret to allow AKS to pull images from ACR
 
-    You need to grant the AKS cluster access to your Azure Container Registry so that it can pull Docker images. 
-    
+    You need to grant the AKS cluster access to your Azure Container Registry so that it can pull Docker images.
+
     Get the credentials:
 
     ```shell
     az acr credential show -n "<container-registry-name>"
     ```
-    
+
     Run the following command, substituting the username & password you got in the previous step:
 
     ```shell

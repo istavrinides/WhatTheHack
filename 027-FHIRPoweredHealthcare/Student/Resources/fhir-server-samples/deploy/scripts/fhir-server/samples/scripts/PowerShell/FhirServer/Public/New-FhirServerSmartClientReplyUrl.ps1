@@ -22,11 +22,11 @@ function New-FhirServerSmartClientReplyUrl {
     )
 
     Set-StrictMode -Version Latest
-    
+
     # Get current AzureAd context
     try {
         $session = Get-AzureADCurrentSessionInfo -ErrorAction Stop
-    } 
+    }
     catch {
         throw "Please log in to Azure AD with Connect-AzureAD cmdlet before proceeding"
     }
@@ -39,17 +39,17 @@ function New-FhirServerSmartClientReplyUrl {
     }
 
     $origReplyUrls = $appReg.ReplyUrls
-    
+
     # Form new reply URL: https://fhir-server/<base64url encoded reply url>/*
     $bytes = [System.Text.Encoding]::UTF8.GetBytes($ReplyUrl)
     $encodedText =[Convert]::ToBase64String($bytes)
     $encodedText = $encodedText.TrimEnd('=');
     $encodedText = $encodedText.Replace('/','_');
     $encodedText = $encodedText.Replace('+','-');
-    
+
     $newReplyUrl = $FhirServerUrl.TrimEnd('/') + "/AadSmartOnFhirProxy/callback/" + $encodedText
 
-    # Add Reply URL if not already in the list 
+    # Add Reply URL if not already in the list
     if ($origReplyUrls -NotContains $newReplyUrl) {
         $origReplyUrls.Add($newReplyUrl)
         Set-AzureADApplication -ObjectId $appReg.ObjectId -ReplyUrls $origReplyUrls

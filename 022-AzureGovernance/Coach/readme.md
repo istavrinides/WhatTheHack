@@ -34,7 +34,7 @@ This hack was designed to be run as a one day event. Below is a suggested schedu
 ##### 9:30 – 10:30 AM: Azure Governance Overview Presentation (Management Groups, RBAC, Policy, Blueprints, Cost Management and Resource Graph)
 ##### 10:30 - 10:45 AM: Break
 ##### 10:45 – 11:30 AM: Management Groups Challenge
-##### 11:30 AM – Noon: Azure Policy Challenge 
+##### 11:30 AM – Noon: Azure Policy Challenge
 ##### Noon – 1 PM: Lunch
 ##### 1 – 2 PM: Azure Policy Challenge (continued)
 ##### 2 – 3 PM Azure Blueprint Challenge

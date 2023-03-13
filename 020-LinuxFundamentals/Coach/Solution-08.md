@@ -1,4 +1,4 @@
-# Challenge 08 - Scripting - Coach's Guide 
+# Challenge 08 - Scripting - Coach's Guide
 
 [< Previous Solution](./Solution-07.md) - **[Home](./README.md)** - [Next Solution >](./Solution-09.md)
 

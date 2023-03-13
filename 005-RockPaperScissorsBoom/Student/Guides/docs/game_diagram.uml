@@ -8,8 +8,8 @@ title Rock Paper Scissors Dynamite
 (Water Balloon) <-- (Scissors)
 (Paper) --> (Rock)
 (Water Balloon) <-- (Paper)
-(Dynamite) --> (Scissors) 
-(Dynamite) --> (Paper) 
+(Dynamite) --> (Scissors)
+(Dynamite) --> (Paper)
 (Dynamite) --> (Rock)
 (Dynamite) <-- (Water Balloon)
 @enduml

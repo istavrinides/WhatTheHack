@@ -22,16 +22,16 @@ namespace MiddlewareBot
                 string message = activity.AsMessageActivity().Text;
 
                 string insertQuery = "INSERT INTO userChatLog(fromId, toId, message) VALUES (@fromId,@toId,@message)";
-                
-                // Passing the fromId, toId, message to the the user chatlog table 
+
+                // Passing the fromId, toId, message to the the user chatlog table
                 SqlCommand command = new SqlCommand(insertQuery, connection);
                 command.Parameters.AddWithValue("@fromId", fromId);
                 command.Parameters.AddWithValue("@toId", toId);
                 command.Parameters.AddWithValue("@message", message);
-              
+
                 // Insert to Azure sql database
                 command.ExecuteNonQuery();
-                Debug.WriteLine("Insertion successful of message: " + activity.AsMessageActivity().Text);   
+                Debug.WriteLine("Insertion successful of message: " + activity.AsMessageActivity().Text);
         }
     }
 

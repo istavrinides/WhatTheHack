@@ -155,12 +155,12 @@ GO
 /****************************************************************************************
 STEP 3 of 3 - With this you can retrieve precious infop about Size and Skew for all your Distributed = hash tables
 ****************************************************************************************/
-SELECT 
+SELECT
 	[two_part_name],max(row_count * 1.000) Max_row_count
-    , min(row_count * 1.000) Min_row_count 
+    , min(row_count * 1.000) Min_row_count
     , sum(row_count * 1.000) Total_rows
     , (max(row_count * 1.000) - min(row_count * 1.000))/sum(row_count * 1.000)*100.00 [Skew%]
-FROM vTableSizes 
+FROM vTableSizes
 	WHERE distribution_policy_name = 'HASH'
 GROUP BY [two_part_name]
 GO

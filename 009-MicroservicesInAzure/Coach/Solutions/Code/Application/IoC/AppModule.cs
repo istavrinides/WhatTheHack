@@ -7,7 +7,7 @@ namespace ContosoTravel.Web.Application.IoC
     public class AppModule : Module
     {
         protected override void Load(ContainerBuilder builder)
-        {  
+        {
             builder.RegisterType<AzureManagement>()
                    .AsSelf()
                    .SingleInstance();

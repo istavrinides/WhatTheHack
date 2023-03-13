@@ -17,14 +17,14 @@ For our microservices based architecture, we're going to use containers for our 
   - `DataAccountPassword`: Primary Key of the Cosmos DB Account
   - `ApplicationInsights__InstrumentationKey`:  Instrumentation Key of the App Insights Resource
 - The Data API and Itinerary API containers, both need to specify a DNS Name, so they are easily addressable by the Web Site.
-  - After you get the Data API deployed, use the Azure CLI to query the deployed container for its full qualified domain name (FQDN) and store it in a variable called:  
+  - After you get the Data API deployed, use the Azure CLI to query the deployed container for its full qualified domain name (FQDN) and store it in a variable called:
     - `dataServiceUri`
-  - After you get the Itinerary API deployed, use the Azure CLI to query the deployed container for the FQDN and store it in a variable called:  
+  - After you get the Itinerary API deployed, use the Azure CLI to query the deployed container for the FQDN and store it in a variable called:
     - `itineraryServiceUri`
-- Verify the Data Service by browsing the URL:  
+- Verify the Data Service by browsing the URL:
   - `http://$dataServiceUri/api/airport`
   - It should return a list of Airports
-- Verify the Itinerary Service by browsing the URL:  
+- Verify the Itinerary Service by browsing the URL:
   - `http://$itineraryServiceUri/api/itinerary/AAA`
   - It should return a 204.
 - **NOTE:** It should return a 404, but to get a positive test response, it returns a 204 (which represents “no content”) to verify the service is up and running.

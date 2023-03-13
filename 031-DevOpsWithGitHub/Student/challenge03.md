@@ -1,4 +1,4 @@
-# What The Hack: DevOps with GitHub 
+# What The Hack: DevOps with GitHub
 
 ## Challenge 3 - Infrastructure as Code (IaC)
 
@@ -6,7 +6,7 @@
 
 ### Introduction
 
-Now that we have some code, we need an environment to deploy it to! The term Infrastructure as Code (IaC) refers to using templates (code) to repeatedly and consistently create the dev, test, prod (infrastructure) environments. We can automate the process of deploying the Azure services we need with an Azure Resource Manager (ARM) template. 
+Now that we have some code, we need an environment to deploy it to! The term Infrastructure as Code (IaC) refers to using templates (code) to repeatedly and consistently create the dev, test, prod (infrastructure) environments. We can automate the process of deploying the Azure services we need with an Azure Resource Manager (ARM) template.
 
 Review the following articles:
 
@@ -19,7 +19,7 @@ Review the following articles:
 We will use GitHub Actions to automate the deployment of our Azure infrastructure. For our application, we will deploy 3 environments: `dev`, `test` and `prod`. Each environment will have its own Web App, however all of our environments will share a single Resource Group, App Service Plan, Application Insights instance, and Azure Container Registry. NOTE: in real deployments, you will likely not share all of these resources.
 
 
-1. Review the ARM template. Notice how it defines a number of parameters and uses them to create the Resource Group, App Service Plan, Web App, Application Insights, and Azure Container Registry. 
+1. Review the ARM template. Notice how it defines a number of parameters and uses them to create the Resource Group, App Service Plan, Web App, Application Insights, and Azure Container Registry.
 
 2. Update the parameters section of the ARM template, replacing all instances of `<prefix>` with a unique lowercase 5 letter name. The resulting name needs to be globally unique to correctly provision resources. Notice the `webAppName` parameter on line #6 - you will override this placeholder value later when you call the ARM template.
 
@@ -30,7 +30,7 @@ We will use GitHub Actions to automate the deployment of our Azure infrastructur
     - Use a service principal to authenticate to Azure
     - Use the "Deploy Azure Resource Manager (ARM) Template" action to call your ARM template in your repo
 
-5. Manually run your workflow. When your workflow completes successfully, go to the Azure portal to see the `dev` environment. 
+5. Manually run your workflow. When your workflow completes successfully, go to the Azure portal to see the `dev` environment.
 
 If everything worked, we are going to call the ARM template again, but override the `webAppName` parameter in the ARM template.
 
@@ -38,16 +38,16 @@ If everything worked, we are going to call the ARM template again, but override 
 
 7. Update your "Deploy Azure Resource Manager (ARM) Template" action to call your ARM template in your repo and override the `webAppName` paramater with the new `targetEnv` environment variable.
 
-8. Rerun the workflow. When your workflow completes successfully, go to the Azure portal to see the new `test` App Service. 
+8. Rerun the workflow. When your workflow completes successfully, go to the Azure portal to see the new `test` App Service.
 
-9. If everything worked, replace the "test" in your `targetEnv` with "prod" and rerun the workflow. When your workflow completes successfully, go to the Azure portal to see the new `prod` App Service. 
+9. If everything worked, replace the "test" in your `targetEnv` with "prod" and rerun the workflow. When your workflow completes successfully, go to the Azure portal to see the new `prod` App Service.
 
 You should see all three environments in Azure.
 
 ### Success Criteria
 
 - Your `deploy.yaml` workflow completes without any errors and overrides the `webAppName` parameter when calling the ARM template.
-- Your resource group contains 6 resources: 3 App Services (dev, test, prod), 1 Application Insights, 1 App Service plan and 1 Container registry. 
+- Your resource group contains 6 resources: 3 App Services (dev, test, prod), 1 Application Insights, 1 App Service plan and 1 Container registry.
 
 ### Learning Resources
 

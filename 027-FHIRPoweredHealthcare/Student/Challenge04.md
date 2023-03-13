@@ -28,7 +28,7 @@ You will deploy a FHIR sample JavaScript app in Azure to read patient data from 
             - Set `Redirect URIs` to your [Web App URL]
             - Enable `Implicit Grant` by selecting Access token and ID tokens
             - Configure permissions for Azure Healthcare APIs with `User_Impersonation` permission (if needed)
- 
+
 - Write a new JavaScript application to connect and read FHIR patient data
     - Start with the sample code from the **[FHIR patient JavaScript app](https://docs.microsoft.com/en-us/azure/healthcare-apis/tutorial-web-app-write-web-app)**.
     - Initialize **[MSAL (Mirosoft Authentication Library) provider](https://docs.microsoft.com/en-us/graph/toolkit/providers/msal)** configuration for your FHIR environment:

@@ -39,7 +39,7 @@ Now you can test whether you can call the `VehicleRegistrationService`. You can 
    Content-Type: application/json; charset=utf-8
    Server: Kestrel
    Transfer-Encoding: chunked
-   
+
    {
        "vehicleId": "KZ-49-VX",
        "brand": "Toyota",

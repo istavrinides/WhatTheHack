@@ -14,7 +14,7 @@ The goals of this challenge include understanding:
     +   Set up artifacts ("staging") location in Blob storage with SAS token
     +   Extend ARM template to deploy DSC extention onto the VM
     +   Add parameters for:
-        +   Artifacts location 
+        +   Artifacts location
         +   Artifacts location SAS token
         +   DSC script archive file name
         +   DSC script function name

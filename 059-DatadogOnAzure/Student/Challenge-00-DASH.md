@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Thank you for joining us at the DASH conference in NYC on October 18th, 2022! You will be participating in a special edition of this hack where you will be provided with an Azure lab environment to participate. 
+Thank you for joining us at the DASH conference in NYC on October 18th, 2022! You will be participating in a special edition of this hack where you will be provided with an Azure lab environment to participate.
 
 The content of this hack will be available if you wish to attempt the hack in your own Azure subscription at a later time on the [What The Hack website](https://aka.ms/wth).
 
@@ -18,7 +18,7 @@ You will be provided with access to an Azure Subscription where the eShopOnWeb s
 
 You can complete this entire hack in a web browser using the [Azure Portal](https://portal.azure.com), [Datadog Portal](https://datadog.com), and [Azure Cloud Shell](https://shell.azure.com). The Azure Cloud Shell has most of the common Azure management tools already pre-installed.
 
->**Note** Datadog is commonly automated via [Terraform](https://www.terraform.io/). Some of the challenges have you use Terraform to configure Datadog features. Terraform is already included in the Azure Cloud Shell. 
+>**Note** Datadog is commonly automated via [Terraform](https://www.terraform.io/). Some of the challenges have you use Terraform to configure Datadog features. Terraform is already included in the Azure Cloud Shell.
 
 ## Description
 
@@ -36,9 +36,9 @@ To access the Azure lab environment for this hack, you will need to do the follo
 
 ### Student Resources
 
-Your coach will provide you with a link to a `Resources.zip` file that contains resource files you will use to complete some of the challenges for this hack.  
+Your coach will provide you with a link to a `Resources.zip` file that contains resource files you will use to complete some of the challenges for this hack.
 
-- Download and unpack this file in your Azure Cloud Shell environment. 
+- Download and unpack this file in your Azure Cloud Shell environment.
 
 ```bash
 # Download the Resources.zip file from the URL provided by your coach
@@ -53,9 +53,9 @@ The rest of the challenges will refer to the relative paths inside the `Resource
 
 ### View Deployed Resources
 
-- To view the eShopOnWeb website, navigate to the Public IP Address resource, **`pip-wth-monitor-web-d-eu`**, in the Azure Portal.  
-- In the Overview blade, copy the DNS name to your clipboard.  
-- Open a web browser, paste your DNS name in the address bar and press ENTER.  Your browser should render the eShopOnWeb site. 
+- To view the eShopOnWeb website, navigate to the Public IP Address resource, **`pip-wth-monitor-web-d-eu`**, in the Azure Portal.
+- In the Overview blade, copy the DNS name to your clipboard.
+- Open a web browser, paste your DNS name in the address bar and press ENTER.  Your browser should render the eShopOnWeb site.
 
 ![Webpage of the eShopOnWeb site](../Images/00-23-Eshoponweb-Webpage.png)
 
@@ -68,8 +68,8 @@ The rest of the challenges will refer to the relative paths inside the `Resource
 - You do not need to enable single sign-on through Azure Active Directory for this workshop, but we recommend doing so in a production environment.
 - Proceed with the deployment, and once the deployment is finished, click the link **Set Password in Datadog.**
 - Choose a password that you will remember for the duration of this workshop.
-- Proceed to log in to Datadog. 
-  - The username/email can be found in the Azure portal, top right. 
+- Proceed to log in to Datadog.
+  - The username/email can be found in the Azure portal, top right.
   - Click View account to see the full email address.
   - Use the password from the previous step.
 -  We recommend keeping the Datadog and Azure portal browser tabs open for the duration of this workshop.
@@ -79,7 +79,7 @@ The rest of the challenges will refer to the relative paths inside the `Resource
 - Verify you have access to the contents of the `Resources.zip` package in your Azure Cloud Shell environment
 - Verify you can see the website deployed
 - Verify the resources contained in architecture diagram below are present in your own Azure subscription.
-- Verify that you have deployed Datadog into your Azure lab environment. 
+- Verify that you have deployed Datadog into your Azure lab environment.
 
 ![Hack Diagram](../Images/datadoghackdiagram.png)
 

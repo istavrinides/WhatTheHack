@@ -1,8 +1,8 @@
 /*=============================================================================
-	Author:			Eric M. Barnard - @ericmbarnard								
-	License:		MIT (http://opensource.org/licenses/mit-license.php)		
-																				
-	Description:	Validation Library for KnockoutJS							
+	Author:			Eric M. Barnard - @ericmbarnard
+	License:		MIT (http://opensource.org/licenses/mit-license.php)
+
+	Description:	Validation Library for KnockoutJS
 ===============================================================================
 */
 /*globals require: false, exports: false, define: false, ko: false */
@@ -507,13 +507,13 @@ kv.configuration = configuration;
                         if (typeof typeAttr === "undefined" || !typeAttr)
                         {
                             // From http://www.w3.org/TR/html-markup/input:
-                            //   An input element with no type attribute specified represents the 
+                            //   An input element with no type attribute specified represents the
                             //   same thing as an input element with its type attribute set to "text".
-                            typeAttr = "text"; 
-                        }                            
-                        params = {typeAttr: typeAttr, value: params}; 
+                            typeAttr = "text";
+                        }
+                        params = {typeAttr: typeAttr, value: params};
                     }
-                
+
 					kv.addRule(valueAccessor(), {
 						rule: attr,
 						params: params
@@ -779,7 +779,7 @@ kv.rules['max'] = {
 	validator: minMaxValidatorFactory("max"),
 	message: 'Please enter a value less than or equal to {0}.'
 };
-    
+
 kv.rules['minLength'] = {
 	validator: function (val, minLength) {
 		return kv.utils.isEmptyVal(val) || val.length >= minLength;
@@ -1336,7 +1336,7 @@ ko.validatedObservable = function (initialValue) {
 
 	var obsv = ko.observable(initialValue);
 	obsv.errors = kv.group(initialValue);
-	obsv.isValid = ko.observable(initialValue.isValid());	
+	obsv.isValid = ko.observable(initialValue.isValid());
 	obsv.errors.subscribe(function (errors) {
 		obsv.isValid(errors.length === 0);
 	});

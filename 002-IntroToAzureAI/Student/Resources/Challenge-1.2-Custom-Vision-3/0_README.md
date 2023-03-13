@@ -60,8 +60,8 @@ In the Resources\Images folder are three folders:
 - Mountain
 - test
 
-The Racing and Mountain folders contain images of these types of bikes 
-that will be trained and tagged. The Test folder contains an image that will be used 
+The Racing and Mountain folders contain images of these types of bikes
+that will be trained and tagged. The Test folder contains an image that will be used
 to perform the test prediction.
 
 **Lab: Creating a Custom Vision Application**
@@ -125,7 +125,7 @@ namespace CustomVision.Sample
 
 ### Step 2: Add code to validate and manage the training key
 
-Create a method `GetTrainingKey()` with two parameters of `trainingKey` 
+Create a method `GetTrainingKey()` with two parameters of `trainingKey`
 with a data type of string, and a second parameter of args with the data type
 of string, using the value from the trainingkey variable.
 The code can include control of flow logic to either use the key if it is already
@@ -135,7 +135,7 @@ the bottom of the file.
 
 ### Step 3: Add code to validate and manage the prediction key
 
-On Line 147, create a method `GetPredictionKey` with two parameters of `predictionKey` 
+On Line 147, create a method `GetPredictionKey` with two parameters of `predictionKey`
 with a data type of string, and a second parameter of args with the data type
 of string, using the value from the predictionkey variable.
 The code can include control of flow logic to either use the key if it already
@@ -149,9 +149,9 @@ for the training key in step 2.
 Create a method named `LoadImagesFromDisk()` that creates two variables named
 `MbikesImages` and `RbikesImages`. Each of thes variables should use the `GetFiles()`
 method to retrieve the images located in the Images\Mountain and Images\Racing
-folder of your Github location respectively. A third variable named `testImage` 
-should be created that defines a new MemoryStream which loads the image bike1.jpg 
-from the Images\test folder of your Github location. Create code underneath the 
+folder of your Github location respectively. A third variable named `testImage`
+should be created that defines a new MemoryStream which loads the image bike1.jpg
+from the Images\test folder of your Github location. Create code underneath the
 code created in step 2
 
 
@@ -164,8 +164,8 @@ code in the body of the `Main()` method after the call to `new TrainingApi().`
 ### Step 6: Add tags to your project
 
 Create two variable named `MbikesTag` and `RbikesTag` that call the `CreateTag`
-method of the class `trainingAPI` for the current project. The MbikesTag 
-variable should be set to "Mountain". The RbikesTag variable should be set 
+method of the class `trainingAPI` for the current project. The MbikesTag
+variable should be set to "Mountain". The RbikesTag variable should be set
 to "Racing". To add tags to your project, create the code after the call to
 `CreateProject("Bike Type");`.
 
@@ -183,17 +183,17 @@ Add the code after the call to `CreateTag(project.Id, "Racing")` method.
 ### Step 8: Train the project
 
 Use the `TrainProject` method of the `trainingApi` class against the current projectid
-to start the training of the images. Use a while clause with the Status method of 
+to start the training of the images. Use a while clause with the Status method of
 the iteration class to check the progress of the training. Then set the iteration as
 Default using the `IsDefault` method of the iteration class. Finally update the iteration
-and set it as default within the project using the `UpdateIteration` method of the 
-`trainingApi` class. Insert your code after the end of code that you added in the prior step. 
+and set it as default within the project using the `UpdateIteration` method of the
+`trainingApi` class. Insert your code after the end of code that you added in the prior step.
 
 
 ### Step 9: Create a variable named predictionKey that holds the prediction key value
 
 Create a variable named `predictionKey` thats calls the method `GetPredictionKey` and passes
-two parameters of a string literal `"<your key here>"`, and a second parameter of `args` 
+two parameters of a string literal `"<your key here>"`, and a second parameter of `args`
 with the data type of string.
 
 ### Step 10: Use the default prediction endpoint
@@ -207,7 +207,7 @@ entered.
 
 Build and run the solution. You will be required to input your training API key
 into the console app when running the solution so have this at the ready. The
-training and prediction of the images can take 2 minutes. If you've completed the 
+training and prediction of the images can take 2 minutes. If you've completed the
 lab successfully, the prediction results should appear on the console.
 
 Further Reading

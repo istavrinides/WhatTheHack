@@ -3,16 +3,16 @@
   'Developer'
   'Premium'
 ])
-param apim_sku string 
+param apim_sku string
 
 @description('The number of Azure API Management capacity units to provision. For Developer edition, this must equal 1.')
-param apim_capacity int 
+param apim_capacity int
 
 @description('Descriptive name for publisher to be used in the portal')
-param apim_publisher_name string 
+param apim_publisher_name string
 
 @description('Email adddress associated with publisher')
-param apim_publisher_email string 
+param apim_publisher_email string
 
 @description('The name of the API Management resource')
 param apim_name string
@@ -119,7 +119,7 @@ resource apim_name_applicationinsights 'Microsoft.ApiManagement/service/diagnost
 resource Microsoft_Insights_diagnosticSettings_logToAnalytics 'Microsoft.Insights/diagnosticSettings@2017-05-01-preview' = {
   scope: apimResource
   name: 'logToAnalytics'
-  
+
   properties: {
     workspaceId: log_analytics_workspace_id
     logs: [

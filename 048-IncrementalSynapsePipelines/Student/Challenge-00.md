@@ -4,7 +4,7 @@
 
 ## Introduction
 
-We need to setup the proper environment for the Hackathon.  Thus, we need everyone on the team to have access to the Azure SQL and Synapse Environments.  Also, any ancilliaries resources such as the Azure Storage Account and Key Vault.  
+We need to setup the proper environment for the Hackathon.  Thus, we need everyone on the team to have access to the Azure SQL and Synapse Environments.  Also, any ancilliaries resources such as the Azure Storage Account and Key Vault.
 
 ## Description
 
@@ -15,11 +15,11 @@ For this challenge the following resources will need to be setup within your gro
 - Key Vault is setup and configured and all users can see the secrets in the Key Vault.
 - Establish a Linked Service in Azure Synapse Analytics that can connect to the Azure SQL Databases using Key Vault based secrets.
 - Setup firewall rules so that only IP Ranges of the team members can access both the Azure SQL and Synapse Analytics envrionments.
-- All resources are tagged appropriately. 
+- All resources are tagged appropriately.
 
 ## Success Criteria
 
-1. Validate that all resources exist in one Resource Group and are tagged appropriately.  
+1. Validate that all resources exist in one Resource Group and are tagged appropriately.
 
 2. Validate that all team members have the proper access to all the assets, including the ability to perform SQL queries in both the Azure SQL and Dedicated Pool environments.
 
@@ -28,7 +28,7 @@ For this challenge the following resources will need to be setup within your gro
 
 *The following links may be useful to achieving the success crieria listed above.*
 
-- [Azure Synapse access control](https://docs.microsoft.com/en-us/azure/synapse-analytics/security/synapse-workspace-access-control-overview) 
+- [Azure Synapse access control](https://docs.microsoft.com/en-us/azure/synapse-analytics/security/synapse-workspace-access-control-overview)
 
 - [Use Azure Key Vault secrets in pipeline activities](https://docs.microsoft.com/en-us/azure/data-factory/how-to-use-azure-key-vault-secrets-pipeline-activities)
 

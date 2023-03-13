@@ -18,13 +18,13 @@ BEGIN
             , PostalCode = S1.PostalCode
             , rowguid = S1.rowguid
             , ModifiedDate = S1.ModifiedDate
-            
+
         from Staging.Address S1
         where [SalesLT].[Address].AddressID = S1.AddressID
         and S1.__$operation = 4
         and S1.tran_begin_time = (
-                                    select MAX(s2.tran_begin_time) 
-                                    from Staging.Address s2 
+                                    select MAX(s2.tran_begin_time)
+                                    from Staging.Address s2
                                     where s2.addressid=s1.addressid and S2.__$operation in (4)
                                 )
 ;

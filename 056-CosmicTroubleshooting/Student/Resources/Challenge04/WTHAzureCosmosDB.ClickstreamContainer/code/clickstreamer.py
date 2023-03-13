@@ -28,7 +28,7 @@ def writeseen( sessinfo, sessnum ):
         'page_id': sessinfo[sessnum]['page'],
         'date': ts.strftime("%Y-%m-%d")
     })
-    
+
     return True
 
 def randsleep():
@@ -67,7 +67,7 @@ try:
                 else:
                     # pick page
                     tsession[s]["page"] = randpage()
-            
+
             writeseen(tsession, s)
             randsleep()
 except KeyboardInterrupt:

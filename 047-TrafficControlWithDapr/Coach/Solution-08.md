@@ -70,7 +70,7 @@ Look in the following files and make changes as appropriate.
       - name: nestedSeparator
         value: "-"
     scopes:
-    - finecollectionservice   
+    - finecollectionservice
     auth:
       secretStore: kubernetes
 
@@ -91,9 +91,9 @@ You will need to build these services, create a Docker container image that has 
     ```
 
 1. 	Navigate to the `Resources/FineCollectionService` directory & use the Azure Container Registry task to build your image from source.
-  
+
     ```shell
-    az acr build --registry <container-registry-name> --image trafficcontrolservice:assignment08 .		
+    az acr build --registry <container-registry-name> --image trafficcontrolservice:assignment08 .
     ```
 
 ### Step 4: Deploy container images to Azure Kubernetes Service
@@ -124,7 +124,7 @@ Now that your container images have been uploaded to the Azure Container Registr
     rules:
     - host: finecollectionservice.<aks-http-application-routing-zone-name>
     ```
-    
+
 1.  Repeat these steps for the `TrafficControlService` and the `VehicleRegistrationService`.
 
 1.  Grant your AKS instance access to pull images from your Azure Container Registry.
@@ -174,7 +174,7 @@ Now that your container images have been uploaded to the Azure Container Registr
 
     ```shell
     kubectl logs vehicle-registration-service-dd6fbbbc6-sxt4z vehicle-registration-service
-    
+
     kubectl logs vehicle-registration-service-dd6fbbbc6-sxt4z daprd
     ```
 

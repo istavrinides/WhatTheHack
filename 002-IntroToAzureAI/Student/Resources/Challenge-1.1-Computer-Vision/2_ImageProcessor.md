@@ -3,7 +3,7 @@ Estimated Time: 30-45 minutes
 
 ## Cognitive Services
 
-Cognitive Services can be used to infuse your apps, websites and bots with algorithms to see, hear, speak, understand, and interpret your user needs through natural methods of communication. 
+Cognitive Services can be used to infuse your apps, websites and bots with algorithms to see, hear, speak, understand, and interpret your user needs through natural methods of communication.
 
 There are five main categories for the available Cognitive Services:
 - **Vision**: Image-processing algorithms to identify, caption and moderate your pictures
@@ -12,7 +12,7 @@ There are five main categories for the available Cognitive Services:
 - **Speech**: Convert spoken audio into text, use voice for verification, or add speaker recognition to your app
 - **Search**: Add Bing Search APIs to your apps and harness the ability to comb billions of webpages, images, videos, and news with a single API call
 
-You can browse all of the specific APIs in the [Services Directory](https://azure.microsoft.com/en-us/services/cognitive-services/directory/). 
+You can browse all of the specific APIs in the [Services Directory](https://azure.microsoft.com/en-us/services/cognitive-services/directory/).
 
 As you may recall, the application we'll be building today will use [Computer Vision](https://www.microsoft.com/cognitive-services/en-us/computer-vision-api) to grab tags and a description.
 
@@ -20,11 +20,11 @@ Let's talk about how we're going to call  Cognitive Services in our application.
 
 ### **Image Processing Library** ###
 
-Under resources>code>Starting-ImageProcessing, you'll find the `Processing Library`. This is a [Portable Class Library (PCL)](https://docs.microsoft.com/en-us/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library), which helps in building cross-platform apps and libraries quickly and easily. It serves as a wrapper around several services. This specific PCL contains some helper classes (in the ServiceHelpers folder) for accessing the Computer Vision API and an "ImageInsights" class to encapsulate the results. Later, we'll create an image processor class that will be responsible for wrapping an image and exposing several methods and properties that act as a bridge to the Cognitive Services. 
+Under resources>code>Starting-ImageProcessing, you'll find the `Processing Library`. This is a [Portable Class Library (PCL)](https://docs.microsoft.com/en-us/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library), which helps in building cross-platform apps and libraries quickly and easily. It serves as a wrapper around several services. This specific PCL contains some helper classes (in the ServiceHelpers folder) for accessing the Computer Vision API and an "ImageInsights" class to encapsulate the results. Later, we'll create an image processor class that will be responsible for wrapping an image and exposing several methods and properties that act as a bridge to the Cognitive Services.
 
 ![Processing Library PCL](./resources/assets/ProcessingLibrary.png)
 
-After creating the image processor (in Lab 2.1), you should be able to pick up this portable class library and drop it in your other projects that involve Cognitive Services (some modification will be required depending on which Cognitive Services you want to use). 
+After creating the image processor (in Lab 2.1), you should be able to pick up this portable class library and drop it in your other projects that involve Cognitive Services (some modification will be required depending on which Cognitive Services you want to use).
 
 
 **ProcessingLibrary: Service Helpers**
@@ -47,7 +47,7 @@ Now let's take a step back for a minute. It isn't quite as simple as creating th
 
 Right-click on the solution and select "Build Solution". If you have errors related to `ImageProcessor.cs`, you can ignore them for now, because we are about to address them.
 
-Navigate to `ImageProcessor.cs` within `ProcessingLibrary`. 
+Navigate to `ImageProcessor.cs` within `ProcessingLibrary`.
 
 **Step 1**: Add the following [`using` directives](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-directive) **to the top** of the class, above the namespace:
 
@@ -68,12 +68,12 @@ using ServiceHelpers;
 public static async Task<ImageInsights> ProcessImageAsync(Func<Task<Stream>> imageStreamCallback, string imageId)
         {
 
-        
+
 ```
-> Hint: Visual Studio will throw an error, due to the open bracket. Add what is necessary to the end of the method. Ask a neighbor if you need help.  
+> Hint: Visual Studio will throw an error, due to the open bracket. Add what is necessary to the end of the method. Ask a neighbor if you need help.
 
 In the above code, we use `Func<Task<Stream>>` because we want to make sure we can process the image multiple times (once for each service that needs it), so we have a Func that can hand us back a way to get the stream. Since getting a stream is usually an async operation, rather than the Func handing back the stream itself, it hands back a task that allows us to do so in an async fashion.
-  
+
 **Step 3**: In `ImageProcessor.cs`, within the `ProcessImageAsync` method, we're going to set up a [static array](https://stackoverflow.com/questions/4594850/definition-of-static-arrays) that we'll fill in throughout the processor. As you can see, these are the main attributes we want to call for `ImageInsights.cs`. Add the code below between the `{ }` of `ProcessImageAsync`:
 
 ```
@@ -93,7 +93,7 @@ var imageAnalysisResult = await VisionServiceHelper._(imageStreamCallback, Defau
             {
                 ImageId = ,
                 Caption = ,
-                Tags = 
+                Tags =
             };
 ```
 Depending on your C# dev background, this may not be an easy task. Here are some hints:
@@ -103,8 +103,8 @@ Depending on your C# dev background, this may not be an easy task. Here are some
 3.  For Caption, you have to specify that you want only the first caption by using `[0]`.
 4.  For Tags, you have to put the tags into an array with `Select(t => t.Name).ToArray()`.
 
-  
-Still stuck? You can take a peek at the solution at [resources>code>Finished-ImageProcessing>ProcessingLibrary>ImageProcessor.cs](./resources/code/Finished-ImageProcessing/ProcessingLibrary/ImageProcessor.cs) 
+
+Still stuck? You can take a peek at the solution at [resources>code>Finished-ImageProcessing>ProcessingLibrary>ImageProcessor.cs](./resources/code/Finished-ImageProcessing/ProcessingLibrary/ImageProcessor.cs)
 
 So now we have the caption and tags that we need from the Computer Vision API, and each image's result (with imageId) is stored in "ImageInsights".
 
@@ -113,7 +113,7 @@ So now we have the caption and tags that we need from the Computer Vision API, a
 return result;
 ```
 
-Now that you've built `ImageProcessor.cs`, don't forget to save it! 
+Now that you've built `ImageProcessor.cs`, don't forget to save it!
 
 Want to make sure you set up `ImageProcessor.cs` correctly? You can find the full class [here](./resources/code/Finished-ImageProcessing/ProcessingLibrary/ImageProcessor.cs).
 

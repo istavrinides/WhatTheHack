@@ -444,9 +444,9 @@
             "type": "Microsoft.Compute/virtualMachines",
             "location": "[parameters('location')]",
             "apiVersion": "2017-03-30",
-            "identity": {  
-                "type": "SystemAssigned" 
-                },             
+            "identity": {
+                "type": "SystemAssigned"
+                },
             "dependsOn": [
                 "[concat('Microsoft.Network/networkInterfaces/', variables('sqlSrvDBNicName'))]",
                 "[concat('Microsoft.Network/publicIPAddresses/', variables('sqlPublicIP'))]"

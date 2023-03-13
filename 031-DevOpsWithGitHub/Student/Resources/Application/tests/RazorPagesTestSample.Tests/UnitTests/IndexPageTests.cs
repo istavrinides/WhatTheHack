@@ -42,7 +42,7 @@ namespace RazorPagesTestSample.Tests.UnitTests
             // Assert
             var actualMessages = Assert.IsAssignableFrom<List<Message>>(pageModel.Messages);
             Assert.Equal(
-                expectedMessages.OrderBy(m => m.Id).Select(m => m.Text), 
+                expectedMessages.OrderBy(m => m.Id).Select(m => m.Text),
                 actualMessages.OrderBy(m => m.Id).Select(m => m.Text));
             #endregion
         }

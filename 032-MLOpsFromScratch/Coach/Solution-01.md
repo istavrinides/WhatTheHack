@@ -10,9 +10,9 @@ The Coach should zip up the following GitHub [https://github.com/microsoft-us-oc
 
 1.  Create and setup a new project in Azure DevOps
     1.  Download and extract `Data_and_Code.zip` from Teams Channel.
-    1.  [Create new service connections](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml) in Project Settings for your Azure ML service and Azure Subscription using Azure Resource Manager service principal. This will enable you to connect to external and remote services to execute tasks in a pipeline.     
+    1.  [Create new service connections](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml) in Project Settings for your Azure ML service and Azure Subscription using Azure Resource Manager service principal. This will enable you to connect to external and remote services to execute tasks in a pipeline.
 1.  Clone into VS Code and run the projects files locally to understand the forecasting project and explore the different files available.
-1.  Install library requirements to setup your environment inside VS Code Terminal or equivalent Shell application:  
+1.  Install library requirements to setup your environment inside VS Code Terminal or equivalent Shell application:
     `pip install -r ./environment_setup/requirements.txt`
 1.  Configure your Azure ML Workspace for the project.
     - **HINT:** Add workspace details through Azure DevOps pipeline variables.
@@ -26,4 +26,3 @@ The Coach should zip up the following GitHub [https://github.com/microsoft-us-oc
     1.  `ScoreModel.py` for scoring/forecasting using the trained model.
     1.  `deployOnAci.py` to deploy the scoring image on ACI.
     1.  `WebserviceTest.py` to the ACI deployment/endpoint.
-    

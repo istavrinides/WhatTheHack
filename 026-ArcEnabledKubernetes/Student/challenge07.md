@@ -5,7 +5,7 @@
 
 ### Introduction
 
-With Azure Policy enabled within the remote clusters, in this challenge lets build on it and start to fleet manage clusters via Azure Arc. Fleet management is the ability to manage the state of remote clusters. 
+With Azure Policy enabled within the remote clusters, in this challenge lets build on it and start to fleet manage clusters via Azure Arc. Fleet management is the ability to manage the state of remote clusters.
 
 There are a number of ways we can accomplish the task of managing consistent state across clusters:
 * Use GitOps to deploy resources on remote clusters

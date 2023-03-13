@@ -4,11 +4,11 @@
 
 ## Introduction
 
-In this challenge, you will analyze and visualize FHIR data using PowerQuery Connector for FHIR and SQL DB Connector in PowerBI. 
+In this challenge, you will analyze and visualize FHIR data using PowerQuery Connector for FHIR and SQL DB Connector in PowerBI.
 
 Once the data is loaded into FHIR, there are many ways to utilize FHIR data to draw out additional insights whether it is to do some basic analysis or for some deep analysis.
 One option is to use the [Power Query connector for FHIR](https://docs.microsoft.com/en-us/power-query/connectors/fhir/fhir) in PowerBI to import and shape data from a FHIR server.
-Another option is to first structure the data using Databricks and store in Azure SQL DB. Then use Azure SQL DB Connector in PowerBI to visualze. 
+Another option is to first structure the data using Databricks and store in Azure SQL DB. Then use Azure SQL DB Connector in PowerBI to visualze.
 
 <center><img src="../images/challenge09-architecture.jpg" width="550"></center>
 

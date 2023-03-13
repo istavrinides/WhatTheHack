@@ -29,6 +29,6 @@ resource appInsightsResource 'Microsoft.Insights/components@2020-02-02' = {
 
 
 
-output logAnalyticsWorkspaceId string = log_analytics_workspace_name_resource.id 
+output logAnalyticsWorkspaceId string = log_analytics_workspace_name_resource.id
 output appInsightsResourceId string = appInsightsResource.id
 output appInsightsInstrumentationKey string = appInsightsResource.properties.InstrumentationKey

@@ -25,7 +25,7 @@ param sku string = 'Developer'
 param skuCount int = 1
 
 @description('Location for all resources.')
-param location string 
+param location string
 
 param resourceTags object
 
@@ -48,9 +48,9 @@ resource apiManagementService 'Microsoft.ApiManagement/service@2021-08-01' = {
 }
 
 // resource apiManagementServiceDiagnostics 'Microsoft.ApiManagement/service/diagnostics@2021-08-01' = {
-//   name: '${apiManagementService.name}/applicationinsights'  
+//   name: '${apiManagementService.name}/applicationinsights'
 //   properties: {
-//     alwaysLog: 'allErrors'    
+//     alwaysLog: 'allErrors'
 //     httpCorrelationProtocol: 'Legacy'
 //     logClientIp: true
 //     loggerId: apiManagementServiceLoggers.id
@@ -58,20 +58,20 @@ resource apiManagementService 'Microsoft.ApiManagement/service@2021-08-01' = {
 //       percentage: 100
 //       samplingType: 'fixed'
 //     }
-    
+
 //   }
 // }
 
 resource apiManagementServiceLoggers 'Microsoft.ApiManagement/service/loggers@2021-08-01' = {
   parent: apiManagementService
-  name: 'apimlogger' 
+  name: 'apimlogger'
   properties: {
-    resourceId: appInsightsResourceId 
+    resourceId: appInsightsResourceId
     loggerType: 'applicationInsights'
     credentials: {
       instrumentationKey: appInsightsInstrumentationKey
     }
-    isBuffered: true 
-    
+    isBuffered: true
+
   }
 }

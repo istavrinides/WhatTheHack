@@ -30,10 +30,10 @@
           ]
         }
       ],
-      "codeConfigurations": [	
+      "codeConfigurations": [
         {
-        "settingFile": "/JavaScriptSPA/authConfig.js", 
-          "replaceTokens": 
+        "settingFile": "/JavaScriptSPA/authConfig.js",
+          "replaceTokens":
             {
             "appId": "Enter_the_Application_Id_Here",
             "tenantId": "Enter_the_Tenant_Info_Here",
@@ -42,8 +42,8 @@
           }
         },
         {
-          "settingFile": "/JavaScriptSPA/graphConfig.js", 
-            "replaceTokens": 
+          "settingFile": "/JavaScriptSPA/graphConfig.js",
+            "replaceTokens":
               {
               "msgraphEndpointHost": "Enter_the_Graph_Endpoint_Here"
             }

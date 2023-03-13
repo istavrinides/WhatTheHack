@@ -25,7 +25,7 @@ Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 # Install DSC modules used by DSC Scripts run via DSC Extension
 # - Note, was told this is not a best practice.  It was suggested
 # - that the module should be zipped with the script, downloaded
-# - then installed.  This is to ensure you have the same version 
+# - then installed.  This is to ensure you have the same version
 # - of the module to prevent your script from breaking.
 install-module -name xSqlServer -Force
 
@@ -51,10 +51,10 @@ $db.Create()
 Write-Host("Database  $databaseName created successfully.")
 
 # Drop login if it exists
-if ($server.Logins.Contains($loginName))  
-{   
+if ($server.Logins.Contains($loginName))
+{
     Write-Host("Deleting the existing login $loginName.")
-       $server.Logins[$loginName].Drop() 
+       $server.Logins[$loginName].Drop()
 }
 
 # Add login
@@ -82,5 +82,5 @@ Invoke-WebRequest -Uri $sqlSchemaScript -OutFile 'C:\sqlScripts\Schema.ps1'
 Invoke-WebRequest -Uri $sqlDataScript -OutFile 'C:\sqlScripts\Data.ps1'
 
 # Execute SQL Scripts
-Invoke-sqlcmd -InputFile 'C:\sqlScripts\Schema.ps1' -Database $databaseName -Username $dbUserName -Password $password 
-Invoke-sqlcmd -InputFile 'C:\sqlScripts\Data.ps1' -Database $databaseName -Username $dbUserName -Password $password 
+Invoke-sqlcmd -InputFile 'C:\sqlScripts\Schema.ps1' -Database $databaseName -Username $dbUserName -Password $password
+Invoke-sqlcmd -InputFile 'C:\sqlScripts\Data.ps1' -Database $databaseName -Username $dbUserName -Password $password

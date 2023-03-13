@@ -59,11 +59,11 @@ Using Direct Line API, a client can send messages to your bot by issuing HTTP Po
 
 	4.1 Curl:
 
-	Curl is a command line tool for transferring data using various protocols. Curl can be downloaded from 	
+	Curl is a command line tool for transferring data using various protocols. Curl can be downloaded from
 	<https://curl.haxx.se/download.html>
 
 	Open terminal and go to the location where curl is installed and run the below command for a specific conversation:
-		
+
 	```
 	curl -H "Authorization:Bearer {SecretKey}" https://directline.botframework.com/api/conversations/{conversationId}/messages -XGET
 	```
@@ -73,10 +73,10 @@ Using Direct Line API, a client can send messages to your bot by issuing HTTP Po
 
 	4.2 Web based Rest Clients:
 
-	You can use [Advanced Rest Client](https://advancedrestclient.com/) with Chrome for receiving messages from the bot. 
-	
+	You can use [Advanced Rest Client](https://advancedrestclient.com/) with Chrome for receiving messages from the bot.
+
 	To use Advanced Rest Client, the header would need to contain header name (Authorization) and header value (Bearer SecretKey). The request url would be `https://directline.botframework.com/api/conversations/{conversationId}/messages` endpoint
-	
+
 	The below images indicate the conversations obtained from *Advanced Rest Client*. Note the conversation "Hi there" and the corresponding bot response that is echoed back.
 
 	![HTTPRequest](../images/HTTPRequest.png)
@@ -91,7 +91,7 @@ Using Direct Line API, a client can send messages to your bot by issuing HTTP Po
 
 	```c#
 	case "send me a botframework image":
-						
+
 		reply.Text = $"Sample message with an Image attachment";
 
 			var imageAttachment = new Attachment()
@@ -107,5 +107,5 @@ Using Direct Line API, a client can send messages to your bot by issuing HTTP Po
 
 	![Images Array](../images/ImagesArray.png)
 
-	
+
  ### Continue to [README](../0_README.md) to review lab

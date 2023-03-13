@@ -3,7 +3,7 @@
 ## Introduction
 
 1. Azure Governance is a collection of concepts and services that are designed to enable management of your various Azure resources at scale. It facilitates leadership to support autonomous teams and ensuring that they aherence to guidelines when using Cloud Resources.
-2. This challenge based hack is intended to teach how to design a well governed Azure cloud deployment. 
+2. This challenge based hack is intended to teach how to design a well governed Azure cloud deployment.
 3. You will be learning about Azure Management Groups, RBAC, Policy, Blueprints, Cost Management and Resource Graph.
 
 ## Learning Objectives
@@ -36,9 +36,9 @@ In this hack you will learn how to:
 [View Challenges in PowerPoint](https://github.com/microsoft/WhatTheHack/blob/master/022-AzureGovernance/Student/AzureGovernance-Challenges.pptx?raw=true)
 
 ## Prerequisites
-1. Review the Deployment Setup Guide. 
+1. Review the Deployment Setup Guide.
 2. Create a new Azure AD Tenant.
-3. Create new Azure Trial Subscription. 
+3. Create new Azure Trial Subscription.
 
 ## Repository Contents
 - `../Coach`

@@ -21,7 +21,7 @@ public class ShipmentIndexModel : PageModel
     [BindProperty(SupportsGet = true)]
     public int StoreId { get; set; }
 
-    public ShipmentIndexModel(ILogger<IndexModel> logger, 
+    public ShipmentIndexModel(ILogger<IndexModel> logger,
                              ICosmosDbService<models.Shipment> shipmentService)
     {
         _logger = logger;
@@ -35,7 +35,7 @@ public class ShipmentIndexModel : PageModel
         {
             return RedirectToPage("/Shipment/Index", new { customerId = customerId, storeId = 1 });
         }
-        
+
         var queryDef = new QueryDefinition("SELECT * FROM c WHERE c.type = @type and c.customerId = @customerId and c.storeId = @storeId")
                 .WithParameter("@type", $"Shipment-{customerId}")
                 .WithParameter("@customerId", customerId)

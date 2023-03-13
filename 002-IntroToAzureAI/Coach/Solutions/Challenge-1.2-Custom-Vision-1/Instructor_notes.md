@@ -9,15 +9,15 @@ We had two people presenting this, and it worked really nicely to have a back-an
             *	Create a Custom Vision project
             *	Upload and Tag images that are then trained
             *	Understand iterations and how to set a default iteration
-            *	Test a trained model and perform a prediction with an independent image            
-            
+            *	Test a trained model and perform a prediction with an independent image
+
     *	Prerequisites
         *	The student should have an Azure Subscription
         *	A valid Microsoft account or an Azure Active Directory OrgID ("work or school account"), so you can sign into customvision.ai and get started.
-        
+
     *	Agenda and logistics
         *	Create a Custom Vision project
-        *	Upload and Tag images into the Custom Vision project  
+        *	Upload and Tag images into the Custom Vision project
         *	Train a Custom Vision model
         *	Understand iterations and how to set a default iteration
         *	Test a trained model
@@ -28,7 +28,7 @@ We had two people presenting this, and it worked really nicely to have a back-an
 
     *	Materials
         *	Show them where the materials are
-        *   Stress how we want people to work together, use your neighbor first, etc  
+        *   Stress how we want people to work together, use your neighbor first, etc
 
 ## Lab information
 
@@ -42,7 +42,7 @@ We had two people presenting this, and it worked really nicely to have a back-an
     *	Make two tags in the new project
     *	Add some images to the tags
     *	Upload images both one at a time and as a batch
-    *	Train the project 
+    *	Train the project
     *	Make a prediction
 
     The README.md file for this lab contains the code answers by design. Encourage the students to explore and understand the code before inserting it
@@ -63,12 +63,12 @@ We had two people presenting this, and it worked really nicely to have a back-an
     *	Make two tags in the new project
     *	Add some images to the tags
     *	Upload images both one at a time and as a batch
-    *	Train the project 
+    *	Train the project
     *	Make a prediction
     *	retrieving and using a training key
     *	Upload images from a local disk into memory
 
-    The README.md file for this lab DOES NOT contains the code answers by design. 
+    The README.md file for this lab DOES NOT contains the code answers by design.
     This lab is recommended for experienced students are those that complete 1.2 and 1.3
     A solution file has been provided for those students who learn better by reading code.
     NOTE THAT STUDENTS MAY NOT FINISH THIS LAB

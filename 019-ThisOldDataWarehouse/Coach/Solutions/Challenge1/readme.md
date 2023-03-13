@@ -12,7 +12,7 @@ be showcasing how to migrate your traditional SQL Server (SMP) to Azure Synapse 
 
 **Note:** The coach's notes and students guides will leverage the terms Azure Data Lake Store Gen2, Azure Data Factory and Azure Synapse Analytics.  These terms will be replaced with Linked Storage, Data Pipelines and SQL Pools respectively in future updates of the WTH.  It is acceptable to use Synapse Analytics Workspace as one of the adventures and use SQL Pools for the data warehouse.
 
-WWI runs their existing database platforms on-premise with SQL Server 2017.  There are two databases samples for WWI.  The first one is for their Line of Business application (OLTP) and the second is for their data warehouse (OLAP).  You will need to setup both environments as our starting point in the migration.  Recommended to have students start Challenge 0 with setup of SQL environment before starting any presentations. 
+WWI runs their existing database platforms on-premise with SQL Server 2017.  There are two databases samples for WWI.  The first one is for their Line of Business application (OLTP) and the second is for their data warehouse (OLAP).  You will need to setup both environments as our starting point in the migration.  Recommended to have students start Challenge 0 with setup of SQL environment before starting any presentations.
 
 1. Open your browser and login to your Azure Tenant.  We plan to setup the Azure Services required for the What the Hack (WTH).  In your portal, open the [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview)
 
@@ -34,7 +34,7 @@ az group create --location eastus2 --name {"Resource Group Name"}
 ```
 az container create -g {Resource Group Name} --name mdwhackdb --image alexk002/sqlserver2019_demo:1  --cpu 2 --memory 7 --ports 1433 --ip-address Public
 ```
-**Note: In order to connect to this database server, the public IP address of the deployed container should be used as the hostname, and the default login credentials can be found in the [source repo for this container found on Docker Hub](https://hub.docker.com/repository/docker/alexk002/sqlserver2019_demo) 
+**Note: In order to connect to this database server, the public IP address of the deployed container should be used as the hostname, and the default login credentials can be found in the [source repo for this container found on Docker Hub](https://hub.docker.com/repository/docker/alexk002/sqlserver2019_demo)
 
 5. Review the database catalog on the data warehouse for familiarity of the schema [Reference document](https://docs.microsoft.com/en-us/sql/samples/wide-world-importers-dw-database-catalog?view=sql-server-ver15)
 
@@ -46,13 +46,13 @@ az container create -g {Resource Group Name} --name mdwhackdb --image alexk002/s
 ## Tools
 
 1. [SQL Server Management Studion (Version 18.x or higher)](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15)
-2. [Visual Studio Code](https://code.visualstudio.com/Download) 
+2. [Visual Studio Code](https://code.visualstudio.com/Download)
 3. [Power BI Desktop](https://www.microsoft.com/en-us/download/details.aspx?id=58494)
 
 
 ## Migration Overview
 
-The objective of this lab is to migrate the WWI DW (OLAP) to Azure Synapse Analytics.  Azure Synapse Analytics is a MPP (Massive Parallel Processing) platform that allows you to scale out your datawarehouse by adding new server nodes (compute) rather than adding more cores to the server.  
+The objective of this lab is to migrate the WWI DW (OLAP) to Azure Synapse Analytics.  Azure Synapse Analytics is a MPP (Massive Parallel Processing) platform that allows you to scale out your datawarehouse by adding new server nodes (compute) rather than adding more cores to the server.
 
 Reference:
 1. [Architecture Document of the MPP platform](https://docs.microsoft.com/en-us/azure/synapse-analytics/migration-guides/migrate-to-synapse-analytics-guide)
@@ -65,7 +65,7 @@ There will be four different object types we'll migrate:
 * SSIS code set refactor (Share SSIS Job with team before they load data in Synapse)
 * Data migration (with SSIS)
 
-Guidelines will be provided below but you will have to determine how best to migrate.  At the end of the migration compare your 
+Guidelines will be provided below but you will have to determine how best to migrate.  At the end of the migration compare your
 end state to the one we've published into the "Coach/Solutions/Challenge1" folder.  The detailed migration guide below is here for things to consider during your migration.
 
 ### Database Schema migration steps
@@ -92,13 +92,13 @@ SELECT  t.[name], c.[name], c.[system_type_id], c.[user_type_id], y.[is_user_def
 	OR  y.[is_user_defined] = 1;
 ```
 6. Review IDENTITY article to ensure surrogate keys are in the right sequence [Reference document](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-tables-identity?context=%2Fazure%2Fsynapse-analytics%2Fcontext%2Fcontext)
-    
+
 
 ### Database code rewrite
 
-Review the SSIS jobs that are at this [Github repo](https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0) (Daily.ETL.ispac)  This job leverages stored procedures in the Source and Target databases extensively.  This will require a refactoring of the Stored procedures for the OLAP database when you repoint the ETL target to Azure Synapse.  There are a number of design considerations you wil need to consider when refactoring this code.  Please read this [document](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql/develop-tables-overview) for more detail. 
+Review the SSIS jobs that are at this [Github repo](https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0) (Daily.ETL.ispac)  This job leverages stored procedures in the Source and Target databases extensively.  This will require a refactoring of the Stored procedures for the OLAP database when you repoint the ETL target to Azure Synapse.  There are a number of design considerations you wil need to consider when refactoring this code.  Please read this [document](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql/develop-tables-overview) for more detail.
 
-There are three patterns you can reuse across all scripts in the same family (Dimension & Fact).  
+There are three patterns you can reuse across all scripts in the same family (Dimension & Fact).
 
 1. Rewrite Dimension T-SQL
     1. "Exec as Owner" and Return can be removed for this lab
@@ -127,9 +127,9 @@ There are numerous strategies and tools to migrate your data from on-premise to 
 
 
 ### Data Setup in Synapse
-For the first time setup only, you will need to execute the "Master Create.sql" script to populate all control tables before you execute the SSIS job.  This is required and it is only done on the initial setup.  After this is complete, you can run the SSIS job.  For all subsequent runs after the initial setup, execute the Reseed ETL Stored Procedure only.  This stored procedure will rollback the database to it's original state.  
+For the first time setup only, you will need to execute the "Master Create.sql" script to populate all control tables before you execute the SSIS job.  This is required and it is only done on the initial setup.  After this is complete, you can run the SSIS job.  For all subsequent runs after the initial setup, execute the Reseed ETL Stored Procedure only.  This stored procedure will rollback the database to it's original state.
 
 A coach's suggestion is to have your team setup two enviroments for this challenge; Dev and Test.  This way they can hack all they want in their dev environment and not worry about impacting the work they've done to date.  After each challenge they can promote their dev code or restore the solution files into their test environment.  This way you can ensure after each challenge their environment won't regress and prevent them from going to the next challenge.
 
-## Congratulations!!! 
+## Congratulations!!!
 The migration is complete.  Run your SSIS jobs to load data from OLTP to OLAP data warehouse.  You might want to create a load control table to setup incremental loads.  This will validate you've completed all steps successfully.  Compare the results of the WWI OLAP database vs. the one you've migrated into Azure Synapse Analytics.

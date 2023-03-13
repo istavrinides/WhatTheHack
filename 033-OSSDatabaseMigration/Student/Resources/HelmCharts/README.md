@@ -2,7 +2,7 @@
 
 ## Setting up Kubernetes
 
-NOTE: YOU DO NOT NEED TO RUN THROUGH THE STEPS IN THIS FILE IF YOU ALREADY PROVISIONED AKS. 
+NOTE: YOU DO NOT NEED TO RUN THROUGH THE STEPS IN THIS FILE IF YOU ALREADY PROVISIONED AKS.
 
 The steps to deploy the AKS cluster, scale it up and scale it down are available in the README file for that section: [README](../ARM-Templates/README.md).
 

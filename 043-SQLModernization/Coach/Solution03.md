@@ -2,7 +2,7 @@
 
 [< Previous Challenge](./Solution02.md) - **[Home](README.md)** - [Next Challenge>](./Solution04.md)
 
-## Notes & Guidance 
+## Notes & Guidance
 
 This challenge requires attendees to use a Jupyter Notebook and Azure Data Studio and Azure Monitor SQL Insights to run/experiment with SQL Server performance and evaluating performance.
 
@@ -14,7 +14,7 @@ The purpose of this challenge is threefold:
 
 In addition to getting hands on with troubleshooting and exploring new features of SQL Server, this challenge will help those purpsuing DP-300 or related certifications that evaluate these skills.
 
-### Explore New Features 
+### Explore New Features
 
 This notebook walks through two queries that perform quite differently in pre-SQL Server 2019 versions compared to SQL Server 2019+. The Notebook walks through setting up the test, and effectively changing the way the query is run by altering the database compatability level.
 
@@ -43,7 +43,7 @@ The query looks different when running under SQL Server 2019. The clustered inde
 
 ![Faster Plan](./images/query_stats_for_faster_plan.png)
 
-By leveraging *table variable deferred compilation*, the compilation of the statement is deferred until the first execution. Cardinality estimates can then be based on the actual table row counts, allowing for better downstream operation choices.  
+By leveraging *table variable deferred compilation*, the compilation of the statement is deferred until the first execution. Cardinality estimates can then be based on the actual table row counts, allowing for better downstream operation choices.
 
 Similarly, *adaptive joins* delays the selection of the type of join until after the first input has been scanned, so either a Hash Join or Nested Loop Join can be selected.
 
@@ -51,7 +51,7 @@ Lastly, *batch mode for rowstore*, previously exclusive to columnstore indexes, 
 
 ## Understand Key Blockers
 
-Depending on the team's ability to read/process query plans, this may either an instant answer or may take some research. An execution plan similar to the following should be displayed when running the provided query: 
+Depending on the team's ability to read/process query plans, this may either an instant answer or may take some research. An execution plan similar to the following should be displayed when running the provided query:
 
 ![Key Lookup](./images/keylookup.png)
 
@@ -64,8 +64,8 @@ To fix this issue, a new index can be created that covers the predicates require
 The following helper queries will create and drop the needed index:
 
 ```sql
-CREATE NONCLUSTERED INDEX [IX_Sales_Invoices_ConfirmedDelivery_TotalDry_TotalChiller] 
-ON Sales.Invoices (ConfirmedDeliveryTime) 
+CREATE NONCLUSTERED INDEX [IX_Sales_Invoices_ConfirmedDelivery_TotalDry_TotalChiller]
+ON Sales.Invoices (ConfirmedDeliveryTime)
 INCLUDE (CustomerId, TotalDryItems, TotalChillerItems)
 
 DROP INDEX IX_Sales_Invoices_ConfirmedDelivery_TotalDry_TotalChiller

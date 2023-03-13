@@ -20,7 +20,7 @@ variables:
 
 stages:
 - stage: Build
-  displayName: Build 
+  displayName: Build
   jobs:
   - job: Build
     displayName: Build
@@ -42,7 +42,7 @@ stages:
       artifact: drop
 
 - stage: Deploy
-  displayName: Deploy 
+  displayName: Deploy
   dependsOn: Build
   condition: succeeded()
   jobs:
@@ -50,7 +50,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: windows-latest
-    
+
     steps:
     - task: AzureResourceManagerTemplateDeployment@3
       inputs:
@@ -65,7 +65,7 @@ stages:
         overrideParameters: '-webAppName $(webAppName) -hostingPlanName $(webAppName)-host -appInsightsLocation "$(location)" -databaseAccountId $(webAppName)db -databaseAccountLocation "$(location)"'
         deploymentMode: 'Incremental'
         deploymentOutputs: 'output'
-    
+
     - task: PowerShell@2
       inputs:
         targetType: 'inline'
@@ -100,7 +100,7 @@ stages:
               "name": "HEADER_VALUE",
               "value": "$(mySecret)",
               "slotSetting": false
-             }   
+             }
           ]
 
     - task: DownloadPipelineArtifact@2
@@ -127,7 +127,7 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
-    
+
     - task: AzureResourceManagerTemplateDeployment@3
       inputs:
         deploymentScope: 'Resource Group'
@@ -140,8 +140,8 @@ stages:
         csmFile: '$(System.DefaultWorkingDirectory)/ARMTemplate/template.json'
         csmParametersFile: '$(System.DefaultWorkingDirectory)/ARMTemplate/parameters.json'
         overrideParameters: '-name $(loadTestResource) -location "$(location)"'
-        deploymentMode: 'Incremental'    
-    
+        deploymentMode: 'Incremental'
+
     - task: AzureLoadTest@1
       inputs:
         azureSubscription: $(serviceConnection)
@@ -155,6 +155,6 @@ stages:
             "value": "$(webAppName).azurewebsites.net"
             }
           ]
-          
+
     - publish: $(System.DefaultWorkingDirectory)/loadTest
       artifact: results

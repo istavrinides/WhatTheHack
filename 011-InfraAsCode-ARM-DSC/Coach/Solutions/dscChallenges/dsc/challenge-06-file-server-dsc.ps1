@@ -27,29 +27,29 @@ Configuration Create-File-Shares {
         # Each share creation depends on its respective folder being created above
         xSmbShare CreateShare1
         {
-            Ensure = "Present" 
+            Ensure = "Present"
             Name   = "Share1"
-            Path = "C:\Folder1"  
+            Path = "C:\Folder1"
             Description = "This is the share based on folder 1!"
             DependsOn = "[File]CreateFolder1"
         }
-        
+
         xSmbShare CreateShare2
         {
-            Ensure = "Present" 
+            Ensure = "Present"
             Name   = "Share2"
-            Path = "C:\Folder2"  
+            Path = "C:\Folder2"
             Description = "This is the share based on folder 2!"
             DependsOn = "[File]CreateFolder2"
-        } 
+        }
 
         xSmbShare CreateShare3
         {
-            Ensure = "Present" 
+            Ensure = "Present"
             Name   = "Share3"
-            Path = "D:\Folder3"  
+            Path = "D:\Folder3"
             Description = "This is the share based on folder 3!"
             DependsOn = "[File]CreateFolder3"
-        } 
+        }
     }
 }

@@ -59,8 +59,8 @@ namespace ContosoMasks.ServiceHost.Models
     {
         static Regex LINE = new Regex(@"^\s+([^\s^\.]+)\.+:\s+avg=([\d\.]+\S+)\s+min=([\d\.]+\S+)\s+med=([\d\.]+\S+)\s+max=([\d\.]+\S+)\s+p\(90\)=([\d\.]+\S+)\s+p\(95\)=([\d\.]+\S+)\s*$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
         static Regex REQSLINE = new Regex(@"^\s+http_reqs\.+:\s+([\d]+)\s+\S+\s*$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-        static Regex NUMBER = new Regex(@"^([\d\.]+)([^\d^\.]+)$", RegexOptions.Compiled | RegexOptions.IgnoreCase); 
-        static Regex MINNUMBER = new Regex(@"^([\d]+)m([\d]+)s$", RegexOptions.Compiled | RegexOptions.IgnoreCase); 
+        static Regex NUMBER = new Regex(@"^([\d\.]+)([^\d^\.]+)$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        static Regex MINNUMBER = new Regex(@"^([\d]+)m([\d]+)s$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
         public static (IEnumerable<Stat>, long)  ParseFile(string file)
         {

@@ -1,6 +1,6 @@
 # Challenge 3: Citizen Services Coach's Guide
 
-[< Previous Challenge](./02-firstresponders.md) - **[Home](./readme.md)** 
+[< Previous Challenge](./02-firstresponders.md) - **[Home](./readme.md)**
 
 ## Notes & Guidance
 Being the coaches guide, this content includes comments, guidance, possible gotchas related to the challenges facing the partipants. The success criteria for the challenge has been duplicated here, but within them, you will find the notes for coaches. In many cases, there is no single solution so coaches are encouraged to be flexibile and focus on the outcome. Did the team accomplish the spirit of the task not necessarily did they do it in the way it is described here?

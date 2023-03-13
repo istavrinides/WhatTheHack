@@ -1,10 +1,10 @@
-# Challenge 0: Pre-requisites - Ready, Set, GO! 
+# Challenge 0: Pre-requisites - Ready, Set, GO!
 
 **[Home](../README.md)** - [Next Challenge >](./Bicep-Challenge-01.md)
 
 ## Introduction
 
-A smart cloud solution architect always has the right tools in their toolbox. 
+A smart cloud solution architect always has the right tools in their toolbox.
 
 ## Description
 

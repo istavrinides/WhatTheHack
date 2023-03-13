@@ -2,7 +2,7 @@
 
 **This document serves to provide some (hopefully) helpful notes and tips with regards to presenting these materials/labs**
 
-## Azure Search intro [20-25 minutes]  
+## Azure Search intro [20-25 minutes]
 
 * I recommend starting with a quick review of the previous day and project architecture, and then going through the agenda for day 2.
 
@@ -16,15 +16,15 @@
     *	With web search engines like Google and Bing and retailers like Amazon, the bar is set high for the search experience. So if we look at this example, we can see some of the things people look for in a good search experience, which I am sure you are familiar with. You want to be able to spell things wrong and get answers, you want type ahead suggestions, you want to be able to sort and filter, you want your search words highlighted in the results, etc. You all know what I am talking about right?
 *	What AZS does
     *	Gives your consumers the experience they expect, without you having to be or hire a search expert
-    *	Azure Search gives your consumers that, but what does it give you? Well, you get monitoring and reporting, you can get scoring and boost items you want to show up higher in the list (maybe products with a higher product margin?) and more. 
+    *	Azure Search gives your consumers that, but what does it give you? Well, you get monitoring and reporting, you can get scoring and boost items you want to show up higher in the list (maybe products with a higher product margin?) and more.
 *	Workflow
     *	Provision service – same as most resources, you can create it in the portal
     *	Create an index which is a container for your data
     *	Index data – you’ll import your data <https://docs.microsoft.com/en-us/azure/search/search-what-is-data-import> then you’ll create an indexer, which basically specifies how to search your data
     *	Then you search!
 *	Step through the lab, explaining the main steps
-    *	When you get to picking the Microsoft vs Lucene Analyzer, demo this site to compare: alice.unearth.ai/ 
-*	AZS discussion – lab wrap up at the end 
+    *	When you get to picking the Microsoft vs Lucene Analyzer, demo this site to compare: alice.unearth.ai/
+*	AZS discussion – lab wrap up at the end
     *	What do you guys think about LUIS? First impressions?
     *	Open it up for more discussion
         *	Questions/Thoughts/Experiences/Challenges

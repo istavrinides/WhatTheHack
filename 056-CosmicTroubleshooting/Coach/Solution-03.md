@@ -1,4 +1,4 @@
-# Challenge 03 - Automate Order Processing- Coach's Guide 
+# Challenge 03 - Automate Order Processing- Coach's Guide
 
 [< Previous Solution](./Solution-02.md) - **[Home](./README.md)** - [Next Solution >](./Solution-04.md)
 
@@ -7,7 +7,7 @@
 For this challenge, students will need to leverage the Change Feed again, this time though to continuously get any Order item. If they created a collection just for the Order items, they can simply get every document created with a status of `Pending Shipment`, add an item in the `Shipments` collection and update the item with a status of `Shipped`.
 
 Example of a solution:
-1. Create a new Azure Function (in the existing Function App or a new one):  
+1. Create a new Azure Function (in the existing Function App or a new one):
     - Name: `OrderProcessor` (for example)
     - Development environment: Develop in portal
     - Template: Azure Cosmos DB trigger
@@ -124,7 +124,7 @@ Example of a solution:
                           .SingleOrDefault();
 
                       if(orderItem != null)
-                      {                    
+                      {
                           orderItem.SetPropertyValue("status", "Shipped");
                           await client.ReplaceDocumentAsync(orderItem);
                       }

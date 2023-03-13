@@ -1,6 +1,6 @@
-# Challenge 12 - Setting up a webserver 
+# Challenge 12 - Setting up a webserver
 
-[< Previous Challenge](./Challenge-11.md) - **[Home](../README.md)** 
+[< Previous Challenge](./Challenge-11.md) - **[Home](../README.md)**
 
 ## Description
 

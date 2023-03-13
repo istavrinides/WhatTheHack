@@ -8,7 +8,7 @@
 
 az login
 
-az account set --subscription "<SUBSCRIPTION_NAME>" 
+az account set --subscription "<SUBSCRIPTION_NAME>"
 
 
 ##DEPLOY CHALLENGE ONE##
@@ -99,7 +99,7 @@ az group deployment create \
     --resource-group IAC-RG01 \
     --template-file challenge-06-load-balanced-nat-rule.json \
     --parameters challenge-06.parameters.json
-    
+
 
 ##DEPLOY CHALLENGE SEVEN##
 
@@ -143,7 +143,7 @@ az group deployment create \
 ##DEPLOY CHALLENGE TEN##
 
 
-#Reference - 
+#Reference -
 
 #With Parameters File
 az group deployment create \

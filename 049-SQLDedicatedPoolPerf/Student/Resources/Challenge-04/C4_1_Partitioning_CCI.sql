@@ -37,7 +37,7 @@ DBCC FREEPROCCACHE()
 GO
 
 
-SELECT 
+SELECT
 	Fis.SalesTerritoryKey
 	,Fis.OrderDateKey
 	, Dsr.SalesReasonName
@@ -71,7 +71,7 @@ DBCC FREEPROCCACHE()
 GO
 
 
-SELECT 
+SELECT
 	Fis.SalesTerritoryKey
 	,Fis.OrderDateKey
 	, Dsr.SalesReasonName

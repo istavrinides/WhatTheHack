@@ -39,7 +39,7 @@ namespace ContosoMasks.ServiceHost
             var foundOutputAttr = output.Attributes.SafeWhere(attr => attr.Name.EqualsOI(tag));
             if ( !foundOutputAttr.SafeAny() )
             {
-                foundOutputAttr = context.AllAttributes.SafeWhere(attr => attr.Name.EqualsOI(tag)); 
+                foundOutputAttr = context.AllAttributes.SafeWhere(attr => attr.Name.EqualsOI(tag));
             }
 
             if (foundOutputAttr.SafeAny())

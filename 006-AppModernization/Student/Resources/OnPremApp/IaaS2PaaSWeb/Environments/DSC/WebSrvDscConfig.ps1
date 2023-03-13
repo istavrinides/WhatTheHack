@@ -69,30 +69,30 @@ Configuration Main
       DependsOn  = "[WindowsFeature]WebServerRole"
     }
     Package InstallWebDeploy {
-      Ensure    = "Present"  
+      Ensure    = "Present"
       Path      = "C:\WindowsAzure\WebDeploy_amd64_en-US.msi"
       Name      = "Microsoft Web Deploy 3.6"
       ProductId = "{6773A61D-755B-4F74-95CC-97920E45E696}"
       Arguments = "ADDLOCAL=ALL"
       DependsOn = "[Script]DownloadWebDeploy"
     }
-    Service StartWebDeploy {                    
+    Service StartWebDeploy {
       Name        = "WMSVC"
       StartupType = "Automatic"
       State       = "Running"
       DependsOn   = "[Package]InstallWebDeploy"
     }
     cChocoInstaller installChoco
-    { 
-      InstallDir = "C:\choco" 
+    {
+      InstallDir = "C:\choco"
     }
     cChocoPackageInstaller googlechrome
-    {            
+    {
         Name = "googlechrome"
         DependsOn = "[cChocoInstaller]installChoco"
     }
     cChocoPackageInstaller webpi
-    {            
+    {
         Name = "webpi"
         DependsOn = "[cChocoInstaller]installChoco"
     }

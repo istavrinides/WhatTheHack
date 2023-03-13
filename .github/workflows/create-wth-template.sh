@@ -50,7 +50,7 @@ CreateDirectoryStructure() {
 
   # create the Student & Student/Resources directories
   mkdir -p $rootPath/Student/Resources
-  
+
   #add a file to allow git to store an "empty" directory
   touch $rootPath/Student/Resources/.gitkeep
 }
@@ -74,7 +74,7 @@ WriteMarkdownFile() {
 
   local templateText=$(PreprocessTemplateFile "$pathToTemplate")
 
-  #read in the template file & replace predefined variables 
+  #read in the template file & replace predefined variables
   #(defined in the file as ${varName})
   local template=$(eval "cat <<EOF
 $templateText
@@ -141,12 +141,12 @@ GenerateNavigationLink() {
   fi
 
   local homeLinkPath=""
-  
+
   #if the navigation link is for Coach guides, it should point to the Coach/README, not the root README file
   if $isCoachGuide
   then
     homeLinkPath="."
-  else  
+  else
     homeLinkPath=".."
   fi
 

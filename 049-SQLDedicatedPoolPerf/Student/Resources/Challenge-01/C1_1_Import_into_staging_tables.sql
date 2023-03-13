@@ -17,7 +17,7 @@ https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/quic
 
 
 /****************************************************************************************
-STEP 1 - Choose the proper distribution method and Storage type for staging area 
+STEP 1 - Choose the proper distribution method and Storage type for staging area
 considering you have to  ingest data at maximum speed and no overhead
 ****************************************************************************************/
 
@@ -25,7 +25,7 @@ CREATE SCHEMA Staging
 GO
 
 CREATE TABLE [Staging].[DimAccount]
-(	
+(
 	[AccountKey] [int] NOT NULL,
 	[ParentAccountKey] [int] NULL,
 	[AccountCodeAlternateKey] [int] NULL,
@@ -542,26 +542,26 @@ GO
 
 /****************************************************************************************
 STEP 2 - Explore COPY INTO T-SQL command to import from ADLS Gen2 - Blob container
-to Dedicated Sql Pool. 
+to Dedicated Sql Pool.
 ****************************************************************************************/
 COPY INTO [schema.]table_name
-[(Column_list)] 
+[(Column_list)]
 FROM '<external_location>' [,...n]
-WITH  
- ( 
+WITH
+ (
  [FILE_TYPE = {'CSV' | 'PARQUET' | 'ORC'} ]
- [,FILE_FORMAT = EXTERNAL FILE FORMAT OBJECT ]    
+ [,FILE_FORMAT = EXTERNAL FILE FORMAT OBJECT ]
  [,CREDENTIAL = (AZURE CREDENTIAL) ]
- [,ERRORFILE = '[http(s)://storageaccount/container]/errorfile_directory[/]]' 
+ [,ERRORFILE = '[http(s)://storageaccount/container]/errorfile_directory[/]]'
  [,ERRORFILE_CREDENTIAL = (AZURE CREDENTIAL) ]
- [,MAXERRORS = max_errors ] 
- [,COMPRESSION = { 'Gzip' | 'DefaultCodec'| 'Snappy'}] 
- [,FIELDQUOTE = 'string_delimiter'] 
- [,FIELDTERMINATOR =  'field_terminator']  
+ [,MAXERRORS = max_errors ]
+ [,COMPRESSION = { 'Gzip' | 'DefaultCodec'| 'Snappy'}]
+ [,FIELDQUOTE = 'string_delimiter']
+ [,FIELDTERMINATOR =  'field_terminator']
  [,ROWTERMINATOR = 'row_terminator']
  [,FIRSTROW = first_row]
- [,DATEFORMAT = 'date_format'] 
- [,ENCODING = {'UTF8'|'UTF16'}] 
+ [,DATEFORMAT = 'date_format']
+ [,ENCODING = {'UTF8'|'UTF16'}]
  [,IDENTITY_INSERT = {'ON' | 'OFF'}]
  [,AUTO_CREATE_TABLE = {'ON' | 'OFF'} ]
 )

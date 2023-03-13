@@ -1,4 +1,4 @@
-# Challenge 02 - Path C: The Azure Container Registry - Coach's Guide 
+# Challenge 02 - Path C: The Azure Container Registry - Coach's Guide
 
 [< Previous Solution](./Solution-01.md) - **[Home](./README.md)** - [Next Solution >](./Solution-03.md)
 
@@ -18,7 +18,7 @@ The coach should demonstrate running the application locally.  To run the Fab Me
    	- `npm install`
 - To start a node app, run:
        - `node ./server.js &`
-- Verify the API app runs by browsing to its URL with one of the three function names, eg: 
+- Verify the API app runs by browsing to its URL with one of the three function names, eg:
    	- `http://localhost:3001/speakers`
 - Repeat for the steps above for the Web app.
 	- **NOTE:** The content-web app expects an environment variable named `CONTENT_API_URL` that points to the API app’s URL.
@@ -34,9 +34,9 @@ If the students get stuck, point them to the ACR documentation:
 
 ### Other tips / tricks
 
-- To create the registry from the CLI, use: 
+- To create the registry from the CLI, use:
     - `az acr create -n <name of registry> -g <resource group> --sku Standard`
-- To login to the ACR, use: 
+- To login to the ACR, use:
     - `az acr login --name <name of ACR>`
 - To list images in the repository, use:
     - `az acr repository list --name <name of ACR>`

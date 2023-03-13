@@ -23,8 +23,8 @@ val destDataDirRoot = mountRoot + source + "/transactional-data-small/"
 
 def Shrink(company: String, yyyy: String, mm: String, sampleProportion: Double)
 {
-  // Source file  
-  var srcDataFile = srcDataDirRoot + "year=" + yyyy + "/month=" +  mm + "/type=" + company + "/" + company + "_tripdata_" + yyyy + "-" + mm + ".csv"     
+  // Source file
+  var srcDataFile = srcDataDirRoot + "year=" + yyyy + "/month=" +  mm + "/type=" + company + "/" + company + "_tripdata_" + yyyy + "-" + mm + ".csv"
   println("srcDataFile = " + srcDataFile)
 
   // Destination partition folder path (where raw CSV output will go)
@@ -80,26 +80,26 @@ for(company <- companies)
     startYear = 2010
   else if (company == "green")
     startYear = 2013
-  
+
   var endYear = 2018
 
-  
+
   for (yyyy <- startYear to endYear)
   {
     var startMonth = 1
-    
+
     // The first year of Green, 2013, starts in August
     if (company == "green" && yyyy == 2013)
       startMonth = 8
-    
+
     // For 2018 our source data stops with June
     var endMonth = if (yyyy == 2018) 6 else 12
-    
+
     for (m <- startMonth to endMonth)
     {
       // By default we'll take 1 in 20 records
       var sampleProportion = 0.05
-      
+
       if (company == "green")
       {
         // Green has much less source data than Yellow, so we'll take 1 in 3 for Green to even it out a bit in the reduced sample
@@ -110,10 +110,10 @@ for(company <- companies)
         // Starting in July 2016, Yellow file sizes shrunk by half so we'll take 1 in 10 starting then
         sampleProportion = 0.1
       }
-      
+
       var sy = yyyy.toString()
       var mm = "%02d".format(m)
-      
+
       Shrink(company, sy, mm, sampleProportion)
     }
   }

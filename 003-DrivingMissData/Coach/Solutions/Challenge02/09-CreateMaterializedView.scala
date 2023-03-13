@@ -26,7 +26,7 @@ import org.apache.spark.sql.functions._
 // COMMAND ----------
 
 //Destination directory
-val destDataDirRoot = mountRoot + curated + "/materialized-view" 
+val destDataDirRoot = mountRoot + curated + "/materialized-view"
 
 // COMMAND ----------
 
@@ -51,7 +51,7 @@ spark.sql("REFRESH TABLE green_taxi_trips_curated")
 
 //Read source data
 val yellowTaxiDF = sql("""
-SELECT 
+SELECT
     taxi_type,
     vendor_id,
     pickup_datetime,
@@ -100,7 +100,7 @@ SELECT
     dropoff_second,
     trip_year,
     trip_month
-  FROM yellow_taxi_trips_curated 
+  FROM yellow_taxi_trips_curated
 """)
 
 //Add extra columns
@@ -132,7 +132,7 @@ dbutils.fs.rm(destDataDirRoot, recurse=true)
 // COMMAND ----------
 
 val matViewDF = sql("""
-  SELECT  
+  SELECT
     taxi_type,
     vendor_id,
     pickup_datetime,
@@ -184,9 +184,9 @@ val matViewDF = sql("""
     dropoff_second,
     trip_year,
     trip_month
-  FROM yellow_taxi_trips_unionable 
+  FROM yellow_taxi_trips_unionable
 UNION ALL
-  SELECT 
+  SELECT
     taxi_type,
     vendor_id,
     pickup_datetime,
@@ -238,7 +238,7 @@ UNION ALL
     dropoff_second,
     trip_year,
     trip_month
-  FROM green_taxi_trips_curated 
+  FROM green_taxi_trips_curated
 """).cache()
 
 // COMMAND ----------

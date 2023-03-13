@@ -106,7 +106,7 @@ serviceMonitor:
   dotnetRuntimeMetrics: true
   httpMetrics: true
   systemMetrics: true
-  
+
 security:
   enabled: false
   enableAadSmartOnFhirProxy: false

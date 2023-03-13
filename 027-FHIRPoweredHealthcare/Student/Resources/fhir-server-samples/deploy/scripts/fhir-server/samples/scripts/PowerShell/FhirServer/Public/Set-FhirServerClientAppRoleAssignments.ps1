@@ -32,7 +32,7 @@ function Set-FhirServerClientAppRoleAssignments {
     # Get current AzureAd context
     try {
         Get-AzureADCurrentSessionInfo -ErrorAction Stop | Out-Null
-    } 
+    }
     catch {
         throw "Please log in to Azure AD with Connect-AzureAD cmdlet before proceeding"
     }
@@ -42,7 +42,7 @@ function Set-FhirServerClientAppRoleAssignments {
     $aadClientServicePrincipal = Get-AzureAdServicePrincipal -Filter "appId eq '$AppId'"
     $ObjectId = $aadClientServicePrincipal.ObjectId
 
-    $existingRoleAssignments = Get-AzureADServiceAppRoleAssignment -ObjectId $apiApplication.ObjectId | Where-Object {$_.PrincipalId -eq $ObjectId} 
+    $existingRoleAssignments = Get-AzureADServiceAppRoleAssignment -ObjectId $apiApplication.ObjectId | Where-Object {$_.PrincipalId -eq $ObjectId}
 
     $expectedRoles = New-Object System.Collections.ArrayList
     $rolesToAdd = New-Object System.Collections.ArrayList
@@ -81,7 +81,7 @@ function Set-FhirServerClientAppRoleAssignments {
         Remove-AzureADServiceAppRoleAssignment -ObjectId $ObjectId -AppRoleAssignmentId ($existingRoleAssignments | Where-Object { $_.Id -eq $role }).ObjectId | Out-Null
     }
 
-    $finalRolesAssignments = Get-AzureADServiceAppRoleAssignment -ObjectId $apiApplication.ObjectId | Where-Object {$_.PrincipalId -eq $ObjectId} 
+    $finalRolesAssignments = Get-AzureADServiceAppRoleAssignment -ObjectId $apiApplication.ObjectId | Where-Object {$_.PrincipalId -eq $ObjectId}
     $rolesNotAdded = $()
     $rolesNotRemoved = $()
     foreach ($diff in Compare-Object -ReferenceObject @($expectedRoles | Select-Object) -DifferenceObject @($finalRolesAssignments | Select-Object) -Property "Id") {
@@ -99,7 +99,7 @@ function Set-FhirServerClientAppRoleAssignments {
         if($rolesNotAdded) {
             Write-Host "The following roles were not added: $rolesNotAdded"
         }
-    
+
         if($rolesNotRemoved) {
             Write-Host "The following roles were not removed: $rolesNotRemoved"
         }

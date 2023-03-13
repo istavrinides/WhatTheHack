@@ -6,7 +6,7 @@
 I'm going to need to see that TPS report...
 
 ## Description
-The executive board needs visuals tools to run analysis.  
+The executive board needs visuals tools to run analysis.
 
 You will need to create reports and/or dashboard to meet their requirements.  You can also include additional visuals to provide unanticipated insights or decision-making support.
 

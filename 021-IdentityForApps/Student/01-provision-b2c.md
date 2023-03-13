@@ -8,7 +8,7 @@ You are a cloud engineer at Contoso Manufacturing (CMC). Recently, CMC IT Leader
 
 ## Description
 
-As an engineer, you have heard of Azure AD B2C. You know that your tenant will need a globally unique name. You mentioned this as an option to your IT Leadership, and they jumped at the chance to pilot this solution. They have asked you to get a new B2C tenant deployed. 
+As an engineer, you have heard of Azure AD B2C. You know that your tenant will need a globally unique name. You mentioned this as an option to your IT Leadership, and they jumped at the chance to pilot this solution. They have asked you to get a new B2C tenant deployed.
 
 ## Success Criteria
 

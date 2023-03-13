@@ -2,7 +2,7 @@
 
 [< Previous Challenge](./02-Provision.md) - **[Home](README.md)** - [Next Challenge >](./04-OnPremIngest.md)
 
-The second challenge is to extract the Cloud COVID-19 data 
+The second challenge is to extract the Cloud COVID-19 data
 from Azure SQL databases and a Cosmos DB collection.
 The goal of this challenge is to get the team up and running with a data movement solution.
 
@@ -37,7 +37,7 @@ mindset of the modern data warehouse.
 
 #### Array of objects
 
-Teams must use caution when bringing in data from Cosmos that is in Arrays of objects because it will come in as one big line of data. 
+Teams must use caution when bringing in data from Cosmos that is in Arrays of objects because it will come in as one big line of data.
 
 
 ##### Option 1 - each line of output is a single JSON object

@@ -24,7 +24,7 @@ public class DebugActivityLogger : IActivityLogger
 
 A more efficient way of logging to a file is to use the Global.asax file and use the events related to the lifecycle of the bot. Extend the global.asax as shown in the code snippet below. Change the below line to a path that exists in your environment.
 
-````C# 
+````C#
 tw = new StreamWriter("C:\\Users\\username\\log.txt", true);
 ````
 
@@ -80,7 +80,7 @@ using Microsoft.Bot.Connector;
 using System.IO;
 
 namespace MiddlewareBot
-{    
+{
     public class DebugActivityLogger : IActivityLogger
     {
         TextWriter tw;
@@ -104,7 +104,7 @@ namespace MiddlewareBot
 
 Run the bot application in the emulator and test with messages. Investigate the log file specified in the line
 
-````C# 
+````C#
 tw = new StreamWriter("C:\\Users\\username\\log.txt", true);
 ````
 

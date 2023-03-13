@@ -1,4 +1,4 @@
-# Challenge 0: Pre-requisites - Ready, Set, GO! 
+# Challenge 0: Pre-requisites - Ready, Set, GO!
 
 **[Home](README.md)** - [Next Challenge >](./01-data-gathering.md)
 

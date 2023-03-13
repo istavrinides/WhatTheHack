@@ -87,8 +87,7 @@ spec:
       - path: /
         pathType: Prefix
         backend:
-          service: 
+          service:
             name: fine-collection-service
-            port: 
+            port:
               number: 80
-              

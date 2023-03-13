@@ -1,4 +1,4 @@
-# Challenge 00 - Prerequisites - Ready, Set, GO! - Coach's Guide 
+# Challenge 00 - Prerequisites - Ready, Set, GO! - Coach's Guide
 
 **[Home](./README.md)** - [Next Solution >](./Solution-01.md)
 
@@ -25,7 +25,7 @@ If attendees will be using a shared Azure subscription, you should be aware of t
 
 - **NOTE:** Quotas are set per region.  If you increase the quota in a single region, you need to ensure that all students deploy to the same region.  Or else, they will bump up against the quota limits in the region they deploy to.
 - **NOTE:** If there is no access to an administrator who can request quota increases, have the students deploy to different regions to stay within the quota limit of each region.
-- **NOTE:** If the students will deploy AKS across Availability Zones, coaches should ensure they pick a region where Availability Zones are supported. 
+- **NOTE:** If the students will deploy AKS across Availability Zones, coaches should ensure they pick a region where Availability Zones are supported.
 <https://docs.microsoft.com/en-us/azure/availability-zones/az-region>
 
 ## Pre-Select Your Path For Container Content

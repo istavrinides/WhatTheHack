@@ -1,4 +1,4 @@
-# Challenge 08 - Storage - Coach's Guide 
+# Challenge 08 - Storage - Coach's Guide
 
 [< Previous Solution](./Solution-07.md) - **[Home](./README.md)** - [Next Solution >](./Solution-09.md)
 
@@ -16,7 +16,7 @@
 - Make sure that the attendees are verifying the MongoDB connection, data and disks by connecting to the MongoDB with an interactive terminal.
 - Make sure that the attendees understand the concept of storage volumes and how AKS provides value by providing the azure disk / file storage in both dynamic and static mode.
 - To troubleshoot mongo and verify that there is data in the database, you need to:
-	- Connect to the mongo pod using: 
+	- Connect to the mongo pod using:
 		- `kubectl exec -it <mongo-db pod name> bash`
 	- Execute these commands:
 		```

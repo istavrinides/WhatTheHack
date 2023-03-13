@@ -17,7 +17,7 @@ A DNS CNAME record that points to the current primary's URL. It is created autom
 * Failover group read-only listener
 
 A DNS CNAME record formed that points to the read-only listener that points to the secondary's URL. It is created automatically when the failover group is created and allows the read-only SQL workload to transparently connect to the secondary using the specified load-balancing rules. When the failover group is created on a server, the DNS CNAME record for the listener URL is formed as <fog-name>.secondary.database.windows.net. When the failover group is created on a SQL Managed Instance, the DNS CNAME record for the listener URL is formed as <fog-name>.secondary.<zone_id>.database.windows.net.
-  
+
 ### Multiple failover groups
 
 You can configure multiple failover groups for the same pair of servers to control the scope of failovers. Each group fails over independently. If your multi-tenant application uses elastic pools, you can use this capability to mix primary and secondary databases in each pool. This way you can reduce the impact of an outage to only half of the tenants.
@@ -26,9 +26,9 @@ SQL Managed Instance does not support multiple failover groups.
 
 Enabling replication traffic between two instances
 Because each instance is isolated in its own VNet, two-directional traffic between these VNets must be allowed. See [Azure VPN gateway](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways).
- 
+
 * [Add SQL Managed Instance to a failover group](https://docs.microsoft.com/en-us/azure/azure-sql/managed-instance/failover-group-add-instance-tutorial?tabs=azure-portal)
-  
+
 * [Enabling geo-replication between managed instances and their VNet](https://docs.microsoft.com/en-us/azure/azure-sql/database/auto-failover-group-overview?tabs=azure-powershell#enabling-geo-replication-between-managed-instances-and-their-vnets)
 
 When you set up a failover group between primary and secondary SQL Managed Instances in two different regions, each instance is isolated using an independent virtual network. To allow replication traffic between these VNets ensure these prerequisites are met:
