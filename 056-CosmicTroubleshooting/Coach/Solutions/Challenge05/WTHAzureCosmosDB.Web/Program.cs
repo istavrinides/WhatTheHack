@@ -66,7 +66,7 @@ builder.Services.AddSingleton<ICosmosDbService<CustomerCart>>(
         if (string.IsNullOrEmpty(connectionString))
         {
             client = new CosmosClient(
-                    accountEndpoint, 
+                    accountEndpoint,
                     tokenCredential,
                     new CosmosClientOptions()
                     {
@@ -102,7 +102,7 @@ builder.Services.AddSingleton<ICosmosDbService<CustomerOrder>>(
 
         if (string.IsNullOrEmpty(connectionString))
         {
-            client = new CosmosClient(accountEndpoint, 
+            client = new CosmosClient(accountEndpoint,
                     tokenCredential,
                     new CosmosClientOptions()
                     {
@@ -140,7 +140,7 @@ builder.Services.AddSingleton<ICosmosDbService<Shipment>>(
         if (string.IsNullOrEmpty(connectionString))
         {
             client = new CosmosClient(
-                    accountEndpoint, 
+                    accountEndpoint,
                     tokenCredential,
                     new CosmosClientOptions()
                     {

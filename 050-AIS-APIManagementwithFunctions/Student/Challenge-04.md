@@ -10,12 +10,12 @@
 ## Introduction
 You would like to be able to secure your backend APIs in one of the two ways:
 - Secure Hello API in a private network
-- Test end-to-end authorization to Hello API via OAuth.  
+- Test end-to-end authorization to Hello API via OAuth.
 
 ## Description
 
 ### Scenario 01: Configure secured backend APIs in a private network
-- Create a new Function App in Elastic Premium plan which will be imported to APIM as Hello Internal API.  
+- Create a new Function App in Elastic Premium plan which will be imported to APIM as Hello Internal API.
 - The existing API - Hello API - will now become the public/external API.  The new path should be configured in APIM as: `https://apim-{{unique_id}}.azure-api.net/external/hello`
 - Secure internal Hello Function App by enabling networking feature by either:
     - Only accepts traffic coming from the APIM subnet
@@ -27,9 +27,9 @@ You would like to be able to secure your backend APIs in one of the two ways:
     - While calls to the default path `http://pip-{{unique_id}}.australiaeast.cloudapp.azure.com/` returns HTTP 404.
 
 ### Scenario 02: Configure OAuth2 authorization when calling Hello API
-- Configure OAuth 2.0 authorization in APIM 
+- Configure OAuth 2.0 authorization in APIM
     - Register a client application (e.g. APIM Developer Portal or [Postman](https://www.postman.com/)) in Azure AD.  This will be used to make calls to Hello API via APIM.
-    - Configure JWT validation policy to pre-authorize requests to Hello API. 
+    - Configure JWT validation policy to pre-authorize requests to Hello API.
     - Register Hello API Function app as an AD application.
 - Call Hello API from your client application successfully.
 

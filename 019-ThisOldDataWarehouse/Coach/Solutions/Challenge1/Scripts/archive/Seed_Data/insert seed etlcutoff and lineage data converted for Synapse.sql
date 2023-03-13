@@ -1,4 +1,4 @@
-INSERT INTO [Integration].[ETL Cutoff] ([Table Name], [Cutoff Time])  
+INSERT INTO [Integration].[ETL Cutoff] ([Table Name], [Cutoff Time])
 SELECT N'City', CAST(N'2016-06-06T12:31:17.0000000' AS DateTime2)
 UNION ALL SELECT N'Customer', CAST(N'2016-06-06T12:31:17.0000000' AS DateTime2)
 UNION ALL SELECT N'Date', CAST(N'2012-12-31T00:00:00.0000000' AS DateTime2)
@@ -15,7 +15,7 @@ UNION ALL SELECT N'Transaction', CAST(N'2016-06-06T12:31:17.0000000' AS DateTime
 UNION ALL SELECT N'Transaction Type', CAST(N'2016-06-06T12:31:17.0000000' AS DateTime2)
 
 SET Identity_Insert [Integration].[Lineage]  ON;
-INSERT INTO [Integration].[Lineage] ([Lineage Key], [Data Load Started], [Table Name], [Data Load Completed], [Was Successful], [Source System Cutoff Time])  
+INSERT INTO [Integration].[Lineage] ([Lineage Key], [Data Load Started], [Table Name], [Data Load Completed], [Was Successful], [Source System Cutoff Time])
 SELECT 1, CAST(N'2016-06-06T12:36:16.5814702' AS DateTime2), N'City', CAST(N'2016-06-06T12:36:49.0592140' AS DateTime2), 1, CAST(N'2016-06-06T12:31:17.0000000' AS DateTime2)
 UNION ALL SELECT 2, CAST(N'2016-06-06T12:36:49.0748362' AS DateTime2), N'Customer', CAST(N'2016-06-06T12:36:49.7154516' AS DateTime2), 1, CAST(N'2016-06-06T12:31:17.0000000' AS DateTime2)
 UNION ALL SELECT 3, CAST(N'2016-06-06T12:36:49.7310770' AS DateTime2), N'Employee', CAST(N'2016-06-06T12:36:49.9654784' AS DateTime2), 1, CAST(N'2016-06-06T12:31:17.0000000' AS DateTime2)

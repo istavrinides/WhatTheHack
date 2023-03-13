@@ -18,6 +18,6 @@
     paths: Application/**
 ```
 - Codeowners
-    - A new file at the root of the repo is needed called "CODEOWNERS", you will need to define the path and the owner.  
+    - A new file at the root of the repo is needed called "CODEOWNERS", you will need to define the path and the owner.
         - `/Application/ @whowong`
 

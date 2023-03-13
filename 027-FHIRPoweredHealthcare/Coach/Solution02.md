@@ -17,7 +17,7 @@ In this challenge, you will deploy a Health Architecture **[HL7toFHIR Conversion
 
 **[HL7 to FHIR Conversion](https://github.com/microsoft/health-architectures/tree/master/HL7Conversion#hl7tofhir-conversion)** reference architecture deployment will create a Logic App based workflow that is triggered whenever new HL7 message is added to the queue of `hl7ingest` Service Bus. This conversion workflow performs the following tasks:
 - Orderly conversion from HL7 to FHIR via the **[FHIR Converter](https://github.com/microsoft/FHIR-Converter)**
-- Persists converted HL7v2 message into FHIR Server through secure proxied FHIR Server connection (FHIR Server Proxy). 
+- Persists converted HL7v2 message into FHIR Server through secure proxied FHIR Server connection (FHIR Server Proxy).
 - Publishes FHIR change events referencing FHIR Resources to an Event Hub.
 
 **NOTE**: After successful deployment, the converter pipeline is integrated with HL7 Ingest platform.

@@ -64,7 +64,7 @@ Set-Content -Path C:\Source\AppWorkshop\IaaS2PaaSWeb\PartsUnlimitedWebsite\obj\D
 C:\Source\AppWorkshop\IaaS2PaaSWeb\PartsUnlimitedWebsite\obj\Debug\Package\partsunlimitedwebsite.deploy.cmd /Y /M:$webSrvUri/MSDeployAgentService /U:$adminUserName /P:$adminUserPassword
 
 ## Install Chocolatey and packages
-Invoke-Expression ((New-Object Net.WebClient).DownloadString('https://chocolatey.org/install.ps1')) 
+Invoke-Expression ((New-Object Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 ## Add startup bat to install additional packages on sign in
 $choco_exe = "C:\ProgramData\chocolatey\bin\choco.exe"
 $install_packages_bat = "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\install_packages.bat"

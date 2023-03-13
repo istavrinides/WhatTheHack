@@ -1,4 +1,4 @@
-CREATE Procedure Integration.IngestEmployeeData 
+CREATE Procedure Integration.IngestEmployeeData
 AS
 BEGIN
 

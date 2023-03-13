@@ -4,7 +4,7 @@
 
 # Notes & Guidance
 
-This challenge introduces an automation tool for SAP Basis persons on provision of (1) all necessary Azure infrastructure (compute/storage/network) (2) server configurations and SAP system installation. 
+This challenge introduces an automation tool for SAP Basis persons on provision of (1) all necessary Azure infrastructure (compute/storage/network) (2) server configurations and SAP system installation.
 
 _The tool is based on Terraform and Ansible script. Contact your Microsoft team for the deployment files. Please note that this may take up to 4 hours to complete once automation is kicked off._
 
@@ -12,7 +12,7 @@ As a coach you wil be given files that are not checked into this repo that need 
 
 ## Description
 
-During the exercise, participants will be able to provision a landscape into Azure for SAP environment and then build a fresh SAP S4H system by using an existing backup files into this environment as shown in the following diagram. SAP HANA DB will use Azure Netapp Filesystem for storage volume. 
+During the exercise, participants will be able to provision a landscape into Azure for SAP environment and then build a fresh SAP S4H system by using an existing backup files into this environment as shown in the following diagram. SAP HANA DB will use Azure Netapp Filesystem for storage volume.
 
 ## Prerequisite
 
@@ -23,13 +23,13 @@ The Participant will need an authorization to create or have a Service Principle
 Azure subscription whitelisted with Azure Netapp Filesystem (ANF)
 
 An estimate of an additional $100/daily Azure budget during the challenge-session days.
- 
+
 ## Success Criteria
 - Complete build of SAP S4H and SAP HANA database on Azure Cloud.
 - Successful Installation of SAP GUI and test logon to SAP Application Server
 
 ## Tips
- 
+
 For step 5. Make sure that the students create an ubuntu box with a named user "azureuser"
 
 For step 6. Make sure that the students run the commands under named user 'azureuser'

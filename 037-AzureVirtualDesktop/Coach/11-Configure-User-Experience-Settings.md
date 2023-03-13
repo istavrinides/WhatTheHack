@@ -6,10 +6,10 @@
 
 * Enable autoenrollment in the tenant
     - [Endpoint Manager](https://endpoint.microsoft.com) -> Devices -> Enroll devices -> Automatic enrollment -> Set MDM user scope to All or Some ensuring appropirate user targetting
-    
+
 - Enable autoenrollment via [Group Policy](https://docs.microsoft.com/en-us/windows/client-management/mdm/enroll-a-windows-10-device-automatically-using-group-policy)
     - [Troubleshooting enrollment issues](https://docs.microsoft.com/en-us/troubleshoot/mem/intune/troubleshoot-windows-auto-enrollment)
-    - Device must have a user PRT before it will enroll ("dsregcmd /status" and verify that it shows AzureAdJoined, DomainJoined, and AzureAdPrt as YES)  
+    - Device must have a user PRT before it will enroll ("dsregcmd /status" and verify that it shows AzureAdJoined, DomainJoined, and AzureAdPrt as YES)
 
 * Configure Universal Print
     - Ensure Universal print is enabled in your tenant. If not, you likely don't have an appropriate M365 subscription or your tenant is not in a [supported region](https://docs.microsoft.com/en-us/universal-print/fundamentals/universal-print-license#list-of-regions-where-universal-print-is-available)
@@ -17,7 +17,7 @@
 * Install the Universal Print connector and register it with your tenant
     * Install has to be on a 64-bit Windows 10 1809+ or Windows Server 2016+ (preferred) system that has network visibility to both the printer and the web service endpoints
     * Pay attention to the [prerequisites](https://docs.microsoft.com/en-us/universal-print/fundamentals/universal-print-connector-installation)
-   
+
    **NOTE:** Though some printers natively support Universal Print and don't require the connector.  At this time, most printers do not natively support Universal Print (yet), therefore they will most likely need to leverage the Universal Print connector every time.*
 
 * [Register printers with the print connector](https://docs.microsoft.com/en-us/universal-print/fundamentals/universal-print-connector-printer-registration)

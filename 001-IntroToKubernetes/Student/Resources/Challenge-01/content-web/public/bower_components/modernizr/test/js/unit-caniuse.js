@@ -134,7 +134,7 @@ window.caniusecb = function(scriptdata) {
 
       // let's get our versions in order..
       var minorver   = ua.minor &&                                  // caniuse doesn't use two digit minors
-                       ua.minor.toString().replace(/(\d)\d$/,'$1'), // but opera does.
+                      ua.minor.toString().replace(/(\d)\d$/,'$1'), // but opera does.
 
           majorminor = (ua.major + '.' + minorver)
                           // opera gets grouped in some cases by caniuse

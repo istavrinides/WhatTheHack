@@ -17,7 +17,7 @@ namespace PartsUnlimitedWebsite.Migrations
                 return "201503130633247_InitialMigration";
             }
         }
-        
+
         string IMigrationMetadata.ProductVersion
         {
             get
@@ -25,13 +25,13 @@ namespace PartsUnlimitedWebsite.Migrations
                 return "7.0.0-beta3-12166";
             }
         }
-        
+
         IModel IMigrationMetadata.TargetModel
         {
             get
             {
                 var builder = new BasicModelBuilder();
-                
+
                 builder.Entity("Microsoft.AspNet.Identity.IdentityRole", b =>
                     {
                         b.Property<string>("ConcurrencyStamp")
@@ -43,7 +43,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         b.Key("Id");
                         b.ForRelational().Table("AspNetRoles");
                     });
-                
+
                 builder.Entity("Microsoft.AspNet.Identity.IdentityRoleClaim`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]", b =>
                     {
                         b.Property<string>("ClaimType");
@@ -54,7 +54,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         b.Key("Id");
                         b.ForRelational().Table("AspNetRoleClaims");
                     });
-                
+
                 builder.Entity("Microsoft.AspNet.Identity.IdentityUserClaim`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]", b =>
                     {
                         b.Property<string>("ClaimType");
@@ -65,7 +65,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         b.Key("Id");
                         b.ForRelational().Table("AspNetUserClaims");
                     });
-                
+
                 builder.Entity("Microsoft.AspNet.Identity.IdentityUserLogin`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]", b =>
                     {
                         b.Property<string>("LoginProvider");
@@ -75,7 +75,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         b.Key("LoginProvider", "ProviderKey");
                         b.ForRelational().Table("AspNetUserLogins");
                     });
-                
+
                 builder.Entity("Microsoft.AspNet.Identity.IdentityUserRole`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]", b =>
                     {
                         b.Property<string>("RoleId");
@@ -83,7 +83,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         b.Key("UserId", "RoleId");
                         b.ForRelational().Table("AspNetUserRoles");
                     });
-                
+
                 builder.Entity("PartsUnlimited.Models.ApplicationUser", b =>
                     {
                         b.Property<int>("AccessFailedCount");
@@ -107,7 +107,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         b.Key("Id");
                         b.ForRelational().Table("AspNetUsers");
                     });
-                
+
                 builder.Entity("PartsUnlimited.Models.CartItem", b =>
                     {
                         b.Property<string>("CartId");
@@ -118,7 +118,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         b.Property<int>("ProductId");
                         b.Key("CartItemId");
                     });
-                
+
                 builder.Entity("PartsUnlimited.Models.Category", b =>
                     {
                         b.Property<int>("CategoryId")
@@ -127,7 +127,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         b.Property<string>("Name");
                         b.Key("CategoryId");
                     });
-                
+
                 builder.Entity("PartsUnlimited.Models.Order", b =>
                     {
                         b.Property<string>("Address");
@@ -145,7 +145,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         b.Property<string>("Username");
                         b.Key("OrderId");
                     });
-                
+
                 builder.Entity("PartsUnlimited.Models.OrderDetail", b =>
                     {
                         b.Property<int>("OrderDetailId")
@@ -156,7 +156,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         b.Property<decimal>("UnitPrice");
                         b.Key("OrderDetailId");
                     });
-                
+
                 builder.Entity("PartsUnlimited.Models.Product", b =>
                     {
                         b.Property<int>("CategoryId");
@@ -169,7 +169,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         b.Property<string>("Title");
                         b.Key("ProductId");
                     });
-                
+
                 builder.Entity("PartsUnlimited.Models.Raincheck", b =>
                     {
                         b.Property<string>("Name");
@@ -181,7 +181,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         b.Property<int>("StoreId");
                         b.Key("RaincheckId");
                     });
-                
+
                 builder.Entity("PartsUnlimited.Models.Store", b =>
                     {
                         b.Property<string>("Name");
@@ -189,44 +189,44 @@ namespace PartsUnlimitedWebsite.Migrations
                             .GenerateValueOnAdd();
                         b.Key("StoreId");
                     });
-                
+
                 builder.Entity("Microsoft.AspNet.Identity.IdentityRoleClaim`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]", b =>
                     {
                         b.ForeignKey("Microsoft.AspNet.Identity.IdentityRole", "RoleId");
                     });
-                
+
                 builder.Entity("Microsoft.AspNet.Identity.IdentityUserClaim`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]", b =>
                     {
                         b.ForeignKey("PartsUnlimited.Models.ApplicationUser", "UserId");
                     });
-                
+
                 builder.Entity("Microsoft.AspNet.Identity.IdentityUserLogin`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]", b =>
                     {
                         b.ForeignKey("PartsUnlimited.Models.ApplicationUser", "UserId");
                     });
-                
+
                 builder.Entity("PartsUnlimited.Models.CartItem", b =>
                     {
                         b.ForeignKey("PartsUnlimited.Models.Product", "ProductId");
                     });
-                
+
                 builder.Entity("PartsUnlimited.Models.OrderDetail", b =>
                     {
                         b.ForeignKey("PartsUnlimited.Models.Order", "OrderId");
                         b.ForeignKey("PartsUnlimited.Models.Product", "ProductId");
                     });
-                
+
                 builder.Entity("PartsUnlimited.Models.Product", b =>
                     {
                         b.ForeignKey("PartsUnlimited.Models.Category", "CategoryId");
                     });
-                
+
                 builder.Entity("PartsUnlimited.Models.Raincheck", b =>
                     {
                         b.ForeignKey("PartsUnlimited.Models.Store", "StoreId");
                         b.ForeignKey("PartsUnlimited.Models.Product", "ProductId");
                     });
-                
+
                 return builder.Model;
             }
         }

@@ -1,7 +1,7 @@
 # What The Hack - Synapse Dedicated SQL Pool - Performance Best Practices
 
 ## Introduction
-This "What the Hack" enables attendees to understand best practices developing, maintaining, and optimizing performance for their Synapse Dedicated SQL Pool. It simulates a real-world scenario where a cycle manufacturer company develops its new data warehouse leveraging Synapse Dedicated Sql pool. The goal is to apply all best practices to avoid performance bottlenecks during day by day activities. 
+This "What the Hack" enables attendees to understand best practices developing, maintaining, and optimizing performance for their Synapse Dedicated SQL Pool. It simulates a real-world scenario where a cycle manufacturer company develops its new data warehouse leveraging Synapse Dedicated Sql pool. The goal is to apply all best practices to avoid performance bottlenecks during day by day activities.
 
 During the hack, attendees will focus on:
 - Database Design – Best Practices
@@ -12,7 +12,7 @@ During the hack, attendees will focus on:
 ## Learning Objectives
 By the end of the "Synapse Dedicated SQL Pool - Performance Best Practices", attendees will have a good understanding of:
 - Tables architecture, database design and how to avoid data-skew
-- T-SQL Best practice 
+- T-SQL Best practice
 - Query performance troubleshooting
 - Impact of table partitioning
 - Monitor workload

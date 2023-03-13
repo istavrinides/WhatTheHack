@@ -4,7 +4,7 @@
 --Is there a way to optimize further this query ?
 
 --Tips:
---Investigate for Incompatible Join 
+--Investigate for Incompatible Join
 --Can you avoid unnecessary data movement ?
 
 https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?view=aps-pdw-2016-au7
@@ -26,7 +26,7 @@ DBCC DROPCLEANBUFFERS()
 DBCC FREEPROCCACHE()
 GO
 
-SELECT 
+SELECT
 	Fis.SalesTerritoryKey
 	,Fis.OrderDateKey
 	, Dsr.SalesReasonName
@@ -53,7 +53,7 @@ STEP2 - Identify the request_id for the query and its MPP execution plan
 		Is the query using a compatible join ?
 *****************************************************************************************/
 SELECT * FROM sys.dm_pdw_exec_requests WHERE [LABEL]=  'First Execution - Join - Slowest one'
-SELECT * FROM sys.dm_pdw_request_steps WHERE request_id = 'request_id' 
+SELECT * FROM sys.dm_pdw_request_steps WHERE request_id = 'request_id'
 GO
 
 

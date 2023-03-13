@@ -13,7 +13,7 @@ param(
  This script creates the Azure AD applications needed for this sample and updates the configuration files
  for the visual Studio projects from the data in the Azure AD applications.
 
- Before running this script you need to install the AzureAD cmdlets as an administrator. 
+ Before running this script you need to install the AzureAD cmdlets as an administrator.
  For this:
  1) Run Powershell as an administrator
  2) in the PowerShell window, type: Install-Module AzureAD
@@ -22,7 +22,7 @@ param(
 #>
 
 # Adds the requiredAccesses (expressed as a pipe separated string) to the requiredAccess structure
-# The exposed permissions are in the $exposedPermissions collection, and the type of permission (Scope | Role) is 
+# The exposed permissions are in the $exposedPermissions collection, and the type of permission (Scope | Role) is
 # described in $permissionType
 Function AddResourcePermission($requiredAccess, `
                                $exposedPermissions, [string]$requiredAccesses, [string]$permissionType)
@@ -58,7 +58,7 @@ Function GetRequiredPermissions([string] $applicationDisplayName, [string] $requ
     }
     $appid = $sp.AppId
     $requiredAccess = New-Object Microsoft.Open.AzureAD.Model.RequiredResourceAccess
-    $requiredAccess.ResourceAppId = $appid 
+    $requiredAccess.ResourceAppId = $appid
     $requiredAccess.ResourceAccess = New-Object System.Collections.Generic.List[Microsoft.Open.AzureAD.Model.ResourceAccess]
 
     # $sp.Oauth2Permissions | Select Id,AdminConsentDisplayName,Value: To see the list of all the Delegated permissions for the application:
@@ -66,7 +66,7 @@ Function GetRequiredPermissions([string] $applicationDisplayName, [string] $requ
     {
         AddResourcePermission $requiredAccess -exposedPermissions $sp.Oauth2Permissions -requiredAccesses $requiredDelegatedPermissions -permissionType "Scope"
     }
-    
+
     # $sp.AppRoles | Select Id,AdminConsentDisplayName,Value: To see the list of all the Application permissions for the application
     if ($requiredApplicationPermissions)
     {
@@ -154,9 +154,9 @@ Function ConfigureApplications
    This function creates the Azure AD applications for the sample in the provided Azure AD tenant and updates the
    configuration files in the client and service project  of the visual studio solution (App.Config and Web.Config)
    so that they are consistent with the Applications parameters
-#> 
+#>
     $commonendpoint = "common"
-    
+
     if (!$azureEnvironmentName)
     {
         $azureEnvironmentName = "AzureCloud"
@@ -188,7 +188,7 @@ Function ConfigureApplications
         $tenantId = $creds.Tenant.Id
     }
 
-    
+
 
     $tenant = Get-AzureADTenantDetail
     $tenantName =  ($tenant.VerifiedDomains | Where { $_._Default -eq $True }).Name
@@ -198,7 +198,7 @@ Function ConfigureApplications
 
    # Create the spa AAD application
    Write-Host "Creating the AAD application (active-directory-javascript-graphapi-v2)"
-   # create the application 
+   # create the application
    $spaAadApplication = New-AzureADApplication -DisplayName "active-directory-javascript-graphapi-v2" `
                                                -HomePage "http://localhost:3000/" `
                                                -ReplyUrls "http://localhost:3000/" `
@@ -207,14 +207,14 @@ Function ConfigureApplications
                                                -Oauth2AllowImplicitFlow $true `
                                                -PublicClient $False
 
-   # create the service principal of the newly created application 
+   # create the service principal of the newly created application
    $currentAppId = $spaAadApplication.AppId
    $spaServicePrincipal = New-AzureADServicePrincipal -AppId $currentAppId -Tags {WindowsAzureActiveDirectoryIntegratedApp}
 
    # add the user running the script as an app owner if needed
    $owner = Get-AzureADApplicationOwner -ObjectId $spaAadApplication.ObjectId
    if ($owner -eq $null)
-   { 
+   {
         Add-AzureADApplicationOwner -ObjectId $spaAadApplication.ObjectId -RefObjectId $user.ObjectId
         Write-Host "'$($user.UserPrincipalName)' added as an application owner to app '$($spaServicePrincipal.DisplayName)'"
    }
@@ -251,13 +251,13 @@ Function ConfigureApplications
    Write-Host "Updating the sample code ($configFile)"
    $dictionary = @{ "graphMeEndpoint" = 'https://graph.microsoft.com/v1.0/me/';"graphMailEndpoint" = 'https://graph.microsoft.com/v1.0/me/messages/' };
    UpdateTextFile -configFilePath $configFile -dictionary $dictionary
-  
-   Add-Content -Value "</tbody></table></body></html>" -Path createdApps.html  
+
+   Add-Content -Value "</tbody></table></body></html>" -Path createdApps.html
 }
 
 # Pre-requisites
-if ((Get-Module -ListAvailable -Name "AzureAD") -eq $null) { 
-    Install-Module "AzureAD" -Scope CurrentUser 
+if ((Get-Module -ListAvailable -Name "AzureAD") -eq $null) {
+    Install-Module "AzureAD" -Scope CurrentUser
 }
 
 Import-Module AzureAD

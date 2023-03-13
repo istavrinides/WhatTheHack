@@ -1,7 +1,7 @@
 ﻿##SETUP##
 
 
-#Install Azure PowerShell 
+#Install Azure PowerShell
 #https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps?view=azurermps-4.4.1
 
 Install-Module AzureRM -AllowClobber
@@ -11,7 +11,7 @@ Install-Module AzureRM -AllowClobber
 
 Login-AzureRmAccount
 
-Set-AzureRmContext -Subscription "<SUBSCRIPTION_NAME>" 
+Set-AzureRmContext -Subscription "<SUBSCRIPTION_NAME>"
 
 
 ##DEPLOY CHALLENGE ONE##
@@ -89,7 +89,7 @@ New-AzureRmResourceGroupDeployment -Name P20Deployment -ResourceGroupName P20-RG
 New-AzureRmResourceGroupDeployment -Name P20Deployment -ResourceGroupName P20-RG01 `
   -TemplateFile challenge-06-load-balanced-nat-rule.json `
   -TemplateParameterFile .\challenge-06.parameters.json
-  
+
 
 ##DEPLOY CHALLENGE SEVEN##
 
@@ -127,7 +127,7 @@ New-AzureRmResourceGroupDeployment -Name P20Deployment -ResourceGroupName P20-RG
 ##DEPLOY CHALLENGE TEN##
 
 
-#Reference - 
+#Reference -
 
 #With Parameters File
 New-AzureRmResourceGroupDeployment -Name P20Deployment -ResourceGroupName P20-RG03 `

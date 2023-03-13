@@ -13,7 +13,7 @@ var lastTimestamp = 0;
 var server = http.createServer(function (req, res) {
     var reqUrl = req.url.replace(/^\/+|\/+$/g, '');
     var method = req.method.toLowerCase();
-    
+
     if(config.enableSecretsFeature) {
         console.log(req.headers['x-secret']);
         console.log(process.env.HEADER_VALUE);
@@ -25,7 +25,7 @@ var server = http.createServer(function (req, res) {
     }
     if(!reqUrl || (!!reqUrl && (reqUrl == "" || reqUrl.toLowerCase() == "index.html"))){
         var data = fs.readFileSync('index.html');
-        
+
         dbOperations.queryCount(function (visitCount){
             visitCount++;
             var dom = new JSDOM(`${data}`);
@@ -44,7 +44,7 @@ var server = http.createServer(function (req, res) {
             }, function(error){
                 // utils.writeResponse(res, data);
             });
-        }, function(error){ 
+        }, function(error){
             utils.writeError(res, error);
         });
     }
@@ -88,7 +88,7 @@ var server = http.createServer(function (req, res) {
                         }
                     });
                 }
-            }) 
+            })
         }, 10);
     }
     else if(reqUrl.toLowerCase() == "lasttimestamp" && method == "get"){
@@ -104,7 +104,7 @@ var server = http.createServer(function (req, res) {
 exports.listen = function () {
     server.listen.apply(server, arguments);
 };
-  
+
 exports.close = function (callback) {
     server.close(callback);
 };

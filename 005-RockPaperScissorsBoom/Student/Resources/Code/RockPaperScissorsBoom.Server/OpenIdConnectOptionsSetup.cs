@@ -81,7 +81,7 @@ namespace RockPaperScissorsBoom.Server
             public Task OnRemoteFailure(RemoteFailureContext context)
             {
                 context.HandleResponse();
-                // Handle the error code that Azure AD B2C throws when trying to reset a password from the login page 
+                // Handle the error code that Azure AD B2C throws when trying to reset a password from the login page
                 // because password reset is not supported by a "sign-up or sign-in policy"
                 if (context.Failure is OpenIdConnectProtocolException && context.Failure.Message.Contains("AADB2C90118"))
                 {

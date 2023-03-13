@@ -15,7 +15,7 @@
 
 // MAGIC %md
 // MAGIC ### Config Keys
-// MAGIC 
+// MAGIC
 // MAGIC The string values here (e.g. "storageAccountName" should be in the cluster config as the key part of a key-value pair)
 
 // COMMAND ----------
@@ -29,7 +29,7 @@ val configKey_hiveDbName = "hiveDbName"
 
 // MAGIC %md
 // MAGIC ### Config Values
-// MAGIC 
+// MAGIC
 // MAGIC Use these from other notebooks.<br />
 // MAGIC These are specified in cluster config.<br />
 // MAGIC Note that if you export notebook without clearing results/state, the actual values from config will be exported as part of the notebook.<br />
@@ -46,7 +46,7 @@ val hiveDbName = spark.conf.get(configKey_hiveDbName)
 
 // MAGIC %md
 // MAGIC ### Constants
-// MAGIC 
+// MAGIC
 // MAGIC Use these from other notebooks.<br />
 // MAGIC These are specified explicitly here.<br />
 // MAGIC These should not contain sensitive information.

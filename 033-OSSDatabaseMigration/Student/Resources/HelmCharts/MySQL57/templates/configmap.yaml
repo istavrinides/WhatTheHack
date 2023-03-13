@@ -7,7 +7,7 @@ data:
   mysqld.cnf: |-
     # Mounted at /etc/mysql/mysql.conf.d/mysqld.cnf
     [mysqld]
-    
+
     lower_case_table_names = 1
     server_id       = 3
 

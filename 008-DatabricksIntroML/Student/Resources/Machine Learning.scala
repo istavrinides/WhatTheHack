@@ -1,7 +1,7 @@
 // Databricks notebook source
 // MAGIC %md # Machine Learning with Spark MLlib
 // MAGIC Spark MLlib, sometimes known as Spark ML, is a library for building machine learning solutions on Spark.
-// MAGIC 
+// MAGIC
 // MAGIC ## Data Preparation and Exploration
 // MAGIC Machine learning begins with data preparation and exploration. We'll start by loading a dataframe of data about flights between airports in the US.
 
@@ -36,7 +36,7 @@ flights.count() - flights.dropDuplicates().count()
 // COMMAND ----------
 
 // MAGIC %md Yes it does.
-// MAGIC 
+// MAGIC
 // MAGIC Does it have any missing values in the **ArrDelay** and **DepDelay** columns?
 
 // COMMAND ----------
@@ -46,7 +46,7 @@ flights.count() - flights.dropDuplicates().na.drop("any", Array("ArrDelay", "Dep
 // COMMAND ----------
 
 // MAGIC %md Yes.
-// MAGIC 
+// MAGIC
 // MAGIC So let's clean the data by removing the duplicates and replacing the missing values with 0.
 
 // COMMAND ----------
@@ -77,7 +77,7 @@ flights.describe().show()
 // COMMAND ----------
 
 // MAGIC %md The *DayofMonth* must be a value between 1 and 31, and the mean is around halfway between these values; which seems about right. The same is true for the *DayofWeek* which is a value between 1 and 7. *Carrier* is a string, so there are no numeric statistics; and we can ignore the statistics for the airport IDs - they're just unique identifiers for the airports, not actually numeric values. The departure and arrival delays range between 63 or 94 minutes ahead of schedule, and over 1,800 minutes behind schedule. The means are much closer to zero than this, and the standard deviation is quite large; so there's quite a bit of variance in the delays. The *Late* indicator is a 1 or a 0, but the mean is very close to 0; which implies that there significantly fewer late flights and non-late flights.
-// MAGIC 
+// MAGIC
 // MAGIC Let's verify that assumption by creating a table and using a SQL statement to count the number of late and non-late flights:
 
 // COMMAND ----------
@@ -97,9 +97,9 @@ spark.sql("SELECT Late, COUNT(*) AS Count FROM flightData GROUP BY Late").show()
 // COMMAND ----------
 
 // MAGIC %md The results of the query are shown in a table above, but you can also view the data returned as a **Bar** chart, showing the count of the ***&lt;id&gt;*** value by the ***Late*** key. This should confirm that there are significantly more on-time flights than late ones in the sample of 1000 records returned by the query.
-// MAGIC 
+// MAGIC
 // MAGIC While we're at it, we can also view histograms and box plots of the delays. Change the plot options to show a **Histogram** of **DepDelay** and confirm that most of the delays are within 100 minutes or so (either way) of 0, but there are a few extremely high delays. These are outliers. You can see these even more clearly if you change the plot type to a **Box Plot** in which the median value is shown as a line inside a box that represents the second and third quartiles of the delay values. The extreme outliers are shown as markers beyond the *whiskers* that indicate the first and fourth quartiles.
-// MAGIC 
+// MAGIC
 // MAGIC So we have two problems: our data is *unbalanced* with more negative classes than positive ones, and the outlier values make the distribution of the data extremely *skewed*. Both of these issues are likely to affect any machine learning model we create from it as the most common class and extreme delay values might dominate the training of the model. We'll address this by removing the outliers and *undersampling* the dominant class - in this case non-late flights.
 
 // COMMAND ----------
@@ -138,11 +138,11 @@ flights.describe().show()
 // COMMAND ----------
 
 // MAGIC %md View histograms and box plots of the delays, and a bar chart of the *Late* classes as you did previously to see a more even distribution (though the delays are still skewed and far from *normal*).
-// MAGIC 
+// MAGIC
 // MAGIC You can also start to explore relationships in the data. For example, group the box plots of arrival delay by day or carrier to see if lateness varies by these factors. A box plot of **DepDelay** grouped by the **Late** indicator should show that on-time flights have a very low median departure delay and small variance compared to late flights.
-// MAGIC 
+// MAGIC
 // MAGIC Finally, to get a clearer picture of the relationship between **DepDelay** and **ArrDelay**, plot both of these fields as a scatter plot - you should see a linear relationship between these two - the later a flight departs, the later it tends to arrive!
-// MAGIC 
+// MAGIC
 // MAGIC We can use statistics to quantify this correlation:
 
 // COMMAND ----------
@@ -175,14 +175,14 @@ println("Training Rows: " + train_rows + " Testing Rows: " + test_rows)
 
 // MAGIC %md ### Define the Pipeline and Train the Model
 // MAGIC Now we'll define a pipeline of steps that prepares the *features* in our data, and then trains a model to predict our **Late** *label* from the features.
-// MAGIC 
+// MAGIC
 // MAGIC A pipeline encapsulates the transformations we need to make to the data to prepare features for modeling, and then fits the features to a machine learning algorithm to create a model. In this case, the pipeline:
 // MAGIC - Creates indexes for all of the categorical columns in our data. These are columns that represent categories, not numeric values.
 // MAGIC - Normalizes numeric columsn so they're on a similar scale - this prevents large numeric values from dominating the training. In this case, we only have one numeric value (**DepDelay**), so this step isn't strictly necessary - but it's included to show how its done.
 // MAGIC - Assembles all of the categorical indexes and the vector of normalized numeric values into a single vector of features.
 // MAGIC - Fits the features to a logistic regression algorithm to create a model.
-// MAGIC 
-// MAGIC Using a pipeline makes it easier to use the trained model with new data by encapsulating all of the feature preparation steps and ensuring numeric features used to generate predictions from the model are scaled using the same distribution statistics as the training data. 
+// MAGIC
+// MAGIC Using a pipeline makes it easier to use the trained model with new data by encapsulating all of the feature preparation steps and ensuring numeric features used to generate predictions from the model are scaled using the same distribution statistics as the training data.
 
 // COMMAND ----------
 
@@ -207,7 +207,7 @@ val assembler = new VectorAssembler().setInputCols(Array("DayofMonthIdx", "DayOf
 
 // Train a logistic regression classification model using the pipeline
 val lr = new LogisticRegression().setLabelCol("Late").setFeaturesCol("features").setMaxIter(10).setRegParam(0.3)
-val pipeline = new Pipeline().setStages(Array(monthdayIndexer, weekdayIndexer, carrierIndexer, 
+val pipeline = new Pipeline().setStages(Array(monthdayIndexer, weekdayIndexer, carrierIndexer,
                                               originIndexer, destIndexer, numVect, minMax, assembler, lr))
 
 val model = pipeline.fit(train)
@@ -232,7 +232,7 @@ predicted.show(100, truncate=false)
 // MAGIC - True Negatives
 // MAGIC - False Positives
 // MAGIC - False Negatives
-// MAGIC 
+// MAGIC
 // MAGIC From these core measures, other evaluation metrics such as *accuracy*, *precision* and *recall* can be calculated.
 
 // COMMAND ----------

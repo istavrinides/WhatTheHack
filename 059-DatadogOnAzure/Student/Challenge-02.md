@@ -21,7 +21,7 @@ In the eShopOnWeb Azure environment, there are three compute resources to be awa
 
 >**Note** The "XX" in each resource name will vary based on the Azure region the eShopOnWeb Azure environment has been deployed to.
 
-Azure Bastion has been configured to enable you to securely login to any of these VMs with a Remote Desktop session through a web brower. 
+Azure Bastion has been configured to enable you to securely login to any of these VMs with a Remote Desktop session through a web brower.
 
 To login to a VM via Azure Bastion, navigate to the blade for any of these VMs in the Azure portal, click the "Connect" button, and select "Bastion". Use the username and password provided in Challenge 0.
 
@@ -31,7 +31,7 @@ In this challenge you need to complete the following management tasks:
     - **HINT:** You can use SQL Management Studio on either the SQL Server VM or the Visual Studio VM to create the database.
 - On the SQL Server VM:
     - Update the sample SQL Server check in order to connect to the DB
-    - Run the Datadog agent's `status` subcommand and look for `sqlserver` in the Checks section  
+    - Run the Datadog agent's `status` subcommand and look for `sqlserver` in the Checks section
     - Find `sqlserver.queries.count` in Metrics Explorer
 - From Datadog, create a graph for the SQL Server Queries and Percent CPU, then add both to a Dashboard
 - From Datadog, create an Alert to send an email for the following:
@@ -40,7 +40,7 @@ In this challenge you need to complete the following management tasks:
 
 Now that Datadog is configured to monitor the eShopOnWeb resources, it is time to simulate load on the SQL Server database and the eShopOnWeb website:
 - Use HammerDB to create a transaction load on the "tpcc" database on the SQL Server
-    - Download and Install HammerDB tool on the Visual Studio VM 
+    - Download and Install HammerDB tool on the Visual Studio VM
     - See sample [Instructions for using HammerDB](./Resources/Challenge-02/UsingHammerDB.md) to generate load on the "tpcc" database.
 - Simulate a CPU load on the VM Scale Set using the `cpuGenLoadwithPS.ps1` script located in the `/Challenge-02` folder of the student resource package.
     - This script is designed to be run directly on the VM instances in the VMSS.

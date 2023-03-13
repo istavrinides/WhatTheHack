@@ -50,7 +50,7 @@ The challenges build upon each other incrementally. You will start by creating a
 - Challenge 10: **[Configure VM Scale Set to run a Web Server using cloud-init](./Student/Bicep-Challenge-10.md)**
    - How cloud-init scripts can be run on a Virtual Machine Scale Set (VMSS)
 - Challenge 11: **[Deploy resources to different scopes](./Student/Bicep-Challenge-11.md)**
-   - Learn how to deploy resources to different scopes   
+   - Learn how to deploy resources to different scopes
 
 
 ## Prerequisites
@@ -66,7 +66,7 @@ You will want to prepare your machine with the following to help complete the Ch
 	* [Bicep VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep)
 	* [Bicep CLI](https://github.com/Azure/bicep/blob/main/docs/installing.md)
 
-## Repository Contents 
+## Repository Contents
 - `../Student`
   - Bicep challenges
 - `../Student/Resources`
@@ -75,7 +75,7 @@ You will want to prepare your machine with the following to help complete the Ch
 ## Contributors
 
 - Victor Viriya-ampanond
-- William Salazar 
+- William Salazar
 - Peter Laudati
 - Pete Rodriguez
 - Tim Sullivan

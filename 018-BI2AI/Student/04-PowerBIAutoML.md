@@ -24,7 +24,7 @@ The Adventure Works business users have loved all the additional insights they'v
 | **Description**                            |                                                                       **Links**                                                                       |
 | Automated Machine Learning in Power BI | <https://docs.microsoft.com/en-us/power-bi/service-machine-learning-automated> |
 | Tutorial: Build a Machine Learning model in Power BI | <https://docs.microsoft.com/en-us/power-bi/service-tutorial-build-machine-learning-model> |
-| Age Calculation in Power BI using Power Query | <https://radacad.com/age-calculation-in-power-bi-using-power-query> | 
+| Age Calculation in Power BI using Power Query | <https://radacad.com/age-calculation-in-power-bi-using-power-query> |
 
 
 [Next challenge (Building Models in Azure Machine Learning - AutoML) >](./05-AMLAutoML.md)

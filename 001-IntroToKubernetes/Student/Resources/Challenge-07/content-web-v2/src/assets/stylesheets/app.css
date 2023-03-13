@@ -1,4 +1,4 @@
-﻿@charset "UTF-8";
+@charset "UTF-8";
 /* line 300, ../../bower_components/foundation/scss/foundation/components/_global.scss */
 meta.foundation-version {
   font-family: "/5.2.1/";
@@ -11212,11 +11212,8 @@ p.questions {
   }
 }
 @media only screen and (min-width: 40.063em) {
- 
+
   h1, h2, h3, h4, h5, h6 {
     line-height: 1;
   }
 }
-
-
-

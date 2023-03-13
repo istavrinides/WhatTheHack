@@ -10,22 +10,22 @@ function triggerconcurrentqueries([string] $server, [string] $dbname, [string] $
 
 	$connectionString = "Server=$server;Initial Catalog=$dbname;Persist Security Info=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Pooling=false"
 
-	$connection = New-Object System.Data.SqlClient.SqlConnection($connectionString) 
+	$connection = New-Object System.Data.SqlClient.SqlConnection($connectionString)
 
-	# Set AAD generated token to SQL connection token 
-	$connection.AccessToken = $authtoken 
+	# Set AAD generated token to SQL connection token
+	$connection.AccessToken = $authtoken
 
-	# Opens connection to Azure SQL Database and executes a query 
-	$connection.Open() 
+	# Opens connection to Azure SQL Database and executes a query
+	$connection.Open()
 
-	$command = New-Object -Type System.Data.SqlClient.SqlCommand($cmd, $connection) 
+	$command = New-Object -Type System.Data.SqlClient.SqlCommand($cmd, $connection)
 	$command.CommandTimeout = 3600
-	$command.ExecuteNonQuery() 
+	$command.ExecuteNonQuery()
 
-	$connection.Close() 
+	$connection.Close()
 	$connection.Dispose()
 
-} 
+}
 
 
 
@@ -42,7 +42,7 @@ WorkFlow Run-PSQL #PSQL means Parallel SQL
 
         [Parameter(Mandatory=$false)]
         [string]$Database,
-        
+
         [Parameter(Mandatory=$true)]
         [string[]]$Query #a string array to hold t-sqls
     )
@@ -51,15 +51,15 @@ WorkFlow Run-PSQL #PSQL means Parallel SQL
 	$token = (Get-AzAccessToken -ResourceUrl https://database.windows.net).Token
 	$i = 0
 
-    foreach -parallel ($q in $query) 
-    { 
+    foreach -parallel ($q in $query)
+    {
 		{ Session starting }
-		triggerconcurrentqueries -server $ServerInstance -dbname $Database -cmd $q -authtoken $token 
+		triggerconcurrentqueries -server $ServerInstance -dbname $Database -cmd $q -authtoken $token
 	}
-	
+
 } #Run-PSQL
 
-$SQLcommand = "SELECT 
+$SQLcommand = "SELECT
 	Fis.SalesTerritoryKey
 	,Fis.OrderDateKey
 	, Dsr.SalesReasonName
@@ -73,7 +73,7 @@ FROM Sales.FactInternetSales Fis
 		ON Fisr.SalesReasonKey = Dsr.SalesReasonKey
 	GROUP BY Fis.SalesTerritoryKey, Fis.OrderDateKey, Dsr.SalesReasonName
 UNION ALL
-SELECT 
+SELECT
 	Fis.SalesTerritoryKey
 	,Fis.OrderDateKey
 	, Dsr.SalesReasonName
@@ -94,6 +94,6 @@ $SQLcommand, `
 $SQLcommand, `
 $SQLcommand;
 
-Run-PSQL -SubscriptionId $SubscriptionId -Server $DedicatedPoolEndPoint -database $DedicatedPoolName -query $SQLcommands; 
+Run-PSQL -SubscriptionId $SubscriptionId -Server $DedicatedPoolEndPoint -database $DedicatedPoolName -query $SQLcommands;
 
 

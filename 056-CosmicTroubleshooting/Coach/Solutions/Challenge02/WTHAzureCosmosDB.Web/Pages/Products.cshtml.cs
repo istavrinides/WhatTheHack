@@ -26,7 +26,7 @@ public class ProductsModel : PageModel
         {
             return RedirectToPage("Products", new { storeId = 1 });
         }
-        
+
         try
         {
             // Read our static products

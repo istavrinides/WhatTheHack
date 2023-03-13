@@ -10,7 +10,7 @@ resource redisCache 'Microsoft.Cache/Redis@2019-07-01' = {
       name: 'Basic'
     }
     minimumTlsVersion: '1.2'
-  }  
+  }
 }
 
 output redisCacheName string = redisCache.name

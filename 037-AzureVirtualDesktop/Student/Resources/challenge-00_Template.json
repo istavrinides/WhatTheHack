@@ -8,7 +8,7 @@
                 "description": "Resource group identifier"
             },
             "defaultValue": [
-                {          
+                {
                     "Name":"rg-wth-identity-d-eus",
                     "Location":"eastus"
                 },
@@ -44,6 +44,6 @@
                 "name": "rgLoop",
                 "count": "[length(parameters('ResourceGroups'))]"
             }
-        }   
+        }
     ]
 }

@@ -18,7 +18,7 @@ New-AzStorageAccount -ResourceGroupName $resourceGroupName -Name $storageAccount
 
 $shareNameUS = "shareeusaz140"
 $shareNameJW = "sharejwaz140"
-$shareNameUK = "shareukaz140" 
+$shareNameUK = "shareukaz140"
 
 # The size to solve this lab is :10240 Gib. It would consume U$ 1638.40 monthly.
 # Note: For a lab purpose use 100 GB U$16.00 monthly
@@ -37,7 +37,7 @@ Finally you need to link the private DNS to a VNet and setup the config records 
 
 
 ```PowerShell
-# 
+#
 
 ##########################################
 # Private End-Point Function
@@ -72,7 +72,7 @@ function New-StgFileSharePrivateEndpoint {
         Subnet = $subnetConfig
         PrivateLinkServiceConnection = $privateEndpointConnection
     }
-    New-AzPrivateEndpoint @parameters2    
+    New-AzPrivateEndpoint @parameters2
 }
 
 New-StgFileSharePrivateEndpoint -resourceGroupName $resourceGroupName -storageAccountName $storageAccountEastUS -location $regionEastUS -vnetName 'SpokeVnet-d-eus' -subnetName 'wvd-eus'
@@ -138,7 +138,7 @@ function New-StgPrivateDNSConfig {
         Name = $privateEndpointName
         PrivateDnsZoneConfig = $config
     }
-    New-AzPrivateDnsZoneGroup @parameters4    
+    New-AzPrivateDnsZoneGroup @parameters4
 }
 
 New-StgPrivateDNSConfig -resourceGroupName $resourceGroupName -privateEndpointName ($storageAccountEastUS+"-PrivEndpoint") -vnetName 'WVD-vnet-eastus' -zoneName $zoneName
@@ -189,7 +189,7 @@ $StorageAccountName = "<storage-account-name-here>"
 $OU = "<ou-distinguishedname-here>" # Ex: "OU=Computers,OU=RootUsers,DC=victorhepoca,DC=local"
 
 #Select the target subscription for the current session
-Select-AzSubscription -SubscriptionId $SubscriptionId 
+Select-AzSubscription -SubscriptionId $SubscriptionId
 
 Join-AzStorageAccountForAuth `
         -ResourceGroupName $ResourceGroupName `
@@ -227,7 +227,7 @@ function Add-FSAZADMRoleAccess {
     $admUser = Get-AzADUser -UserPrincipalName $UserUPN
     $stgAADRoleFSADM = "Storage File Data SMB Share Elevated Contributor"
     $stgEastUS = Get-AzStorageAccount -ResourceGroupName $resourceGroupName -Name $storageName
-    New-AzRoleAssignment -ObjectId $admUser.Id -RoleDefinitionName $stgAADRoleFSADM -Scope $stgEastUS.id    
+    New-AzRoleAssignment -ObjectId $admUser.Id -RoleDefinitionName $stgAADRoleFSADM -Scope $stgEastUS.id
 }
 Add-FSAZADMRoleAccess -storageName $storageAccountEastUS -UserUPN "<Synced Admin User>"
 Add-FSAZADMRoleAccess -storageName $storageAccountJapanWest -UserUPN "<Synced Admin User>"
@@ -242,7 +242,7 @@ function Add-FSAZRoleAccess {
     $admUser = Get-AzADGroup -DisplayName $ADGroupName
     $stgAADRoleFSADM = "Storage File Data SMB Share Contributor"
     $stgEastUS = Get-AzStorageAccount -ResourceGroupName $resourceGroupName -Name $storageName
-    New-AzRoleAssignment -ObjectId $admUser.Id -RoleDefinitionName $stgAADRoleFSADM -Scope $stgEastUS.id    
+    New-AzRoleAssignment -ObjectId $admUser.Id -RoleDefinitionName $stgAADRoleFSADM -Scope $stgEastUS.id
 }
 Add-FSAZRoleAccess -storageName $storageAccountEastUS -ADGroupName "wvd_users_japan"
 Add-FSAZRoleAccess -storageName $storageAccountJapanWest -ADGroupName "wvd_users_uk"
@@ -262,7 +262,7 @@ function connectFS {
         New-PSDrive -Name $letter -PSProvider FileSystem -Root "\\$storageName.file.core.windows.net\shareeusaz140" -Persist
     } else {
         Write-Error -Message "Unable to reach the Azure storage account via port 445. Check to make sure your organization or ISP is not blocking port 445, or use Azure P2S VPN, Azure S2S VPN, or Express Route to tunnel SMB traffic over a different port."
-    }    
+    }
 }
 connectFS -letter Z -storageName $storageAccountEastUS
 connectFS -letter Y -storageName $storageAccountJapanWest
@@ -276,7 +276,7 @@ function assignNTFSRights {
         [string]$ADGroupName
     )
     icacls Z: /remove "Authenticated Users"
-    icacls Z: /remove "Builtin\Users"    
+    icacls Z: /remove "Builtin\Users"
     icacls Z: /remove "Creator Owner"
     icacls Z: /grant ($domain+"\"+$ADGroupName+":(M)")
     icacls Z: /grant "Creator Owner:(OI)(CI)(IO)(M)"
@@ -304,7 +304,7 @@ function AllowNSG {
         -DestinationAddressPrefix $StoragePrivateEndpointIP -DestinationPortRange 445
 
     # Update the NSG.
-    $nsg | Set-AzNetworkSecurityGroup    
+    $nsg | Set-AzNetworkSecurityGroup
 }
 AllowNSG -resourceGroupName $resourceGroupName -NSGName "nsg-wvd-d-eus" -StoragePrivateEndpointIP "<Storage Private Endpoint IP>"
 AllowNSG -resourceGroupName $resourceGroupName -NSGName "nsg-wvd-d-jw" -StoragePrivateEndpointIP "<Storage Private Endpoint IP>"

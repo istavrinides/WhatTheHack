@@ -1,9 +1,9 @@
-# Challenge 05 - Standard file permissions - Coach's Guide 
+# Challenge 05 - Standard file permissions - Coach's Guide
 
 [< Previous Solution](./Solution-04.md) - **[Home](./README.md)** - [Next Solution >](./Solution-06.md)
 
 ## Notes & Guidance
-1. As a regular user (student), create a directory ~/permissions. 
+1. As a regular user (student), create a directory ~/permissions.
 
 `student@vm01:~$ mkdir ~/permissions`
 

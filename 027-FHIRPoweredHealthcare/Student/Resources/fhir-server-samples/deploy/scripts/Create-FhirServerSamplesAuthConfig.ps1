@@ -44,7 +44,7 @@ Set-StrictMode -Version Latest
 # Get current AzureAd context
 try {
     $tenantInfo = Get-AzureADCurrentSessionInfo -ErrorAction Stop
-} 
+}
 catch {
     throw "Please log in to Azure AD with Connect-AzureAD cmdlet before proceeding"
 }
@@ -52,7 +52,7 @@ catch {
 # Get current Az context
 try {
     $azContext = Get-AzContext
-} 
+}
 catch {
     throw "Please log in to Azure RM with Login-AzAccount cmdlet before proceeding"
 }
@@ -91,7 +91,7 @@ if ($azContext.Account.Type -eq "User") {
         Select-AzSubscription -SubscriptionId $azContext.Subscription.Id -TenantId $azContext.Tenant.Id | Out-Null
         $azContext = Get-AzContext
         Write-Host "Current context is user: $($azContext.Account.Id)"
-        $currentUser = Get-AzADUser -UserPrincipalName $azContext.Account.Id    
+        $currentUser = Get-AzADUser -UserPrincipalName $azContext.Account.Id
     }
 
     #If this is guest account, we will try a search instead
@@ -129,14 +129,14 @@ $fhirServiceName = "${EnvironmentName}srvr"
 if ($UsePaas) {
     $fhirServiceUrl = "https://${EnvironmentName}.azurehealthcareapis.com"
 } else {
-    $fhirServiceUrl = "https://${fhirServiceName}.${WebAppSuffix}"    
+    $fhirServiceUrl = "https://${fhirServiceName}.${WebAppSuffix}"
 }
 
 $application = Get-AzureAdApplication -Filter "identifierUris/any(uri:uri eq '$fhirServiceUrl')"
 
 if (!$application) {
     $newApplication = New-FhirServerApiApplicationRegistration -FhirServiceAudience $fhirServiceUrl -AppRoles "globalAdmin"
-    
+
     # Change to use applicationId returned
     $application = Get-AzureAdApplication -Filter "identifierUris/any(uri:uri eq '$fhirServiceUrl')"
 }
@@ -153,7 +153,7 @@ if ($aadUser)
 {
     Write-Host "User found, will update."
 }
-else 
+else
 {
     Write-Host "User not, will create."
 }
@@ -184,8 +184,8 @@ else {
 }
 
 $upnSecureString = ConvertTo-SecureString $userUpn -AsPlainText -Force
-Set-AzKeyVaultSecret -VaultName $KeyVaultName -Name "$userId-upn" -SecretValue $upnSecureString | Out-Null   
-Set-AzKeyVaultSecret -VaultName $KeyVaultName -Name "$userId-password" -SecretValue $passwordSecureString | Out-Null   
+Set-AzKeyVaultSecret -VaultName $KeyVaultName -Name "$userId-upn" -SecretValue $upnSecureString | Out-Null
+Set-AzKeyVaultSecret -VaultName $KeyVaultName -Name "$userId-password" -SecretValue $passwordSecureString | Out-Null
 Set-FhirServerUserAppRoleAssignments -ApiAppId $application.AppId -UserPrincipalName $userUpn -AppRoles "globalAdmin"
 
 $dashboardJSName = "${EnvironmentName}dash"
@@ -210,7 +210,7 @@ if (!$confidentialClient) {
 
     $origReplyUrls = $appReg.ReplyUrls
 
-    # Add Reply URL if not already in the list 
+    # Add Reply URL if not already in the list
     if ($origReplyUrls -NotContains $dashboardJSReplyUrl) {
         $origReplyUrls.Add($dashboardJSReplyUrl)
         Set-AzureADApplication -ObjectId $appReg.ObjectId -ReplyUrls $origReplyUrls
@@ -252,7 +252,7 @@ if (!$publicClient) {
     $publicClient = New-FhirServerClientApplicationRegistration -ApiAppId $application.AppId -DisplayName $publicClientAppName -PublicClient:$true
     $secretPublicClientId = ConvertTo-SecureString $publicClient.AppId -AsPlainText -Force
     Set-AzKeyVaultSecret -VaultName $KeyVaultName -Name "$publicClientAppName-id" -SecretValue $secretPublicClientId| Out-Null
-} 
+}
 
 Set-FhirServerClientAppRoleAssignments -AppId $publicClient.AppId -ApiAppId $application.AppId -AppRoles "globalAdmin"
 New-FhirServerSmartClientReplyUrl -AppId $publicClient.AppId -FhirServerUrl $fhirServiceUrl -ReplyUrl $growthChartUrl

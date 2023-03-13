@@ -34,7 +34,7 @@ We will be hosting the event in Microsoft Teams in a team created for this event
 
 The team's name is **"WTH - IoT Hack of the Century (May 2020)"**
 
-1.) Open Microsoft Teams and join the Team for this event by using the following join code: 
+1.) Open Microsoft Teams and join the Team for this event by using the following join code:
 
 **{ INSERT JOIN CODE HERE }**
 
@@ -43,7 +43,7 @@ We will kick-off by meeting **in the General channel** of this team at 10am East
 2.) Click this link to go to the General Channel:
 **{ INSERT LINK TO GENERAL CHANNEL HERE }**
 
-3.) When you arrive, click the purple **"Join"** button to join the meeting. 
+3.) When you arrive, click the purple **"Join"** button to join the meeting.
 
 **NOTE:** Do NOT click the **"Meet Now"** button in the channel, as only the meeting organizer should start the meeting.
 

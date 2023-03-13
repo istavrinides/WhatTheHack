@@ -1,4 +1,4 @@
-# Challenge 01 - Path A: Got Containers? - Coach's Guide 
+# Challenge 01 - Path A: Got Containers? - Coach's Guide
 
 [< Previous Solution](./Solution-01.md) - **[Home](./README.md)** - [Next Solution >](./Solution-02A.md)
 
@@ -49,7 +49,7 @@ One of the tasks in this challenge is, prior to building the docker images, is t
    	- `npm install`
 - To start a node app, run:
        - `node ./server.js &`
-- Verify the API app runs by browsing to its URL with one of the three function names, eg: 
+- Verify the API app runs by browsing to its URL with one of the three function names, eg:
    	- `http://localhost:3001/speakers`
 - Repeat for the steps above for the Web app.
 	- **NOTE:** The content-web app expects an environment variable named `CONTENT_API_URL` that points to the API app’s URL.
@@ -61,11 +61,11 @@ One of the tasks in this challenge is, prior to building the docker images, is t
 #### Dockerizing the Application
 - It is up to you as coach to gauge how long attendees should spend creating their own Dockerfiles.  **Feel free to provide the sample Dockerfiles at an appropriate time.**  The sample dockerfiles for both content-api and content-web are in the `/Coach/Solutions` folder for Challenge 1. These files are also located in the `/Challenge-02` folder of the `Resources.zip` package the students have, but they shouldn't know that at this point unless you tell them.
 	- The value of the env URL for content-web should match whatever value is used for the --name parameter when executing docker run on content-api as seen below.
-- Build Docker images for both content-api & content-web. 
+- Build Docker images for both content-api & content-web.
 	- `docker build –t content-api .`
 	- `docker build –t content-web .`
 - Run the applications in the Docker containers in a network and verify access
-	- Create a Docker network named **fabmedical**: 
+	- Create a Docker network named **fabmedical**:
 		- `docker network create fabmedical`
 	- Run each container using a name and using the **fabmedical** network. The containers should be run in "detached" mode so they don’t block the command prompt.
 		- `docker run -d -p 3001:3001 --name api --net fabmedical content-api`

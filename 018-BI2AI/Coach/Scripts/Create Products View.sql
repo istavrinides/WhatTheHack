@@ -24,6 +24,6 @@ SELECT  ProductKey,
         StartDate,
         EndDate,
         Status
-FROM dimproduct p 
+FROM dimproduct p
     inner join [dbo].[DimProductSubcategory] psc on p.productsubcategorykey = psc.productsubcategorykey
     inner join [dbo].[DimProductCategory] pc on psc.productcategorykey = pc.productcategorykey

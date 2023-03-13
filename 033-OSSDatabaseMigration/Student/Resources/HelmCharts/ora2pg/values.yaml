@@ -11,7 +11,7 @@ image:
   name: visulate/visulate-ora2pg
   pullPolicy: IfNotPresent
   tag: "latest"
-  
+
 service:
   type: LoadBalancer
   port: 3000

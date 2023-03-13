@@ -16,7 +16,7 @@ AdventureWorks has asked about the possibility of recovering data accidentally d
 
 ## Success Criteria
 
-* Meet your company's RPO/RTO goals on either AdventureWorks or WWI. 
+* Meet your company's RPO/RTO goals on either AdventureWorks or WWI.
 
 ## Tips
 

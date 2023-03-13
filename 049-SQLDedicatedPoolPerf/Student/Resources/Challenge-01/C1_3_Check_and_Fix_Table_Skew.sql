@@ -20,7 +20,7 @@ https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-
 ****************************************************************************************/
 
 /****************************************************************************************
-STEP1 - Run the following query 
+STEP1 - Run the following query
 *****************************************************************************************/
 
 
@@ -28,7 +28,7 @@ DBCC DROPCLEANBUFFERS()
 DBCC FREEPROCCACHE()
 GO
 
-SELECT  
+SELECT
 	[CustomerKey]
 	, COUNT(distinct [ProductKey]) Distinct_Prod_Count
 	, SUM([OrderQuantity])[OrderQuantity_SUM]

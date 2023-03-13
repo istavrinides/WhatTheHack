@@ -8,7 +8,7 @@ Caladan is very impressed with the team's work!
 At last, all of their raw data is in one centralized location and normalized data is available in the ODS.
 Excitement is growing; they're so close to making sense of it all!
 
-The team will now do the hard work of making a recommendation for policy implemenation.  To do so they will need to design a Data Warehouse for serving the data to ML and Reports.  The team is also going to need to calculate the effectiveness of each policy on the sample countries by calculating a growth percentage change on a daily basis and aggregate the growth percentage on a weekly basis. 
+The team will now do the hard work of making a recommendation for policy implemenation.  To do so they will need to design a Data Warehouse for serving the data to ML and Reports.  The team is also going to need to calculate the effectiveness of each policy on the sample countries by calculating a growth percentage change on a daily basis and aggregate the growth percentage on a weekly basis.
 
 Looking toward the future, if new data becomes available,
 the marketing team would like to be able to access it within an hour of its creation.
@@ -22,9 +22,9 @@ ever-present chance of human error, they would like
 the team to automate the process.
 
 ## Description
-The team can create a rather simple Star/Snowflake schema or make it more elaborate as they see fit.  The calculation should be done as the data is loaded into the Data Warehouse.  
+The team can create a rather simple Star/Snowflake schema or make it more elaborate as they see fit.  The calculation should be done as the data is loaded into the Data Warehouse.
 
-Note that the dimensions should all be considered 
+Note that the dimensions should all be considered
 [Type 1 dimensions](https://en.wikipedia.org/wiki/Slowly_changing_dimension#Type_1:_overwrite).
 
 Reference: [Type 2 dimension](https://en.wikipedia.org/wiki/Slowly_changing_dimension#Type_2:_add_new_row)

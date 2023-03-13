@@ -16,9 +16,9 @@ spec:
         app: {{ .Values.application.labelValue }}
     spec:
       containers:
-      - image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"      
+      - image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
         name: {{ .Values.infrastructure.appName }}
-        resources:        
+        resources:
           limits:
             memory: "{{ .Values.resources.limits.memory }}"
             cpu: "{{ .Values.resources.limits.cpu }}"

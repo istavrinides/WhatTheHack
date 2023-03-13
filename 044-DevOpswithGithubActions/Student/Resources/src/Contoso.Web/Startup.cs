@@ -56,7 +56,7 @@ namespace Contoso.Web
             {
                 endpoints.MapDefaultControllerRoute();
             });
-             
+
         }
     }
 }

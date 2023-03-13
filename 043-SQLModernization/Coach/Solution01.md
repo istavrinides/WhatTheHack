@@ -49,10 +49,10 @@ The remaining challenge is completing the database assessment. If there are no t
 
 Run Script:
 ```powershell
- .\SkuRecommendationDataCollectionScript.ps1 
+ .\SkuRecommendationDataCollectionScript.ps1
 -ComputerName localhost
--OutputFilePath C:\dma\counters.csv 
--CollectionTimeInSeconds 600 
+-OutputFilePath C:\dma\counters.csv
+-CollectionTimeInSeconds 600
 -DbConnectionString "Server=localhost;Initial Catalog=AdventureWorksLT2017;Integrated Security=SSPI;"
 ```
 
@@ -63,7 +63,7 @@ Analyze results:
 .\DmaCmd.exe /Action=SkuRecommendation /SkuRecommendationInputDataFilePath="c:\dma\counters.csv" /SkuRecommendationTsvOutputResultsFilePath="c:\dma\prices.tsv" /SkuRecommendationJsonOutputResultsFilePath="C:\dma\prices.json” /SkuRecommendationOutputResultsFilePath="C:\dma\prices.html" /SkuRecommendationPreventPriceRefresh=true
 ```
 
-Those results alone are not sufficient without some "commentary" by the team in evaluating what they see in the data -- for example, clarifying the IO recommendations. 
+Those results alone are not sufficient without some "commentary" by the team in evaluating what they see in the data -- for example, clarifying the IO recommendations.
 
 If the team has a mismatched environment where they need to collect performance counter information from, say, a linux container, they have the following choices:
 1. Temporarily configure a Windows VM for capturing the data. The goal is to learn the process.

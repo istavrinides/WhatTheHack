@@ -1,4 +1,4 @@
-# Challenge 9 - Deploy a Virtual Machine Scale Set 
+# Challenge 9 - Deploy a Virtual Machine Scale Set
 
 [< Previous Challenge](./ARM-Challenge-08.md) - [Home](../readme.md) - [Next Challenge>](./ARM-Challenge-10.md)
 

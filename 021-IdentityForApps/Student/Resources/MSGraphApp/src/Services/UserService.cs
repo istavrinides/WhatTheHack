@@ -311,7 +311,7 @@ namespace b2c_ms_graph
                     Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
                 }
             }
-            catch (ServiceException ex) 
+            catch (ServiceException ex)
             {
                 if (ex.StatusCode == System.Net.HttpStatusCode.BadRequest)
                 {
@@ -320,7 +320,7 @@ namespace b2c_ms_graph
                     Console.WriteLine();
                     Console.WriteLine(ex.Message);
                     Console.ResetColor();
-                }                
+                }
             }
             catch (Exception ex)
             {

@@ -1,11 +1,11 @@
 
 
-# Change NSG firewall rule to restrict Postgres, Oracle and MySQL database from your client machine only. The first step is to find out your local client IP address. 
+# Change NSG firewall rule to restrict Postgres, Oracle and MySQL database from your client machine only. The first step is to find out your local client IP address.
 
 echo -e "\n This script restricts the access to your Postgres, Oracle, and MySQL database from your computer only.
 
  The variable myip will get the ip address of the shell environment where this script is running from - be it a cloud shell or your own computer.
- You can get your computer's IP adress by browsing to  https://ifconfig.me. So if the browser says it is 102.194.87.201, your myip=102.194.87.201/32. 
+ You can get your computer's IP adress by browsing to  https://ifconfig.me. So if the browser says it is 102.194.87.201, your myip=102.194.87.201/32.
 \n"
 
 myip=`curl -s ifconfig.me`/32

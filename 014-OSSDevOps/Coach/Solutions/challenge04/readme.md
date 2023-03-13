@@ -33,7 +33,7 @@ If you are new to Docker and containers, it would be helpful to review the follo
 
 Now lets build the docker image. To do so you will need a Docker Hub account (linked above in the prereqs) and a public repository.
 
-From the `app` folder, run the following command replacing `<DockerHubUsername>` with your Docker Hub user name. 
+From the `app` folder, run the following command replacing `<DockerHubUsername>` with your Docker Hub user name.
 
 ```
 docker build -t <DockerHubUsername>/<AppName> .

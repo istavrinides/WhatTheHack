@@ -209,7 +209,7 @@ You're going to start the application, service-by-service. While doing so, you'l
 1. Make sure no services from previous tests are running (close the command-shell windows).
 
 1. First, you'll start the `VehicleRegistrationService` shown below:
- 
+
     <img src="../images/Challenge-03/dapr-setup-assignment03-vehichleregistration-highlight.png" style="padding-top: 25px;" />
 
 1. Open a **new** terminal window in VS Code and make sure the current folder is `Resources/VehicleRegistrationService`.
@@ -223,12 +223,12 @@ You're going to start the application, service-by-service. While doing so, you'l
     *Notice how the command specifies the custom components folder with the `--components-path` flag. By adding it, Dapr will use RabbitMQ for pub/sub.*
 
 1. Look for the following output:
-   
+
     ```shell
     You're up and running! Both Dapr and your app logs will appear here.*
     ```
 
-1. Next, you'll start the `FineCollectionService`: 
+1. Next, you'll start the `FineCollectionService`:
 
     <img src="../images/Challenge-03/dapr-setup-assignment03-finecollection-highlight.png" style="padding-top: 25px;" />
 
@@ -241,7 +241,7 @@ You're going to start the application, service-by-service. While doing so, you'l
     ```
 
 1. Look for the following output:
-   
+
     ```shell
     You're up and running! Both Dapr and your app logs will appear here.
     ```
@@ -259,7 +259,7 @@ You're going to start the application, service-by-service. While doing so, you'l
     ```
 
 1. Look for the following output:
-  
+
     ```shell
     You're up and running! Both Dapr and your app logs will appear here.*
     ```

@@ -6,8 +6,8 @@
 
 - Participants can choose multiple options to deploy their own non-AKS cluster, the one documented here is using aks-engine.
 - Using gitops, consider not exposing secrets in the repo as something optional. Alternatives to fix this are Sealed Secrets or AKV integration
-- You can choose whether focusing more on deploying different Arc extensions on the cluster (APIM, App Svcs, etc), or move on to the Arc-enabled Data Services part 
-- For Arc-enabled Data Services, participants need to decide whether implementing direct or indirect connectivity mode. Depending on the mode, tooling will be different. For example, direct connectivity mode supports only portal deployment at the time of this writing. 
+- You can choose whether focusing more on deploying different Arc extensions on the cluster (APIM, App Svcs, etc), or move on to the Arc-enabled Data Services part
+- For Arc-enabled Data Services, participants need to decide whether implementing direct or indirect connectivity mode. Depending on the mode, tooling will be different. For example, direct connectivity mode supports only portal deployment at the time of this writing.
 
 ## Solution Guide
 
@@ -72,7 +72,7 @@ sudo systemctl restart docker
 echo "Installing Kubernetes components..."
 
 sudo apt-get install -y apt-transport-https
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add 
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
 cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
 deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
@@ -81,7 +81,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 REALEND
 
 # Run script
-master_pip=$(az network public-ip show -n "${master_vm_name}-pip" -g $rg --query ipAddress -o tsv) && echo $master_pip 
+master_pip=$(az network public-ip show -n "${master_vm_name}-pip" -g $rg --query ipAddress -o tsv) && echo $master_pip
 user=$(ssh -n -o BatchMode=yes -o StrictHostKeyChecking=no $master_pip "whoami") && echo $user
 scp $prepare_cluster_file "${master_pip}:/home/${user}/prepare_cluster.sh"
 ssh -n -o BatchMode=yes -o StrictHostKeyChecking=no $master_pip "bash ./prepare_cluster.sh"
@@ -179,14 +179,14 @@ az role assignment create --scope $scope --role Contributor --assignee $assignee
 
 # Retrieve example JSON file describing a basic cluster
 # url=https://raw.githubusercontent.com/Azure/aks-engine/master/examples/kubernetes.json
-# aksengine_cluster_file="./aksengine_cluster.json" 
+# aksengine_cluster_file="./aksengine_cluster.json"
 # wget $url -O $aksengine_cluster_file
 # You can modify the kubernetes.json file, for example with smaller VM sizes such as Standard_B2ms
 
 # Optionally we can create a cluster file from scratch:
 aksengine_vm_size=Standard_B2ms
 worker_count=3
-aksengine_cluster_file="./aksengine_cluster.json" 
+aksengine_cluster_file="./aksengine_cluster.json"
 cat <<EOF > $aksengine_cluster_file
 {
   "apiVersion": "vlabs",
@@ -241,10 +241,10 @@ aks-engine deploy --subscription-id $subscription \
 
 # There are different ways to access the cluster
 # Exporting the KUBECONFIG variable is required by the command "az k8sconfiguration create"
-export KUBECONFIG="./_output/$domain/kubeconfig/kubeconfig.$location.json" 
+export KUBECONFIG="./_output/$domain/kubeconfig/kubeconfig.$location.json"
 kubectl get node
 # The alias is a little dirty trick for lazy persons like me
-# alias ke="kubectl --kubeconfig ./_output/$domain/kubeconfig/kubeconfig.$location.json" 
+# alias ke="kubectl --kubeconfig ./_output/$domain/kubeconfig/kubeconfig.$location.json"
 ```
 
 ### Connect non-managed Kubernetes cluster to Arc

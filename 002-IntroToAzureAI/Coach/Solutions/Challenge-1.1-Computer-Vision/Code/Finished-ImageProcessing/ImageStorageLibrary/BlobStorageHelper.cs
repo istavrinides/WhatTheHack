@@ -70,7 +70,7 @@ namespace ImageStorageLibrary
         /// <param name="prefix">Blob prefix (i.e. "subdirectory")</param>
         /// <returns>List of URIs for blobs in the container matching the given prefix.</returns>
         private async Task<IList<Uri>> GetImageURIsAsync(string prefix)
-        { 
+        {
             BlobContinuationToken tok = null;
             List<Uri> blobUris = new List<Uri>();
             do

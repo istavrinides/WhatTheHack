@@ -7,7 +7,7 @@
 In this challenge, you will deploy a Health Architecture **[HL7toFHIR Conversion](https://github.com/microsoft/health-architectures/tree/master/HL7Conversion#hl7tofhir-conversion)** serverless solution that provides the following services within **[FHIR Converter](https://github.com/microsoft/FHIR-Converter)** and FHIR Proxy:
 - Import and process valid HL7 bundles and persist them to a FHIR Compliant store
 - FHIR Server Proxy connection to FHIR Server without exposing credentials
-- Publish successful FHIR CUD events referencing FHIR Resources to an event hub to support pre-processing and/or post-processing for event driven workflow and orchestration scenarios.  This can be done by enabling the PublishFHIREventPostProcess module of the FHIR Proxy. 
+- Publish successful FHIR CUD events referencing FHIR Resources to an event hub to support pre-processing and/or post-processing for event driven workflow and orchestration scenarios.  This can be done by enabling the PublishFHIREventPostProcess module of the FHIR Proxy.
 
 <center><img src="../images/challenge02-architecture.jpg" width="550"></center>
 
@@ -17,7 +17,7 @@ In this challenge, you will deploy a Health Architecture **[HL7toFHIR Conversion
 
 **[HL7 to FHIR Conversion](https://github.com/microsoft/health-architectures/tree/master/HL7Conversion#hl7tofhir-conversion)** reference architecture deployment will create a Logic App based workflow that is triggered whenever new HL7 message is added to the queue of `hl7ingest` Service Bus. This conversion workflow performs the following tasks:
 - Orderly conversion from HL7 to FHIR via the **[FHIR Converter](https://github.com/microsoft/FHIR-Converter)**
-- Persists converted HL7v2 message into FHIR Server through secure proxied FHIR Server connection (FHIR Server Proxy). 
+- Persists converted HL7v2 message into FHIR Server through secure proxied FHIR Server connection (FHIR Server Proxy).
 - Publishes FHIR change events referencing FHIR Resources to an Event Hub.  You can also provide a central ingest point and event bus to support virtually unlimited event driven workflow and orchestration scenarios by enabling the PublishFHIREventPostProcess module of the FHIR Proxy
 
 **Note:** After successful deployment, the FHIR converter pipeline is integrated with the HL7 Ingest platform.
@@ -51,8 +51,8 @@ In this challenge, you will deploy a Health Architecture **[HL7toFHIR Conversion
         - Enter the FHIR Server Service Client Application ID
         - Enter the FHIR Server Service Client Secret:
         - Enter the FHIR Server/Service Client Audience/Resource (`https://azurehealthcareapis.com`)
-        - Enter the FHIR Server/Service Client Tenant ID  
-          
+        - Enter the FHIR Server/Service Client Tenant ID
+
 - Validate resources created in the deployment
     - Storage account: `[ENVIRONMENTNAME]store#####`
     - FHIR Event Hub Namespace: `fehub###`

@@ -19,8 +19,8 @@ Azure Time Series Insights is a fully managed analytics, storage, and visualizat
 
 ## Success Criteria
 
-  - Stand up Azure Time Series Insight Instance 
-  - Define the asset model 
+  - Stand up Azure Time Series Insight Instance
+  - Define the asset model
   - Connect the TSI instance with IoT Hub and consume the events in real time
   - Create visualization with the time series data
   - Create dashboard to show multiple charts.

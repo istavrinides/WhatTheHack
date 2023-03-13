@@ -1,4 +1,4 @@
-# Challenge 01 - Rapid SAP deployment - Coach's Guide 
+# Challenge 01 - Rapid SAP deployment - Coach's Guide
 
 [< Previous Challenge](./Solution-00.md) - **[Home](./README.md)** - [Next Solution >](./Solution-02.md)
 
@@ -21,11 +21,11 @@ A valid Azure subscription which can create Azure resources (Virtual Machines (I
 The Participant will need an authorization to create a Service Principal with the Contributor Role, or will need one provided prior to the start of the challenge.
 
 An estimate of an additional $100/daily Azure budget during the challenge-session days.
- 
+
 ## Success Criteria
 - Complete build of SAP S4H and SAP HANA database on Azure Cloud.
 - Successful Installation of SAP GUI and test logon to SAP Application Server
- 
+
 ## Learning Resources
 
 - [SAP GUI Installation Guide](https://help.sap.com/viewer/1ebe3120fd734f67afc57b979c3e2d46/760.05/en-US)

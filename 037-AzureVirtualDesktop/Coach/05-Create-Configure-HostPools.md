@@ -22,6 +22,6 @@
 
 * Uk South Region
     * There should be one Pooled HostPool for Remote Apps running Windows Server 2019, deployed by Azure CLI.
-        * Metadata location should be in North Europe. (Use UK South once it is available). VMs should be located in UK South. 
+        * Metadata location should be in North Europe. (Use UK South once it is available). VMs should be located in UK South.
         * Enable Screen Capture Protection by adding the reg key policy. https://docs.microsoft.com/en-us/azure/virtual-desktop/security-guide#enable-screen-capture-protection-preview
         * Deny Clipboard, Storage, Printers, Camera and Microphone.

@@ -23,5 +23,5 @@
 - It's possible to verify the settings from the Configuration section of the portal, but you could also verify it through the CLI, all MYSQL settings should have the `@Microsoft.KeyVault(SecretUri=...)` structure
 
     ```shell
-    az webapp config appsettings list -g $RG -n $WEBAPP 
+    az webapp config appsettings list -g $RG -n $WEBAPP
     ```

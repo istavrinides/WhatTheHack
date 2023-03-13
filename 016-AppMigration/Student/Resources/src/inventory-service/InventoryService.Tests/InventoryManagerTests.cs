@@ -19,7 +19,7 @@ namespace InventoryService.Tests
             dataMock
                 .Setup(m => m.GetInventoryBySkus(It.IsAny<IEnumerable<string>>()))
                 .ReturnsAsync(new []
-                    { 
+                    {
                         new InventoryItem { Sku = "sku1" },
                         new InventoryItem { Sku = "sku2" }
                     });
@@ -40,7 +40,7 @@ namespace InventoryService.Tests
             dataMock
                 .Setup(m => m.GetInventoryBySkus(It.IsAny<IEnumerable<string>>()))
                 .ReturnsAsync(new []
-                    { 
+                    {
                         new InventoryItem { Sku = "sku1" }
                     });
             dataMock
@@ -59,9 +59,9 @@ namespace InventoryService.Tests
             Assert.Equal(new [] { "sku2", "sku3" }, createdItems.Select(i => i.Sku));
             notificationsMock.Verify(m => m.NotifyInventoryChanged(
                 It.Is<InventoryItem>(i => i.Sku == "sku2" && i.Quantity == createdItems.First(c => c.Sku == "sku2").Quantity)));
-             notificationsMock.Verify(m => m.NotifyInventoryChanged(
+            notificationsMock.Verify(m => m.NotifyInventoryChanged(
                 It.Is<InventoryItem>(i => i.Sku == "sku3" && i.Quantity == createdItems.First(c => c.Sku == "sku3").Quantity)));
-           notificationsMock.VerifyNoOtherCalls();
+            notificationsMock.VerifyNoOtherCalls();
         }
 
         [Fact]

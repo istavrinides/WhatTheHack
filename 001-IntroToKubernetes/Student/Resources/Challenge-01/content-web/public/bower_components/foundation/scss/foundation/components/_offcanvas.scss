@@ -329,7 +329,7 @@ $menu-slide: "transform 500ms ease" !default;
     @include translate3d(0,-100%,0);
     top: 0;
     width: 100%;
-  }  
+  }
   @if $position == bottom {
     @include translate3d(0,100%,0);
     bottom: 0;

@@ -7,7 +7,7 @@ function signIn() {
     .then(loginResponse => {
       console.log("id_token acquired at: " + new Date().toString());
       console.log(loginResponse);
-      
+
       if (myMSALObj.getAccount()) {
         showWelcomeMessage(myMSALObj.getAccount());
       }
@@ -25,7 +25,7 @@ function getTokenPopup(request) {
     .catch(error => {
       console.log(error);
       console.log("silent token acquisition fails. acquiring token using popup");
-          
+
       // fallback to interaction when silent call fails
         return myMSALObj.acquireTokenPopup(request)
           .then(tokenResponse => {

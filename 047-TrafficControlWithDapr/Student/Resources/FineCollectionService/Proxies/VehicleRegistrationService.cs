@@ -18,6 +18,6 @@ namespace FineCollectionService.Proxies
         {
             return await _httpClient.GetFromJsonAsync<VehicleInfo>(
                 $"http://localhost:6002/vehicleinfo/{licenseNumber}");
-        }       
+        }
     }
 }

@@ -24,21 +24,21 @@ In order for us to get started, let's talk a few basics.  Web Browsers are the g
   - This lets your Web Browser take ***www.contosomasks.com*** and turn that into an IP Address to then talk to.
 - Something to host your content/website
   - There are lots of choices to run the application code and/or store the JavaScript, CSS, and HTML files.
-  
+
 When it comes to DNS, you have to register Names in what's called a "Domain".  For a DNS Name of www.contosomasks.com:
 - contosomasks.com would be the Domain registered with a [Domain name registrar](https://en.wikipedia.org/wiki/Domain_name_registrar)
 - **www** would be an *A Record* or a *CNAME Record* created in the contosomasks.com Domain
   - **A** Record - An alias record that is a name for a specific IP Address
-  - [**CNAME** Record](https://en.wikipedia.org/wiki/CNAME_record) - A Canonical Name record that maps one name to another 
+  - [**CNAME** Record](https://en.wikipedia.org/wiki/CNAME_record) - A Canonical Name record that maps one name to another
 
 We're going to setup a copy of the original Contoso Masks website.  A link to deploy the [ARM (Azure Resource Manager) template](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/overview) is in the **Tips** and with template located in the [Resources folder](./Resources) folder.  This will setup:
 
-- An Azure DNS Zone with the definition of your own subdomain of contosomasks.com.  
+- An Azure DNS Zone with the definition of your own subdomain of contosomasks.com.
   - This will let you have your own standalone public DNS to use for the challenges.
 - Azure App Service hosting the **www** Web site of your instance of Contoso Masks.
   - The website will be auto-deployed to the App Service.
 
-Once we get everything deployed, we will take some time and look to analyze the website using your Web Browser's developer tools.  
+Once we get everything deployed, we will take some time and look to analyze the website using your Web Browser's developer tools.
 
 ## Description
 
@@ -56,7 +56,7 @@ For this challenge we are going to:
          3. dash '-'
 3. In your Web Browser, load up your new copy of www.***SITENAME***.contosomasks.com, where ***SITENAME*** is that parameter you used in 2.iii.  Use the Development tools in the Web Browser to understand how the web pages and resources are loading, where they are coming from, and detail on how each requests loads.
 
-## Deploy the Website 
+## Deploy the Website
 
 Use the link below to deploy the solution to your resource group.
 
@@ -69,7 +69,7 @@ Use the link below to deploy the solution to your resource group.
 - Show the newly deployed resources in the Azure Portal
   - Highlighting the **www** record in your new Azure DNS Zone
 - Demonstrate your new version of the Contoso Website loads
-- Show the "waterfall" of the one of the Images in the Dev Tools of your Web Browser 
+- Show the "waterfall" of the one of the Images in the Dev Tools of your Web Browser
 
 
 ## Learning Resources

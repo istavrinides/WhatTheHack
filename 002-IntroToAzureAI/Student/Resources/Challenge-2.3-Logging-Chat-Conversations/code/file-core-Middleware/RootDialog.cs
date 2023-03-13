@@ -21,7 +21,7 @@
             var message = await result;
 
             await context.PostAsync($"You sent {message.Text} which was {message.Text.Length} characters");
-            
+
             // Graceful exit when user types exit
             if (message.Text.ToLower().Contains("exit"))
             {

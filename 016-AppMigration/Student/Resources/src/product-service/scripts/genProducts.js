@@ -56,12 +56,12 @@ async function insert() {
     pg.connect();
 
     const existing = await pg.query(`
-      SELECT 
-        products.id, 
-        products.name, 
-        products.sku, 
-        products.price, 
-        products.short_description, 
+      SELECT
+        products.id,
+        products.name,
+        products.sku,
+        products.price,
+        products.short_description,
         products.long_description,
         products.digital,
         products.unit_description,
@@ -73,7 +73,7 @@ async function insert() {
         suppliers.name as supplier_name,
         product_types.name as product_type
       FROM products, suppliers, product_types
-      WHERE 
+      WHERE
         suppliers.id = products.supplier_id
       AND
         product_types.id = products.product_type_id;

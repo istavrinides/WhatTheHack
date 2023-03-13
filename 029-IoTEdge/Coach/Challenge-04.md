@@ -15,4 +15,4 @@ Verify challengers have performed the following:
 
 ## Advanced Challenges (Optional)
 
-It would also make sense to discuss how they can integrate existing application with TSI dashboards [Integrating TSI with C# application](https://github.com/Azure-Samples/Azure-Time-Series-Insights). Also, discuss how they can use REST API to fetch the data from TSI instance [REST API for TSI](https://docs.microsoft.com/en-us/rest/api/time-series-insights/) 
+It would also make sense to discuss how they can integrate existing application with TSI dashboards [Integrating TSI with C# application](https://github.com/Azure-Samples/Azure-Time-Series-Insights). Also, discuss how they can use REST API to fetch the data from TSI instance [REST API for TSI](https://docs.microsoft.com/en-us/rest/api/time-series-insights/)

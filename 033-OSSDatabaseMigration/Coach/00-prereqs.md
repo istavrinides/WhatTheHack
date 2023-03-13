@@ -25,7 +25,7 @@ There are a lot of opportunities for things to go wrong in this step especially 
     kubectl -n {infrastructure.namespace goes here} logs deploy/contosopizza
 ```
 
-* [Optional] Google ReCaptcha will not work by default which means they will not be able to register as a user in the application. The attendee will need to generate their own. The instructions are here: https://github.com/pzinsta/pizzeria. The IP address for each web application will need to be registered as a domain in Google reCaptcha. 
+* [Optional] Google ReCaptcha will not work by default which means they will not be able to register as a user in the application. The attendee will need to generate their own. The instructions are here: https://github.com/pzinsta/pizzeria. The IP address for each web application will need to be registered as a domain in Google reCaptcha.
 
 * The approximate cost for this hack is about $15/day (using Azure Pay as You Go pricing):
     * AKS: $163/month
@@ -33,11 +33,11 @@ There are a lot of opportunities for things to go wrong in this step especially 
     * Azure DB for PostgreSQL: $150/month
 
     * Total: $464/month (plus any incidental charges for storage, private endpoints, etc.)
-    
-    
+
+
 * This hack can be done in an Azure trial account (one attendee per Azure trial). However, Microsoft anti-fraud detection may prevent multiple Azure trial subscriptions from being created in the same network location. Also, each attendee will need a working credit card to setup an Azure trial subscription (even though the card will not be charged).
 
-* Different database servers use different terminology. You may need to explain this to your attendees depending on their level of experience with the databases that are part of the hack. For example, in Oracle a database is a set of files while the schema is the set of objects (e.g., tables, constraints, indexes, etc.). 
+* Different database servers use different terminology. You may need to explain this to your attendees depending on their level of experience with the databases that are part of the hack. For example, in Oracle a database is a set of files while the schema is the set of objects (e.g., tables, constraints, indexes, etc.).
 
 * For Microsoft internal subscriptions, it appears that MS IT is applying a default NSG to the AKS subnet. If you see this, you will have to add inbound rules to the NSG in order to connect to the AKS services (e.g., port 1521 and 3000 for Oracle, port 5432 for PostgreSQL, port 3306 for MySQL and the application's ports 8081-8083)
 

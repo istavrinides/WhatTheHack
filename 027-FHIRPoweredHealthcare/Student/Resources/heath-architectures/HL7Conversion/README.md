@@ -1,17 +1,17 @@
 # HL7 Ingest, Conversion Samples
-This project contains fully functional sample deployments of ingest and conversion workflows powered by Microsoft's FHIR Converter. The goal of this project is to provide quick start examples that can be used to accelerate implementation of health data ingest into Azure Health Data Platform.  
+This project contains fully functional sample deployments of ingest and conversion workflows powered by Microsoft's FHIR Converter. The goal of this project is to provide quick start examples that can be used to accelerate implementation of health data ingest into Azure Health Data Platform.
 
-The [FHIR Converter](https://github.com/microsoft/FHIR-Converter) is an open source project that enables healthcare organizations to convert legacy data (currently HL7 v2 messages) into FHIR bundles. Converting legacy data to FHIR expands the use cases for health data and enables interoperability.  
+The [FHIR Converter](https://github.com/microsoft/FHIR-Converter) is an open source project that enables healthcare organizations to convert legacy data (currently HL7 v2 messages) into FHIR bundles. Converting legacy data to FHIR expands the use cases for health data and enables interoperability.
 
 
 ## Overview
 This repo provides reference architecture and sample deployments for the ingest and conversion to FHIR of HL7 messages and the de-identification of FHIR resources.
 These samples demonstrate incorporating Microsoft's FHIR Converter into your enterprise HL7 messaging/FHIR infrastructure to enable end-to-end workflows for a variety of use cases.
 The examples include:
-  + An HL7 ingest platform to consume HL7 Messages via MLLP and securely Transfer them to Azure via HL7overHTTPS and place in blob storage and produce a consumable event on a high speed ordered service bus for processing.  
-  
-  + A workflow that performs orderly conversion from HL7 to FHIR via the conversion API and persists the message into a FHIR Server and publishes change events referencing FHIR resources to a high speed event hub to interested subscribers.  
-    
+  + An HL7 ingest platform to consume HL7 Messages via MLLP and securely Transfer them to Azure via HL7overHTTPS and place in blob storage and produce a consumable event on a high speed ordered service bus for processing.
+
+  + A workflow that performs orderly conversion from HL7 to FHIR via the conversion API and persists the message into a FHIR Server and publishes change events referencing FHIR resources to a high speed event hub to interested subscribers.
+
 
 ## HL7 Ingest
 
@@ -26,7 +26,7 @@ Infrastructure deployment that will allow you to:
 ### <a name="ingest"></a>Deploying your own HL7 Ingest Platform
 1. [Get or Obtain a valid Azure Subscription](https://azure.microsoft.com/en-us/free/)
 2. [If you are running Windows 10 make sure you have enabled Windows Linux Subsystem](https://code.visualstudio.com/remote-tutorials/wsl/enable-wsl) and [Installed a Linux Distribution](https://code.visualstudio.com/remote-tutorials/wsl/install-linux)
-3. [Install Azure CLI 2.0 on Linux based System or Windows Linux Subsystem](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-apt?view=azure-cli-latest) 
+3. [Install Azure CLI 2.0 on Linux based System or Windows Linux Subsystem](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-apt?view=azure-cli-latest)
 4. [Download/Clone this repo](https://github.com/microsoft/health-architectures)
 5. Open a bash shell into the Azure CLI 2.0 environment
 6. Switch to the HL7Conversion subdirectory of this repo
@@ -37,7 +37,7 @@ Infrastructure deployment that will allow you to:
     + From the linux command shell run the following command to test the hl7overhttps ingest
       ```
         curl --trace-ascii - -H "Content-Type:text/plain" --data-binary @samplemsg.hl7 <your ingest host name from above>/api/hl7ingest?code=<your ingest host key from above>
-      ``` 
+      ```
     + You should receive back an HL7 ACK message
     + Congratulations!!! The sample hl7 message was accepted securely stored into blob storage and queued for further ingest processing on the deployed service bus queue
 9. Send in HL7 messages using the local HL7 MLLP Relay. To run a local copy of the HL7 MLLP Relay:
@@ -45,7 +45,7 @@ Infrastructure deployment that will allow you to:
     + From a command prompt run the runhl7relay.bash(linux) or runhl7relay.cmd(windows) passing in the hl7ingest Function App URL (Saved from Above) and the function app access key (Saved from above) as parameters.
         ```
         runhl7relay https://<your ingest host name from above/api/hl7ingest "<function app key from above>"
-       ``` 
+       ```
     + You can now point any HL7 MLLP Engine to the HL7 Relay listening port (default is 8079) and it will transfer messages to the hl7ingest function app over https
     + An appropriate HL7 ACK will be sent to the engine from the relay listener
 

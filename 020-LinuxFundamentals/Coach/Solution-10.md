@@ -1,4 +1,4 @@
-# Challenge 10 - Logical volume manager - Coach's Guide 
+# Challenge 10 - Logical volume manager - Coach's Guide
 
 [< Previous Solution](./Solution-09.md) - **[Home](./README.md)** - [Next Solution >](./Solution-11.md)
 
@@ -219,17 +219,17 @@ Size of logical volume vg_data/lv_part2 changed from 500.00 MiB (125 extents) to
 11. Check:
     1. That the ```LV``` has been resized
 
-    `student@vm01:~$ sudo lvs vg_data` 
+    `student@vm01:~$ sudo lvs vg_data`
 
     ```bash
     LV       VG      Attr       LSize  Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
     lv_part1 vg_data -wi-ao----  2.50g
     lv_part2 vg_data -wi-ao---- <1.49g
-    ```   
+    ```
 
     2. If there was reflection in the file system
 
-    `student@vm01:~$ df -h /mnt/dir1 /mnt/dir2` 
+    `student@vm01:~$ df -h /mnt/dir1 /mnt/dir2`
 
     ```bash
     Filesystem                    Size  Used Avail Use% Mounted on
@@ -239,7 +239,7 @@ Size of logical volume vg_data/lv_part2 changed from 500.00 MiB (125 extents) to
 
 12. Resize the file system
 
-`student@vm01:~$ sudo resize2fs /dev/vg_data/lv_part2` 
+`student@vm01:~$ sudo resize2fs /dev/vg_data/lv_part2`
 
 ```bash
 resize2fs 1.45.5 (07-Jan-2020)
@@ -248,7 +248,7 @@ old_desc_blocks = 1, new_desc_blocks = 1
 The filesystem on /dev/vg_data/lv_part2 is now 390144 (4k) blocks long.
 ```
 
-`student@vm01:~$ df -h /mnt/dir1 /mnt/dir2` 
+`student@vm01:~$ df -h /mnt/dir1 /mnt/dir2`
 
 ```bash
 Filesystem                    Size  Used Avail Use% Mounted on

@@ -6,10 +6,10 @@ public class Product : Entity
 {
     [JsonProperty(PropertyName = "itemId")]
     public string ItemId { get; set; }
-    
+
     [JsonProperty(PropertyName = "storeId")]
     public int StoreId { get; set; }
-    
+
     [JsonProperty(PropertyName = "name")]
     public string Name { get; set; }
 
@@ -23,5 +23,5 @@ public class Product : Entity
     public string Description { get; set; }
 
     [JsonProperty(PropertyName = "type")]
-    public string Type  = "Product";    
+    public string Type  = "Product";
 }

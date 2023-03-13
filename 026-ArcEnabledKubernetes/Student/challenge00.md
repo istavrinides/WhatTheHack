@@ -7,7 +7,7 @@
 
 The prerequisites for completing this hack are as follows:
 
-* Access to a local computer with admin access to install or have access to tools such as VSCode, Terraform, Docker, and SSH Terminal 
+* Access to a local computer with admin access to install or have access to tools such as VSCode, Terraform, Docker, and SSH Terminal
 
 * Access to a competetive cloud platform to standup and work with a managed Kubernetes service
    * Recommended: Access to Google Cloud Platform (GCP) to deploy Google Kubernetes Engine (GKE) cluster.
@@ -42,5 +42,5 @@ In this challenge we will setup the core components needed to complete this What
    * Terraform
    * Kubectl
 2. Ensure you have access to the GCP platform and Azure platform to be able to deploy GKE and Azure Arc enabled Kubernetes resources.
-   
+
 [Home](../readme.md) - [Next](challenge01.md)

@@ -34,7 +34,7 @@
                     reply.Attachments.Add(heroCardAttachment);
                     break;
                 case "send me a botframework image":
-                    
+
                     reply.Text = $"Sample message with an Image attachment";
 
                     var imageAttachment = new Attachment()

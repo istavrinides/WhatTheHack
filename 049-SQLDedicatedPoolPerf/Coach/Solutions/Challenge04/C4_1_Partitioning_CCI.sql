@@ -24,7 +24,7 @@ SET RESULT_SET_CACHING OFF
 GO
 
 
-SELECT 
+SELECT
 	Fis.SalesTerritoryKey
 	,Fis.OrderDateKey
 	, Dsr.SalesReasonName
@@ -51,13 +51,13 @@ GO
 
 /****************************************************************************************
 STEP 3 of 6 - Run this query against the partitioned table with same amount of rows and columns.
-It has more than 80 partitions, 1 for each quarter from 2001 'till 2029 
+It has more than 80 partitions, 1 for each quarter from 2001 'till 2029
 ****************************************************************************************/
 
 SET RESULT_SET_CACHING OFF
 GO
 
-SELECT 
+SELECT
 	Fis.SalesTerritoryKey
 	,Fis.OrderDateKey
 	, Dsr.SalesReasonName

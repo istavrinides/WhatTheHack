@@ -22,7 +22,7 @@ This project requires Node.js 8+ as well CosmosDB or MongoDB running somewhere.
    - `KEYVAULT_ID` — ID of your Azure Key Vault
    - `KEYVAULT_SECRET` — ID of your Azure Key Vault
    - All of the above keys you have loaded in the Key Vault will be available in the app
-   
+
 ## To Populate ComsosDB or MongoDB with fake data
 
 ### Randomly generate large quantities of products

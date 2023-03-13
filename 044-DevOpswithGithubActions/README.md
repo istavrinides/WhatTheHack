@@ -43,7 +43,7 @@ Policy Documents for Policy Holders are stored in Cloud Storage and retrieved us
    - Based on your understanding from the challenge requirements, secure the APIs and services.
    - Demonstrate secure functional solution implementation to coach.
 
-   
+
 ## Prerequisites
 
 - Ensure you have a Github Personal Account: [Sign Up for Personal Github Account](https://github.com)

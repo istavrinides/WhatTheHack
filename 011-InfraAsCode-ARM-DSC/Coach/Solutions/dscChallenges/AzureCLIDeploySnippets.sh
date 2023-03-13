@@ -26,8 +26,8 @@ az vm list-sizes -l eastus2
 az vm image list
 
 #Get a list of VMs by various search queries
-az vm image list --publisher Oracle -l eastus2 --all  
-az vm image list --publisher MicrosoftSQLServer -l eastus2 --all 
+az vm image list --publisher Oracle -l eastus2 --all
+az vm image list --publisher MicrosoftSQLServer -l eastus2 --all
 
 #Create a resource group
 az group create --name iac-rg --location eastus2

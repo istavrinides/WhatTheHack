@@ -24,7 +24,7 @@ namespace ContosoTravel.Web.Application.Controllers.MVC
             _cartDisplayProvider = cartDisplayProvider;
         }
 
-        // Make sure to return an empty cart if there isn't a purchased Itinerary 
+        // Make sure to return an empty cart if there isn't a purchased Itinerary
         public async Task<CartModel> Index(CancellationToken cancellationToken)
         {
             string cartId = _cartCookieProvider.GetCartCookie();
@@ -34,7 +34,7 @@ namespace ContosoTravel.Web.Application.Controllers.MVC
             {
                 return await _cartDisplayProvider.LoadFullCart<CartModel>(cart, cancellationToken);
             }
-            
+
             if ( (await _itineraryController.GetByCartId(cancellationToken)) == null )
             {
                 return new CartModel() { Id = System.Guid.Parse(cartId) };

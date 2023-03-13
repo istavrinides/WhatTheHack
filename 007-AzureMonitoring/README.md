@@ -14,7 +14,7 @@
 
 ### 1. Build attendees technical skills on Monitoring workloads in Azure
 
-### 2. Understand what Monitoring Tools are available in Azure and how to implement them.  
+### 2. Understand what Monitoring Tools are available in Azure and how to implement them.
 
 ## Prerequisites
 
@@ -76,8 +76,8 @@
 
 ### Noon – 1 PM: Lunch
 
-### 1  – 3 PM: App Insights Challenges Continues 
+### 1  – 3 PM: App Insights Challenges Continues
 
-### 3 – 4 PM: Plan & Whiteboard Monitoring for existing Application 
+### 3 – 4 PM: Plan & Whiteboard Monitoring for existing Application
 
 

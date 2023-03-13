@@ -7,8 +7,8 @@
 
 // MAGIC %md
 // MAGIC #### Summary
-// MAGIC 
-// MAGIC 1) Read raw data, augment with derived attributes, augment with reference data & persist<br /> 
+// MAGIC
+// MAGIC 1) Read raw data, augment with derived attributes, augment with reference data & persist<br />
 // MAGIC 2) Create external unmanaged Hive tables<br />
 // MAGIC 3) Create statistics for tables
 
@@ -42,7 +42,7 @@ spark.catalog.setCurrentDatabase(hiveDbName)
 // COMMAND ----------
 
 // MAGIC %md
-// MAGIC #### 2.  Read raw, augment, persist as parquet 
+// MAGIC #### 2.  Read raw, augment, persist as parquet
 
 // COMMAND ----------
 
@@ -108,7 +108,7 @@ val curatedDF = spark.sql("""
       minute(t.dropoff_datetime) as dropoff_minute,
       second(t.dropoff_datetime) as dropoff_second,
       date(t.dropoff_datetime) as dropoff_date
-  from 
+  from
     yellow_taxi_trips t
     left outer join vendor_lookup v on (t.vendor_id = case when t.trip_year < "2015" then v.abbreviation else v.vendor_id end)
     left outer join trip_month_lookup tm on (t.trip_month = tm.trip_month)

@@ -234,13 +234,13 @@ Wide styles
 	.nav-bar { padding: 1em 3em; }
 	.content { padding: 2em 3em; }
 	.footer { padding: 2em 3em; }
-	
+
 	.nav li
 	{
 		display: inline;
 		margin: 0 1em 0 0;
 	}
-	
+
 	.nav a
 	{
 		display: inline;

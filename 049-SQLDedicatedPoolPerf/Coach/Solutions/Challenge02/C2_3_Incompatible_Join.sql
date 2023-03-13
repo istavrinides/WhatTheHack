@@ -21,8 +21,8 @@ STEP 1 of 6 - Training Replicated Table Cache for DimSalesReason to avoid Broadc
 ****************************************************************************************/
 IF EXISTS
 (
-	SELECT * FROM sys.pdw_replicated_table_cache_state 
-		WHERE OBJECT_NAME(object_id) = 'DimSalesReason' 
+	SELECT * FROM sys.pdw_replicated_table_cache_state
+		WHERE OBJECT_NAME(object_id) = 'DimSalesReason'
 			and State = 'NotReady'
 )
 BEGIN
@@ -31,15 +31,15 @@ BEGIN
 END
 GO
 
-SELECT * FROM sys.pdw_replicated_table_cache_state 
-WHERE OBJECT_NAME(object_id) = 'DimSalesReason' 
+SELECT * FROM sys.pdw_replicated_table_cache_state
+WHERE OBJECT_NAME(object_id) = 'DimSalesReason'
 GO
 
 
 /****************************************************************************************
 STEP 2 of 6 - Execute this query
 ****************************************************************************************/
-SELECT 
+SELECT
 	Fis.SalesTerritoryKey
 	,Fis.OrderDateKey
 	, Dsr.SalesReasonName
@@ -71,7 +71,7 @@ GO
 /****************************************************************************************
 STEP 4 of 6 - fixing the issue changing the distribution column
 Original Sales.FactInternetSales has been created using HASH(ProductKey) which is not good for this query
-Sales.FactInternetSales and Sales.FactInternetSalesReason use SalesOrderNumber and this caused the biggest Shufflemove 
+Sales.FactInternetSales and Sales.FactInternetSalesReason use SalesOrderNumber and this caused the biggest Shufflemove
 Which move all the rows that meet Where clauses from Sales.FactInternetSales to perform subsequent joins and aggregation
 
 Redistribute Sales.FactInternetSales using SalesOrderNumber remove the first Shufflemove and improve performance.
@@ -104,7 +104,7 @@ GO
 STEP 5 of 6 - Run the query again and Check generated MPP plan
 ****************************************************************************************/
 
-SELECT 
+SELECT
 	Fis.SalesTerritoryKey
 	,Fis.OrderDateKey
 	, Dsr.SalesReasonName

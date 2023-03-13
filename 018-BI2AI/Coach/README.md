@@ -25,7 +25,7 @@ The following is expected timing for a standard delivery.
 
 ## Potential variations for delivery
 
-As previously mentioned, this content is geared at trying to strike a balance between something open ended and something totally scripted.  As such this content does assume a basic level of proficiency and familiarity with tools like Power BI, but in the interest of keeping attendees close to the correct path we've included a "Hackflow Steps" section in each challenge.  This is intened not to show the users how to complete the activities, but rather inform them of the general order of tasks required to complete the challenge.   
+As previously mentioned, this content is geared at trying to strike a balance between something open ended and something totally scripted.  As such this content does assume a basic level of proficiency and familiarity with tools like Power BI, but in the interest of keeping attendees close to the correct path we've included a "Hackflow Steps" section in each challenge.  This is intened not to show the users how to complete the activities, but rather inform them of the general order of tasks required to complete the challenge.
 
 We realize this may not be ideal for every audience; therefore we see two potential variations of this delivery:
 
@@ -81,7 +81,7 @@ This area is for us to keep a running list of things we would like to incorporat
 1. An adjunct lab to AML Designer to add in normalization, comparing other algorithms, etc. to hit a higher accuracy
 2. An adjunct lab to AML AutoML to add in timeseries forecasting
 3. An optional lab to AML Notebooks for time series forecasting
-4. Pick an AML tool to dive into Model Transparency and Interpretability 
+4. Pick an AML tool to dive into Model Transparency and Interpretability
 5. Create a Data Labeling project to label bikes or bike parts, show the team aspect
 6. Create a "custom vision" model for bikes and call that from PowerBI
-   
+

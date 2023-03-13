@@ -12,5 +12,5 @@ namespace PictureBot
         public double Score { get; set; }
 
         public object Value { get; set; }
-    }    
+    }
 }

@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: postgresql-config
   namespace: {{ .Values.infrastructure.namespace }}
-data: 
+data:
   postgresql.conf: |-
     # Mounted at /etc/postgresql/postgresql.conf
     # -----------------------------

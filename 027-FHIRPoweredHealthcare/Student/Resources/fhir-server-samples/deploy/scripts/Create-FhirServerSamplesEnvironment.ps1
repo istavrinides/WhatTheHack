@@ -73,7 +73,7 @@ if ($UsePaaS -and ($PersistenceProvider -ne "cosmos"))
 # Get current AzureAd context
 try {
     $tenantInfo = Get-AzureADCurrentSessionInfo -ErrorAction Stop
-} 
+}
 catch {
     throw "Please log in to Azure AD with Connect-AzureAD cmdlet before proceeding"
 }
@@ -81,7 +81,7 @@ catch {
 # Get current Az context
 try {
     $azContext = Get-AzContext
-} 
+}
 catch {
     throw "Please log in to Azure RM with Login-AzAccount cmdlet before proceeding"
 }
@@ -97,7 +97,7 @@ if ($azContext.Account.Type -eq "User") {
         Select-AzSubscription -SubscriptionId $azContext.Subscription.Id -TenantId $azContext.Tenant.Id | Out-Null
         $azContext = Get-AzContext
         Write-Host "Current context is user: $($azContext.Account.Id)"
-        $currentUser = Get-AzADUser -UserPrincipalName $azContext.Account.Id    
+        $currentUser = Get-AzADUser -UserPrincipalName $azContext.Account.Id
     }
 
     #If this is guest account, we will try a search instead
@@ -189,7 +189,7 @@ New-AzResourceGroupDeployment -TemplateUri $sandboxTemplate -environmentName $En
 Write-Host "Warming up site..."
 Invoke-WebRequest -Uri "${fhirServerUrl}/metadata" | Out-Null
 $functionAppUrl = "https://${EnvironmentName}imp.azurewebsites.net"
-Invoke-WebRequest -Uri $functionAppUrl | Out-Null 
+Invoke-WebRequest -Uri $functionAppUrl | Out-Null
 
 @{
     dashboardUrl              = $dashboardJSUrl

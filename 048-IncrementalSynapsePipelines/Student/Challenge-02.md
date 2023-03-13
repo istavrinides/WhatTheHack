@@ -16,7 +16,7 @@ For this challenge we need to implement the following:
 
 - Implement Change Data Capture on the Azure SQL Database and be able to articulate on the cdc tables and functions and their purpose.
 - Create an incremental synapse pipeline that accounts for the following...
-    - For each time a pipeline is executed, it will only update the SQL Dedicated Pool with new row inserts, updates and deletions since the last time it was executed.  
+    - For each time a pipeline is executed, it will only update the SQL Dedicated Pool with new row inserts, updates and deletions since the last time it was executed.
     - You only need to do 2-3 tables so make sure your pipeline has a lookup to determine which tables to copy and where to land them in the Dedicated Pool.  Please choose related tables so modifications can easily be viewed in the target Dedicated Pool and Power BI.
 - Implement Staging and Production Tables in the Dedicated Pool and an automated methodology to update data from staging to production.
 - Create a Power BI report that queries the production tables in the Dedicated Pool.

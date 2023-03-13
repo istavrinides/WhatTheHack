@@ -3,7 +3,7 @@
 APIAPPID=""
 DISPLAYNAME=""
 REPLYURL="https://www.getpostman.com/oauth2/callback"
-IDENTIFIERURI="" 
+IDENTIFIERURI=""
 
 usage ()
 {
@@ -75,12 +75,12 @@ else
     apiAppScopeId=$(echo $apiAppReg | jq -r .oauth2Permissions[0].id)
 fi
 
-# Some GUID values for Azure Active Directory 
-# https://blogs.msdn.microsoft.com/aaddevsup/2018/06/06/guid-table-for-windows-azure-active-directory-permissions/ 
-# Windows AAD Resource ID: 
-windowsAadResourceId="00000002-0000-0000-c000-000000000000" 
-# 'Sign in and read user profile' permission (scope) 
-signInScope="311a71cc-e848-46a1-bdf8-97ff7156d8e6" 
+# Some GUID values for Azure Active Directory
+# https://blogs.msdn.microsoft.com/aaddevsup/2018/06/06/guid-table-for-windows-azure-active-directory-permissions/
+# Windows AAD Resource ID:
+windowsAadResourceId="00000002-0000-0000-c000-000000000000"
+# 'Sign in and read user profile' permission (scope)
+signInScope="311a71cc-e848-46a1-bdf8-97ff7156d8e6"
 
 aadPermissions="{ \"resourceAppId\": \"${windowsAadResourceId}\", \"resourceAccess\": [{ \"id\": \"${signInScope}\", \"type\": \"Scope\"}]}"
 apiPermissions="{ \"resourceAppId\": \"${apiAppId}\", \"resourceAccess\": [{ \"id\": \"${apiAppScopeId}\", \"type\": \"Scope\"}]}"
@@ -99,13 +99,13 @@ aadEndpoint=$(az cloud show --name $environmentName | jq -r .endpoints.activeDir
 authUrl="${aadEndpoint}/${aadTenantId}/oauth2/authorize?resource=${apiAppAudience}"
 tokenUrl="${aadEndpoint}/${aadTenantId}/oauth2/token"
 
-#Service principal for client application 
+#Service principal for client application
 sp=$(az ad sp create --id ${clientAppId})
 
 #Return summary information
 cat << EOF
-{ 
-    "AppId": "${clientAppId}", 
+{
+    "AppId": "${clientAppId}",
     "AppSecret": "${clientSecret}",
     "ReplyUrl": "${REPLYURL}",
     "AuthUrl": "${authUrl}",

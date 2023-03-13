@@ -66,7 +66,7 @@ Because the FHS is the default filesystem layout on Linux machines, and each dir
 * This directory contains configuration files of your system.
 * The name of your device, your passwords, your network configuration, DNS, crontabs, date and time ..etc are stored here in configuration files.
 * This directory cannot contain any binary executable files according to FHS.
-* These configuration files affect all users on system. If you want to make config changes for a specific user, ~/.conf/ should be used instead of 
+* These configuration files affect all users on system. If you want to make config changes for a specific user, ~/.conf/ should be used instead of
 /etc/
 
 ### **/usr**
@@ -80,7 +80,7 @@ This way /usr has its own hierarchy just like the / (root) did.
 #### **/usr/bin**
 
 * This is the primary directory of executable commands on the system.
-* Contains all user installed command binaries 
+* Contains all user installed command binaries
 * If you want to execute your scripts using a single command, you usually place them in /usr/bin/
 
 #### **/usr/sbin**

@@ -55,5 +55,5 @@ namespace DataLoader.SQLServer
                 return resource.ReadToEnd();
             }
         }
-    }    
+    }
 }

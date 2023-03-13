@@ -5,9 +5,9 @@
 
 ## Introduction
 
-Duration: 45 minutes. 
+Duration: 45 minutes.
 
-Pre-requisites: Another Windows virtual machine which will serve as SHIR for Azure Data Factory will be needed as a pre-requisite to this challenge. Explain that SHIR’s are not sharable now. Don’t forget to spin up these VMs in the same virtual network. You may also use the PS script provided to deploy the VMs. This challenge also needs an Azure VM running SQL Server with the WideWorldImporters database restored (see previous challenge).  
+Pre-requisites: Another Windows virtual machine which will serve as SHIR for Azure Data Factory will be needed as a pre-requisite to this challenge. Explain that SHIR’s are not sharable now. Don’t forget to spin up these VMs in the same virtual network. You may also use the PS script provided to deploy the VMs. This challenge also needs an Azure VM running SQL Server with the WideWorldImporters database restored (see previous challenge).
 
 Optionally, you may choose a couple of related tables from AdventureWorksLT database from the Azure SQL DB used in challenge 2 and avoid setting up the additional SHIR machine.
 

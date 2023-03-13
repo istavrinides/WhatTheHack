@@ -8,31 +8,31 @@ variable "location" {
 }
 
 variable "resource_group_name" {
-  description = "The name of the resource group in which the resources are created"  
+  description = "The name of the resource group in which the resources are created"
 }
 
 variable "virtual_network_name" {
-    description = "The name for the virtual network"        
+    description = "The name for the virtual network"
 }
 variable "virtual_network_address_space" {
-    description = "The name for the virtual network"   
-    type = "list"     
+    description = "The name for the virtual network"
+    type = "list"
 }
-variable "subnet" { 
-    description = "The name and address prefix for the subnet" 
-    type = "map"   
+variable "subnet" {
+    description = "The name and address prefix for the subnet"
+    type = "map"
 }
 
 variable "nsg" {
-    description = "The name of the Network security group"    
+    description = "The name of the Network security group"
 }
 variable "nsg_security_rule_ssh" {
     description = "The name, priority, direction, access, protocol, source_port_range, destination_port_range, source_address_prefix, destination_address_prefix for the SSH NSG security rule"
-    type = "map"    
+    type = "map"
 }
-variable "tags" {    
+variable "tags" {
     description = "The tags for the Azure resource"
-    type = "map"  
+    type = "map"
 }
 variable "azurerm_network_interface" {
   description = "Settings for the VM NIC"
@@ -51,12 +51,12 @@ variable "azurerm_virtual_machine" {
   description = "Virtual machine settings"
   type = "map"
 }
-variable "os_profile_linux_config_disable_password_authentication" {    
-    description = "Password authentication setting for linux" 
+variable "os_profile_linux_config_disable_password_authentication" {
+    description = "Password authentication setting for linux"
 }
-variable "os_profile" {    
+variable "os_profile" {
     description = "OS Profile settings"
-    type = "map"  
+    type = "map"
 }
 
 variable "azurerm_storage_account" {
@@ -64,9 +64,9 @@ variable "azurerm_storage_account" {
   type = "map"
 }
 
-variable "os_profile_linux_config_ssh_keys" {    
+variable "os_profile_linux_config_ssh_keys" {
     description = "SSH settings for linux"
-    type = "map"  
+    type = "map"
 }
 variable "azurerm_virtual_machine_storage_os_disk" {
   description = "Storage settings for the VM"

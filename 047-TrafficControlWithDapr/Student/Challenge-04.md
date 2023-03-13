@@ -44,7 +44,7 @@ This challenge targets the operation labeled as **number 3** in the end-state se
 ## Tips
 
 - Use the redis CLI inside the `dapr_redis` container that is used as the state-store in the default Dapr installation.
-  - Run the redis CLI locally: 
+  - Run the redis CLI locally:
     ```shell
     docker exec -it dapr_redis redis-cli
     ```

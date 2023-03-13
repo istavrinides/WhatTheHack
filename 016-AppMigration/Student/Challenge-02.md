@@ -10,11 +10,11 @@ The goal of this lab is to take an existing web application and move it from a s
 
 
 
-## Setup Environment 
+## Setup Environment
 
 You will need a few things in your environment setup for this lab.
 
-- Source code for the Inventory and Product services.  
+- Source code for the Inventory and Product services.
 - Source code for the front end web site.
 - Azure Container Repository
 
@@ -29,7 +29,7 @@ The source code for all three projects are in this repo.  We will first pull it 
    1. Press the shell icon in the Azure Portal, as in the setup for the Cosmos DB
    2. Open a new browser tab to:  <http://shell.azure.com> for a full screen experience
 
-2. Pull down the source code locally.  Run the following git command 
+2. Pull down the source code locally.  Run the following git command
 
    ```bash
    git clone https://github.com/chadgms/2019AzureMigrateYourApps
@@ -68,7 +68,7 @@ Now we get into the really exciting stuff!  We have an existing code base for ou
    MYID=(prefix)
    ```
 
-   
+
 
 2. Run the following command to build the code and push the product service image to the ACR.
 
@@ -169,9 +169,9 @@ Now that we have compiled code in containers stored in the registry we now need 
    3. Press Review and Create
    4. Press Create
 
-### Service Configuration 
+### Service Configuration
 
-We now have web apps created for all our resources.  The last thing we need to do is configure application environment variables like connections strings.  When the services start up they can read the environment variables so we can make configurations at runtime.  
+We now have web apps created for all our resources.  The last thing we need to do is configure application environment variables like connections strings.  When the services start up they can read the environment variables so we can make configurations at runtime.
 
 #### Product Service
 
@@ -203,23 +203,23 @@ The product service uses the NOSQL data that was in the on-premise MongoDB.  We 
 
 5. Click + New application setting to add each of these NAME/VALUE pairs
    1. **Name**: COLLECTION_NAME   **Value**: inventory - > Press OK
-   
+
    2. **Name**: DB_CONNECTION_STRING  **Value**:  (paste in the Cosmos DB connection String)
-   
-      1. **IMPORTANT:** We need to add the database name 'tailwind' to the connection string.  You will see the server address:port and the the /?ssl flag like this: 
-   
+
+      1. **IMPORTANT:** We need to add the database name 'tailwind' to the connection string.  You will see the server address:port and the the /?ssl flag like this:
+
          ```
          ...azure.com:10255/?ssl...
          ```
-   
-         You add the tailwind database name between them like this: 
-   
+
+         You add the tailwind database name between them like this:
+
          ```
          ..azure.com:10255/tailwind?ssl...
          ```
-         
+
          ![cosmosconnectstring](images/cosmosconnectstring.png)
-   
+
 6. You should have two app settings something like this ![productappsettings](images/productappsettings.png)
 
 
@@ -245,13 +245,13 @@ The inventory service needs to be pointed to the SQL Database that now lives in 
 1. Click on resource groups -> (your resource group)
 2. Click on your inventory service resource of type 'App Service'
 3. Click Configuration on the left nav bar
-4. Here we will add a Connection String 
-5. Click + New connection string 
+4. Here we will add a Connection String
+5. Click + New connection string
    1. Name: 'InventoryContext'
    2. Value:  (paste in the SQL connection String>)
    3. Update the SQL Connection string:
       1. User ID='migrateadmin'
-      2. Password='AzureMigrateTraining2019#' 
+      2. Password='AzureMigrateTraining2019#'
    4. Type: SQLAzure
 6. Press OK
 7. Press Save
@@ -260,7 +260,7 @@ The inventory service needs to be pointed to the SQL Database that now lives in 
 
 #### Front End Web Site
 
-The last thing we need to do is to tell our front end web site the URL's to our web services for product and inventory.  
+The last thing we need to do is to tell our front end web site the URL's to our web services for product and inventory.
 
 ##### Get base URL's
 
@@ -268,7 +268,7 @@ You can get the base URLs for inventory and product services by clicking on thei
 
 1. Click on resource groups -> (your resource group)
 2. Click on your inventory or product service resource of type 'App Service'
-3. Take note / copy the URL 
+3. Take note / copy the URL
 
 ##### Set Front End Web App Properties
 
@@ -298,7 +298,7 @@ That is is it!  We are done migrating the data and deploying a modern applicatio
 
 
 
-## Appendix 
+## Appendix
 
 ### Shared Connection Strings
 

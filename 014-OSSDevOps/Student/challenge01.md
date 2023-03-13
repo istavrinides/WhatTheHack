@@ -1,4 +1,4 @@
-# What the Hack: OSS DevOps 
+# What the Hack: OSS DevOps
 
 ## Challenge 1 - Introduction
 [Back](challenge00.md) // [Home](../readme.md) // [Next](challenge02.md)
@@ -19,7 +19,7 @@ We can only assume that you are doing this What the Hack because you understand 
 
 1. Create a new public GitHub repository ([hint](https://help.github.com/en/articles/create-a-repo)).
 2. Add the other members of your hack team as contributors to your GitHub repostiory ([hint](https://help.github.com/en/articles/inviting-collaborators-to-a-personal-repository)).
-3. Take the [DevOps Self-Assessment](https://www.devopsassessment.net) this will take between 20 to 40 minutes. 
+3. Take the [DevOps Self-Assessment](https://www.devopsassessment.net) this will take between 20 to 40 minutes.
 4. Share the results of your Self-Assessment with your team. Are their any common themes?
 
 

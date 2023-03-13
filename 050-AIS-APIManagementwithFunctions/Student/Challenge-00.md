@@ -54,7 +54,7 @@ This hack requires VS Code version **1.63 or higher**.
 
 ### Set default Azure subscription and resource group
 
-You can set your default Azure subscription and resource group by: 
+You can set your default Azure subscription and resource group by:
 
 - Sign-in by running ```az login``` in the VS Code Terminal
 - Set default subscription by running ```az account set --subscription "<subscription name or subscription id>"```

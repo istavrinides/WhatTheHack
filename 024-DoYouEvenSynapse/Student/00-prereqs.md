@@ -1,9 +1,9 @@
-# Challenge 0: Pre-requisites - Ready, Set, GO! 
+# Challenge 0: Pre-requisites - Ready, Set, GO!
 
 **[Home](../README.md)** - [Next Challenge >](./01-data-gathering.md)
 
 ## Introduction
-A smart cloud solution architect always has the right tools in their toolbox. 
+A smart cloud solution architect always has the right tools in their toolbox.
 
 ## Description
 In this challenge we'll be setting up all the tools we will need to complete our challenges.
@@ -14,6 +14,6 @@ In this challenge we'll be setting up all the tools we will need to complete our
     - Power BI Desktop
 
 ## Success Criteria
-- An Azure Subscription has been set up 
+- An Azure Subscription has been set up
 - Access to the Azure Portal
 - Show the accounts necessary have Owner or Contributor permissions on the Subscription

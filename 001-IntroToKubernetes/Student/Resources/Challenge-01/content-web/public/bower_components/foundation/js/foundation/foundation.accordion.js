@@ -80,13 +80,13 @@
         $instance.attr('aria-multiselectable','true');
       }
     },
-	
+
   	toggle : function(options) {
   		var options = typeof options !== 'undefined' ? options : {};
   		var selector = typeof options.selector !== 'undefined' ? options.selector : '';
   		var toggle_state = typeof options.toggle_state !== 'undefined' ? options.toggle_state : '';
   		var $accordion = typeof options.$accordion !== 'undefined' ? options.$accordion : this.S(this.scope).closest('[' + this.attr_name() + ']');
-  
+
   		var $items = $accordion.find('> dd' + selector + ', > li' + selector);
   		if ( $items.length < 1 ) {
   			if ( window.console ) {
@@ -94,7 +94,7 @@
   			}
   			return false;
   		}
-  
+
   		var S = this.S;
   		var active_class = this.settings.active_class;
   		$items.each(function() {
@@ -105,18 +105,18 @@
   			}
   		});
   	},
-  
+
   	open : function(options) {
   		var options = typeof options !== 'undefined' ? options : {};
   		options.toggle_state = 'open';
   		this.toggle(options);
   	},
-  
+
   	close : function(options) {
   		var options = typeof options !== 'undefined' ? options : {};
   		options.toggle_state = 'close';
   		this.toggle(options);
-  	},	
+  	},
 
     off : function () {},
 

@@ -13,7 +13,7 @@ In this challenge you will be setting up storage resources to support the requir
 In this challenge you will be creating three storage accounts one per region. Each region will have a dedicated host pool so each storage account will be used by one of those host pools.
 
 1. Capacity planning is always a key point for the success of any project. For the success of this deployment your implementation must support the following points:
-    * For this PoC the solution **must support 1/3 of the users** on each region. 
+    * For this PoC the solution **must support 1/3 of the users** on each region.
     * The storage capacity must support 1/3 of the users to login at the same time and have steady state sessions. You must calculate the expected amount of IOps fot this solution. **HINT:** Check the reference section to calculate the storage requirements.**
     * Solution breakout:
         * Field in UK 2000 users
@@ -27,13 +27,13 @@ In this challenge you will be creating three storage accounts one per region. Ea
         - `storjw\<alias>`
         - `storuks\<alias>`
         - Example: `storeusvsantana`
-        
+
          **NOTE:** The Storage account name must have less than 15 characters due to NETBIOS limitation.
 
 1. Create Private Endpoint for each Storage Account
     * Create a Private Endpoint connecting each storage account to the respective VNet in each region.
     * The private link must be named as follow:
-        - `priveusaz140`  
+        - `priveusaz140`
         - `privjwaz140`
         - `privuksaz140`
 
@@ -51,7 +51,7 @@ In this challenge you will be creating three storage accounts one per region. Ea
     * You must apply the permission to the following groups:
         - `avd_users_japan`
         - `avd_users_uk`
-        - `avd_users_usa`  
+        - `avd_users_usa`
     * The file shares must be named as follow:
         - `shareeusaz140`
         - `sharejwaz140`

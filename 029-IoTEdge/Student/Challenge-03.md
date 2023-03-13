@@ -6,7 +6,7 @@
 Now that Contoso has a device installed in their plant and cloud services deployed to interact with the Edge device; we will need to deploy services onto the Edge device allowing communication via OPC from the simulated Plant-floor 'machine' in Challenge-2 to the Edge.  This challenge involves deploying specialized modules to the Edge to facilitate the communication with a configuration that will connect and ingest OPC data changes from the Programmable Logic Controller running the 'machine' and push them into the cloud for later analysis.
 
 ## Description
-In the previous challenges you should have already build the foundation for proceeding forward with ingesting data from the Plant-floor 'machine' we're simulating.  In this challenge we need to focus on deploying the necessary components required to connect to the plant-floor machine's industrial programmable logic controller (simulated) to the Edge device.  
+In the previous challenges you should have already build the foundation for proceeding forward with ingesting data from the Plant-floor 'machine' we're simulating.  In this challenge we need to focus on deploying the necessary components required to connect to the plant-floor machine's industrial programmable logic controller (simulated) to the Edge device.
 
 For this challenge you should focus on the steps below to successfully establish data flow from the IoT Edge --> Cloud.
 

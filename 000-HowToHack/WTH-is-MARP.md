@@ -28,7 +28,7 @@ The easiest way to create is to start with an existing example.
 * [WTH Advanced Kubernetes Coach Slides](https://microsoft.github.io/WhatTheHack/023-AdvancedKubernetes/Coach/slides.html)
   * [Slide source file](https://raw.githubusercontent.com/microsoft/WhatTheHack/master/023-AdvancedKubernetes/Coach/slides.md)
 * [MARP Example slides](https://speakerdeck.com/yhatt/marp-basic-example)
-* [MARP themes](https://github.com/marp-team/marp-core/tree/main/themes) 
+* [MARP themes](https://github.com/marp-team/marp-core/tree/main/themes)
 
 ## Export Markdown to HTML
 
@@ -41,8 +41,8 @@ To export the content of active Markdown editor, open the quick pick from Marp i
 
 # FAQ
 
-* Q: Why MARP vs Reveal.js? 
+* Q: Why MARP vs Reveal.js?
   * A: Reveal.js is great and powerful and complex.  It uses Javacript as a baseline, and we wanted to make this as easy on new developers who might not use JS or even have NPM installed.
 * Q: How do I make MARP do what I want?
-  * A: This will not have the same power or flexibility as Powerpoint.  
+  * A: This will not have the same power or flexibility as Powerpoint.
   * You can customize the presentation with [MARP directives](https://marpit.marp.app/directives).

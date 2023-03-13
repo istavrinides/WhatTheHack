@@ -2,7 +2,7 @@ param longName string
 
 resource keyVault 'Microsoft.KeyVault/vaults@2021-04-01-preview' = {
   name: 'kv-${longName}'
-  location: resourceGroup().location 
+  location: resourceGroup().location
   properties: {
     sku: {
       family: 'A'
@@ -11,7 +11,7 @@ resource keyVault 'Microsoft.KeyVault/vaults@2021-04-01-preview' = {
     tenantId: subscription().tenantId
     enableRbacAuthorization: false
     accessPolicies: []
-  }  
+  }
 }
 
 output keyVaultName string = keyVault.name

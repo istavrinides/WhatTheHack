@@ -53,11 +53,11 @@ sudo chown -R $ADMINUSER.$ADMINUSER $ADMINUSERHOME
 
 #11. Change sshd port to 2266 and restart it
 sudo systemctl stop sshd.service
-sudo chown $ADMINUSER.$ADMINUSER /etc/ssh/sshd_config 
-sudo cat <<EOF >> /etc/ssh/sshd_config 
+sudo chown $ADMINUSER.$ADMINUSER /etc/ssh/sshd_config
+sudo cat <<EOF >> /etc/ssh/sshd_config
 
 # WTH: Change to run on a custom port for security reasons
 Port 2266
 EOF
-sudo chown root.root /etc/ssh/sshd_config 
+sudo chown root.root /etc/ssh/sshd_config
 sudo systemctl start sshd.service

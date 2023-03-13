@@ -19,8 +19,8 @@ namespace RazorPagesTestSample.Tests
                 .AddEntityFrameworkInMemoryDatabase()
                 .BuildServiceProvider();
 
-            // Create a new options instance using an in-memory database and 
-            // IServiceProvider that the context should resolve all of its 
+            // Create a new options instance using an in-memory database and
+            // IServiceProvider that the context should resolve all of its
             // services from.
             var builder = new DbContextOptionsBuilder<AppDbContext>()
                 .UseInMemoryDatabase("InMemoryDb")

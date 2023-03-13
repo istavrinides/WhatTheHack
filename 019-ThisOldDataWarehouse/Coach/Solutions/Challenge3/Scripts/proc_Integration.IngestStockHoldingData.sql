@@ -1,4 +1,4 @@
-CREATE  Procedure Integration.IngestStockHoldingData 
+CREATE  Procedure Integration.IngestStockHoldingData
 AS
 BEGIN
 

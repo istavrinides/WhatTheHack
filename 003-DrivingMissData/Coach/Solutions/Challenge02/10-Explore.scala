@@ -10,22 +10,22 @@
 // COMMAND ----------
 
 // MAGIC %sql
-// MAGIC 
-// MAGIC select 
+// MAGIC
+// MAGIC select
 // MAGIC   taxi_type,
 // MAGIC   count(*) as trip_count
-// MAGIC from 
+// MAGIC from
 // MAGIC   taxi_trips_mat_view
 // MAGIC group by taxi_type
 
 // COMMAND ----------
 
 // MAGIC %sql
-// MAGIC 
-// MAGIC select 
+// MAGIC
+// MAGIC select
 // MAGIC   taxi_type,
 // MAGIC   count(*) as trip_count
-// MAGIC from 
+// MAGIC from
 // MAGIC   taxi_trips_mat_view
 // MAGIC group by taxi_type
 
@@ -37,10 +37,10 @@
 // COMMAND ----------
 
 // MAGIC %sql
-// MAGIC 
-// MAGIC select 
+// MAGIC
+// MAGIC select
 // MAGIC   taxi_type, sum(total_amount + tip_amount) as revenue_with_tip
-// MAGIC from 
+// MAGIC from
 // MAGIC   taxi_trips_mat_view
 // MAGIC group by
 // MAGIC   taxi_type
@@ -53,10 +53,10 @@
 // COMMAND ----------
 
 // MAGIC %sql
-// MAGIC 
-// MAGIC select 
+// MAGIC
+// MAGIC select
 // MAGIC   taxi_type, sum(total_amount) revenue
-// MAGIC from 
+// MAGIC from
 // MAGIC   taxi_trips_mat_view
 // MAGIC group by
 // MAGIC   taxi_type
@@ -69,12 +69,12 @@
 // COMMAND ----------
 
 // MAGIC %sql
-// MAGIC 
-// MAGIC select 
+// MAGIC
+// MAGIC select
 // MAGIC   taxi_type,
 // MAGIC   trip_year,
 // MAGIC   count(*) as trip_count
-// MAGIC from 
+// MAGIC from
 // MAGIC   taxi_trips_mat_view
 // MAGIC where
 // MAGIC   trip_year between 2010 and 2017
@@ -91,19 +91,19 @@
 // COMMAND ----------
 
 // MAGIC %sql
-// MAGIC 
-// MAGIC select 
+// MAGIC
+// MAGIC select
 // MAGIC   taxi_type,
 // MAGIC   trip_month as month,
 // MAGIC   count(*) as trip_count
-// MAGIC from 
+// MAGIC from
 // MAGIC   taxi_trips_mat_view
-// MAGIC where 
+// MAGIC where
 // MAGIC   trip_year=2017
 // MAGIC group by
 // MAGIC   taxi_type, trip_month
 // MAGIC order by
-// MAGIC   trip_month 
+// MAGIC   trip_month
 
 // COMMAND ----------
 
@@ -113,11 +113,11 @@
 // COMMAND ----------
 
 // MAGIC %sql
-// MAGIC 
-// MAGIC select 
+// MAGIC
+// MAGIC select
 // MAGIC   taxi_type,
 // MAGIC   round(avg(trip_distance), 2) as trip_distance_miles
-// MAGIC from 
+// MAGIC from
 // MAGIC   taxi_trips_mat_view
 // MAGIC group by
 // MAGIC   taxi_type
@@ -130,11 +130,11 @@
 // COMMAND ----------
 
 // MAGIC %sql
-// MAGIC 
-// MAGIC select 
+// MAGIC
+// MAGIC select
 // MAGIC   taxi_type,
 // MAGIC   round(avg(total_amount), 2) as avg_total_amount
-// MAGIC from 
+// MAGIC from
 // MAGIC   taxi_trips_mat_view
 // MAGIC group by
 // MAGIC   taxi_type
@@ -147,11 +147,11 @@
 // COMMAND ----------
 
 // MAGIC %sql
-// MAGIC 
-// MAGIC select 
+// MAGIC
+// MAGIC select
 // MAGIC   taxi_type,
 // MAGIC   count(*) as tipless_count
-// MAGIC from 
+// MAGIC from
 // MAGIC   taxi_trips_mat_view
 // MAGIC where
 // MAGIC   tip_amount = 0
@@ -166,11 +166,11 @@
 // COMMAND ----------
 
 // MAGIC %sql
-// MAGIC 
-// MAGIC select 
+// MAGIC
+// MAGIC select
 // MAGIC   taxi_type,
 // MAGIC   count(*) as num_transactions
-// MAGIC from 
+// MAGIC from
 // MAGIC   taxi_trips_mat_view
 // MAGIC where
 // MAGIC   payment_type_description = 'No charge' and
@@ -186,8 +186,8 @@
 // COMMAND ----------
 
 // MAGIC %sql
-// MAGIC 
-// MAGIC select 
+// MAGIC
+// MAGIC select
 // MAGIC   payment_type_description,
 // MAGIC   count(*) as num_transactions
 // MAGIC from
@@ -203,7 +203,7 @@
 // COMMAND ----------
 
 // MAGIC %sql
-// MAGIC 
+// MAGIC
 // MAGIC select
 // MAGIC   pickup_hour,
 // MAGIC   count(*) as num_pickups
@@ -224,17 +224,17 @@
 // COMMAND ----------
 
 // MAGIC %sql
-// MAGIC 
-// MAGIC select 
+// MAGIC
+// MAGIC select
 // MAGIC   pickup_zone,
 // MAGIC   dropoff_zone,
 // MAGIC   count(*) as trip_count
-// MAGIC from 
+// MAGIC from
 // MAGIC   nyctaxi.yellow_taxi_trips_curated
-// MAGIC where 
+// MAGIC where
 // MAGIC   trip_year = 2017 and
 // MAGIC   pickup_zone is not null and
-// MAGIC   pickup_zone <> 'NV' and 
+// MAGIC   pickup_zone <> 'NV' and
 // MAGIC   dropoff_zone is not null and
 // MAGIC   dropoff_zone <> 'NV'
 // MAGIC group by

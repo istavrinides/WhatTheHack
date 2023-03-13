@@ -15,7 +15,7 @@ namespace PictureBot.Responses
         {
             await context.SendActivity($"What would you like to search for?");
         }
-        
+
         public static async Task ReplyWithSearchConfirmation(ITurnContext context, string utterance)
         {
             await context.SendActivity($"Ok, searching for pictures of {utterance}");

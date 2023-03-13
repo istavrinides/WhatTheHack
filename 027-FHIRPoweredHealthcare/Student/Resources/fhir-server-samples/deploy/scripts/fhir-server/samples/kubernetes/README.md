@@ -1,6 +1,6 @@
 # Running Microsoft FHIR Server for Azure in Kubernetes
 
-The Microsoft FHIR Server for Azure can be deployed in a Kubernetes cluster. This document describes how to deploy and configure [Azure Kubernetes Service (AKS)](https://azure.microsoft.com/services/kubernetes-service/) to be able to run the FHIR server in it. Specifically, it describes how to install [Azure Service Operator](https://github.com/Azure/azure-service-operator) in the cluster to allow easy deployment of managed databases (Azure SQL or Cosmos DB). The repo contains a [helm](https://helm.sh) chart that leverages the Azure Service Operator to deploy and configure both FHIR service and backend database. 
+The Microsoft FHIR Server for Azure can be deployed in a Kubernetes cluster. This document describes how to deploy and configure [Azure Kubernetes Service (AKS)](https://azure.microsoft.com/services/kubernetes-service/) to be able to run the FHIR server in it. Specifically, it describes how to install [Azure Service Operator](https://github.com/Azure/azure-service-operator) in the cluster to allow easy deployment of managed databases (Azure SQL or Cosmos DB). The repo contains a [helm](https://helm.sh) chart that leverages the Azure Service Operator to deploy and configure both FHIR service and backend database.
 
 ## Deploy and configure AKS cluster
 
@@ -281,7 +281,7 @@ To use the `$export` operation, the FHIR server must be configured with a [pod i
     STORAGE_ACCOUNT_ID=$(az storage account show -g $RESOURCE_GROUP -n $STORAGE_ACCOUNT_NAME | jq -r .id)
     BLOB_URI=$(az storage account show -g $RESOURCE_GROUP -n $STORAGE_ACCOUNT_NAME | jq -r .primaryEndpoints.blob)
     az role assignment create --role "Storage Blob Data Contributor" --assignee $IDENTITY_CLIENT_ID --scope $STORAGE_ACCOUNT_ID
-    ```      
+    ```
 
 4. Provision FHIR server:
 

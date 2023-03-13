@@ -1,4 +1,4 @@
-# Optional Challenge 07B - Data in Cosmos DB - Coach's Guide 
+# Optional Challenge 07B - Data in Cosmos DB - Coach's Guide
 
 [< Previous Solution](./Solution-07A.md) - **[Home](./README.md)** - [Next Solution >](./Solution-08.md)
 

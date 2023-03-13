@@ -6,14 +6,14 @@
 1. Your Azure Subscription
 
 
-## Introduction 
+## Introduction
 
 The primary objective of this activity is to just setup resources that will be used for subsequent challenges.  It will also familiarize students with creating Power BI Capacity in Azure.
 
 
 ## Hackflow
 
-1. Create a new blob storage account with a new container 
+1. Create a new blob storage account with a new container
 1. A backup of the AdventureWorksDW has been provided for you in the following location.  Download the file and upload it to your newly created blob container. <https://cgmaiadjacent.blob.core.windows.net/backup/AdventureWorksDW.bacpac>
 1. Create an Azure SQL Database server in the Azure Portal.  (Note:  Make sure you setup the database to allow access from other Azure services.)
 1. Import the AdventureWorksDW database from the blob where you uploaded the .bacpac file

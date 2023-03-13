@@ -1,7 +1,7 @@
 version: "3"
 services:
   fhir-api:
-    build: 
+    build:
       context: ./../../
       dockerfile: ./build/docker/Dockerfile
       args:
@@ -13,7 +13,7 @@ services:
       SqlServer__AllowDatabaseCreation: "true"
       SqlServer__Initialize: "true"
       DataStore: "SqlServer"
-    ports:     
+    ports:
       - "8080:8080"
     depends_on:
       - sql

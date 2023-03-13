@@ -18,7 +18,7 @@ Welcome to the coach's guide for the Azure Integration Services - API Management
 -  Challenge 4: **[Secure Backend APIs](Solution-04.md)**
    - Securing backend APIs by configuring them in the VNET or by using OAuth 2.0 authorization
 
-## Coach Prerequisites 
+## Coach Prerequisites
 
 This hack has pre-reqs that a coach is responsible for understanding and/or setting up BEFORE hosting an event. Please review the [What The Hack Hosting Guide](https://aka.ms/wthhost) for information on how to host a hack event.
 
@@ -30,9 +30,9 @@ Before the hack, it is the Coach's responsibility to download and package up the
 
 Always refer students to the [What The Hack website](https://aka.ms/wth) for the student guide: [https://aka.ms/wth](https://aka.ms/wth)
 
-**NOTE:** Students should **not** be given a link to the What The Hack repo before or during a hack. The student guide does **NOT** have any links to the Coach's guide or the What The Hack repo on GitHub.  
+**NOTE:** Students should **not** be given a link to the What The Hack repo before or during a hack. The student guide does **NOT** have any links to the Coach's guide or the What The Hack repo on GitHub.
 
-### Additional Coach Prerequisites 
+### Additional Coach Prerequisites
 - Visual Studio Code 1.63 or higher with Bicep extension
 - Azure CLI 2.20.0 or higher
 - Azure DevOps project or GitHub project
@@ -41,17 +41,17 @@ Always refer students to the [What The Hack website](https://aka.ms/wth) for the
 
 These Azure requirements should be shared with a stakeholder in the organization that will be providing the Azure subscription(s) that will be used by the students.
 
-This hack requires students to use an account that have Owner access to an Azure subscription so they can create and consume Azure resources such as: 
+This hack requires students to use an account that have Owner access to an Azure subscription so they can create and consume Azure resources such as:
 
 - API Management Service
 - Azure Function Apps
-- Virtual Networks 
+- Virtual Networks
 - Private Endpoints
 
 Moreover, check that the account the students will use have the right permissions to be able to create new AAD application registrations (service principals).  If the student accounts do not have this permission, then ask if your AAD Global Administrator can allow it, or create app-registrations (service principals) on the student's behalf for the hack.  Steps on how do this can be found [here](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#permissions-required-for-registering-an-app).
 
 
-## Suggested Hack Agenda 
+## Suggested Hack Agenda
 - Day 1
 	- Challenge 0 (1 hour)
 	- Challenge 1 (2 hours)

@@ -1,4 +1,4 @@
-# What the Hack: OSS DevOps 
+# What the Hack: OSS DevOps
 
 ## Challenge 09 - Monitoring: Generating and listening to application metrics
 [Back](challenge08.md) // [Home](../readme.md)
@@ -19,5 +19,5 @@ The tasks in this challenge are to:
 ### Success Criteria
 
 The successfully complete this section deploy a the voting application and have its metrics be emitted to Prometheus.
-   
+
 [Back](challenge08.md) // [Home](../readme.md)

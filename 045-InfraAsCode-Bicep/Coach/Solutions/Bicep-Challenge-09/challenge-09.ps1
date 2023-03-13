@@ -10,4 +10,3 @@ New-AzResourceGroupDeployment `
 	-TemplateFile ./challenge-09.bicep `
 	-TemplateParameterFile ./challenge-09.parameters.json `
 	-CustomScript $(Get-Content '../scripts/install-apache.sh' -Encoding UTF8 -Raw)
-	

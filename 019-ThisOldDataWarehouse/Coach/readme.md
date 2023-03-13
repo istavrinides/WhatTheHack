@@ -42,4 +42,3 @@ This area is for us to keep a running list of things we would like to incorporat
 1. Setup external table in Azure Synapse Analytics
 1. Create Power BI report to use clickstream data
 1. Recreate this pipeline using Synapse Spark Pool
-   

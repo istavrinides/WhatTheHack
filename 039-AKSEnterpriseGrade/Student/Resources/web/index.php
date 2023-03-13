@@ -40,7 +40,7 @@
                             list($header, $payload, $signature) = explode(".", $jwt);
                             $plainPayload = base64_decode($payload);
                             $jsonPayload = json_decode($plainPayload, true);
-                            print("Hello, ".$jsonPayload["given_name"]); 
+                            print("Hello, ".$jsonPayload["given_name"]);
                         }
                     ?></li>
 				</ul>

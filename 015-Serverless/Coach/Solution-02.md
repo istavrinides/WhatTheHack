@@ -1,4 +1,4 @@
-# Challenge 02 - Create a Hello World Function - Coach's Guide 
+# Challenge 02 - Create a Hello World Function - Coach's Guide
 
 [< Previous Solution](./Solution-01.md) - **[Home](./README.md)** - [Next Solution >](./Solution-03.md)
 

@@ -38,7 +38,7 @@ In this hack you will be solving the common problem that websites have with the 
 - Some form of Chromium Web Browser installed
   - [Microsoft Edge](https://www.microsoft.com/en-us/edge)
   - [Google Chrome](https://www.google.com/chrome/)
-  
+
 ## Repository Contents
 - ./Coach/Resources/ContosoMasks.com
   - Code for the website that Front Door will refer to

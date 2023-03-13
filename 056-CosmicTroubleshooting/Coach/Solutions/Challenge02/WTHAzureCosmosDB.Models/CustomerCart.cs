@@ -12,7 +12,7 @@ public class CustomerCart : Entity
 
     [JsonProperty(PropertyName = "storeId")]
     public int StoreId { get; set; }
-    
+
     [JsonProperty(PropertyName = "items")]
     public List<CustomerCartItem> Items { get; set; }
 }

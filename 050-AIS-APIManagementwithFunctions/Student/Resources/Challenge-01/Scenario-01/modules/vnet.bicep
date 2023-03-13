@@ -17,7 +17,7 @@ param vm_subnet_prefix string = '10.0.2.0/24'
 param bastion_subnet_prefix string = '10.0.3.0/26'
 
 @description('Location in which resources will be created')
-param location string 
+param location string
 
 @description('The reference to the NSG for API Management')
 param apim_nsg_id string
@@ -74,21 +74,21 @@ resource vnetResource 'Microsoft.Network/virtualNetworks@2021-05-01' = {
       }
       {
         type: 'subnets'
-        name: 'vmSubnet'        
+        name: 'vmSubnet'
         properties: {
-          addressPrefix: vm_subnet_prefix           
+          addressPrefix: vm_subnet_prefix
           privateEndpointNetworkPolicies: 'Enabled'
           privateLinkServiceNetworkPolicies: 'Enabled'
           networkSecurityGroup: {
             id: vm_nsg_id
           }
         }
-      }      
+      }
       {
         type: 'subnets'
-        name: 'AzureBastionSubnet'        
+        name: 'AzureBastionSubnet'
         properties: {
-          addressPrefix: bastion_subnet_prefix           
+          addressPrefix: bastion_subnet_prefix
           privateEndpointNetworkPolicies: 'Disabled'
           privateLinkServiceNetworkPolicies: 'Disabled'
 

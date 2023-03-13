@@ -12,7 +12,7 @@ Using docker-compose this image can be started with the following steps:
 1. Open a terminal window.
 2. Set the enviornment variable SAPASSWORD to what you want the SQL access password to be. Be sure to follow the [SQL server password complexity requirements](https://docs.microsoft.com/en-us/sql/relational-databases/security/password-policy?view=sql-server-ver15#password-complexity).
 3. Copy & save a local version of the docker-compose file from the release directory of the fhir-server project.
-4. Run the command: 
+4. Run the command:
 
 ```bash
 docker-compose up -d .
@@ -23,20 +23,20 @@ docker-compose up -d .
 
 Using just docker this image can be started with the following steps. Replace the `<SA_PASSWORD>` below with your chosen SQL connection password, following the complexity rules linked above.
 1. Open a terminal window.
-2. Run the command: 
+2. Run the command:
 
 ```bash
 docker network create fhir_network
 ```
 
-3. Run the command: 
+3. Run the command:
 
 ```bash
 docker run --net fhir_network --name fhir_sql -e SA_PASSWORD=<SA_PASSWORD> -e ACCEPT_EULA="Y" -d mcr.microsoft.com/mssql/server
 ```
 
 4. Give the SQL server a minute to start up.
-5. Run the command: 
+5. Run the command:
 
 ```bash
 docker run --net fhir_network -e FhirServer__Security__Enabled="false" -e SqlServer__ConnectionString="Server=tcp:fhir_sql,1433;Initial Catalog=FHIR;Persist Security Info=False;User ID=sa;Password=<SA_PASSWORD>;MultipleActiveResultSets=False;Connection Timeout=30;" -e SqlServer__AllowDatabaseCreation="true" -e SqlServer__Initialize="true" -e DataStore="SqlServer" -p 8080:8080 -d healthplatformregistry.azurecr.io/r4_fhir-server azure-fhir-api

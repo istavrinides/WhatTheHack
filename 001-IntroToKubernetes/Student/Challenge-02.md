@@ -9,7 +9,7 @@ Azure Container Registry is a managed registry service based on the open-source 
 You can use Azure container registries with your existing container development and deployment pipelines, or use Azure Container Registry Tasks to build container images in Azure. Build on demand, or fully automate builds with triggers such as source code commits and base image updates.
 
 ## Choose Your Path!
-**Attention Attendee:**  Your coach will advise you on the path to take with this challenge on Azure Container Registry.  
+**Attention Attendee:**  Your coach will advise you on the path to take with this challenge on Azure Container Registry.
 
 ### [ACR Path A](Challenge-02A.md)
 - Deploy the containers you created in Challenge 1

@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   connection: local
-  tasks:  
+  tasks:
   - name: Create public IP address
     azure_rm_publicipaddress:
       resource_group: ansible-rg

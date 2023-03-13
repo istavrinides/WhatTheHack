@@ -13,7 +13,7 @@
     const connection = new signalR.HubConnectionBuilder()
       .withUrl('/signalr/inventory')
       .build()
-    
+
     const items = document.getElementById('items')
     connection.on('inventoryUpdated', item => {
       const li = document.createElement('li')
@@ -24,7 +24,7 @@
       console.log('disconnected')
       startConnection()
     })
-    
+
     startConnection()
 
     function startConnection() {

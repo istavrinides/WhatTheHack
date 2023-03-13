@@ -18,7 +18,7 @@ namespace Contoso.WebApi
             Configuration = configuration;
         }
 
-       
+
         public IConfiguration Configuration { get; }
 
 

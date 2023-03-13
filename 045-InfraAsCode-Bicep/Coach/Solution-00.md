@@ -12,7 +12,7 @@ You will need an Azure subscription to complete this hackathon. If you don't hav
 
 [Sign Up for Azure HERE](https://azure.microsoft.com/en-us/free/)
 
-Our goal in the hackathon is limiting the cost of using Azure services. 
+Our goal in the hackathon is limiting the cost of using Azure services.
 
 If you've never used Azure, you will get:
 - $200 free credits for use for up to 30 days
@@ -53,7 +53,7 @@ Build, manage, and monitor everything from simple web apps to complex cloud appl
 
 Manage your resources via a web interface (i.e. GUI) at [https://portal.azure.com/](https://portal.azure.com/)
 
-The Azure Portal is a great tool for quick prototyping, proof of concepts, and testing things out in Azure by deploying resources manually. However, when deploying production resources to Azure, it is highly recommended that you an automation tool, templates, or scripts instead of the portal. 
+The Azure Portal is a great tool for quick prototyping, proof of concepts, and testing things out in Azure by deploying resources manually. However, when deploying production resources to Azure, it is highly recommended that you an automation tool, templates, or scripts instead of the portal.
 
 **Note:** That's why you're participating in this "Infrastructure as Code" hackathon!
 
@@ -86,11 +86,11 @@ Alternatively, you can use the [Azure Cloud Shell](https://shell.azure.com/bash)
 
 ### Azure PowerShell CmdLets
 
-Azure PowerShell provides a set of cmdlets that use the Azure Resource Manager model for managing your Azure resources. 
+Azure PowerShell provides a set of cmdlets that use the Azure Resource Manager model for managing your Azure resources.
 
 [Install the Azure PowerShell Cmdlets](https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps)
 
-The Azure PowerShell Cmdlets are functionally equivalent to the Azure CLI and can be used to complete all of the challenges instead of the Azure CLI. However, the Azure PowerShell Cmdlets are required for the PowerShell DSC challenges. 
+The Azure PowerShell Cmdlets are functionally equivalent to the Azure CLI and can be used to complete all of the challenges instead of the Azure CLI. However, the Azure PowerShell Cmdlets are required for the PowerShell DSC challenges.
 
 
 ### Azure Cloud Shell

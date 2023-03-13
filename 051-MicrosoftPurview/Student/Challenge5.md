@@ -15,7 +15,7 @@ In this challenge you will setup a business glossary with terms that have been p
     - Account Team Unit
     - Specialist Team Unit
 
-All of these three terms need an additional column called "Microsoft Terminology".  
+All of these three terms need an additional column called "Microsoft Terminology".
 
 Ensure that these terms can be used for searching these tagged assets and can also be used as filter conditions for the search.
 

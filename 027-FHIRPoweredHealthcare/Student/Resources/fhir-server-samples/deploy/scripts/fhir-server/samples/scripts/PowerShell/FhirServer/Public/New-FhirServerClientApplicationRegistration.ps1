@@ -37,11 +37,11 @@ function New-FhirServerClientApplicationRegistration {
     )
 
     Set-StrictMode -Version Latest
-    
+
     # Get current AzureAd context
     try {
         Get-AzureADCurrentSessionInfo -ErrorAction Stop | Out-Null
-    } 
+    }
     catch {
         throw "Please log in to Azure AD with Connect-AzureAD cmdlet before proceeding"
     }
@@ -60,7 +60,7 @@ function New-FhirServerClientApplicationRegistration {
     $reqAad.ResourceAppId = $windowsAadResourceId
     $reqAad.ResourceAccess = New-Object -TypeName "Microsoft.Open.AzureAD.Model.ResourceAccess" -ArgumentList $signInScope, "Scope"
 
-    # Required App Permission for the API application registration. 
+    # Required App Permission for the API application registration.
     $reqApi = New-Object -TypeName "Microsoft.Open.AzureAD.Model.RequiredResourceAccess"
     $reqApi.ResourceAppId = $apiAppReg.AppId #From API App registration above
 

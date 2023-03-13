@@ -3,7 +3,7 @@
 
 ## Notes & Guidance
 
-In this hack you participants will solve common challenges for companies planning to use Azure IoT in Industrial IoT scenarios.  This is the coaches guide to aid individuals guiding participants through the challenges.  
+In this hack you participants will solve common challenges for companies planning to use Azure IoT in Industrial IoT scenarios.  This is the coaches guide to aid individuals guiding participants through the challenges.
 
 + [Slide Deck to use for Delivery](../Student/assets/IoTHub_Edge.pptx)
 
@@ -17,9 +17,9 @@ In this hack you participants will solve common challenges for companies plannin
 ## Challenges
 
 - Challenge 1: **[Deploy IoTHub/Edge](Challenge-01.md)**
-- Challenge 2: **[Deploy OPC Simulator](Challenge-02.md)** 
+- Challenge 2: **[Deploy OPC Simulator](Challenge-02.md)**
 - Challenge 3: **[Deploy Industrial IoT solution](Challenge-03.md)**
-- Challenge 4: **[Route messages and do time-series analysis](Challenge-04.md)** 
+- Challenge 4: **[Route messages and do time-series analysis](Challenge-04.md)**
 - Challenge 5: **[Process Steaming Data](Challenge-05.md)**
 - Challenge 6: **[Deploy to devices at scale](Challenge-06.md)**
 - Challenge 7: **[Connect to Devices with Device Streams](Challenge-07.md)**

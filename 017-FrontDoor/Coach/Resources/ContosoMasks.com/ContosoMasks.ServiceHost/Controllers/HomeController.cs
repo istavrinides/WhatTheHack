@@ -29,7 +29,7 @@ namespace ContosoMasks.ServiceHost.Controllers
             {
                 string url = string.IsNullOrEmpty(SiteConfiguration.FrontDoorURL) ? "/" : SiteConfiguration.FrontDoorURL;
                 if ( cdn )
-                { 
+                {
                     return Redirect(url + "?cdn=true");
                 }
                 else
@@ -70,7 +70,7 @@ namespace ContosoMasks.ServiceHost.Controllers
 
             this.Response.Headers.Add("X-ContosoMasks-StaticEndpoint", cdnEndPoint);
 
-            
+
             return View();
         }
 
@@ -100,7 +100,7 @@ namespace ContosoMasks.ServiceHost.Controllers
                         run = new LoadTestRun(url, id);
                         runs.Add(run);
                     }
-                    
+
                     run.AddFile(toks[1], blobContent);
                 }
             }

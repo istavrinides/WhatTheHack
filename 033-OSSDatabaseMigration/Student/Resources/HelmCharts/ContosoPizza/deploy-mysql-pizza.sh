@@ -12,13 +12,13 @@ done
 while ! kubectl -n mysql exec deploy/mysql -it -- /usr/bin/mysql -u root -pOCPHack8 <./mysql.sql &> /dev/null ; do
     echo "Waiting to be able to login to MySQL"
     sleep 2
-done 
+done
 
 mysqlClusterIP=$(kubectl -n mysql get svc -o jsonpath="{.items[0].spec.clusterIP}")
 
 sed "s/XXX.XXX.XXX.XXX/$mysqlClusterIP/" ./values-mysql-orig.yaml >temp_mysql.yaml && mv temp_mysql.yaml ./values-mysql.yaml
 
-helm upgrade --install mysql-contosopizza . -f ./values.yaml -f ./values-mysql.yaml 
+helm upgrade --install mysql-contosopizza . -f ./values.yaml -f ./values-mysql.yaml
 
 for ((i = 0 ; i < 30 ; i++)); do
     appStatus=$(kubectl -n contosoappmysql get svc -o jsonpath="{.items[0].status.loadBalancer.ingress[0].ip}")

@@ -16,5 +16,5 @@
     - On the new page, select "Configure CodeQL Alerts"
     - It will give you a default template which you can modify.  A sample solution is in the coaches solution section.
 
-## Solution 
+## Solution
 - [Navigate to Solution for Challenge 09](./Solution/Solution-09/Solution09.yml)

@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: vehicle-registration-service 
+  name: vehicle-registration-service
   labels:
     app: vehicle-registration-service
 spec:
@@ -86,8 +86,7 @@ spec:
       - path: /
         pathType: Prefix
         backend:
-          service: 
+          service:
             name: vehicle-registration-service
-            port: 
+            port:
               number: 80
-              

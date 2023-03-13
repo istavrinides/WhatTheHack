@@ -60,7 +60,7 @@ Now you will add code to the `TrafficControlService` so that it uses the Dapr st
     using System.Net.Http.Json;
     using System.Threading.Tasks;
     using TrafficControlService.Models;
-    
+
     namespace TrafficControlService.Repositories
     {
         public class DaprVehicleStateRepository : IVehicleStateRepository
@@ -71,7 +71,7 @@ Now you will add code to the `TrafficControlService` so that it uses the Dapr st
             {
                 throw new NotImplementedException();
             }
-    
+
             public async Task SaveVehicleStateAsync(VehicleState vehicleState)
             {
                 throw new NotImplementedException();
@@ -84,7 +84,7 @@ Now you will add code to the `TrafficControlService` so that it uses the Dapr st
 
     ```csharp
     private readonly HttpClient _httpClient;
-    
+
     public DaprVehicleStateRepository(HttpClient httpClient)
     {
         _httpClient = httpClient;
@@ -96,12 +96,12 @@ Now you will add code to the `TrafficControlService` so that it uses the Dapr st
     ```csharp
     var state = new[]
     {
-        new { 
+        new {
             key = vehicleState.LicenseNumber,
             value = vehicleState
         }
     };
-    
+
     await _httpClient.PostAsJsonAsync(
         $"http://localhost:3600/v1.0/state/{DAPR_STORE_NAME}",
         state);
@@ -346,7 +346,7 @@ Now you're ready to test the application. Just repeat steps 2a and 2b.
 
 ### Step 4: Use Azure Cache for Redis as state store
 
-Now, you can also use Azure Cache for Redis instead of the default state store. This will require no code changes, similar to replacing *RabbitMQ* with Azure Service Bus in challenge 3 required no code changes either. 
+Now, you can also use Azure Cache for Redis instead of the default state store. This will require no code changes, similar to replacing *RabbitMQ* with Azure Service Bus in challenge 3 required no code changes either.
 
 1.  Update the `Resources/dapr/components/statestore.yaml` file with the key/value pairs for your Azure Redis Cache instance. You can find these on the Overview blade of your Azure Redis Cache instance. Make sure you add the **6380** port number after the host URI.
 

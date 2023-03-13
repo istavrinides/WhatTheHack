@@ -35,7 +35,7 @@ The `uniqueString()` function takes one or more input strings and generates a un
 - Use the `uniqueString()` and `resourceGroup()` functions to generate a unique storage account name.
 - Use string interpolation to concatenate the `uniqueString()` value with a storage account prefix of your choice (i.e. your initials)
 
-**NOTE:** Storage account names must be unique. They must contain 3 or more characters and be all lowercase. 
+**NOTE:** Storage account names must be unique. They must contain 3 or more characters and be all lowercase.
 
 - Provide an input parameter named `globalRedundancy` of type `bool`  and use the ternary operator to switch the storage account sku name between `Standard_GRS` & `Standard_LRS` depending on whether the parameter value is `true` or `false`, respectively.
 - Create a container in the storage account you created in the previous challenge and modify the bicep file to output additional information:
@@ -43,7 +43,7 @@ The `uniqueString()` function takes one or more input strings and generates a un
     - Blob primary endpoint
 - In the previous challenge, you observed that parameter values need to be passed in via the command line or you will be prompted for their values each time you deploy the template. Use a parameter file to list parameter values and pass them into the template.
 
-**NOTE:** ARM Templates with Bicep use the same parameter file format as ARM Templates with JSON. 
+**NOTE:** ARM Templates with Bicep use the same parameter file format as ARM Templates with JSON.
 
 ## Success Criteria
 

@@ -43,7 +43,7 @@ In this challenge you need to complete the following management tasks:
     - Recurrence Interval should be 15 mins
     - Force logoff should be set to 0
 
-1. Group Policy for AVD: the idle session and disconnected session settings are enabled    
+1. Group Policy for AVD: the idle session and disconnected session settings are enabled
 1. Configure the Start VM On Connect solution for the Japan West host pool using PowerShell
 
 ## Success Criteria

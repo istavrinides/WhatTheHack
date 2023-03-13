@@ -1,6 +1,6 @@
-# Challenge 12 - Setting up a WebServer - Coach's Guide 
+# Challenge 12 - Setting up a WebServer - Coach's Guide
 
-[< Previous Solution](./Solution-11.md) - **[Home](./README.md)** 
+[< Previous Solution](./Solution-11.md) - **[Home](./README.md)**
 
 ## Notes & Guidance
 1. Download the sample application [from here](/resources/simple-php-app.tar.gz) to your home directory
@@ -130,17 +130,17 @@ server {
         root /home/student/simple-php-app;
         index index.php index.html index.htm;
         server_name _;
- 
+
         location / {
             try_files $uri $uri/ =404;
         }
- 
+
         location ~ \.php$ {
             include snippets/fastcgi-php.conf;
             fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
         }
 }
-``` 
+```
 `EOT`
 
 `student@vm01:~$ sudo cp ~/default /etc/nginx/sites-enabled/default`
@@ -155,13 +155,13 @@ Remember to open port 80 on NSG
 
 To add SSL we will use [Certbot](https://certbot.eff.org/) to get a certificate from [Let's Encrypt](https://letsencrypt.org/). Here are the steps you need to follow:
 
-* Ensure you have a valid domain with an A record pointing to the Virtual Machine Public IP. A valid domain with an A register defined is a pre-requisite for Certbot. You can use Azure App Service Domains to get a domain.  
-    
+* Ensure you have a valid domain with an A record pointing to the Virtual Machine Public IP. A valid domain with an A register defined is a pre-requisite for Certbot. You can use Azure App Service Domains to get a domain.
+
 * After addressing the previous step, you must adjust your Nginx config file `/etc/nginx/sites-enabled/default` setting the **server_name** directive to point to the name of your domain. Eg:
-    
+
 `student@vm01:~$ sudo sed -i.bkp -e 's/_;/linuxhackathon.com;/g' /etc/nginx/sites-enabled/default`
 
-Then let's proceed to the setup and configurations for Certbot by setting new environment variables: 
+Then let's proceed to the setup and configurations for Certbot by setting new environment variables:
 
 ```
 export DOMAIN_NAME="linuxhackathon.com"
@@ -175,12 +175,12 @@ Install snap tool to get certbot:
 
 Install and configure Certbot:
 
-`student@vm01:~$ sudo snap install --classic certbot` 
+`student@vm01:~$ sudo snap install --classic certbot`
 
-`student@vm01:~$ sudo certbot --nginx -d "${DOMAIN_NAME}" -m "${EMAIL}" --agree-tos -n` 
+`student@vm01:~$ sudo certbot --nginx -d "${DOMAIN_NAME}" -m "${EMAIL}" --agree-tos -n`
 
 Restart Nginx:
 
-`student@vm01:~$ sudo systemctl restart nginx` 
+`student@vm01:~$ sudo systemctl restart nginx`
 
 Remember to open the port 443 on the NSG

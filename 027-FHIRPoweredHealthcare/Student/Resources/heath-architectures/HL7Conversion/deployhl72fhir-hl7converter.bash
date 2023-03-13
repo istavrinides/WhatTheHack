@@ -98,7 +98,7 @@ then
 	az login
 fi
 
-defsubscriptionId=$(az account show --query "id" --out json | sed 's/"//g') 
+defsubscriptionId=$(az account show --query "id" --out json | sed 's/"//g')
 
 #Prompt for parameters is some required parameters are missing
 if [[ -z "$subscriptionId" ]]; then
@@ -125,7 +125,7 @@ defdeployprefix=${defdeployprefix,,}
 if [[ -z "$resourceGroupLocation" ]]; then
 	echo "If creating a *new* resource group, you need to set a location "
 	echo "You can lookup locations with the CLI using: az account list-locations "
-	
+
 	echo "Enter resource group location:"
 	read resourceGroupLocation
 fi
@@ -254,7 +254,7 @@ echo "Starting HL72FHIR Workflow Platform deployment..."
 		#stepresult=$(az storage account create --name $deployprefix$storageAccountNameSuffix --resource-group $resourceGroupName --location  $resourceGroupLocation --sku Standard_LRS --encryption-services blob --kind StorageV2)
 		#echo "Retrieving Storage Account Connection String..."
 		#storageConnectionString=$(az storage account show-connection-string -g $resourceGroupName -n $deployprefix$storageAccountNameSuffix --query "connectionString" --output tsv)
-		
+
         #Create EventHub Bus Namespace and Hub
 		#echo "Creating FHIR Event Hub Namespace ["$evhubnamespaceName"]..."
 		#stepresult=$(az eventhubs namespace create --name $evhubnamespaceName --resource-group $resourceGroupName -l $resourceGroupLocation)
@@ -276,7 +276,7 @@ echo "Starting HL72FHIR Workflow Platform deployment..."
 		#echo "Deploying FHIREventProcessor Function App from repo to host ["$fahost"]..."
 		#deployment from git repo
 		#stepresult=$(retry az functionapp deployment source config-zip --name $faname --resource-group $resourceGroupName --src $deployzip)
-		
+
         #Deploy HL7 FHIR Converter
 		hl7converterinstance=$deployprefix$hl7convertername$RANDOM
 		echo "Deploying FHIR Converter ["$hl7converterinstance"] to resource group ["$hl7converterrg"]..."
@@ -304,7 +304,7 @@ echo "Starting HL72FHIR Workflow Platform deployment..."
 		echo "************************************************************************************************************"
 		echo " "
 )
-	
+
 if [ $?  == 0 ];
  then
 	echo "HL72FHIR Workflow Platform has successfully been deployed"

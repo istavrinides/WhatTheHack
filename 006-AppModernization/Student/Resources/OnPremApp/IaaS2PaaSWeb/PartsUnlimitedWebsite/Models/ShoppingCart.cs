@@ -112,7 +112,7 @@ namespace PartsUnlimited.Models
 
         public decimal GetTotal()
         {
-            // Multiply product price by count of that product to get 
+            // Multiply product price by count of that product to get
             // the current price for each of those products in the cart
             // sum all product price totals to get the cart total
             decimal total = 0;
@@ -167,7 +167,7 @@ namespace PartsUnlimited.Models
 
             if (cartId == null)
             {
-                //A GUID to hold the cartId. 
+                //A GUID to hold the cartId.
                 cartId = Guid.NewGuid().ToString();
 
                 // Send cart Id as a cookie to the client.

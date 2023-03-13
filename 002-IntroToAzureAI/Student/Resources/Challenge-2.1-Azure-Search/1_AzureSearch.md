@@ -1,7 +1,7 @@
 ## 1_AzureSearch:
 Estimated Time: 20-30 minutes
-  
-## Azure Search 
+
+## Azure Search
 
 [Azure Search](https://docs.microsoft.com/en-us/azure/search/search-what-is-azure-search) is a search-as-a-service solution allowing developers to incorporate great search experiences into applications without managing infrastructure or needing to become search experts.
 
@@ -9,7 +9,7 @@ Developers look for PaaS services in Azure to achieve better and faster results 
 
 Search is a hard and rarely a core expertise area. From an infrastructure standpoint, it needs to have high availability, durability, scale, and operations. From a functionality standpoint, it needs to have ranking, language support, and geospatial capabilities.
 
-![Example of Search Requirements](./resources/assets/AzureSearch-Example.png) 
+![Example of Search Requirements](./resources/assets/AzureSearch-Example.png)
 
 The example above illustrates some of the components users are expecting in their search experience. [Azure Search](https://docs.microsoft.com/en-us/azure/search/search-what-is-azure-search) can accomplish these user experience features, along with giving you [monitoring and reporting](https://docs.microsoft.com/en-us/azure/search/search-traffic-analytics), [simple scoring](https://docs.microsoft.com/en-us/rest/api/searchservice/add-scoring-profiles-to-a-search-index), and tools for [prototyping](https://docs.microsoft.com/en-us/azure/search/search-import-data-portal) and [inspection](https://docs.microsoft.com/en-us/azure/search/search-explorer).
 
@@ -17,7 +17,7 @@ Typical Workflow:
 1. Provision service
 	- You can create or provision an Azure Search service from the [portal](https://docs.microsoft.com/en-us/azure/search/search-create-service-portal) or with [PowerShell](https://docs.microsoft.com/en-us/azure/search/search-manage-powershell).
 2. Create an index
-	- An [index](https://docs.microsoft.com/en-us/azure/search/search-what-is-an-index) is a container for data, think "table". It has schema, [CORS options](https://docs.microsoft.com/en-us/aspnet/core/security/cors), search options. You can create it in the [portal](https://docs.microsoft.com/en-us/azure/search/search-create-index-portal) or during [app initialization](https://docs.microsoft.com/en-us/azure/search/search-create-index-dotnet). 
+	- An [index](https://docs.microsoft.com/en-us/azure/search/search-what-is-an-index) is a container for data, think "table". It has schema, [CORS options](https://docs.microsoft.com/en-us/aspnet/core/security/cors), search options. You can create it in the [portal](https://docs.microsoft.com/en-us/azure/search/search-create-index-portal) or during [app initialization](https://docs.microsoft.com/en-us/azure/search/search-create-index-dotnet).
 3. Index data
 	- There are two ways to [populate an index with your data](https://docs.microsoft.com/en-us/azure/search/search-what-is-data-import). The first option is to manually push your data into the index using the Azure Search [REST API](https://docs.microsoft.com/en-us/azure/search/search-import-data-rest-api) or [.NET SDK](https://docs.microsoft.com/en-us/azure/search/search-import-data-dotnet). The second option is to point a [supported data source](https://docs.microsoft.com/en-us/azure/search/search-import-data-portal) to your index and let Azure Search automatically pull in the data on a schedule.
 4. Search an index
@@ -36,13 +36,13 @@ Once creation is complete, open the panel for your new search service.
 
 An index is a persistent store of documents and other constructs used by an Azure Search service. An index is like a database that holds your data and can accept search queries. You define the index schema to map to the structure of the documents you wish to search, similar to fields in a database. These fields can have properties that tell things such as if it is full text searchable, or if it is filterable.  You can populate content into Azure Search by programmatically [pushing content](https://docs.microsoft.com/en-us/rest/api/searchservice/addupdate-or-delete-documents) or by using the [Azure Search Indexer](https://docs.microsoft.com/en-us/azure/search/search-indexer-overview) (which can crawl common datastores for data).
 
-For this lab, we will use the [Azure Search Indexer for Cosmos DB](https://docs.microsoft.com/en-us/azure/search/search-howto-index-documentdb) to crawl the data in the Cosmos DB collection. 
+For this lab, we will use the [Azure Search Indexer for Cosmos DB](https://docs.microsoft.com/en-us/azure/search/search-howto-index-documentdb) to crawl the data in the Cosmos DB collection.
 
-![Import Wizard](./resources/assets/AzureSearch-ImportData.png) 
+![Import Wizard](./resources/assets/AzureSearch-ImportData.png)
 
 Within the Azure Search blade you just created, click **Import Data->Data Source->Cosmos DB**.
 
-![Import Wizard for DocDB](./resources/assets/AzureSearch-DataSource.png) 
+![Import Wizard for DocDB](./resources/assets/AzureSearch-DataSource.png)
 
 Once you click this, choose a name for the Cosmos DB data source. If you completed the previous lab, `challenge1.1-computer_vision`, choose the Cosmos DB account where your data resides as well as the corresponding Container and Collections. If you did not complete the previous lab, select "Or input a connection string" and paste in the connection string: `AccountEndpoint=https://anthobootcampdb.documents.azure.com:443/;AccountKey=XzxwNshrS92RAycyikcSNLOtrDdTMQIYsOHDLko22QDHVCNi4b3YW7pqrzhDPZJupwelnlABrqY4m3nCr686Yw==;`. For both, the Database should be "images" and the Collection should be "metadata".
 
@@ -64,34 +64,34 @@ Set the fields **Tags** to be **Facetable** (to allow the client to group the re
 
 Set the fields **Caption and Tags** to be **Searchable** (to allow the client to do full text search over the text in these fields)
 
-![Configure Azure Search Index](./resources/assets/AzureSearch-ConfigureIndex.png) 
+![Configure Azure Search Index](./resources/assets/AzureSearch-ConfigureIndex.png)
 
-At this point we will configure the Azure Search Analyzers.  At a high level, you can think of an analyzer as the thing that takes the terms a user enters and works to find the best matching terms in the Index.  Azure Search includes analyzers that are used in technologies like Bing and Office that have deep understanding of 56 languages.  
+At this point we will configure the Azure Search Analyzers.  At a high level, you can think of an analyzer as the thing that takes the terms a user enters and works to find the best matching terms in the Index.  Azure Search includes analyzers that are used in technologies like Bing and Office that have deep understanding of 56 languages.
 
 Click the **Analyzer** checkbox and set the fields **Caption and Tags** to use the **English-Microsoft** [analyzer](https://docs.microsoft.com/en-us/azure/search/search-analyzers).
 
-![Language Analyzers](./resources/assets/AzureSearch-Analyzer.png) 
+![Language Analyzers](./resources/assets/AzureSearch-Analyzer.png)
 
 For the final Index configuration step, we will create a [**Suggester**](https://docs.microsoft.com/en-us/rest/api/searchservice/suggesters) to set the fields that will be used for type ahead, allowing the user to type parts of a word where Azure Search will look for best matches in these fields. To learn more about suggestors and how to extend your searches to support fuzzy matching, which allows you to get results based on close matches even if the user misspells a word, check out [this example](https://docs.microsoft.com/en-us/azure/search/search-query-lucene-examples#fuzzy-search-example).
 
 
 Click the **Suggester** checkbox and enter a Suggester Name: **sg** and choose **Tags** to be the fields to look for term suggestions
 
-![Search Suggestions](./resources/assets/AzureSearch-Suggester.png) 
+![Search Suggestions](./resources/assets/AzureSearch-Suggester.png)
 
-Click **OK** to complete the configuration of the Indexer.  You could set at schedule for how often the Indexer should check for changes, however, for this lab we will just run it once.  
+Click **OK** to complete the configuration of the Indexer.  You could set at schedule for how often the Indexer should check for changes, however, for this lab we will just run it once.
 
 Click **Advanced Options** and choose to **Base 64 Encode Keys** to ensure that the ID field only uses characters supported in the Azure Search key field.
 
 Click **OK, three times** to start the Indexer job that will start the importing of the data from the Cosmos DB database.
 
-![Configure Indexer](./resources/assets/AzureSearch-ConfigureIndexer.png) 
+![Configure Indexer](./resources/assets/AzureSearch-ConfigureIndexer.png)
 
 ***Query the Search Index***
 
 You should see a message pop up indicating that Indexing has started.  If you wish to check the status of the Index, you can choose the "Indexes" option in the main Azure Search blade.
 
-At this point we can try searching the index.  
+At this point we can try searching the index.
 
 Click **Search Explorer** and in the resulting blade choose your Index if it is not already selected.
 
@@ -107,9 +107,9 @@ Azure Search uses default scoring to compute an initial score, but you can custo
 
 [Postman](https://www.getpostman.com/) is a great tool that allows you to easily execute Azure Search REST API calls and is a great debugging tool.  You can take any query from the Azure Search Explorer and along with an Azure Search API key to be executed within Postman.
 
-Download the [Postman](https://www.getpostman.com/) tool and install it. 
+Download the [Postman](https://www.getpostman.com/) tool and install it.
 
-After you have installed it, take a query from the Azure Search explorer and paste it into Postman, choosing GET as the request type.  
+After you have installed it, take a query from the Azure Search explorer and paste it into Postman, choosing GET as the request type.
 
 Click on Headers and enter the following parameters:
 

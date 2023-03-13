@@ -95,7 +95,7 @@ logws_id=$(az resource list -g $rg -n $logws_name --query '[].id' -o tsv)
 logws_customerid=$(az monitor log-analytics workspace show -n $logws_name -g $rg --query customerId -o tsv)
 az monitor diagnostic-settings create -n mydiag --resource $azfw_id --workspace $logws_id \
       --metrics '[{"category": "AllMetrics", "enabled": true, "retentionPolicy": {"days": 1, "enabled": false }, "timeGrain": null}]' \
-      --logs '[{"category": "AzureFirewallApplicationRule", "enabled": true, "retentionPolicy": {"days": 1, "enabled": false}}, 
+      --logs '[{"category": "AzureFirewallApplicationRule", "enabled": true, "retentionPolicy": {"days": 1, "enabled": false}},
               {"category": "AzureFirewallNetworkRule", "enabled": true, "retentionPolicy": {"days": 1, "enabled": false}},
               {"category": "AZFWNetworkRule", "enabled": true, "retentionPolicy": {"days": 1, "enabled": false}},
               {"category": "AZFWApplicationRule", "enabled": true, "retentionPolicy": {"days": 1, "enabled": false}},
@@ -205,13 +205,13 @@ You can query the FW logs and look for denied packets by the firewall, in case y
 
 ```bash
 # App rule logs
-query_apprule='AzureDiagnostics 
-| where ResourceType == "AZUREFIREWALLS" 
-| where Category == "AzureFirewallApplicationRule" 
-| where TimeGenerated >= ago(30m) 
+query_apprule='AzureDiagnostics
+| where ResourceType == "AZUREFIREWALLS"
+| where Category == "AzureFirewallApplicationRule"
+| where TimeGenerated >= ago(30m)
 | project TimeGenerated, Protocol=split(msg_s, " ")[0], From=split(msg_s, " ")[iif(split(msg_s, " ")[0]=="HTTPS",3,4)], To=split(msg_s, " ")[iif(split(msg_s, " ")[0]=="HTTPS",5,6)], Action=trim_end(".", tostring(split(msg_s, " ")[iif(split(msg_s, " ")[0]=="HTTPS",7,8)])), Rule_Collection=iif(split(msg_s, " ")[iif(split(msg_s, " ")[0]=="HTTPS",10,11)]=="traffic.", "AzureInternalTraffic", iif(split(msg_s, " ")[iif(split(msg_s, " ")[0]=="HTTPS",10,11)]=="matched.","NoRuleMatched",trim_end(".",tostring(split(msg_s, " ")[iif(split(msg_s, " ")[0]=="HTTPS",10,11)])))), Rule=iif(split(msg_s, " ")[11]=="Proceeding" or split(msg_s, " ")[12]=="Proceeding","DefaultAction",split(msg_s, " ")[12])
-| where Rule_Collection != "AzureInternalTraffic" 
-| where Action == "Deny" 
+| where Rule_Collection != "AzureInternalTraffic"
+| where Action == "Deny"
 | take 100'
 az monitor log-analytics query -w "$logws_customerid" --analytics-query "$query_apprule" -o tsv
 ```
@@ -226,7 +226,7 @@ query_netrule='AzureDiagnostics
 | where TimeGenerated >= ago(5m)
 | project Protocol=split(msg_s, " ")[0], From=split(msg_s, " ")[3], To=trim_end(".", tostring(split(msg_s, " ")[5])), Action=split(msg_s, " ")[7]
 | extend From_IP=split(From, ":")[0], From_Port=split(From, ":")[1], To_IP=split(To, ":")[0], To_Port=split(To, ":")[1]
-| where Action == "Deny" 
+| where Action == "Deny"
 | take 100'
 az monitor log-analytics query -w "$logws_customerid" --analytics-query "$query_netrule" -o tsv
 ```

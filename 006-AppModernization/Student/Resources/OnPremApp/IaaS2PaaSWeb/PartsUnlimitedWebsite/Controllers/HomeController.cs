@@ -46,7 +46,7 @@ namespace PartsUnlimited.Controllers
 
             return View(viewModel);
         }
-        
+
         private List<Product> GetTopSellingProducts(int count)
         {
             // Group the order details by product and return
@@ -67,10 +67,10 @@ public ActionResult Recomendations()
 
             // Group the order details by product and return
             // the products the top recomendations for the recomendations page
-            
+
             int count = 0;
             while (count < roco_count
-                   ) 
+                   )
             {
                 _db.Products
                     .OrderByDescending(a => a.OrderDetails.Count())

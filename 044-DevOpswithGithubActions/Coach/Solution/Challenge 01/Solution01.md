@@ -16,21 +16,21 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptions/{subscription-id}/resourceGroups/{resource-group} --sdk-auth
 
-Output of this will be similar 
+Output of this will be similar
 
 
   {
-  
+
     "clientId": "<GUID>",
-  
+
     "clientSecret": "<GUID>",
-    
+
     "subscriptionId": "<GUID>",
-    
+
     "tenantId": "<GUID>",
-    
+
     (...)
-    
+
   }
 
 Copy Complete Parenthesis and create Github Secret , This will be our First Github Secret !

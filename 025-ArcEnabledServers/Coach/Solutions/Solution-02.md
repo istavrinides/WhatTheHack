@@ -6,7 +6,7 @@
 
 1. Assign a policy that adds a resource tag to all resources in the resource group where your Azure Arc connected servers are located.
 
-- In the Azure portal, create a policy assignment targeting the **arc-enabled-servers-rg** resource group based on the built-in policy definition **Add or replace a tag on resources**. 
+- In the Azure portal, create a policy assignment targeting the **arc-enabled-servers-rg** resource group based on the built-in policy definition **Add or replace a tag on resources**.
 
    >**Note**: Do not use **Append a tag and its value to resources**, since you need a policy definition with **modify** effect in order to apply it to existing resources. Make sure to create a remediation task and enable **Managed Identity**. Set **Tag name** to **arcchallenge2a** and **Tag value** to **Completed**.
 
@@ -20,7 +20,7 @@
 
 - In the Azure portal, create a policy assignment targeting the **arc-enabled-servers-rg** resource group and the newly created Log Analytics workspace. Use the built-in policy definition **[Preview]: Deploy Log Analytics agent to Windows Azure Arc machines**. Make sure to create a remediation task and enable **Managed Identity** in the location matching the location of Arc enabled Server resource. Do not use the built-in definition **Deploy Log Analytics agent for Windows VMs**.
 
-   >**Note**: Do not wait for the policy processing to take place but proceed to the next step. 
+   >**Note**: Do not wait for the policy processing to take place but proceed to the next step.
 
 4. Configure the Log Analytics agent to collect performance metrics of the connected machine.
 
@@ -30,6 +30,6 @@
 
 ### Success Criteria
 
-1. Azure Arc connected servers should have a tag applied by the policy you created in Challenge #1. 
+1. Azure Arc connected servers should have a tag applied by the policy you created in Challenge #1.
 2. Azure Arc connected servers should have the Log Analytics agent deployed and working.
 3. You can use the Log Analytics workspace to query performance metrics about your Azure Arc connected machine.

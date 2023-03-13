@@ -37,7 +37,7 @@ In this challenge you will be setting up autoenrollment into MDM for your AVD de
     - *Optional:* Manually add the printer on a AVD to ensure everything is working
     - Deploy your printer to a group of devices in the MEM portal
         - **HINT:** Use the Universal Print printer provisioning tool and the included sample policy to get you started
-        - **TIPS:** 
+        - **TIPS:**
             - When you go to assign the custom win32 app to the group, change end user notficiations to "Hide all toast notifications" so that the install is transparent to the user
             - Once both your provisioning and policy applications have installed, you will need to log off and back on before the printer will become available
 

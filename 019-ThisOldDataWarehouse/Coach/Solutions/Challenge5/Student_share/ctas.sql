@@ -10,8 +10,8 @@
 --This happens after each load or after inserting,deleting or updating a table.
 --First statement determines if table has resides on one node
 SELECT [ReplicatedTable] = t.[name]
-  FROM sys.tables t  
-  JOIN sys.pdw_replicated_table_cache_state c  
+  FROM sys.tables t
+  JOIN sys.pdw_replicated_table_cache_state c
     ON c.object_id = t.object_id
   JOIN sys.pdw_table_distribution_properties p
     ON p.object_id = t.object_id
@@ -22,7 +22,7 @@ SELECT [ReplicatedTable] = t.[name]
 --Run this each time you run the CTAS statement with a replicate or load more data into the tables
 SELECT TOP 1 * FROM [Dimension].[City]
 
---There are three simulations.  Run each one with the explain plan to compare results (total cost, steps, and response time) -- 
+--There are three simulations.  Run each one with the explain plan to compare results (total cost, steps, and response time) --
 	-- One, Round Robin Distribution with Heap
 	-- Two, Replicate with a Clustered Index
 	-- Three, Replicate with Clustered Columnstore Index
@@ -36,7 +36,7 @@ WITH
   (
     HEAP,
     DISTRIBUTION = ROUND_ROBIN
-  )  
+  )
 AS SELECT * FROM [Dimension].[City]
 OPTION  (LABEL  = 'CTAS : City_ROUNDROBIN')
 

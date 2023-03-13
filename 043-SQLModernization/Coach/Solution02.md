@@ -4,7 +4,7 @@
 
 ## Notes & Guidance
 
-This optional challenge focuses on performing On-prem SQL Server migration to SQL Server on Azure VM (IaaS). The challenge involves step by step approach on managing the migration using new capabilities of "Azure Migrate". The new capabilities include creation of migration project with two main phases. Phase 1 is discovery and assessment, while phase 2 is using the assessment recommendations to perform actual migration of the VM.   
+This optional challenge focuses on performing On-prem SQL Server migration to SQL Server on Azure VM (IaaS). The challenge involves step by step approach on managing the migration using new capabilities of "Azure Migrate". The new capabilities include creation of migration project with two main phases. Phase 1 is discovery and assessment, while phase 2 is using the assessment recommendations to perform actual migration of the VM.
 
 Although this challenge only includes migrating from SQL Server VM to IaaS, the new capabilities include migrating from SQL Server VM to Azure SQL DB (PaaS). Please refer to additional documentation -  https://docs.microsoft.com/en-us/azure/migrate/how-to-create-azure-sql-assessment.
 
@@ -14,27 +14,27 @@ The challenge environment setup includes creating a Azure SQL Server VM in a sou
 
 ![Generated Traffic](./images/hammerDB-VirtualUser-traffic.png)
 
-### Discovery and Assessment 
+### Discovery and Assessment
 
 1. Login to Azure Portal and create a Resource Group, to host subsequent resources as described below.
 2. Create Azure Migrate Project. https://docs.microsoft.com/en-us/azure/migrate/tutorial-discover-physical#set-up-a-project
-    
-3. Setup Discovery Appliance. 
+
+3. Setup Discovery Appliance.
     - Create/Deploy Windows Server 2016 (Datacenter) VM.
 
-    - RDP to the VM as an administrator and download the AzureMigrateINstallerServer-Public. 
-    
-    - Login to Azure Portal and navigate to "Azure Migrate". If the previously created project is not selected   
+    - RDP to the VM as an administrator and download the AzureMigrateINstallerServer-Public.
+
+    - Login to Azure Portal and navigate to "Azure Migrate". If the previously created project is not selected
       select it on the top right corner.
-    
-    - Under "Windows, Linux and SQL Server" -> Assessment tools -> Click "Discover". This will take you to setup   
+
+    - Under "Windows, Linux and SQL Server" -> Assessment tools -> Click "Discover". This will take you to setup
       screen for discover appliance.
-     
-    - Select the "Physical or other (AWS, GCP, Xen etc." dropdown option for "Are your servers virtualized?".  
-    
-    - Generate project key, by giving a appliance name and keep it handy. It will be required when associating the 
-      appliance with Azure migrate project. 
-    
+
+    - Select the "Physical or other (AWS, GCP, Xen etc." dropdown option for "Are your servers virtualized?".
+
+    - Generate project key, by giving a appliance name and keep it handy. It will be required when associating the
+      appliance with Azure migrate project.
+
     - Download and extract the "Azure Migrate Appliance". Navigate to the folder where extracted
 
     - Open a Powershell session and run the Azure migrate installer script - .\AzureMigrateInstaller.ps1.
@@ -50,7 +50,7 @@ The challenge environment setup includes creating a Azure SQL Server VM in a sou
 
       ![Discovery Appliance configuration 1](./images/azmigratediscoveryinstallersetup1.png)
 
-    - Register the appliance with Azure migrate by logging in. The key "Project key" obtained in step above will 
+    - Register the appliance with Azure migrate by logging in. The key "Project key" obtained in step above will
       be validated automatically.
 
       ![Discovery Appliance configuration 2](./images/azmigratediscoveryinstallersetup2.png)
@@ -61,12 +61,12 @@ The challenge environment setup includes creating a Azure SQL Server VM in a sou
 
       ![Add Credentials](./images/azmigratediscoveryinstallersetup3credentials.png)
 
-    - Add discovery source. This a friendly name representation of the Source. 
+    - Add discovery source. This a friendly name representation of the Source.
 
       ![Add Discovery source](./images/azmigratediscoveryinstallersetup3discoverysrc.png)
 
-    - Validate/re-validate connection and start the discovery. This will start a job and discover the servers to 
-      be migrated. 
+    - Validate/re-validate connection and start the discovery. This will start a job and discover the servers to
+      be migrated.
 
       ![Validate connection](./images/azmigratediscoveryinstallersetup3startdiscovery.png)
 
@@ -80,7 +80,7 @@ The challenge environment setup includes creating a Azure SQL Server VM in a sou
 
     ![Create Assessment](./images/azmigratediscoveryiassessment1.png)
 
-    - Assessments are organized by groups. You could run multiple assessment if needed. Every time you create a new 
+    - Assessments are organized by groups. You could run multiple assessment if needed. Every time you create a new
       assessment, newly collected metric data is used for the recommendations that are generated. In production scenarios, it is recommended that you let the discovery run for few days, before creating an assessment.
 
     ![Create Assessment group](./images/azmigratediscoveryiassessment2.png)
@@ -98,33 +98,33 @@ The challenge environment setup includes creating a Azure SQL Server VM in a sou
 
     ![View Recommendations](./images/azmigratediscoveryiassessmentfinal.png)
 
-### Replicate, Test and Migrate 
+### Replicate, Test and Migrate
 
 1. Review the recommendations in phase 1 above by navigating to Azure migrate project.
 2. Prepare replication Appliance
    Azure Migrate: Server Migration uses a replication appliance to replicate machines to Azure. First step to enable replication is to build and configure a replication appliance. Follow below steps:
 
-    - Create/Deploy Windows Server 2016 (Datacenter) VM, within previously created "source" resource group. In 
-      addition create a target resource group with Virtual network created in it. We'll use the "default" subnet in this target Virtual network as our landing spot for migrated SQL server VM. Lets call this a "target" resource group. 
+    - Create/Deploy Windows Server 2016 (Datacenter) VM, within previously created "source" resource group. In
+      addition create a target resource group with Virtual network created in it. We'll use the "default" subnet in this target Virtual network as our landing spot for migrated SQL server VM. Lets call this a "target" resource group.
 
-    - Add a new data disk to the VM (1TB), which will be used by the replication agent (ASR agent). More details 
+    - Add a new data disk to the VM (1TB), which will be used by the replication agent (ASR agent). More details
       below.
 
-    - RDP to the VM as an administrator and ensure the newly attached data disk is attached and active by 
+    - RDP to the VM as an administrator and ensure the newly attached data disk is attached and active by
       configuring it in the "disk management" system utility. A new volume letter is allocated for this new volume. This volume is used latter during the installation process.
-    
-    - Login to Azure Portal and navigate to "Azure Migrate". If the previously created project is not selected select it on the top right corner.
-    
-    - Under "Windows, Linux and SQL Server" -> Migration tools -> Click "Discover". This will take you to setup screen for replication appliance.   
 
-    - Select Target Region. 
+    - Login to Azure Portal and navigate to "Azure Migrate". If the previously created project is not selected select it on the top right corner.
+
+    - Under "Windows, Linux and SQL Server" -> Migration tools -> Click "Discover". This will take you to setup screen for replication appliance.
+
+    - Select Target Region.
 
     - Select the "Physical or other (AWS, GCP, Xen etc." dropdown option for "Are your servers virtualized?"
 
     - Select the "Install a replication appliance" dropdown option for "do you want to install a new replication appliance or scale out existing setup".
-    
+
     - Download the replication appliance software (AzureSiteREcoveryUnifiedSetup.exe) and the registration key file. Run the setup and select the downloaded "registration key" in the wizzard. For install path, select the newly attached data disk volume.
-      
+
     - Once the installation is completed, validate that the "hostconfigwxcommon" and "cspsconfigtool" shortcuts are seen on the desktop. These are the programs to setup configuration and process server.
 
     - Open "cspsconfigtool" and add a new account to be used for replication. Ensure this is the local account on the target machine.
@@ -156,13 +156,13 @@ The challenge environment setup includes creating a Azure SQL Server VM in a sou
     ![Mobility Service - setup](./images/azmigrateMobilityServiceSetup3.png)
 
 4. Ensure the Azure migrate project reflects the successful replication appliance registration.
-    
+
     ![Validate replication appliance registration](./images/azmigrateReplicationappliancesetup.png)
 
 4. Start replication.
 
     - Login to Azure Portal and navigate to "Azure Migrate". If the previously created project is not selected select it on the top right corner.
-    
+
     - Under "Windows, Linux and SQL Server" -> Migration tools -> Click "Replicate". This will take you to setup screen to begin replication. Run through the wizard by selecting the source settings. Select the previously created replication appliance and the user account that was created in the previous step. Click Next.
 
     ![Replicate - start](./images/azmigrateReplicate1.png)
@@ -196,7 +196,7 @@ The challenge environment setup includes creating a Azure SQL Server VM in a sou
     ![Replicate - review topology](./images/azmigrateReplicate8.png)
 
 
-5. Before you initiate migration, it is a best practice to test it. Test Migration allows to test the replicated server failover and uncover any issues. 
+5. Before you initiate migration, it is a best practice to test it. Test Migration allows to test the replicated server failover and uncover any issues.
     - Start Test migration.
 
     ![Start Test](./images/azmigratestarttest.png)
@@ -212,7 +212,7 @@ The challenge environment setup includes creating a Azure SQL Server VM in a sou
 
 6. Now that the testing is complete proceed with actual Migration of the VM to the target resource group
     - Start Migration.
-    
+
     ![Start Migration](./images/azmigratestartmigrate.png)
 
     - Validate completion.

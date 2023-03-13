@@ -1,4 +1,4 @@
-# Challenge 08 - Data Export Workflow - Coach's Guide 
+# Challenge 08 - Data Export Workflow - Coach's Guide
 
 [< Previous Solution](./Solution-07B.md) - **[Home](./README.md)** - [Next Solution >](./Solution-09.md)
 

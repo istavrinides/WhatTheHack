@@ -17,7 +17,7 @@
         "appInsightsName": {
             "defaultValue": "<prefix>devops-ai",
             "type": "String"
-        },        
+        },
         "sku": {
             "defaultValue": "S1",
             "type": "String"

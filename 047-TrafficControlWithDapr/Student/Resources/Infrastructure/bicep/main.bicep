@@ -7,7 +7,7 @@ param publicSSHKey string
 var longName = '${appName}-${environment}'
 
 module keyVaultModule 'keyVault.bicep' = {
-  name: 'keyVaultDeploy'  
+  name: 'keyVaultDeploy'
   params: {
     longName: longName
   }
@@ -24,7 +24,7 @@ module logicAppModule 'logicApp.bicep' = {
   name: 'logicAppDeploy'
   params: {
     longName: longName
-  }  
+  }
 }
 
 module containerRegistryModule 'containerRegistry.bicep' = {
@@ -40,28 +40,28 @@ module aksModule 'aks.bicep' = {
     longName: longName
     adminUsername: adminUsername
     publicSSHKey: publicSSHKey
-  }  
+  }
 }
 
 module redisCacheModule 'redisCache.bicep' = {
   name: 'redisCacheDeploy'
   params: {
     longName: longName
-  }  
+  }
 }
 
 module mqttModule 'mqtt.bicep' = {
   name: 'mqttDeploy'
   params: {
     longName: longName
-  }  
+  }
 }
 
 module storageAccountModule 'storage.bicep' = {
   name: 'storageAccountDeploy'
   params: {
     longName: longName
-  }  
+  }
 }
 
 output subscriptionId string = subscription().subscriptionId

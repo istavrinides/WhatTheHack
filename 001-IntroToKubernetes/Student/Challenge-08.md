@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Not all containers can be stateless. What happens when your application needs to have some persistent storage? 
+Not all containers can be stateless. What happens when your application needs to have some persistent storage?
 
 ## Description
 
@@ -14,12 +14,12 @@ In this challenge we will be creating Azure data disks and using the Kubernetes 
 	- Make sure that you are using the latest version of the Fabmedical container images, either the ones you built or the pre-built ones available here:
 		- `whatthehackmsft/content-api:v2`
 		- `whatthehackmsft/content-web:v2`
-	- Delete the MongoDB pod created in Challenge 6. 
-		- Kubernetes should automatically create a new pod to replace it. 
+	- Delete the MongoDB pod created in Challenge 6.
+		- Kubernetes should automatically create a new pod to replace it.
 		- Connect to the new pod and you should observe that the “contentdb” database is no longer there since the pod was not configured with persistent storage.
 	- Delete your existing MongoDB deployment
 - Redeploy MongoDB with dynamic persistent storage
-	- **NOTE**: Some types of persistent volumes (specifically, Azure disks) are associated with a single zone, see [this document](https://docs.microsoft.com/en-us/azure/aks/availability-zones#azure-disks-limitations). Since we enabled availability zones in challenge 3, we need to guarantee that the two volumes and the node that the pod runs on are in the same zone.  
+	- **NOTE**: Some types of persistent volumes (specifically, Azure disks) are associated with a single zone, see [this document](https://docs.microsoft.com/en-us/azure/aks/availability-zones#azure-disks-limitations). Since we enabled availability zones in challenge 3, we need to guarantee that the two volumes and the node that the pod runs on are in the same zone.
     	- Fortunately, the default azure-disk storage class uses the "volumeBindingMode: WaitForFirstConsumer" setting which forces kubernetes to wait for a workload to be scheduled before provisioning the disks.  In other words, AKS is smart enough to create the disk in the same availability zone as the node.
     	- You could optionally create your own storage class to specifically define the volumeBindingMode, but that's not necessary for this exercise.
 	- Create two Persistent Volume Claims (PVC) using the new Storage Class, one for data and one for config.
@@ -59,7 +59,7 @@ In this challenge we will be creating Azure data disks and using the Kubernetes 
 			MongoDB shell version v3.6.1
 			connecting to: mongodb://127.0.0.1:27017
 			MongoDB server version: 3.6.1
-			
+
 			> show dbs
 			admin       0.000GB
 			config      0.000GB
@@ -67,11 +67,11 @@ In this challenge we will be creating Azure data disks and using the Kubernetes 
 			local       0.000GB
 			```
 
-	- Destroy the MongoDB pod to prove that the data persisting to the disk 
+	- Destroy the MongoDB pod to prove that the data persisting to the disk
 		- `kubectl delete pod <mongo-db-pod>`
 	- Wait for kubernetes to recreate the pod
 	- Once the pod is created, verify that data is persisted by following the previous MongoDB verification step.
-	- Verify the API can retrieve the data by viewing the speaker and sessions pages in the browser: 
+	- Verify the API can retrieve the data by viewing the speaker and sessions pages in the browser:
 		- `http://<yourWebServicePIP>:3000/speakers.html`
 		- `http://<yourWebServicePIP>:3000/sessions.html`
 
@@ -81,6 +81,6 @@ In this challenge we will be creating Azure data disks and using the Kubernetes 
 1. Verify that the data isn't lost after you stop and restart the MongoDB pod.
 1. Verify that this new MongoDB instance and its data are used in the application.
 
-## Advanced Challenges 
+## Advanced Challenges
 
 Discuss with your coach what would happen if the Node running the MongoDB pod were to crash or be shut down.  Would Kubernetes be able to re-deploy the pod on a different node?  How do availability zones play into this?

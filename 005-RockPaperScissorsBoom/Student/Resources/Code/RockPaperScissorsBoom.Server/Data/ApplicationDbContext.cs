@@ -16,6 +16,6 @@ namespace RockPaperScissorsBoom.Server.Data
         {
         }
 
-        
+
     }
 }

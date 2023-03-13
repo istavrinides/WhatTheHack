@@ -7,7 +7,7 @@ public class CustomerOrder : Entity
 
     [JsonProperty(PropertyName = "customerId")]
     public string CustomerId { get; set; }
-    
+
     [JsonProperty(PropertyName = "storeId")]
     public int StoreId { get; set; }
 

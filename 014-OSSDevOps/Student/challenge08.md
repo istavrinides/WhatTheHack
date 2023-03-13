@@ -1,4 +1,4 @@
-# What the Hack: OSS DevOps 
+# What the Hack: OSS DevOps
 
 ## Challenge 08 - Infrastructure as Code: Deploying via Terraform
 [Back](challenge07.md) // [Home](../readme.md) // [Next](challenge09.md)
@@ -28,5 +28,5 @@ The complete this challenge successfully:
 *   Ensure Terraform CLI is installed locally
 *   Create a Terraform  ```*.tf``` template file utilizing the Azure provider
 * Deploy the containerized voting application to ACI via Terraform
-   
+
 [Back](challenge07.md) // [Home](../readme.md) // [Next](challenge09.md)

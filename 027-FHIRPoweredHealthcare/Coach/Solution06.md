@@ -9,7 +9,7 @@ In this challenge, you will create a new Single Page App (SPA) integrated with M
 ![JavaScript SPA App - Implicit Flow](../images/JavaScriptSPA-ImplicitFlow.jpg)
 
 - Make sure the following Node.js prerequistes have been completed
-  - To see if you already have Node.js and npm installed and check the installed version, run: 
+  - To see if you already have Node.js and npm installed and check the installed version, run:
     ```bash
     node -v
     npm -v
@@ -17,19 +17,19 @@ In this challenge, you will create a new Single Page App (SPA) integrated with M
 
   - Download and install **[Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)**
     - Download latest **[Node.js pre-built installer](https://nodejs.org/en/download/)** for your platform
-    - Run downloaded `node-v14.15.1-x64.msi` executable to install node.js 
-    - Post installation, a cmdline window will popup to install additional tools for Node.js.  In the cmdline window, 
+    - Run downloaded `node-v14.15.1-x64.msi` executable to install node.js
+    - Post installation, a cmdline window will popup to install additional tools for Node.js.  In the cmdline window,
     ```Command
     Press any key to continue...
     ```
-- Create a new JavaScript SPA patient search app 
+- Create a new JavaScript SPA patient search app
   - **Option 1: Create a Node.js SPA AAD MSAL Patient Search app**
-    - This step-by-step guide will create a vanilla JavaScript SPA to query protected web API, i.e. Microsoft Graph API, but you will modify it to access FHIR Server web API that accepts tokens from the Microsoft identity platform endpoint. 
+    - This step-by-step guide will create a vanilla JavaScript SPA to query protected web API, i.e. Microsoft Graph API, but you will modify it to access FHIR Server web API that accepts tokens from the Microsoft identity platform endpoint.
     - In this scenario, after a user signs in, an access token is requested and added to HTTP requests through the authorization header. This token will be used to acquire patient data via FHIR Server API.
     - Setup you web server or project, download **[project files](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/quickstart.zip)**
     - Create and initialize your project
       - Initialize your SPA, run `npm init` at your project root folder
-      - Install required dependencies, run 
+      - Install required dependencies, run
         ```bash
         npm install express --save
         npm install morgan --save
@@ -41,8 +41,8 @@ In this challenge, you will create a new Single Page App (SPA) integrated with M
         - Start the server
     - Create the SPA UI in `index.html` file that handles the following:
       - Implements UI built with Bootstrap 4 Framework
-      -	Imports script files for 
-        - configuration, 
+      -	Imports script files for
+        - configuration,
         - authentication,
         - API call
     - Access and update DOM elements in `ui.js` file
@@ -59,23 +59,23 @@ In this challenge, you will create a new Single Page App (SPA) integrated with M
     - Process MSAL authentication and acquire token to call FHIR Server API in `authPopup.js` file
     - Store REST endpoint for FHIR server in `graphConfig.js` file
     - Make REST call to FHIR Server in `graph.js` file
-      - Create helper function `callMSGraph()` to make the HTTP GET request against the protected FHIR API resource that requires a token. 
+      - Create helper function `callMSGraph()` to make the HTTP GET request against the protected FHIR API resource that requires a token.
         - This method appends the acquired token in the HTTP Authorization header.
-        - The request then uses `fetch` method to call the API and returns the response to the caller. 
+        - The request then uses `fetch` method to call the API and returns the response to the caller.
     - Add search components in `index.html` to implement patient lookup.
       - Add a search input textbox to enter search criteria
       - Add a submit button to perform the patient search
 
   - **Option 2: Create React AAD MSAL Patient Search SPA**
-    - Build a new SPA in React using **[Create React App](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app)** toolchain.  It sets up your development environment with latest JavaScript features and optimizes your app for production. 
-    
+    - Build a new SPA in React using **[Create React App](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app)** toolchain.  It sets up your development environment with latest JavaScript features and optimizes your app for production.
+
       - You’ll need to have Node >= 8.10 and npm >= 5.6 on your machine. To create a project, run:
         ```bash
         npx create-react-app react-patient-search
         cd react-patient-search
         npm start
         ```
-        
+
         **Note:** `npx` on the first line above refers to a package runner tool that comes with npm 5.2+.
 
     - Use **[Microsoft Authentication Library for JavaScript (MSAL.js) 2.0](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/README.md#microsoft-authentication-library-for-javascript-msaljs-20-for-browser-based-single-page-applications)** for Browser-Based Single-Page Applications
@@ -89,7 +89,7 @@ In this challenge, you will create a new Single Page App (SPA) integrated with M
         ```DotNet
         import ReactDOM from "react-dom";
         ```
-      - Setup **[React Redux store](https://react-redux.js.org/introduction/basic-tutorial)** to make it available to the app. 
+      - Setup **[React Redux store](https://react-redux.js.org/introduction/basic-tutorial)** to make it available to the app.
         ```DotNet
         import { Provider } from "react-redux";
         import { basicReduxStore } from "./reduxStore";
@@ -119,7 +119,7 @@ In this challenge, you will create a new Single Page App (SPA) integrated with M
         - MSAL client authentication,
           - **[Single-page application: Sign-in and Sign-out](https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-spa-sign-in?tabs=javascript2)**
     - Create patient search function `callPatientSearch.js` to setup and call FHIR API using `fetch` method
-      - Single-page application: **[Call a web API](https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-spa-call-api?tabs=javascript#call-a-web-api)** 
+      - Single-page application: **[Call a web API](https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-spa-call-api?tabs=javascript#call-a-web-api)**
       - use the `acquireTokenSilent` method to acquire or renew an access token before you call a web API
     - Access and update DOM elements in `updateUI.js` to render patient search results
 
@@ -129,8 +129,8 @@ In this challenge, you will create a new Single Page App (SPA) integrated with M
 
     **Note:** These URIs will accept as destinations when returning authentication responses (tokens) after successfully authenticating users.
 
-- Test and run your code locally 
-  - Set redirectUri to `https://localhost:3000` in `authConfig.js` file 
+- Test and run your code locally
+  - Set redirectUri to `https://localhost:3000` in `authConfig.js` file
   - Run at cmdline:
     ```bash
     npm install
@@ -145,4 +145,3 @@ In this challenge, you will create a new Single Page App (SPA) integrated with M
   - You should see a list of patients that were loaded into FHIR Server
   - Enter full or partial name (Given or Family) in the Search box and click Search button
     - This will call the FHIR API interface that filters patient data that contains the specified Given name or Family name configured and return the patient search results to browser
- 

@@ -4,7 +4,7 @@ This is a challenge-based hack. It's NOT step-by-step. Don't worry, you will do 
 
 ## **Introduction**
 
-Our solution begins with an existing data warehouse.  Adventure Works has a need to transition thier reporting to Power BI to better empower their business users to gain insights from their data without as much IT involvement in the reporting process. This endeavor begains as a fairly basic implementation of their data model in Power BI, but quickly devolves into a hybrid data architecture, and ultimately results in a variety of Artificial Intelligence and Machine Learning tasks to gain better insights from the data.  
+Our solution begins with an existing data warehouse.  Adventure Works has a need to transition thier reporting to Power BI to better empower their business users to gain insights from their data without as much IT involvement in the reporting process. This endeavor begains as a fairly basic implementation of their data model in Power BI, but quickly devolves into a hybrid data architecture, and ultimately results in a variety of Artificial Intelligence and Machine Learning tasks to gain better insights from the data.
 
 ## Technologies
 

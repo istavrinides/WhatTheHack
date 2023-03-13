@@ -25,7 +25,7 @@ In this challenge you need to:
 
 ### Update Datadog Configuration on the SQL Server VM
 
-Manually update the configuration on the SQL Server VM from Challenge 2 in order to add Datadog monitoring of the following: 
+Manually update the configuration on the SQL Server VM from Challenge 2 in order to add Datadog monitoring of the following:
 - Logs
 - Live Process Monitoring
 - Network Monitoring
@@ -39,22 +39,22 @@ You will need to install the Datadog agent on the Azure VM scale set which runs 
 
 As noted above, the installation and configuration of software on a VM scale set needs to be done via an automation script. Normally, the Datadog installation and configuration would have been included in that automation BEFORE the VM scale set is deployed. However for this hack, we want you to learn how to perform this configuration.
 
-To make this possible, we have provided you a way to hook into the automation process for the VM scale set. 
-- The VM scale set is configured to look for a PowerShell script named `SetupDatadogOnWebServers.ps1` in an Azure Blob Storage container in the eShopOnWeb Azure environment.  
+To make this possible, we have provided you a way to hook into the automation process for the VM scale set.
+- The VM scale set is configured to look for a PowerShell script named `SetupDatadogOnWebServers.ps1` in an Azure Blob Storage container in the eShopOnWeb Azure environment.
 - The container name is `/scripts` and the storage account is named with a prefix of `bootstrap` followed by a random set of characters. (For example `bootstrapXXXXXXXXXX`)
 
-In the `/Challenge-03` folder of your student resource package, you will find a sample PowerShell script named `SetupDatadogOnWebServers.ps1`. This script has the commands needed to install the Datadog agent and a sample configuration block that configures Logs, Live Process Monitoring, and Network Monitoring.  
+In the `/Challenge-03` folder of your student resource package, you will find a sample PowerShell script named `SetupDatadogOnWebServers.ps1`. This script has the commands needed to install the Datadog agent and a sample configuration block that configures Logs, Live Process Monitoring, and Network Monitoring.
 
 You will need to edit this script and add the following:
 - Your Datadog API key
 
 Once your script is ready:
-- Upload the completed script to the `/scripts` container of the storage account named with the prefix `bootstrap` in the eShopOnWeb Azure environment. 
+- Upload the completed script to the `/scripts` container of the storage account named with the prefix `bootstrap` in the eShopOnWeb Azure environment.
 - After the updated `SetupDatadogOnWebServers.ps1` script has been uploaded, delete the VM instances of the VM scale set.  Azure will automatically create new VM instances to replace the ones you deleted.  These new VM instances should run your updated script.
 
 ### Create a Dashboard in Datadog
 
-Create a new dashboard that will contain the graphs typically included for an infrastructure host, but add a graph for logs, live processes and network monitoring. 
+Create a new dashboard that will contain the graphs typically included for an infrastructure host, but add a graph for logs, live processes and network monitoring.
 
 Update the dashboard to handle a drop-down via template variables for:
 - Environment
@@ -68,10 +68,10 @@ To complete this challenge successfully, you should be able to:
 
 ## Learning Resources
 
-- [NPM for Windows](https://docs.datadoghq.com/network_monitoring/performance/setup/?tab=agentwindows) 
+- [NPM for Windows](https://docs.datadoghq.com/network_monitoring/performance/setup/?tab=agentwindows)
 - [Template Variables for Dashboards](https://docs.datadoghq.com/dashboards/template_variables/)
-- [Live Process monitoring configuration](https://docs.datadoghq.com/infrastructure/process/?tab=linuxwindows) 
-- [Dashboard docs](https://docs.datadoghq.com/dashboards) 
+- [Live Process monitoring configuration](https://docs.datadoghq.com/infrastructure/process/?tab=linuxwindows)
+- [Dashboard docs](https://docs.datadoghq.com/dashboards)
 - [Dashboard copy and paste](https://www.datadoghq.com/blog/copy-paste-widget/)
 - [Dashboard widgets](https://docs.datadoghq.com/dashboards/widgets/)
 - [Dashboard Powerpacks](https://www.datadoghq.com/blog/standardize-dashboards-powerpacks-datadog/)

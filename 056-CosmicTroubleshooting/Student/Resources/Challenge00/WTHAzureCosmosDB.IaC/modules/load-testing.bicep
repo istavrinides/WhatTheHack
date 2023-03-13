@@ -20,7 +20,7 @@ resource loadTestingcontributorRoleDefinition 'Microsoft.Authorization/roleDefin
 resource roleAssignment 'Microsoft.Authorization/roleAssignments@2020-04-01-preview' = {
   name: guid(resourceGroup().id, managedIdentityPrincipalId, loadTestingcontributorRoleDefinition.id)
   scope: loadtestingName_resource
-  
+
   properties: {
     roleDefinitionId: loadTestingcontributorRoleDefinition.id
     principalId: managedIdentityPrincipalId

@@ -314,7 +314,7 @@ fi
 
 ### Option 3: AAD Workload Identity (WORK IN PROGRESS)
 
-Note this is still work in progress. Besides, I am not sure if 
+Note this is still work in progress. Besides, I am not sure if
 
 ```bash
 # Enable feature
@@ -391,7 +391,7 @@ Or alternatively:
 
 ```bash
 # Send a request to the Azure AD Application to configure federation
-az login --scope https://graph.microsoft.com//.default 
+az login --scope https://graph.microsoft.com//.default
 credential_name=sqlapi-federated-credential
 cat <<EOF > body.json
 {

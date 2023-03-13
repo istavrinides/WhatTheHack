@@ -60,7 +60,7 @@ In the Resources\Images folder are three folders:
 - test
 
 The Dent and writeoff folders contain images of these types of damages to vehicles
-that will be trained and tagged. The Test folder contains an image that will be used 
+that will be trained and tagged. The Test folder contains an image that will be used
 to perform the test prediction.
 
 
@@ -115,60 +115,60 @@ namespace CustomVision.Sample
             TrainingApiCredentials trainingCredentials = new TrainingApiCredentials(trainingKey);
             TrainingApi trainingApi = new TrainingApi(trainingCredentials);
 
-            // Create a new project  
+            // Create a new project
             Console.WriteLine("Creating new project:");
             var project = trainingApi.CreateProject("Car Assessment");
 
-            // Make two tags in the new project  
+            // Make two tags in the new project
             var WriteOffTag = trainingApi.CreateTag(project.Id, "WriteOff");
             var DentTag = trainingApi.CreateTag(project.Id, "Dent");
 
-            // Add some images to the tags  
+            // Add some images to the tags
             Console.WriteLine("\tUploading images");
             LoadImagesFromDisk();
 
-            // Images can be uploaded one at a time  
+            // Images can be uploaded one at a time
             foreach (var image in WriteOffImages)
             {
                 trainingApi.CreateImagesFromData(project.Id, image, new List< string> () { WriteOffTag.Id.ToString() });
             }
 
-            // Or uploaded in a single batch   
+            // Or uploaded in a single batch
             trainingApi.CreateImagesFromData(project.Id, DentImages, new List< Guid> () { DentTag.Id });
 
             // Now there are images with tags start training the project
             Console.WriteLine("\tTraining");
             var iteration = trainingApi.TrainProject(project.Id);
 
-            // The returned iteration will be in progress, and can be queried periodically to see when it has completed  
+            // The returned iteration will be in progress, and can be queried periodically to see when it has completed
             while (iteration.Status == "Training")
             {
                 Thread.Sleep(1000);
 
-                // Re-query the iteration to get it's updated status  
+                // Re-query the iteration to get it's updated status
                 iteration = trainingApi.GetIteration(project.Id, iteration.Id);
             }
 
-            // The iteration is now trained. Make it the default project endpoint  
+            // The iteration is now trained. Make it the default project endpoint
             iteration.IsDefault = true;
             trainingApi.UpdateIteration(project.Id, iteration.Id, iteration);
             Console.WriteLine("Done!\\n");
 
-            // Now there is a trained endpoint, it can be used to make a prediction  
+            // Now there is a trained endpoint, it can be used to make a prediction
 
-            // Add your prediction key from the settings page of the portal 
-            // The prediction key is used in place of the training key when making predictions 
+            // Add your prediction key from the settings page of the portal
+            // The prediction key is used in place of the training key when making predictions
             string predictionKey = GetPredictionKey("<your key here>", args);
 
-            // Create a prediction endpoint, passing in a prediction credentials object that contains the obtained prediction key  
+            // Create a prediction endpoint, passing in a prediction credentials object that contains the obtained prediction key
             PredictionEndpointCredentials predictionEndpointCredentials = new PredictionEndpointCredentials(predictionKey);
             PredictionEndpoint endpoint = new PredictionEndpoint(predictionEndpointCredentials);
 
-            // Make a prediction against the new project  
+            // Make a prediction against the new project
             Console.WriteLine("Making a prediction:");
             var result = endpoint.PredictImage(project.Id, testImage);
 
-            // Loop over each prediction and write out the results  
+            // Loop over each prediction and write out the results
             foreach (var c in result.Predictions)
             {
                 Console.WriteLine($"\t{c.Tag}: {c.Probability:P1}");
@@ -191,7 +191,7 @@ namespace CustomVision.Sample
 
 ### Step 2: Add code to get and manage the training key
 
-On Line 127, create a method `GetTrainingKey` with two parameters of `trainingKey` 
+On Line 127, create a method `GetTrainingKey` with two parameters of `trainingKey`
 with a data type of string, and a second parameter of args with the data type
 of string, using the value from the trainingkey variable.
 The code can include control of flow logic to either use the key if it already
@@ -223,11 +223,11 @@ the bottom from the file.
 
 ### Step 3: Add code to get and manage the prediction key
 
-On Line 147, create a method `GetPredictionKey` with two parameters of `predictionKey` 
+On Line 147, create a method `GetPredictionKey` with two parameters of `predictionKey`
 with a data type of string, and a second parameter of args with the data type
 of string, using the value from the predictionkey variable.
 The code can include control of flow logic to either use the key if it already
-defined, or to prompt for the key should it be missing. Create 
+defined, or to prompt for the key should it be missing. Create
 code at the bottom of the cs file, underneath the code you have just created for step 2.
 
 `--NOTE THAT THE CODE IS MISSING BY DESIGN`

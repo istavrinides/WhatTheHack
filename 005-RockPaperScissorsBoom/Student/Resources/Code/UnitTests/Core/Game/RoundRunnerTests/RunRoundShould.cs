@@ -11,15 +11,15 @@ namespace UnitTests.Core.Game.RoundRunnerTests
 {
     public class RunRoundShould
     {
-        private readonly RockOnlyBot _rockOnlyBot 
+        private readonly RockOnlyBot _rockOnlyBot
             = new RockOnlyBot {Competitor = new Competitor()};
-        private readonly PaperOnlyBot _paperOnlyBot 
+        private readonly PaperOnlyBot _paperOnlyBot
             = new PaperOnlyBot { Competitor = new Competitor() };
-        private readonly WaterOnlyBot _waterOnlyBot 
+        private readonly WaterOnlyBot _waterOnlyBot
             = new WaterOnlyBot { Competitor = new Competitor() };
-        private readonly DynamiteOnlyBot _dynamiteOnlyBot 
+        private readonly DynamiteOnlyBot _dynamiteOnlyBot
             = new DynamiteOnlyBot { Competitor = new Competitor() };
-        private readonly ScissorsOnlyBot _scissorsOnlyBot 
+        private readonly ScissorsOnlyBot _scissorsOnlyBot
             = new ScissorsOnlyBot { Competitor = new Competitor() };
         private readonly RoundRunner _roundRunner = new RoundRunner();
         private readonly RoundResultBuilder _builder = new RoundResultBuilder();

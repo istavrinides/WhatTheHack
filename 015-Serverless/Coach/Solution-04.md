@@ -1,4 +1,4 @@
-# Challenge 04 - Configuration - Coach's Guide 
+# Challenge 04 - Configuration - Coach's Guide
 
 [< Previous Solution](./Solution-03.md) - **[Home](./README.md)** - [Next Solution >](./Solution-05.md)
 
@@ -42,7 +42,7 @@ In this task, you will apply application settings using the Microsoft Azure Port
 
 5.  Select **Save**.
 
- 
+
 6.  _Optional steps_, only if you wish to debug the functions locally on your development machine:
 
     a. Update the local.settings.json file with the same values.

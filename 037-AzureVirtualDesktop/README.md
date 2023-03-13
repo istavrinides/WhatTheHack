@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This hack is designed to help you get hands-on experience to ramp up for the AZ-140 AVD specialst certification or if you just want to learn Azure Virtual Desktop. AVD has quickly gained adoption across the globe with companies moving to remote work for their employees. 
+This hack is designed to help you get hands-on experience to ramp up for the AZ-140 AVD specialst certification or if you just want to learn Azure Virtual Desktop. AVD has quickly gained adoption across the globe with companies moving to remote work for their employees.
 
-The hack starts off by covering the basics of AVD and then digs deep into the different componets. You will encounter different types of solutions that is or could be needed in a AVD environment. Challenges 0-7 should be done in order, 8-11 can be done randomly once 0-7 are completed. 
+The hack starts off by covering the basics of AVD and then digs deep into the different componets. You will encounter different types of solutions that is or could be needed in a AVD environment. Challenges 0-7 should be done in order, 8-11 can be done randomly once 0-7 are completed.
 
 ## Learning Objectives
 
-In this hack you will learn how to set up a Azure Virtual Desktop in a typical scenario and build it out in your own environment. Once your AVD environment is built you will learn how to scale. monitor and manage the environment with other Azure resources. 
+In this hack you will learn how to set up a Azure Virtual Desktop in a typical scenario and build it out in your own environment. Once your AVD environment is built you will learn how to scale. monitor and manage the environment with other Azure resources.
 
 ## Challenges
 

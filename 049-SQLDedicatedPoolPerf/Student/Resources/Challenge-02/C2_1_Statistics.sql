@@ -20,7 +20,7 @@ DBCC DROPCLEANBUFFERS()
 DBCC FREEPROCCACHE()
 GO
 
-SELECT 
+SELECT
 	Fis.SalesTerritoryKey
 	,Fis.OrderDateKey
 	, Dsr.SalesReasonName
@@ -59,7 +59,7 @@ DBCC DROPCLEANBUFFERS()
 DBCC FREEPROCCACHE()
 GO
 
-SELECT 
+SELECT
 	Fis.SalesTerritoryKey
 	,Fis.OrderDateKey
 	, Dsr.SalesReasonName
@@ -72,7 +72,7 @@ FROM Sales.FactInternetSales Fis
 			AND Fisr.SalesOrderLineNumber = Fis.SalesOrderLineNumber
 	INNER JOIN Sales.DimSalesReason Dsr
 		ON Fisr.SalesReasonKey = Dsr.SalesReasonKey
-WHERE Fis.OrderDateKey >= '20120101' and Fis.OrderDateKey < '20211231' 
+WHERE Fis.OrderDateKey >= '20120101' and Fis.OrderDateKey < '20211231'
 		AND Fis.SalesTerritoryKey BETWEEN 5 and 10
 		AND Dsr.SalesReasonName = 'Demo Event'
 	GROUP BY Fis.SalesTerritoryKey, Fis.OrderDateKey, Dsr.SalesReasonName
@@ -90,7 +90,7 @@ SELECT * FROM sys.dm_pdw_request_steps WHERE request_id >= 'request_id' AND comm
 
 /****************************************************************************************
 STEP5 - Can you recognize Auto created Statistics ?
-	Which columns have statistics and Why ? 
+	Which columns have statistics and Why ?
 *****************************************************************************************/
 SELECT
     sm.[name] AS [schema_name],
@@ -116,14 +116,14 @@ FROM
     JOIN sys.schemas sm
         ON  tb.[schema_id] = sm.[schema_id]
 WHERE
-    sm.[name] = 'Sales' 
+    sm.[name] = 'Sales'
 	and tb.[name] = 'FactInternetSales'
 	and st.[name] not like	'Clustered%';
 GO
 
 
 /****************************************************************************************
-STEP6 - Is there a way to manually create needed statistics and 
+STEP6 - Is there a way to manually create needed statistics and
 		avoid the overhead while executing the query the first time ?
 		Create needed statistics manually and check if the query still need Auto Create Stats
 *****************************************************************************************/

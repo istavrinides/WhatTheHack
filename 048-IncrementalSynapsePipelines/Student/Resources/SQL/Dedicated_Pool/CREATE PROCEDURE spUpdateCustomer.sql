@@ -23,16 +23,16 @@ BEGIN
             , PasswordSalt = S1.PasswordSalt
             , rowguid = S1.rowguid
             , ModifiedDate = S1.ModifiedDate
-            
+
         from Staging.Customer S1
         where [SalesLT].[Customer].CustomerID = S1.CustomerID
         and S1.__$operation = 4
         and S1.tran_begin_time = (
-                                    select MAX(s2.tran_begin_time) 
-                                    from Staging.Customer s2 
+                                    select MAX(s2.tran_begin_time)
+                                    from Staging.Customer s2
                                     where s2.Customerid=s1.Customerid and S2.__$operation in (4)
                                 )
-                                
+
 ;
 END;
 GO

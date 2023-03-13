@@ -66,8 +66,8 @@ aadEndpoint=$(az cloud show --name $environmentName | jq -r .endpoints.activeDir
 
 #Return summary information
 cat << EOF
-{ 
-    "AppId": "$apiAppId", 
+{
+    "AppId": "$apiAppId",
     "TenantId": "$aadTenantId",
     "Authority": "${aadEndpoint}/${aadTenantId}",
     "Audience": "${AUDIENCE}"

@@ -22,7 +22,7 @@ class SqlInfo extends React.Component {
       .then(info => this.setState({ info: info }));
     }
   }
-  
+
   render() {
     return (this.state.enabled) ?
       <div className="sql-info">{this.state.info.dataSource} | {this.state.info.databaseEdition}</div> :

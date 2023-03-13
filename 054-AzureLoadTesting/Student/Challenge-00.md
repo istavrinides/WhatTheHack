@@ -27,8 +27,8 @@ Now that you have the common prerequisites installed on your workstation, there 
 
 Your coach will provide you with a Resources.zip file that contains resources you will need to complete the hack. If you plan to work locally, you should unzip it on your workstation. If you plan to use the Azure Cloud Shell, you should upload it to the Cloud Shell and unzip it there.
 
-### Sample WebApp with Cosmos DB 
- 
+### Sample WebApp with Cosmos DB
+
  The sample app is a WebApp deployed on App Service with Cosmos DB as a database. It counts the number of visitors visiting the page and inserts the same into a sample collection in Cosmos DB.
 
 ### Installation
@@ -48,7 +48,7 @@ Your coach will provide you with a Resources.zip file that contains resources yo
 
         https://<app_name>.azurewebsites.net
 
-### **Clean up resources**       
+### **Clean up resources**
 
 You may want to delete the resources to avoid incurring additional charges at the end of this hack. Use the `az group delete` command to remove the resource group and all related resources.
 

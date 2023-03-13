@@ -3,7 +3,7 @@
 # It will build the solution and publish a copy of the output artifacts to a file share.
 
 # The VM instances of the VM scale set are configured to pull the artifacts from this file share when they are created.
-# After running this script, you will need to delete the VM instances of the VMSS. 
+# After running this script, you will need to delete the VM instances of the VMSS.
 # New VM instances will be created by the VMSS and pick up the updated application code.
 
 # Configure eShoponWeb application

@@ -7,10 +7,10 @@
 
 ## Introduction
 
-Users partitioned the FactInternetSales table by [OrderDateKey] column and are now complaining about performance running a simple query against it. 
+Users partitioned the FactInternetSales table by [OrderDateKey] column and are now complaining about performance running a simple query against it.
 If they run the same query against the old table (not partitioned), performance is good.
 
-You can find all the files for this challnge into the Zip file provided by your coach at this path: _./Resources/Challenge-04/_ 
+You can find all the files for this challnge into the Zip file provided by your coach at this path: _./Resources/Challenge-04/_
 
 ## Description
 
@@ -20,14 +20,14 @@ You can find all the files for this challnge into the Zip file provided by your 
 
 ### Table Partitioning – Clustered columnstore health check
 
-Investigate why query against partitioned table is slower than the original one and fix it. 
+Investigate why query against partitioned table is slower than the original one and fix it.
 - Open [C4_1_Partitioning_CCI.sql](./Resources/Challenge-04/C4_1_Partitioning_CCI.sql?raw=true) and identify why the partitioned table is so slow
   - Is the partitioning affecting the Columnstore health ?
   - Is the Columnstore index in good shape ?
 
 ## Success Criteria
 
-- Understand when partitions could be helpful and when not 
+- Understand when partitions could be helpful and when not
 - Deep understanding in Columnstore Index health and how they heavily affect performance
 - Beeing able to identify unhealthy Columnstore indexes
 

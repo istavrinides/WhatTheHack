@@ -6,7 +6,7 @@
 
 Caladan has established connections to various COVID-19 data sources for health and safety personnel.
 While these data sources have daily data from different geographies they are not in a format that makes it easy
-to analyze or create reports.  
+to analyze or create reports.
 Both govenrment leaders would like policy recommendations and the ability generate their own reports to dig deeper.
 
 To enable this long term vision, Caladan would like to establish
@@ -14,7 +14,7 @@ an enterprise data lake to feed covid-19 and future infectious disease data need
 This central repository can later be leveraged for
 analysis, reporting and eventually - machine learning.
 
-The datasources do not currently contain sensitive information but it is anticipated that they will in the future as other infectious disease data are ingested into the data lake. 
+The datasources do not currently contain sensitive information but it is anticipated that they will in the future as other infectious disease data are ingested into the data lake.
 Caladan is concerned about their consituents' data,
 so they want to ensure such data will be protected at all times,
 with access limited to those who truly require it for business reasons.

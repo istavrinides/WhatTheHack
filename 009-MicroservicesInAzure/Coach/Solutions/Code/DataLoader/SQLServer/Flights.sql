@@ -71,6 +71,6 @@ CREATE PROCEDURE dbo.FindFlights
 AS
     SET NOCOUNT ON
     SELECT [Id], [DepartingFrom], [ArrivingAt], [DepartureTime], [ArrivalTime], [Duration], [Cost] FROM FLIGHTS
-    WHERE [DepartingFrom] = @DepartingFrom AND ArrivingAt = @ArrivingAt AND 
+    WHERE [DepartingFrom] = @DepartingFrom AND ArrivingAt = @ArrivingAt AND
     DepartureTime between DateAdd(s, -1 * @SecondsOffset, @DesiredTime) AND DateAdd(s, @SecondsOffset, @DesiredTime)
 GO

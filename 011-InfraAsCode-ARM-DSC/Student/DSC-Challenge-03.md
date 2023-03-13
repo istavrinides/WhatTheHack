@@ -1,7 +1,7 @@
 
 # Challenge 3 - File Server DSC
 
-[< Previous Challenge](./DSC-Challenge-02.md) - [Home](../readme.md) 
+[< Previous Challenge](./DSC-Challenge-02.md) - [Home](../readme.md)
 
 ## Introduction
 

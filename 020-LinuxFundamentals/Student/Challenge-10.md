@@ -2,7 +2,7 @@
 
 [< Previous Challenge](./Challenge-09.md) - **[Home](../README.md)** - [Next Challenge >](./Challenge-11.md)
 
-## Pre-requisites 
+## Pre-requisites
 
 - Create a data disk of 5GB
 - Add to the Virtual Machine

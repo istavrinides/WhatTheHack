@@ -1,15 +1,15 @@
-# Challenge 01 - Got Containers? - Coach's Guide 
+# Challenge 01 - Got Containers? - Coach's Guide
 
 [< Previous Solution](./Solution-00.md) - **[Home](./README.md)** - [Next Solution >](./Solution-02.md)
 
 ## Notes & Guidance
 
 ## COACHES:  READ THIS CAREFULLY!
-There are four different options/paths for delivering Challenges 1-3.  
+There are four different options/paths for delivering Challenges 1-3.
 
 BEFORE the hack, the Coach should discuss these paths with a stakeholder from the organization they are delivering the hack to. An appropriate path should be selected based on the learning objectives of the organization.
 
-When delivering the hack, advise your students of the proper path to select from the Student guide based on the decision made with the stakeholder PRIOR TO the hack.  
+When delivering the hack, advise your students of the proper path to select from the Student guide based on the decision made with the stakeholder PRIOR TO the hack.
 
 ### Challenges 1-3: Four Paths to Choose
 
@@ -17,7 +17,7 @@ When delivering the hack, advise your students of the proper path to select from
 
 For organizations who are not focused on how to build container images, we have provided pre-built container images for the FabMedical sample application hosted in Dockerhub. This means you may choose to start the hack with either Challenge 2 or Challenge 3.
 
-We have found it is common that some organizations do not allow their users to have the "Owner" role assigned to them in their Azure subscription. This means the attendees will not be able to configure the Azure Container Registry for use with their AKS cluster. 
+We have found it is common that some organizations do not allow their users to have the "Owner" role assigned to them in their Azure subscription. This means the attendees will not be able to configure the Azure Container Registry for use with their AKS cluster.
 
 You can workaround this either by skipping Challenge 2 altogether, or completing Challenge 2 to understand how ACR works, but then using the pre-built container images in Dockerhub for deployment in Challenge 4.
 
@@ -26,7 +26,7 @@ You can workaround this either by skipping Challenge 2 altogether, or completing
 ### Choose your path:
 
 #### [PATH A](./Solution-01A.md) - Challenge 1A & 2A Coach's Guides
- Use this path to provide students with a comprehensive experience of building, testing, and running containers locally. Students will create a VM (using a provided ARM template) with Docker and all other required tools to ensure uniformity of environments. In this path, your students will create a Dockerfile, build and test local containers, and then push these container images to Azure Container Registry. 
+ Use this path to provide students with a comprehensive experience of building, testing, and running containers locally. Students will create a VM (using a provided ARM template) with Docker and all other required tools to ensure uniformity of environments. In this path, your students will create a Dockerfile, build and test local containers, and then push these container images to Azure Container Registry.
 #### [PATH B](./Solution-02B.md) - Challenge 2B Coach's Guide
 Use this path if your students understand Docker, don't care about building images locally, and/or have environments issues that would prevent them from building containers locally. In this path, your students will be given a Dockerfile, will create an Azure Container Registry, and then will use ACR tasks to build the images natively inside ACR.
 #### [PATH C](./Solution-02C.md) - Challenge 2C Coach's Guide

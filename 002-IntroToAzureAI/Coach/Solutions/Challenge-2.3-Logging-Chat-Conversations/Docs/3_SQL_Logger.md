@@ -20,7 +20,7 @@ The aim of this lab is to log chat conversations to Azure SQL database. This lab
 
 ![Firewall Settings](images/FirewallSettings.png)
 
-2.4.   Create a new table called userChatLog with the below create table statement (or schema). We will use the same tool of the "Query the SQL database" section at the [Create DB - Portal](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-get-started-portal) link. Within the Azure Portal, click "Data Explorer (preview)" on the left menu. To login, use the same account and password you specified when creating the database. Paste the script below and click "Run". The expected result is the message "Query succeeded: Affected rows: 0.". 
+2.4.   Create a new table called userChatLog with the below create table statement (or schema). We will use the same tool of the "Query the SQL database" section at the [Create DB - Portal](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-get-started-portal) link. Within the Azure Portal, click "Data Explorer (preview)" on the left menu. To login, use the same account and password you specified when creating the database. Paste the script below and click "Run". The expected result is the message "Query succeeded: Affected rows: 0.".
 
 ```
 CREATE TABLE userChatLog(id int IDENTITY(1, 1),fromId varchar(25),toId varchar(25),message varchar(max),PRIMARY KEY(id));
@@ -83,21 +83,21 @@ public class SqlActivityLogger : IActivityLogger
                 string message = activity.AsMessageActivity().Text;
 
                 string insertQuery = "INSERT INTO userChatLog(fromId, toId, message) VALUES (@fromId,@toId,@message)";
-                
-                // Passing the fromId, toId, message to the the user chatlog table 
+
+                // Passing the fromId, toId, message to the the user chatlog table
                 SqlCommand command = new SqlCommand(insertQuery, connection);
                 command.Parameters.AddWithValue("@fromId", fromId);
                 command.Parameters.AddWithValue("@toId", toId);
                 command.Parameters.AddWithValue("@message", message);
-              
+
                 // Insert to Azure sql database
                 command.ExecuteNonQuery();
-                Debug.WriteLine("Insertion successful of message: " + activity.AsMessageActivity().Text);   
+                Debug.WriteLine("Insertion successful of message: " + activity.AsMessageActivity().Text);
         }
     }
 ````
 
-### SQL Injection 
+### SQL Injection
 
 SQL Injection refers to an injection attack wherein an attacker can execute malicious SQL statements that control an application’s database server. SQL Injection can provide an attacker with unauthorized access to sensitive data. In the LogAsync method, parameters allow for defense against SQL injection. The prime benefit of parameterized queries is to prevent SQL injection.
 

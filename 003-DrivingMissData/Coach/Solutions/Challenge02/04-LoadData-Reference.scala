@@ -87,10 +87,10 @@ val vendorSchema = StructType(Array(
 def LoadReferenceData(srcDatasetName: String, srcDataFile: String, destDataDir: String, srcSchema: StructType, delimiter: String )
 {
   // println("Dataset: " + srcDatasetName)
-  
+
   // Delete dest to recreate clean for idempotent runs
   dbutils.fs.rm(destDataDir, recurse=true)
-  
+
   // Read source data
   val refDF = sqlContext
     .read
@@ -102,11 +102,11 @@ def LoadReferenceData(srcDatasetName: String, srcDataFile: String, destDataDir: 
   // Write parquet output
   // println("Reading source and saving as parquet")
   refDF.coalesce(1).write.parquet(destDataDir)
-  
+
   // Delete residual files from job operation (_SUCCESS, _start*, _committed*)
   // println("Delete temp/job files")
   DeleteSparkJobFiles(destDataDir)
-  
+
   // println("Done")
 }
 

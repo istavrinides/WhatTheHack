@@ -16,7 +16,7 @@ for ($i = 1; $i -le $teamCount; $i++)
     {
         $teamName = "0" + $i;
     }
-    
+
     $resourceGroupName = "mdw-oh-" + $teamName + "-" + $region
     $deploymentName = "azuredeploy" + "-" + (Get-Date).ToUniversalTime().ToString('MMdd-HHmmss')
     Write-Host("Now deploying RG to " + $resourceGroupName);
@@ -27,5 +27,5 @@ for ($i = 1; $i -le $teamCount; $i++)
     if (!$resourceGroup) {
         $resourceGroup = New-AzResourceGroup -Name $resourceGroupName -Location $region
     }
-    New-AzResourceGroupDeployment -Name $deploymentName -ResourceGroupName $resourceGroupName -Location $region -TemplateFile $deploymentTemplateFile -TemplateParameterFile $deploymentParameterFile -sqlAdminLoginPassword $sqlAdminLoginPassword -vmAdminPassword $vmAdminPassword -AsJob    
+    New-AzResourceGroupDeployment -Name $deploymentName -ResourceGroupName $resourceGroupName -Location $region -TemplateFile $deploymentTemplateFile -TemplateParameterFile $deploymentParameterFile -sqlAdminLoginPassword $sqlAdminLoginPassword -vmAdminPassword $vmAdminPassword -AsJob
 }

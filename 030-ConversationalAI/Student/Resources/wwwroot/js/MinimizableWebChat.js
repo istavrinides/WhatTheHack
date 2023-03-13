@@ -8,7 +8,7 @@ class MinimizableWebChat {
     Connected = false;
     Authenticated = false;
 
-    #HtmlTemplate = `<div class="minimizable-web-chat">    
+    #HtmlTemplate = `<div class="minimizable-web-chat">
     <button class="maximize">
         <img alt="beanie icon" style="margin-top: -30px;margin-left: -10px;"
             src="https://virtualworkfriendbotz7sw.blob.core.windows.net/images/BotIcon.png" width="50" height="50">
@@ -90,16 +90,16 @@ class MinimizableWebChat {
             {
                 speechTokenUrl = this.TokenGenerationBase + "/api/speech/" + this.DomainId;
             }
-    
+
             $.post(speechTokenUrl, async function (speechToken) {
                 chatControl.#SpeechFactory = await window.WebChat.createCognitiveServicesSpeechServicesPonyfillFactory({
                     credentials: speechToken
                 });
-                chatControl.#ConnectWebChat(chatControl);            
+                chatControl.#ConnectWebChat(chatControl);
             });
         }
         else {
-            chatControl.#ConnectWebChat(chatControl);  
+            chatControl.#ConnectWebChat(chatControl);
         }
 
         chatControl.Root[0].addEventListener('WebChatUIUpdate', ({ data }) => {
@@ -108,7 +108,7 @@ class MinimizableWebChat {
             this.WebChatStyleOptions = data.value;
             this.UpdateUI(data.sender, data.value, this);
         });
-        
+
     }
     #ConnectWebChat(chatControl) {
         var tokenUrl = "/api/tokens";
@@ -153,7 +153,7 @@ class MinimizableWebChat {
                         //console.log(activity);
                         //chatControl.Render(chatControl);
                     }
-                    
+
                 }
 
                 return next(action);
@@ -196,12 +196,12 @@ class MinimizableWebChat {
                 },
                 chatControl.WebChat[0]);
         }
-        
-    }
-    
 
-    UpdateUI = function (control, data, wrapper) {        
+    }
+
+
+    UpdateUI = function (control, data, wrapper) {
         control.StyleOptions = data;
-        control.Render(control);        
+        control.Render(control);
     }
 }

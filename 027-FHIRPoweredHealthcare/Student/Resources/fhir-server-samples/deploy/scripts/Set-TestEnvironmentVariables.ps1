@@ -18,7 +18,7 @@ Set-StrictMode -Version Latest
 # Get current Az context
 try {
     $azContext = Get-AzContext
-} 
+}
 catch {
     throw "Please log in to Azure RM with Login-AzAccount cmdlet before proceeding"
 }

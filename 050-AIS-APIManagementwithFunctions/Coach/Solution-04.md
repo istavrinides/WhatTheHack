@@ -1,6 +1,6 @@
 # Challenge 04 - Securing Backends APIs - Coach's Guide
 
-[<Previous Solution](./Solution-03.md) - **[Home](./README.md)** 
+[<Previous Solution](./Solution-03.md) - **[Home](./README.md)**
 
 ## Introduction
 
@@ -26,7 +26,7 @@ For Scenario 01:
 
   - Configure a [Private endpoint](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-vnet)
     ![Function App Private Endpoint 1](./images/Solution04_FuncApp_Private_Endpoint_1.jpg)
-    This creates a virtual NIC with a private IP assigned to it, as well as private DNS record to be mapped to that IP. 
+    This creates a virtual NIC with a private IP assigned to it, as well as private DNS record to be mapped to that IP.
     ![Function App Private Endpoint 2](./images/Solution04_FuncApp_Private_Endpoint_2.jpg)
     Try calling the function endpoint from Postman in your jumpbox VM, you should get HTTP 200
     ![Function App Access Restriction 3](./images/Solution04_FuncApp_Private_Endpoint_3.jpg)
@@ -41,17 +41,17 @@ For Scenario 01:
     - In the portal, go the Application Gateway and under Settings, select Rewrites, then click Rewrite set.
       ![Create URL Rewrite Set 1](./images/Solution04_Create_URLRewrite_Set_1.jpg)
     - Name your new rewrite set then select the default routing rule created earlier.  Click Next.
-      ![Create URL Rewrite Set 2](./images/Solution04_Create_URLRewrite_Set_2.jpg)      
+      ![Create URL Rewrite Set 2](./images/Solution04_Create_URLRewrite_Set_2.jpg)
     - Click Add rewrite rule and name it: First, add condition as follows, then click Ok when done.
-      ![Create URL Rewrite Set 3](./images/Solution04_Create_URLRewrite_Set_3.jpg)    
+      ![Create URL Rewrite Set 3](./images/Solution04_Create_URLRewrite_Set_3.jpg)
     - Then, add action and configure like below.  Click OK then Create when done.
-      ![Create URL Rewrite Set 4](./images/Solution04_Create_URLRewrite_Set_4.jpg) 
+      ![Create URL Rewrite Set 4](./images/Solution04_Create_URLRewrite_Set_4.jpg)
     - Open Postman and test your changes. Try calling http://pip-{{unique_id}}.australiaeast.cloudapp.azure.com/external, it should now return HTTP 200.
-      ![Create URL Rewrite Set 5](./images/Solution04_Create_URLRewrite_Set_5.jpg) 
-      ![Create URL Rewrite Set 6](./images/Solution04_Create_URLRewrite_Set_6.jpg) 
-      ![Create URL Rewrite Set 7](./images/Solution04_Create_URLRewrite_Set_7.jpg) 
+      ![Create URL Rewrite Set 5](./images/Solution04_Create_URLRewrite_Set_5.jpg)
+      ![Create URL Rewrite Set 6](./images/Solution04_Create_URLRewrite_Set_6.jpg)
+      ![Create URL Rewrite Set 7](./images/Solution04_Create_URLRewrite_Set_7.jpg)
     - Try calling http://pip-{{unique_id}}.australiaeast.cloudapp.azure.com/, it should now return HTTP 404.
-      ![Create URL Rewrite Set 8](./images/Solution04_Create_URLRewrite_Set_8.jpg) 
+      ![Create URL Rewrite Set 8](./images/Solution04_Create_URLRewrite_Set_8.jpg)
 
 - To secure external Hello API to only accept requests routed from Application Gateway, you need to add [```ip-filter``` policy](https://docs.microsoft.com/en-us/azure/api-management/api-management-access-restriction-policies#RestrictCallerIPs).
   - Add the policy to Hello API, configuring the AGW subnet range.  Click Save to apply changes.
@@ -63,10 +63,10 @@ For Scenario 01:
 
 - To test the public and private API calls:
   - Test the public API by calling the AGW endpoint from Postman
-  - Test the private API by calling the APIM endpoint from Postman installed in your jumpbox VM. 
+  - Test the private API by calling the APIM endpoint from Postman installed in your jumpbox VM.
 
 For Scenario 02:
-- First, the student should follow the steps [Protect a web API backend in Azure API Management using OAuth 2.0 authorization with Azure Active Directory](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-protect-backend-with-aad).    
+- First, the student should follow the steps [Protect a web API backend in Azure API Management using OAuth 2.0 authorization with Azure Active Directory](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-protect-backend-with-aad).
     - In Step [1. Register an application in Azure AD to represent the API](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-protect-backend-with-aad#1-register-an-application-in-azure-ad-to-represent-the-api), the backend-app AAD registration should look like below:
         ![Enable backend-app AAD app reg settings 1](./images/Solution04_Enable_ADAuth_BackendApp_1.jpg)
         ![Enable backend-app AAD app reg settings 2](./images/Solution04_Enable_ADAuth_BackendApp_2.jpg)
@@ -76,12 +76,12 @@ For Scenario 02:
         ![Enable client-app AAD app reg settings 1](./images/Solution04_Enable_ADAuth_ClientApp_1.jpg)
         ![Enable client-app AAD app reg settings 2](./images/Solution04_Enable_ADAuth_ClientApp_2.jpg)
         ![Enable client-app AAD app reg settings 3](./images/Solution04_Enable_ADAuth_ClientApp_3.jpg)
-        ![Enable client-app AAD app reg settings 4](./images/Solution04_Enable_ADAuth_ClientApp_4.jpg)     
+        ![Enable client-app AAD app reg settings 4](./images/Solution04_Enable_ADAuth_ClientApp_4.jpg)
     - In Step [4. Enable OAuth 2.0 user authorization in the Developer Console](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-protect-backend-with-aad#4-enable-oauth-20-user-authorization-in-the-developer-console), the OAuth2 settings in the Developer portal should look something like below:
         ![APIM Dev Portal OAuth2 Settings 1](./images/Solution04_APIM_DevPortal_OAuth_Settings_1.jpg)
         ![APIM Dev Portal OAuth2 Settings 2](./images/Solution04_APIM_DevPortal_OAuth_Settings_2.jpg)
-    - In Step [5. Successfully call the API from the developer portal](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-protect-backend-with-aad#5-successfully-call-the-api-from-the-developer-portal), you should be able to successfully call Hello API from the APIM Developer Portal. 
-        ![Call Hello API in APIM Dev Portal 1](./images/Solution04_Call_HelloAPI_APIM_DevPortal_1.jpg)       
+    - In Step [5. Successfully call the API from the developer portal](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-protect-backend-with-aad#5-successfully-call-the-api-from-the-developer-portal), you should be able to successfully call Hello API from the APIM Developer Portal.
+        ![Call Hello API in APIM Dev Portal 1](./images/Solution04_Call_HelloAPI_APIM_DevPortal_1.jpg)
       You may get the following CORS error after clicking Send.
         ![Call Hello API in APIM Dev Portal 2](./images/Solution04_Call_HelloAPI_APIM_DevPortal_2.jpg)
       To fix this, just add the APIM CORS policy scoped for all APIs, as follows:
@@ -93,7 +93,7 @@ For Scenario 02:
       To test, call Hello API from the Dev Portal again.  Try returning a failure by modifying the Authorization header value.
         ![Configure validate-jwt policy 2](./images/Solution04_Configure_validatejwt_policy_2.jpg)
 
-    <!-- - Click the scope link.  Student does not have to do anything here since the settings have already been pre-filled.  Though, they have the liberty to change any of these (e.g. Consent to Admins only), as long as the scope has been enabled.  
+    <!-- - Click the scope link.  Student does not have to do anything here since the settings have already been pre-filled.  Though, they have the liberty to change any of these (e.g. Consent to Admins only), as long as the scope has been enabled.
         ![Edit HelloAPI AD Auth Scope settings](./images/Solution04_Enable_ADAuth_HelloAPI_5.jpg) -->
 
 - If using Postman as your client application, you need to [specifying the Authorization details using OAuth2](https://learning.postman.com/docs/sending-requests/authorization/#oauth-20) which will ask you to log in and consent before sending the generated Access Token.  Ensure that you specify Authorization Code as the grant type.
@@ -106,7 +106,7 @@ For Scenario 02:
     - Client ID: The ID for your client application registered with the API provider. (e.g. the Application ID of the client app AAD registration created [earlier](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-protect-backend-with-aad#2-register-another-application-in-azure-ad-to-represent-a-client-application#:~:text=On%20the%20app%20Overview%20page%2C%20find%20the%20Application%20(client)%20ID%20value%20and%20record%20it%20for%20later.))
     - Client Secret: The client secret given to you by the API provider. (e.g. the Client secret of the client app AAD registration created [earlier](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-protect-backend-with-aad#2-register-another-application-in-azure-ad-to-represent-a-client-application##:~:text=Create%20a%20client%20secret%20for%20this%20application%20to%20use%20in%20a%20subsequent%20step.))
     - Scope: The scope of access you are requesting, which may include multiple space-separated values. (e.g. This is the [backend app scope](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-protect-backend-with-aad#2-register-another-application-in-azure-ad-to-represent-a-client-application###:~:text=Use%20the%20back-end%20app%20scope%20you%20created%20in%20the%20Default%20scope%20field) granted to the client app)
-    - State: An opaque value to prevent cross-site request forgery. 
+    - State: An opaque value to prevent cross-site request forgery.
     - Client Authentication: A dropdown list: send a Basic Auth request in the header, or client credentials in the request body. After upgrading to a new  version, change the value in this dropdown menu to avoid problems with client authentication.
 
     ![Postman Auth Request 1](./images/Solution04_Postman_Auth_Request_1.jpg)
@@ -114,11 +114,11 @@ For Scenario 02:
 
 - Click Get New Access Token which will pop-up another browser window prompting you to log-in.  Once successful, you will be redirected back with the generated access token.  Click Use Token to add that to the request header.
     ![Postman Auth Request 3](./images/Solution04_Postman_Auth_Request_3.jpg)
-  
+
 - Then, click Send to execute GET request to Hello API.
     ![Postman Auth Request 4](./images/Solution04_Postman_Auth_Request_4.jpg)
 
- 
+
 - Lastly, configure your Function App to use AAD login. Use the [existing backend app AAD registration](https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-provider-aad?toc=/azure/azure-functions/toc.json#-option-2-use-an-existing-registration-created-separately) created earlier.
     ![Function App AAD Auth 1](./images/Solution04_FunctionApp_AADAuth_1.jpg)
 
@@ -134,5 +134,5 @@ For Scenario 02:
     - Add the [authentication-managed-identity](https://docs.microsoft.com/en-us/azure/api-management/api-management-authentication-policies#ManagedIdentity)   policy which uses the managed identity to obtain an access token from AAD, then will set the token in the Authorization header using the Bearer scheme.  In the resource property, specify the client id of the backend app.
       ![Enable Managed Identity in APIM 2](./images/Solution04_Enable_ManagedIdentity_APIM_2.jpg)
     - Test API call.
-    
+
 [Back to Top](#challenge-04---securing-backends-apis---coachs-guide)

@@ -3,5 +3,5 @@
 
 import seaborn as sns
 num_cols = ["Age", "Height", "Weight", "Duration",
-            "Heart_Rate", "Body_Temp", "Calories"] 
+            "Heart_Rate", "Body_Temp", "Calories"]
 sns.pairplot(frame[num_cols], size=2)

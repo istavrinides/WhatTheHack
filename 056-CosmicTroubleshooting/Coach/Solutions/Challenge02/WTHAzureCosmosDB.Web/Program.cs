@@ -19,7 +19,7 @@ builder.Services.AddSingleton<ICosmosDbService<Product>>(
         var accountEndpoint = builder.Configuration.GetValue<string>("Cosmos:AccountEndpoint");
         var tokenCredential = new Azure.Identity.DefaultAzureCredential();
         var database = builder.Configuration.GetValue<string>("Cosmos:Database");
-        var container = builder.Configuration.GetValue<string>("Cosmos:ProductCollectionName");        
+        var container = builder.Configuration.GetValue<string>("Cosmos:ProductCollectionName");
         var connectionString = builder.Configuration.GetValue<string>("Cosmos:ConnectionString");
         Microsoft.Azure.Cosmos.CosmosClient client;
 
@@ -67,7 +67,7 @@ builder.Services.AddSingleton<ICosmosDbService<CustomerOrder>>(
         var accountEndpoint = builder.Configuration.GetValue<string>("Cosmos:AccountEndpoint");
         var tokenCredential = new Azure.Identity.DefaultAzureCredential();
         var database = builder.Configuration.GetValue<string>("Cosmos:Database");
-        var container = builder.Configuration.GetValue<string>("Cosmos:CustomerOrderCollectionName");        
+        var container = builder.Configuration.GetValue<string>("Cosmos:CustomerOrderCollectionName");
         var connectionString = builder.Configuration.GetValue<string>("Cosmos:ConnectionString");
         Microsoft.Azure.Cosmos.CosmosClient client;
 
@@ -91,7 +91,7 @@ builder.Services.AddSingleton<ICosmosDbService<Shipment>>(
         var accountEndpoint = builder.Configuration.GetValue<string>("Cosmos:AccountEndpoint");
         var tokenCredential = new Azure.Identity.DefaultAzureCredential();
         var database = builder.Configuration.GetValue<string>("Cosmos:Database");
-        var container = builder.Configuration.GetValue<string>("Cosmos:ShipmentCollectionName");        
+        var container = builder.Configuration.GetValue<string>("Cosmos:ShipmentCollectionName");
         var connectionString = builder.Configuration.GetValue<string>("Cosmos:ConnectionString");
         Microsoft.Azure.Cosmos.CosmosClient client;
 

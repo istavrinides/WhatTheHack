@@ -17,7 +17,7 @@ https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-
 STEP 1 of 7 - Run this simple Select
 ****************************************************************************************/
 
-SELECT  
+SELECT
 	[CustomerKey]
 	, COUNT(distinct [ProductKey]) Distinct_Prod_Count
 	, SUM([OrderQuantity])[OrderQuantity_SUM]
@@ -33,7 +33,7 @@ GO
 STEP 2 of 7 - check its MPP execution plan
 change the request_id using the proper-one. The most expensive step is step2 which is ShuffleMoveOperation
 This table has been created distributed=Hash(RevisionNumber)
-RevisionNumber shouldn't be used as distribution column since it only has 1 valu (Very dense and not selectine) 
+RevisionNumber shouldn't be used as distribution column since it only has 1 valu (Very dense and not selectine)
 Rows with same value land into the same distribution (Distribution 16 in this case) and using below queries you should be able to demonstrate
 the slowest distribution is the 16th.
 ****************************************************************************************/
@@ -66,7 +66,7 @@ WITH
 	CLUSTERED COLUMNSTORE INDEX
 )
 AS
-SELECT  
+SELECT
 	*
 FROM [Sales].[FactSales_Skewed]
 GO
@@ -78,7 +78,7 @@ Table is now evenly distributed, this should ensure good performance
 Bear in mind, First execution might not be fast, it's due to missing statistics, we will take care later
 ****************************************************************************************/
 
-SELECT  
+SELECT
 	[CustomerKey]
 	, COUNT(distinct [ProductKey]) Distinct_Prod_Count
 	, SUM([OrderQuantity])[OrderQuantity_SUM]
@@ -91,7 +91,7 @@ GO
 
 /****************************************************************************************
 STEP 6 of 7 - check its MPP execution plan
-change the request_id using the proper-one. 
+change the request_id using the proper-one.
 Its MPP plan is a single-step plan (Returnoperation) and no data movement required
 All distributions apprix take the same amount of time to complete their task
 ****************************************************************************************/

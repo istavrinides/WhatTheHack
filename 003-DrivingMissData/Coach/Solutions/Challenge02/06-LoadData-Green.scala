@@ -163,12 +163,12 @@ val greenTripSchema_13to14 = StructType(Array(
 
 // Function to return schema for a given year and month
 // Input:  Year and month
-// Output: StructType for applicable schema 
+// Output: StructType for applicable schema
 // Sample call: println(GetTaxiSchema(2009,1))
 
 def GetTaxiSchema(tripYear: Int, tripMonth: Int): StructType = {
   var taxiSchema : StructType = null
-  
+
   if (tripYear >= 2017 || (tripYear == 2016 && tripMonth > 6))
   {
     // println("greenTripSchema_16H2to18")
@@ -196,11 +196,11 @@ def GetTaxiSchema(tripYear: Int, tripMonth: Int): StructType = {
 
 // Function to add columns to dataframe as required to homogenize schema
 // Input:  Dataframe, year and month
-// Output: Dataframe with homogenized schema 
+// Output: Dataframe with homogenized schema
 // Sample call: println(GetSchemaHomogenizedDataframe(DF,2014,6))
 
 def GetSchemaHomogenizedDataframe(sourceDF: org.apache.spark.sql.DataFrame,
-                                  tripYear: Int, 
+                                  tripYear: Int,
                                   tripMonth: Int): org.apache.spark.sql.DataFrame =
 {
   var df : org.apache.spark.sql.DataFrame = null
@@ -208,7 +208,7 @@ def GetSchemaHomogenizedDataframe(sourceDF: org.apache.spark.sql.DataFrame,
   if (tripYear >= 2017 || (tripYear == 2016 && tripMonth > 6))
   {
     // println("tripYear >= 2017 || (tripYear == 2016 && tripMonth > 6)")
-    
+
     df = sourceDF
       .withColumn("trip_year", substring(col("lpep_pickup_datetime"), 0, 4))
       .withColumn("trip_month", substring(col("lpep_pickup_datetime"), 6, 2))
@@ -240,7 +240,7 @@ def GetSchemaHomogenizedDataframe(sourceDF: org.apache.spark.sql.DataFrame,
   else if ((tripYear == 2016 && tripMonth <= 6) || tripYear == 2015)
   {
     // println("(tripYear == 2016 && tripMonth <= 6) || tripYear == 2015")
-    
+
     df = sourceDF
       .withColumn("trip_year", substring(col("lpep_pickup_datetime"), 0, 4))
       .withColumn("trip_month", substring(col("lpep_pickup_datetime"), 6, 2))
@@ -272,10 +272,10 @@ def GetSchemaHomogenizedDataframe(sourceDF: org.apache.spark.sql.DataFrame,
   else if (tripYear == 2013 || tripYear == 2014)
   {
     // println("tripYear == 2013 || tripYear == 2014")
-    
+
     df = sourceDF
       .withColumn("trip_year", substring(col("lpep_pickup_datetime"), 0, 4))
-      .withColumn("trip_month", substring(col("lpep_pickup_datetime"), 6, 2))    
+      .withColumn("trip_month", substring(col("lpep_pickup_datetime"), 6, 2))
       .withColumn("taxi_type", lit("green"))
       .withColumnRenamed("VendorID", "vendor_id")
       .withColumnRenamed("lpep_pickup_datetime", "pickup_datetime")
@@ -301,7 +301,7 @@ def GetSchemaHomogenizedDataframe(sourceDF: org.apache.spark.sql.DataFrame,
       .withColumnRenamed("Total_amount", "total_amount")
       .withColumnRenamed("Trip_type", "trip_type")
   }
-  
+
   df
 }
 
@@ -384,19 +384,19 @@ for (yyyy <- 2013 to 2018)
 
     // At this writing we only have Jan-June for 2018
     var endMonth = if (yyyy == 2018) 6 else 12
-    
-    for (m <- startMonth to endMonth) 
+
+    for (m <- startMonth to endMonth)
     {
       var mm = "%02d".format(m)
-      
-      // Source path  
+
+      // Source path
       var srcDataFile= srcDataDirRoot + "year=" + yyyy + "/month=" +  mm + "/type=green/green_tripdata_" + yyyy + "-" + mm + ".csv"
       println("srcDataFile = " + srcDataFile)
 
-      // Destination path  
+      // Destination path
       var destDataDir = destDataDirRoot + "/trip_year=" + yyyy + "/trip_month=" + mm + "/"
       println("destDataDir = " + destDataDir)
-      
+
       // Source schema - use the Int m for this call, not the formatted String mm
       var taxiSchema = GetTaxiSchema(yyyy, m)
 
@@ -428,7 +428,7 @@ for (yyyy <- 2013 to 2018)
 
       // Add partition for year and month
       spark.sql("ALTER TABLE green_taxi_trips ADD IF NOT EXISTS PARTITION (trip_year=" + yyyy + ",trip_month=" + mm + ") LOCATION '" + destDataDir.dropRight(1) + "'")
-    
+
       // Refresh table
       spark.sql("REFRESH TABLE green_taxi_trips")
     }

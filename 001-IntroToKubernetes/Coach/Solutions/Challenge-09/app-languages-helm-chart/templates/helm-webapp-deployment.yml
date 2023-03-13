@@ -1,8 +1,8 @@
 ---
 # Deploys the container as a single pod in the Kubernetes Cluster
-# 
+#
 # kubectl create -f webapp-deployment.yml
-# 
+#
 # This is how we validate that it is working
 # kubectl describe deployment nginx-webapp -n whatthehack
 #

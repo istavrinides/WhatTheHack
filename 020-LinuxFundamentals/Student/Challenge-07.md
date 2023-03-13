@@ -16,7 +16,7 @@ In this challenge you will learn about the creation of users and groups in a Lin
 
 ## Success Criteria
 
-1. Make sure you create the groups as requested 
+1. Make sure you create the groups as requested
 2. Validate if the users were created in the correct groups
 3. Confirm each user has a password
 

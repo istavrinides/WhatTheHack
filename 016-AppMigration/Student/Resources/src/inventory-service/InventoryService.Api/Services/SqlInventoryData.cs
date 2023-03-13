@@ -52,7 +52,7 @@ namespace InventoryService.Api.Services
                 {
                     item.Quantity += quantityChanged;
                     var averageQuantity = quantityChanged / item.Quantity; // should an exception if 0 (for app insights demo)
-					item.Modified = DateTime.Now;
+                    item.Modified = DateTime.Now;
                     await context.SaveChangesAsync();
                     scope.Complete();
                     return item;

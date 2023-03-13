@@ -3,14 +3,14 @@ function New-FhirServerApiApplicationRegistration {
     .SYNOPSIS
     Create an AAD Application registration for a FHIR server instance.
     .DESCRIPTION
-    Create a new AAD Application registration for a FHIR server instance. 
+    Create a new AAD Application registration for a FHIR server instance.
     A FhirServiceName or FhirServiceAudience must be supplied.
     .EXAMPLE
     New-FhirServerApiApplicationRegistration -FhirServiceName "myfhiservice" -AppRoles globalReader,globalExporter
     .EXAMPLE
     New-FhirServerApiApplicationRegistration -FhirServiceAudience "https://myfhirservice.azurewebsites.net" -AppRoles globalReader,globalExporter
     .PARAMETER FhirServiceName
-    Name of the FHIR service instance. 
+    Name of the FHIR service instance.
     .PARAMETER FhirServiceAudience
     Full URL of the FHIR service.
     .PARAMETER WebAppSuffix
@@ -37,11 +37,11 @@ function New-FhirServerApiApplicationRegistration {
     )
 
     Set-StrictMode -Version Latest
-    
+
     # Get current AzureAd context
     try {
         Get-AzureADCurrentSessionInfo -ErrorAction Stop | Out-Null
-    } 
+    }
     catch {
         throw "Please log in to Azure AD with Connect-AzureAD cmdlet before proceeding"
     }

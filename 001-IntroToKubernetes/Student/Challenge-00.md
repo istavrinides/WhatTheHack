@@ -16,7 +16,7 @@ In this challenge we'll be setting up all the tools we will need to complete our
 
 - Install the recommended toolset:
     - Windows Subsystem for Linux
-    - Azure CLI 
+    - Azure CLI
         - Update to the latest
         - Must be at least version 2.7.x
         - **NOTE for Windows users:** Install Azure CLI on Windows Subsystem for Linux following the instructions for the Linux distribution you are using in WSL.
@@ -27,7 +27,7 @@ In this challenge we'll be setting up all the tools we will need to complete our
 
 ### Student Resources
 
-Your coach will provide you with a `Resources.zip` file that contains resource files you will use to complete some of the challenges for this hack.  
+Your coach will provide you with a `Resources.zip` file that contains resource files you will use to complete some of the challenges for this hack.
 
 If you have installed all of the tools listed above on your local workstation, you should unpack the `Resources.zip` file there too.
 

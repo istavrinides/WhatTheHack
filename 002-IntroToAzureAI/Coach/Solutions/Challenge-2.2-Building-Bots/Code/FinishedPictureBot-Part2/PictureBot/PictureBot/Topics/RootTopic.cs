@@ -42,7 +42,7 @@ namespace PictureBot.Topics
                     }
                     break;
                 case ActivityTypes.Message:
-                    // greet on first message if we haven't already 
+                    // greet on first message if we haven't already
                     if (!Greeted)
                     {
                         await RootResponses.ReplyWithGreeting(context);
@@ -85,7 +85,7 @@ namespace PictureBot.Topics
                             await RootResponses.ReplyWithHelp(context);
                             return true;
                         default:
-                            // adding app logic when Regex doesn't find an intent 
+                            // adding app logic when Regex doesn't find an intent
                             // respond saying we don't know
                             await RootResponses.ReplyWithConfused(context);
                             return true;

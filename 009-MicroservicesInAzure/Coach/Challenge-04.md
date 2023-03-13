@@ -16,13 +16,13 @@ Create the container instance
 For Powershell:
 
 ```powershell
-$dataServiceUri=az container show -g $rg -n XXX1 --query "ipAddress.fqdn" 
+$dataServiceUri=az container show -g $rg -n XXX1 --query "ipAddress.fqdn"
 ```
 
 For Bash:
 
 ```bash
-export dataServiceUri=$(az container show -g $rg -n XXX1 --query "ipAddress.fqdn" | tr -d '"') 
+export dataServiceUri=$(az container show -g $rg -n XXX1 --query "ipAddress.fqdn" | tr -d '"')
 ```
 
 ### Itinerary API
@@ -34,7 +34,7 @@ Create the container instance
 For Powershell:
 
 ```powershell
-$itineraryServiceUri=az container show -g $rg -n XXX2 --query "ipAddress.fqdn" 
+$itineraryServiceUri=az container show -g $rg -n XXX2 --query "ipAddress.fqdn"
 ```
 
 For Bash:

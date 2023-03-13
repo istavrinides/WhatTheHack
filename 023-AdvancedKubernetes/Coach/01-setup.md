@@ -50,7 +50,7 @@ az aks nodepool add --cluster-name AKS_NAME -g $RG_NAME \
     -n $NODEPOOL_NAME \
     --enable-cluster-autoscaler \
     --min-count 1 --max-count 5
-    
+
 # authenticate to AKS cluster
 az aks get-credentials -g $RG_NAME -n $AKS_NAME
 ```

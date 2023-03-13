@@ -13,7 +13,7 @@ namespace VehicleRegistrationService.Repositories
         private PersonNameGenerator _nameGenerator;
 
         private readonly string[] _vehicleBrands = new string[] {
-            "Mercedes", "Toyota", "Audi", "Volkswagen", "Seat", "Renault", "Skoda", 
+            "Mercedes", "Toyota", "Audi", "Volkswagen", "Seat", "Renault", "Skoda",
             "Kia", "Citroën", "Suzuki", "Mitsubishi", "Fiat", "Opel" };
 
         private Dictionary<string, string[]> _models = new Dictionary<string, string[]>
@@ -49,7 +49,7 @@ namespace VehicleRegistrationService.Repositories
             // get random vehicle info
             string brand = GetRandomBrand();
             string model = GetRandomModel(brand);
-            
+
             // get random owner info
             var ownerName = _nameGenerator.GenerateRandomFirstAndLastName();
             var ownerEmail = $"{ownerName.ToLowerInvariant().Replace(' ', '.')}@outlook.com";

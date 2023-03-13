@@ -90,7 +90,7 @@ resource logicApp 'Microsoft.Logic/workflows@2019-05-01' = {
         '$connections': {
             value: {
                 office365: {
-                    connectionId: '/subscriptions/${subscription().subscriptionId}/resourceGroups/${resourceGroup().name}/providers/Microsoft.Web/connections/${connectionName}'                                   
+                    connectionId: '/subscriptions/${subscription().subscriptionId}/resourceGroups/${resourceGroup().name}/providers/Microsoft.Web/connections/${connectionName}'
                     connectionName: connectionName
                     id: '/subscriptions/${subscription().subscriptionId}/providers/Microsoft.Web/locations/${resourceGroup().location}/managedApis/${connectionName}'
                 }

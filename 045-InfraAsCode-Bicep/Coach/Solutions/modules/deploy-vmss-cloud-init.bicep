@@ -6,14 +6,14 @@ param resourcePrefix string = 'p20'
 param vmssInstanceCount int = 2
 
 @description('Subnet Resource ID')
-param subnetRef string 
+param subnetRef string
 
 @description('User name for the Virtual Machine.')
 param adminUsername string
 
 @description('Password for the Virtual Machine.')
 @secure()
-param adminPassword string 
+param adminPassword string
 
 @description('The Ubuntu version for the VM. This will pick a fully patched image of this given Ubuntu version. Allowed values: 12.04.5-LTS, 14.04.2-LTS, 15.10.')
 @allowed([

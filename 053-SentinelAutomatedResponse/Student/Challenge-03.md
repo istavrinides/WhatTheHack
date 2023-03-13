@@ -1,34 +1,34 @@
 
 
-# Challenge 03 - Automated Response  
+# Challenge 03 - Automated Response
 
-[< Previous Challenge](./Challenge-02.md) - **[Home](../README.md)** 
+[< Previous Challenge](./Challenge-02.md) - **[Home](../README.md)**
 
-## Pre-requisites 
+## Pre-requisites
 
-Verify your environment  
-- Creates an alert based on your user login  
-- Creates an Incident per Alert 
+Verify your environment
+- Creates an alert based on your user login
+- Creates an Incident per Alert
 - Watchlist is created
-   
 
 
-## Introduction 
 
-Now we have our alert rule running, the SOC team is finding that it's just way too 'noisy' because every time an admin logs on, it's generating  Alerts and Incidents. It's your job to ensure that the Alert must trigger whenever an administrator logs in and create an Incident, AND, the Incident should be automatically closed if the IP address exists in the Watchlist. 
+## Introduction
+
+Now we have our alert rule running, the SOC team is finding that it's just way too 'noisy' because every time an admin logs on, it's generating  Alerts and Incidents. It's your job to ensure that the Alert must trigger whenever an administrator logs in and create an Incident, AND, the Incident should be automatically closed if the IP address exists in the Watchlist.
 
 
 ## Description
 We want to automatically update your Security Teams channel when the Incident is not automatically closed.
 
 ### Close the Incident automatically
- 
-- Close an alert/incident using the Watchlist and a Playbook when the IP is a known (ie is in the Watchlist) IP.  
-- Ensure that an Incident is created when the login IP is not contained in the list of Watchlist IP addresses.  
 
-**Hint**: When you log on, if your IP is in the Watchlist, automatically close the alert/incident  
+- Close an alert/incident using the Watchlist and a Playbook when the IP is a known (ie is in the Watchlist) IP.
+- Ensure that an Incident is created when the login IP is not contained in the list of Watchlist IP addresses.
 
-**Update The Workbook**  
+**Hint**: When you log on, if your IP is in the Watchlist, automatically close the alert/incident
+
+**Update The Workbook**
 Send a message to your security operations channel in Microsoft Teams or Slack to make sure your security analysts are aware of the incident.
 
 
@@ -50,11 +50,11 @@ Send a message to your security operations channel in Microsoft Teams or Slack t
 ## Tips
 
 
-Check the GitHub repository for existing Logic Apps/ Playbooks.  
+Check the GitHub repository for existing Logic Apps/ Playbooks.
 
-When adding the Playbook, you need to Manage playbook permissions (in blue, just under the Actions heading).  
+When adding the Playbook, you need to Manage playbook permissions (in blue, just under the Actions heading).
 
-Read the learning resource above on automated response to find out how to link into Teams (and you can search the web for additional info).  
+Read the learning resource above on automated response to find out how to link into Teams (and you can search the web for additional info).
 
 ## Advanced Challenges
 

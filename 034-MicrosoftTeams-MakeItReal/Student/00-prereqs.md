@@ -1,10 +1,10 @@
-# Challenge 0: Pre-requisites 
+# Challenge 0: Pre-requisites
 
 **[Home](../README.md)** - [Next Challenge >](./01-collaboration.md)
 
 ## Introduction
 
-This challenge details the requirements for your M365 tenant in preparation for taking on the challenges in the hack. If your coach is providing a tenant, confirm that this work has been done for you.  
+This challenge details the requirements for your M365 tenant in preparation for taking on the challenges in the hack. If your coach is providing a tenant, confirm that this work has been done for you.
 
 ## Description
 

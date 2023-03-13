@@ -51,14 +51,14 @@ You can find a sample \`thingamajig.config\` file in the \`/ChallengeXX\` folder
 
 Please configure the thingamajig with the following specifications:
 - Use dynamic IP addresses
-- Only trust the following whitelisted servers: "mothership", "IoTQueenBee" 
+- Only trust the following whitelisted servers: "mothership", "IoTQueenBee"
 - Deny access to "IoTProxyShip"
 
 You can view an architectural diagram of an IoT thingamajig here: [Thingamajig.PDF](/Student/Resources/Architecture.PDF?raw=true).
 
 ## Success Criteria
 
-*Success criteria goes here. The success criteria should be a list of checks so a student knows they have completed the challenge successfully. These should be things that can be demonstrated to a coach.* 
+*Success criteria goes here. The success criteria should be a list of checks so a student knows they have completed the challenge successfully. These should be things that can be demonstrated to a coach.*
 
 *The success criteria should not be a list of instructions.*
 

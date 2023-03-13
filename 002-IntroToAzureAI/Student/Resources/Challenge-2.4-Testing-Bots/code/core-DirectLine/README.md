@@ -21,7 +21,7 @@ In the Bot Framework developer portal, enable Direct Line in the channels list a
 ![Configure Direct Line](images/outcome-configure.png)
 
 #### Publish
-Also, in order to be able to run and test this sample you must [publish your bot, for example to Azure](https://docs.microsoft.com/en-us/bot-framework/publish-bot-overview). Alternatively, you can use [Ngrok to interact with your local bot in the cloud](https://blogs.msdn.microsoft.com/jamiedalton/2016/07/29/ms-bot-framework-ngrok/). 
+Also, in order to be able to run and test this sample you must [publish your bot, for example to Azure](https://docs.microsoft.com/en-us/bot-framework/publish-bot-overview). Alternatively, you can use [Ngrok to interact with your local bot in the cloud](https://blogs.msdn.microsoft.com/jamiedalton/2016/07/29/ms-bot-framework-ngrok/).
 
 ### Code Highlights
 
@@ -33,7 +33,7 @@ Check out the client's [Program.cs](DirectLineClient/Program.cs#L25-L27) class w
 
 ````C#
 DirectLineClient client = new DirectLineClient(directLineSecret);
-            
+
 var conversation = await client.Conversations.StartConversationAsync();
 ````
 

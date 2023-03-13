@@ -29,7 +29,7 @@
       "metadata": {
         "description": "Name of the storage account the connector should use."
       }
-      
+
     },
     "azureblob_1_accessKey": {
       "type": "securestring",

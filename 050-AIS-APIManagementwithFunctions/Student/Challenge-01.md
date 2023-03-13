@@ -15,17 +15,17 @@ As a cloud engineer, you would like to be able to deploy this POC environment us
 
 There are two scenarios you would like to prove (just choose one):
 
-### Scenario 01: Deploy a VNET-secured AIS environment 
+### Scenario 01: Deploy a VNET-secured AIS environment
 This scenario is for when you need to access services deployed over a private network (e.g. APIs hosted on-premises)
 - Deploy the Bicep templates of the VNET-integrated AIS which can be found at `/Challenge-01/Scenario-01` of the `Resources.zip` file provided to you by your coach.  These templates are ready for deployment, however, you might run into warning or errors about some missing parameter or variable values that you need to fill out.  Make sure to address these issues before deploying.
 
-### Scenario 02: Deploy an identity-secured AIS environment 
+### Scenario 02: Deploy an identity-secured AIS environment
 This scenario is preferred for integrating with services hosted in the cloud or publicly-accessible
 - Deploy the Bicep templates of the publicly-exposed AIS which can be found at `/Challenge-01/Scenario-02` of the `Resources.zip` file provided to you by your coach.  These templates are ready for deployment, however, you might run into warning or errors about some missing parameter or variable values that you need to fill out.  Make sure to address these issues before deploying.
 
 
 - For both scenarios, make sure to [publish the APIM Developer portal](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-developer-portal-customize#publish) because you may need to use this in the succeeding challenges.  The steps for publishing the APIM Developer portal for Scenario 01 (in APIM internal mode) would be different from Scenario 02 (public). Don't forget to enable CORS afterwards.
-  - After publishing, browse to the Dev portal in a separate incognito/private browser and test Echo API GET operation.  
+  - After publishing, browse to the Dev portal in a separate incognito/private browser and test Echo API GET operation.
 
 ## Success Criteria
 As mentioned earlier, you can choose which scenario to go for your POC environment:
@@ -44,7 +44,7 @@ As mentioned earlier, you can choose which scenario to go for your POC environme
     - Configured to send monitoring data to your Application Insights resource
   - Virtual Machine
   - Bastion
-  
+
 ### Scenario 02: Deploy an identity-secured AIS environment
 - Verify that the provided Bicep templates have deployed the following resources into your Azure subscription:
   - Application Insights resource
@@ -53,7 +53,7 @@ As mentioned earlier, you can choose which scenario to go for your POC environme
     - Published the Developer Portal
   - Function App in the Consumption Plan - Y1 SKU
     - Configured to send monitoring data to your Application Insights resource
-  
+
 
 ## Learning Resources
 - [What is Bicep?](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview)
@@ -62,11 +62,11 @@ As mentioned earlier, you can choose which scenario to go for your POC environme
   - [Azure Quickstart Templates - Create API Management Service](https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.apimanagement/azure-api-management-create)
   - [Microsoft.ApiManagement service](https://docs.microsoft.com/en-us/azure/templates/microsoft.apimanagement/service?tabs=bicep)
   - [Tutorial: Access and customize the developer portal](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-developer-portal-customize#publish)
-  
+
 - [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview)
   - [Deploy Function App on Premium plan](https://docs.microsoft.com/en-us/azure/azure-functions/functions-infrastructure-as-code#deploy-on-premium-plan)
   - [Microsoft.Web sites/functions](https://docs.microsoft.com/en-us/azure/templates/microsoft.web/sites/functions?tabs=bicep)
- 
+
 - [What is Application Insights?](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview)
   - [Microsoft.Insights components](https://docs.microsoft.com/en-us/azure/templates/microsoft.insights/components?tabs=bicep)
 

@@ -1,11 +1,11 @@
-# Challenge 6: Deploy to devices at scale 
+# Challenge 6: Deploy to devices at scale
 [< Previous Challenge](./Challenge-05.md) - **[Home](README.md)** - [Next Challenge >](./Challenge-07.md)
 ## Notes & Guidance
 
 Detailed steps:
 
 1. Create a new IoT Edge device on your IoT Hub
-1. Add a tag to the new device's *device twin*: `environment` with value `development`. This will allow you to do a targeted deployment later on. 
+1. Add a tag to the new device's *device twin*: `environment` with value `development`. This will allow you to do a targeted deployment later on.
 1. Deploy a new VM running Azure IoT Edge, in the same region/resource group you've used before
     - After deployment, SSH to the VM and confirm that iotedge is running and check its version. It should be the latest (at the time of writing, 1.0.10.4).
     - Check what module(s) are running on the device and understand *why*, comparing with what you see in the IoT Edge device page in your IoT Hub, on the Azure Portal

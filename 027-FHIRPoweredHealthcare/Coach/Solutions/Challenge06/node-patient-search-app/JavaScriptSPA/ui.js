@@ -22,7 +22,7 @@ function updateUI(data, endpoint) {
   console.log(data);
 
   if (endpoint === fhirConfig.fhirEndpoint) {
-    
+
     profileDiv.innerHTML = '';
 
     const nameFamily = document.createElement('p');
@@ -33,11 +33,11 @@ function updateUI(data, endpoint) {
     var patientListHtml = '<ol>';
 
     data.entry.forEach(function(e) {
-      patientListHtml += '<li>' + e.resource.name[0].family + ', ' + e.resource.name[0].given + ' (' + e.resource.id + ')' + ', ' + e.resource.gender; 
+      patientListHtml += '<li>' + e.resource.name[0].family + ', ' + e.resource.name[0].given + ' (' + e.resource.id + ')' + ', ' + e.resource.gender;
     });
 
     patient.innerHTML = patientListHtml;
     profileDiv.appendChild(patient);
 
-  } 
+  }
 }

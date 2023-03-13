@@ -1,9 +1,9 @@
-# Challenge 01 - Create a Linux Virtual Machine - Coach's Guide 
+# Challenge 01 - Create a Linux Virtual Machine - Coach's Guide
 
 **[Home](./README.md)** - [Next Solution >](./Solution-02.md)
 
 ## Notes & Guidance
- 
+
 To accomplish the creation of the Ubuntu 20.04 Linux Virtual Machine, you can follow the below steps using the Azure CLI from cloud shell:
 
 - Create the resource group:

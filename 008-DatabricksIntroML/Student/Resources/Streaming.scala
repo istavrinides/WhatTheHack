@@ -7,10 +7,10 @@ val inputPath = "wasbs://spark@<YOUR_ACCOUNT>.blob.core.windows.net/stream/"
 
 val jsonSchema = new StructType().add("device", StringType).add("status", StringType)
 
-val inStream = 
+val inStream =
   spark.readStream.schema(jsonSchema).option("maxFilesPerTrigger", 2).json(inputPath)
 
-val countErrors = 
+val countErrors =
   inStream.filter("status == 'error'").groupBy(window(current_timestamp(), "1 minute"), $"device").count()
 
 val outStream =

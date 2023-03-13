@@ -13,18 +13,18 @@ Now that we have a deployed instance of our code, we are likely going to get a r
 
 ## Description
 
-In this challenge we will first create a second build pipeline that will build and run unit tests on any code before it gets checked into the master branch. We will also implement a few policies in Azure DevOps to ensure that our team is following the rules. Finally we will make a change to our code to see how branching in Git works. 
+In this challenge we will first create a second build pipeline that will build and run unit tests on any code before it gets checked into the master branch. We will also implement a few policies in Azure DevOps to ensure that our team is following the rules. Finally we will make a change to our code to see how branching in Git works.
 
 - Clone the build pipeline that we created earlier.
    - Remove all but the `restore`, `build` and `test` tasks.
    - Turn off the continuous integration trigger.
-- Setup a Branch Policy to protect our `master` branch, [hint](https://docs.microsoft.com/en-us/azure/devops/repos/git/branch-policies?view=azure-devops). The policy shall: 
+- Setup a Branch Policy to protect our `master` branch, [hint](https://docs.microsoft.com/en-us/azure/devops/repos/git/branch-policies?view=azure-devops). The policy shall:
    - Require at least 1 reviewer, however users should be able to approve their own changes (NOTE: you will likely not want to do this in a real app)
    - Require at least 1 linked work item.
    - Perform a `Build validation` using our new build pipeline.
-- Using a simple Git Branching strategy lets make a change. 
+- Using a simple Git Branching strategy lets make a change.
    - Your manager has asked that you update the copyright information at the bottom of the site, currently it says `© ASP.NET Core` and it should say `© 2019 Contoso Corp.`
-   - Create a Work Item requesting we implement the feature. 
+   - Create a Work Item requesting we implement the feature.
    - Make the change in your code. Be sure to make this change on a new "feature branch"
    - Create a Pull Request to merge the change into `master`. Notice how the policies you set are audited on your pull request.
    -  Complete your pull request.

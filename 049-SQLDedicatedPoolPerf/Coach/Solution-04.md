@@ -1,4 +1,4 @@
-# Challenge 04 - Partitioned Table And Clustered Columnstore Indexes - Coach's Guide 
+# Challenge 04 - Partitioned Table And Clustered Columnstore Indexes - Coach's Guide
 
 [< Previous Solution](./Solution-03.md) - **[Home](./README.md)** - [Next Solution >](./Solution-05.md)
 
@@ -12,7 +12,7 @@ You will also get a deeper understanding about Columnstore Indexes behavior
 - Columnstore Indexes health
 
 **Condition of success**
-- Understand when partitions could be helpful and when not 
+- Understand when partitions could be helpful and when not
 - Deep understanding in Columnstore Index health and how they heavily affect performance
 - Beeing able to identify unhealthy Columnstore indexes
 

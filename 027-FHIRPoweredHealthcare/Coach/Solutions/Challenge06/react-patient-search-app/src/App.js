@@ -104,7 +104,7 @@ seePatients = () => {
   };
 
   render() {
-    // Check state for authentication or search action    
+    // Check state for authentication or search action
     switch (this.state.sampleType) {
       // Found signIn state
       case 'signIn':
@@ -125,7 +125,7 @@ seePatients = () => {
       default:
         break;
     }
-    
+
     return (
       <div className="App">
         <header className="App-header">
@@ -135,7 +135,7 @@ seePatients = () => {
         <AzureAD provider={authProvider} reduxStore={basicReduxStore}>
           {({ accountInfo, authenticationState, error }) => {
             return (
-              <React.Fragment>      
+              <React.Fragment>
 
                 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                   <a class="navbar-brand" href="/">MS Identity Platform</a>
@@ -165,7 +165,7 @@ seePatients = () => {
                           Enter Given Name: <input type="text" id="searchTxt" name="txt" defaultValue="Jose871" onChange={() => this.handleOnChange(this.value)}></input>
 
                           <button class="btn btn-primary" id="searchPatient" onClick={() => this.handleSearch(document.getElementById("searchTxt").value)}>Search Patient</button>
-                        
+
                         </div>
                         <br></br>
                         <button class="btn btn-primary" id="seeProfile" onClick={() => this.handleSearchAll()}>See All Patients</button>
@@ -176,9 +176,9 @@ seePatients = () => {
                         <div id="profile-div"></div>
                         <br></br>
                       </div>
-                      </Card.Text>                    
+                      </Card.Text>
                   </Card.Body>
-                </Card>                  
+                </Card>
               </React.Fragment>
             );
           }}

@@ -52,7 +52,7 @@ namespace WTHAzureCosmosDB.ProxyFuncApp
             data.TryGetValue("altDataPlaneEndpoint", out altDataPlaneEndpoint);
             data.TryGetValue("testRunId", out testRunId);
             data.TryGetValue("accessToken", out accessToken);
-            
+
 
             var response = await GetLastTestRunStatusAsync(altDataPlaneEndpoint[0], testRunId[0], accessToken[0]);
 

@@ -2,7 +2,7 @@
 
  **[Home](./README.md)** - [Next Challenge [2] >](./Solution02.md)
 
-Hopefully most students started the prerequisites.  If a student doesn't have some Linux instance configured, installing WSL during a Hack could be all day.  Either that person should pair up (if possible given Virtual delivery) or go write to Create a Linux VM.  This process has been done on Ubuntu 18.04.  
+Hopefully most students started the prerequisites.  If a student doesn't have some Linux instance configured, installing WSL during a Hack could be all day.  Either that person should pair up (if possible given Virtual delivery) or go write to Create a Linux VM.  This process has been done on Ubuntu 18.04.
 
 The documentation is pretty good about for [Install w3af](http://docs.w3af.org/en/latest/install.html).  The installation process is basically self-correcting, generating a bash script to run.  This can involve many iterations of trying to run w3af_console, then run install script.  **Only use the w3af_console, the GUI option might be attractive to people.  All the commands are given so people are just investing time to install it.**
 

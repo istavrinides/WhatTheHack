@@ -14,7 +14,7 @@ namespace PartsUnlimited.Utils
         {
             //  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
             var categories = new List<Category>{
                 new Category { Name = "Brakes", Description = "Brakes description", ImageUrl = "product_brakes_disc.jpg" },
@@ -35,16 +35,16 @@ namespace PartsUnlimited.Utils
                 Created = DateTime.Now,
                 Title = "Halogen Headlights (2 Pack)",
                 CategoryId = categoriesMap["Lighting"],
-                Price = 38.99M, 
-                SalePrice = 38.99M, 
-                ProductArtUrl = "product_lighting_headlight.jpg", 
-                ProductDetails = "{ \"Light Source\" : \"Halogen\", \"Assembly Required\": \"Yes\", \"Color\" : \"Clear\", \"Interior\" : \"Chrome\", \"Beam\": \"low and high\", \"Wiring harness included\" : \"Yes\", \"Bulbs Included\" : \"No\",  \"Includes Parking Signal\" : \"Yes\"}", 
+                Price = 38.99M,
+                SalePrice = 38.99M,
+                ProductArtUrl = "product_lighting_headlight.jpg",
+                ProductDetails = "{ \"Light Source\" : \"Halogen\", \"Assembly Required\": \"Yes\", \"Color\" : \"Clear\", \"Interior\" : \"Chrome\", \"Beam\": \"low and high\", \"Wiring harness included\" : \"Yes\", \"Bulbs Included\" : \"No\",  \"Includes Parking Signal\" : \"Yes\"}",
                 Description = "Our Halogen Headlights are made to fit majority of vehicles with our  universal fitting mold. Product requires some assembly and includes light bulbs.",
                 Inventory = 10,
                 LeadTime = 0,
                 RecommendationId = 1
             });
-            products.Add(new Product 
+            products.Add(new Product
             {
                 SkuNumber = "LIG-0002",
                 Created = DateTime.Now,
@@ -312,7 +312,7 @@ namespace PartsUnlimited.Utils
         }
 
         /// <summary>
-        /// Generate an enumeration of rainchecks.  The random number generator uses a seed to ensure 
+        /// Generate an enumeration of rainchecks.  The random number generator uses a seed to ensure
         /// that the sequence is consistent, but provides somewhat random looking data.
         /// </summary>
         public static IEnumerable<Raincheck> GetRainchecks(IList<Store> stores, IList<Product> products)

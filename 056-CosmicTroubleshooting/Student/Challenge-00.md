@@ -50,7 +50,7 @@ To start the environment in a local container:
 To start the environment in the GitHub Codespaces:
 
 - Install [GitHub CLI](https://cli.github.com/)
-- Open terminal in 
+- Open terminal in
   Bash:
   ```
   # Login to GitHub CLI
@@ -79,8 +79,8 @@ In the `/Challenge00/` folder of the `Resources.zip` file given by your coach, y
 
 Please deploy the infrastructure by running one of the following scripts in the `/Challenge00/` folder:
 
-- Powershell: 
-  ``` 
+- Powershell:
+  ```
   # Update your Az Powershell commandlets
   Update-Module Az
 
@@ -90,7 +90,7 @@ Please deploy the infrastructure by running one of the following scripts in the 
   # Deploy the infrastructure
   # Please make sure you are using Powershell v7.2 or newer
   # You might need to unblock the file
-  .\deploy.ps1 
+  .\deploy.ps1
   ```
 - Bash:
   ```

@@ -1,5 +1,5 @@
 CREATE VIEW Customers
-AS 
+AS
 SELECT  FirstName,
         MiddleName,
         LastName,

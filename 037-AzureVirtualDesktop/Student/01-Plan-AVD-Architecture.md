@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This Challenge is to design the AVD architecture that will be deployed in later challenges.  By the end of this session you should have a plan for the host pools, session hosts, profile storage and client deployment.  
+This Challenge is to design the AVD architecture that will be deployed in later challenges.  By the end of this session you should have a plan for the host pools, session hosts, profile storage and client deployment.
 
 You should also have considered all aspects of security in this design including GPO, identity, and RBAC.
 
@@ -12,17 +12,17 @@ You should also have considered all aspects of security in this design including
 
 Taking into account our scenario, specify the details for the following:
 
-1. Host pool(s)  
+1. Host pool(s)
 1. Images
-1. Storage  
+1. Storage
 1. Clients
-1. Security  
+1. Security
 1. Networking
 1. FSLogix
 
 ## Success Criteria
 
-- Created a document defining all of the parameters that will be used in the deployment challenges.  
+- Created a document defining all of the parameters that will be used in the deployment challenges.
 
 ## Tips
 

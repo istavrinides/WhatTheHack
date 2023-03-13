@@ -1,4 +1,4 @@
-# Challenge 03 - Create Resources - Coach's Guide 
+# Challenge 03 - Create Resources - Coach's Guide
 
 [< Previous Solution](./Solution-02.md) - **[Home](./README.md)** - [Next Solution >](./Solution-04.md)
 
@@ -66,18 +66,18 @@ None.
 
     c. For Runtime stack, select **.NET Core**.
 
-    d. Leave the default for Version 
+    d. Leave the default for Version
 
     e. Select the same **Region** as your Resource Group.
 
-    f. Click **Next: Hosting** 
-    
+    f. Click **Next: Hosting**
+
     g. Leave the **storage** option as **create new**.
 
     h. For Plan Type, select **Consumption (Serverless))**.
 
     i. Click **Next: Monitoring**
-    
+
     j. Set **Enable Application Insights** radio button to No (we'll add this later).
 
 5.  Select **Create**.
@@ -92,18 +92,18 @@ None.
 
     c. For Runtime stack, select **Node.js**.
 
-    d. Leave the default for Version 
+    d. Leave the default for Version
 
     e. Select the same **Region** as your Resource Group.
 
-    f. Click **Next: Hosting** 
-    
+    f. Click **Next: Hosting**
+
     g. Leave the **storage** option as **create new**.
 
     h. For Plan Type, select **Consumption (Serverless)**.
 
     i. Click **Next: Monitoring**
-    
+
     j. Set **Enable Application Insights** radio button to No (we'll add this later).
 
 8.  Select **Create**.

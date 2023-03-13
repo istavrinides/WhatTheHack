@@ -9,7 +9,7 @@ for ((i = 0 ; i < 30 ; i++)); do
 
     if [ "$pgStatus" != "$status" ]; then
         sleep 10
-    else   
+    else
         break
     fi
 done

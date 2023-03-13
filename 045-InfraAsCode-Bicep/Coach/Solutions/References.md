@@ -1,9 +1,9 @@
-## Basic Links 
-- ARM Basics 
+## Basic Links
+- ARM Basics
   - <https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview>
-- ARM Template 101 
+- ARM Template 101
   - <https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-authoring-templates>
-- Template Deployment 101 
+- Template Deployment 101
   - <https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-create-first-template>
 - Manage Templates in VS Code
   - <https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-vscode-extension>
@@ -14,9 +14,9 @@
 - ARM Lab
   - <https://azurecitadel.github.io/workshops/arm/arm-lab2-sourcesOfResources>
 
-## Cheats 
+## Cheats
 - Run Selected (Highlighted) -  CNTL+SHIFT+P - "Terminal: Selected Text in Active Terminal"
 - Change Default Terminal -     CTL+SHIFT+P - "Terminal: Select Default Shell"
 
 ## Terms
-- autoUpgradeMinorVersion -     
+- autoUpgradeMinorVersion -

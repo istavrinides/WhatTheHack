@@ -10,4 +10,3 @@ New-AzResourceGroupDeployment `
 	-TemplateFile ./challenge-10.bicep `
 	-TemplateParameterFile ./challenge-10.parameters.json `
 	-CloudInitScript $(Get-Content '../scripts/cloud-init.txt' -Encoding UTF8 -Raw)
-	

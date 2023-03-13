@@ -11,9 +11,9 @@ The objective of this lab is to have the Power BI report "WWI_Sales.pbix" to ret
 
 ## Success Criteria
 * Reduce Response time to less than 10 seconds thru removing skew in Azure Synapse Analytics tables.
-    1. Run "skew.pbix" in student directory to review skew in your Azure Synapse Analytics platform.  
-    1. Review each table distribution to ensure you have the right type for each schema.  
-* Reduce Response time to less than 10 seconds by reviewing the Explain plan.    
+    1. Run "skew.pbix" in student directory to review skew in your Azure Synapse Analytics platform.
+    1. Review each table distribution to ensure you have the right type for each schema.
+* Reduce Response time to less than 10 seconds by reviewing the Explain plan.
     1. Capture the runtimes for the visual "Total Sales by State Province" in the "High Level Dashboard". (Lower right hand corner)  Open Performance analyzer and look for the visual and record the response time for your baseline.  You will need to also open the "+" icon to expand the section to see "Copy query".  Please copy this query into SSMS.
     1. This query joins date, city and sale tables to visualize.
     1. After you run each distribution type, execute "explain.sql".  The query in the explain plan is from the step above.
@@ -26,7 +26,7 @@ The objective of this lab is to have the Power BI report "WWI_Sales.pbix" to ret
     1. Turn on Result-set cache. The first run of performance analyzer will be high but the second run should be a big improvement from the baseline from the first step.
 * Reduce Response time to less than 10 seconds thru changes to the Power BI Data Model.
     1. Experiment with DirectQuery and Composite model in Power BI Desktop for optimal performance. Determine which table(s) are best in dual mode.  Open Performance Analyzer in Power BI Desktop to capture the runtimes.
-    
+
 ## Learning resources
 
 1. [Performance Tuning](https://medium.com/@ian.shchoy/azure-sql-data-warehouse-deep-dive-into-data-distribution-f4cf8f1e340a)
@@ -45,7 +45,7 @@ The objective of this lab is to have the Power BI report "WWI_Sales.pbix" to ret
 1. Request from the coach the student zip file
 1. Use SQL Credential when connecting to the Azure Synapse Analytics SQL Pool
 1. Make sure the ASA service is running in Azure Portal since it might pause based on your settings
-1. Create direct query mode data model first because you can convert direct query mode to imported mode but not vice versa 
+1. Create direct query mode data model first because you can convert direct query mode to imported mode but not vice versa
 1. Use Power BI Perforamance Analyzer to check power bi query time and performance
 
 

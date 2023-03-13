@@ -2,7 +2,7 @@
 
 namespace PictureBot.Models
 {
-    public class ImageMapper 
+    public class ImageMapper
     {
         public static SearchHit ToSearchHit(SearchResult hit)
         {

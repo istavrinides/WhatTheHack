@@ -1,4 +1,4 @@
-CREATE  Procedure Integration.IngestOrderData 
+CREATE  Procedure Integration.IngestOrderData
 AS
 BEGIN
 

@@ -1,4 +1,4 @@
-# Challenge 11 - Operations and Monitoring - Coach's Guide 
+# Challenge 11 - Operations and Monitoring - Coach's Guide
 
 [< Previous Solution](./Solution-10.md) - **[Home](./README.md)**
 

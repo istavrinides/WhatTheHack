@@ -76,12 +76,12 @@ AS
     INSERT INTO Itineraries ([Id], [DepartingFlight], [ReturningFlight], [CarReservation], [CarReservationDuration], [HotelReservation], [HotelReservationDuration], [RecordLocator], [PurchasedOn])
                 VALUES (@Id, @DepartingFlight, @ReturningFlight, @CarReservation, @CarReservationDuration, @HotelReservation, @HotelReservationDuration, @RecordLocator, @PurchasedOn)
 
-    MERGE Itineraries AS target  
-    USING (SELECT @Id, @DepartingFlight, @ReturningFlight, @CarReservation, @CarReservationDuration, @HotelReservation, @HotelReservationDuration, @RecordLocator) AS source ([Id], [DepartingFlight], [ReturningFlight], [CarReservation], [CarReservationDuration], [HotelReservation], [HotelReservationDuration], [RecordLocator])  
-    ON (target.Id = source.Id)  
-    WHEN MATCHED THEN   
+    MERGE Itineraries AS target
+    USING (SELECT @Id, @DepartingFlight, @ReturningFlight, @CarReservation, @CarReservationDuration, @HotelReservation, @HotelReservationDuration, @RecordLocator) AS source ([Id], [DepartingFlight], [ReturningFlight], [CarReservation], [CarReservationDuration], [HotelReservation], [HotelReservationDuration], [RecordLocator])
+    ON (target.Id = source.Id)
+    WHEN MATCHED THEN
         UPDATE SET [Id] = source.[Id], [DepartingFlight] = source.[DepartingFlight], [ReturningFlight] = source.[ReturningFlight], [CarReservation] = source.[CarReservation], [CarReservationDuration] = source.[CarReservationDuration], [HotelReservation] = source.[HotelReservation], [HotelReservationDuration] = source.[HotelReservationDuration], [RecordLocator] = source.[RecordLocator]
-    WHEN NOT MATCHED THEN  
+    WHEN NOT MATCHED THEN
         INSERT ([Id], [DepartingFlight], [ReturningFlight], [CarReservation], [CarReservationDuration], [HotelReservation], [HotelReservationDuration], [RecordLocator])
         VALUES (source.[Id], source.[DepartingFlight], source.[ReturningFlight], source.[CarReservation], source.[CarReservationDuration], source.[HotelReservation], source.[HotelReservationDuration], source.[RecordLocator]);
 GO

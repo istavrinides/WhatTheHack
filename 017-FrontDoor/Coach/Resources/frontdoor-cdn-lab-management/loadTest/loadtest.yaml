@@ -14,7 +14,7 @@ scenarios:
           url: "/"
           capture:
             - header: "X-ContosoMasks-StaticEndpoint"
-              as: "staticendpoint"            
+              as: "staticendpoint"
       - get:
           url: "{{ staticendpoint }}images/usa.jpg"
       - get:
@@ -56,14 +56,14 @@ scenarios:
       - get:
           url: "{{ staticendpoint }}images/spicey.jpg"
       - get:
-          url: "{{ staticendpoint }}images/stone.jpg"              
+          url: "{{ staticendpoint }}images/stone.jpg"
     - name: "Message Page"
-      flow:              
+      flow:
       - get:
           url: "/Message"
           capture:
             - header: "X-ContosoMasks-StaticEndpoint"
-              as: "staticendpoint"                        
+              as: "staticendpoint"
       - get:
           url: "{{ staticendpoint }}lib/jquery/dist/jquery.min.js"
       - get:
@@ -80,4 +80,3 @@ scenarios:
           url: "{{ staticendpoint }}lib/bootstrap/dist/css/bootstrap.min.css"
       - get:
           url: "{{ staticendpoint }}css/site.css"
-  

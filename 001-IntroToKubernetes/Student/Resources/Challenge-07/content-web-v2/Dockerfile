@@ -14,7 +14,7 @@ RUN npm install
 
 # Bundle app source
 COPY . /usr/src/app
-RUN ng build 
+RUN ng build
 
 FROM base as final
 WORKDIR /usr/src/app

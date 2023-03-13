@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Quickstart | MSAL.JS Vanilla JavaScript SPA</title>
     <link rel="SHORTCUT ICON" href="./favicon.svg" type="image/x-icon">
-    
+
     <!-- msal.min.js can be used in the place of msal.js; included msal.js to make debug easy -->
     <script type="text/javascript" src="https://alcdn.msauth.net/lib/1.4.4/js/msal.js" integrity="sha384-fTmwCjhRA6zShZq8Ow5ZkbWwmgp8En46qW6yWpNEkp37MkV50I/V2wjzlEkQ8eWD" crossorigin="anonymous"></script>
-    
+
     <!-- msal.js with a fallback to backup CDN -->
     <script type="text/javascript">
       if(typeof Msal === 'undefined')document.write(unescape("%3Cscript src='https://alcdn.msftauth.net/lib/1.4.4/js/msal.js' type='text/javascript' %3E%3C/script%3E"));
@@ -39,7 +39,7 @@
           <button class="btn btn-primary" id="searchPatient" onclick="searchPatient(getElementById('searchTxt').value)">Search Patient</button>
         </div>
         <br>
-        <button class="btn btn-primary" id="seeProfile" onclick="seeProfile()">See All Patients</button>      
+        <button class="btn btn-primary" id="seeProfile" onclick="seeProfile()">See All Patients</button>
         <br>
         <br>
         <!-- Render patient search results  -->
@@ -64,14 +64,14 @@
 
     <!-- importing bootstrap.js and supporting js libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    
+
     <!-- importing app scripts (load order is important) -->
     <script type="text/javascript" src="./authConfig.js"></script>
     <script type="text/javascript" src="./fhirConfig.js"></script>
     <script type="text/javascript" src="./ui.js"></script>
-    
+
     <!-- replace next line with authRedirect.js if you would like to use the redirect flow -->
     <!-- <script type="text/javascript" src="./authRedirect.js"></script>   -->
     <script type="text/javascript" src="./authPopup.js"></script>

@@ -259,11 +259,11 @@ th {
 
 | Availability % | Downtime per year | Downtime per quarter | Downtime per month | Downtime per week | Downtime per day |
 | --- | --- | --- | --- | --- | --- |
-| 99% ("two nines") | 3.65 days | 21.9 hours | 7.31 hours | 1.68 hours | 14.40 minutes 
+| 99% ("two nines") | 3.65 days | 21.9 hours | 7.31 hours | 1.68 hours | 14.40 minutes
 | 99.5% ("two and a half nines") | 1.83 days | 10.98 hours | 3.65 hours | 50.40 minutes | 7.20 minutes |
-| 99.9% ("three nines")  | 8.77 hours | 2.19 hours | 43.83 minutes | 10.08 minutes | 1.44 minutes | 
-| 99.95% ("three and a half nines") | 4.38 hours | 65.7 minutes | 21.92 minutes | 5.04 minutes | 43.20 seconds | 
-| 99.99% ("four nines") | 52.60 minutes | 13.15 minutes | 4.38 minutes | 1.01 minutes | 8.64 seconds | 
+| 99.9% ("three nines")  | 8.77 hours | 2.19 hours | 43.83 minutes | 10.08 minutes | 1.44 minutes |
+| 99.95% ("three and a half nines") | 4.38 hours | 65.7 minutes | 21.92 minutes | 5.04 minutes | 43.20 seconds |
+| 99.99% ("four nines") | 52.60 minutes | 13.15 minutes | 4.38 minutes | 1.01 minutes | 8.64 seconds |
 | 99.999% ("five nines") | 5.26 minutes | 1.31 minutes | 26.30 seconds | 6.05 seconds | 864.00 milliseconds
 
 ---

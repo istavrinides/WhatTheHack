@@ -1,4 +1,4 @@
-# Challenge 04 - File contents - Coach's Guide 
+# Challenge 04 - File contents - Coach's Guide
 
 [< Previous Solution](./Solution-03.md) - **[Home](./README.md)** - [Next Solution >](./Solution-05.md)
 
@@ -57,7 +57,7 @@ Five (followed by Ctrl-d)
 
 `student@vm01:~$ cat count.log > cat-count.log`
 
-6. Display cat-count.log, but with all lines in reverse order 
+6. Display cat-count.log, but with all lines in reverse order
 
 `student@vm01:~$ tac cat-count.log`
 

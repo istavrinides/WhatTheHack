@@ -4,7 +4,7 @@
 
 ## Notes & Guidance
 
-- Some students create their first repository via github desktop.  Make sure students understand how a distributed source control such as git is different from a centralized source control system such as TFVC. 
+- Some students create their first repository via github desktop.  Make sure students understand how a distributed source control such as git is different from a centralized source control system such as TFVC.
 
 - To clone a repository via command line: `git clone $URL` in the directory you want to copy the repository to.
   - To get the $URL, go to your repository in github.

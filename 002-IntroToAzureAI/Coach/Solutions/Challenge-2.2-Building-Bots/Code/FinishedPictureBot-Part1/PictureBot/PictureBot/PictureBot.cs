@@ -29,7 +29,7 @@ namespace PictureBot
             }
             else
             {
-                // we do have an active topic, so call it 
+                // we do have an active topic, so call it
                 handled = await conversation.ActiveTopic.ContinueTopic(context);
             }
 

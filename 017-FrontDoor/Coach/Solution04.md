@@ -22,7 +22,7 @@ What it needs to evolve to:
      - Patterns to Match (1)
        - `/*`
      - Routing Type: Forward
-     - Backend Pool = 1st (AppService)     
+     - Backend Pool = 1st (AppService)
 
 
 ## Links

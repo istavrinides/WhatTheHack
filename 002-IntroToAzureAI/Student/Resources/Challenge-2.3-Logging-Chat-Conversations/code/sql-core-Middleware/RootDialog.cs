@@ -4,7 +4,7 @@
     using System.Threading.Tasks;
     using Microsoft.Bot.Builder.Dialogs;
     using Microsoft.Bot.Connector;
-    
+
     #pragma warning disable 1998
 
     [Serializable]
@@ -25,8 +25,8 @@
 
                 //System.Environment.Exit(0);
                 context.EndConversation("End of Conversation");
-               
-                
+
+
             }*/
 
             await context.PostAsync($"You sent {message.Text} which was {message.Text.Length} characters");

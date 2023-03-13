@@ -6,10 +6,10 @@ param resourcePrefix string
 param vmssInstanceCount int = 2
 
 @description('Subnet Resource ID')
-param subnetRef string 
+param subnetRef string
 
 @description('User name for the Virtual Machine.')
-param adminUsername string 
+param adminUsername string
 
 @description('Password for the Virtual Machine.')
 @secure()

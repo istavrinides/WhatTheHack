@@ -21,7 +21,7 @@
 3. Press New Project
 4. Set the **Project name** you want
 5. In **visibility** select **Private**
-6. Click on **Advanced**, in **Version control** select **GIT** and **Work item process** select Scrum then click on **+ Create project** 
+6. Click on **Advanced**, in **Version control** select **GIT** and **Work item process** select Scrum then click on **+ Create project**
 
 ![](images/2.png)
 
@@ -39,7 +39,7 @@
 
 ## Exercise 2: Configure Continuous Integration
 ### Task 1: Configure your basic Pipeline DevOps
-1. Log in to your Azure portal lab subscription. 
+1. Log in to your Azure portal lab subscription.
 
 - **Note** If you are using your own subscription, begin the deployment of Module 3 resources using this deployment script. Be sure to use lowercase letters with your initials Eg. - tjbmodule3.  Click the Deploy to Azure button to start <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoft%2Falmvm%2Fmaster%2Flabs%2Fvstsextend%2Fdocker%2Farmtemplate%2Fazuredeploy.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png" alt="Deploy to Azure"></a>
 
@@ -206,9 +206,9 @@
 ## Task 9: Set your host
 1. Click on **Tasks** tab
 2. Click on Pipelines
-3. Select 
+3. Select
    1. Agent Pool: Azure Pipelines
-   2. Agent Specification: **Ubuntu 16.04** 
+   2. Agent Specification: **Ubuntu 16.04**
 
 ![](images/41.png)
 
@@ -236,7 +236,7 @@
 ![](images/44b.png)
 
 ### Task 2: Config your DB deployment
-1. Click on **Tasks** tab 
+1. Click on **Tasks** tab
 2. Click on **Agent job**
 3. set ``DB Deployment`` on **Display name** input
 4. Create this variable clicking on **+ Add** button
@@ -266,7 +266,7 @@
 
 ![](images/48.png)
 
-2. Click on your new **Agent job** 
+2. Click on your new **Agent job**
 3. Set `Web App deployment` as your **Display name**
 4. Select the **Hosted Ubuntu 1604** option from **Agent pool** dropdown
 

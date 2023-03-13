@@ -17,7 +17,7 @@
    - Create API Management service.
    - Import Open API and Azure Function API.
 
-   
+
 ## Prerequisites
 
 - Ensure you have Github Personal Account: [Sign Up for Personal Github Account](https://github.com)

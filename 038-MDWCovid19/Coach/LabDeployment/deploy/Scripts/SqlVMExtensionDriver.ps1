@@ -1,5 +1,5 @@
 param (
-    [string]$ohmdwSqlserverName,    
+    [string]$ohmdwSqlserverName,
     [string]$databaseName,
     [string]$covid19BaseUri,
     [string]$databaseDacPacName,

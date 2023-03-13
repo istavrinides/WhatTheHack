@@ -88,7 +88,7 @@ namespace TollBooth
         /// Vision API. Otherwise, we'll receive the following error when the
         /// API service is throttled:
         /// System.ObjectDisposedException: Cannot access a disposed object. Object name: 'System.Net.Http.ByteArrayContent'
-        /// 
+        ///
         /// More information can be found on the HttpClient class in the
         /// .NET Core library source code:
         /// https://github.com/dotnet/corefx/blob/6d7fca5aecc135b97aeb3f78938a6afee55b1b5d/src/System.Net.Http/src/System/Net/Http/HttpClient.cs#L500
@@ -162,20 +162,20 @@ namespace TollBooth
         /// <summary>
         /// Creates a Polly-based resiliency strategy that does the following when communicating
         /// with the external (downstream) Computer Vision API service:
-        /// 
+        ///
         /// If requests to the service are being throttled, as indicated by 429 or 503 responses,
         /// wait and try again in a bit by exponentially backing off each time. This should give the service
         /// enough time to recover or allow enough time to pass that removes the throttling restriction.
         /// This is implemented through the WaitAndRetry policy named 'waitAndRetryPolicy'.
-        /// 
+        ///
         /// Alternately, if requests to the service result in an HttpResponseException, or a number of
         /// status codes worth retrying (such as 500, 502, or 504), break the circuit to block any more
         /// requests for the specified period of time, send a test request to see if the error is still
         /// occurring, then reset the circuit once successful.
-        /// 
+        ///
         /// These policies are executed through a PolicyWrap, which combines these into a resiliency
         /// strategy. For more information, see: https://github.com/App-vNext/Polly/wiki/PolicyWrap
-        /// 
+        ///
         /// NOTE: A longer-term resiliency strategy would have us share the circuit breaker state across
         /// instances, ensuring subsequent calls to the struggling downstream service from new instances
         /// adhere to the circuit state, allowing that service to recover. This could possibly be handled

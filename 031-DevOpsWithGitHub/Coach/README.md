@@ -26,7 +26,7 @@ Welcome to the coach's guide for the DevOps with GitHub What The Hack. Here you 
 - Challenge 09: **[Security](./Solution-09.md)**
 	 - Incorporating security into your projects leveraging native GitHub features
 
-## Coach Prerequisites 
+## Coach Prerequisites
 
 This hack has pre-reqs that a coach is responsible for understanding and/or setting up BEFORE hosting an event. Please review the [What The Hack Hosting Guide](https://aka.ms/wthhost) for information on how to host a hack event.
 
@@ -38,7 +38,7 @@ Before the hack, it is the Coach's responsibility to download and package up the
 
 Always refer students to the [What The Hack website](https://aka.ms/wth) for the student guide: [https://aka.ms/wth](https://aka.ms/wth)
 
-**NOTE:** Students should **not** be given a link to the What The Hack repo before or during a hack. The student guide does **NOT** have any links to the Coach's guide or the What The Hack repo on GitHub.  
+**NOTE:** Students should **not** be given a link to the What The Hack repo before or during a hack. The student guide does **NOT** have any links to the Coach's guide or the What The Hack repo on GitHub.
 
 
 ## Azure Requirements

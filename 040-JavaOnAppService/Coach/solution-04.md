@@ -31,7 +31,7 @@
     AGENT_CONFIG="-javaagent:/home/site/wwwroot/applicationinsights-agent-$APPI_VERSION.jar"
     az webapp config appsettings set -g $RG -n $WEBAPP --settings \
         APPLICATIONINSIGHTS_CONNECTION_STRING=$APPI_CONN_STR \
-        JAVA_OPTS="-Dspring.profiles.active=mysql $AGENT_CONFIG"    
+        JAVA_OPTS="-Dspring.profiles.active=mysql $AGENT_CONFIG"
     ```
 
 - Although the idea is not to change any of the files, including the pom file, the deployment (including the agent jar) can also be done through `mvn`. See here [an example and instructions](https://github.com/meken/app-services-app-insights-java).

@@ -1,4 +1,4 @@
-# Tournament Challenge - Deploy Your Bot!  
+# Tournament Challenge - Deploy Your Bot!
 
 ## Prerequisities
 
@@ -16,7 +16,7 @@ Note that you may have built some of these Azure resources already while going t
 
 #### Step 1 - Create Azure Container Registry.
 
-Run the following in Azure Cloud Shell. 
+Run the following in Azure Cloud Shell.
 
 **Make Sure you are in the `WhatTheHack/005-RockPaperScissorsBoom/Student/Resources/Code/` directory.**
 
@@ -76,8 +76,8 @@ It may take a few minutes after these commands run to see your bot live. Navigat
 
 #### Step 4 - Report your Bot's URL
 
-Just tell us your bot's URL (in the Teams channel will work) and we'll include it in the Tournament. Good luck! 
+Just tell us your bot's URL (in the Teams channel will work) and we'll include it in the Tournament. Good luck!
 
 ## Advanced
 
-1. The bot you deployed is the standard example bot which is just an instance of the Clever bot. You can edit the Clever bot's code and try to make it even more clever. This might be a fun exercise to do later. 
+1. The bot you deployed is the standard example bot which is just an instance of the Clever bot. You can edit the Clever bot's code and try to make it even more clever. This might be a fun exercise to do later.

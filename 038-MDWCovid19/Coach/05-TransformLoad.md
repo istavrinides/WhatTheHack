@@ -16,18 +16,18 @@ no matter how many source systems are fed into the lake today (or tomorrow)
 The team could end up with a new folder in their data lake called something like `conformed`.
 
 We recommend 6 datasets which line up with facts and dimensions:
-   
+
     - Cases
     - Deaths
     - Recoveries
-    
+
     - Policies
     - Geography
     - Date
 
 ### Version Control Rules:
 
-- Developers cannot push changes directly to the main branch.  
+- Developers cannot push changes directly to the main branch.
     - In Github the repository will need to be public to accomplish this.
 - Changes are reviewed with at least one explicit approval from another developer before being incorporated into the main branch.
 
@@ -35,4 +35,4 @@ Branch Protection steps:
     Settings>Branches>Add rule>
 - Require Pull request reviews before merging.
 - Require review from code owners.
-- Include administrators to enforce for administrators 
+- Include administrators to enforce for administrators

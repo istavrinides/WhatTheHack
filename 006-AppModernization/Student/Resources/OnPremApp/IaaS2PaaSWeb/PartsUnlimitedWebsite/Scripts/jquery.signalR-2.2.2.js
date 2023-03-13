@@ -950,7 +950,7 @@
 
             // Clear out our message buffer
             connection._.connectingMessageBuffer.clear();
-            
+
             // Clean up this event
             $(connection).unbind(events.onStart);
 

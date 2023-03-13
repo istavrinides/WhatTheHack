@@ -2,7 +2,7 @@
 
 [< Previous Challenge](./00-pre-reqs.md) - **[Home](./README.md)** - [Next Challenge>](./02-susi.md)
 
-## Introduction 
+## Introduction
 
 In this first hack, your attendees will be provisioning their B2C tenants. This is well documented here: https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant, but this guide should help with some pitfalls.
 
@@ -22,7 +22,7 @@ Provided your attendees do not have an existing B2C tenant, they can follow the 
     - Subscription - make sure they pick the subscription they created for this hack
     - Resource group - this resource group must exist before getting to this screen. <br><img src="../Images/01/review-and-create-tenant.png" alt="image of search" width="500"/>
 8. Click "Review & Create"
-9. After validation, click "Create". This process will take a few minutes. 
+9. After validation, click "Create". This process will take a few minutes.
 
 ## Hints
 

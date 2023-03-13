@@ -83,7 +83,7 @@ namespace RockPaperScissorsBoom.Server.Pages
             BotRankings = gameRunnerResult.GameRecord.BotRecords.OrderByDescending(x => x.Wins).ToList();
             AllFullResults = gameRunnerResult.AllMatchResults.OrderBy(x => x.Competitor.Name).ToList();
 
-            //Get 20 Last 
+            //Get 20 Last
             GamesForTable = db.GameRecords.OrderByDescending(g => g.GameDate).Take(20).Include(g => g.BotRecords).ToList();
 
             if (bool.Parse(configuration["EventGridOn"]))

@@ -1,4 +1,4 @@
-# Challenge 02 - Handling directories - Coach's Guide 
+# Challenge 02 - Handling directories - Coach's Guide
 
 [< Previous Solution](./Solution-01.md) - **[Home](./README.md)** - [Next Solution >](./Solution-03.md)
 
@@ -85,7 +85,7 @@ drwx------ 2 student student 4096 Apr  6 15:02 .ssh
 
 `student@vm01:~$ mkdir -p ~/folder1/folder2/folder3`
 
-9. List recursively the content of your ~ 
+9. List recursively the content of your ~
 
 `student@vm01:~$ ls -R`
 

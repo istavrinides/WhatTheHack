@@ -18,7 +18,7 @@ https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-
 SELECT TOP 10 * FROM sys.dm_pdw_exec_requests ORDER BY total_elapsed_time DESC
 GO
 
-SELECT * FROM sys.dm_pdw_request_steps WHERE request_id = 'QID28234' 
+SELECT * FROM sys.dm_pdw_request_steps WHERE request_id = 'QID28234'
 ORDER BY request_id, step_index
 GO
 
@@ -137,9 +137,9 @@ FROM base
 SELECT * FROM size;
 GO
 
-SELECT 
+SELECT
 	[two_part_name],max(row_count * 1.000), min(row_count * 1.000) ,sum(row_count * 1.000) , (max(row_count * 1.000) - min(row_count * 1.000))/sum(row_count * 1.000)*100.00
-FROM vTableSizes 
+FROM vTableSizes
 	WHERE distribution_policy_name = 'HASH'
 GROUP BY [two_part_name]
 GO

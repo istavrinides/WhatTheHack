@@ -390,7 +390,7 @@ var PublicIpAddresses = [
   {
     Name: 'pip-wth-monitor-bastion-d-${NameSuffix}'
     Sku: 'Standard'
-  } 
+  }
 ]
 var StorageAccountName = 'storwthmond${NameSuffix}${toLower(substring(uniqueString(deployment().name), 0, 10))}'
 var StorageEndpoint = environment().suffixes.storage

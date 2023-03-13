@@ -16,20 +16,20 @@ env:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-        
+
   loadTest:
     name: Load Test
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout GitHub Actions 
+      - name: Checkout GitHub Actions
         uses: actions/checkout@v2
-          
+
       - name: Login to Azure
         uses: azure/login@v1
         continue-on-error: false
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-        
+
       - name: 'Azure Load Testing'
         uses: azure/load-testing@v1
         with:
@@ -42,15 +42,15 @@ jobs:
               "name": "webapp",
               "value": "${{ env.AZURE_WEBAPP_NAME }}.azurewebsites.net"
               }
-            ]  
-            
+            ]
+
       - uses: JasonEtco/create-an-issue@v2
         if: ${{ failure() }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           filename: .github/ISSUE_TEMPLATE/LoadTest.md
-          
+
       - uses: actions/upload-artifact@v2
         with:
           name: loadTestResults

@@ -31,7 +31,7 @@ resource "azurerm_network_security_group" "myterraformnsg" {
     name                = "${var.nsg}"
     location            = "${var.location}"
     resource_group_name = "${azurerm_resource_group.rg.name}"
-    
+
     security_rule {
         name                       = "${var.nsg_security_rule_ssh["name"]}"
         priority                   = "${var.nsg_security_rule_ssh["priority"]}"
@@ -80,7 +80,7 @@ resource "random_id" "randomId" {
         # Generate a new ID only when a new resource group is defined
         resource_group = "${azurerm_resource_group.rg.name}"
     }
-    
+
     byte_length = 8
 }
 

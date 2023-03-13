@@ -16,7 +16,7 @@ This workshop demonstrates how you can perform logging using Microsoft Bot Frame
 
 ## Uses of logging chat conversations
 
-In the advanced analytics space, there are plenty of uses for storing log converstaions. Having a corpus of chat conversations can allow developers to: 
+In the advanced analytics space, there are plenty of uses for storing log converstaions. Having a corpus of chat conversations can allow developers to:
 1. Build question and answer engines specific to a domain.
 2. Introduce a personality to bots.
 3. Perform analysis on specific topics or products to identify trends.
@@ -41,7 +41,7 @@ __code__: Contains all the code for the hands-on labs
 
 The order of Hands-on Labs to carry out the solution is as follows:
 1. [Activity Logger](docs/1_Activity_Logger.md):
-The aim of this hands-on lab is to implement the IActivityLogger interface that writes message activities when running in debug. 
+The aim of this hands-on lab is to implement the IActivityLogger interface that writes message activities when running in debug.
 2. [File Logger](docs/2_File_Logger.md):
 This hands-on lab is to demonstrate how you can log conversations to a file using global events.
 3. [SQL Logger](docs/3_SQL_Logger.md):

@@ -8,7 +8,7 @@ The purpose of this challenge is to get attendees hands-on with several security
 
 ### Vulnerability Assessment & Threat Protection
 
-An example of implementing this is [located in Microsoft SQL Workshop](https://github.com/microsoft/sqlworkshops-azuresqlworkshop/blob/master/azuresqlworkshop/03-Security.md). 
+An example of implementing this is [located in Microsoft SQL Workshop](https://github.com/microsoft/sqlworkshops-azuresqlworkshop/blob/master/azuresqlworkshop/03-Security.md).
 
 Once configured, you can test SQL Injection by opening a new connection to the database, adding something like "Application Name=testapp" to the Additional Connection Parameters dialog. Then, using that connection, execute a query such as:
 
@@ -30,7 +30,7 @@ Log Analytics may take some time to begin adding auditing events. It's important
 
 ### Dynamic Data Masking
 
-Dynamic data masking is an easy way to add "defense in depth" measures to mask all or parts of a column -- for example, masking all but the last 4 of a social security number of credit card number. A call center agent or website, for example, would only "see" the last 4 digits for verification purposes. 
+Dynamic data masking is an easy way to add "defense in depth" measures to mask all or parts of a column -- for example, masking all but the last 4 of a social security number of credit card number. A call center agent or website, for example, would only "see" the last 4 digits for verification purposes.
 
 The example code block contains the TSQL needed to query sample rows, set up a mask, configure a test user, re-query the same rows to check for consistency, and optionally drop the mask if desired. (There is no reason to drop the mask, but providing the code here for how to do it.)
 
@@ -39,7 +39,7 @@ The example code block contains the TSQL needed to query sample rows, set up a m
 --example query
 SELECT top 10 person.FirstName, person.LastName, phone.PhoneNumber
 FROM Person.Person person
-INNER JOIN Person.PersonPhone phone 
+INNER JOIN Person.PersonPhone phone
 ON person.BusinessEntityID = phone.BusinessEntityID
 WHERE person.LastName LIKE 'S%'
 ORDER BY person.LastName ASC
@@ -49,14 +49,14 @@ ALTER TABLE Person.PersonPhone
 ALTER COLUMN PhoneNumber ADD MASKED WITH (FUNCTION = 'partial(0,"x",5)');
 
 --create a user to test
-CREATE USER TestUser WITHOUT LOGIN;  
-GRANT SELECT ON Person.Person TO TestUser;  
-GRANT SELECT ON Person.PersonPhone TO TestUser;  
+CREATE USER TestUser WITHOUT LOGIN;
+GRANT SELECT ON Person.Person TO TestUser;
+GRANT SELECT ON Person.PersonPhone TO TestUser;
 
 EXECUTE AS USER = 'TestUser';
 SELECT top 10 person.FirstName, person.LastName, phone.PhoneNumber
 FROM Person.Person person
-INNER JOIN Person.PersonPhone phone 
+INNER JOIN Person.PersonPhone phone
 ON person.BusinessEntityID = phone.BusinessEntityID
 WHERE person.LastName LIKE 'S%'
 ORDER BY person.LastName ASC
@@ -79,16 +79,16 @@ SELECT TOP 20 * from HumanResources.EmployeePayHistory
 ORDER BY BusinessEntityID ASC
 
 -- add permission to table
-GRANT SELECT ON HumanResources.EmployeePayHistory TO TestUser;  
+GRANT SELECT ON HumanResources.EmployeePayHistory TO TestUser;
 
 -- add mask
 ALTER TABLE HumanResources.EmployeePayHistory
 ALTER COLUMN Rate ADD MASKED WITH (FUNCTION = 'default()');
 
--- query w mask -- observe the 'RateBucket' 
+-- query w mask -- observe the 'RateBucket'
 EXECUTE AS USER = 'TestUser';
-SELECT TOP 20 *, 
-    CASE 
+SELECT TOP 20 *,
+    CASE
         WHEN Rate > 100 THEN '>100'
         WHEN Rate > 50 THEN '>50'
         ELSE '<50'

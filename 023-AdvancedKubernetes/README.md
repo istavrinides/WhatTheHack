@@ -45,7 +45,7 @@ Before starting this hack you should have hands-on experience with the following
 1. [GitOps](./Student/05-gitops.md)
    1. Install flux
    1. Setup Flux Pipeline
-   1. Simulate CI to verify changes pushed to AKS cluster 
+   1. Simulate CI to verify changes pushed to AKS cluster
    1. Update Github to deploy Ingress Controller via Flux
 1. [Service Mesh](./Student/06-service-mesh.md)
    1. Install a Service Mesh

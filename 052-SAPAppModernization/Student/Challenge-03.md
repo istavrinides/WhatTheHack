@@ -12,10 +12,10 @@ Let's build on the prior solution and add geographical caching of data my insert
 
 ## Description
 
-- Familiarise yourself with this repository [SAP Geodes and Cosmos](https://github.com/MartinPankraz/AzCosmosDB-OData-Shim) 
+- Familiarise yourself with this repository [SAP Geodes and Cosmos](https://github.com/MartinPankraz/AzCosmosDB-OData-Shim)
 - Read this associated blog post [SAP and Toilet Paper](https://blogs.sap.com/2021/06/11/sap-where-can-i-get-toilet-paper-an-implementation-of-the-geodes-pattern-with-s4-btp-and-azure-cosmosdb/)
 - Deploy a CosmosDB SQL API instance with 2 regions present
-- Deploy another API Management Developer tier instance for the other region 
+- Deploy another API Management Developer tier instance for the other region
 - Deploy an Azure Front Door frontend, with backends pointing to the 2 APIM instances
     - Hint: Deployment Details are here [Cosmos OData Deployment](https://github.com/MartinPankraz/AzCosmosDB-OData-Shim#deployment-guide)
 
@@ -25,5 +25,5 @@ Let's build on the prior solution and add geographical caching of data my insert
 
 ## Learning Resources
 
-- [SAP Geodes and Cosmos](https://github.com/MartinPankraz/AzCosmosDB-OData-Shim) 
+- [SAP Geodes and Cosmos](https://github.com/MartinPankraz/AzCosmosDB-OData-Shim)
 - [SAP and Toilet Paper](https://blogs.sap.com/2021/06/11/sap-where-can-i-get-toilet-paper-an-implementation-of-the-geodes-pattern-with-s4-btp-and-azure-cosmosdb/)

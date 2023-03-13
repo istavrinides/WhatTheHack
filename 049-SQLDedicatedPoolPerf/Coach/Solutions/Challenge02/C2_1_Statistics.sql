@@ -21,7 +21,7 @@ Ensure you're using DW500
 
 --https://docs.microsoft.com/en-us/sql/analytics-platform-system/configure-auto-statistics?view=aps-pdw-2016-au7&viewFallbackFrom=azure-sqldw-latest
 ****************************************************************************************/
-SELECT 
+SELECT
 	Fis.SalesTerritoryKey
 	,Fis.OrderDateKey
 	, Dsr.SalesReasonName
@@ -54,14 +54,14 @@ SELECT * FROM sys.dm_pdw_exec_requests WHERE request_id > 'request_id' and Comma
 GO
 
 /***************************************************************************************
-STEP 3 of 8 - If you run the query again it will run faster than previous execution 
+STEP 3 of 8 - If you run the query again it will run faster than previous execution
 even cleaning buffers and procedure cache
 ****************************************************************************************/
 
 DBCC DROPCLEANBUFFERS()
 DBCC FREEPROCCACHE()
 
-SELECT 
+SELECT
 	Fis.SalesTerritoryKey
 	,Fis.OrderDateKey
 	, Dsr.SalesReasonName
@@ -77,7 +77,7 @@ FROM Sales.FactInternetSales Fis
 WHERE Fis.OrderDateKey >= '20120101' and Fis.OrderDateKey < '20211231'
 		AND Fis.SalesTerritoryKey BETWEEN 5 and 10
 		AND Dsr.SalesReasonName = 'Demo Event'
-	GROUP BY Fis.SalesTerritoryKey, Fis.OrderDateKey, Dsr.SalesReasonName 
+	GROUP BY Fis.SalesTerritoryKey, Fis.OrderDateKey, Dsr.SalesReasonName
 OPTION(LABEL = 'Second Execution - Stats available')
 GO
 
@@ -153,7 +153,7 @@ STEP 7 of 8 - Query is fast, Stats have been manually created
 ****************************************************************************************/
 
 
-SELECT 
+SELECT
 	Fis.SalesTerritoryKey
 	,Fis.OrderDateKey
 	, Dsr.SalesReasonName
@@ -166,7 +166,7 @@ FROM Sales.FactInternetSales Fis
 			AND Fisr.SalesOrderLineNumber = Fis.SalesOrderLineNumber
 	INNER JOIN Sales.DimSalesReason Dsr
 		ON Fisr.SalesReasonKey = Dsr.SalesReasonKey
-WHERE Fis.OrderDateKey >= '20120101' and Fis.OrderDateKey < '20211231' 
+WHERE Fis.OrderDateKey >= '20120101' and Fis.OrderDateKey < '20211231'
 		AND Fis.SalesTerritoryKey BETWEEN 5 and 10
 		AND Dsr.SalesReasonName = 'Demo Event'
 	GROUP BY Fis.SalesTerritoryKey, Fis.OrderDateKey, Dsr.SalesReasonName

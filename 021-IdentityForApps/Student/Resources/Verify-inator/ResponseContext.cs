@@ -32,5 +32,5 @@ namespace Verify_inator
         public string isEmployee { get; set; }
         public int status { get; set; }
         public string userMessage { get; set; }
-    }    
+    }
 }

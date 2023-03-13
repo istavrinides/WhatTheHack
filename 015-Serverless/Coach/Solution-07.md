@@ -1,4 +1,4 @@
-# Challenge 07 - Monitoring - Coach's Guide 
+# Challenge 07 - Monitoring - Coach's Guide
 
 [< Previous Solution](./Solution-06.md) - **[Home](./README.md)** - [Next Solution >](./Solution-07A.md)
 

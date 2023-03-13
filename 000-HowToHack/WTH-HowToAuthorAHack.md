@@ -24,13 +24,13 @@ When you design a WTH, these are the things you should consider:
 - [Coach's Guide](#coaches-guide)
 - [Coach Solutions](#coach-solutions)
 
-If you create things in this order, you will be able to flush out a new hack rapidly. 
+If you create things in this order, you will be able to flush out a new hack rapidly.
 
 **HINT:** The Coach's guide and Coach Solutions is the most detail oriented & time consuming item to produce.  Shhh...  don't say we told you this, but hack authors have been known to write the Coach's Guide as a post-mortem from their first run of the hack.
 
 ## Hack Description
 
-Why should someone take the time to deliver or participate in your hack?  This is the main question you need to answer in order to define your hack. Every WTH needs to have an executive summary (aka "one pager") that quickly describes your hack to those who will host or attend your hack. Think of this as your marketing pitch. 
+Why should someone take the time to deliver or participate in your hack?  This is the main question you need to answer in order to define your hack. Every WTH needs to have an executive summary (aka "one pager") that quickly describes your hack to those who will host or attend your hack. Think of this as your marketing pitch.
 
 **HINT:** The "Hack Description" can serve a dual purpose. If you take the time to write it first, it can be the outline or specification for your hack before you develop the actual content.
 
@@ -41,12 +41,12 @@ The "Hack Description" must include the following:
 ### Hack Title
 
 Give your hack name. Keep it short, but consider giving it a "fun" name that is more than just the name of the technologies that the hack will cover.
-  
+
 ### Introduction
 
 This is your chance to sell the casual reader on why they should consider your hack. In a paragraph or two, consider answering the following questions:
 
-- What technologies or solutions will it cover? 
+- What technologies or solutions will it cover?
 - Why are these technologies or solutions important or relevant to the industry?
 - What real world scenarios can these technologies or solutions be applied to?
 
@@ -64,16 +64,16 @@ For most this page will act as a "Table of Contents" for your hack. We recommend
 
 Provide a list of technical prerequisites for your hack here.  List out assumed knowledge attendees should have to be successful with the hack. For example, if the hack is an "Introduction to Kubernetes", the attendee should have a basic understanding of containers.  However, if it is an "Advanced Kubernetes" hack, then the attendee should know the basics of Kubernetes and not ask you what a "pod" or "deployment" is.
 
-Provide a list of tools/software that the attendee needs to install on their machine to complete the hack. 
+Provide a list of tools/software that the attendee needs to install on their machine to complete the hack.
 
 We have compiled a list of common tool pre-requisites needed for most of the Azure related hacks here:
-- [What The Hack Common Prerequisites](WTH-Common-Prerequisites.md). 
+- [What The Hack Common Prerequisites](WTH-Common-Prerequisites.md).
 
 You can provide a link to it in your hack's prerequisites section in addition to any unique prerequisites for your hack.
 
 ### Repository Contents (Optional)
 
-While optional, it is a good idea to provide a catalog of the files you are providing with your hack. 
+While optional, it is a good idea to provide a catalog of the files you are providing with your hack.
 
 ### Contributors
 
@@ -82,17 +82,17 @@ Finally, give yourself and your fellow hack authors some credit. List the names 
 ### Hack Description Template
 
 To help you get started, we have provided a sample template for a Hack Description / "one pager" here:
-- [Hack Description Template](WTH-HackDescription-Template.md). 
+- [Hack Description Template](WTH-HackDescription-Template.md).
 
 Please copy this template into your hack's root folder, rename it to "README.md", and customize it for your hack.
 
 ## Challenge Design
 
-Challenges are at the heart of the WTH format. Designing challenges is what a hack author should spend the majority of their time focusing on. 
+Challenges are at the heart of the WTH format. Designing challenges is what a hack author should spend the majority of their time focusing on.
 
 There are different approaches to designing a hackathon. If you are familiar with the Marvel Comic Universe movies, you know that they follow one of two patterns:
 - "Origin Story" - A movie focused on the back story of a SINGLE superhero that lets the audience get to know that character in depth (perhaps with a sidekick character or two included).
-- "Avengers Story" - A movie with an ensemble cast of superhero characters working together to solve a mega problem, with each character getting varying amounts of screen time. 
+- "Avengers Story" - A movie with an ensemble cast of superhero characters working together to solve a mega problem, with each character getting varying amounts of screen time.
 
 You can use the same patterns when designing a What The Hack.
 
@@ -106,8 +106,8 @@ Once you have decided what type of hack you want to create, you should follow th
 - Think through what skills/experience you want attendees to walk away with by completing each challenge
 - Challenges should be cumulative, building upon each other and they should:
     - Establish Confidence – Start small and simple (think "Hello World")
-    - Build Competence – By having successively more complex challenges.	
-- Each challenge should provide educational value.  
+    - Build Competence – By having successively more complex challenges.
+- Each challenge should provide educational value.
     - For example, if an attendee completes only 3 out of 7 challenges, he/she still walks away feeling satisfied that they will have still learned something valuable.
 - Take into consideration that a challenge might have more than one way to solve it and that's OK.
 - Provide verifiable success criteria for each challenge that lets the coaches and attendees know they have completed it.
@@ -117,11 +117,11 @@ Once you have decided what type of hack you want to create, you should follow th
 
 ### Challenge Template
 To help you get started, we have provided a sample markdown template for a hack Challenge here:
-- [Challenge Template](WTH-Challenge-Template.md). 
+- [Challenge Template](WTH-Challenge-Template.md).
 
-Please copy this template into your hack's `../Student` folder, rename it to "ChallengeXX.md", where "XX" is the challenge number, and customize it for each challenge. 
+Please copy this template into your hack's `../Student` folder, rename it to "ChallengeXX.md", where "XX" is the challenge number, and customize it for each challenge.
 
-**NOTE:** In each challenge's markdown file, you should create navigation links to/from the previous & next challenges. Please use relative links (eg. `"/ChallengeXX.md"`) instead of absolute links (eg. `"http://github.com/Microsoft/WhatTheHack/000-YourAwesomeHack/Student/ChallengeXX.md"`)  
+**NOTE:** In each challenge's markdown file, you should create navigation links to/from the previous & next challenges. Please use relative links (eg. `"/ChallengeXX.md"`) instead of absolute links (eg. `"http://github.com/Microsoft/WhatTheHack/000-YourAwesomeHack/Student/ChallengeXX.md"`)
 
 ## Student Resources
 
@@ -135,7 +135,7 @@ This has the benefit of not having to direct the attendees to the WTH repo durin
 
 ### DownGit
 
-One recommended way to enable attendees to easily download hack resources is using DownGit. DownGit is a clever utility that lets you create a download link to any GitHub public directory or file. 
+One recommended way to enable attendees to easily download hack resources is using DownGit. DownGit is a clever utility that lets you create a download link to any GitHub public directory or file.
 
 You can view the DownGit project on GitHub here: <https://github.com/MinhasKamal/DownGit>
 
@@ -148,7 +148,7 @@ To enable attendees to download hack resources using DownGit:
 
 ### Pre-load Resources into Microsoft Teams
 
-Our recommended method of providing resource files to attendees is for the WTH event host to pre-load them into the Microsoft Teams team for the WTH event. 
+Our recommended method of providing resource files to attendees is for the WTH event host to pre-load them into the Microsoft Teams team for the WTH event.
 
 To pre-load resources into the event team, the host should:
 1. Use DownGit to download the Zip file of resources from the WTH repo.
@@ -157,7 +157,7 @@ To pre-load resources into the event team, the host should:
 
 ## Presentation Lectures
 
-You may be wondering why there is a section called "Presentation Lectures" when the whole point of What The Hack is to be hands-on and ***NOT*** a "death by Power Point" snoozefest?!  
+You may be wondering why there is a section called "Presentation Lectures" when the whole point of What The Hack is to be hands-on and ***NOT*** a "death by Power Point" snoozefest?!
 
 When you host a What The Hack event, there is always a kick off meeting where the attendees are welcomed and then introduced to the logistics of the hack. The best way to do that is with a *short* PowerPoint delivered a few slides at a time.
 
@@ -181,9 +181,9 @@ Please publish any presentations in your hack's `../Coach` folder.
 
 ## Coaches Guide
 
-Every WTH should come with a Coach's guide. The simple way to think of the Coach's guide is that should be the document with all of "the answers". The reality is, doing so would turn it into a giant step-by-step document loaded with detailed commands, screenshots, and other resources that are certain to be obsolete the minute you publish it. No one wants to maintain a document like that. 
+Every WTH should come with a Coach's guide. The simple way to think of the Coach's guide is that should be the document with all of "the answers". The reality is, doing so would turn it into a giant step-by-step document loaded with detailed commands, screenshots, and other resources that are certain to be obsolete the minute you publish it. No one wants to maintain a document like that.
 
-Instead of treating the Coach's guide like a step-by-step document, treat it as the "owner's manual" you would want to provide to future coaches so they can host and deliver your WTH to others. 
+Instead of treating the Coach's guide like a step-by-step document, treat it as the "owner's manual" you would want to provide to future coaches so they can host and deliver your WTH to others.
 
 The Coach's guide should include the following:
 
@@ -201,11 +201,11 @@ The Coach's guide should be updated during & post event with key learnings, such
 
 ## Coach Solutions
 
-This is where you put "the answers". There are usually multiple ways to solve a WTH Challenge. The solutions you provide here should be example solutions that represent one way to solve the challenges. The solution resources might include a full working application, configuration files, populated templates, or other resources that can be used to demonstrate how to solve the challenges. 
+This is where you put "the answers". There are usually multiple ways to solve a WTH Challenge. The solutions you provide here should be example solutions that represent one way to solve the challenges. The solution resources might include a full working application, configuration files, populated templates, or other resources that can be used to demonstrate how to solve the challenges.
 
 Examples of Coach Solutions are:
-- Prerequisites for the Azure environment if needed. 
-    - Example: A VM image with Visual Studio or ML tools pre-installed. 
+- Prerequisites for the Azure environment if needed.
+    - Example: A VM image with Visual Studio or ML tools pre-installed.
     - Example: An ARM template and/or script that builds out an environment that saves time on solving a challenge
 - Scripts/templates/etc for some challenges that can be shared with attendees if they get really stuck
     - Example: If challenges 1 through 3 build something (i.e. an ARM template) that is needed for challenge 4, you could “give” a stuck team the template so they could skip to challenge 4.
@@ -221,7 +221,7 @@ Okay, ready to get started creating your own What The Hack?
 First we create a fork of the main WTH repo and then clone it to disk and create a branch to work in. The instructions below assume you have the git command line on your machine. If you're more comfortable in a GUI git client, you can use that too (we recommend SourceTree).
 1. Create a fork of the WTH repo
    - Navigate to the WTH git repo at: <https://aka.ms/wth>
-   - Click the Fork button at the top right of the page and then choose the account you want to create the fork in. 
+   - Click the Fork button at the top right of the page and then choose the account you want to create the fork in.
 2. Clone your new fork to your local machine
    - `git clone https://github.com/myname/WhatTheHack.git`
    - `cd WhatTheHack`
@@ -247,5 +247,5 @@ Now that you've created the directory structure above, here is what each of them
 		- Solution code for the coach only. These are the answers and should not be shared with students.
 - `../Student`
 	- The Challenge markdown files
-	- `/Resources` 
+	- `/Resources`
 		- The code and supporting files the students will need throughout the hack.

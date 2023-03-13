@@ -12,34 +12,34 @@
 <script>
 
 function setResult(id, result) {
-	$('#' + id).addClass(result ? 'pass' : 'fail');
+  $('#' + id).addClass(result ? 'pass' : 'fail');
 }
 
 </script>
 
-</head><body><h2>The <a href="http://caniuse.com/">When can I use...</a> test suite... <small>(originally from <a href="http://tests.caniuse.com/">tests.caniuse.com</a>)</small></h2> 
+</head><body><h2>The <a href="http://caniuse.com/">When can I use...</a> test suite... <small>(originally from <a href="http://tests.caniuse.com/">tests.caniuse.com</a>)</small></h2>
 <div id="intro">
-	<p>This is a basic test suite of various web technologies for the <a href="./caniuse_files/caniuse.html">When Can I Use</a> website.</p>
-	<p>It is used to quickly test basic support for features in upcoming browsers, rather than any full support of the feature's specification.</p>
-	<p>Results on this page generally match the results as they appear on the When Can I Use site, but <strong>may not always</strong> due to a variety of circumstances (test may pass but support is actually buggy, not tested well enough, has alternative method, etc).</p>
-	
-	<p>Four different types of tests are used:</p>
-	<dl>
-		<dt>Auto</dt>
-		<dd>Automated JS-based tests. (m) means <a href="http://modernizr.com/">Modernizr</a> is used.</dd>
-	
-		<dt>Visual</dt>
-		<dd>Requires visual confirmation/comparison to confirm</dd>
-	
-		<dt>Visual-square</dt>
-		<dd>Test must create a 30x30px green (lime) square</dd>
-	
-		<dt>Interactive</dt>
-		<dd>Requires interaction to confirm support</dd>
-	</dl>
-	
-	<p>If you are interested in contributing tests you can contact me at: when (at) caniuse (dotcom).</p>
-	
+  <p>This is a basic test suite of various web technologies for the <a href="./caniuse_files/caniuse.html">When Can I Use</a> website.</p>
+  <p>It is used to quickly test basic support for features in upcoming browsers, rather than any full support of the feature's specification.</p>
+  <p>Results on this page generally match the results as they appear on the When Can I Use site, but <strong>may not always</strong> due to a variety of circumstances (test may pass but support is actually buggy, not tested well enough, has alternative method, etc).</p>
+
+  <p>Four different types of tests are used:</p>
+  <dl>
+    <dt>Auto</dt>
+    <dd>Automated JS-based tests. (m) means <a href="http://modernizr.com/">Modernizr</a> is used.</dd>
+
+    <dt>Visual</dt>
+    <dd>Requires visual confirmation/comparison to confirm</dd>
+
+    <dt>Visual-square</dt>
+    <dd>Test must create a 30x30px green (lime) square</dd>
+
+    <dt>Interactive</dt>
+    <dd>Requires interaction to confirm support</dd>
+  </dl>
+
+  <p>If you are interested in contributing tests you can contact me at: when (at) caniuse (dotcom).</p>
+
 </div>
 
 
@@ -127,7 +127,7 @@ border-radius: 150px;
 <div class="test_wrap"><h3>Visual-square</h3><div id="canvas1" class="visual-square"></div><div class="square"><canvas width="30" height="30" style="background:red;" id="canv_test"></canvas>
 
 <script>
-var canvas = $('#canv_test')[0], 
+var canvas = $('#canv_test')[0],
     ctx    = canvas.getContext && canvas.getContext('2d');
 
 if (ctx){
@@ -156,9 +156,9 @@ try{
 <tr><th><h3>Cross-Origin Resource Sharing</h3><span class="links">[<a href="http://caniuse.com/cors">Table</a>] [<a href="http://tests.caniuse.com/?feat=cors&prefix=all">Single feat</a>]</span></th><td class="current pass">&nbsp;</td><td>
 <div class="test_wrap"><h3>Auto</h3><div id="cors0" class="auto pass"></div><script>
 $(function() {
-	$.get('http://a.deveria.com/tests/cors/true.php', function(data) {
-		setResult('cors0', data);
-	});
+  $.get('http://a.deveria.com/tests/cors/true.php', function(data) {
+    setResult('cors0', data);
+  });
 });
 
 </script><div class="info">Instant XHR request on page that should permit it.</div></div>
@@ -169,7 +169,7 @@ $(function() {
 
 <div class="test_wrap"><h3>Visual-square</h3><div id="css-animation1" class="visual-square"></div><div class="square"><style>
  #css-animation1test {
-	-webkit-animation: staylime 60s infinite;
+  -webkit-animation: staylime 60s infinite;
 -moz-animation: staylime 60s infinite;
 -ms-animation: staylime 60s infinite;
 -o-animation: staylime 60s infinite;
@@ -177,34 +177,34 @@ animation: staylime 60s infinite;
 }
 
 @-webkit-keyframes staylime {
-	from { background-color: lime; }
-	to   { background-color: lime; }
+  from { background-color: lime; }
+  to   { background-color: lime; }
  }
 @-moz-keyframes staylime {
-	from { background-color: lime; }
-	to   { background-color: lime; }
+  from { background-color: lime; }
+  to   { background-color: lime; }
  }
 @-ms-keyframes staylime {
-	from { background-color: lime; }
-	to   { background-color: lime; }
+  from { background-color: lime; }
+  to   { background-color: lime; }
  }
 @-o-keyframes staylime {
-	from { background-color: lime; }
-	to   { background-color: lime; }
+  from { background-color: lime; }
+  to   { background-color: lime; }
  }
 @keyframes staylime {
-	from { background-color: lime; }
-	to   { background-color: lime; }
+  from { background-color: lime; }
+  to   { background-color: lime; }
  }
 
 
 </style>
 
-<div id="css-animation1test" style="width:30px;height:30px;"></div></div><div class="info">animation: staylime 60s infinite; 
+<div id="css-animation1test" style="width:30px;height:30px;"></div></div><div class="info">animation: staylime 60s infinite;
 
 @keyframes staylime {
-	from { background-color: lime; }
-	to   { background-color: lime; }
+  from { background-color: lime; }
+  to   { background-color: lime; }
  }</div></div>
 
 </td></tr>
@@ -238,7 +238,7 @@ box-shadow: inset lime 0px 0px 150px;
 <div class="test_wrap"><h3>Auto (m)</h3><div id="css-opacity0" class="auto pass"></div><script>setResult('css-opacity0', Modernizr.opacity);</script><div class="info">Modernizr test for: "opacity"</div></div>
 
 <div class="test_wrap"><h3>Visual-square</h3><div id="css-opacity1" class="visual-square"></div><div class="square"><div style="width:30px;height:30px;position:relative;background:lime">
-	<div style="width:30px;height:30px;background:red;-webkit-opacity:0;-moz-opacity:0;-ms-opacity:0;-o-opacity:0;opacity:0;"></div></div>
+  <div style="width:30px;height:30px;background:red;-webkit-opacity:0;-moz-opacity:0;-ms-opacity:0;-o-opacity:0;opacity:0;"></div></div>
 </div>
 </div><div class="info">Test for opacity: 0</div>
 
@@ -247,7 +247,7 @@ box-shadow: inset lime 0px 0px 150px;
 <div class="test_wrap"><h3>Auto (m)</h3><div id="css-textshadow0" class="auto pass"></div><script>setResult('css-textshadow0', Modernizr.textshadow);</script><div class="info">Modernizr test for: "textshadow"</div></div>
 
 <div class="test_wrap"><h3>Visual</h3><div id="css-textshadow1" class="visual"></div><div class="vis_test"><div style="width:30px;height:30px;overflow:hidden" id="css-textshadow1">
- 
+
 <div style="font:25px/25px Times New Roman, Times; color:white;-webkit-text-shadow:25px 0 3px lime;-moz-text-shadow:25px 0 3px lime;-ms-text-shadow:25px 0 3px lime;-o-text-shadow:25px 0 3px lime;text-shadow:25px 0 3px lime;position:relative; left:-25px;">A</div>
 
 </div></div><div class="vis_ref"><img src="./caniuse_files/text-shadow1.png"></div><div class="info">font-size: 25px;
@@ -266,42 +266,42 @@ left: -25px;</div></div>
 
 <div class="test_wrap"><h3>Interact</h3><div id="css-transitions1" class="interact"></div><style>
 #css-transitions1wrap {
-	width: 30px;
-	height: 30px;
-	border: 1px solid;
-	overflow: hidden;
-	margin: 0 auto;
+  width: 30px;
+  height: 30px;
+  border: 1px solid;
+  overflow: hidden;
+  margin: 0 auto;
 }
 
 #css-transitions1test {
-	-webkit-transition-property: left;
-	-webkit-transition-duration: 3s;
-	-webkit-transition-timing-function: cubic-bezier(0, 1, 1, 0);
+  -webkit-transition-property: left;
+  -webkit-transition-duration: 3s;
+  -webkit-transition-timing-function: cubic-bezier(0, 1, 1, 0);
 -moz-transition-property: left;
-	-moz-transition-duration: 3s;
-	-moz-transition-timing-function: cubic-bezier(0, 1, 1, 0);
+  -moz-transition-duration: 3s;
+  -moz-transition-timing-function: cubic-bezier(0, 1, 1, 0);
 -ms-transition-property: left;
-	-ms-transition-duration: 3s;
-	-ms-transition-timing-function: cubic-bezier(0, 1, 1, 0);
+  -ms-transition-duration: 3s;
+  -ms-transition-timing-function: cubic-bezier(0, 1, 1, 0);
 -o-transition-property: left;
-	-o-transition-duration: 3s;
-	-o-transition-timing-function: cubic-bezier(0, 1, 1, 0);
+  -o-transition-duration: 3s;
+  -o-transition-timing-function: cubic-bezier(0, 1, 1, 0);
 transition-property: left;
-	transition-duration: 3s;
-	transition-timing-function: cubic-bezier(0, 1, 1, 0);
-	background-color: lime;
-	position: relative;
-	left: -30px;
-	top: 0;
+  transition-duration: 3s;
+  transition-timing-function: cubic-bezier(0, 1, 1, 0);
+  background-color: lime;
+  position: relative;
+  left: -30px;
+  top: 0;
 }
 
 #css-transitions1wrap:hover #css-transitions1test {
-	left: 30px;
+  left: 30px;
 }
 
 </style>
 <div id="css-transitions1wrap">
-	<div id="css-transitions1test" style="width:30px;height:30px;"></div>
+  <div id="css-transitions1test" style="width:30px;height:30px;"></div>
 </div><p class="condition">Green square must (briefly) appear on hover</p><div class="info">5 second transition from left to right using cubic-bezier(0, 1, 1, 0); </div></div>
 
 </td></tr>
@@ -362,36 +362,36 @@ setResult('fileapi0', !!window.FileReader);
 
 <div class="test_wrap"><h3>Auto</h3><div id="geolocation1" class="auto pass"></div><script>
 (function() {
-	var result = false;
-	var geo = navigator.geolocation;
-	if(geo) {
-		result = (
-			"getCurrentPosition" in geo
-			&& "watchPosition" in geo
-			&& "clearWatch" in geo
-		);
-	}
-	setResult('geolocation1', result);
+  var result = false;
+  var geo = navigator.geolocation;
+  if(geo) {
+    result = (
+      "getCurrentPosition" in geo
+      && "watchPosition" in geo
+      && "clearWatch" in geo
+    );
+  }
+  setResult('geolocation1', result);
 }());
 </script><div class="info">Test for getCurrentPosition, watchPosition and clearWatch in navigator.geolocation</div></div>
 
 <div class="test_wrap"><h3>Interact</h3><div id="geolocation2" class="interact"></div><button id="geolocation2test">Get location</button>
 <script>
 (function() {
-	var btn = document.getElementById('geolocation2test');
-	if(!navigator.geolocation && !navigator.geolocation.getCurrentPosition) return false;
-	btn.onclick = function() {
-		var feat = document.getElementById('geolocation2');
-		navigator.geolocation.getCurrentPosition(function(pos) {
-			feat.innerHTML = '<p>Result:<br>LAT: ' + pos.coords.latitude + '<br>LON: ' + pos.coords.longitude + '</p>';
-		}, function(error) {
-			feat.innerHTML = '<p>Error:' + error.message + '</p>';
-		});
-		
-		feat.innerHTML = '<p>Waiting for response...</p>';
-		
-		return false;
-	}
+  var btn = document.getElementById('geolocation2test');
+  if(!navigator.geolocation && !navigator.geolocation.getCurrentPosition) return false;
+  btn.onclick = function() {
+    var feat = document.getElementById('geolocation2');
+    navigator.geolocation.getCurrentPosition(function(pos) {
+      feat.innerHTML = '<p>Result:<br>LAT: ' + pos.coords.latitude + '<br>LON: ' + pos.coords.longitude + '</p>';
+    }, function(error) {
+      feat.innerHTML = '<p>Error:' + error.message + '</p>';
+    });
+
+    feat.innerHTML = '<p>Waiting for response...</p>';
+
+    return false;
+  }
 })();
 
 </script><p class="condition">Must provide LAT and LON info (may need to give permission first)</p><div class="info">Test for navigator.geolocation.getCurrentPosition on which position.coords.latitude and position.coords.longitude are expected. </div></div>
@@ -403,22 +403,22 @@ setResult('getelementsbyclassname0', typeof document.getElementsByClassName === 
 </script></div>
 
 <div class="test_wrap"><h3>Visual-square</h3><div id="getelementsbyclassname1" class="visual-square"></div><div class="square"><div style="width: 30px; height: 30px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: lime; background-position: initial initial; background-repeat: initial initial; " id="getelementsbyclassname1container">
-	<div id="getelementsbyclassname1test">
-		<div class="getelementsbyclassname1test"></div>
-		<div class="getelementsbyclassname1test altgetelementsbyclassname1test"></div>
-		<div class="altgetelementsbyclassname1test"></div>
-	</div>
+  <div id="getelementsbyclassname1test">
+    <div class="getelementsbyclassname1test"></div>
+    <div class="getelementsbyclassname1test altgetelementsbyclassname1test"></div>
+    <div class="altgetelementsbyclassname1test"></div>
+  </div>
 <script>
 (function() {
-	if(document.getElementsByClassName) {
-		var elems = document.getElementsByClassName('getelementsbyclassname1test');
-		var from_id = document.getElementById('getelementsbyclassname1test').getElementsByTagName('*');
-		if(elems.length && elems.length === 2) {
-			if(elems[0] === from_id[0] && elems[1] === from_id[1]) {
-				document.getElementById('getelementsbyclassname1container').style.background = 'lime';
-			}
-		}
-	}
+  if(document.getElementsByClassName) {
+    var elems = document.getElementsByClassName('getelementsbyclassname1test');
+    var from_id = document.getElementById('getelementsbyclassname1test').getElementsByTagName('*');
+    if(elems.length && elems.length === 2) {
+      if(elems[0] === from_id[0] && elems[1] === from_id[1]) {
+        document.getElementById('getelementsbyclassname1container').style.background = 'lime';
+      }
+    }
+  }
 }());
 </script></div><div class="info">Test if two divs were correctly retrieved using getElementsByClassName</div></div>
 
@@ -427,7 +427,7 @@ setResult('getelementsbyclassname0', typeof document.getElementsByClassName === 
 <div class="test_wrap"><h3>Auto (m)</h3><div id="hashchange0" class="auto pass"></div><script>setResult('hashchange0', Modernizr.hashchange);</script><div class="info">Modernizr test for: "hashchange"</div></div>
 
 <div class="test_wrap"><h3>Visual-square</h3><div id="hashchange1" class="visual-square"></div><div class="square"><iframe style="width:30px;height:30px;border:0" src="./caniuse_files/hashchange.html"></iframe></div><div class="info">iframe with addEventListener('hashchange', function() {
-	document.body.style.background = 'lime';
+  document.body.style.background = 'lime';
 }, false);
 </div></div>
 
@@ -451,31 +451,31 @@ setResult('json0', 'JSON' in window)
 (function() {
 try {
 var obj = {
-	key1: 'my_str',
-	key2: ['my', 'array'],
-	key3: {
-		my: 'object',
-		with_numbers: [1, 2, 3, 4.5678],
-		and_also: 9
-	}
+  key1: 'my_str',
+  key2: ['my', 'array'],
+  key3: {
+    my: 'object',
+    with_numbers: [1, 2, 3, 4.5678],
+    and_also: 9
+  }
 };
 
 var str = JSON.stringify(obj);
 if(typeof str === 'string') {
-	var new_obj = JSON.parse(str);
-	if(
-		new_obj.key1 === 'my_str'
-		&& new_obj.key2.length === 2
-		&& new_obj.key2[1] === 'array'
-		&& new_obj.key3.with_numbers[3] === 4.5678
-		&& new_obj.key3.and_also === 9
-	) {
-		setResult('json1', true);
-	} else {
-		setResult('json1', false);
-	}
+  var new_obj = JSON.parse(str);
+  if(
+    new_obj.key1 === 'my_str'
+    && new_obj.key2.length === 2
+    && new_obj.key2[1] === 'array'
+    && new_obj.key3.with_numbers[3] === 4.5678
+    && new_obj.key3.and_also === 9
+  ) {
+    setResult('json1', true);
+  } else {
+    setResult('json1', false);
+  }
 } else {
-	setResult('json1', false);
+  setResult('json1', false);
 }
 } catch(e){
 setResult('json1', false);
@@ -496,8 +496,8 @@ background-position: 0 0, 0 5px, 0 10px, 0 15px, 0 20px, 0 25px;</div></div>
 <div class="test_wrap"><h3>Auto (m)</h3><div id="multicolumn0" class="auto pass"></div><script>setResult('multicolumn0', Modernizr.csscolumns);</script><div class="info">Modernizr test for: "csscolumns"</div></div>
 
 <div class="test_wrap"><h3>Visual-square</h3><div id="multicolumn1" class="visual-square"></div><div class="square"><div style="-webkit-column-width: 15px; -webkit-column-gap: 0;-moz-column-width: 15px; -moz-column-gap: 0;-ms-column-width: 15px; -ms-column-gap: 0;-o-column-width: 15px; -o-column-gap: 0;column-width: 15px; column-gap: 0; width:30px;height:30px;background:red;">
-	<div style="inline-block;width:15px;height:30px;background:lime;"></div>
-	<div style="inline-block;width:15px;height:30px;background:lime;"></div>
+  <div style="inline-block;width:15px;height:30px;background:lime;"></div>
+  <div style="inline-block;width:15px;height:30px;background:lime;"></div>
 </div>
 </div><div class="info">column-width: 15px;
 column-gap: 0;</div></div>
@@ -508,22 +508,22 @@ column-gap: 0;</div></div>
 
 <div class="test_wrap"><h3>Auto</h3><div id="namevalue-storage1" class="auto pass"></div><script>
 (function() {
-	var result = false;
-	if(window.localStorage) {
-		try {
-			localStorage.setItem('foo', 'bar');
-			if(localStorage.getItem('foo') === 'bar'
-				&& localStorage['foo'] === 'bar'
-				&& localStorage.foo === 'bar'
-			) {
-				localStorage.removeItem('foo');
-				if(localStorage.getItem('foo') === null) {
-					result = true;
-				}
-			}
-		} catch(e) {}
-	}
-	setResult('namevalue-storage1', result);
+  var result = false;
+  if(window.localStorage) {
+    try {
+      localStorage.setItem('foo', 'bar');
+      if(localStorage.getItem('foo') === 'bar'
+        && localStorage['foo'] === 'bar'
+        && localStorage.foo === 'bar'
+      ) {
+        localStorage.removeItem('foo');
+        if(localStorage.getItem('foo') === null) {
+          result = true;
+        }
+      }
+    } catch(e) {}
+  }
+  setResult('namevalue-storage1', result);
 })();
 
 </script><div class="info">Test if getItem, setItem and removeItem work.</div></div>
@@ -552,32 +552,32 @@ setResult('queryselector0', !!document.querySelectorAll && !!document.querySelec
 </script></div>
 
 <div class="test_wrap"><h3>Auto</h3><div id="queryselector1" class="auto pass"></div>	<div id="queryselector1test">
-		<div data-foo="queryselector1"></div>
-		<div id="queryselector1target"></div>
-		<div class="altqueryselector1test"></div>
-	</div>
+    <div data-foo="queryselector1"></div>
+    <div id="queryselector1target"></div>
+    <div class="altqueryselector1test"></div>
+  </div>
 <script>
 (function() {
-	if(document.querySelector) {
-		var elem = document.querySelector('[data-foo=queryselector1] + *');
-		var target = document.getElementById('queryselector1target');
-		setResult('queryselector1', elem === target);
-	}
+  if(document.querySelector) {
+    var elem = document.querySelector('[data-foo=queryselector1] + *');
+    var target = document.getElementById('queryselector1target');
+    setResult('queryselector1', elem === target);
+  }
 }());
 </script><div class="info">querySelector test on selector '[data-foo=bar] + *'</div></div>
 
 <div class="test_wrap"><h3>Auto</h3><div id="queryselector2" class="auto pass"></div>	<div id="queryselector2test">
-		<div data-foo="queryselector2"></div>
-		<div id="queryselector2target"></div>
-		<div class="altqueryselector2test"></div>
-	</div>
+    <div data-foo="queryselector2"></div>
+    <div id="queryselector2target"></div>
+    <div class="altqueryselector2test"></div>
+  </div>
 <script>
 (function() {
-	if(document.querySelector) {
-		var elem = document.querySelector('[data-foo=queryselector2] + *');
-		var target = document.getElementById('queryselector2target');
-		setResult('queryselector2', elem === target);
-	}
+  if(document.querySelector) {
+    var elem = document.querySelector('[data-foo=queryselector2] + *');
+    var target = document.getElementById('queryselector2target');
+    setResult('queryselector2', elem === target);
+  }
 }());
 </script><div class="info">querySelectorAll test on selector '[data-foo=bar] + *'</div></div>
 
@@ -598,8 +598,8 @@ setResult('queryselector0', !!document.querySelectorAll && !!document.querySelec
 <tr><th><h3>Inline SVG in HTML5</h3><span class="links">[<a href="http://caniuse.com/svg-html5">Table</a>] [<a href="http://tests.caniuse.com/?feat=svg-html5&prefix=all">Single feat</a>]</span></th><td class="current pass">&nbsp;</td><td>
 <div class="test_wrap"><h3>Auto (m)</h3><div id="svg-html50" class="auto pass"></div><script>setResult('svg-html50', Modernizr.inlinesvg);</script><div class="info">Modernizr test for: "inlinesvg"</div></div>
 
-<div class="test_wrap"><h3>Visual-square</h3><div id="svg-html51" class="visual-square"></div><div class="square"><svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" style="background:red;"> 
-    <rect height="30" width="30" y="0" x="0" fill="#00ff00"></rect> 
+<div class="test_wrap"><h3>Visual-square</h3><div id="svg-html51" class="visual-square"></div><div class="square"><svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" style="background:red;">
+    <rect height="30" width="30" y="0" x="0" fill="#00ff00"></rect>
 </svg>
 </div></div>
 
@@ -619,7 +619,7 @@ setResult('queryselector0', !!document.querySelectorAll && !!document.querySelec
 <div class="test_wrap"><h3>Auto (m)</h3><div id="transforms2d0" class="auto pass"></div><script>setResult('transforms2d0', Modernizr.csstransforms);</script><div class="info">Modernizr test for: "csstransforms"</div></div>
 
 <div class="test_wrap"><h3>Visual-square</h3><div id="transforms2d1" class="visual-square"></div><div class="square"><div style="width:30px;height:30px;background:red;overflow:hidden">
-	<div style="background:lime;width:30px;height:30px;position:relative;left:-30px;-webkit-transform: translate(30px);-moz-transform: translate(30px);-ms-transform: translate(30px);-o-transform: translate(30px);transform: translate(30px); "></div>
+  <div style="background:lime;width:30px;height:30px;position:relative;left:-30px;-webkit-transform: translate(30px);-moz-transform: translate(30px);-ms-transform: translate(30px);-o-transform: translate(30px);transform: translate(30px); "></div>
 </div>
 </div><div class="info">transform: translate(30px);</div></div>
 
@@ -629,38 +629,38 @@ setResult('queryselector0', !!document.querySelectorAll && !!document.querySelec
 
 <div class="test_wrap"><h3>Visual-square</h3><div id="transforms3d1" class="visual-square"></div><div class="square"><style>
 #transforms3d1container {
-	background: red;
-	width: 30px;
-	height: 30px;
-	overflow: hidden;
-	-webkit-perspective: 600;
-	-webkit-perspective-origin: 0 200px;
-	-moz-perspective: 600;
-	-moz-perspective-origin: 0 200px;
-	-ms-perspective: 600;
-	-ms-perspective-origin: 0 200px;
-	-o-perspective: 600;
-	-o-perspective-origin: 0 200px;
-	perspective: 600;
-	perspective-origin: 0 200px;
+  background: red;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  -webkit-perspective: 600;
+  -webkit-perspective-origin: 0 200px;
+  -moz-perspective: 600;
+  -moz-perspective-origin: 0 200px;
+  -ms-perspective: 600;
+  -ms-perspective-origin: 0 200px;
+  -o-perspective: 600;
+  -o-perspective-origin: 0 200px;
+  perspective: 600;
+  perspective-origin: 0 200px;
 
 }
 
-#transforms3d1test { 
-	width:400px; height:100px;
-	background: lime;
-	position: relative;
-	top: 30px;
-	-webkit-transform: translate3d(-234px, 0, 0) rotate3d(0, 1, 0, -70deg);
-	-moz-transform: translate3d(-234px, 0, 0) rotate3d(0, 1, 0, -70deg);
-	-ms-transform: translate3d(-234px, 0, 0) rotate3d(0, 1, 0, -70deg);
-	-o-transform: translate3d(-234px, 0, 0) rotate3d(0, 1, 0, -70deg);
-	transform: translate3d(-234px, 0, 0) rotate3d(0, 1, 0, -70deg);
+#transforms3d1test {
+  width:400px; height:100px;
+  background: lime;
+  position: relative;
+  top: 30px;
+  -webkit-transform: translate3d(-234px, 0, 0) rotate3d(0, 1, 0, -70deg);
+  -moz-transform: translate3d(-234px, 0, 0) rotate3d(0, 1, 0, -70deg);
+  -ms-transform: translate3d(-234px, 0, 0) rotate3d(0, 1, 0, -70deg);
+  -o-transform: translate3d(-234px, 0, 0) rotate3d(0, 1, 0, -70deg);
+  transform: translate3d(-234px, 0, 0) rotate3d(0, 1, 0, -70deg);
 
 }
 </style>
 <div id="transforms3d1container">
-	<div id="transforms3d1test"></div>
+  <div id="transforms3d1test"></div>
 </div></div><div class="info">Parent:
 perspective: 600;
 perspective-origin: 0 200px;
@@ -676,15 +676,15 @@ setResult('video0', !!document.createElement('video').canPlayType);
 </script></div>
 
 <div class="test_wrap"><h3>Interact</h3><div id="video1" class="interact"></div><video width="160" height="120" controls="">
-	<source src="video.mp4" type="video/mp4">
-	<source src="video.ogv" type="video/ogv">
-	<source src="video.webm" type="video/webm">
+  <source src="video.mp4" type="video/mp4">
+  <source src="video.ogv" type="video/ogv">
+  <source src="video.webm" type="video/webm">
 </video><div class="info">Video with controls and all three formats available.</div></div>
 
 <div class="test_wrap"><h3>Interact</h3><div id="video2" class="interact"></div><video width="160" height="120" controls="">
-	<source src="mimevid.php?type=.mp4" type="video/mp4">
-	<source src="mimevid.php?type=.ogv" type="video/ogg">
-	<source src="mimevid.php?type=.webm" type="video/webm">
+  <source src="mimevid.php?type=.mp4" type="video/mp4">
+  <source src="mimevid.php?type=.ogv" type="video/ogg">
+  <source src="mimevid.php?type=.webm" type="video/webm">
 </video><div class="info">Video with controls and all three formats available (with MIME).</div></div>
 
 </td></tr>
@@ -700,17 +700,17 @@ setResult('video0', !!document.createElement('video').canPlayType);
 
 try {
 
-	var w = new Worker('worker.js');
-	
-	w.onmessage = function (event) {
-	  var success = (event.data && event.data === 'worker works');
-	  setResult('webworkers1', success);
-	}
-	
-	w.postMessage('');
+  var w = new Worker('worker.js');
+
+  w.onmessage = function (event) {
+    var success = (event.data && event.data === 'worker works');
+    setResult('webworkers1', success);
+  }
+
+  w.postMessage('');
 
 } catch(e) {
-	setResult('webworkers1', false);
+  setResult('webworkers1', false);
 }
 
 }());
@@ -744,7 +744,7 @@ setResult('xhr20', (progEv && fdata));
  content: 'Z';
 }
 </style>
-<span id="gencontent">-</span></div><div class="vis_ref"><img src="./caniuse_files/before-after.png"></div><div class="info">Element with CSS: 
+<span id="gencontent">-</span></div><div class="vis_ref"><img src="./caniuse_files/before-after.png"></div><div class="info">Element with CSS:
 #gencontent:before {
  content: 'A';
 }
@@ -761,14 +761,14 @@ setResult('xhr20', (progEv && fdata));
 </style>
 <div style="display:inline-block;vertical-align:middle">
 <div id="table-test">
-	<div class="table-tr">
-		<div class="table-td">topleft</div>
-		<div class="table-td">topright</div>
-	</div>
-	<div class="table-tr">
-		<div class="table-td">bottomleft</div>
-		<div class="table-td">bottomright</div>
-	</div>
+  <div class="table-tr">
+    <div class="table-td">topleft</div>
+    <div class="table-td">topright</div>
+  </div>
+  <div class="table-tr">
+    <div class="table-td">bottomleft</div>
+    <div class="table-td">bottomright</div>
+  </div>
 </div>
 </div></div><div class="vis_ref"><img src="./caniuse_files/table.png"></div><p class="condition">Should be 2x2 table</p></div>
 
@@ -794,7 +794,7 @@ setResult('xhr20', (progEv && fdata));
 </td></tr>
 <tr><th><h3>SVG filters</h3><span class="links">[<a href="http://caniuse.com/svg-filters">Table</a>] [<a href="http://tests.caniuse.com/?feat=svg-filters&prefix=all">Single feat</a>]</span></th><td class="current pass">&nbsp;</td><td>
 <div class="test_wrap"><h3>Visual</h3><div id="svg-filters0" class="visual"></div><div class="vis_test"><object data="http://tests.caniuse.com/blur.svg" type="image/svg+xml" height="70" width="70">
-	object SVG not supported
+  object SVG not supported
 </object>
 </div><div class="vis_ref"><img src="./caniuse_files/svg_blur.png"></div></div>
 
@@ -831,7 +831,7 @@ setResult('xhr20', (progEv && fdata));
 </div><p class="condition">Text should overflow box</p></div>
 
 <div class="test_wrap"><h3>Visual-square</h3><div id="wordwrap2" class="visual-square"></div><div class="square"><div style="width:30px;height:30px;background:red;overflow:hidden">
-	<div style="color:lime;font-size:10px;line-height:10px;word-wrap:break-word;background:lime;">abcdefghijklmnop</div>
+  <div style="color:lime;font-size:10px;line-height:10px;word-wrap:break-word;background:lime;">abcdefghijklmnop</div>
 </div>
 </div><div class="info">word-wrap: break-word;</div></div>
 
@@ -839,14 +839,14 @@ setResult('xhr20', (progEv && fdata));
 <tr><th><h3>calc() as CSS unit value</h3><span class="links">[<a href="http://caniuse.com/calc">Table</a>] [<a href="http://tests.caniuse.com/?feat=calc&prefix=all">Single feat</a>]</span></th><td class="current unknown">&nbsp;</td><td>
 <div class="test_wrap"><h3>Visual-square</h3><div id="calc0" class="visual-square"></div><div class="square"><style>
 #calc0test {
-	width: 0px;
-	width: -webkit-calc(10px + 20px);
-	width: -moz-calc(10px + 20px);
-	width: -ms-calc(10px + 20px);
-	width: -o-calc(10px + 20px);
-	width: calc(10px + 20px);
-	height: 30px;
-	background: lime;
+  width: 0px;
+  width: -webkit-calc(10px + 20px);
+  width: -moz-calc(10px + 20px);
+  width: -ms-calc(10px + 20px);
+  width: -o-calc(10px + 20px);
+  width: calc(10px + 20px);
+  height: 30px;
+  background: lime;
 }
 </style>
 <div id="calc0test"></div>
@@ -872,37 +872,37 @@ border-right: calc(0.5em) solid lime;</div></div>
 <tr><th><h3>CSS Grid Layout</h3><span class="links">[<a href="http://caniuse.com/css-grid">Table</a>] [<a href="http://tests.caniuse.com/?feat=css-grid&prefix=all">Single feat</a>]</span></th><td class="current unknown">&nbsp;</td><td>
 <div class="test_wrap"><h3>Visual-square</h3><div id="css-grid0" class="visual-square"></div><div class="square"><style>
 #css-grid0grid {
-	display: -webkit-grid; 	display: -moz-grid; 	display: -ms-grid; 	display: -o-grid; 	display: grid; 
-	-webkit-grid-columns: 15px 1fr; 	-moz-grid-columns: 15px 1fr; 	-ms-grid-columns: 15px 1fr; 	-o-grid-columns: 15px 1fr; 	grid-columns: 15px 1fr; 
-	-webkit-grid-rows: 15px 15px; 	-moz-grid-rows: 15px 15px; 	-ms-grid-rows: 15px 15px; 	-o-grid-rows: 15px 15px; 	grid-rows: 15px 15px; 
+  display: -webkit-grid; 	display: -moz-grid; 	display: -ms-grid; 	display: -o-grid; 	display: grid;
+  -webkit-grid-columns: 15px 1fr; 	-moz-grid-columns: 15px 1fr; 	-ms-grid-columns: 15px 1fr; 	-o-grid-columns: 15px 1fr; 	grid-columns: 15px 1fr;
+  -webkit-grid-rows: 15px 15px; 	-moz-grid-rows: 15px 15px; 	-ms-grid-rows: 15px 15px; 	-o-grid-rows: 15px 15px; 	grid-rows: 15px 15px;
 
 }
 
 #css-grid0grid > div {
-	background: lime;
+  background: lime;
 }
 
 #css-grid0a {
-	-webkit-grid-row: 1; 	-moz-grid-row: 1; 	-ms-grid-row: 1; 	-o-grid-row: 1; 	grid-row: 1; 
-	-webkit-grid-column: 1; 	-moz-grid-column: 1; 	-ms-grid-column: 1; 	-o-grid-column: 1; 	grid-column: 1; 
+  -webkit-grid-row: 1; 	-moz-grid-row: 1; 	-ms-grid-row: 1; 	-o-grid-row: 1; 	grid-row: 1;
+  -webkit-grid-column: 1; 	-moz-grid-column: 1; 	-ms-grid-column: 1; 	-o-grid-column: 1; 	grid-column: 1;
 }
 
 #css-grid0b {
-	-webkit-grid-row: 1; 	-moz-grid-row: 1; 	-ms-grid-row: 1; 	-o-grid-row: 1; 	grid-row: 1; 
-	-webkit-grid-column: 2; 	-moz-grid-column: 2; 	-ms-grid-column: 2; 	-o-grid-column: 2; 	grid-column: 2; 
+  -webkit-grid-row: 1; 	-moz-grid-row: 1; 	-ms-grid-row: 1; 	-o-grid-row: 1; 	grid-row: 1;
+  -webkit-grid-column: 2; 	-moz-grid-column: 2; 	-ms-grid-column: 2; 	-o-grid-column: 2; 	grid-column: 2;
 }
 
 #css-grid0c {
-	-webkit-grid-row: 2; 	-moz-grid-row: 2; 	-ms-grid-row: 2; 	-o-grid-row: 2; 	grid-row: 2; 
-	-webkit-grid-column: 1; 	-moz-grid-column: 1; 	-ms-grid-column: 1; 	-o-grid-column: 1; 	grid-column: 1; 
-	-webkit-grid-column-span: 2; 	-moz-grid-column-span: 2; 	-ms-grid-column-span: 2; 	-o-grid-column-span: 2; 	grid-column-span: 2; 
+  -webkit-grid-row: 2; 	-moz-grid-row: 2; 	-ms-grid-row: 2; 	-o-grid-row: 2; 	grid-row: 2;
+  -webkit-grid-column: 1; 	-moz-grid-column: 1; 	-ms-grid-column: 1; 	-o-grid-column: 1; 	grid-column: 1;
+  -webkit-grid-column-span: 2; 	-moz-grid-column-span: 2; 	-ms-grid-column-span: 2; 	-o-grid-column-span: 2; 	grid-column-span: 2;
 }
 </style>
 
 <div id="css-grid0grid">
-	 <div id="css-grid0a"></div>
-	 <div id="css-grid0b"></div>
-	 <div id="css-grid0c"></div>
+  <div id="css-grid0a"></div>
+  <div id="css-grid0b"></div>
+  <div id="css-grid0c"></div>
 </div>
 
 </div><div class="info">Grid with two columns, two rows and three elements taking up space.</div></div>
@@ -918,7 +918,7 @@ border-right: calc(0.5em) solid lime;</div></div>
 }
 
 #mediaq3 {
-	clear: left;
+  clear: left;
 }
 
 @media all and (min-width: 0px) {
@@ -949,17 +949,17 @@ border-right: calc(0.5em) solid lime;</div></div>
 <tr><th><h3>CSS 2.1 selectors</h3><span class="links">[<a href="http://caniuse.com/css-sel2">Table</a>] [<a href="http://tests.caniuse.com/?feat=css-sel2&prefix=all">Single feat</a>]</span></th><td class="current pass">&nbsp;</td><td>
 <div class="test_wrap"><h3>Visual-square</h3><div id="css-sel20" class="visual-square"></div><div class="square"><style>
 #css-sel20test div {
-	width: 30px;
-	height: 30px;
-	background: red;
+  width: 30px;
+  height: 30px;
+  background: red;
 }
 
 #css-sel20test > div {
-	background: lime;
+  background: lime;
 }
 </style>
 <div id="css-sel20test">
-	<div></div>
+  <div></div>
 </div>
 </div><div class="info">Test for child ( &gt; )selector</div></div>
 
@@ -979,7 +979,7 @@ border-right: calc(0.5em) solid lime;</div></div>
 <tr><th><h3>CSS3 Box-sizing</h3><span class="links">[<a href="http://caniuse.com/css3-boxsizing">Table</a>] [<a href="http://tests.caniuse.com/?feat=css3-boxsizing&prefix=all">Single feat</a>]</span></th><td class="current pass">&nbsp;</td><td>
 <div class="test_wrap"><h3>Visual-square</h3><div id="css3-boxsizing0" class="visual-square"></div><div class="square"><style>
 #boxsizetest {
-   -webkit-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
 -ms-box-sizing: border-box;
 -o-box-sizing: border-box;
@@ -1002,29 +1002,29 @@ box-sizing: border-box;
 <tr><th><h3>New semantic elements</h3><span class="links">[<a href="http://caniuse.com/html5semantic">Table</a>] [<a href="http://tests.caniuse.com/?feat=html5semantic&prefix=all">Single feat</a>]</span></th><td class="current pass">&nbsp;</td><td>
 <div class="test_wrap"><h3>Visual-square</h3><div id="html5semantic0" class="visual-square"></div><div class="square"><style>
 #html5semantic0test {
-	width: 30px;
-	height: 30px;
-	background: red;
+  width: 30px;
+  height: 30px;
+  background: red;
 }
 
 #html5semantic0test * {
-	background: lime;
-	height: 4px;
+  background: lime;
+  height: 4px;
 }
 
 #html5semantic0test section {
-	height: 6px;
+  height: 6px;
 }
 </style>
 
 <div id="html5semantic0test">
-	<section></section>
-	<article></article>
-	<aside></aside>
-	<hgroup></hgroup>
-	<header></header>
-	<footer></footer>
-	<nav></nav>
+  <section></section>
+  <article></article>
+  <aside></aside>
+  <hgroup></hgroup>
+  <header></header>
+  <footer></footer>
+  <nav></nav>
 </div></div><div class="info">section, article, aside, hgroup, header, footer, nav tested for default "block" style.</div></div>
 
 </td></tr>
@@ -1045,14 +1045,14 @@ box-sizing: border-box;
 <tr><th><h3>CSS3 object-fit/object-position</h3><span class="links">[<a href="http://caniuse.com/object-fit">Table</a>] [<a href="http://tests.caniuse.com/?feat=object-fit&prefix=all">Single feat</a>]</span></th><td class="current unknown">&nbsp;</td><td>
 <div class="test_wrap"><h3>Visual-square</h3><div id="object-fit0" class="visual-square"></div><div class="square"><style>
 #object-fit0test {
-	width: 30px;
-	height: 30px;
-	background: lime;
-	overflow: hidden;
+  width: 30px;
+  height: 30px;
+  background: lime;
+  overflow: hidden;
 }
 
 #object-fit0test img {
-	-webkit-object-fit: contain;
+  -webkit-object-fit: contain;
 -moz-object-fit: contain;
 -ms-object-fit: contain;
 -o-object-fit: contain;
@@ -1062,19 +1062,19 @@ object-fit: contain;
 </style>
 
 <div id="object-fit0test">
-	<img src="./caniuse_files/red30x30.png" width="90" height="30">
+  <img src="./caniuse_files/red30x30.png" width="90" height="30">
 </div></div><div class="info">object-fit: contain</div></div>
 
 <div class="test_wrap"><h3>Visual-square</h3><div id="object-fit2" class="visual-square"></div><div class="square"><style>
 #object-fit2test {
-	width: 30px;
-	height: 30px;
-	background: lime;
-	overflow: hidden;
+  width: 30px;
+  height: 30px;
+  background: lime;
+  overflow: hidden;
 }
 
 #object-fit2test img {
-	-webkit-object-position: 30px 30px;
+  -webkit-object-position: 30px 30px;
 -moz-object-position: 30px 30px;
 -ms-object-position: 30px 30px;
 -o-object-position: 30px 30px;
@@ -1084,14 +1084,14 @@ object-position: 30px 30px;
 </style>
 
 <div id="object-fit2test">
-	<img src="./caniuse_files/red30x30.png" width="30" height="30">
+  <img src="./caniuse_files/red30x30.png" width="30" height="30">
 </div>
 </div><div class="info">object-position: 30px 30px;</div></div>
 
 </td></tr>
 <tr><th><h3>rem (root em) units</h3><span class="links">[<a href="http://caniuse.com/rem">Table</a>] [<a href="http://tests.caniuse.com/?feat=rem&prefix=all">Single feat</a>]</span></th><td class="current pass">&nbsp;</td><td>
 <div class="test_wrap"><h3>Visual-square</h3><div id="rem0" class="visual-square"></div><div class="square"><div style="background:red;width:30px;height:30px;position:relative;overflow:hidden;text-align:left">
-	<span style="font-size:1px;background:lime;color:lime;position:relative;left:-6px;line-height:30px;font-size:5rem;">A</span>
+  <span style="font-size:1px;background:lime;color:lime;position:relative;left:-6px;line-height:30px;font-size:5rem;">A</span>
 </div></div><div class="info">span with single character and font-size: 5rem;</div></div>
 
 </td></tr>
@@ -1136,7 +1136,7 @@ try {
     g     = elem.getContext && elem.getContext('experimental-webgl');
 } catch(e){};
 
-if (g){    
+if (g){
   g.clearColor(0,1,0,1);
   g.clear(g.COLOR_BUFFER_BIT);
 }
@@ -1146,13 +1146,13 @@ if (g){
 </td></tr>
 <tr><th><h3>SVG fonts</h3><span class="links">[<a href="http://caniuse.com/svg-fonts">Table</a>] [<a href="http://tests.caniuse.com/?feat=svg-fonts&prefix=all">Single feat</a>]</span></th><td class="current pass">&nbsp;</td><td>
 <div class="test_wrap"><h3>Visual</h3><div id="svg-fonts0" class="visual"></div><div class="vis_test"><style>
-@font-face { 
-  font-family: Windsong_svg; 
+@font-face {
+  font-family: Windsong_svg;
   src: url(caniuse_files/Windsong-webfont.svg#webfontuOn4Eelr) format("svg");
 }
 #windsong_svg {
-	font: 18px Windsong_svg;
-	margin: 5px;
+  font: 18px Windsong_svg;
+  margin: 5px;
 }
 </style>
 <p id="windsong_svg">Windsong font</p>
@@ -1162,13 +1162,13 @@ if (g){
 <tr><th><h3>TTF/OTF - TrueType and OpenType font support</h3><span class="links">[<a href="http://caniuse.com/ttf">Table</a>] [<a href="http://tests.caniuse.com/?feat=ttf&prefix=all">Single feat</a>]</span></th><td class="current pass">&nbsp;</td><td>
 <div class="test_wrap"><h3>Visual</h3><div id="ttf0" class="visual"></div><div class="vis_test"><style>
 @font-face {
-	font-family: 'Windsong_otf';
-	src: url('caniuse_files/Windsong-webfont.otf');
+  font-family: 'Windsong_otf';
+  src: url('caniuse_files/Windsong-webfont.otf');
 }
 
 #windsong_otf {
-	font: 18px Windsong_otf;
-	margin: 5px;
+  font: 18px Windsong_otf;
+  margin: 5px;
 }
 </style>
 <p id="windsong_otf">Windsong font</p>
@@ -1176,13 +1176,13 @@ if (g){
 
 <div class="test_wrap"><h3>Visual</h3><div id="ttf1" class="visual"></div><div class="vis_test"><style>
 @font-face {
-	font-family: 'Windsong_ttf';
-	src: url('caniuse_files/Windsong-webfont.ttf');
+  font-family: 'Windsong_ttf';
+  src: url('caniuse_files/Windsong-webfont.ttf');
 }
 
 #windsong_ttf {
-	font: 18px Windsong_ttf;
-	margin: 5px;
+  font: 18px Windsong_ttf;
+  margin: 5px;
 }
 </style>
 <p id="windsong_ttf">Windsong font</p>
@@ -1192,13 +1192,13 @@ if (g){
 <tr><th><h3>WOFF - Web Open Font Format</h3><span class="links">[<a href="http://caniuse.com/woff">Table</a>] [<a href="http://tests.caniuse.com/?feat=woff&prefix=all">Single feat</a>]</span></th><td class="current pass">&nbsp;</td><td>
 <div class="test_wrap"><h3>Visual</h3><div id="woff0" class="visual"></div><div class="vis_test"><style>
 @font-face {
-	font-family: 'Windsong_woff';
-	src: url('caniuse_files/Windsong-webfont.woff');
+  font-family: 'Windsong_woff';
+  src: url('caniuse_files/Windsong-webfont.woff');
 }
 
 #windsong_woff {
-	font: 18px Windsong_woff;
-	margin: 5px;
+  font: 18px Windsong_woff;
+  margin: 5px;
 }
 </style>
 <p id="windsong_woff">Windsong font</p>
@@ -1227,7 +1227,7 @@ if (g){
 </td></tr>
 <tr><th><h3>MPEG-4/H.264 video format</h3><span class="links">[<a href="http://caniuse.com/mpeg4">Table</a>] [<a href="http://tests.caniuse.com/?feat=mpeg4&prefix=all">Single feat</a>]</span></th><td class="current fail">&nbsp;</td><td>
 <div class="test_wrap"><h3>Auto</h3><div id="mpeg40" class="auto pass"></div><script>
-var v = document.createElement('video'); 
+var v = document.createElement('video');
 setResult('mpeg40', !!(v.canPlayType && v.canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"').replace(/no/, '')));
 </script></div>
 
@@ -1244,7 +1244,7 @@ setResult('mpeg40', !!(v.canPlayType && v.canPlayType('video/mp4; codecs="avc1.4
 </td></tr>
 <tr><th><h3>Ogg/Theora video format</h3><span class="links">[<a href="http://caniuse.com/ogv">Table</a>] [<a href="http://tests.caniuse.com/?feat=ogv&prefix=all">Single feat</a>]</span></th><td class="current pass">&nbsp;</td><td>
 <div class="test_wrap"><h3>Auto</h3><div id="ogv0" class="auto pass"></div><script>
-var v = document.createElement('video'); 
+var v = document.createElement('video');
 setResult('ogv0', !!(v.canPlayType && v.canPlayType('video/ogg; codecs="theora"').replace(/no/, '')));
 </script></div>
 
@@ -1261,7 +1261,7 @@ setResult('ogv0', !!(v.canPlayType && v.canPlayType('video/ogg; codecs="theora"'
 </td></tr>
 <tr><th><h3>WebM/VP8 video format</h3><span class="links">[<a href="http://caniuse.com/webm">Table</a>] [<a href="http://tests.caniuse.com/?feat=webm&prefix=all">Single feat</a>]</span></th><td class="current pass">&nbsp;</td><td>
 <div class="test_wrap"><h3>Auto</h3><div id="webm0" class="auto pass"></div><script>
-var v = document.createElement('video'); 
+var v = document.createElement('video');
 setResult('webm0', !!(v.canPlayType && v.canPlayType('video/webm; codecs="vp8, vorbis"').replace(/no/, '')));
 </script></div>
 
@@ -1279,22 +1279,22 @@ setResult('webm0', !!(v.canPlayType && v.canPlayType('video/webm; codecs="vp8, v
 <tr><th><h3>Animated PNG (APNG) [unoff]</h3><span class="links">[<a href="http://caniuse.com/apng">Table</a>] [<a href="http://tests.caniuse.com/?feat=apng&prefix=all">Single feat</a>]</span></th><td class="current unknown">&nbsp;</td><td>
 <div class="test_wrap"><h3>Auto</h3><div id="apng0" class="auto fail"></div><script>
 (function() {
-	// From: http://eligrey.com/blog/post/apng-feature-detection
-	var apngTest = new Image();
-	var canv = document.createElement("canvas");
-	var apng_supported = null;
-	if(canv.getContext && canv.getContext("2d").drawImage) {
-		var ctx = canv.getContext("2d");
-		var apng_supported = false;
-		apngTest.onload = function () {
-			ctx.drawImage(apngTest, 0, 0);
-			apng_supported = ( ctx.getImageData(0, 0, 1, 1).data[3] === 0 );
-			setResult('apng0', apng_supported);
-		};
-		apngTest.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACGFjVEwAAAABAAAAAcMq2TYAAAANSURBVAiZY2BgYPgPAAEEAQB9ssjfAAAAGmZjVEwAAAAAAAAAAQAAAAEAAAAAAAAAAAD6A+gBAbNU+2sAAAARZmRBVAAAAAEImWNgYGBgAAAABQAB6MzFdgAAAABJRU5ErkJggg==";
-	} else {
-		setResult('apng0', false);
-	}
+  // From: http://eligrey.com/blog/post/apng-feature-detection
+  var apngTest = new Image();
+  var canv = document.createElement("canvas");
+  var apng_supported = null;
+  if(canv.getContext && canv.getContext("2d").drawImage) {
+    var ctx = canv.getContext("2d");
+    var apng_supported = false;
+    apngTest.onload = function () {
+      ctx.drawImage(apngTest, 0, 0);
+      apng_supported = ( ctx.getImageData(0, 0, 1, 1).data[3] === 0 );
+      setResult('apng0', apng_supported);
+    };
+    apngTest.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACGFjVEwAAAABAAAAAcMq2TYAAAANSURBVAiZY2BgYPgPAAEEAQB9ssjfAAAAGmZjVEwAAAAAAAAAAQAAAAEAAAAAAAAAAAD6A+gBAbNU+2sAAAARZmRBVAAAAAEImWNgYGBgAAAABQAB6MzFdgAAAABJRU5ErkJggg==";
+  } else {
+    setResult('apng0', false);
+  }
 }());
 
 
@@ -1322,9 +1322,9 @@ setResult('css-canvas0', 'getCSSCanvasContext' in document)
             top: -30px;
             width: 30px;
             -webkit-box-reflect: below 0;
-               -moz-box-reflect: below 0;
+              -moz-box-reflect: below 0;
                 -ms-box-reflect: below 0;
-                 -o-box-reflect: below 0;
+                -o-box-reflect: below 0;
                     box-reflect: below 0;
             "></div>
 
@@ -1345,7 +1345,7 @@ setResult('stream0', "getUserMedia" in navigator);
 <tr><th><h3>CSS Masks [unoff]</h3><span class="links">[<a href="http://caniuse.com/css-masks">Table</a>] [<a href="http://tests.caniuse.com/?feat=css-masks&prefix=all">Single feat</a>]</span></th><td class="current pass">&nbsp;<span>-pre-</span></td><td>
 <div class="test_wrap"><h3>Visual</h3><div id="css-masks0" class="visual"></div><div class="vis_test"><style>
 #masktest {
-	-webkit-mask-image: url(caniuse_files/alpha.png);
+  -webkit-mask-image: url(caniuse_files/alpha.png);
 -moz-mask-image: url(caniuse_files/alpha.png);
 -ms-mask-image: url(caniuse_files/alpha.png);
 -o-mask-image: url(caniuse_files/alpha.png);
@@ -1358,10 +1358,10 @@ mask-image: url(caniuse_files/alpha.png);
 }
 #masktestbg {
     display: inline-block;
-	background: lime;
+  background: lime;
     height: 16px;
     width: 32px;
-	left: -32px;
+  left: -32px;
 }
 
 </style>
@@ -1377,13 +1377,13 @@ mask-image: url(caniuse_files/alpha.png);
  display: inline-block;
  overflow: hidden;
  font: 16px courier, monospace;
--webkit-text-overflow: ellipsis; 
--moz-text-overflow: ellipsis; 
--ms-text-overflow: ellipsis; 
--o-text-overflow: ellipsis; 
-text-overflow: ellipsis; 
+-webkit-text-overflow: ellipsis;
+-moz-text-overflow: ellipsis;
+-ms-text-overflow: ellipsis;
+-o-text-overflow: ellipsis;
+text-overflow: ellipsis;
 
- text-overflow: ellipsis; 
+ text-overflow: ellipsis;
 }
 </style>
 
@@ -1416,13 +1416,13 @@ green stroked text
 <tr><th><h3>EOT - Embedded OpenType fonts [unoff]</h3><span class="links">[<a href="http://caniuse.com/eot">Table</a>] [<a href="http://tests.caniuse.com/?feat=eot&prefix=all">Single feat</a>]</span></th><td class="current fail">&nbsp;</td><td>
 <div class="test_wrap"><h3>Visual</h3><div id="eot0" class="visual"></div><div class="vis_test"><style>
 @font-face {
-	font-family: 'Windsong_eot';
-	src: url('caniuse_files/Windsong-webfont.eot');
+  font-family: 'Windsong_eot';
+  src: url('caniuse_files/Windsong-webfont.eot');
 }
 
 #windsong_eot {
-	font: 18px Windsong_eot;
-	margin: 5px;
+  font: 18px Windsong_eot;
+  margin: 5px;
 }
 </style>
 <p id="windsong_eot">Windsong font</p>

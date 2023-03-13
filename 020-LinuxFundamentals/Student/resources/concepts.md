@@ -30,7 +30,7 @@ In addition, Inodes are also independent of file names. So this means you can co
 
 ## File descriptors, pipes and redirects
 
-This section explains how the input and output directing features of the GNU/Linux system work. 
+This section explains how the input and output directing features of the GNU/Linux system work.
 
 A command always generates output that can be incorporated by another command, which generates other output that can be incorporated by another command, and so on until the output of the commands appears in a specific location (on the screen or within a file).
 
@@ -48,14 +48,14 @@ There are 3 file descriptors that show how files can be accessed, they are:
 * **Standard Error (stderr)**: The Standard Error is also a text output stream, but used to display error messages.
 When your command fails, it generates an error which is displayed by the Standard Error output, linked to the terminal and is called **File Descriptor 2**.
 
-### Pipes 
+### Pipes
 
 Pipe allows you to join two or more commands executed in sequence.
 
 Example:
 
 ```bash
-ls -l /etc | less 
+ls -l /etc | less
 ```
 
 If more than two commands are used with redirection, we name the resulting operation a **Pipeline**.
@@ -82,7 +82,7 @@ Outputs that are redirected to a file are not displayed on the standard output (
 
 * **Redirect Standard Input**
 
-The command instead of reading information from a keyboard, it reads from a file. 
+The command instead of reading information from a keyboard, it reads from a file.
 
 Redirect the file into a command
 

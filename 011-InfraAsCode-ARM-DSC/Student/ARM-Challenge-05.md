@@ -2,7 +2,7 @@
 
 [< Previous Challenge](./ARM-Challenge-04.md) - [Home](../readme.md) - [Next Challenge>](./ARM-Challenge-06.md)
 
-## Introduction 
+## Introduction
 
 In this challenge, you will put all the pieces together and extend your ARM template to deploy a Virtual Machine in Azure.
 

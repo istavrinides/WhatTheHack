@@ -5,7 +5,7 @@ declare myUrl="http://mon19webscalesetlb.eastus.cloudapp.azure.com"
 # how many times are we hitting it?
 declare numberOfHits=100
 
-# output what we're going to do 
+# output what we're going to do
 echo "Using url: $myUrl"
 echo "Hitting it $numberOfHits times"
 

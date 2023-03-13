@@ -9,12 +9,12 @@
 
 In this challenge you will troubleshoot queries in stuck, not running queries and will optimize query executions.
 
-You can find all the files for this challnge into the Zip file provided by your coach at this path: _./Resources/Challenge-03/_ 
+You can find all the files for this challnge into the Zip file provided by your coach at this path: _./Resources/Challenge-03/_
 
 ## Description
 
 **Learning objectives:**
-- Understand locking behavior 
+- Understand locking behavior
 - Understand concurrency behavior
 - Optimize query with result set caching and materialized views
 
@@ -28,9 +28,9 @@ Investigate why the transaction is not completing in the expected timeframe and 
 
 ### Concurrency limits
 
-_Before run this excercise please scale your DWH to DW100c using the Azure Portal._ 
+_Before run this excercise please scale your DWH to DW100c using the Azure Portal._
 
-Many users are complaining their reporting queries (very simple SELECT T-SQL command) are not completing in the expected period. 
+Many users are complaining their reporting queries (very simple SELECT T-SQL command) are not completing in the expected period.
 Investigate why their SELECT commands are taking so long and fix it.
   - Execute [C3_B_Simulate_ Queries.ps1](./Resources/Challenge-03/C3_B_Simulate_Queries.ps1?raw=true) powershell script available at this path **./Resources/Challenge-03/C3_B_Simulate_ Queries.ps1**"_ and provide required parameters. **Do not close the powershell session until you complete the excercise**
   - Open and execute [C3_2_Concurrency.sql](./Resources/Challenge-03/C3_2_Concurrency.sql?raw=true) using your preferred editor and identify why it is taking so long to complete.
@@ -48,7 +48,7 @@ Is there a way to speed-up the execution ?
 
 ## Success Criteria
 
-- Understanding locking behavior and transactions in Dedicated Sql Pool 
+- Understanding locking behavior and transactions in Dedicated Sql Pool
 - Recognize if a query is blocked by other transaction or due to a lack in system resources
 - Manage Result Set Cache and Materialized view to improve performance
 
@@ -57,5 +57,5 @@ Is there a way to speed-up the execution ?
 - [Transactions (Azure Synapse Analytics)](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/transactions-sql-data-warehouse?view=aps-pdw-2016-au7)
 - [Who is blocking me ?](https://techcommunity.microsoft.com/t5/azure-synapse-analytics-blog/who-is-blocking-me/ba-p/1431932)
 - [Memory and concurrency limits](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/memory-concurrency-limits)
-- [Performance tuning with result set caching](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/performance-tuning-result-set-caching) 
+- [Performance tuning with result set caching](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/performance-tuning-result-set-caching)
 - [Performance tune with materialized views](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/performance-tuning-materialized-views)

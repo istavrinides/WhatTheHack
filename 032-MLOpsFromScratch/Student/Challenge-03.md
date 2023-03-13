@@ -12,11 +12,11 @@ Use this challenge to perform tasks to confirm data has been extracted from sour
 
 ## Success criteria
 
-- Count the number of CSV files extracted into `Data/` folder using a `Python script` in Azure DevOps pipeline. (This can be the same script used in [Challenge-01](./Challenge-01)).    
+- Count the number of CSV files extracted into `Data/` folder using a `Python script` in Azure DevOps pipeline. (This can be the same script used in [Challenge-01](./Challenge-01)).
 - Visualizing and exploring the data (using a python visualization library like `matplotlib` or `seaborn` or `plotly`).
 
 ## Tips
-  
+
 - Use the `Python Script` task in your `Build` pipeline to run the unit test.
 
 ## Learning resources

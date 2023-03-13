@@ -366,7 +366,7 @@ $align-class-breakpoints:
     .no-bullet {
       list-style-type: none;
       margin-#{$default-float}: $list-side-margin-no-bullet;
-      
+
       li {
         ul,
         ol {

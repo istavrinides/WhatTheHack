@@ -48,7 +48,7 @@
           ![publishPipelineArtifact](../images/Challenge-02/publishPipelineArtifact.png)
 
         **NOTE:** Alternatively, you have more Artifact options such as Model Artifact that you could use if you want to go that route.
-    
+
 **Complete CI pipeline**
 
 ![ciPipeline](../images/Challenge-02/ciPipeline.png)

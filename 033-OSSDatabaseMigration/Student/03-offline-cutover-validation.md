@@ -3,7 +3,7 @@
 [< Previous Challenge](./02-offline-migration.md) - **[Home](../README.md)** - [Next Challenge >](./04-online-migration.md)
 
 ## Introduction
- Reconfigure the application to use the appropriate connection string that uses Azure DB and validate that the application is working. You have to do this by redeploying the Pizzeria container application(s). 
+ Reconfigure the application to use the appropriate connection string that uses Azure DB and validate that the application is working. You have to do this by redeploying the Pizzeria container application(s).
 
 ## Description
 You will reconfigure the application to use a connection string that points to the Azure DB for PostgreSQL/MySQL. You will need to update the `ContosoPizza/values-mysql.yaml`, `ContosoPizza/values-postgresql.yaml` and/or `ContosoPizza/values-oracle.yaml` values file(s) with the updated values for dataSourceURL, dataSourceUser and dataSourcePassword using the appropriate values for Azure DB for PostgreSQL/MySQL:
@@ -55,7 +55,7 @@ Status field changes from "Terminating" to "ContainerCreating" and then to "Runn
 
 * Oracle:
 
-You will need to change the database type in the `values-oracle.yaml` file from "oracle" to "postgres" before you run these steps. 
+You will need to change the database type in the `values-oracle.yaml` file from "oracle" to "postgres" before you run these steps.
 
 ```bash
 
@@ -75,7 +75,7 @@ Status field changes from "Terminating" to "ContainerCreating" and then to "Runn
 ## Success Criteria
 
 * You have validated that the Pizzeria applications (one for PostgreSQL and one for MySQL) are working with the configuration change
-* You can update the value of column  "name" in table "ingredient" for any row. Change the name from "Onion" to "Shallot" and on the app, click on 
+* You can update the value of column  "name" in table "ingredient" for any row. Change the name from "Onion" to "Shallot" and on the app, click on
 start building any pizza, and on the next page, click "Veggies" and at the lower left corner, see that "Shallot" appears with the picture of the onion.
 
 ## Hints
@@ -104,7 +104,7 @@ and also
 ```
 You may find it helpful to send the output of the above logs command to a file so you can grep it or use an editor to search it. Your problem may be identified by "Error" or "Exception".
 
-* If you find an error in the JDBC connection string, you will have to repeat the steps to do a helm upgrade/kubectl rollout restart steps above for the application. 
+* If you find an error in the JDBC connection string, you will have to repeat the steps to do a helm upgrade/kubectl rollout restart steps above for the application.
 
 ## References
 

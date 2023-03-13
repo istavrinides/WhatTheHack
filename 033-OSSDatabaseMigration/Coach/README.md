@@ -4,7 +4,7 @@ This hack includes a optional [lecture presentation](Coach/OSS-DB-What-the-Hack-
 
 The tips in this coach's guide are intended to help you guide the attendees as they go through the challenges. You should not immediately give them out. It is okay for the attendees to struggle for a bit before arriving at the solution. This is often the best way for them to learn. Use your best judgement for deciding when to give them additional help.
 
-You will need to zip up the files in the Resources directory under the Student directory and place it in the Files section of the General Teams channel. 
+You will need to zip up the files in the Resources directory under the Student directory and place it in the Files section of the General Teams channel.
 
 ## Challenge tips
 - Challenge 0: **[Pre-requisites - Setup Environment and Prerequisites!](00-prereqs.md)**
@@ -15,7 +15,7 @@ You will need to zip up the files in the Resources directory under the Student d
    - Dump the "on-prem" databases, create databases for Azure DB for PostgreSQL/MySQL and restore them
 - Challenge 3: **[Offline Cutover and Validation](03-offline-cutover-validation.md)**
    - Reconfigure the application to use the appropriate connection string and validate that the application is working
-- Challenge 4: **[Online Migration](04-online-migration.md)** 
+- Challenge 4: **[Online Migration](04-online-migration.md)**
    - Create new databases in Azure DB for PostgreSQL/MySQL and use the Azure Database Migration Service to replicate the data from the on-prem databases
 - Challenge 5: **[Online Cutover and Validation](05-online-cutover-validation.md)**
    - Reconfigure the application to use the appropriate connection string for Azure DB for PostgreSQL/MySQL

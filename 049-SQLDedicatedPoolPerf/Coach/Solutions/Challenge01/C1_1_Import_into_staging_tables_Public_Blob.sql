@@ -33,7 +33,7 @@ All tables will be defined as ROUND ROBIN (To avoid overhead due to tuple mover 
 ****************************************************************************************/
 
 CREATE TABLE [Staging].[DimAccount]
-(	
+(
 	[AccountKey] [int] NOT NULL,
 	[ParentAccountKey] [int] NULL,
 	[AccountCodeAlternateKey] [int] NULL,
@@ -536,7 +536,7 @@ STEP 2 of 2 - How to ingest data using COPY INTO
 ****************************************************************************************/
 
 
-COPY INTO Staging.DimAccount 
+COPY INTO Staging.DimAccount
 FROM 'https://YourStorageAccountName.blob.core.windows.net/ContainerName/SubFolder/DimAccount/'
 WITH(FILE_TYPE = 'PARQUET')
 GO

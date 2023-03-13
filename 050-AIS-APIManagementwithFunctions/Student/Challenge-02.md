@@ -8,7 +8,7 @@
 - You should have completed Challenge 01
 
 ## Introduction
-Now that you've created your Bicep templates, you would like to create a CI/CD pipeline to deploy these templates to your Azure environment. 
+Now that you've created your Bicep templates, you would like to create a CI/CD pipeline to deploy these templates to your Azure environment.
 
 ## Description
 - Create a repository and upload your Bicep templates to the main branch.

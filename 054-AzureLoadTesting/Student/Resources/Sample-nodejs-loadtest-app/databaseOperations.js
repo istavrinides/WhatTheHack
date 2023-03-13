@@ -4,7 +4,7 @@ var obj = JSON.parse(fs.readFileSync('connectionData.json', 'utf8'));
 var DbConnection = require('./db');
 
 var connectionString = "mongodb://account:key@account.documents.azure.com:10255/?ssl=true";
-var connectionString = process.env.CONNECTION_STRING; 
+var connectionString = process.env.CONNECTION_STRING;
 var stringSplit1 = connectionString.split("://")[1];
 var stringSplit2 = stringSplit1.split('@');
 var userNamePassword = stringSplit2[0];
@@ -17,7 +17,7 @@ connectionString = ("mongodb://" + encodeURIComponent(userName) + ":" + encodeUR
 
 
 module.exports = {
-    queryCount: function (callback, errorCallback, retry = 2) { 
+    queryCount: function (callback, errorCallback, retry = 2) {
         DbConnection.Get()
         .then((mongoClient) => {
             // Find some documents
@@ -30,7 +30,7 @@ module.exports = {
                         return;
                     } else {
                         errorCallback(err)
-                    } 
+                    }
                 } else {
                     console.log(`Found ${count} records`);
                     callback(count);
@@ -40,7 +40,7 @@ module.exports = {
     },
 
     addRecord: function (pageName, callback, errorCallback, retry = 2) {
-        
+
         DbConnection.Get()
         .then((mongoClient) => {
             var milliseconds = (new Date).getTime().toString();

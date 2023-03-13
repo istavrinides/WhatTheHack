@@ -14,11 +14,11 @@ resource plan 'Microsoft.Web/serverfarms@2020-09-01' = {
   name: 'plan-${resourceSuffix}'
   location: location
   sku: {
-    name: 'P1V2' 
+    name: 'P1V2'
   }
   properties: {
     reserved: true // makes this a Linux plan
-  } 
+  }
 }
 
 resource webApp 'Microsoft.Web/sites@2020-09-01' = {

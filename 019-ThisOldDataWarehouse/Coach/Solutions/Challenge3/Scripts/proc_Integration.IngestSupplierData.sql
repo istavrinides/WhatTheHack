@@ -1,4 +1,4 @@
-CREATE  Procedure Integration.IngestSupplierData 
+CREATE  Procedure Integration.IngestSupplierData
 AS
 BEGIN
 

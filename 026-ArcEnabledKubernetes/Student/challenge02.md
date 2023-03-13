@@ -5,7 +5,7 @@
 
 ### Introduction
 
-In this challenge lets built another cluster that will act has a remote cluster that will be Arc enabled. The cluster is going to be deployed locally via minikube. 
+In this challenge lets built another cluster that will act has a remote cluster that will be Arc enabled. The cluster is going to be deployed locally via minikube.
 
 Once this challenge is complete, we will have a 2nd cluster deployed and ready to be managed by Azure Arc enabled Kubernetes. With minikube cluster deployed, we will be able to manage the cluster centrally via the Azure portal.
 
@@ -13,7 +13,7 @@ Once this challenge is complete, we will have a 2nd cluster deployed and ready t
 
 ### Challenge
 
-1. Deploy a minikube cluster locally 
+1. Deploy a minikube cluster locally
     *  Run ```kubectl get nodes -o wide``` with the ```kubectl``` context being that of a newly minikube cluster to verify cluster is ready to be Arc enabled.
 2. If minikube cluster is not able to be deployed:
     * Deploy an Azure Kubernetes Service (AKS) cluster as a **remote** cluster that will be Arc enabled.

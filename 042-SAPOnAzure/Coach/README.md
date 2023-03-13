@@ -6,7 +6,7 @@ Welcome to the coach's guide for the SAP on Azure What The Hack. Here you will f
 ## Coach's Guides
 ### Challenges
 
-- Challenge 0: [Pre-requisites - Ready, Set, GO!](./00-prereqs.md) 
+- Challenge 0: [Pre-requisites - Ready, Set, GO!](./00-prereqs.md)
 
 - Challenge 1: [Rapid SAP Deployment](./01-SAP-Auto-Deployment.md)
 
@@ -20,5 +20,5 @@ Welcome to the coach's guide for the SAP on Azure What The Hack. Here you will f
 
 - Challenge 6: [Application aware maintenance (Start/Stop/Scale)](./06-Start-Stop-Automation.md)
 
-- Challenge 7: [Self-service analytical dashboard using data from SAP S/4 Hana system](./07-PowerQuery.md) 
+- Challenge 7: [Self-service analytical dashboard using data from SAP S/4 Hana system](./07-PowerQuery.md)
 

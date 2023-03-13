@@ -197,14 +197,14 @@ $orbit-timer-hide-for-small: true !default;
       }
 
       .orbit-timer {
-        
+
         position: absolute;
         top: 12px;
         #{$opposite-direction}: 10px;
         height: 6px;
         width: 100px;
         z-index: 10;
-        
+
 
         .orbit-progress {
           @if $orbit-timer-show-progress-bar {
@@ -215,7 +215,7 @@ $orbit-timer-hide-for-small: true !default;
             position: relative;
             right: 20px;
             top: 5px;
-            
+
           }
         }
 

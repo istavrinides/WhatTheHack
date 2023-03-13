@@ -125,12 +125,12 @@ namespace PictureBot
 
         /// <summary>
         /// An IntentDisabler that's registered here will fire BEFORE the intent recognizer code
-        /// is run, and will have the oppertunity to prevent the recognizer from running. 
-        /// 
-        /// As soon as one function returns 'Do Not Run' no further methods will be called. 
-        /// 
-        /// Enabled/Disabled methods that are registered are run in the order registered. 
-        /// </summary>        
+        /// is run, and will have the oppertunity to prevent the recognizer from running.
+        ///
+        /// As soon as one function returns 'Do Not Run' no further methods will be called.
+        ///
+        /// Enabled/Disabled methods that are registered are run in the order registered.
+        /// </summary>
         public IntentRecognizerMiddleware OnEnabled(IntentDisabler preCondition)
         {
             if (preCondition == null)
@@ -155,7 +155,7 @@ namespace PictureBot
         }
 
         /// <summary>
-        /// Filter method are run in REVERSE order registered. That is, they are run from "last -> first". 
+        /// Filter method are run in REVERSE order registered. That is, they are run from "last -> first".
         /// </summary>
         public IntentRecognizerMiddleware OnFilter(IntentResultMutator postCondition)
         {

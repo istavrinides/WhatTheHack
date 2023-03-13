@@ -45,7 +45,7 @@ namespace PictureBot.Topics
                     }
                     break;
                 case ActivityTypes.Message:
-                    // greet on first message if we haven't already 
+                    // greet on first message if we haven't already
                     if (!Greeted)
                     {
                         await RootResponses.ReplyWithGreeting(context);
@@ -116,7 +116,7 @@ namespace PictureBot.Topics
                                     await RootResponses.ReplyWithLuisScore(context, topIntent.Value.intent, topIntent.Value.score);
                                     break;
                                 case "SearchPics":
-                                    // Check if LUIS has identified the search term that we should look for.  
+                                    // Check if LUIS has identified the search term that we should look for.
                                     var entity = result?.Entities;
                                     var obj = JObject.Parse(JsonConvert.SerializeObject(entity)).SelectToken("facet");
                                     // if no entities are picked up on by LUIS, go through SearchTopic
@@ -155,7 +155,7 @@ namespace PictureBot.Topics
             return true;
         }
 
-        // below tasks are required to process the search text and return the results     
+        // below tasks are required to process the search text and return the results
         public async Task<bool> ProceedWithSearchAsync(ITurnContext context, string facet)
         {
             var userState = context.GetUserState<UserData>();
@@ -170,7 +170,7 @@ namespace PictureBot.Topics
             ISearchIndexClient indexClientForQueries = CreateSearchIndexClient();
 
             // For more examples of calling search with SearchParameters, see
-            // https://github.com/Azure-Samples/search-dotnet-getting-started/blob/master/DotNetHowTo/DotNetHowTo/Program.cs.  
+            // https://github.com/Azure-Samples/search-dotnet-getting-started/blob/master/DotNetHowTo/DotNetHowTo/Program.cs.
 
             DocumentSearchResult results = await indexClientForQueries.Documents.SearchAsync(facet);
             await SendResultsAsync(context, results);

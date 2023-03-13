@@ -33,7 +33,7 @@ This hack will help you learn:
  - [Challenge 5](./Student/challenge05.md) - Enable GitOps
  - [Challenge 6](./Student/challenge06.md) - Enable Azure Policy
  - [Challenge 7](./Student/challenge07.md) - Manage remote cluster via Azure Policy
- 
+
 
 ## Prerequisites
 The prerequisites for the hack are covered in [challenge 0](./Student/challenge00.md).
@@ -48,4 +48,4 @@ The prerequisites for the hack are covered in [challenge 0](./Student/challenge0
 - Dale Kirby
 - Lior Karmat
 - Ali Hussain
-- Laura Nicolas 
+- Laura Nicolas

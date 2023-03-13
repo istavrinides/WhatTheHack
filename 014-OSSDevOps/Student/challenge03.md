@@ -1,4 +1,4 @@
-# What the Hack: OSS DevOps 
+# What the Hack: OSS DevOps
 
 ## Challenge 3 - GitHub Repositories: Introduction
 
@@ -21,7 +21,7 @@ Now that we have a basic understanding of version control and Git, lets get some
 4. Commit the files to your GitHub repository using VS Code or your favorite Git client.
 
    **Be sure to include a # sign followed by the issue number for this challenge to the Git commit message.**
-   
+
    For example: lets say you want to use the commit comment `my first commit` and your issue number is 55 your, your commit message should look like this  `my first commit #55`.
 
    ([hint](https://help.github.com/en/articles/adding-a-file-to-a-repository-using-the-command-line))

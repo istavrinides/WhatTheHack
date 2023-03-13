@@ -6,7 +6,7 @@
 
 Now that the application is in great shape and the end users get a great experience, Stuff and More Stuff Co. would like to focus on making sure their deployment is secure and if any issues arise, they can know about them and are able to mitigate.
 
-## Description 
+## Description
 
 You should define and present how can Stuff and More Stuff Co. leverage Azure Cosmos DB features and integration points with other Azure Services to enhance their security posture, ensure increased availability, prevent data loss and increase the solution's performance.
 

@@ -25,7 +25,7 @@ param sku string = 'Developer'
 param skuCount int = 1
 
 @description('Location for all resources.')
-param location string 
+param location string
 
 param resourceTags object
 
@@ -49,14 +49,14 @@ resource apiManagementService 'Microsoft.ApiManagement/service@2021-08-01' = {
 
 resource apiManagementServiceLoggers 'Microsoft.ApiManagement/service/loggers@2021-08-01' = {
   parent: apiManagementService
-  name: 'apimlogger' 
+  name: 'apimlogger'
   properties: {
     resourceId: appInsightsResourceId
     loggerType: 'applicationInsights'
     credentials: {
       instrumentationKey: appInsightsInstrumentationKey
     }
-    isBuffered: true 
-    
+    isBuffered: true
+
   }
 }

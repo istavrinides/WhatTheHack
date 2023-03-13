@@ -56,13 +56,13 @@ public class DevToolsIndexModel : PageModel
                     };
 
 
-        //get a new token for given MSI 
+        //get a new token for given MSI
         //we are leveraging on defined MSI in paramaters for cosmosdb
         var accessToken = await _azureLoadTestingRunHelper.GetDefaultAzureTokenAsync(
             _configuration["AZURE_CLIENT_ID"],
             ALT_TOKEN_ENDPOINT
             );
-        
+
         _logger.LogDebug("ALT data plane:" + _configuration["LOADT_DATA_PLANE_ENDPOINT"]);
         _logger.LogDebug("ALT test id:" + _configuration["LOADT_TEST_ID"]);
 
@@ -109,13 +109,13 @@ public class DevToolsIndexModel : PageModel
     {
         _logger.LogDebug("ALT data plane:" + _configuration["LOADT_DATA_PLANE_ENDPOINT"]);
 
-        //get a new token for given MSI 
+        //get a new token for given MSI
         //we are leveraging on defined MSI in paramaters for cosmosdb
         var accessToken = await _azureLoadTestingRunHelper.GetDefaultAzureTokenAsync(
             _configuration["AZURE_CLIENT_ID"],
             ALT_TOKEN_ENDPOINT
             );
-        
+
         string lastTestRunId;
 
         _memoryCache.TryGetValue(ALT_CACHE_LAST_TEST_RUN, out lastTestRunId);

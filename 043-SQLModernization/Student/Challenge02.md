@@ -4,11 +4,11 @@
 
 ## Introduction
 
-Your team is wondering what options are available to leverage automation for the migration of SQL Server infrastructure to the cloud. In doing so they would be able to accelerate the migration at scale and take advantage of intelligence learnings from the field. 
+Your team is wondering what options are available to leverage automation for the migration of SQL Server infrastructure to the cloud. In doing so they would be able to accelerate the migration at scale and take advantage of intelligence learnings from the field.
 
 ## Description
 
-The objective of this challenge is to migrate TPCC (benchmark database - http://www.tpc.org/tpcc/) to Azure. The TPCC database is used as a benchmark for a typical OLTP workloads. 
+The objective of this challenge is to migrate TPCC (benchmark database - http://www.tpc.org/tpcc/) to Azure. The TPCC database is used as a benchmark for a typical OLTP workloads.
 
 Your company has provided the following requirements and guidelines:
 
@@ -29,8 +29,8 @@ Your company has provided the following requirements and guidelines:
 * [Tutorial 1](https://docs.microsoft.com/en-us/azure/migrate/tutorial-discover-physical)
 * [Tutorial 2](https://docs.microsoft.com/en-us/azure/migrate/tutorial-assess-physical)
 * [Tutorial 3](https://docs.microsoft.com/en-us/azure/migrate/tutorial-migrate-physical-virtual-machines)
-* [HammerDB automation tool](https://www.hammerdb.com/) 
-* [TPCC benchmark database](http://www.tpc.org/tpcc/) 
+* [HammerDB automation tool](https://www.hammerdb.com/)
+* [TPCC benchmark database](http://www.tpc.org/tpcc/)
 
 ## Advanced Challenges (Optional)
 

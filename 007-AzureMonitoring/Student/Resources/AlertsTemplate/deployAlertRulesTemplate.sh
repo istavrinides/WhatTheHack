@@ -6,8 +6,8 @@
 
 # Step 0: Test for the 'jq' program which will be needed
 declare jqPath=$(which jq)
-if [ ! -f $jqPath ] 
-then 
+if [ ! -f $jqPath ]
+then
   echo 'This script requires that the "jq" utility is installed and on your path'
   exit 1
 fi

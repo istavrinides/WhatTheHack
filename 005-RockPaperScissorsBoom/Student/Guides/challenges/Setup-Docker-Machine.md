@@ -21,12 +21,12 @@ With this first challenge you will be able to setup the environment required to 
 
 1. [Fork](https://help.github.com/articles/fork-a-repo/) this repo in your GitHub account. We want you to create your own fork so that if you have suggestions or fixes, you can issue a pull-request and submit them back to the main repo.
 1. [Clone](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) your repo in [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview)
-    * cloning the entire WhatTheHack repo will take several minutes. 
+    * cloning the entire WhatTheHack repo will take several minutes.
     * Make sure you clone your OWN fork of the repo, not the Microsoft/WhatTheHack repo.
     * We recommend using [Bash (Linux) mode](https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart) in the cloud shell for this Hack
     * Have limited screen real estate? Try the [full screen shell](https://shell.azure.com/)
 1. Setup an Azure Docker-machine to be used through your Azure Cloud Shell ([instructions here](./helpers/CreateDockerMachine.md)).
-    * Docker-machine makes it easy to set up a Docker host in Azure. We will initially use docker for deploying the Rock Paper Scissors Boom app. 
+    * Docker-machine makes it easy to set up a Docker host in Azure. We will initially use docker for deploying the Rock Paper Scissors Boom app.
 
 ### Optional Challenges
 1. Create a new Private project in [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/organizations/projects/create-project?view=vsts&tabs=new-nav) (with Git and Agile under advanced options)

@@ -20,7 +20,7 @@ The goal of this challenge is to demonstrate how you can enable a monitoring sol
 
 ### Cost Optimization and Session Host scaling
 
-- Assume each region starts seeing staff logon between 8am and 9:30am, there is no sudden spike in logons. The office is closed by 7pm.  
+- Assume each region starts seeing staff logon between 8am and 9:30am, there is no sudden spike in logons. The office is closed by 7pm.
 - Users can be forcibly logged off after receiving a 5 minute warning if they are still connected to an active host
 - Approximately 5% of users in each region may attempt to connect from home each night and AVD should be available to them off-peak across each region and meets the cost saving targets set by the company
 - AVD Session Hosts should be gradually powered on as morning peak demand increases and existing hosts should be filled up before additional VMs are powered on to reduce excess capacity.

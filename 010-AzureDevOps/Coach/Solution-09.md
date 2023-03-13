@@ -1,4 +1,4 @@
-# Challenge 09 - Azure Pipelines: OSS Scanning with WhiteSource Bolt - Coach's Guide 
+# Challenge 09 - Azure Pipelines: OSS Scanning with WhiteSource Bolt - Coach's Guide
 
 [< Previous Solution](./Solution-08.md) - **[Home](./README.md)**
 

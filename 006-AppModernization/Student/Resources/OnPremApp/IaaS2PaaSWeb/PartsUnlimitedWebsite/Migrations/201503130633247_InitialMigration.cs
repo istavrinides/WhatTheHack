@@ -18,7 +18,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         NormalizedName = c.String()
                     })
                 .PrimaryKey("PK_AspNetRoles", t => t.Id);
-            
+
             migrationBuilder.CreateTable("AspNetRoleClaims",
                 c => new
                     {
@@ -28,7 +28,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         RoleId = c.String()
                     })
                 .PrimaryKey("PK_AspNetRoleClaims", t => t.Id);
-            
+
             migrationBuilder.CreateTable("AspNetUserClaims",
                 c => new
                     {
@@ -38,7 +38,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         UserId = c.String()
                     })
                 .PrimaryKey("PK_AspNetUserClaims", t => t.Id);
-            
+
             migrationBuilder.CreateTable("AspNetUserLogins",
                 c => new
                     {
@@ -48,7 +48,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         UserId = c.String()
                     })
                 .PrimaryKey("PK_AspNetUserLogins", t => new { t.LoginProvider, t.ProviderKey });
-            
+
             migrationBuilder.CreateTable("AspNetUserRoles",
                 c => new
                     {
@@ -56,7 +56,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         RoleId = c.String()
                     })
                 .PrimaryKey("PK_AspNetUserRoles", t => new { t.UserId, t.RoleId });
-            
+
             migrationBuilder.CreateTable("AspNetUsers",
                 c => new
                     {
@@ -78,7 +78,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         UserName = c.String()
                     })
                 .PrimaryKey("PK_AspNetUsers", t => t.Id);
-            
+
             migrationBuilder.CreateTable("CartItem",
                 c => new
                     {
@@ -89,7 +89,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         ProductId = c.Int(nullable: false)
                     })
                 .PrimaryKey("PK_CartItem", t => t.CartItemId);
-            
+
             migrationBuilder.CreateTable("Category",
                 c => new
                     {
@@ -98,7 +98,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         Name = c.String()
                     })
                 .PrimaryKey("PK_Category", t => t.CategoryId);
-            
+
             migrationBuilder.CreateTable("Order",
                 c => new
                     {
@@ -116,7 +116,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         Username = c.String()
                     })
                 .PrimaryKey("PK_Order", t => t.OrderId);
-            
+
             migrationBuilder.CreateTable("OrderDetail",
                 c => new
                     {
@@ -127,7 +127,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         ProductId = c.Int(nullable: false)
                     })
                 .PrimaryKey("PK_OrderDetail", t => t.OrderDetailId);
-            
+
             migrationBuilder.CreateTable("Product",
                 c => new
                     {
@@ -140,7 +140,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         CategoryId = c.Int(nullable: false)
                     })
                 .PrimaryKey("PK_Product", t => t.ProductId);
-            
+
             migrationBuilder.CreateTable("Raincheck",
                 c => new
                     {
@@ -152,7 +152,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         ProductId = c.Int(nullable: false)
                     })
                 .PrimaryKey("PK_Raincheck", t => t.RaincheckId);
-            
+
             migrationBuilder.CreateTable("Store",
                 c => new
                     {
@@ -160,7 +160,7 @@ namespace PartsUnlimitedWebsite.Migrations
                         Name = c.String()
                     })
                 .PrimaryKey("PK_Store", t => t.StoreId);
-            
+
             migrationBuilder.AddForeignKey(
                 "AspNetRoleClaims",
                 "FK_AspNetRoleClaims_AspNetRoles_RoleId",
@@ -168,7 +168,7 @@ namespace PartsUnlimitedWebsite.Migrations
                 "AspNetRoles",
                 new[] { "Id" },
                 cascadeDelete: false);
-            
+
             migrationBuilder.AddForeignKey(
                 "AspNetUserClaims",
                 "FK_AspNetUserClaims_AspNetUsers_UserId",
@@ -176,7 +176,7 @@ namespace PartsUnlimitedWebsite.Migrations
                 "AspNetUsers",
                 new[] { "Id" },
                 cascadeDelete: false);
-            
+
             migrationBuilder.AddForeignKey(
                 "AspNetUserLogins",
                 "FK_AspNetUserLogins_AspNetUsers_UserId",
@@ -184,7 +184,7 @@ namespace PartsUnlimitedWebsite.Migrations
                 "AspNetUsers",
                 new[] { "Id" },
                 cascadeDelete: false);
-            
+
             migrationBuilder.AddForeignKey(
                 "CartItem",
                 "FK_CartItem_Product_ProductId",
@@ -192,7 +192,7 @@ namespace PartsUnlimitedWebsite.Migrations
                 "Product",
                 new[] { "ProductId" },
                 cascadeDelete: false);
-            
+
             migrationBuilder.AddForeignKey(
                 "OrderDetail",
                 "FK_OrderDetail_Order_OrderId",
@@ -200,7 +200,7 @@ namespace PartsUnlimitedWebsite.Migrations
                 "Order",
                 new[] { "OrderId" },
                 cascadeDelete: false);
-            
+
             migrationBuilder.AddForeignKey(
                 "OrderDetail",
                 "FK_OrderDetail_Product_ProductId",
@@ -208,7 +208,7 @@ namespace PartsUnlimitedWebsite.Migrations
                 "Product",
                 new[] { "ProductId" },
                 cascadeDelete: false);
-            
+
             migrationBuilder.AddForeignKey(
                 "Product",
                 "FK_Product_Category_CategoryId",
@@ -216,7 +216,7 @@ namespace PartsUnlimitedWebsite.Migrations
                 "Category",
                 new[] { "CategoryId" },
                 cascadeDelete: false);
-            
+
             migrationBuilder.AddForeignKey(
                 "Raincheck",
                 "FK_Raincheck_Store_StoreId",
@@ -224,7 +224,7 @@ namespace PartsUnlimitedWebsite.Migrations
                 "Store",
                 new[] { "StoreId" },
                 cascadeDelete: false);
-            
+
             migrationBuilder.AddForeignKey(
                 "Raincheck",
                 "FK_Raincheck_Product_ProductId",
@@ -233,51 +233,51 @@ namespace PartsUnlimitedWebsite.Migrations
                 new[] { "ProductId" },
                 cascadeDelete: false);
         }
-        
+
         public override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey("AspNetRoleClaims", "FK_AspNetRoleClaims_AspNetRoles_RoleId");
-            
+
             migrationBuilder.DropForeignKey("AspNetUserClaims", "FK_AspNetUserClaims_AspNetUsers_UserId");
-            
+
             migrationBuilder.DropForeignKey("AspNetUserLogins", "FK_AspNetUserLogins_AspNetUsers_UserId");
-            
+
             migrationBuilder.DropForeignKey("Product", "FK_Product_Category_CategoryId");
-            
+
             migrationBuilder.DropForeignKey("OrderDetail", "FK_OrderDetail_Order_OrderId");
-            
+
             migrationBuilder.DropForeignKey("CartItem", "FK_CartItem_Product_ProductId");
-            
+
             migrationBuilder.DropForeignKey("OrderDetail", "FK_OrderDetail_Product_ProductId");
-            
+
             migrationBuilder.DropForeignKey("Raincheck", "FK_Raincheck_Product_ProductId");
-            
+
             migrationBuilder.DropForeignKey("Raincheck", "FK_Raincheck_Store_StoreId");
-            
+
             migrationBuilder.DropTable("AspNetRoles");
-            
+
             migrationBuilder.DropTable("AspNetRoleClaims");
-            
+
             migrationBuilder.DropTable("AspNetUserClaims");
-            
+
             migrationBuilder.DropTable("AspNetUserLogins");
-            
+
             migrationBuilder.DropTable("AspNetUserRoles");
-            
+
             migrationBuilder.DropTable("AspNetUsers");
-            
+
             migrationBuilder.DropTable("CartItem");
-            
+
             migrationBuilder.DropTable("Category");
-            
+
             migrationBuilder.DropTable("Order");
-            
+
             migrationBuilder.DropTable("OrderDetail");
-            
+
             migrationBuilder.DropTable("Product");
-            
+
             migrationBuilder.DropTable("Raincheck");
-            
+
             migrationBuilder.DropTable("Store");
         }
     }

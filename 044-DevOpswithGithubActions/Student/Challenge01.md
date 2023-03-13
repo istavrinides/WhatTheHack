@@ -5,7 +5,7 @@
 
 ## Introduction
 
-Before Starting with Github Actions Workflow first let us understand our environment and proceed task by task. 
+Before Starting with Github Actions Workflow first let us understand our environment and proceed task by task.
 
 ## Description
 
@@ -16,12 +16,12 @@ Before Starting with Github Actions Workflow first let us understand our environ
 - Ensure you have an Azure subscription
 - Collobarate with your team to define an approach to start with
 - Demonstrate your understanding to your Coach and keep in mind the Success Criteria below
-   
+
 
 ## Success Criteria
 
 1. You should have code in your Reposistory
-2. You should be able to show your Azure subscription 
+2. You should be able to show your Azure subscription
 3. You should be able to demonstrate your understanding of the solution blueprint to your coach
 
 ## Learning Resources

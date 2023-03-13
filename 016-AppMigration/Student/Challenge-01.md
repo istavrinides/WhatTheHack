@@ -6,7 +6,7 @@ The goals of this lab is to get you familiar with the Azure environment, portal 
 
 - Experience Creating a Virtual Machine
 - Use the Azure Cloud Shell to create resources
-- Migrate a Linux Mongo DB to Azure Cosmos DB 
+- Migrate a Linux Mongo DB to Azure Cosmos DB
 - Migrate a SQL Server 2017 DB to Azure SQL Database
 
 ## Setup Environment
@@ -21,16 +21,16 @@ You will need a few things in your environment setup for this lab.
   - A public Mongo DB will be made available to you to access remotely.
 - An Azure Cosmos DB instance
   - You will create this as part of the lab
-- The Microsoft Data Migration Assistant 
+- The Microsoft Data Migration Assistant
   - You will install this as part of the SQL VM creation
 - An Azure Database Migration Service
-  - You will create this as part of the setup 
+  - You will create this as part of the setup
 
 
 
 ### Setup 0 - Create a unique prefix
 
-In many cases you need to create a resource that has a unique name.  The easiest way to do this is to create a prefix that you can append to the front of the standard resource names.    As an exmple, Bill Smith needs a unique prefix so he decided to use his name and the first three digits of his phone number.  So, his prefix is 'BS336'.  Any resources that need to be unique he can now put this in front of the standard name and it should be unique.  
+In many cases you need to create a resource that has a unique name.  The easiest way to do this is to create a prefix that you can append to the front of the standard resource names.    As an exmple, Bill Smith needs a unique prefix so he decided to use his name and the first three digits of his phone number.  So, his prefix is 'BS336'.  Any resources that need to be unique he can now put this in front of the standard name and it should be unique.
 
 One thing to consider is that some resources have a limit to how many characters are in a name.  So, keeping your prefix to under 6 characters.  Come up with a prefix you can use for all the labs.
 
@@ -116,7 +116,7 @@ Follow these steps:
 1. Wait for the shell to start.
 1. Make sure you are in  `bash` from the dropdown of the Cloud Shell window.  ![CreateBash4](images/CreateBash4.png)
 1. First off create 3 Bash variables by typing the following in the shell and press enter:
-  * Resource Group Name - Make sure to set this to YOUR resource group 1 name.  
+  * Resource Group Name - Make sure to set this to YOUR resource group 1 name.
   * Region to host the Azure Cosmos DB instance
   * The account name - This MUST be unique.  Create a prefix that would be unique to your.  Possibly your initials and a few digits.
 
@@ -125,7 +125,7 @@ RESOURCE_GROUP_COSMOS='<Your resoruce group name>'
 LOCATION_COSMOS='<use same region as you have for other resources>'
 ACCOUNT_NAME_COSMOS='(prefix)migrationcosmos'
 ```
-5. Copy the below command and execute it (you can paste in command window with a  right click).  This will create the Azure Cosmos DB Account and place it into the resource group you just created.  
+5. Copy the below command and execute it (you can paste in command window with a  right click).  This will create the Azure Cosmos DB Account and place it into the resource group you just created.
 
 ```language-bas
 az cosmosdb create --resource-group $RESOURCE_GROUP_COSMOS --name $ACCOUNT_NAME_COSMOS --kind MongoDB --locations regionName=$LOCATION_COSMOS
@@ -166,7 +166,7 @@ We will now create a PaaS instance of SQL server to migrate our on-premises data
 
 
 
-### Exercise 1  -  Assess DB Migration Using the DB Migration Tool Migrate Using Azure Database Migration 
+### Exercise 1  -  Assess DB Migration Using the DB Migration Tool Migrate Using Azure Database Migration
 
 The inventory service is hosted on a SQL server and served by an ASP.NET core website. The Inventory service determines the quantity of a unit that's currently in stock.  In this lab we will migrate the on premises SQL Server to an instance of SQL Azure DB.
 
@@ -174,18 +174,18 @@ We will be using the [Database Migration Tool](https://www.microsoft.com/en-us/d
 
 #### Finish On-Prem Configuration
 
-By now the SQL Server VM you created should be finished provisioning.  We need to do a couple of extra steps to get it ready to migrate. 
+By now the SQL Server VM you created should be finished provisioning.  We need to do a couple of extra steps to get it ready to migrate.
 
 1. On the left hand side of the Azure portal click on the resource group icon
    ![RGIcon](images/RGIcon.png)
 2. Click on your Resource Group
    1. You should now see all the resources we created in the exercises above
 3. Click on your SQL On Prem Virtual Machine you created
-4. Click on Connect->download the RDP file and open that to RDP to the VM, login with the migrateadmin user we created in Setup 1. 
+4. Click on Connect->download the RDP file and open that to RDP to the VM, login with the migrateadmin user we created in Setup 1.
 5. Update IE Security - The local server manager should launch on first login.
-   1. Press Local Server on the left side 
+   1. Press Local Server on the left side
    2. Press the IE Enhanced Security Configuration  on the right ![IE-EnhancedSec1](images/IE-EnhancedSec1.png)
-   3. Set that off for Administrator 
+   3. Set that off for Administrator
        ![IE-EnhancedSec2](images/IE-EnhancedSec2.png)
    4. Close the Server Manager
 6. Download and restore the database.  The inventory database is stored in the repository as a SQL .bacpac file needs to be restored.
@@ -195,7 +195,7 @@ By now the SQL Server VM you created should be finished provisioning.  We need t
    3. Launch the SQL Server Management Studio and connect to the local SQL instance.
    4. Right click on the Database folder and select 'Import Data-tier Application'
    ![ImportDAC](images/ImportDAC.png)
-   
+
 7. Follow the wizard to import the backup file you downloaded.
 8. When complete - Right click on the database folder and select 'refresh'
 9. You should now see the TailwindInventory DB installed.
@@ -224,9 +224,9 @@ First we need to do an assessment.  The tool will check the local db for compati
 6. UN-Check the Encrypt Connection Box
 7. Select the `TailwindInventory` database, click `Add`
 8. Click `Start Assessment`
-9. You will see a report on compatibility issues.  There should only be one for this DB because Service Broker is turned on.  In a real situation you would mitigate the issues.  For this lab we do not have to worry about as we know service broker is not actually used.  In your real situation you would now have a list of possible incompatibilities that would have to be addressed. 
+9. You will see a report on compatibility issues.  There should only be one for this DB because Service Broker is turned on.  In a real situation you would mitigate the issues.  For this lab we do not have to worry about as we know service broker is not actually used.  In your real situation you would now have a list of possible incompatibilities that would have to be addressed.
 
-#### Schema Migration 
+#### Schema Migration
 
 Now that we know our database can be migrated we will use the Migration tool to migrate JUST the schema information.  We will use the more robust Azure Database Migration Service for the data.
 
@@ -244,7 +244,7 @@ Now that we know our database can be migrated we will use the Migration tool to 
 4. UN-Check the Encrypt Connection box
 5. Click Connect
 6. Select the `TailwindInventory` database, click `Next`
-7. Target Server:  This will be the Azure SQL Server Instance we created.  
+7. Target Server:  This will be the Azure SQL Server Instance we created.
    1. In the Azure Portal click on the resource group icon and select your resource group.
    2. Find the SQL Server Instance you created.  It will be resource type of SQL Server
    3. Copy the server name on the right hand side of the overview page
@@ -261,7 +261,7 @@ Now that we know our database can be migrated we will use the Migration tool to 
 
 #### Data Migration
 
-Now that we have the schema migrated, we now need to move the data.  We will use the Azure Data Migration Service for this as it is much more robust option and can migrate the data with very minimal downtime. 
+Now that we have the schema migrated, we now need to move the data.  We will use the Azure Data Migration Service for this as it is much more robust option and can migrate the data with very minimal downtime.
 
 1. In the Azure Portal click on the resource group icon and select your resource group.
 2. Find the resource of type 'Azure Database Migration Service' and click it.
@@ -326,20 +326,20 @@ We can do all this from the Azure Bash Shell
 1. Launch a new Azure Command Shell.  You can either:
    1. Press the shell icon in the Azure Portal, as in the setup for the Cosmos DB
    2. Open a new browser tab to: <http://shell.azure.com> for a full screen experience
-   
+
 2. Download the MongoDB client tools (you can paste into the shell with a right click)
 
    ```bash
    wget https://repo.mongodb.org/apt/ubuntu/dists/xenial/mongodb-org/4.0/multiverse/binary-amd64/mongodb-org-tools_4.0.11_amd64.deb
    ```
 
-3.  Unpack the downloaded zip file 
+3.  Unpack the downloaded zip file
 
    ```
    dpkg-deb -R mongodb-org-tools_4.0.11_amd64.deb ~/mongotools
    ```
 
-4. Set the path to include the tools  
+4. Set the path to include the tools
 
    ```
    export PATH=$PATH:~/mongotools/usr/bin
@@ -367,7 +367,7 @@ We can do all this from the Azure Bash Shell
 
 Now that we have a copy of the data locally, we can use the mongorestore command to load that data into our Cosmos DB instance we created.
 
-First check to make sure the Cosmos DB instance was created successfully.  
+First check to make sure the Cosmos DB instance was created successfully.
 
 1. In the Azure portal click on the resource groups on the left toolbar
 2. Click on your Resource Group.
@@ -382,13 +382,13 @@ First check to make sure the Cosmos DB instance was created successfully.
 
 1. We will create a few environment variables to store Cosmos DB information for our restore command.
 
-2. You will need the Cosmos DB username and password.  
+2. You will need the Cosmos DB username and password.
 
    1. Navigate to the Cosmos DB account in the Azure portal.
    2. Click on the Connection String option on the left navigation
    3. The username and password for you Cosmos DB instance can be copied from here.
 
-3. Go back to the Azure shell 
+3. Go back to the Azure shell
 
 4. Create the following environment variables in that shell
 
@@ -398,7 +398,7 @@ First check to make sure the Cosmos DB instance was created successfully.
    > COSMOS_PWD=<primary password from connection string properties>
    > ```
 
-   
+
 
 5. Make sure you are still in the /dump/tailwind directory still
 
@@ -415,7 +415,7 @@ mongorestore \
     --db tailwind \
     --collection inventory
 ```
-8. Go into your Azure Cosmos DB account and click on `Data Explorer`. 
+8. Go into your Azure Cosmos DB account and click on `Data Explorer`.
 9. Press the refresh button next to Collections if you don't see the tailwind collection
 10. Select the `tailwind` database.
 11. Expand the `tailwind` node, expand the `inventory` node, and select `Documents`

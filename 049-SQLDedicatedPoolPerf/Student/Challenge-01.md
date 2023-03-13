@@ -11,9 +11,9 @@
 
 ## Introduction
 
-In this challenge you will import several parquet files from Blob Storage into your data warehouse and then you will move data from staging area to the production one. 
+In this challenge you will import several parquet files from Blob Storage into your data warehouse and then you will move data from staging area to the production one.
 
-You can find all the files for this challnge into the Zip file provided by your coach at this path: _./Resources/Challenge-01/_ 
+You can find all the files for this challnge into the Zip file provided by your coach at this path: _./Resources/Challenge-01/_
 
 ## Description
 
@@ -29,10 +29,10 @@ You can find all the files for this challnge into the Zip file provided by your 
 Define staging tables architecture, then import all parquet files using the link your coach will provide you.
 Data should land in a staging area (schema “Staging”) optimized to ingest data at maximum speed using the “COPY INTO” T-SQL command.
 
-- Open [C1_1_Import_into_staging_tables.sql](./Resources/Challenge-01/C1_1_Import_into_staging_tables.sql?raw=true) 
-  - Complete the provided T-SQL code to create the staging tables by choosing the proper structure and storage. 
+- Open [C1_1_Import_into_staging_tables.sql](./Resources/Challenge-01/C1_1_Import_into_staging_tables.sql?raw=true)
+  - Complete the provided T-SQL code to create the staging tables by choosing the proper structure and storage.
   - Import data from Parquet files into Staging tables using the suggested COPY INTO T-SQL command
-  
+
 ### Move data from staging area to production tables
 
 Optimize each table structure considering whether it is a “dimension” or a “fact” table. Production tables should belong to “Sales” schema. Check the Database diagram [(Download available here)](./Resources/DedicatedSqlPool-TablesRelationships.pdf?raw=true) to identify relationships between tables and decide which is the proper distribution method. Consider also tables will be queried by filtering using the CustomerKey, ProductionKey, DataKey columns. Choose the proper one to guarantee an even distribution of data across all distributions. Use the suggested “CREATE TABLE AS” T-SQL command.
@@ -41,7 +41,7 @@ Optimize each table structure considering whether it is a “dimension” or a �
   - Are Dimension tables (DimAccount, DimCustomer etc...) good candidates to be replicated ?
   - Most of your queries will join tables using CustomerKey, ProductKey, CurrencyKey and FinanceKey fields. Choose the most selective column
   - Example: Check FactInternetSales table: Is it better to distribute it using CustomerKey or ProductKey column ?
-  
+
 ### Investigate slowness due to data skew
 
 Users are complaining that a query is taking too much to complete and need your assistance to fix the issue. Investigate why the query is so slow and make it faster.
@@ -53,8 +53,8 @@ Users are complaining that a query is taking too much to complete and need your 
 ## Success Criteria
 
 - Identify the best design for Staging tables to improve performance during load
-- Verify all the methods you can use to load data from Blob storage 
-- Choose the best design (distribution method) for production tables 
+- Verify all the methods you can use to load data from Blob storage
+- Choose the best design (distribution method) for production tables
 - Check Data Skew and fix it
 
 ## Learning Resources

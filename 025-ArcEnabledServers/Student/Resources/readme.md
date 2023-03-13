@@ -1,4 +1,4 @@
-# What the Hack: Azure Arc enabled servers 
+# What the Hack: Azure Arc enabled servers
 
 ## Intentionally Blank
 

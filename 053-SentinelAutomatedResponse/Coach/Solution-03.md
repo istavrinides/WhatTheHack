@@ -1,21 +1,21 @@
 # Challenge-03 - Automated Response - Coach's Guide
 
-[< Previous Challenge](./Solution-02.md) - **[Home](./README.md)** 
+[< Previous Challenge](./Solution-02.md) - **[Home](./README.md)**
 
 
 ## Introduction
-In this section of the Coach's guide, you fill find guidance, code, and examples that will help you guide the teams over the course of the WTH. 
+In this section of the Coach's guide, you fill find guidance, code, and examples that will help you guide the teams over the course of the WTH.
 In the spirit of continuous improvement, update this repository with any suggestions, altertnatives, or additional challenges.
 
-This section of the hack includes a optional [Sentinel Review Deck](./Intro2Sentinel-C2.pptx?raw=true) that features a short presentation to introduce key topics associated with 
-this challenge. 
+This section of the hack includes a optional [Sentinel Review Deck](./Intro2Sentinel-C2.pptx?raw=true) that features a short presentation to introduce key topics associated with
+this challenge.
 
 Instructions on how to update the repository with updates can be found here. https://aka.ms/wthcontribute
 </br>
 
 ## Part1
 
-1. Install the following playbook and test the connections.  
+1. Install the following playbook and test the connections.
 https://github.com/Azure/Azure-Sentinel/tree/master/Playbooks/Watchlist-CloseIncidentKnownIPs </br>
 
 Note: This repository is part of the Azure Sentinel Playbooks, this repo was available at the time of this publication but if it's not there, the coach should report it as a bug via the WTH Contribution Guide process: https://aka.ms/wthcontribute </br>

@@ -74,7 +74,7 @@ Challenge 1 has attendees start by taking the FabMedical sample application's so
 
 For organizations who are not focused on how to build container images, we have provided pre-built container images for the FabMedical sample application hosted in Dockerhub. This means you may choose to start the hack with either Challenge 2 or Challenge 3.
 
-We have found it is common that some organizations do not allow their users to have the "Owner" role assigned to them in their Azure subscription. This means the attendees will not be able to configure the Azure Container Registry for use with their AKS cluster. 
+We have found it is common that some organizations do not allow their users to have the "Owner" role assigned to them in their Azure subscription. This means the attendees will not be able to configure the Azure Container Registry for use with their AKS cluster.
 
 You can workaround this either by skipping Challenge 2 altogether, or completing Challenge 2 to understand how ACR works, but then using the pre-built container images in Dockerhub for deployment in Challenge 4.
 

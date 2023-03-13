@@ -21,7 +21,7 @@
 * Goodbye
 
 
-**Are there any additional Cognitive Services that you think the bot would benefit from?**  
+**Are there any additional Cognitive Services that you think the bot would benefit from?**
 * Custom Speech Service - over come recognition barriers like speaking style, background, noise, and vocabulary
 * Speaker Recognition API - you could authenticate/identify return customers
 * Translator Speech API - give the user the option to speak in different languages

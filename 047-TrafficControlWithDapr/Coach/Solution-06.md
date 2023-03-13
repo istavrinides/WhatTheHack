@@ -41,7 +41,7 @@ In order to connect to Mosquitto, you need to pass in a custom configuration fil
 
 This will pull the docker image `eclipse-mosquitto` from Docker Hub and start it. The name of the container will be `dtc-mosquitto`. The server will be listening for connections on port `1883` for MQTT traffic.
 
-The `-v` flag specifies a Docker volume mount. It mounts the current folder (containing the config file) as the `/mosquitto/config/` folder in the container. Mosquitto reads its config file from that folder.  
+The `-v` flag specifies a Docker volume mount. It mounts the current folder (containing the config file) as the `/mosquitto/config/` folder in the container. Mosquitto reads its config file from that folder.
 
 If everything goes well, you should see some output like this:
 
@@ -134,7 +134,7 @@ Next, create an input binding for the `/exitcam` operation:
       - name: consumerID
         value: trafficcontrolservice
     scopes:
-      - trafficcontrolservice    
+      - trafficcontrolservice
     ```
 
 Now with input bindings configured, it's time to change the Camera Simulation so it'll send MQTT messages to Mosquitto.
@@ -171,13 +171,13 @@ The proxy uses HTTP to send the message to the `TrafficControlService`. You will
     using System.Text;
     using System.Text.Json;
     using Simulation.Events;
-   
+
     namespace Simulation.Proxies
     {
         public class MqttTrafficControlService : ITrafficControlService
         {
             private readonly IMqttClient _client;
-   
+
             public MqttTrafficControlService(int camNumber)
             {
                 // connect to mqtt broker
@@ -190,14 +190,14 @@ The proxy uses HTTP to send the message to the `TrafficControlService`. You will
                 var sessionState = _client.ConnectAsync(
                   new MqttClientCredentials(clientId: $"camerasim{camNumber}")).Result;
             }
-   
+
             public void SendVehicleEntry(VehicleRegistered vehicleRegistered)
             {
                 var eventJson = JsonSerializer.Serialize(vehicleRegistered);
                 var message = new MqttApplicationMessage("trafficcontrol/entrycam", Encoding.UTF8.GetBytes(eventJson));
                 _client.PublishAsync(message, MqttQualityOfService.AtMostOnce).Wait();
             }
-   
+
             public void SendVehicleExit(VehicleRegistered vehicleRegistered)
             {
                 var eventJson = JsonSerializer.Serialize(vehicleRegistered);
@@ -314,7 +314,7 @@ Azure IoT Hub can be set up as a [MQTT queue](https://docs.microsoft.com/en-us/a
     dotnet add package Microsoft.Azure.Devices.Client
     ```
 
-1.  Replace the implementation of the `Resources/Simulation/Proxies/MqttTrafficControlService.cs` class with similar code to below.  
+1.  Replace the implementation of the `Resources/Simulation/Proxies/MqttTrafficControlService.cs` class with similar code to below.
 
     ```csharp
     using Microsoft.Azure.Devices.Client;

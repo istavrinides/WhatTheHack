@@ -6,7 +6,7 @@
 Making gains, get that data updated!
 
 ## Description
-Additional results have been recorded. Your team’s task is to create a process to capture these new results and incorporate them into the reporting repository 
+Additional results have been recorded. Your team’s task is to create a process to capture these new results and incorporate them into the reporting repository
 
 For simplification, it can be assumed that all new data is simply new event results (i.e., INSERTs).  No modification or deletion of past data is to be supported.
 

@@ -77,7 +77,7 @@ var appSettings = [
 ]
 
 resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01'  = {
-  name: appServicePlanName  
+  name: appServicePlanName
   location: location
   properties: {
     reserved: false

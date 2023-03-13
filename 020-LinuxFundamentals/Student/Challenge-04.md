@@ -27,7 +27,7 @@ In this challenge let's learn about file content manipulation and discover how t
 1. Show the content of the first 10 lines of `/etc/resolv.conf`
 2. Show the last 5 lines of `/etc/crontab`
 3. Validate if the content of the file `count.log` was created as expected
-4. Check if the file `count.bkp` was created 
+4. Check if the file `count.bkp` was created
 5. Check if the file `cat-count.log` was created
 6. Confirm if you can see the content of the file `cat-count.log` in reverse order
 7. Validate if you was able to see the content of the file `/etc/selinux/semanage.conf` paged

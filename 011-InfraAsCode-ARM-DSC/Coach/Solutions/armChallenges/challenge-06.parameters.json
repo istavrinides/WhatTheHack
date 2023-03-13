@@ -3,11 +3,11 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "resourcePrefix": {
-        "value": "p20" 
+        "value": "p20"
       },
       "vmName": {
         "value": "P20WebVM"
-      },      
+      },
       "adminUsername": {
         "value": "p20admin"
       },

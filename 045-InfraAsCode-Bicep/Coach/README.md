@@ -22,7 +22,7 @@ Also remember that this hack includes a optional [lecture presentation](WTH-IaC-
    - Create complex deployment with Bicep using modules
 - Challenge 6: **[Bicep Modules](Solution-06.md)**
    - Learn about custom script extensions
-- Challenge 7: **[Configure VM to run a Web Server](Solution-07.md)** 
+- Challenge 7: **[Configure VM to run a Web Server](Solution-07.md)**
    - Learn about custom script extensions
 - Challenge 8: **[Deploy a Virtual Machine Scale Set](Solution-08.md)**
    - Create complex deployment with Bicep using modules

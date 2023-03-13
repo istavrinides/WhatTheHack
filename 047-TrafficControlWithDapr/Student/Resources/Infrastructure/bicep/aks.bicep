@@ -4,7 +4,7 @@ param publicSSHKey string
 
 resource logAnalytics 'Microsoft.OperationalInsights/workspaces@2020-10-01' = {
   name: 'la-${longName}'
-  location: resourceGroup().location  
+  location: resourceGroup().location
 }
 
 resource appInsights 'Microsoft.Insights/components@2020-02-02' = {
@@ -21,7 +21,7 @@ resource aksAzurePolicy 'Microsoft.Authorization/policyAssignments@2019-09-01' =
   scope: resourceGroup()
   properties: {
     policyDefinitionId: '/providers/Microsoft.Authorization/policyDefinitions/c26596ff-4d70-4e6a-9a30-c2506bd2f80c'
-  }  
+  }
 }
 
 resource aks 'Microsoft.ContainerService/managedClusters@2021-03-01' = {

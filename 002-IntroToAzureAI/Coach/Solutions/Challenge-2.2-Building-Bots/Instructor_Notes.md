@@ -2,7 +2,7 @@
 
 **This document serves to provide some (hopefully) helpful notes and tips with regards to presenting these materials/labs**
 
-## Building Bots intro [~30 minutes]  
+## Building Bots intro [~30 minutes]
 
 *	Quick poll/discussion to gauge familiarity and use of bots
     *	Ask the room - who has implemented, what are they, what do they think of them, how easy are they to use and access, are they flexible, are there options for customization?
@@ -14,7 +14,7 @@
     *	Ask the class if they can think of others or share examples of times they've implemented or even interacted with a bot
     *	Litware insurance bot is a good example (from about 1 min – 9 min, skip probably because too long. Watch ahead of time for ideas.
         *	<https://www.youtube.com/watch?v=1xgMEkvEppM>
-*	Set up the lab 
+*	Set up the lab
     *	Goals
     *	Architecture and use case
     *	Demo to them

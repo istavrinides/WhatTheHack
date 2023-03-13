@@ -53,7 +53,7 @@ Always refer students to the [What The Hack website](https://aka.ms/wth) for the
   - 1x Azure Function App
   - 1x Azure Key Vault
   - 1x Azure Storage Account
-  
+
   Depending on how the students will elect to solve the challenges, more Azure Services will need to be deployed, such as:
 
   - Additional Azure Cosmos DB containers (with cross-region multi-master support)

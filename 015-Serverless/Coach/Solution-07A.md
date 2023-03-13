@@ -1,4 +1,4 @@
-# Optional Challenge 07A - Scale the Cognitive Service - Coach's Guide 
+# Optional Challenge 07A - Scale the Cognitive Service - Coach's Guide
 
 [< Previous Solution](./Solution-07.md) - **[Home](./README.md)** - [Next Solution >](./Solution-07B.md)
 

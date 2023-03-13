@@ -20,7 +20,7 @@ admin_password=your_super_secret_password
 # If the Vnet_id begins with "1", it is created in $location1
 # If the Vnet_id begins with "2", it is created in $location2
 
-function create_vm_vnet {    
+function create_vm_vnet {
     location=$1
     vnet_id=$2
     vnet_prefix=$3
@@ -30,7 +30,7 @@ function create_vm_vnet {
     echo "VNET name: vnet-${vnet_id}-$location"
     echo "VNET prefix: $vnet_prefix and subnet prefix: $subnet_prefix"
     echo "VM name: vnet${vnet_id}-vm"
-    
+
     az vm create -n "vnet${vnet_id}-vm" -g "$rg" -l "$location" --image "ubuntuLTS" --size $vm_size \
             --authentication-type Password --admin-username "$admin_username" --admin-password "$admin_password" \
             --public-ip-address "vnet${vnet_id}-pip" --vnet-name "vnet${vnet_id}-$location" \
@@ -38,7 +38,7 @@ function create_vm_vnet {
             --no-wait
 }
 
-function create_branch_csr_vnet {    
+function create_branch_csr_vnet {
     location=$1
     vnet_id=$2
     vnet_prefix=$3

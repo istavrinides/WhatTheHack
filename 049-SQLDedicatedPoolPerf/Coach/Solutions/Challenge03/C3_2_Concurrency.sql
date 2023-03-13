@@ -23,7 +23,7 @@ While PS1 script is still running (it should take hours to complete) run below q
 
 ****************************************************************************************/
 
-SELECT 
+SELECT
 	Fis.SalesTerritoryKey
 	,Fis.OrderDateKey
 	, Dsr.SalesReasonName
@@ -45,7 +45,7 @@ GO
 
 /****************************************************************************************
 STEP 2 of 4 - Checking what is going on
-You should find 4 session with status = 'running' and one with status = 'suspended' 
+You should find 4 session with status = 'running' and one with status = 'suspended'
 DW1000 allows max 4 running concurrent query. New submitted queries will be queued and their status will be 'Suspended'
 
 https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/memory-concurrency-limits
@@ -113,7 +113,7 @@ While PS1 script is still running (it should take hours to complete) run below q
 It should complete in few seconds
 ****************************************************************************************/
 
-SELECT 
+SELECT
 	Fis.SalesTerritoryKey
 	,Fis.OrderDateKey
 	, Dsr.SalesReasonName

@@ -36,7 +36,7 @@
 ############################################################
 
 # Waits until a resource finishes provisioning
-# Example: wait_until_finished <resource_id> 
+# Example: wait_until_finished <resource_id>
 function wait_until_finished () {
      wait_interval=60
      resource_id=$1
@@ -197,7 +197,7 @@ function connect_gws () {
     cx_type=$3
     gw1_type=$(get_router_type_from_id "$gw1_id")
     gw2_type=$(get_router_type_from_id "$gw2_id")
-    echo "Connecting vng${gw1_id} and vng${gw2_id}. Finding out information about the gateways..." 
+    echo "Connecting vng${gw1_id} and vng${gw2_id}. Finding out information about the gateways..."
 
     # Using Vnet-to-Vnet connections (no BGP supported)
     # az network vpn-connection create -g $rg -n ${gw1_id}to${gw2_id} \
@@ -214,7 +214,7 @@ function connect_gws () {
     if [[ ${gw1_type} == "vng" ]] || [[ ${gw1_type} == "vng2" ]]
     then
         vpngw1_gw1_pip=$(echo "$vpngw1_bgp_json" | jq -r '.bgpPeeringAddresses[1].tunnelIpAddresses[0]')
-        vpngw1_gw1_bgp_ip=$(echo "$vpngw1_bgp_json" | jq -r '.bgpPeeringAddresses[1].defaultBgpIpAddresses[0]')    
+        vpngw1_gw1_bgp_ip=$(echo "$vpngw1_bgp_json" | jq -r '.bgpPeeringAddresses[1].defaultBgpIpAddresses[0]')
         echo "Extracted info for vpngw1: ASN $vpngw1_asn, GW0 $vpngw1_gw0_pip, $vpngw1_gw0_bgp_ip. GW1 $vpngw1_gw1_pip, $vpngw1_gw1_bgp_ip."
     elif [[ "$gw1_type" ==  "vng1" ]]
     then
@@ -425,7 +425,7 @@ function connect_csr () {
     if [[ ${gw_type} == "vng" ]] || [[ ${gw_type} == "vng2" ]]
     then
         vpngw_gw1_pip=$(echo "$vpngw_bgp_json" | jq -r '.bgpPeeringAddresses[1].tunnelIpAddresses[0]')
-        vpngw_gw1_bgp_ip=$(echo "$vpngw_bgp_json" | jq -r '.bgpPeeringAddresses[1].defaultBgpIpAddresses[0]')    
+        vpngw_gw1_bgp_ip=$(echo "$vpngw_bgp_json" | jq -r '.bgpPeeringAddresses[1].defaultBgpIpAddresses[0]')
         echo "Extracted info for vpngw: ASN $vpngw_asn, GW0 $vpngw_gw0_pip, $vpngw_gw0_bgp_ip. GW1 $vpngw_gw1_pip, $vpngw_gw1_bgp_ip."
     elif [[ "$gw_type" ==  "vng1" ]]
     then
@@ -539,7 +539,7 @@ EOF
 }
 
 # Configure a tunnel a BGP neighbor for a specific remote endpoint on a Cisco CSR
-# "mode" can be either IKEv2 or ISAKMP. I havent been able to bring up 
+# "mode" can be either IKEv2 or ISAKMP. I havent been able to bring up
 #   a CSR-to-CSR connection using IKEv2, hence my workaround is using isakmp.
 function config_csr_tunnel () {
     csr_id=$1
@@ -683,7 +683,7 @@ function log_gw () {
   echo "Configuring diagnostic settings for gateway vng${gw_id}"
   az monitor diagnostic-settings create -n mydiag --resource "$vpngw_id" --workspace "$logws_id" \
       --metrics '[{"category": "AllMetrics", "enabled": true, "retentionPolicy": {"days": 0, "enabled": false }, "timeGrain": null}]' \
-      --logs '[{"category": "GatewayDiagnosticLog", "enabled": true, "retentionPolicy": {"days": 0, "enabled": false}}, 
+      --logs '[{"category": "GatewayDiagnosticLog", "enabled": true, "retentionPolicy": {"days": 0, "enabled": false}},
               {"category": "TunnelDiagnosticLog", "enabled": true, "retentionPolicy": {"days": 0, "enabled": false}},
               {"category": "RouteDiagnosticLog", "enabled": true, "retentionPolicy": {"days": 0, "enabled": false}},
               {"category": "IKEDiagnosticLog", "enabled": true, "retentionPolicy": {"days": 0, "enabled": false}}]' >/dev/null
@@ -693,10 +693,10 @@ function log_gw () {
 # Possible improvements:
 # - Supply time and max number of msgs as parameters
 function get_ike_logs () {
-  query='AzureDiagnostics 
-  | where ResourceType == "VIRTUALNETWORKGATEWAYS" 
-  | where Category == "IKEDiagnosticLog" 
-  | where TimeGenerated >= ago(5m) 
+  query='AzureDiagnostics
+  | where ResourceType == "VIRTUALNETWORKGATEWAYS"
+  | where Category == "IKEDiagnosticLog"
+  | where TimeGenerated >= ago(5m)
   | project Message
   | take 20'
   az monitor log-analytics query -w "$logws_customerid" --analytics-query "$query" -o tsv

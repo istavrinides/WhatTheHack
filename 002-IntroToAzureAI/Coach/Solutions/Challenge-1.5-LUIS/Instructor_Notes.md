@@ -2,7 +2,7 @@
 
 **This document serves to provide some (hopefully) helpful notes and tips with regards to presenting these materials/labs**
 
-## LUIS intro [20-25 minutes]  
+## LUIS intro [20-25 minutes]
 
 * Intro to LUIS
     *	What is NLP?
@@ -15,7 +15,7 @@
     *	Walk through all of the Build a Luis app sections, skipping Improve performance using features, and getting too much into entities
     *	Briefly talk about prebuilt entities and prebuilt domains
 *	Briefly scroll through the lab as a preview, don't spend too much time, let them explore on their own
-*	LUIS discussion – lab wrap up at the end 
+*	LUIS discussion – lab wrap up at the end
     *	What do you guys think about LUIS? First impressions?
     *	Open it up for more discussion
         *	Questions

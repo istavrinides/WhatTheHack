@@ -14,7 +14,7 @@ The goal of this lab is to introduce unit testing for bots developed using Micro
 
 ## 2.	Setup
 
-Import the EchoBot Solution in VisualStudio from code\EchoBot. On successful import, you will see two projects (EchoBot, a Bot Application and EchoBotTests, a Test Project) as shown below. 
+Import the EchoBot Solution in VisualStudio from code\EchoBot. On successful import, you will see two projects (EchoBot, a Bot Application and EchoBotTests, a Test Project) as shown below.
 
 ![Setup](images/Setup.png)
 
@@ -63,7 +63,7 @@ Run all Tests by selecting  **Test -> Run -> All Tests** as shown below and veri
 
 A.   Write another TestMethod called *EchoStartsWith* that verifies echo prompt begins with "You sent".
 
-*Hint:* The TestMethod would be very similar to ShouldReturnEcho() and you would check if toUser.Text starts with "You sent". 
+*Hint:* The TestMethod would be very similar to ShouldReturnEcho() and you would check if toUser.Text starts with "You sent".
 
 B.   Can you verify that the echoed messages were sent by a bot?
 

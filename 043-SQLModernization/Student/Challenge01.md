@@ -4,13 +4,13 @@
 
 ## Introduction
 
-Your fledgling company has two migration tasks at hand. In both cases, your clients would like to migrate their SQL Server instances into Azure. Each solution has different requirements. 
+Your fledgling company has two migration tasks at hand. In both cases, your clients would like to migrate their SQL Server instances into Azure. Each solution has different requirements.
 
 ## Description
 
 The objective of this challenge is to migrate AdventureWorks and WWI Databases (OLTP and OLAP) to Azure. Each presents a unique set of customer requirements; be sure to read the optional advanced challenges -- while completing the advanced challenges is not required for this challenge, it may impact your implementation choices.
 
-### AdventureWorks 
+### AdventureWorks
 
 AdventureWorks has provided the following requirements and guidelines:
 

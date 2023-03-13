@@ -19,7 +19,7 @@ This hack includes an optional [lecture presentation](Lectures.pptx?raw=true) th
 - Challenge 03: **[Monitoring Azure Virtual Machines](./Solution-03.md)**
 	 - Datadog agent manual and scalable installations on Windows and VM scale sets.
 - Challenge 04: **[Datadog for Applications](./Solution-04.md)**
-	 - Monitoring applications deployed to Azure using Datadog. 
+	 - Monitoring applications deployed to Azure using Datadog.
 
 
 ## Coach Prerequisites
@@ -50,7 +50,7 @@ This hack requires students to have access to an Azure subscription where they c
   - 2 Azure Storage accounts (blob storage)
   - Total: 26 vCPU + 4 Public IPs per studente
 
->**Note** The VM SKUs are configurable in the Bicep templates. Smaller VM SKU sizes can be used if cost is a concern for the hack.  
+>**Note** The VM SKUs are configurable in the Bicep templates. Smaller VM SKU sizes can be used if cost is a concern for the hack.
 
 >**Note** Always remind students to stop all VMs, VM Scale Sets, and AKS clusters at the end of each hack day to conserve costs during a multi-day hack.
 
